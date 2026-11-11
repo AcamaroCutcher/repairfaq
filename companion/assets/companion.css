@@ -300,3 +300,6 @@ html:not(.js) .reveal, html:not(.js) .reveal-stagger > * { opacity: 1; transform
 .hero .wrap > *, .detail-grid > *, .cards > *, .dgrid > *, .honor > * { min-width: 0; }
 .hero-3d, .panel.three-panel { overflow: hidden; }
 @media (max-width: 760px) { .topbar .icon-btn[data-search-open] { margin-left: auto; } .menu-btn { margin-left: 0; } }
+
+/* JetBrains Mono's ligatures turn |> and -> into single symbols, which would change Sam's ASCII drawings. */
+pre, code, kbd, samp, .ascii, .schem-svg text, .notice, .eyebrow, .kicker { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0, "dlig" 0; }

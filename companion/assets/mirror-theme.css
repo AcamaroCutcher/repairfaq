@@ -15,7 +15,12 @@ body {
   color: #0f172a;
   background-color: #ffffff;
 }
-pre, tt, code, kbd, samp { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; }
+pre, tt, code, kbd, samp {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  /* No ligatures: they would merge characters like |> in the ASCII diagrams into new symbols. */
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0, "dlig" 0;
+}
 a:link { color: #1d4ed8; }
 a:visited { color: #6d28d9; }
 a:hover { color: #0f766e; }

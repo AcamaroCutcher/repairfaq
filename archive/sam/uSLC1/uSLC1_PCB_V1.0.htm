@@ -1,0 +1,61 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uSLC1/uSLC1_PCB_V1.0.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uSLC1/uSLC1_PCB_V1.0.htm">https://www.repairfaq.org/sam/uSLC1/uSLC1_PCB_V1.0.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<b>Version 1.0 &micro;SLC1 PCB Corrections</b>
+<p>
+I must have been smoke'n sump'n when I did the layout for Version 1.0
+as there are a couple of errors (can you believe it?!).
+These only impact compatibility with the Spectra-Physics 117/A (and
+functionally identical Melles Griot 05-STP-901) laser head and digital
+purity. ;-)  The following is only really relevant if you already have
+a V1.0 PCB:
+<p>
+These changes are not required in most cases but are recommended for
+compatibility with future releases.  All of these can be done on the bottom
+of the PCB.
+<p>
+<ul>
+<li>The wiring to the photodiodes is fine if you're building your own laser
+ head but is not compatible with the SP/MG laser head cable.  For most people,
+ this is of no consequence.
+<p>
+ <ol>
+ <li>Cut the trace between J2-8 and J2-9 (Laser head DB9).
+ <li>Cut the trace between J2-8 and R13 (1K 1/4W).
+ <li>Cut the trace between J2-5 and R12 (1K trimpot).
+ <li>Add a jumper between J2-5 and J2-9.
+ <li>Add a jumper between J2-5 to R13.
+ <li>Add a jumper from J2-8 to R12.
+ </ol>
+<p>
+<li>The order of the State LEDs is backwards.  I know this will keep you
+ up at night. :)  Swapping the State0LED and State2LED #define statements
+ in the firmware before compiling is the simplest solution but for the purist:
+<p>
+ <ol>
+ <li>Cut the trace bwteen U1-10 (Atmega) and R2.
+ <li>Cut the trace bwteen U1-12 and R4.
+ <li>Add a jumper between U1-10 and R4.
+ <li>Add a jumper between U1-12 and R2.
+ </ol>
+<p>
+<li>The following is recommended to beef up the current capacity of the
+ heater traces:
+<p>
+ <ol>
+ <li>Add a jumper between J1-3 (Power connector) and J2-6.
+ <li>Add a jumper between J2-1 and Q1-C (center pin).
+ </ol>
+</ul>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/laserpic/qmhnpics.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Photos of Quack Medical Helium-Neon Lasers</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/laserpic/qmhnpics.htm">https://www.repairfaq.org/sam/laserpic/qmhnpics.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<A NAME="qmhntoc"></A>
+<p>
+<hr>
+<b><center>Sam's Laser FAQ, <A HREF="../copyright.htm">Copyright &copy<A> 1994-2014,
+ Samuel M. Goldwasser, All Rights Reserved.<br>
+ I may be contacted via the
+ <A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+ Email Links Page</A>.</center></b>
+<hr>
+<p>
+<li>Go to <A HREF="../laserfaq.htm">Sam's Laser FAQ Table of Contents</A>.
+<li>Back to <A HREF="laserpic.htm#legtoc">Laser Equipment Gallery Lobby</A>.
+<h2>Photos of Quack Medical Helium-Neon Lasers</h2>
+
+These are photos of devices using HeNe lasers that claimed to be useful for
+curing just about anything that ailed you.  While photo-therapy in some
+forms is generally accepted now (2014), these devices (only one so far)
+clearly lacked the power to do much of anything except make money for the
+manufacturer and drain money from the buyers.
+<p>
+<ul>
+<li><A HREF="qmhnpics.htm#d820">Dynatronics Model 820 Laser</A> (Gallery)
+<p>
+The Dynatronics Model 820 was one such device.
+<A HREF="http://www.dynatronics.com/">Dynatronics</A> was and still is
+a manufacturer of a variety of medical therapy products.  I haven't really
+spent much time on their Web site so I can't comment on whether what they
+sell now is useful.  The model 820 almost certainly was not, at least not
+more than as a placebo.  However, to their credit, it is much higher
+quality than I had originally expected, which would have been a
+cheezy surplus barcode scanner tube duct-taped in place with a discrete
+linear power supply cobbled together from junk parts.  But this is not the
+case.
+<p>
+The parts are first rate and the general construction technique
+is really quite good with fiberglass-Epoxy PCBs and most wiring using
+cables with AMP connectors and.  It uses a genuine
+Hughes model 3222H-C laser head which has a hard-sealed modern tube,
+random polarized and rated 2 mW.  It has a sticker stating 2.75 mW
+when new.  Its power output currently measures over 2 mW at power-on
+through the plastic chopper wheel (more below) so it may indeed approach
+2.75 mW after warmup.  The power supply is a Laser Drive 115 VAC
+input brick.  I have no reason to suspect that they
+bought anything other than new lasers since there was no eBay back then,
+though I suppose some of the laser surplus places did exist in 1981 (the
+date of manufacture of this unit).  However, the laser head and power
+supply are dated 1980, so seeing them surplus in 1981 would be unusual.
+<p>
+The output of the laser feeds an optical fiber or light guide which goes to
+the "probe", after passing through a plastic motor-driven chopper wheel.
+I doubt there is any focusing as the coupling efficiency is terrible - no
+more than 25 percent makes it to the probe tip.  I don't think anything
+is misaligned, but being that way, it among other things, stays within
+the less than 1 mW of a Class II laser.  The end of the probe cable at the
+laser is made of metal and passes through
+a pair of opto-interrupters which act as a safety interlock: The laser
+will not turn on if the probe is missing, nor can the probe be removed
+if the laser is on as there is a solenoid that latches on the metal
+section.  AC power must be on but the laser must be off to remove the
+probe cable.  There is also a standard 2 pin Jones plug electrical
+interlock which must be present for the laser to turn on.
+<p>
+The "controller" consists of a pair of PCBs.  What I'm calling the "Main PCB"
+has the DC power supplies and circuitry to enable the laser and chopper wheel
+motor and control its speed, and for the timer that sets the duration of
+laser exposure in timed mode.
+<p>
+While I complement Dynatronics on their construction
+quality, they also appear to have the paranoid mentality of a fly-by-night
+operation.  Specifically, the part numbers
+on most ICs and transistors have been sanded off!  For the most part, this
+would not impede reverse engineering by anyone with a competence level above
+that of a carrot, so it seems silly.  And it would be even easier to simply
+duplicate the functionality.  This isn't rocket science!
+And the Main PCB seems somewhat more complex than necessary to implement
+the required functionality, so I wonder if all the parts actually do
+something. :)
+<p>
+The display on the front panel and the audio <i>have nothing whatsoever to do
+with the laser or its output</i> and are active as long as power is on.  Both
+are based on the resistance between the probe tip and the cylindrical aluminum
+electrode or rod which one is presumably supposed to hold onto while digging
+the probe into whatever body part is to be irradiated.  Then, the display
+shows a number from 0 to 100 to indicate how good the conductance is with
+0 being infinite resistance and 100 be 0 ohms with 100K coming at 50.
+The display runs off a 7107 A/D IC (common back then for any sort of
+application requiring a 7 segment digital readout of an analog voltage).
+The audio output is from a Sonalert beeper gated by a 555 timer whose
+repetition rate depends on the conductance.  So, it's an increasing warble
+of sorts.  The control on the front panel only sets loudness over a
+modest range, which unfortunately doesn't include mute. :( :)
+<p>
+The laser may be turned on either directly by a pushbutton on the probe, or
+that may latch a timer with a duration of from around 5 to 30 seconds based
+on the setting of the front panel pot.  Whenever
+the laser is on, a motor rotates a chopper wheel in the beam to produce a
+variable rate modulation of the laser output.  The motor speed is controlled
+by another pot on the front panel.
+<p>
+I'd love to locate a copy of the instruction manual that went with this thing,
+especially the part about how to cure various dreaded afflictions. ;-)
+<p>
+<ul>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f1.jpg">
+ View 01</A> - Dynatronics 820 Laser - Front 1.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f2.jpg">
+ View 02</A> - Dynatronics 820 Laser - Front 2.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820b.jpg">
+ View 03</A> - Dynatronics 820 Laser - Back.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lc.jpg">
+ View 04</A> - Dynatronics 820 Laser - Left Connector Panel with modified
+ UHF connector for the fiber probe, 2 pin Jones plug interlock, and banana
+ jack hand electrode.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820rc.jpg">
+ View 05</A> - Dynatronics 820 Laser - Right Connector Panel showing AC cord
+ and fuses for the electronics and HeNe laser power supply brick.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820u.jpg">
+ View 06</A> - Dynatronics 820 Laser - Bottom showing Sonalert.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fi.jpg">
+ View 07</A> - Dynatronics 820 Laser - Front interior.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fi.jpg">
+ View 08</A> - Dynatronics 820 Laser - Model Label.  Note date: 1981.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptl.jpg">
+ View 09</A> - Dynatronics 820 Laser - Power transformer, Sonalert from top,
+ HeNe laser power supply brick and back of laser head.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820hp.jpg">
+ View 10</A> - Dynatronics 820 Laser - HeNe laser label and power supply brick.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820cr.jpg">
+ View 11</A> - Dynatronics 820 Laser - Motor and chopper wheel.
+<p>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ib.jpg">
+ View 12</A> - Dynatronics 820 Laser - Interconnect PCB next to fiber removal
+ preventional solenoid, dual opto-interrupt beam interlock, and front of
+ laser head.
+<p>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820mp.jpg">
+ View 13</A> - Dynatronics 820 Laser - Main PCB.  This control power to the
+ laser and motor, motor speed, on-timer and latch, and also provides regulated
+ 5 VDC as well as unregulated +/-8.5 VDC supplies.
+<p>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptr.jpg">
+ View 14</A> - Dynatronics 820 Laser - Power transformer and terminal block
+ on main PCB, back of laser head.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820dl.jpg">
+ View 15</A> - Dynatronics 820 Laser - Danger label.  Wow! Beware of killer
+ laser. :)
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpi.jpg">
+ View 16</A> - Dynatronics 820 Laser - Front panel interior showing from
+ left to right: timer control, motor speed control, display/audio PCB,
+ and power and status switches and lights.
+<p>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpt.jpg">
+ View 17</A> - Dynatronics 820 Laser - Front panel PCB top (component side).
+ The two ICs are a 7107 A/D and 555 timer, both with their markings sanded
+ off.  The sanding job on the 7107 was second rate so it was still possible
+ to read; the 555 was determined based on its wiring.
+<p>
+ The value shown in the 2-1/8 digit display (up to 100) is based on the
+ resistance between the probe tip and the hand-held cylindrical electrode
+ that plugs into a banana plug next to the main probe on the left connector.
+ A 100K resistor to a DC voltage feeds the probe tip while the hand-held
+ electrode is effectively another 100K ohm resistor to ground, forming a
+ voltage divider.  The displayed value is then calibrated via the trim-pot
+ on the front panel PCB to be 100 when there is no additional resistance
+ between them.  Unfortunately, the voltage regulation isn't so great, so
+ when the motor turns on, it may drop by 1 count.  Darn. :)
+<p>
+ The 555 provides a variable rate enable to the Sonalert based on the
+ (analog) value in the display so it kind or warbles at an increasing rate
+ for higher values.  The Audio Level front panel control is simply in series
+ with the Sonalert and provides a modest range of volume.
+<p>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpb.jpg">
+ View 18</A> - Dynatronics 820 Laser - Front panel PCB bottom (solder-side).
+<p>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fwb.jpg">
+ View 19</A> - Dynatronics 820 Laser - Front with laser beam on.  Look hard. :)
+ Just to convince you this a laser!  The output of the probe is under 0.5
+ mW, though the laser head itself produces over 2 mW at power on, somewhat
+ more after warmup.
+<p>
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb1.jpg">
+ View 20</A> - Dynatronics 820 Laser - Closeup of probe producing a beam 1.
+
+<li><A HREF="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb2.jpg">
+ View 21</A> - Dynatronics 820 Laser - Closeup of probe producing a beam 2.
+ </ul>
+</ul>
+<p>
+<A NAME="henehtp"></A>
+<hr>
+<br>
+<h3>Quack Medical Helium-Neon Lasers</h3>
+
+<dl><dd>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f1.jpg">View 01</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f1.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f1t.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f2.jpg">View 02</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f2.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820f2t.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820b.jpg">View 03</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820b.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820bt.jpg" align=middle border=0></A>
+
+<p>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lc.jpg">View 04</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lc.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lct.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820rc.jpg">View 05</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820rc.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820rct.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820u.jpg">View 06</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820u.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ut.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ml.jpg">View 07</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ml.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820mlt.jpg" align=middle border=0></A>
+
+<p>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fi.jpg">View 08</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fi.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fit.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptl.jpg">View 09</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptl.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptlt.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820hp.jpg">View 10</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820hp.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820hpt.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820cr.jpg">View 11</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820cr.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820crt.jpg" align=middle border=0></A>
+
+<p>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ib.jpg">View 12</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ib.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ibt.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820mp.jpg">View 13</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820mp.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820mpt.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptr.jpg">View 14</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptr.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820ptrt.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820dl.jpg">View 15</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820dl.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820dlt.jpg" align=middle border=0></A>
+
+<p>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpi.jpg">View 16</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpi.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpit.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpt.jpg">View 17</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpt.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fptt.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpb.jpg">View 18</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpb.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fpbt.jpg" align=middle border=0></A>
+
+<p>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fwb.jpg">View 19</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fwb.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820fwbt.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb1.jpg">View 20</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb1.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb1t.jpg" align=middle border=0></A>
+
+<A href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb2.jpg">View 21</A> <a href="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb2.jpg">
+<image src="https://acamarocutcher.github.io/repairfaq-photos/archive/sam/laserpic/d820lb2t.jpg" align=middle border=0></A>
+
+</dl>
+<p>
+<hr>
+<p>
+<li>Back to <A HREF="../laserfaq.htm#faqtoc">Sam's Laser FAQ Table of Contents</A>.
+<li>Back to <A HREF="qmhnpics.htm#henetoc">Top of Quack Medical Helium-Neon
+ Laser Photos Page</A>.
+<p>
+<hr>
+<b><center>Sam's Laser FAQ, <A HREF="../copyright.htm">Copyright &copy<A> 1994-2014,
+ Samuel M. Goldwasser, All Rights Reserved.<br>
+ I may be contacted via the
+ <A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+ Email Links Page</A>.</center></b>
+<hr>
+<p>
+</BODY>
+</HTML>

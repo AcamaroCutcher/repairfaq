@@ -1,0 +1,207 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/techinfo.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Miscellaneous Technical Information (which you probably don't need)</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/techinfo.htm">https://www.repairfaq.org/sam/techinfo.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Miscellaneous Technical Information<br>
+(Which You Probably Don't Need)
+</h1>
+<h2>
+Version 1.10
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy;</A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="titoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#ptmpre">Preface</a>
+ <ul>
+ <li><A HREF="#tiaac">Author and Copyright</a>
+ <li><A HREF="#tidis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#tiint">Introduction</a>
+ <ul>
+ <li><A HREF="#tisop">Scope and Purpose of This Document</a>
+ </ul>
+<p>
+<li><A HREF="#tidpm1">Non-Linear Systems, Inc. PM-349 3-1/2 Digit DPM</A>
+<li><A HREF="#tivsl1">Varian Spectral Lamp X49-609</A>
+<li><A HREF="#tispl1">Spellman LCM13X1408 High Voltage Power Supply</A>
+<li><A HREF="Creating_PCBs_using_Tango_PCB_for_DOS.htm">Creating PCBs using Tango PCB for DOS</A>
+</ul>
+<p>
+<A NAME="tipre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#titoc">Misc Info Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="tiaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="tidis">DISCLAIMER</a></h3>
+
+We will not be responsible for any damage to flesh, material, or ego that may
+result from the use of this information!
+<p>
+<A NAME="tiint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#titoc">Misc Info Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="tisop">Scope and Purpose of This Document</A></h3>
+
+This is a random collection of pinouts and other stuff for various items
+I've found or bought for next to nothing with no hookup instructions but
+which doesn't really have a place in any other FAQs. :)
+<p>
+I can pretty much guarantee that there is nothing here that you're likely
+to just happen to be interested in.  But a search engine should find it
+if needed. :)
+<p>
+<A NAME="tidpm1"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#titoc">Misc Info Table of Contents</A>.
+<h2>Non-Linear Systems, Inc. PM-349 3-1/2 Digit DPM</h2>
+
+<pre>
+Pin  1:  300 ohms to Gnd (for DPs)   Pin A:  NC
+Pin  2:  NC                          Pin B:  DP3 - Connect to Pin 1 (188.8)
+Pin  3:  NC                          Pin C:  DP2 - Connect to Pin 1 (18.88)
+Pin  4:  NC                          Pin D:  DP1 - Connect to Pin 1 (1.888) *
+Pin  5:  In-                         Pin E:  NC
+Pin  6:  NC                          Pin F:  NC
+Pin  7:  NC                          Pin H:  In+
+Pin  8:  LED Digit Power             Pin J:  NC
+Pin  9:  Vdd (+5)                    Pin K:  Gnd
+Pin 10:  LED Sign (+/-) Power        Pin L:  Gnd
+</pre>
+<p>
+Range: Set to +/-1.999 VDC, DP1 selected by being connected to pin 1.
+<p>
+IC info; ICL7107R, datasheet at:
+<A HREF="http://www.intersil.com/data/fn/fn3082.pdf">Intersil ICL7107
+ Datasheet</A>.
+<p>
+<A NAME="tivsl1"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#titoc">Misc Info Table of Contents</A>.
+<h2>Varian Spectral Lamp X49-609</h2>
+
+This is a small sealed glass globe (about 10 mm diameter) in an aluminum
+reflector excited by a self-contained vacuum tube oscillator.  I have no
+idea what gas is inside the globe.  The discharge color is similar to that
+of low pressure air, or maybe just nitrogen, but there is no way this globe
+could have leaked.  There appears to be nothing else inside the globe that
+might vaporize once it heats up, and no visible change takes place in the
+discharge color or intensity after running for awhile.
+<p>
+<b>U.S. Patent #2,975,330: Electrodeless Discharge Method and Apparatus</b>
+shows the basic idea though the actual implementation is differs considerably.
+<p>
+<b>Filament:</b> 5 V results in a nice orange glow and it works, but I
+don't know if it's really rated for 6.3 V.
+<p>
+<b>B+:</b> 150 to 300 VDC to the case.  There is some voltage threshold
+above which the glow inside the globe gets noticeably more intense, though
+it's never what one might call bright.
+<p>
+If anyone knows more about these devices, please contact me via the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ Email Links Page</A>.
+<p>
+<A NAME="tispl1"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#titoc">Misc Info Table of Contents</A>.
+<h2>Spellman LCM13X1408 High Voltage Power Supply</h2>
+
+This is a 3-1/4" x 4-1/8" x 1-3/8" semi-potted multiple output power supply.
+It has two high voltage (Alden-style) single pin connectors and a 4 pin
+DC input and medium voltage output connector (same as femail PC disk drive
+connector).  A recessed trimpot allows for adjustment of the output voltages.
+Only one is actually regulated (I assume it is Output #1 but don't know for
+sure) but the others will roughly track it.
+<p>
+I have determined operation by tracing the wiring of the 4 pin connector and
+then measuring the output voltages.  For the measurements, Output #1 was set
+for 12 kV.
+<p>
+<PRE>
+   Pin    Function     Value
+ ------------------------------
+   Red    Output 1    +12 kVDC
+  White   Output 2     +6 kVDC
+
+    1     Output 3   +625 VDC     
+    2     DC In       +24 VDC
+    3     Output 4   -125 VDC
+    4     Common
+</PRE>
+<p>
+The output current capability is knnown but not it's certainly not very high.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#titoc">Misc Info Table of Contents</A>.
+<p>
+-- end V1.03 --
+<p>
+</BODY>
+</HTML>

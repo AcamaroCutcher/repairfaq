@@ -1,0 +1,537 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/other/sgtms1/tmscoils.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<head>
+<title>Commercial TMS Coils</title>
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/other/sgtms1/tmscoils.htm">https://www.repairfaq.org/sam/other/sgtms1/tmscoils.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<h1>Commercial TMS Coils</h1>
+<p>
+<h3>Version 1.02 (30-Oct-18)<br>
+<br>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2016
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+</h3>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<link rel="icon" href="https://www.repairfaq.org/sam/other/sgtms1/sgtms%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/other/sgtms1/sgtms%40v%3D2.ico" type="image/x-icon">
+<p>
+<h2>Introduction</h2>
+
+There are literally hundreds of different commercial coil designs used for
+TMS and other neurological applications.
+Here is a summary of a few commercial figure-8 coils, mostly found in
+research papers, as well as the author's Sam #13 (built) and
+Sam #14 (proposed):
+<p>
+<pre>
+    Mfr/Model      #Turns  ID     Mean      OD    Overlap  Wire Size   Angle
+-------------------------------------------------------------------------------
+ Magstim 70 mm       9x2 5.2 cm  7.0 cm   8.8 cm  0.0 cm 1x7 mm          0 deg
+ Medtronic MC-B70   10x2 2.4 cm  6.6 cm  10.8 cm  4.2 cm 3.5 mm (#8)  34.5 deg
+ MagVenture CoolB70 11x2 2.3 cm  5.95 cm  9.6 cm ?3.6 cm 3x12 mm?     30.0 deg
+ MagVenture MC-B70  10x2 2.7 cm  6.2 cm   9.7 cm ?3.5 cm 3x6 mm?      30.0 deg
+ Sam #13             8+9 3.13 cm 5.72 cm  8.26 cm 2.5 cm 2.6 mm (#10) 30.0 deg
+ Sam #14            10x2 2.9 cm  6.8 cm  10.5 cm  3.4 cm 3.18 mm Tube 30.0 deg
+</pre>
+<p>
+Calculations show the overlapped configuration to have more localization and
+a slightly higher peak field and dB/dt for the same inductance.
+
+<h2>Commercial TMS Coils</h2>
+
+The following are specifications and design info obtained from various sources
+including the manufacturers' Web sites and research papers.  Only coils where
+actual engineering specifications (or at least descriptions) provided
+are included here.  Those with only marketing blurb were ignored, though
+some was unavoidable for those that made the cut. :)
+For descriptions of the authors coils, see <A HREF="sgcoils.htm">Sam's
+TMS Coils</A>.
+
+<h3>Medtronic MC-B70 double coil</h3>
+
+A photo and two X-ray pictures of the Magstim figure-of-eight coil
+are shown in the paper: Axel Thielschera and Thomas Kammerb, "Electric
+field properties of two commercial figure-8 coils in TMS: calculation
+of focality and efficiency", Clin Neurophysiol 2004 Jul;115(7):1697-708.
+<p>
+<pre>
+Coil Winding Data
+
+    Inner diameter 24 mm
+    Outer diameter 108 mm
+    Wire cross-section: 3.5 mm
+    Number of windings 2 x 10
+    Thickness of plastic chassis between coils and head 2 mm.
+</pre>
+<p>
+In the coil center the windings of the two wings overlap. Next to the overlap,
+the windings of the left and right wings are bent by an angle of 18.5 and 16
+degrees, respectively.
+
+<h3>MagVenture Cool-B70 Butterfly</h3>
+
+Electrical and magnetic properties similar to the MCF-B70. Designed
+for demanding stimulation protocols requiring a very high number of
+stimuli. Desined with a slightly bent surface for best possible
+skull contact. Equipped with trigger button to support clinical
+operation. Built in EPV timer and counter (5 years or 18 million EPV,
+which ever comes first).  Number of pulses remaining = 17,472,068.
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 2.9 kg.
+    Cable length: 1.3 m.
+    Dimensions of transducer head: 180 x 116 x 45/64 mm.
+    Angulated: 150 degrees.
+
+Coil Winding Data:
+
+    Inner diameter: 23 mm.
+    Outer diameter: 96 mm.
+    Winding height: 12 mm.
+    Number of windings: 2 x 11.
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 28 kT/s near the coil surface.
+    Active pulse width: 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations, before warm-up at ambient temperature of 20 &deg;C
+     wotj output of 75% of maximum at 2 pps: >20.000 pulses.
+
+    Number of stimulations, before warm-up at ambient temperature of 20 &deg;C
+     with protocol: 60 trains at 50 pulses/train at 10 pps with inter-train
+     interval of 25 s and output = 75%: >10.000 pulses.
+</pre>
+
+<h3>MagVenture MC-B70 Butterfly</h3>
+
+Suitable coil for focused stimulation. The coil is produced with a slight bend
+to closely follow the shape of the head. Equipped with trigger button to
+support clinical operation.
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 1.1 kg.
+    Cable length: 1,7 m.
+    Dimensions of transducer head: 169 x 112 x 16/33 mm.
+
+Coil Winding Data:
+
+    Inner diameter: 27mm.
+    Outer diameter: 97mm.
+    Winding height: 6mm.
+    Number of windings: 2 x 10.
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 31 kT/s near the coil surface.
+    Active pulse width: 280 us (Biphasic).
+
+Performance
+
+    Number of stimulations before warm-up at ambient temperature at 20 &deg;C
+     with mean output 75% of maximum at 1 pps: 400 pulses.
+
+Ordering Number:
+
+    9016E0564.
+</pre>
+
+<h3>Magventure MC-B35 Butterfly</h3>
+
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 600 g.
+    Cable length: 1.5 m.
+    Dimensions of transducer head: 103 x 55 x 18 mm.
+
+Coil Winding Data:
+
+    Inner diameter: 24 mm.
+    Outer diameter: 47 mm.
+    Winding height: 9 mm.
+    Number of windings: 2 x (3X4).
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 50 kT/s near the coil surface.
+    Active pulse width: 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations before warm-up at ambient temperature at 20 &deg;C
+     with mean output 75% of maximum at 1 pps: 75 pulses.
+
+Ordering Number:
+
+    9016E0671
+</pre>
+
+<h3>Magventure C-B60 Butterfly</h3>
+
+Suitable coil for focused stimulations. Equipped with power control and
+trigger button to support clinical operation.
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 700 g.
+    Cable length: 1.7 m.
+    Dimensions of transducer head: 165 x 85 x 19 mm.
+
+Coil Winding Data:
+
+    Inner diameter: 35 mm.
+    Outer diameter: 75 mm.
+    Winding height: 11 mm.
+    Number of windings: 2 x (2 x 5).
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 35 kT/s near the coil surface.
+    Active pulse width: 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations before warm-up at ambient temperature at 20 &deg;C
+     with mean output of 75% of maximum at 1 pps: 350 pulses.
+
+Ordering Number:
+
+    9016E0482.
+</pre>
+
+<h3>Magventure D-B80 Butterfly</h3>
+
+Opened butterfly design for powerful stimulation. The coil is suitable for
+deep stimulation. The coil is slightly bend to closely follow curved shapes.
+Equipped with trigger button to support clinical operation.
+<p>
+</pre>
+Mechanical Properties:
+
+    Weight of transducer head: 900 g.
+    Cable length: 1.7m.
+    Angle: 120 degrees.
+
+Coil Winding Data:
+
+    Inner diameter: 67 mm.
+    Outer diameter: 95 mm.
+    Winding height: 12 mm.
+    Number of windings: 2 x (3+4).
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 31 kT/s near the coil surface.
+    Active pulse width: 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations, before warm-up at ambient temperature of 20 &deg;C
+     with mean output of 75% of maximum at 1 pps: 500 pulses.
+
+Ordering Number:
+
+    9016E0431.
+</pre>
+
+<h3>Magventure MC-B65-HO Butterfly</h3>
+
+The coil handle is placed orthogonal on the cable.
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 0.7 kg.
+    Cable length: 
+        2 m (B65-HO-2).
+        8 m (B65-HO-8).
+    Dimensions of transducer head: 162 x 85 x 22 mm.
+
+Coil Winding Data:
+
+    Inner diameter; 35 mm.
+    Outer diameter: 75 mm.
+    Winding height: 11 mm.
+    Number of windings: 2x (2 x 5).
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 25 kT/s near the coil surface.
+    Active pulse width 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with mean output 75% of maximum at 1 pps: 350 pulses.
+
+Ordering Number:
+
+    9016E0462 (2m).
+    9016E0472 (8m).
+</pre>
+
+<h3>Magventure MCF-B65 Butterfly</h3>
+
+The Coil is designed for demanding stimulation protocols, requiring a high
+number of stimuli without the need for external cooling. Equipped with
+trigger button to support clinical operation.
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 1.5 kg.
+    Cable length: 2 m.
+    Dimensions of transducer head: 174 x 94 x 53 mm.
+
+Coil Winding Data:
+
+    Inner diameter: 35 mm.
+    Outer diameter: 75 mm.
+    Winding height: 12 mm.
+    Number of windings: 2x (2 x 5).
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 32 kT/s near the coil surface.
+    Active pulse width: 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with mean output of 75% of maximum at 1 pps: 2000 pulses.
+
+Ordering Number:
+
+    9016E0423.
+</pre>
+
+<h3>Magventure MCF-B70 Butterfly Coil</h3>
+
+Electrical and magnetic properties similar to the MC-B70. Designed for
+demanding stimulation protocols requiring a high number of stimuli
+without the need for external cooling. Designed with a slightly bend
+surface for best possible skull contact. Large ergonomic handle and
+equipped with trigger button to support clinical operation.
+<p>
+<pre>
+Mechanical Properties
+
+    Weight of transducer head: 2.5 kg.
+    Cable length: 1.3 m.
+    Angle: 150 degrees.
+    Dimensions of transducer head: 180 x 116 x 46/64 mm.
+
+Coil Winding Data:
+
+    Inner diameter: 23 mm.
+    Outer diameter: 96 mm.
+    Winding height: 12 mm.
+    Number of windings: 2 x 11.
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 28 kT/s near the coil surface.
+    Active pulse width 280 &micro;s (Biphasic).
+
+Performance
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with mean output of 75% of maximum at 1 pps: 5500 pulses.
+
+    Protocol: 60 trains at 50 pulses/train at 10 pps with inter-train interval
+     of 25 s with output of 75%.  (Total number of stimulations = 3000).
+     One protocol can be performed without overheating the coil.
+
+    Minimum cooling time between protocols: 2.5 hours at 20 &deg;C or
+     1 hour at 7 &deg;C.
+
+Ordering Number:
+
+    9016E0401.
+</pre>
+
+<h3>Magventure Cool-B35 Butterfly</h3>
+
+Electrical and magnetic properties similar to the MC-B35. Suitable for focused
+stimulation of peripheral nerves and muscles. Large ergonomic handle. Equipped
+with trigger button to support clinical operation. Built in EPV timer and
+counter (5 years or 18 mill. EPV, whichever comes first)
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 1.2 kg.
+    Cable length: 1.3 m.
+    Dimensions of transducer head: 113x65x42 mm.
+
+Coil Winding Data:
+
+    Inner diameter: 10 mm.
+    Outer diameter: 46 mm.
+    Winding height: 15 mm.
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 50 kT/s near the coil surface.
+    Active pulse width: 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with mean output of 100% of maximum at 1 pps: 150 pulses.
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with mean output of 75% of maximum at 1 pps: 300 pulses.
+
+Ordering Number:
+
+    9016E0681.
+</pre>
+
+<h3>Magventure Cool-B65 Butterfly</h3>
+
+Designed for demanding stimulation protocols requiring a very high
+number of stimuli. Optimized for high repetition rates and long pulse
+trains. Cooled from an external Cooler Unit. Equipped with trigger
+button to support clinical operation. Built in EPV timer and counter
+(5 years or 18 million EPV, whichever comes first).
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 1.7 kg.
+    Cable length: 1.3 m.
+    Dimensions of transducer head: 174 x 94 x 41 mm.
+
+Coil Winding Data:
+
+    Inner diameter: 35 mm.
+    Outer diameter: 75 mm.
+    Winding height: 12 mm.
+    Number of windings: 2 x (2 x 5).
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 36 kT/s near the coil surface.
+    Active pulse width 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with mean output of 75% of maximum at 2 pps: >20.000 pulses.
+
+    Number of stimulations, before warm-up at ambient temperature of 20 &deg;C
+     with protocol: 60 trains at 50 pulses/train at 10 pps with inter-train
+     interval or 25 s at output of 75%: >10.000 pulses.
+
+Ordering Number:
+
+    9016E0491.
+</pre>
+
+<h3>Magventure Cool D-B80 Butterfly</h3>
+
+Electrical and magnetic properties like the D-B80. Suitable for deep
+stimulation. Designed for demanding stimulation protocols requiring a
+very high number of stimuli. Equipped with trigger button to support
+clinical operation. Built in EPV timer and counter (5 years or 18
+million EPV, which ever comes first).
+<p>
+<pre>
+Mechanical Properties:
+
+    Weight of transducer head: 1.8 kg.
+    Cable length: 1.3 m.
+    Dimensions of transducer head: 
+        Diameter: 2 x 110mm.
+        Thickness 30mm.
+    Angle: 120 degrees.
+
+Coil Winding Data:
+
+    Inner diameter: 67 mm.
+    Outer diameter: 95 mm.
+    Winding height: 12 mm.
+    Number of windings: 2 x (3+4).
+
+Magnetic and Electrical Properties:
+
+    Max initial dB/dt: 31 kT/s near the coil surface.
+    Active pulse width 280 &micro;s (Biphasic).
+
+Performance:
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with output of 75% of maximum at 2 pps: >20.000 pulses.
+
+    Number of stimulations before warm-up at ambient temperature of 20 &deg;C
+     with output of 75%, protocol: 60 trains at 50 pulses/train at 10 pps
+     and inter-train interval of 25 sec: >10.000 pulses.
+
+Ordering Number:
+
+    9016E0531.
+</pre>
+
+<h3>Magstim 70 mm Double Coil</h3>
+
+A photo and two X-ray pictures of the Magstim figure- of-eight coil
+are shown in the paper: Axel Thielschera and Thomas Kammerb, "Electric
+field properties of two commercial figure-8 coils in TMS: calculation
+of focality and efficiency", Clin Neurophysiol 2004 Jul;115(7):1697-708.
+<p>
+<pre>
+Coil Winding Data
+
+    Inner diameter 52 mm
+    Outer diameter 88 mm
+    Winding height 7 mm
+    Wire cross-section: 7x1 mm
+    Number of windings 2 x 9
+    Thickness of plastic chassis between coils and head 3 mm.
+</pre>
+<p>
+<hr>
+<p>
+-- end V1.02 --
+<p>
+</body>
+</html>
+

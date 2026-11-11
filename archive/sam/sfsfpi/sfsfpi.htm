@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!--
+  Mirrored from https://www.repairfaq.org/sam/sfsfpi/sfsfpi.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.repairfaq.org/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.repairfaq.org/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.repairfaq.org/favicon-16x16.png">
+<link rel="manifest" href="https://www.repairfaq.org/site.webmanifest">
+
+<title>Construction Guidelines for the Selectable FSR Fabry-Perot Interferometer Kit 1</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/sfsfpi/sfsfpi.htm">https://www.repairfaq.org/sam/sfsfpi/sfsfpi.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<center>
+<h2>Construction Guidelines for the Selectable FSR Scanning Fabry-Perot Interferometer Kit 1</h2>
+<h3>Version 1.10 (19-Aug-2025)
+<p>
+
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2025
+<br>
+Sam Goldwasser<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+
+<font size=5 color="darkred">
+<b>Note: Complete kits are no longer being offered due in part to the very
+sporadic interest. ;-)  But a list of the standard parts is further down in this
+document, and there may be a few leftover custom parts and raw materials
+like the base plate slab.  Dimensioned drawings are also available upon
+request.  Assembly information not covered here may be found in the other
+SFPI instruction manauls at <A HREF="../manuals/index.html">Sam's Electronics and
+Laser Kit Information and Manuals</a>.
+</b></font>
+
+<h3>Introduction</h3>
+
+The Selectable FSR Scanning Fabry-Perot Interformeter is for those who would
+like to explore the finer points of spherical mirror cavities.  While the
+confocal cavity where the mirror spacing is set to be equal to the RoC of
+both mirrors is discussed in every text on the subject, there is usually
+no mention of the fact that there are a large number of other spacings
+that may have advantages depending on the objective.  This kit uses the
+same mirrors as in the <b>Basic. Deluxe, and a few other SFPI kits on eBay.
+These either cover
+<b><font color="#FFF478">Y</font>
+<font color="#FF9936">O</font>
+<font color="#FF0010">R</font></b> wavelengths from around 590-650 nm</b>
+with an RoC of 42 mm for an FSR of ~1.75 inches or
+<b><font color="#00f000">G</font>
+<font color="#FFF478">Y</font>
+<font color="#FF9936">O</font>
+<font color="#FF0010">R</font></b> wavelengths from around 525-700 nm</b>
+with an RoC of 38.1 mm (1.5 inches) for an FSR of ~2.0 inches.
+The <font color="#FFF478">Y</font>
+<font color="#FF9936">O</font>
+<font color="#FF0010">R</font> version may have slightly higher finesse
+on average but for most purposes the difference are probably not significant.
+<p>
+Unlike the other kits, these utilize either a Thorlabs rail or a ball bearing rail
+and micro-positioner along with adjustable mirror mounts to facilitate setting
+the cavity spacing over a large range of stable resonances for the mirrors.
+<p>
+Several of the resonances are suitable for looking at the
+longitudinal modes of TEM00 HeNe and other lasers within the wavelength
+range.  For this application, the SFPI may also be called a "Laser Spectrum
+Analyzer".  The same configuration can also be used as a tunable etalon or
+optical frequency filter.
+<p>
+Wavelengths below or above the wavelength ranges should work 
+also,  Performance is best with
+narrow beam lasers like HeNes but the use of an aperture or beam reduction
+optic should allow the modes of fat beam lasers to be displayed as well.
+The advantage of a mode degenerate (including confocal)
+SFPI is that alignment with respect to
+the laser being tested is much less critical than with a planar-planar
+SFPI and back-reflections can be off-axis so that the laser is less likely
+to be destabilized.
+<p>
+Here are the available spherical resonances up to N=10 sorted by
+decreasing mirror spacing.  To keep it simple, the parameter "k" is
+set to 0 (the planar special case) or 1. Mirror spacings of 1.0
+relative to confocal or less are often
+more useful being able to either reduce the size of an instrument or
+provide a larger FSR. Mirror spacings of
+more than 1.0 may be useful to provide smaller FSRs. The Planar cavity
+1-0 at the top with the same mirror spacing as the confocal cavity
+(d = RoC = 3.81 or 4.2 cm depending on the mirrors)
+would have an FSR of 2.0 x the confocal FSR (CFSR), but is much more
+difficult to align and use.  while this instrument could be loaded with planar
+mirrors and have a continuous range of FSRs, alignment would be really
+tricky.
+<p>
+<center>
+<img src="../manuals/srsfpiN.gif"></A>
+</center>
+<p>
+Much more info at
+<A HREF="../laserlia.htm#liamdsf">Mode Degenerate
+Fabry-Perot Interferometers</A>.
+<p>
+But back to basics. ;-)
+The general optical layout of a confocal cavity spherical SFPI
+(which is a special case of the range of mode degenerate spacings)
+is shown below:
+<p>
+<center>
+<img src="../cfsfpi1.gif" height=400></A>
+</center>
+
+For the confocal configuration, L = RoC of the mirrors, which must be
+exactly equal.  In this kit, the PZT ring has been replaced by the "holey"
+beeper element which is more sensistive and a lot less expensive.  There
+is no need for an output focusing lens because the beam is already very narrow.
+<p>
+Semi-X-ray drawings of the top and side views of the Selectable FSR SFPI along
+with a photo of the version using a ball bearing rail are shown below.
+<p>
+<center>
+<img src="SG-SEL_FSR_SFPI2-Confocal3.gif" height="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="SG-SEL_FSR_SFPI1-Confocal3.gif" height="">
+<A HREF="SG-SEL_FSR_SFPI1-2.jpg">
+<img style="border:15px solid white; "src="SG-SEL_FSR_SFPI1-2.jpg" height="620" alt="Selectable FSR SFPI using Thorlabs Rail"/></a><br>
+<font size =6>Selectable FSR SFPI using Thorlabs Rail (Left Diagram) and Ball Bearing Rail (Right Diagram and Photo)</font size>
+</center>
+<p>
+The rails allow one of the mirrors to be
+positioned from the mirrors nearly touching to over more than 3.5 inches
+(8.89 cm), which is the spherical spacing and the largest one that is stable.
+The carrier may be locked in position so that fine adjustments can be
+performed using the micropositioner.  The kinematic mirror mounts enable
+the alignment to be fine tuned.
+<p>
+The Thorlabs version is simpler to construct requiring no custom parts
+other than the baseplate,  Everything is held together with screws.
+But gross movement of the rear mirror may not
+be very smooth or precise.  Since the translation stage will make up for
+any position error, as a practical matter this may only be significant
+only if constantly fiddling with the N or k parameters. ;-)
+<p>
+The MGN12 ball bearing rail version allows for very smooth movement but is more
+complex to assemble and locking is not as secure as with the Thorlabs RC1
+carrier.  Everything is held together with screws except for the joint between the
+linear slide and MGN15 carriage, which may use 5 minute Epoxy.  I was not
+able to drill a mounting hole in the steel carriage block. :(  Take care
+that the translation stage is perfectly parallel to the carriage block as
+that will impact alignment as the spacing is changed.  An adapter plate
+could be fabricated if desired with four countersunk holes for the carriage
+block and a central 8-32 tapped hole for the translation stage.  But that
+would increase the height of the front mirror.
+<p>
+For both versions, the mounting of the PZT can be done using adhesive or screws
+into (added) tapped holes in the rear mirror mount.  But a spacer of some sort
+(which sold be an unused one inch threaded lock ring or even a length of
+bare wire) should be placed between
+them so that the center part with the mirror is free to move, even if
+that is imperceptible.
+<p>
+Note that since the spacing isn't fixed, a focusing lens is NOT part of the
+kit since its focal length depends to some extent on the cavity spacing.
+However, one can be added externally or attached to the laser if desired.
+In practice, the benefits of a lens may not be that dramatic for narrow beam
+lasers.  (The Micro and Nano SFPIs don't have focusing lenses and work fine.)
+<p>
+The typical parts are shown below:
+<p>
+The kit includes the following:
+<p>
+<ul>
+<li><b>Confocal cavity mirrors</b> - Two high quality dielectric mirrors:
+<p>
+ <ul>
+ <li>S1: 99.4-99.8%@633nm with its RoC around 42 mm.  These will be
+  from the same production lot so their RoCs should be the same.
+ <li>S2: AR@633nm.
+ <li>Diameter: 7.75 mm.
+ </ul>
+<p>
+CAUTION: The mirror coating on highly curved surface is extremely delicate.
+DO NOT TOUCH.  These should be clean, requiring at most to have dust
+blown off with a air bulb.  If cleaning is needed, ONLY use laser mirror
+cleaning techniques!  Warranty does not cover damage to mirror surface!
+I suggest NOT removing the mirrors from the lens tissue until ready to
+use.  They look kind of cool but are just mirrors! :)
+<p>
+When set up in the confocal configuration where the mirror spacing is
+equal to the RoC, the Free Spectral Range (FSR) will be approximately
+1.75 GHz.  The mirror set can be used for other mode degenerate SFPI
+configurations using different spacings, which is the intent of this
+kit. ;-)  But the common
+confocal setup is generally most useful as a general purpose laser
+spectrum analyzer.
+<p>
+<li><b>PZT disk with center hole</b> - Requires 5-10 V to move through
+ 1 FSR.  A standard electronic function generator (e.g., an old Wavetek)
+ can be used as a driver if its p-p voltage is adequate.  Or, construct
+ <A HREF="https://www.repairfaq.org/sam/sfsfpi/sfpidrv1.gif">Scanning Fabry-Perot Interferometer Driver 1</A>.
+ Or, add an amplifier to boost its output.  (A dual op-amp with a +/-15 V
+ swing will produce up to 60 V p-p with the PZT floating, which is way
+ more than enough.  See the schematic for the driver, above.)  The PZT
+ is 27 mm in diameter and the standard hole is 4-6 mm in diameter.
+<p>
+ The attachment of the leads to the PZT disk is rather fragile, especially
+ the one soldered to the metallic coated area which is only loosely bonded
+ to the PZT material itself.  So it would
+ be a good idea to coat the area with some 5 minute Epoxy to minimize stress,
+ and then to add a strain relief when installed in the SFPI assembly.
+<p>
+<li><b>Silicon photodiode (PD)</b> - This has an active  area of around
+ 2x2mm.  For mounting, the leads can be put through the holes in a Perf.
+ board and secured with adhesive.  Take care soldering as they plastic
+ melts easily.
+<p>
+ The PD can be connected via shielded cable or a twisted pair directly
+ to the vertical input of your scope with a 10K ohm load resistor.
+ However, it is better to connect the PD in series with the load resistor
+ and back-bias it with a few volts (e.g., a 9 V battery).  With back bias,
+ the response (across the load resistor) will be linear up to several mW.
+ Something along the lines of:
+<p>
+<PRE>
+                            Shielded Cable
+       R Protect    PD1         Center
+   +-----/\/\-------|<|-----------------------+----o Scope input (direct)
+   |    1K ohms            +--------------+   |
+   |  (Optional)           |    Shield    |   /
+   |                       |              |   \ R Load
+   |                       |              |   / 10K ohms
+   |                       |              |   \
+   |     +| | -            |              |   |
+   +------||||-------------+              +---+----o Scope Gnd
+       B1 | |
+</PRE>
+<p>
+ Confirm that the PD is responding to light.  Room light will suffice, but
+ a better test source is a dimmable LED flashlight.  These use Pulse Width
+ Modulation (PWM) to chop the light output and a pulsed waveform should be
+ clearly visible on the scope.
+<p>
+ For initial setup, leave the entire photodiode uncovered.  Once there
+ is a signal, installing an aperture to block all but the central 1 mm or so
+ may improve resolution.  For low power lasers, a preamp would be beneficial.
+<p>
+<li><b>Mechanical Parts:</b>
+<p>
+ <ul>
+ <li><b>Thorlabs rail version</b>
+<p>
+  <ul>
+  <li><b>Thorlabs RLA0600 rail.</b> While a longer rail could be used, there
+   is no point unless mirrors with a larger RoC are installed.
+
+<p>
+  <li><b>Thorlabs RC4 carrier for the front mirror mount:</b>  The thumb-screw
+   may be replaced with a short 1/4-20 setscrew since the RC4 should never need
+   to be moved.
+<p>
+  <li><b>Front mirror mount:</b> Thorlabs KMS or KMS/M kinematic mount modified
+   by enlarging the holes to accept 7.75 mm mirrors and adding a setscrew
+   to secure the mirror.  This mounts via a spacer and washers/shims to the
+   Thorlabs RC4 carrier.
+<p>
+  <li><b>Thorlabs RC1 carrier for back mirror mount.</b>
+<p>
+  <li><b>Back mirror mount:</b> Thorlabs KMS or KMS/M kinematic mount modified
+   by enlarging the holes to pass the beam.  The PZT will be attached using
+   5-minute Epoxy.
+<p>
+  <li><b>Thorlabs DT12 or DT12M, or Newport MT-X linear stage:</b>  This
+   attaches to the mirror mount using a 3/8 inch 8-32 setscrew with plastic
+   washer to provide compliance in tightening.  One or both holes may need
+   to be retapped for 8-32 threads.
+<p>
+   This assembly is attached to the RC1 using an 8-32 x ?? inch cap-head
+   screw with #8 washer.
+ </ul>
+<p>
+ <li><b>Ball bearing rail version</b>
+<p>
+  <ul>
+  <li><b>MR150 rail with MGN12C carriage and 2x 5-32 x 1/2" mounting
+   screws:</b>. While a longer rail could be used, there
+   is no point unless mirrors with a larger RoC are installed.
+<p>
+  <li><b>Front mirror mount:</b> Thorlabs KMS or KMS/M kinematic mount modified
+   by enlarging the center hole to accept the 7.75 mm mirror and adding a setscrew
+   to secure it.  This mounts via an aluminum adapter plate, spacer, and shim(s).
+<p>
+  <li><b>Back mirror mount:</b> Thorlabs KMS or KMS/M kinematic mount modified
+   by enlarging the center holes if necessary to pass the beam.
+<p>
+  <li><b>Thorlabs DT12 or DT12M, or Newport MT-X linear stage:</b>  This
+   attaches to the mirror mount using a 3/8 inch 8-32 setscrew with plastic
+   washer to provide compliance in tightening.  One or both holes may need
+   to be retapped for 8-32 threads.
+<p>
+   This assembly is then glued to the carriage, centered, using 5-minute
+   Epoxy.  Take particular care to align it so that the lateral position
+   of the mirror doesn't change with position.
+<p>
+  <li><b>Custom Carriage Locking Bracket with 4-40 Nylon thumb-screw:</b> This
+   attaches to the front-end of the carriage with two M2.5 x ?? mm screws in
+   place of the original screws.
+<p>
+  <li><b>Carriage End-stop (optional, not shown):</b> A washer or rubber foot
+   attached to the end of the rail to prevent the carriage from accidentally,
+   uh, going off the end. ;-)
+  </ul>
+<p>
+  <b>Common to both versions:</b>
+<p>
+  <ul>
+  <li><b>Baseplate:</b> Aluminum plate 3x6x3/8 inch drilled and tapped for the
+   rail, leveling/alignment screws, and optional cable clamp.
+<p>
+  <li><b>Detector PCB:</b> This is for both the single channel photodiode or
+   dual polarization PBSC and photodiodes.  This requires one or two photodiodes,
+   zero or one PBSC, four screw terminal block, 1K (typical) ohm resistor, and
+   0.1 &micro;F capacitor.
+  </ul>
+ </ul>
+</ul>
+<p>
+Some of the leftover Thorlabs parts, several undrilled baseplate slabs,
+the photodetector PCBs and electronic components, and other odds and ends
+may be available.  Contact me via the email link if interested.
+<p>
+<b>Dual polarization option:</b>
+<p>
+For simulataneously monitoring the orthogonally polarized longitudinal modes
+of a random polarized HeNe or other similar laser, this adds an additional
+photodiode and a small polarizing beam-splitter cube (PBSC).
+The PBSC splits the beam to the two photodiodes.  Both photodiodes can
+be installed on the detector PCB with one to the side for the S-polarized
+component and the other over the PBSC for the P-polarized component.
+The PD outputs feed load resistors or a preamp and are sent to
+separate channels of your scope.  The laser will then need to be oriented
+so its polarization axes align with the SFPI head.
+
+<h3>Initial Adjustments</h3>
+
+The best FSR to start with is the normal confocal one where the cavity
+length is equal to the RoC of the mirrors.
+<p>
+The confocal cavity SFPI requires that the mirrors be spaced precisely at
+their RoC, around 42 mm in this case.  So, the resonator must have some
+means of fine adjustment as noted above.  Their axes and orientation
+should be coincident.  Slight tilt with respect to each other isn't
+critical - it just shifts the center point of the spherical cavity.
+However, an offset may be more detrimental.  Once the assembly is complete,
+it's time to do "first light" with a laser!  A single longitudinal mode
+(single frequency) laser is best for this as it reduces any ambiguity
+in setting the cavity spacing, but a short normal HeNe (e.g., a JDSU
+1508) red alignment laser can be used.  A DIODE LASER WILL PROBABLY NOT
+WORK as most are not even close to single mode.
+<p>
+<ol>
+<li>The mirror spacing should be
+ set as close to 42 mm as can be done with physical measurements.
+ (I.e., a machinist's scale and Mark II eyeballs.)
+<p>
+<li>Connect the PZT to your ramp generator.  If driven at a kHz or so at
+ 10 or 20 V p-p, a tone should be audible from the PZT confirming that it's
+ working.
+<p>
+<li>Connect the photodiode to your
+ scope's vertical input with a resistor of a few kohms across it.  (If a proper
+ photodiode preamp is available, that's even better!)
+<p>
+<li>Trigger the scope externally using a sync signal from the ramp generator,
+ or the ramp if none is available.  Displaying both the photodiode signal and
+ ramp will confirm that the scope is synced properly.
+<p>
+<li>Set up the test laser so it is aimed precisely into the center of the input
+ mirror.  (The optional lens should probably not be used at this time as it
+ may make things more confusing.)
+<p>
+<li>Drive the PZT with a 10 to 20 V p-p ramp (or triangle) at 50 to 100 Hz.
+<p>
+<li>Observe where the intra-cavity beam is located on each mirror and
+ adjust alignment so it is more or less centered and tight.  Then check
+ the position of the photodiode and adjust it if necessary so the trasmitted
+ beam is centered on it.  The room lights should probably be out for all this.
+<p>
+<li>With the scope's vertical sensitivity turned up, watch for any signal from
+ the photodiode that is synchronized with the ramp.  If the blips go negative,
+ reverse the PD polarity.  If your cavity distance
+ and mirror alignment were perfect, the result scanning through two FSRs
+ for a laser with 3 longitudinal modes would look similar to the photo below.
+</ol>
+<p>
+<center>
+<A HREF="../sfpihds.jpg"><img  HEIGHT=400  src="../sfpihds.jpg" border=0></A>
+<br>
+<h2>SFPI Display of Melles Griot 05-LHR-151 5 mW HeNe Laser</h2>
+</center>
+<p>
+ More likely, the peaks will be smeared out or composed of multiple small
+ blips as in the sequence of graphics below.  Or there may be nothing at
+ all.  Adjust the spacing of the
+ mirrors in small increments <i>Slowly</i>
+ and then then let it settle down.  With any movement, the display will
+ become quite scrambled, so be patient.  If going one way makes it worse,
+ go the other way. :)  If the initial cavity spacing was within about 1 mm
+ of being optimal, there should be only one place close by where it resolves
+ into a beautiful display like the one above. ;-)
+<p>
+<center>
+<img src="../sfpicsa1.gif"</A>
+</center>
+<p>
+These simulated "screen shots" depict a display spanning 2 FSRs
+for an SFPI using 42 mm RoC mirrors with 99.5%R as the cavity length
+approaches optimum.  From left-to-right, top-to-bottom, the error
+is approximately: 0.3 mm, 0.15 mm, 0.07 mm, 0.03 mm, 0.015 mm, 0 mm.
+<p>
+The entire sequence represents a cavity length change of &lt;1 percent but
+will also depend on the finesse and the mode order (confocal, half confocal,
+etc.).  The higher the finesse, the more critical it will be.  In other words
+you mileage may vary. :)  The amplitude of the peaks would actually increase
+by a much larger amount than shown.  Which side the "crud" is on depends
+on the relationship of the ramp voltage to cavity length, swap if
+backwards. :)  Some of these diagrams are originallly from the Toptica
+SFPI 100 manual, I hope they won't mind. :)
+<p>
+First time users do not appreciate how precise the spacing needs to
+be.  But it's less than 1/10th the width of a human hair - a few microns.
+Once close, the only effective way of fine tuning it is with precision
+screws that change spacing such as would be found in a linear
+translation stage, a 3-screw pan/tilt mount (which can be easily
+constructed from scrap parts), or something equivalent.
+<p>
+It's also essential to avoid back-reflections into the laser, which will
+likely destabilize it and create chaos in the display.  The alignment
+should be adjusted such the the reflections from the SFPI (mostly the
+front mirror) do NOT enter the laser's aperture.  With the confocal
+cavity SFPI, a slight offset will not significantly affect resolution.
+Ideally, an optical isolator could be used but they are really pricey.
+<p>
+Using mirrors identical to the ones in the kit, I've seen a finesse at
+633 nm of 500 or more, though this depends on all the stars aligning
+perfectly. :)  And I can't guarantee that all samples are that good.
+But expect a finesse of several hundred with reasonable care.
+Performance at other wavelengths may not be as good but it should still be
+usable to below 594 nm (yellow HeNe) and above 650 nm (may actually be
+better at longer wavelengths).
+<p>
+While the assembly guidelines here assume the standard confocal cavity
+configuration, there are smaller and larger mirror spacings that
+are still mode-degenerate making alignment non-critical.
+Some of these may be useful by trading off size, FSR, and resolution.
+<p>
+For more on SFPIs, see the section:
+<A HREF="../laserlia.htm#liasfpi">Scanning Fabry-Perot Interferometers</A>
+of "Sam's Laser FAQ".
+<p>
+<br>
+<hr>
+</body>
+</html>

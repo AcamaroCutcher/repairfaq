@@ -1,0 +1,145 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcfljiiojam.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="HP LaserJet II output jam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: HP LaserJet II output jam</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcfljiiojam.htm">https://www.repairfaq.org/samnew/printfaq/pcfljiiojam.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">HP LaserJet II output jam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pcfljiidbfp.htm">&lt;&lt;&nbsp;HP LaserJet II with dark ..</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfljiipwpw.htm">HP LaserJet IIp won't go ..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcfljiiojam">HP LaserJet II output jam</A></h3>
+
+<blockquote>
+"I found a junked HP Laserjet II which initially jammed pulling in the paper.
+ I have fixed that.  It still jams on the output, though.  It prints nicely,
+ so it seems worth fixing.  If I open the back tray, the sheet exits 90%
+ before stopping with the "paper jam" error.  With that tray closed, I get the
+ accordion paper jam in the fuser area.  I do not detect any rotation of the
+ upper rollers to feed the paper out of the top.  When opened, I can roll
+ them by hand easily.  I see no obvious gear wear or broken teeth.  I also see
+ deep scratches in the grey fuser, which is probably unrelated.  The toner
+ does not have any fusing problem that I see in a band down the page."
+</blockquote>
+<p>
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+<p>
+I think you've got 2 problems here - the false paper jam with the tray open,
+and a problem with the drive to the top rollers.
+<p>
+Let's look a them in that order.
+<p>
+There's only one paper sensor in the SX engine that I know about, and that's
+part of the fuser. On the PCB at the left side of the fuser there's a slotted
+opto-switch with a lever that detects paper in the fuser. There's also a single
+transistor on said PCB that buffers/amplifies the output from the opto-switch,
+Q332, I think. This sensor must change state one way (to indicate paper has
+got to the fuser) shortly after the registration clutch operates and then
+change state the other way when the paper has got out of the fuser.
+<p>
+You might start by reseating the cable at J206 of the DC controller board
+(just in case it's bad connections) and then look at the sensor (mechanically
+and electrically) on the fuser PCB.
+<p>
+Silly question: If the paper tray switches (on the DC controller board) aren't
+operating properly, could the printer think it was feeding a shorter piece of
+paper than it actually has, and then give a paper jam error? It's always
+possible... Alas I don't know the coding for these 3 switches (SW201-SW203)
+<p>
+The other problem is almost certainly mechanical. Look at the gears on the
+right hand side of the fuser (stripped teeth do occur here) and in the top
+cover of the printer. Shouldn't be too hard to find where the drive has
+failed. I suppose you could remove the outer casing and AC block, re-insert
+the fuser and close the cover, and look at things while turning the machine by
+hand.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfljiidbfp.htm">&lt;&lt;HP LaserJet II with dark ..</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfljiipwpw.htm">HP LaserJet IIp won't go ..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

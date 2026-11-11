@@ -1,0 +1,492 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/hvinvert.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Simple High Voltage Generator: Low Voltage DC In, up to 30 kV
+ Out</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/hvinvert.htm">https://www.repairfaq.org/sam/hvinvert.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+
+<PRE>
+
+</PRE>
+<br>
+<h1>
+Simple High Voltage Generator:<br>
+Low Voltage DC In, up to 30 kV Out
+</h1>
+<h2>
+Version 1.25a
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="hvitoc"></A>
+<hr>
+<br>
+<li>Go (Back) to <A HREF="samschem.htm">Various Schematics and Diagrams</A>.
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#hvipre">Preface</a>
+ <ul>
+ <li><A HREF="#hviaac">Author and Copyright</a>
+ <li><A HREF="#hvidis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#hviint">Introduction</a>
+ <ul>
+ <li><A HREF="#hvishv">Simple High Voltage Generator</a>
+ <li><A HREF="#hvisaf">Safety Considerations</a>
+ </ul>
+<p>
+<li><A HREF="#hvicon">High Voltage Inverter</a>
+ <ul>
+ <li><A HREF="#hvicir">HV Inverter Circuit Diagram</a>
+ <li><A HREF="#hviias">HV Inverter Assembly</a>
+ <li><A HREF="#hviipl">HV Inverter Parts List</a>
+ <li><A HREF="#hvienh">Suggested Enhancements</a>
+ </ul>
+<p>
+<li><A HREF="#hvilps">Low Voltage Power Supply</a>
+ <ul>
+ <li><A HREF="#hvilvd">LV Power Supply Description</a>
+ <li><A HREF="#hvilpl">LV Power Supply Parts List</a>
+ </ul>
+<p>
+<li><A HREF="#hvitfs">Typical Flyback Schematic</a>
+</ul>
+<A NAME="hvipre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#hvitoc">Simple High Voltage Generator Table of
+ Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="hviaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="hvidis">DISCLAIMER</a></h2>
+
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+<A NAME="hviint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#hvitoc">Simple High Voltage Generator Table of
+ Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="hvishv">Simple High Voltage Generator</A></h3>
+
+The basic circuit described in this document is capable of generating up to
+30 kilovolts or more from a low voltage DC source using the flyback (LOPT)
+transformer salvaged from a B/W or color TV or computer monitor.  Typical
+output with a 12 VDC 2 A power supply or battery will be 12,000 V.  Maximum
+output current at full voltage is typically around 1 to 2 mA.  Higher currents
+are available but the output voltage will drop.  At 2 kV, more than 10 mA may
+be possible depending on your particular flyback transformer input voltage
+and current.
+
+<h3><A NAME="hvisaf">Safety Considerations</A></h3>
+
+Before thinking about experimenting with anything using or producing high
+voltages, see the document: <A HREF="safety.htm">Safety Guidelines for High
+Voltage and/or Line Powered Equipment</A>.  While the circuit described below
+isn't likely to be lethal using the suggested input voltage and components,
+who knows how you might 'enhance' it! :-)
+<p>
+<A NAME="hvicon"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#hvitoc">Simple High Voltage Generator Table of
+ Contents</A>.
+<h2>High Voltage Inverter</h2>
+<h3><A NAME="hvicir">HV Inverter Circuit Diagram</A></h3>
+
+As you can see from the schematic below, it doesn't get much simpler than this!
+<PRE>
+
+   +Vcc     Q1   +----------------+
+     o           |                 )::
+     |       B |/ C                )::
+     |  +------|    2N3055         )::
+     |  |      |\ E           5 T  ):: +------|>|----------o  +HV
+     |  |        |                 )::(   HV Diode, usually
+     |  |       -_-                )::(    built in.
+     |  |                          )::(
+     +--|-------------------------+ ::(
+     |  |   Q2  _-_                )::(
+     |  |        |                 )::( Secondary (HV) winding,
+     |  |    B |/ E           5 T  )::(  intact.
+     |  |  ----|    2N3055         )::(
+     |  |  |   |\ C                )::(
+     |  |  |     |                 )::(
+     |  |  |     +----------------+ ::(
+     |  |  |                        ::(
+     |  |  -----------------------+ :: +------------------o  -HV
+     |  |                     2 T  )::
+     |  |               +---------+ ::
+     |  |               |     2 T  ):: T1 - Flyback transformer from B/W or
+     |  +-------------------------+         color TV or computer monitor.
+     |                  |
+     |            R1    |    R2
+     +----------/\/\/\--+--/\/\/\--+
+                  110        27   _|_
+                  5 W        5 W   -
+
+</PRE>
+Pinout for TO3 metal can transistor:
+<PRE>
+               _
+             / O \         View from bottom (pin side).
+           / o   o \
+          (  B   E  )      B = Base, E = Emitter, C = Collector.
+           \       /
+             \ O / C       The metal case is the Collector.
+
+</PRE>
+Pinout for the TO220 or TOP3 plastic case transistor:
+<PRE>
+
+                    TO3Pn
+       TO220        _____
+       _____       /     \
+      |  o  |     |   O   |      View from front (label side).
+      |-----|     |-------|
+      |Label|     |       |      B = Base, E = Emitter, C = Collector.
+      |_____|     | Label |
+       | | |      |_______|      If there is an exposed metal tab, that is
+       | | |        | | |         the Collector as well.
+       B C E        | | |  
+                    B C E
+
+</PRE>
+
+A slightly modified version of this basic circuit which I use as an RF source
+to excite a glow discharge in helium-neon laser and other gas discharge tubes
+is shown in: <A HREF="flybkrf1.gif">Flyback Based RF Source</A>.  This one uses
+a flyback transformer without a high voltage rectifier (or with the rectifier
+removed).  The inductor, L1, is an addition that should reduce the stress on
+the transistors and power supply by limiting current at the time each of the
+transistors go into saturation just before the base drive switches to the
+opposite side.  I have not specifically tested this circuit with the inductor
+but have used it with similar inverters.
+<p>
+These designs are similar to circuits found in: "Build your own working
+Fiberoptic, Infrared, and Laser Space-Age Projects", Robert E. Iannini,
+TAB books, 1987, ISBN 0-8306-2724-3 and many other places.
+<p>
+For larger (e.g., color TV or monitor) flybacks, or use with more than 12 VDC
+in, transistors with higher power ratings may be needed for sustained operation
+in addition to a good heat sink.  An alternative is to parallel more than
+one power transistor along with small (e.g., .05 ohm, 2 W) current balancing
+resistors in series with their emitters.
+
+<h3><A NAME="hviias">HV Inverter Assembly</A></h3>
+
+Read the following in its entirety!  This assumes the basic circuit using
+a small flyback and input voltage of 12 VDC or less.  Some modifications
+may be needed when using larger flybacks and higher input voltages.
+<p>
+<ol>
+<li>Obtain flyback transformer with known good HV secondary winding. primary
+ may be left intact if it is known to be in good condition - non shorted.
+ A flyback removed due to failure may be used if it was the primary that
+ failed and the primary turns can be removed without damaging the HV
+ secondary or losing the secondary return connection!  Flybacks fail
+ in both ways (primary and secondary).
+<p>
+<li>Locate the return for the high voltage winding.  This may be a different
+ color wire than the low voltage winding or may exit from the potted part
+ of the flyback in a different place.  It is not possible to use an
+ ohmmeter to locate the return for the high voltage winding if your
+ flyback has a built-in HV rectifier or multiplier as the forward voltage
+ drop of the rectifier diodes is much greater than the battery voltage
+ used in your multimeter.  However, a winding connection that has
+ infinite resistance to every other terminal is likely to be the HV
+ return.  On flybacks with no HV rectifier or multiplier, the return
+ is easily located by measuring resistance between the HV output and all
+ other terminals.  The HV winding will have a resistance of 100s-1000s
+ of ohms compared to single digit readings or less for all the other
+ windings.
+<p>
+<li>Wind 10 turn center tapped drive winding and 4 turn centertapped feedback
+ winding using #16 to 20 gauge insulated wire.  Make sure both halves of each
+ coil are wound in same direction.  Connect centertap in each case at the
+ winding - do not bring out a loop.  Insulate well with electrical tape.
+<p>
+<li>Vcc should typically be in the range 12 to 24 volts at a couple of amps.
+ Circuit should start oscillating at around a Vcc of 5 V or so.  If you do
+ not get any HV out, interchange the connections to the transistor bases.
+ Heat sinks are advised for the transistors.  Be aware of the capability of
+ your flyback (B/W monitors up to 15 kV, color up to 30 kV).  You risk
+ destroying the secondary windings and/or HV rectifier if you get carried
+ away.  Running this on 24 volts will probably cause an internal arc-over
+ in a small flyback, at which point you start over with more caution and a
+ new flyback.
+<p>
+<li>Actual output will depend on turns ratio of the flyback you have.
+<p>
+ <ul>
+ <li>For a typical small B/W TV, monochrome computer monitor, or video display
+  terminal, you should be able to get around 12,000 volts with 12 VDC input.
+<p>
+  I built one from a dead Mac-Plus flyback from which I removed the (dead)
+  primary windings.
+<p>
+ <li>With a large color TV or color monitor flyback, 30,000 V or more will be
+  possible using a 24 VDC power supply.
+ </ul>
+<p>
+<li>The frequency of operation will be in the kHz to 10s of kHz range depending
+ on Vcc, load, and specific flyback characteristics.
+<p>
+<li>You can experiment with the number of turns, resistor values, etc. to
+ optimize operation and power output for you needs.
+<p>
+<li>CAUTION: contact with output will be painful, though probably not
+ particularly dangerous due to low (a few mA) current availability.
+<p>
+ HOWEVER, if you add a high voltage capacitor to store the charge,
+ don't even think about going near the HV!
+</ol>
+
+<h3><A NAME="hviipl">HV Inverter Parts List</A></h3>
+
+None of the component values are critical.  It is quite likely that everything
+needed is already patiently waiting in your junkbox.  If not, except for the
+flyback, most if not all of the parts should be available from Radio Shack.
+See the section: "Low voltage power supply" for a simple design to use with
+this inverter.
+<p>
+Some experimenting with different value resistors and even the number of turns
+on each winding may improve performance for your particular flyback.
+<p>
+<ul>
+<li>Q1, Q2 - 2N3055 or similar NPN power transistors (reverse polarity of Vcc
+ if using PNP transistors.)  Maximum stress on transistors are about 2
+ to 3 times VCC.  Heat sinks will be needed for continuous operation.
+<p>
+<li>R1 - 110 ohms, 2 W resistor (5 W for Vcc of 24 V).  This provides base
+ current to get circuit started.
+<p>
+<li>R2 - 27 ohms, 5W resistor.  This provides return path for base feedback
+ during operation.
+<p>
+<li>T1 - Flyback transformer from/for B/W TV, video display terminal, color
+ TV, computer monitor, etc., modified according to text above.
+<p>
+ Most modern flybacks include built-in HV rectifier diode(s) and/or
+ voltage multiplier (tripler) so output without additional components
+ will be high voltage positive or somewhat smoothed HV DC.
+<p>
+ Note: this kind of flyback transformer drives the CRT directly and
+ uses its glass envelope as the main high voltage filter capacitor.
+ (A foot square piece of 1/8 inch Plexiglas with Aluminum foil plates
+ makes an filter capacitor.)
+<p>
+<li>Wire - a couple of feet of #16-#20 hookup wire, magnet wire, or any other
+ insulated wire for home made primaries.  Use electrical tape to
+ fix windings to core.  Wind feedback winding on top of drive winding.
+</ul>
+
+<h3><A NAME="hvienh">Suggested Enhancements</a></h3>
+
+Here are some minor changes that should improve the efficiency of this circuit.
+<p>
+(From: Robert (rrtcj@hotmail.com).)
+<p>
+<ul>
+<li>Use a more modern transistor like the 2N3773 instead of the 2N3055.
+ It has higher current (30 A) and higher voltage (140 V) ratings as well
+ as higher Hfe thus requiring less base current.
+<p>
+<li>Use a single feedback winding (2 turns) with each end connected to the
+ base of one transistor and over a 150 ohm resistor connected to Vcc.
+ (I'm not quite sure exactly what this means but my guess is to
+ connect a 150 ohm resistor from one of the bases to Vcc to provide the
+ startup base drive.  --- Sam.)
+<p>
+<li>Add an inductor (about 0.4 mH, can be more but not less) in series to the
+ flyback circuit.  Since both transistor are switched on for a little moment
+ (when there is no voltage in the feedback), so there will be high currents
+ (causing losses resulting in excessive power disspation in the transistors)
+ The coil prevents the current spike without wasting power like a resistor.
+</ul>
+<p>
+<b>Measurements:</b> With an input voltage of 16 VDC, the output voltage is
+ about 12 kV.  Without the filter choke, the input current with no load is
+ 5 A; with the filter choke it is only 3.2 A.  With the output shorted
+ (arcing), the current is about 9 A in both cases.
+<p>
+In fact I don't need big heatsinks.  With the 2N3773, I can drive this circuit
+continuously with one medium-size heatsink and the transistors get only
+warm!!!
+<p>
+<A NAME="hvilps"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#hvitoc">Simple High Voltage Generator Table of
+ Contents</A>.
+<h2>Low Voltage Power Supply</h2>
+<h3><A NAME="hvilvd">LV Power Supply Description</A></h3>
+
+The power supply (12 to 24 V) doesn't need to be anything fancy.  Regulation
+is not needed so a simple power transformer-bridge rectifier-filter capacitor
+design will be fine.  The circuit described below will provide about 15 VDC at
+up to 3 A.  Unless you are going for maximum output, this should be adequate.
+<p>
+During initial testing at least, a Variac on the input (or variable voltage
+power supply) is highly desirable to avoid blowing anything should your wiring
+or parts not be quite right and to gain a feel for the capabilities of your
+circuit before it is too late!  In neither of these is available, use a 10 ohm
+25 W power resistor or 100 W light bulb in series with the load (inverter) to
+limit current to a safe value - one that won't fry too many things too quickly.
+<p>
+A typical circuit is shown below:
+<PRE>
+
+                  _         T1
+  H o-----o/ o---- _------+                5 A diodes
+       S1 Power  F1 Fuse   )||             or bridge
+                  1 A      )|| +---------+----|>|-------+-------+-----o +Vcc
+                           )||(         ~|        D1    |+      |
+                           )||(          +----|<|----+  |     +_|_ C1
+ 115 VAC                   )||( 12 VAC            D2 |  |      ___ 20,000 uF
+                           )||(          +----|>|----|--+     - |  25 V
+                           )||(          |        D3 |          |
+                           )|| +---------+----|<|----+----------+--+--o Gnd
+                           )||          ~         D4     -        _|_
+  N o---------------------+                                        -
+
+</PRE>
+<h3><A NAME="hvilpl">LV Power Supply Parts List</A></h3>
+<p>
+All of these parts should be readily available:
+<ul>
+<li>T1 - 12 V, 3 A power transformer.
+<li>S1 - SPST toggle switch.
+<li>F1 - Fuse, 1 A.
+<li>D1-4 - Silicon rectifier diodes, 5 A minimum.  Or, 5 A bridge rectifier.
+<li>C1 - Electrolytic filter capacitor, 20,000 uF or more, 25 V minimum.
+</ul>
+<A NAME="hvitfs"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#hvitoc">Simple High Voltage Generator Table of
+ Contents</A>.
+<h2>Typical Flyback Schematic</h2>
+
+This diagram shows a typical flyback that might be found in a direct
+view color television or computer monitor.  Resistances are included for
+illustrative purposes only and may be quite different on your flyback!
+<p>
+The high voltage section on the right may actually be constructed as a
+voltage multiplier rather than a single winding with multiple HV diodes.
+The rectifiers or multiplier, and/or focus/screen divider may be external
+to the flyback transformer in some models.
+<p>
+Flyback transformers used in black-and-white TVs and monochrome computer
+monitors do not have a focus and screen divider network.
+<p>
+The ferrite core of a flyback transformer is constructed with a precision
+gap usually formed by some plastic spacers or pieces of tape.  Don't lose
+them if you need to disassemble the core.  The ferrite core is also
+relatively fragile, so take care.
+<p>
+The focus and screen divider network uses potentiometers and resistors
+(not shown) with values in the 10s to 100s of M ohms so they may not
+register at all on your multimeter.  The high voltage rectifiers (CR1
+to CR3 on this diagram) are composed of many silicon diodes in series
+and will read open on a typical VOM or DMM.
+<p>
+Note that there is no standardization to the color code.  However, the fat
+wire to the CRT is most often red but could also be black.  Of course, you
+cannot miss it with the suction cup-like insulator at the CRT anode end.
+<PRE>
+
+                                        +--|>|-----------o  HV to CRT
+              _                   1  ::(   CR1             (25 to 30 kV,
+             |   B+  o-------------+ ::(                    suction cup on
+    Drive    |                      )::(                    fat red wire)
+    winding <                       ):: +-------+
+             |             1.32     )::         |
+             |                    2 ):: +--|>|--+
+             |_  HOT o-------------+ ::(   CR2
+              _                   3  ::( 
+             |   50  o-------------+ ::(
+             |                      ):: +-------+
+             |              .11   4 )::         |
+             |   35  o-------------+ :: +--|>|--+
+  Various    |                      )::(   CR3  |
+  auxiliary <               .28     )::(        /
+  windings   |                    5 )::(        \<-------o  Focus 
+             |   16  o-------------+ ::(        /          (3 to 10 kV,
+             |                      )::(        \           orange wire)
+             |              .12   6 )::(        |
+             |_   0  o----------+--+ ::(  9     |
+              _                 | 7  :: +--+    /
+             |   H1  o----------)--+ ::    |    \<-------o  Screen
+ CRT Heater <               .08 | 8 )::    |    /          (200 to 800 V,
+             |_  H2  o----------+--+       |    \           brown wire)
+                                |          |    |      
+                                |          +----|--------o  To CRT DAG
+                                |               |            ground
+                                +---------------+
+
+</PRE>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#hvitoc">Simple High Voltage Generator Table of
+ Contents</A>.
+<li>Go (Back) to <A HREF="samschem.htm">Various Schematics and Diagrams</A>.
+<p>
+-- end V1.25a --

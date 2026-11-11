@@ -1,0 +1,543 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/jacobs.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Jacob's Ladder (Climbing Arc) Construction</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/jacobs.htm">https://www.repairfaq.org/sam/jacobs.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+
+<PRE>
+
+</PRE>
+<br>
+<h1>
+Jacob's Ladder (Climbing Arc) Construction
+</h1>
+<h2>
+Version 1.37 (7-Dec-12)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="jltoc"></A>
+<hr>
+<br>
+<li>Go to <A HREF="samschem.htm">Various Schematics and Diagrams</A>.
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#jlpre">Preface</a>
+ <ul>
+ <li><A HREF="#jlaac">Author and Copyright</a>
+ <li><A HREF="#jldis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#jlint">Introduction</a>
+ <ul>
+ <li><A HREF="#jlwij">What is a Jacob's Ladder?</a>
+ <li><A HREF="#jlhdj">How Does a Jacob's Ladder Work?</A>
+ <li><A HREF="#jlsaf">Jacob's Ladder SAFETY</a>
+ </ul>
+<p>
+<li><A HREF="#jlbjl">Building a Jacob's Ladder</a>
+ <ul>
+ <li><A HREF="#jlbas">Basic Components</a>
+ <li><A HREF="#jlcon">Construction</a>
+ <li><A HREF="#jlgab">Clive's Gabriel Electrode to Help the Arc to Strike</A>
+ <li><A HREF="#jlwnm">Why NOT to use Microwave Oven Transformers</a>
+ </ul>
+<p>
+<li><A HREF="#jladd">Additional Information</a>
+ <ul>
+ <li><A HREF="#jlnrb">Notes on Really BIG Jacob's Ladders</a>
+ <li><A HREF="#jlaud">And Now for the Audio Feed</a>
+ <li><A HREF="#jlozo">About Ozone Production</a>
+ <li><A HREF="#jlfcc">Jacob's Ladders and the FCC</a>
+ <li><A HREF="#jldcj">Don's Comments on Jacob's Ladders</a>
+ </ul>
+</ul>
+<p>
+<A NAME="jlpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#jltoc">Jacob's Ladder Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="jlaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning. 
+<li>There is no charge except to cover the costs of copying. 
+</ol>
+
+<h3><A NAME="jldis">DISCLAIMER</a></h2>
+
+Jacob's Ladders - especially large ones using line powered transformers - can
+be both deadly, destructive, or both.
+<p>
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+<A NAME="jlint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#jltoc">Jacob's Ladder Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="jlwij">What is a Jacob's Ladder?</A></h3>
+
+A Jacob's Ladder is the type of high voltage "climbing arc" display seen in
+many old (and usually bad) Sci-Fi movies.  Jacob's Ladder come in all shapes,
+styles, and sizes.  Here is info on a common type that is easy to construct
+with readily available parts.  However, read the section:
+<A HREF="#jlsaf">Jacob's Ladder SAFETY</A> before attempting to power any
+high voltage project of this type.
+
+<h3><A NAME="jlhdj">How Does a Jacob's Ladder Work?</A></h3>
+
+The simple explanation is that an arc starts at the bottom and due to the
+fact that hot air rises, tends to move up the diverging rods until they are
+too far apart for the voltage provided by the power source.  A more complete
+explanation is given below:
+<p>
+(From: Kenny Greenberg (kenny@neonshop.com).)
+<p>
+While it is true that warm air pushes the arc up the ladder, there is also
+the typical 'high leakage' or reactance curve of the transformer contributing
+to the effect.  The transformer will happily arc across the bottom as long as
+Paschen's Law will allow. Once this arc is struck the current in the arc will
+actually increase to the transformer's preset limit.  The heat is also
+creating higher resistance. 
+<p>
+Normally the transformer would try choke the voltage down as current
+increased. But just above the arc exists a path that the transformer
+can easily maintain and which in fact will lower its current. Voila.
+<p>
+At the top of course we are not only at the upper limit of the transformer
+but it is also where the current is very low and so all the fun breaks apart
+only to reignite down below.
+<p>
+A very interesting variant existed in the 1930's which used separate
+horizontal electrodes at various points along one side instead of a
+continuous vertical line. Each electrode is attached to a separate
+neon unit. They are tied together and return to the HV transformer.
+The convection current was optimized by placing this in a housing with
+vents at the bottom and top. The result is an animator with no moving
+parts.
+<p>
+The downside is the nitric acid that gets produced so keep it away from
+things that may be corrode.
+
+<h3><A NAME="jlsaf">Jacob's Ladder SAFETY</h3>
+
+WARNING: See <A HREF="safety.htm">Safety
+Guidelines for High Voltage and/or Line Powered Equipment</A> before firing
+up any Jacob's Ladder or other high voltage or line powered project!
+<p>
+Make sure that no one can come in contact with this - particularly curious
+onlookers.  Separating the potential victims from any possible contact
+with the high voltage is really the only foolproof way of protecting
+against fools or the unaware - and you from a lawsuit.  People not
+familiar with high voltage phenomena (or aware only through grade-C
+sci-fi movies) can be incredibly naive.
+<p>
+A GFCI (Ground Fault Circuit Interrupter) is of no use in protecting against
+HV contact since the secondary of a neon sign transformer is isolated from the
+line but its centertap is usually connected to the case - which should be
+grounded.  However, a GFCI would be a good idea in any case when you are
+working with line connected equipment.
+<p>
+12,000 volts will jump approximately anywhere from 3/8 to 3/4 inch in dry air,
+with sharp points and edges generally but maybe not quite always favoring
+longer distances.  This distance occaisionally varies unpredictably with
+humidity.  Don't forget that 12,000 VAC is approximately 17,000 V peak.  Neon
+sign transformers have current limited outputs - 30 mA is typical - but that
+is still highly dangerous - lethal under the wrong conditions.
+<p>
+You can build a small Jacob's Ladder using a high voltage transformer
+of lower capacity or a DC-AC inverter using a TV flyback transformer.
+While these would be less dangerous, there is little room for carelessness
+when working with any type of high voltage device.  Even if there is no
+resistive path, the stray capacitance can permit enough AC current to flow
+to give you a painful experience!
+<p>
+Electrical discharges in air are also a producer of ozone which may be a
+health hazard.  See the section: <A HREF="#jlozo">About Ozone Production</a>.
+They also can produce significant Radio Frequency Interference (RFI) so the
+FCC may come calling if you run the thing for an extended period of time.
+<p>
+<A NAME="jlbjl"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#jltoc">Jacob's Ladder Table of Contents</A>.
+<h2>Building a Jacob's Ladder</h2>
+<h3><A NAME="jlbas">Basic Components</A></h3>
+
+There are only two major parts to a basic Jacob's Ladder: a high voltage
+power source and a pair of rods arranged in a narrow V configuration on an
+insulated and fireproof support.
+<p>
+You will need 12 to 15 kVAC at 20 to 30 mA.  However, the exact values are
+not at all critical.  A neon sign (luminous tube) transformer is the usual
+source for this power though an oil burner ignition transformer will work in
+a pinch (some say better and cheaper) or you could build an inverter type
+power supply.
+<p>
+<ul>
+<li>Luminous tube transformers can be obtained used from sign shops or
+ demolition companies.  The cost will be anywhere from free to $50 or more
+ depending on size and condition and whether the seller has a use or other
+ buyers for this sort of equipment.
+<p>
+ Typical ratings: 12,000 to 15,000 VRMS current limited to 20 to 30 mA.
+ Larger ones are available - up to 60 mA or even 120 mA - but this is not
+ required.  More information on neon sign transformers can be found in
+ the chapter: <A HREF="laserclp.htm#clptoc">The
+ Home-Built Laser Assembly and Power Supply</A> of
+ <A HREF="lasersam.htm">Sam's Laser FAQ</A>.
+<p>
+<li>Oil burner ignition transformers can be removed from discarded oil burners.
+ These will probably be free for the asking at your local HVAC company.
+ However, you will likely have to disassemble the disgustingly icky burner
+ assembly and properly dispose of the unwanted parts as part of the deal.
+<p>
+ Typical ratings: 8,000 to 10,000 VRMS current limited to 10 to 25 mA.
+<p>
+<li>Both neon signs and oil burner ignitions may be powered by solid state
+ inverters in some cases.  These are likely suitable as well - and higher
+ tech!.
+<p>
+ Inverter voltage and current ratings will be similar to their transformer
+ counterparts, above.  However, since the frequency of operation is in the
+ 10s of kHz range instead of 50/60 Hz, behavior for the Jacob's Ladder will
+ differ somewhat.  For example, if they run on filtered DC (internally),
+ there will be none of that 50/60 Hz buzz associated with those classic
+ sci-fi movies!  Perhaps, more of a starship engine sound. :)
+<p>
+<li>A small Jacob's Ladder can be powered from the types of high voltage
+ inverters described in
+ <A HREF="samschem.htm">Various Schematics
+ and Diagrams</A>.  However, since these only produce a couple of mA, the
+ result will not be quite as spectacular.
+<p>
+<li>I DO NOT recommend the following: microwave oven transformers, utility pole
+ transformers, and 100 kVA substation transformers :-).  See the section:
+ <A HREF="#jlwnm">Why NOT to use Microwave Oven Transformers</A> for
+ additional comments if you are not yet convinced.
+<p>
+ <ul>
+ <li>Microwave oven transformers produce only about 1,500 to 2,500 VAC which
+  is too low.  Several in series would be required but this is an extremely
+  dangerous and unwieldy arrangement.  They can supply AMPS of current which
+  is an instantly lethal situation, are not current limited to anything
+  that would conceivably let a human survive (0.5 AMPs or more), and do not
+  have the required insulation for such operation.
+<p>
+ <li>Utility pole and substation transformers.  Aside from requiring a fork
+  lift or 10 ton crane to move, I don't think the power company would be
+  happy if one of these were to disappear one night :-).  It goes without
+  saying that these would even be overkill (no pun...) for the State
+  electric chair.
+<p>
+ Having said that, see the section: <A HREF="#jlnrb">Notes on Really BIG
+ Jacob's Ladders</A> for some more information.
+ </ul>
+</ul>
+<h3><A NAME="jlcon">Construction</A></h3>
+
+Take a pair of thin metal rods - the steel wire from old metal coat hangers
+works quite well.   Straighten them out and mount them on an insulated
+non-flammable support with a gap of about 1/4 inch at the bottom and 1 to 3
+inches at the top forming a narrow tall 'V'.   Mounting locations should not
+be in the path of the rising arc.  Since the electrical forces on the rods
+will tend to pull them together, adequate support especially at
+the top is critical unless a moving sculpture is the desired result. :)
+A free-standing metal coat hanger wire will not be rigid enough.  Again,
+the support must be non-flammable and not in the path of the arc.
+<p>
+Connect the high tension output of the
+transformer to the two rods using high voltage insulated wire unless
+the routing is such that there is no chance of arcing where you don't want it.
+DO NOT use automotive ignition cable for this unless it is the non-resistive
+type.  Some adjustment of the spacing at the bottom (to get the arc started)
+and at the top (to determine when the arc is extinguished and how fast it
+rises) may be required (but do so only with the power off!).  If starting
+is problematic, a pair of sharp electrodes made from thin wire may be added
+at the bottom with a spacing just slightly smaller than the main gap.  The high
+electric field at their points will help in initial ionization.  But careful
+shaping of the main electrodes usually makes this unnecessary.
+<p>
+Depending on the voltage and power rating of your high voltage source, these
+dimensions may vary considerably.  Spirals and other more creative
+configurations are also possible.
+<p>
+<PRE>
+                            ___   1-3 inch gap or more at top.
+                             ^  \     /
+                    2-3 feet |   \   /
+                     or more |    \ / 1/4 inch gap at bottom.
+                            _v_   / \
+                          +----X-'   '-X----+  X is mount attachment.
+                          |   Insulated,    |       
+                      HV  |  non-flammable  |
+                     +----+  mounting base  |
+                  ||(                       |
+        Hot o---+ ||(                       |
+                 )||(       Luminous tube   | HV insulated wire
+                 )||( CT     transformer    |
+   AC Line       )|| +---+   (12 kV, 30 mA, |
+                 )||(    |   typical)       |
+                 )||(    |                  |
+    Neutral o---+ ||(    |                  |
+                  ||( HV |                  |
+             Case |  +----------------------+
+                  |      |
+Safety Ground o---+------+   
+</PRE>
+<p>
+IMPORTANT SAFETY NOTE: Essential line fuse, power switch, and power indicator
+lamp not shown.  Centertap (case) MUST be connected to Safety (earth) Ground!!
+<p>
+A Jacob's Ladder works on the principle that the ionized air in the arc
+is a lower resistance than the air around it and heated air rises.  The
+arc strikes at the point of lowest breakdown voltage - the small gap
+at the bottom.  The heated plasma rises and even when it is an inch or
+more in width is an easier path for the current to follow.  Eventually,
+the gap becomes too wide, the arc extinguishes and is reestablished
+at the bottom.  For best results, shield the whole thing from drafts but
+don't use anything that can catch fire!
+
+<h3><A NAME="jlgab">Clive's Gabriel Electrode to Help the Arc to
+ Strike</A></h3>
+
+(From: Clive Mitchell (clive@emanator.demon.co.uk).)
+<p>
+You know how critical the gap between the electrodes at the bottom of
+a Jacob's ladder can be.  Too wide and the arc won't strike, and too
+narrow and it won't make it all the way to the top.
+<p>
+Because I live in the UK I'm more or less saddled with a 10 kV limit on
+the maximum neon transformer available.  Since the lower voltage makes
+the gap even more critical, I designed a slight enhancement that works
+really well.
+<p>
+It's simply a third electrode placed between the strike gap at the
+bottom of the vee.  It is connected to either one of the main electrodes
+via two 1M ohm high voltage resistors.
+<p>
+When an arc should occur, the following happens...
+<ol>
+<li>The voltage on the middle electrode floats to the potential of the
+electrode it's connected to via the resistors.
+<p>
+<li>It's easy for an arc to jump the short distance from the other
+electrode to the middle one.
+<p>
+<li>When an arc has struck and current is flowing, the voltage on the
+middle electrode flies up due to the high resistance value.
+<p>
+<li>The combination of high voltage at the middle electrode and the
+ionized path makes the arc strike all the way across.
+</ol>
+It's simple, but works perfectly.
+<p>
+I've never seen anyone use this on a Jacob's ladder before so what do I call
+it?  How about the Gabriel electrode (in keeping with the biblical theme).
+
+<h3><A NAME="jlwnm">Why NOT to use Microwave Oven Transformers</A></h3>
+
+Using multiple high voltage transformers from microwave ovens to construct a
+Jacob's Ladder is a very bad idea for several reasons:
+<ul>
+<li>Microwave oven transformers are absolutely positively lethal if you or
+  anyone else gets too close, AMPS available - especially if you are going to
+  put them in series as would be needed to obtain adequate voltage.  You might
+  as well tap directly off of your utility's substation power bus.
+<p>
+<li>Unlike luminous tube (neon sign) or oil burner ignition transformers, they
+  are NOT current limited to anything that will allow running on a 15 or 20
+  amp branch circuit so some other means of preventing your breakers (or
+  your utility's substation breakers) from popping like cherry bombs will be
+  needed.
+<p>
+<li>The most you will get out of a microwave oven transformer is about 2 to 2.5
+  kVAC.  This is way to little for a decent Jacob's Ladder and putting them
+  in parallel will not help.  Therefore, 4 or 5 in series would be needed to
+  obtain adequate voltage.
+<p>
+<li>Their insulation is not rated for series operation so one or more of the
+  windings will see excessive voltage.  There will likely be fireworks - and
+  not where you want them.
+</ul>
+I bet you are also going to try to run them on 220 VAC to double the output
+voltage as well, huh??
+<p>
+Similar comments apply to the use of utility pole or substation transformers.
+<p>
+A word to the wise: at some point, bigger is just stupid.  Sorry.
+<p>
+<A NAME="jladd"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#jltoc">Jacob's Ladder Table of Contents</A>.
+<h2>Additional Information</h2>
+<h3><A NAME="jlnrb">Notes on Really BIG Jacob's Ladders</A></h3>
+
+(From: Steve Roberts (osteven@en.com).)
+<p>
+Microwave oven transformers make excellent Jacob's Ladders and Tesla Coil
+drivers with a properly chosen series cap in the primary for power factor
+correction.  One of the major problems with the hollow "E" core current
+limited neon sign and furnace ignition transformers is that they do not source
+enough current to maintain a plasma on larger Jacob's Ladders, and the current
+limiting makes them lousy as pulsed laser drivers as well.
+<p>
+However, the high current from a microwave oven transformer will source a 10"
+inch arc in nitrogen/oxygen mixtures once it has been started at about 1/2".
+There are several European web sites that show back to back microwave oven
+transformer powered ladders.  A key problem is that you have to mount the
+transformers on Lucite or Lexan because the center tap is grounded on the
+secondary side. For a advanced safety conscious experimenter it is not a
+problem to use these, provided you use either 1" diameter rods of copper or
+carbon rods for the ladder rails. While I would not approve of just anybody
+playing with these either, it can be done and produces spectacular results, if
+you don't mind the electric meter spinning at Mach 1!
+<p>
+They also make nice stable cores for high current low voltage transformers
+when rewound, I use them to power 25 amp 3.2 volt laser tube filaments all the
+time with out blowing breakers. 
+<p>
+<p>
+<A HREF="http://www.Geocities.com/CapeCanaveral/Lab/5322/hv2.html">Snock's
+High Voltage Page</A> has a number of articles and links relating to large
+Jacob's Ladders and other high voltage projects.
+
+<h3><A NAME="jlaud">And Now for the Audio Feed</A></h3>
+
+(From: Norman E. Litsche (nlitsche@worldnet.att.net).)
+<p>
+One of those old(bad) movies had a huge Jacob's Ladder inside a large
+transparent (glass, I assume - Plexiglass wasn't around then) hollow column
+resonant at 60 Hz.  Unbelievable sound!  Always wanted to build one like this
+but never had the time, the big resonant column or the really huge neon sign
+transformer that would have been needed.
+<p>
+(Assuming 1,100 feet per second for the speed of sound in air, a column closed
+at one end would be a 1/4 wavelength resonator resulting in an actual height
+of about 4.6 feet for a 60 Hz fundamental. --- sam)
+
+<h3><A NAME="jlozo">About Ozone Production</A></h3>
+
+If the Jacob's Ladder is large, significant ozone is an inherent byproduct
+unless you run it in an inert gas which might be an interesting experiment
+though I don't know how performance will be affected.
+<p>
+(From: Pamela Hughes (phughes@omnilinx.net).)
+<p>
+The arc is a plasma of hot ionized gas.  Molecules like O2 are broken down to
+the atomic level and ionized.  when these ions collide with the surrounding
+air, they cause chemical reactions... the O can combine with nitrogen and form
+small amounts of nitrogen oxides, and with O2 to form ozone (O3).  However,
+the high temps in an arc also tend to destroy these molecules too so you'd
+probably only produce trace amounts if it weren't for the UV given off by the
+arc.  Ultraviolet seems to be the main mechanism for producing O3 as it can
+ionize in the air far enough from the arc that it will be cool enough for
+ozone to exist (a spark gives off UV and ionizes the air around it) A glow
+discharge is better at generating ozone than an arc though, since it maximizes
+the UV and the pressures and temps are much lower (i.e., put a conductive
+coating on the outside of a glass tube and a wire down the center of it, then
+apply enough voltage to produce a glow discharge inside the tube as you pump
+oxygen at low pressure through the tube.  Shortwave UV lamps will produce it
+too (they use these as sterilizers in dairy barns).
+
+<h3><A NAME="jlfcc">Jacob's Ladders and the FCC</A></h3>
+
+Operating Jacob's Ladders (as well as Tesla coils) are broad-band RF sources
+and can interfere with radio, TV, maybe cell phone, cordless phone, and
+other communications equipment.  There have been reports of the FCC tracking
+down and fining people for this interference - I don't know if these stories
+are true but it is definitely something to think about before running your
+creation for an extended period of time, at least.  The FCC would probably
+confiscate your setup as well - which would likely be more traumatic than the
+fine (as hefty as it might be!)  Perhaps, consider a Faraday cage in addition
+to the Plexiglass ozone shield :-).
+
+<h3><A NAME="jldcj">Don's Comments on Jacob's Ladders</a></h3>
+
+(From: Don Klipstein.)
+<ol>
+<li>Generally, in my experience the arc produces little UV.
+ I suspect most noxious gas emissions are due to mechanisms other than UV,
+ and are more nitrogen oxides than ozone.
+<p>
+<li>I think it's a good idea to enclose a Jacobs ladder in a glass or
+ acrylic/"Plexiglas"/"Lucite" enclosure if people not familiar with Jacobs
+ ladder hazards will be around it.  Besides protection from electric shock,
+ a few people are more concerned about the shortwave UV output than I think
+ they should be.
+<p>
+<li>As for audio resonances - the main audio output from the arc is even
+ harmonics of the power supply frequency.
+ It appears to me that a tube that is open at both ends and half a
+ wavelength long at twice the power supply frequency is best.  In my
+ experience with loudspeaker ports, the tube needs to be somewhat shorter to
+ resonate, due to the mass of the air just outside of the ends of the tube.
+ It may need to be around 60-80% of its diameter shorter, shorter still if
+ one end is near a perpendicular plane.
+<p>
+ Also, the speed of sound in dry air at 20 C (298 K) is
+ 1,126 feet/sec, 343.2 m/s.  This varies proportionately
+ with the square root of absolute temperature.  It varies very slightly
+ directly with humidity.
+</ol>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#jltoc">Jacob's Ladder Table of Contents</A>.
+<li>Go to <A HREF="samschem.htm">Various Schematics and Diagrams</A>.
+<p>
+-- end V1.37 --
+<p>
+</BODY>
+</HTML>

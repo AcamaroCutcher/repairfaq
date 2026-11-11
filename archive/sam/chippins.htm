@@ -1,0 +1,2661 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/chippins.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Pinouts for Various Common Chips and Hybrids</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/chippins.htm">https://www.repairfaq.org/sam/chippins.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Pinouts for Various Common Chips and Hybrids
+</h1>
+<h2>
+Version 2.23d
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="cptoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#cppre">Preface</A>
+ <ul>
+ <li><A HREF="#cpaac">Author and Copyright</a>
+ <li><A HREF="#cpdpc">Device Pinouts Contributions</A>
+ <li><A HREF="#cpdis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#cpint">Introduction</A>
+ <ul>
+ <li><A HREF="#cpsap">Scope and Purpose of this Document</A>
+ <li><A HREF="#cpwts">When to Suspect the One of These Chips?</A>
+ <li><A HREF="#cpsaf">Safe Troubleshooting</a>
+ <li><A HREF="#cptes">Testing</A>
+ </ul>
+<p>
+<li><A HREF="#cpnum">Chips Starting with Numbers</A>
+ <ul>
+ <li><A HREF="#cp4N33">4N33 - ECG3083</A>
+ <li><A HREF="#cp6N138">6N138 - ECG3093</A>
+ <li><A HREF="#cp93C66">93C66</A>
+ </ul>
+<p>
+<li><A HREF="#cpa">A</A>
+ <ul>
+ <li><A HREF="#cpAN635">AN6359 - NTE/ECG1812</A>
+ <li><A HREF="#cpAN5515">AN5515 - ECG1684</A>
+ </ul>
+<p>
+<li><A HREF="#cpb">BA</A>
+ <ul>
+ <li><A HREF="#cpBA336">BA336</A>
+ <li><A HREF="#cpBA5115">BA5115</A>
+ <li><A HREF="#cpBA6209">BA6209 - ECG1716</A>
+ <li><A HREF="#cpBA6247">BA6247</A>
+ <li><A HREF="#cpBA7001">BA7001</A>
+ </ul>
+<p>
+<li><A HREF="#cpcl">C to L</A>
+ <ul>
+ <li><A HREF="#cpC4558C">C4558C</A>
+ <li><A HREF="#cpCNY75GB">CNY75GB</A>
+ <li><A HREF="#cpDS8884">DS8884</A>
+ <li><A HREF="#cpHA12002">HA12002</A>
+ <li><A HREF="#cpkA2206">kA2206/LA4183 - ECG1667</A>
+ <li><A HREF="#cpL200C">L200C - ECG1942</A>
+ <li><A HREF="#cpLA6324">LA6324 - ECG987</A>
+ <li><A HREF="#cpLA7823">LA7823 - ECG1647</A>
+ <li><A HREF="#cpLA7824">LA7824 - NTE7123</A>
+ <li><A HREF="#cpLA7831">LA7831</A>
+ <li><A HREF="#cpLA7836">LA7836 - SK10085/A>
+ <li><A HREF="#cpLA7837">LA7837 - ECG7104</A>
+ <li><A HREF="#cpLA7838">LA7838 - ECG7039</A>
+ <li><A HREF="#cpLA7850">LA7850 - ECG7086</A>
+ <li><A HREF="#cpLA7851">LA7851 - ECG 7062</A>
+ <li><A HREF="#cpLM325">LM325</A>
+ <li><A HREF="#cpLM1881">LM1881</A>
+ </ul>
+<p>
+<li><A HREF="#cpmp">M to P</A>
+ <ul>
+ <li><A HREF="#cpM51522A">M51522A</A>
+ <li><A HREF="#cpM54543L">M54543L - ECG1628</A>
+ <li><A HREF="#cpMC34166">MC34166</A>
+ <li><A HREF="#cpNE5044N">NE5044N</A>
+ <li><A HREF="#cpPA230">PA230, PA238 - ECG847</A>
+ </ul>
+<p>
+<li><A HREF="#cpsstk">S to STK</A>
+ <ul>
+ <li><A HREF="#cpSAA7321">SAA7321</A>
+ <li><A HREF="#cpSTK054">STK054 - ECG1028</A>
+ <li><A HREF="#cpSTK082">STK082</A>  
+ <li><A HREF="#cpSTK457">STK457/STK459 - ECG1330</A>
+ <li><A HREF="#cpSTK461">STK461/STK463 - ECG1331</A>
+ <li><A HREF="#cpSTK563F">STK563F - ECG1732 - RCA #200750</A> 
+ <li><A HREF="#cpSTK0050">STK0050</A>
+ <li><A HREF="#cpSTK0050II">STK0050II - ECG1334</A>
+ <li><A HREF="#cpSTK0070">STK0070 - ECG1322</A>
+ <li><A HREF="#cpSTK0080">STK0080 - ECG1322</A>
+ <li><A HREF="#cpSTK0070II">STK0070II - ECG1335</A>
+ <li><A HREF="#cpSTK0080II">STK0080II - ECG1335</A>
+ <li><A HREF="#cpSTK4044V">STK4044V - ECG1882</A>
+ <li><A HREF="#cpSTK4101I">STK4101II - ECG1816</A>
+ <li><A HREF="#cpSTK4131">STK4131</A>
+ <li><A HREF="#cpSTK4131II">STK4131II - ECG1817</A>
+ <li><A HREF="#cpSTK4141II">STK4141II/STK4142II - ECG1818</A>
+ <li><A HREF="#cpSTK4152II">STK4152II - ECG1819</A>
+ <li><A HREF="#cpSTK4161II">STK4161II - ECG1315</A>
+ <li><A HREF="#cpSTK4171II">STK4171II/STK4181II/STK4191II - ECG1316</A>
+ <li><A HREF="#cpSTK4171V">STK4171V/STK4181V/STK4191V - ECG1317</A>
+ <li><A HREF="#cpSTK4162II">STK4162II</A>
+ <li><A HREF="#cpSTK5633">STK5633 - ECG1742</A>
+ <li><A HREF="#cpSTK6982B">STK6982B - ECG1736</A>
+ </ul>
+<p>
+<li><A HREF="#cpstr">STR</A>
+ <ul>
+ <li><A HREF="#cpSTR380">STR380 - ECG1548</A>
+ <li><A HREF="#cpSTR382">STR382 - ECG1553</A>
+ <li><A HREF="#cpSTR381">STR381 - ECG1546</A>
+ <li><A HREF="#cpSTR11006">STR11006 - ECG7092</A>
+ <li><A HREF="#cpSTR30115">STR30115 - ECG1896</A>
+ <li><A HREF="#cpSTR30120">STR30120 - ECG1839</A>
+ <li><A HREF="#cpSTR30123">STR30123 - ECG1776</A>
+ <li><A HREF="#cpSTR30125">STR30125 - ECG1897</A>
+ <li><A HREF="#cpSTR30130">STR30130 - ECG1777</A>
+ <li><A HREF="#cpSTR30135">STR30135 - ECG1778</A>
+ <li><A HREF="#cpSTR50041A">STR50041A - ECG1894</A>
+ <li><A HREF="#cpSTR51041">STR51041 - ECG1895</A>
+ <li><A HREF="#cpSTR53041">STR53041 - ECG1840</A>
+ <li><A HREF="#cpSTR53043">STR53043 - ECG1841</A>
+ <li><A HREF="#cpSTR54041">STR54041 - ECG1796</A>
+ <li><A HREF="#cpSTR5412">STR5412</A>
+ <li><A HREF="#cpSTR58041">STR58041</A>
+ <li><A HREF="#cpSTR80145">STR80145</A>
+ </ul>
+<p>
+<li><A HREF="#cpt">T</A>
+ <ul>
+ <li><A HREF="#cpTA7120">TA7120</A>
+ <li><A HREF="#cpTA7136AP">TA7136AP - ECG1464</A>
+ <li><A HREF="#cpTA7203">TA7203 - ECG1154</A>
+ <li><A HREF="#cpTA7204">TA7204 - ECG1153</A>
+ <li><A HREF="#cpTA7222A">TA7222AP - ECG1278</A>
+ <li><A HREF="#cpTA7267">TA7267 - ECG7064</A>
+ <li><A HREF="#cpTA7291S">TA7291S</A>
+ <li><A HREF="#cpTA7313AP">TA7313AP - ECG1465</A>
+ <li><A HREF="#cpTA7317P">TA7317P</A>
+ <li><A HREF="#cpTA7559P">TA7559P - ECG778A</A>
+ <li><A HREF="#cpTA75902P">TA75902P</A>
+ <li><A HREF="#cpTA8201AK">TA8201AK - ECG1832*</A>
+ <li><A HREF="#cpTAA611A12">TAA611A12 - ECG1113</A>
+ <li><A HREF="#cpTAA2761A">TAA2761A</A>
+ <li><A HREF="#cpTC9174P">TC9174P</A>
+ <li><A HREF="#cpTDA1170">TDA1170 - ECG1289</A>
+ <li><A HREF="#cpTDA1175P">TDA1175P</A>
+ <li><A HREF="#cpTDA1541A">TDA1541A</A>
+ <li><A HREF="#cpTDA1670A">TDA1670A/TDA1675 - ECG1862</A>
+ <li><A HREF="#cpTDA1770A">TDA1770A</A>
+ <li><A HREF="#cpTDA1905">TDA1905 - ECG7000</A>
+ <li><A HREF="#cpTDA2003">TDA2003 - ECG1288</A>
+ <li><A HREF="#cpTDA2005">TDA2005 - ECG1396</A>
+ <li><A HREF="#cpTDA2040">TDA2040 - ECG1376</A>
+ <li><A HREF="#cpTDA2577">TDA2577 - ECG1632</A>
+ <li><A HREF="#cpTDA2578A">TDA2578A</A>
+ <li><A HREF="#cpTDA3505">TDA3505</A>
+ <li><A HREF="#cpTDA3654">TDA3654 - ECG1754</A>
+ <li><A HREF="#cpTDA4190">TDA4190</A>
+ <li><A HREF="#cpTDA4440">TDA4440</A>
+ <li><A HREF="#cpTDA4555">TDA4555</A>
+ <li><A HREF="#cpTDA4601">TDA4601</A>
+ <li><A HREF="#cpTDA4605">TDA4605</A>
+ <li><A HREF="#cpTDA8340">TDA8340</A>
+ <li><A HREF="#cpTDA9102C">TDA9102C</A>
+ <li><A HREF="#cpTEA2037A">TEA2037A - ECG1888</A>
+ <li><A HREF="#cpTEA5500">TEA5500</A>
+ <li><A HREF="#cpTL494">TL494 - ECG1729</A>
+ </ul>
+<p>
+<li><A HREF="#cpuz">U to Z</A>
+ <ul>
+ <li><A HREF="#cpUA78GU">UA78GU(1C) - ECG953</A>
+ <li><A HREF="#cpUA2240CN">UA2240CN - ECG893 - SK7712</A>
+ <li><A HREF="#cpUC3842AN">UC3842AN</A>
+ <li><A HREF="#cpUDN2993LB">UDN2993LB</A>
+ <li><A HREF="#cpULN2003A">ULN2003A - ECG2013</A>
+ <li><A HREF="#cpULN3718M">ULN3718M</A>
+ <li><A HREF="#cpULN3751Z">ULN3751Z</A>
+ <li><A HREF="#cpuPA53C">uPA53C - ECG2084</A>
+ <li><A HREF="#cpuPC177C">uPC177C</A>
+ <li><A HREF="#cpuPC1238">uPC1238</A>
+ <li><A HREF="#cpX24C44">X24C44</A>
+ </ul>
+</ul>
+<p>
+<A NAME="cpint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="cpaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="cpdpc">Device Pinouts Contributions</A></h3>
+
+This list was compiled from replies to postings on the USENET newsgroup:
+<A HREF="news:sci.electronics.repair">sci.electronics.repair</A>
+and will be updated as new requests come in.  Contributions are welcome.
+Please email in a format similar to those listed below.  If you provide
+additional comments, your name and email address will be listed as well.
+
+<h3><A NAME="cpdis">DISCLAIMER</a></h2>
+
+While every effort has been made to assure that the pinout information in this
+document is accurate, errors are possible and sometimes the databooks
+themselves are even in conflict.
+<p>
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+<A NAME="cpint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="cpsap">Scope and Purpose of this Document</A></h3>
+
+This document provides pinouts for some of the common integrated circuits
+found in audio and video entertainment equipment like TVs, VCRs, and cassette
+decks and computer monitors.  A good source for this information is the ECG
+Semiconductor Master Replacement Guide (or the SK/NTE or other similar
+databooks).
+<p>
+Note: the companion document: <A HREF="vcrreg.htm">VCR
+Power Supply Hybrid Regulators</A> contains similar information for many of the
+common parts found in VCRs with linear power supplies.
+<p>
+Much more info on most of these parts can be found on the Net via Chipdir and
+other semiconductor reference pages.  See the links in
+<A HREF="sambook.htm">Sam's Neat, Nifty, and Handy Bookmarks</A>.  Consumer
+electronics sites may have some of the hard-to-find datasheets.  For example,
+for Sanyo datasheets (STK), more info can be found at:
+<p>
+<ul>
+<A HREF="http://www.datadart.com/al/sanyo/sanyodata.htm">Datadart.com Sanyo
+Reference Page</A>.
+</ul>
+
+<h3><A NAME="cpwts">When to Suspect the One of These Chips?</A></h3>
+
+The following are valid reasons for investigating the health of one of
+these parts:
+<ul>
+<li>Scorch marks, discoloration, melted or bubbling plastic, device split in
+   half, gobs of smoke, 6 foot flames.
+<p>
+<li>Excessive heat.  While some of these chips or hybrids like power amplifiers
+   will run hot, they should not be so hot that an egg would fry instantly.
+<p>
+<li>Functional fault.  Since many of these parts have quite specific tasks to
+   perform, the symptoms should provide some hint as to whether it is possible
+   for the particular device to be at fault.  For example, your monitor no
+   longer syncs properly would point to the sync separator.
+</ul>
+
+<h3><A NAME="gadsaf">Safe Troubleshooting</a></h3>
+
+WARNING: Read, understand, and follow the recommendations in the document:
+<A HREF="https://www.repairfaq.org/REPAIR/safety.htm">Safety Guidelines for
+High Voltage and/or Line Powered Equipment</A> before attempting any repairs
+on equipment that operates directly from the wall outlet (not low voltage
+wall adapter).
+
+<h3><A NAME="cptes">Testing</A></h3>
+
+First identify a suitable ground for your multimeter.  With the equipment
+unplugged, test for continuity between the ground pin of the chip or hybrid
+and the chassis or a metal shield.  Don't use the part's ground pin as
+clipping anything to it increases the chance of an unfortunate short circuit.
+<p>
+First, check for power to the Vcc or Vss (or whatever) pins.  A large
+percentage of failures will be due to lack of power or incorrect voltages.
+The suspect device may or may not be at fault.  In many cases, a fusable
+resistor has sacrificed itself possibly due to a short in the suspect
+part or elsewhere (or opened for no good reason).
+<p>
+However, note that the 'typical Vcc' or other supply voltages listed in
+this document or the device's datasheet may not be what your equipment
+actually uses.  Therefore, a voltage that is moderately different than
+the one listed for the device may be normal.
+<p>
+Once good power is confirmed, test the inputs and outputs.  Obviously, an
+oscilloscope is generally needed for these.
+<p>
+Where multiple identical devices are present, substitution is usually an
+acceptable troubleshooting technique but there is some risk involved as
+faulty circuitry can blow your 'good' part.
+<p>
+<A NAME="cpnum"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>Chips Starting with Numbers</h2>
+<h3><A NAME="cp4N33">4N33 - ECG3083</A></h3>
+<PRE>
+
+Opto isolator - Photo Darlington output.
+
+Pin 1: Anode
+Pin 2: Cathode
+Pin 3: N.C.
+Pin 4: Emitter
+Pin 5: Collector
+Pin 6: Base
+
+</PRE>
+<h3><A NAME="cp6N138">6N138 - ECG3093</A></h3>
+<PRE>
+
+Optoisolater with split Darlington output.  Vcc = 18 V max., 8 pin DIP.
+
+Pin 1: NC
+Pin 2: LED Anode
+Pin 3: LED Cathode
+Pin 4: NC
+Pin 5: Gnd/Q2 Emitter
+Pin 6: Q2 Collector
+Pin 7: Q1 Emitter/Q2 Base
+Pin 8: Vcc/PD Anode/Q1 collector.
+
+</PRE>
+<h3><A NAME="cp93C66">93C66</A></h3>
+<PRE>
+
+Serial EEPROM.  512 x 8 or 256 x 16 bits.  8 pin DIP.
+
+Pin 1: CS chip select, active high
+Pin 2: CLK, serial clock, xfer on positive edge
+Pin 3: DI, data in
+Pin 4: DO, data out
+Pin 5: Vss (ground)
+Pin 6: ORG  (x8=vxx or x16=vcc)
+Pin 7: NU (not used?) or TEST
+Pin 8: Vcc 5 volts for C, other versions (LC) can runs +2 to +6v
+
+</PRE>
+<p>
+<A NAME="cpa"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>A</h2>
+<h3><A NAME="cpAN635">AN6359 - NTE/ECG1812</A></h3>
+<PRE>
+
+VCR Servo Interface.  Vcc - 5 V.  20 pin DIP.
+
+Pin 1:  Mode select B
+Pin 2:  Gnd
+Pin 3:  Mode select C
+Pin 4:  Mode select X 1/2
+Pin 5:  PAL/NTSC select
+Pin 6:  B optput
+Pin 7:  A output
+Pin 8:  Error input
+Pin 9:  Ref input
+Pin 10: Amp input
+Pin 11: Error output
+Pin 12: Rec/Play select
+Pin 13: Rec 2/4/6 H select
+Pin 14: Mem
+Pin 15: FG divide select
+Pin 16: PB ctrl input
+Pin 17: FG output
+Pin 18: Vcc (5V)
+Pin 19: FG input
+Pin 20: Mode select A
+
+</PRE>
+<h3><A NAME="cpAN5515">AN5515 - ECG1684</A></h3>
+<PRE>
+
+TV vertical deflection.  Vcc = 24 V typ.  7 pin SIP-HS.
+
+Pin 1: Ground
+Pin 2: Output
+Pin 3: Vcc for output
+Pin 4: Input
+Pin 5: Trigger pulse input
+Pin 6: Pulse amp out
+Pin 7: Vcc
+
+</PRE>
+<p>
+<A NAME="cpb"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>B</h2>
+<h3><A NAME="cpBA336">BA336</A></h3>
+<PRE>
+
+Audio Level Sensor, used for a 'skip track' function, 9 pin SIP:
+
+Pin 1: Pulse Width
+Pin 2: Sense Timing
+Pin 3: Input
+Pin 4: NFB
+Pin 5: GND
+Pin 6: Muting
+Pin 7: Noise Filter
+Pin 8: Output
+Pin 9: Vcc (Min: 4.2V, Max: 12V)
+
+</PRE>
+<h3><A NAME="cpBA5115">BA5115</A></h3>
+<PRE>
+
+Pin 1: PB level adj
+Pin 2: PB output
+Pin 3: LP (eq switch)
+Pin 4: PB +input
+Pin 5: Bias filter
+Pin 6: Vcc
+Pin 7: Rec output
+Pin 8: Rec amp in
+Pin 9: Rec/EE control
+Pin 10: Mute control
+Pin 11: Line output
+Pin 12: Ground
+Pin 13: ALC level
+Pin 14: ALC off
+Pin 15: ALC att/recv
+Pin 16: Line amp in
+Pin 17: PB/EE control
+Pin 18: Line input
+
+</PRE>
+<h3><A NAME="cpBA6209">BA6209 - ECG1716</A></h3>
+<PRE>
+
+VCR Motor Driver with braking.  Vcc max = 18 V, I max = 1.2 A.
+
+Pin 1: GND 
+Pin 2: Vout 1
+Pin 3: Vz1
+Pin 4: Vreg
+Pin 5: Fin
+Pin 6: Rin
+Pin 7: Vcc1
+Pin 8: Vcc2
+Pin 9: Vz2
+Pin 10: Vout 2
+
+I would guess that you should be able to monitor Fin and Rin (forward
+and reverse, I would assume) and determine if the commands are correct.
+Vout 1 and 2 should probably be opposites of each other for forward (e.g.,
++,0) and reverse (e.g., 0,+).  They would be the same for stop.
+
+I have no idea what the Vzs are or the Vreg.
+
+</PRE>
+<h3><A NAME="cpBA6247">BA6247</A></h3>
+<PRE>
+
+Pin 1: Ground
+Pin 2: Motor drive
+Pin 3: Motor drive
+Pin 4: Logic
+Pin 5: Logic
+Pin 6: Logic
+Pin 7: Vcc 12 V
+Pin 8: Voltage divide
+Pin 9: Voltage divide
+Pin 10: Motor return
+
+</PRE>
+
+<h3><A NAME="cpBA7001">BA7001</A></h3>
+
+Audio power amp, single channel.
+<PRE>
+
+Pin 1: NC
+Pin 2: Control Input
+Pin 3: Ground
+Pin 4: Output
+Pin 5: NC
+Pin 6: VCC
+Pin 7: Input 1
+Pin 8: Input 2
+
+</PRE>
+<A NAME="cpcl"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>C to L</h2>
+<h3><A NAME="cpC4558C">C4558C</A></h3>
+<PRE>
+
+Dual op-amp.
+
+Pin 1: Out 1
+Pin 2: -In 1
+Pin 3: +In 1
+Pin 4: -Vcc
+Pin 5: +In 2
+Pin 6: -In 2
+Pin 7: Out 2
+Pin 8: +Vcc
+
+</PRE>
+<h3><A NAME="cpCNY75GB">CNY75GB</A></h3>
+<PRE>
+
+Optoisolator, NPN phototransistor.
+
+Isolation voltage, Vmax = 5300 V, gain = 100, Vcemax = 80 V.
+
+Pin 1: LED K
+Pin 2: LED A
+Pin 4: Phototransistor E
+Pin 5: Phototransistor C
+Pin 6: Phototransistor B
+
+</PRE>
+<h3><A NAME="cpDS8884">DS8884</A></h3>
+<PRE>
+
+High voltage display driver for gas filled tubes.
+
+Pin 1: Current Prog. In
+Pin 2: A in
+Pin 3: B in
+Pin 4: C in
+Pin 5: D in
+Pin 6: D.pt.
+Pin 7: comma in
+Pin 8: comma out
+Pin 9: GND
+Pin 10: d.pt out
+Pin 11: g out
+Pin 12: f out
+Pin 13: e out
+Pin 14: d out
+Pin 15: c out
+Pin 16: b out
+Pin 17: a out
+Pin 18: Vcc
+
+</PRE>
+<h3><A NAME="cpHA12002">HA12002</A></h3>
+<PRE>
+
+Speaker (or spike) protector/voltage/temp/overload IC.
+
+Pin 1: Relay driver
+Pin 2: GND
+Pin 3: Temp detect
+Pin 4: Audio sig. in
+Pin 5: AC detect
+Pin 6: Overload detect
+Pin 7: Bias
+Pin 8: Pos feedback
+</PRE>
+<p>
+(From: Anonymous.)
+<p>
+The HA12002 is designed to be the core of a speaker protection circuit.
+If all of the inputs are in spec, it turns on a relay
+via pin 1 to connect the speakers to the amplifiers in a stereo audio
+system.  There is an internal latch circuit to hold off the relay if a
+fault is detected.  Power must be removed to reset the latch.
+Pin 8 uses an external RC time delay to hold off the speakers when the
+amplifier is first turned on.  Typically the capacitor connected to this
+pin is charged through a voltage divider, and the components are selected
+for a time delay of 3 seconds.
+
+<h3><A NAME="cpkA2206">kA2206/LA4183 - ECG1667</A></h3>
+<PRE>
+
+Dual AF PO, 2.3 W, 9 V (4.7 W bidge BTL).
+
+Pin 1: BTL out
+Pin 2: Out 2
+Pin 3: Bootstrap 2
+Pin 4,5: Pwr amp GND (tab)
+Pin 6: Neg feedback 2
+Pin 7: In 2
+Pin 8: Decoupling
+Pin 9: Preamp GND
+Pin 10: In 1
+Pin 11: Neg feedback 1
+Pin 12,13: Pwr amp GND (tab)
+Pin 14: Bootstrap 1
+Pin 15: Out 1
+Pin 16: Vcc
+
+</PRE>
+<h3><A NAME="cpL200C">L200C - ECG1942</A></h3>
+<PRE>
+
+Positive adjustable voltage regulator.  Output: 3 to 36 V, 2 A.
+
+Pin 1: Input
+Pin 2: Limiting
+Pin 3: Ground
+Pin 4: Reference
+Pin 5: Output
+
+</PRE>
+<h3><A NAME="cpLA6324">LA6324 - ECG987</A></h3>
+<PRE>
+
+Quad op-amp.
+
+Pin 1: Out 1
+Pin 2: -In 1
+Pin 3: +In 1
+Pin 4: +V
+Pin 5: +In 2
+Pin 6: -In 2
+Pin 7: Out 2
+Pin 8: Out 3
+Pin 9: -In 3
+Pin 10: +In 3
+Pin 11: -V (or GND for some)
+Pin 12: +In 4
+Pin 13: -In 4
+Pin 14: Out 4
+
+</PRE>
+<h3><A NAME="cpLA7823">LA7823 - ECG1647</A></h3>
+<PRE>
+
+TV Horiz/Vert Osc/Driver/Sync Sep/AFC.  Vcc 12 V typ, 16 pin DIP.
+
+Pin 1: Flyback pulse in
+Pin 2: AFC Out
+Pin 3: Horiz Osc In
+Pin 4: Horiz Osc Out
+Pin 5: Holddown In
+Pin 6: Gnd
+Pin 7: Vert Drvr Out
+Pin 8: Vert Drvr In
+Pin 9: Vert Out Center Voltage
+Pin 10: Vert Osc
+Pin 11: Vert Osc
+Pin 12: Sync Sep Out
+Pin 13: Vcc - Vert
+Pin 14: Video In
+Pin 15: Blanking Out
+Pin 16: Vcc - Horiz
+
+</PRE>
+<h3><A NAME="cpLA7824">LA7824 - NTE7123</A></h3>
+<PRE>
+
+Sync Deflection Circuit for color TV.  Vcc = 12 V typ.  16 pin DIP.
+
+Pin 1: AFC Comparison Sawtooth Wave Input
+Pin 2: AFC Output
+Pin 3: Time Constant Circuit
+Pin 4: Horizontal Output
+Pin 5: Holddown Input
+Pin 6: Gnd
+Pin 7: Vertical Drive Output
+Pin 8: Vertical Drive Sawtooth WaveInput
+
+Pin 9: Vertical Output Middle Point Voltage
+Pin 10: Time Constant Circuit
+Pin 11: Vertical Trigger Output
+Pin 12: Horizontal, Vertical Sync Sep Output
+Pin 13: Vcc13 (Vertical)
+Pin 14: Video Signal Input(Positive)
+Pin 15: Composite Blanking Pulse Output
+Pin 16: Vcc16 (Horizontal)
+
+</PRE>
+<h3><A NAME="cpLA7831">LA7831</A></h3>
+<PRE>
+
+TV Vertical Deflection, typical Vcc = 24 V.
+
+Pin 1: NC
+Pin 2: NC
+Pin 3: GND
+Pin 4: Vertical output
+Pin 5: Vertical output stage Vcc
+Pin 6: Input
+Pin 7: Osc
+Pin 8: 24 V Vcc
+Pin 9: Pump up output
+Pin 10 NC
+
+</PRE>
+<h3><A NAME="cpLA7836">LA7836 - SK10085</A></h3>
+<PRE>
+
+TV vertical deflection, 13 pin SIP.
+
+Pin 1: +Vcc1
+Pin 2: Vert Trig In
+Pin 3: Vertical height control
+Pin 4: 50/60 Hz Vert size control signal input
+Pin 5: Ramp Waveform Generation
+Pin 6: AC/DC Feedback Input to Vertical Output Section
+Pin 7: Vcc7
+Pin 8: Pump Up Output
+Pin 9: Vertical Blocking
+Pin 10: Gnd
+Pin 11: Vertical Output
+Pin 12: Power Supply for Vert Out
+Pin 13: Ripple filter
+
+</PRE>
+
+(From: Tuck, Ryan (investbanker@webtv.net).)
+<p>
+I did a ton of research myself only to find that if you want to replace
+an LA7835, LA7835-TV, LA7836, LA7837, or LA7838, you are better off using
+the LA7838 for any of them or paying more for an ECG7104 or ECG7039 instead
+of crosswiring a SK10085 (which does work.  Philips lists the LA7820 listed
+as being replaceable by an ECG7084 but I have seen it listed elsewhere as an
+ECG7840 or another transposition of those last three numbers I can't remember.
+
+<h3><A NAME="cpLA7837">LA7837 - ECG7104</A></h3>
+<PRE>
+
+TV vertical deflection, 13 pin SIP.
+
+Pin 1: +Vcc1 = 12 V typical
+Pin 2: Vert Trig In
+Pin 3: Time constant
+Pin 4: Vertical amp control
+Pin 5: Vertical size control input
+Pin 6: Ramp waveform generation
+Pin 7: Vertical output FB
+Pin 8: Vcc8 - 24 V typical
+Pin 9: Pump up output
+Pin 10: Osc stop
+Pin 11: Gnd
+Pin 12: Vertical Output
+Pin 13: Power Supply for Vert Out
+
+</PRE>
+(Also see note under <A HREF="#cpLA7836">LA7836 - SK10085</A>.)
+
+<h3><A NAME="cpLA7838">LA7838 - ECG7039</A></h3>
+<PRE>
+
+TV vertical deflection, Vcc1 = 12 V, Vcc8 = 24 V, 13 pin SIP.
+
+Pin 1: +Vcc1
+Pin 2: Vert trigger in
+Pin 3: Time constant
+Pin 4: Vertical amp control
+Pin 5: Vertical size control
+Pin 6: Ramp generator
+Pin 7: Vert output AC/DC feedback
+Pin 8: +Vcc8
+Pin 9: Pump-up out
+Pin 10: Osc stop
+Pin 11: Ground
+Pin 12: Vert output
+Pin 13: Power supply for vertical out
+
+</PRE>
+(Also see note under <A HREF="#cpLA7836">LA7836 - SK10085/A>.)
+
+<h3><A NAME="cpLA7850">LA7850 - ECG7086</A></h3>
+<PRE>
+
+TV/monitor deflection processor.
+
+Pin 1: Horiz trig in
+Pin 2: Phase adj time constant
+Pin 3: Sync pulse time constant
+Pin 4: FBP trig in
+Pin 5: Sawtooth gen cap
+Pin 6: Comp volt gen cap
+Pin 7: Afc out
+Pin 8: Horiz osc time constant
+Pin 9: Discharge res
+Pin 10: Vcc1
+Pin 11: Horiz width set
+Pin 12: Horz drive out
+Pin 13: X-ray protect in
+Pin 14: Ground
+Pin 15: Vert drive out
+Pin 16: sawtooth gen
+Pin 17: Mid point volt control in
+Pin 18: Vert osc time constant
+Pin 19: Vert trig in
+Pin 20: Vcc2
+
+</PRE>
+<h3><A NAME="cpLA7851">LA7851 - ECG 7062</A></h3>
+<PRE>
+
+Vertical Deflection Circuit/Sync/H V Osc/X-ray Prot.  Vcc = 12 V.  20 pin DIP.
+
+See <A HREF="#cpLA7850">LA7850 - ECG7086</A> for pinout (electrical specs
+may differ slightly).
+
+</PRE>
+<h3><A NAME="cpLM325">LM325</A></h3>
+<PRE>
+
+Dual Regulator, 14 pin dip.
+
+Pin 1: +Boost
+Pin 2: NC
+Pin 3: +Vin
+Pin 4: -Vin
+Pin 5: -Current Limit
+Pin 6: -Sense
+Pin 7: -Vout
+Pin 8: -Boost
+Pin 9: NC
+Pin 10: Reference
+Pin 11: GND
+Pin 12: NC
+Pin 13: +Current Limit
+Pin 14: +Sense
+
+</PRE>
+<h3><A NAME="cpLM1881">LM1881</A></h3>
+<PRE>
+
+Sync separator.
+
+Pin 1: Composite Sync (out)
+Pin 2: Composite Video (in)
+Pin 3: VSync (out)	
+Pin 4: GND		
+Pin 5: Burst/Back Porch (out)
+Pin 6: Reset
+Pin 7: Odd/Even (hi/lo) (out)
+Pin 8: Vcc
+
+</PRE>
+<p>
+<A NAME="cpmp></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>M to P</h2>
+<h3><A NAME="cpM51522A">M51522A</A></h3>
+<PRE>
+
+Dual Audio Preamplifier by Mitsubishi Electronics.
+
+Pin 1: Input 2
+Pin 2: Feedback 2
+Pin 3: Output 2
+Pin 4: Ground
+Pin 5: V+
+Pin 6: Output 1
+Pin 7: Feedback 1
+Pin 8: Input 1
+
+</PRE>
+<h3><A NAME="cpM54543L">M54543L - ECG1628</A></h3>
+<PRE>
+
+VCR loading/bi-directional motor driver.
+
+(From: Deon Maree (edm@pixie.co.za) I think the M54544L is the same as
+the M54543L)
+
+Pin 1: Vcc
+Pin 2: Driver Vcc
+Pin 3: Output 2
+Pin 4: Input 1
+Pin 5: Ground
+Pin 6: Input 2
+Pin 7: Output 1
+Pin 8: Driver Vcc
+Pin 9: Vcc
+
+</PRE>
+<h3><A NAME="cpMC34166">MC34166</A></h3>
+<PRE>
+
+Switching power regulator.
+
+Pin 1: Voltage Feedback
+Pin 2: Switch Output
+Pin 3: Gnd - Heatsink
+Pin 4: Pwr Input
+Pin 5: Compensation
+
+</PRE>
+<h3><A NAME="cpNE5044N">NE5044N</A></h3>
+<PRE>
+
+Programmable 7 channel RC encoder.
+
+Pin 1: IP1
+Pin 2: IP2
+Pin 3: IP3
+Pin 4: IP4
+Pin 5: IP5
+Pin 6: IP6
+Pin 7: IP7
+Pin 8: GND
+Pin 9: FR RC
+Pin 10: OUT RC
+Pin 11: SER OP
+Pin 12: RANGE
+Pin 13: SET RES
+Pin 14: MPX CAP
+Pin 15: VREG
+Pin 16: VCC
+
+</PRE>
+<h3><A NAME="cpPA230">PA230, PA238 - ECG847</A></h3>
+<PRE>
+
+Low level audio amp, 12V Vcc, 8 pin package (14 pin DIP outline).
+
+Pin 1: NC
+Pin 3: Vcc
+Pin 5: Compensation
+Pin 7: Output
+Pin 8: Gnd
+Pin 10: Inverting input
+Pin 12: Non inverting input
+Pin 14: NC
+
+</PRE>
+<p>
+<A NAME="cpint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>S to STK</h2>
+<h3><A NAME="cpSAA7321">SAA7321</A></h3>
+<PRE>
+
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+
+Pin 1: CDR (Right channel Damping capacitor) 
+Pin 2: DER (Right channel De-emphasis network)
+Pin 3: VRefR (Right channel reference)
+Pin 4: VssAR (Right channel analogue ground)
+Pin 5: VssA (Analogue ground)
+Pin 6: VssAL
+Pin 7: VRefL
+Pin 8: DEL
+Pin 9: CDL
+Pin 10: INTL (Left channel Integrator output)
+Pin 11: VddAL (Left channel +5V)
+
+Pin 12: OALI- (Left channel Op-amp Inverting input)
+Pin 13: OALI+ (Left channel Op-amp non-inverting input)
+Pin 14: OALO (Left channel Op-amp output)
+Pin 15: VddRef (+5V for reference)
+Pin 16: VRO (Voltage reference output)
+Pin 17: VRC (Voltage referece decoupling capacitor)
+Pin 18: Test4
+Pin 19: DAO (Serial data output (I2S) from the attenuator/clipper stage)
+Pin 20: CLO (Serial bit clock output)
+Pin 21: WSO (Word Select output)
+Pin 22: Vdd1 (+5V)
+
+Pin 23: Vdd2 (+5V)
+Pin 24: Xtal2 (Crystal oscillator connections 11.2896MHz)
+Pin 25: Xtal1
+Pin 26: Xsys (System clock output from this oscillator)
+Pin 27; Vss (ground)
+Pin 28: Vss
+Pin 29; Test1
+Pin 30: WSI (I2S Word Select Input)
+Pin 31: CLI (I2S Clock input)
+Pin 32: DAI (I2S Data Input)
+Pin 33: N/C
+
+Pin 34: DEC (Demphasis control input)
+Pin 35: Mute* (Active low mute input)
+Pin 36: Att* (When low, attenuate outputs by 12dB)
+Pin 37: Test2
+Pin 38: tes3
+Pin 39: VddA (Analogue +5V)
+Pin 40: OARO
+Pin 41: OARI+
+Pin 42: OARI-
+Pin 43: VddAR
+Pin 44: INTR
+
+Where signal names are uncommented, look for a similar name with L/R 
+swapped. It'll be the same signal in the other channel. 
+
+I2S input port is 16 bits, 44.1kHz. I2S output port is 4 times oversampled. 
+
+</PRE>
+<h3><A NAME="cpSTK054">STK054 - ECG1028</A></h3>
+<PRE>
+
+20 W Audio Amp.
+
+Pin 1 - -Vcc
+Pin 2 - Out
+Pin 3 - +Vcc
+Pin 4 - Bootstrap
+Pin 5 - NC
+Pin 6 - NC
+Pin 7 - FB
+Pin 8 - In
+Pin 9 - Gnd
+Pin 10 - NC
+
+</PRE>
+<h3><A NAME="cpSTK082">STK082</A></h3>
+
+Audio Power amp, 35 W, Vcc = +/- 30 V typical.
+
+<PRE>
+
+Pin 1: Input
+Pin 2: Gnd
+Pin 3: Neg FB
+Pin 4: Vcc-
+Pin 5: Phase
+Pin 6: Vcc-
+Pin 7: Output
+Pin 8: Vcc+
+Pin 9: N/C
+Pin 10: Vcc+
+
+</PRE>
+<h3><A NAME="cpSTK457">STK457/STK459 - ECG1330</A></h3>
+<PRE>
+
+Dual AF PO, 15 W/channel, Vcc +/- 21 V typical. 16 pin SIP-M
+
+See the section: "STK461/STK463 - ECG1331" for pinout.  
+
+</PRE>
+<h3><A NAME="cpSTK461">STK461/STK463 - ECG1331</A></h3>
+<PRE>
+
+Dual AF PO, 25 W/channel, Vcc +/- 23 V typical. 16 pin SIP-M
+
+Pin 1:  Chan 1 input
+Pin 2:  Chan 1 feedback
+Pin 3:  Gnd
+Pin 4:  Chan 1 bias
+Pin 5:  -Vcc
+Pin 6:  Chan 1 feedback *
+Pin 7:  Chan 1 output
+Pin 8:  +Vcc
+Pin 9:  +Vcc
+Pin 10: Chan 2 output *
+Pin 11: Chan 2 feedback
+Pin 12: -Vcc
+Pin 13: Chan 2 bias
+Pin 14: Gnd
+Pin 15: Chan 2 feedback
+Pin 16: Chan 2 input
+</PRE>
+<p>
+(From: Anonymous, the following has not been verified.)
+<p>
+* Pins 6 and 11 aren't feedback, they are the lower half of
+the class AB output stage.  The upper half at pins 7 and 10
+are correctly labelled.
+<p>
+Also, pins 4 and 13 might well be bias, as described, but
+the Sanyo documented configuration shows they also do have
+speaker output (AC) feeding back through a 47uF current
+limiting capacitor, then through resistors 1k to -29V and
+3.3k into pin 4 (or 13) to the base of the lower output
+stage(s), so they must also be feedback, perhaps in addition
+to bias?
+<p>
+The above is also true for STK463, and the pinout is
+identical for the STK465 module also, so I don't know why
+that one isn't listed; it's the same circuit but for higher
+wattage.
+
+<h3><A NAME="cpSTK563F">STK563F - ECG1732 - RCA #200750</A></h3>
+<PRE>
+
+TV +135 V regulator and 4 watt AF output combination in a 12 pin SIP-M case. 
+
+Pin 1:  Positive DC input
+Pin 2:  Reg drive
+Pin 3:  NC
+Pin 4:  Negative DC input
+Pin 5:  NC
+Pin 6:  Reg voltage output
+Pin 7:  Bootstrap
+Pin 8:  Bias res
+Pin 9:  AF output
+Pin 10: Bypass
+Pin 11: Gnd
+Pin 12: AF input
+
+</PRE>
+<h3><A NAME="cpSTK0050">STK0050</A></h3>
+<PRE>
+
+AF Power Amp, 50 W, Vcc = 36 V.
+
+Pin 1: Input pos(+)
+Pin 2: Vcc neg(-)
+Pin 3: Output
+Pin 4: NC
+Pin 5: NC
+Pin 6: NC
+Pin 7: NC
+Pin 8: Output
+Pin 9: Vcc pos(+)
+Pin 10: Input neg(-)
+
+</PRE>
+<h3><A NAME="cpSTK0050II">STK0050II - ECG1334</A></h3>
+<PRE>
+
+Mod AF PO, 60 W (ECG1334), Vcc = +/- 41 V typical, Rl = 8 ohms.  10 pin SIP-M.
+
+(Note: ECG1334 may not be exact mechanical or electrical match but according
+to ECG should work for applications.)
+
+Pin 1:  +Input
+Pin 2:  -Vcc
+Pin 3:  Output
+Pin 4:  Filter Cap
+Pin 5:  Phase Comp
+Pin 6:  Phase Comp
+Pin 7:  Filter Cap
+Pin 8:  Output
+Pin 9:  +Vcc
+Pin 10: -Input
+
+</PRE>
+<h3><A NAME="cpSTK0070">STK0070 - ECG1322</A></h3>
+<PRE>
+
+See the section: "STK0080 - ECG1322".  Note: power and maximum Vcc may not
+be the same as for the STK0080 or ECG1322.
+
+</PRE>
+<h3><A NAME="cpSTK0080">STK0080 - ECG1322</A></h3>
+<PRE>
+
+AF PO, 80 W (ECG1322), Vcc = +/- 46 V typical.  10 pin SIP-M.
+
+Pin 1:  Input +
+Pin 2:  Vss -
+Pin 3:  Output
+Pin 4:  NC
+Pin 5:  NC
+Pin 6:  NC
+Pin 7:  NC
+Pin 8:  Output
+Pin 9:  Vss +
+Pin 10: Input -
+
+</PRE>
+<h3><A NAME="cpSTK0070II">STK0070II - ECG1335</A></h3>
+<PRE>
+
+See the section: "STK0080II - ECG1335".  Note: power and maximum Vcc may not
+be the same as for the STK0080II or ECG1335.
+
+</PRE>
+<h3><A NAME="cpSTK0080II">STK0080II - ECG1335</A></h3>
+<PRE>
+
+AF PO, 80 W (ECG1335), Vcc = +/- 47 V typical, RL = 8 ohms.  10 pin SIP-M.
+
+Pin 1:  Input +
+Pin 2:  Vss -
+Pin 3:  Output
+Pin 4:  Filter cap
+Pin 5:  Phase comp
+Pin 6:  Phase comp
+Pin 7:  Filter cap
+Pin 8:  Output
+Pin 9:  Vss +
+Pin 10: Input -
+
+</PRE>
+<h3><A NAME="cpSTK4044V">STK4044V - ECG1882</A></h3>
+<PRE>
+
+AF PO.  100 W, Vcc, +/-51V max.  15 pin SIPP.
+
+Pin 1:  Input
+Pin 2:  NFB (whatever that is)
+Pin 3:  Substrate 
+Pin 4:  Bias
+Pin 5:  Bypass
+Pin 6:  Test Point
+Pin 7:  I Adjust
+Pin 8:  Compensation
+Pin 9:  Emitter Bypass
+Pin 10: I Adjust
+Pin 11: Compensation
+Pin 12: V(-)
+Pin 13: Output
+Pin 14: V(+)
+Pin 15: Bootstrap
+
+</PRE>
+<h3><A NAME="cpSTK4101I">STK4101II - ECG1816</A></h3>
+<PRE>
+
+Audio Power Amp, 6 W, 8 ohms, Vcc = +/- 13.2 V, 18 pin SIP.
+
+See the section: "STK4171V/STK4181V/STK4191V - ECG1317" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTK4131">STK4131</A></h3>
+<PRE>
+
+Dual AF PO, 20W/Ch, Dual Power Supply, Vcc=+/- 23V typ.  18-pin SIP.
+
+Pin 1: Input 2
+Pin 2: NFB2
+Pin 3: GND 1
+Pin 4: Feedback
+Pin 5: I Bias 1
+Pin 6: Muting
+Pin 7: Mute Adjust
+Pin 8: Mute T Cap
+Pin 9: Power GND 1
+Pin 10: Output 1
+Pin 11: (+) Vcc
+Pin 12: Bootstrap
+Pin 13: Output 2
+Pin 14: Power GND 2
+Pin 15: I Bias 2
+Pin 16: GND
+Pin 17: NFB 2
+Pin 18: Input 2.
+
+</PRE>
+<h3><A NAME="cpSTK4131II">STK4131II - ECG1817</A></h3>
+<PRE>
+
+Audio Power Amp, 20 W, 8 ohms, Vcc = +/- 22 V, 18 pin SIP.
+
+See the section: "STK4171V/STK4181V/STK4191V - ECG1317" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTK4141II">STK4141II/STK4142II - ECG1818</A></h3>
+<PRE>
+
+Audio Power Amp, 25 W, 8 ohms, Vcc = +/- 26 V, 18 pin SIP.
+
+See the section: "STK4171V/STK4181V/STK4191V - ECG1317" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTK4152II">STK4152II - ECG1819</A></h3>
+<PRE>
+
+Audio Power Amp, 30 W, 8 ohms, Vcc = +/- 27.5 V, 18 pin SIP.
+
+See the section: "STK4171V/STK4181V/STK4191V - ECG1317" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTK4161II">STK4161II - ECG1315</A></h3>
+<PRE>
+
+Audio Power Amp, 35 W, 8 ohms, Vcc = +/- 30 V, 18 pin SIP.
+
+See the section: "STK4171V/STK4181V/STK4191V - ECG1317" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTK4171II">STK4171II/STK4181II/STK4191II - ECG1316</A></h3>
+<PRE>
+
+Audio Power Amp, 50 W, 8 ohms, Vcc = +/- 35 V, 18 pin SIP.
+
+See the section: "STK4171V/STK4181V/STK4191V - ECG1317" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTK4171V">STK4171V/STK4181V/STK4191V - ECG1317</A></h3>
+<PRE>
+
+Audio Power Amp, 50 W, 8 ohms, Vcc = +/- 35.5 V, 18 pin SIP.
+
+Pin 1: Left channel input (-)
+Pin 2: Left channel input (+)
+Pin 3: Compensation
+Pin 4: Compensation
+Pin 5: Compensation
+Pin 6: Muting
+Pin 7: Compensation
+Pin 8: Compensation
+Pin 9: -Vcc
+Pin 10: Left channel Output
+Pin 11: +Vcc
+Pin 12: Bypass
+Pin 13: Right channel output
+Pin 14: -Vcc
+Pin 15: Compensation
+Pin 16: Gnd
+Pin 17: Right channel input (+)
+Pin 18: Right channel input (-)
+
+</PRE>
+<h3><A NAME="cpSTK4162II">STK4162II</A></h3>
+<PRE>
+
+Dual AF PO, 50 W/Ch, dual power supply.  Vcc = +/-52.5V max.
+
+Pin 1: Input 1
+Pin 2: NFB 1
+Pin 3: Gnd 1
+Pin 4: Feedback
+Pin 5: Input Bias 1
+Pin 6: Mute
+Pin 7: Mute Adjust
+Pin 8: Mute T Cap
+Pin 9: Power Gnd
+Pin 10: Output 1
+Pin 11: Vcc
+Pin 12: Bootstrap
+Pin 13: Output 2
+Pin 14: Power Gnd 2
+Pin 15: Input Bias 2
+Pin 16: Gnd 2
+Pin 17: NFB 2
+Pin 18: Input 2.
+
+</PRE>
+<h3><A NAME="cpSTK5633">STK5633 - ECG1742</A></h3>
+<PRE>
+
+130 volt regulator.
+
+Pin 1: DC input (case)
+Pin 2: Base
+Pin 3: Common
+Pin 4: Output
+
+</PRE>
+<h3><A NAME="cpSTK6982B">STK6982B - ECG1736</A></h3>
+<PRE>
+
+Four phase constant current step motor driver.  Vcc: 24 V, Il: 1.5 A typ. 
+18 pin SIP.
+
+Pin 1: Vcc
+Pin 2: Motor A common
+Pin 3: Diode
+Pin 4: Motor A
+Pin 5: Input A
+Pin 6: Motor A low
+Pin 7: Low Input A
+Pin 8: Re1
+Pin 9: V ref
+Pin 10: Ground
+Pin 11: V ref
+Pin 12: Re2
+Pin 13: Motor B
+Pin 14: Input B
+Pin 15: Moto B low
+Pin 16: Low B Input
+Pin 17: Motor B common
+Pin 18: Pause
+
+</PRE>
+<p>
+<A NAME="cpstr"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>STR</h2>
+<h3><A NAME="cpSTR380">STR380 - ECG1548</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 123 V, 1 A.
+
+See the section: "STR381 - ECG1546" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR382">STR382 - ECG1553</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 127 V, 1 A.
+
+See the section: "STR381 - ECG1546" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR381">STR381 - ECG1546</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 130 V, 1 A.  TO3 3 pin.
+
+Pin 1: +DC Input
+Pin 2: Output
+Pin 3: Common
+Pin 4: Base
+
+Bottom view:
+
+            Common
+            3 o   
+        4 o       o 2
+        Base    Output
+
+Case is input - probably about 160 V.
+Base is probably nearly the same as output.
+
+</PRE>
+<h3><A NAME="cpSTR11006">STR11006 - ECG7092</A></h3>
+<PRE>
+
+Pin 1: V out/sense
+Pin 2: Base drive
+Pin 3: Input
+Pin 4: Ground
+Pin 5: Current detect
+
+</PRE>
+<h3><A NAME="cpSTR30115">STR30115 - ECG1896</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 115 V, 1 A.  5 pin SIP.
+
+See the section: "STR30135 - ECG1778" for pinout.
+
+
+</PRE>
+<h3><A NAME="cpSTR30120">STR30120 - ECG1839</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 120 V, 1 A.  5 pin SIP.
+
+See the section: "STR30135 - ECG1778" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR30123">STR30123 - ECG1776</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 123 V, 1 A.  5 pin SIP.
+
+See the section: "STR30135 - ECG1778" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR30125">STR30125 - ECG1897</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 125 V, 1 A.  5 pin SIP.
+
+See the section: "STR30135 - ECG1778" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR30130">STR30130 - ECG1777</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 130 V, 1 A.  5 pin SIP.
+
+See the section: "STR30135 - ECG1778" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR30135">STR30135 - ECG1778</A></h3>
+<PRE>
+
+Hybrid TV Voltage Regulator, 135 V, 1 A.  5 pin SIP.
+
+Pin 1: Common
+Pin 2: Base
+Pin 3: +DC Input
+Pin 4: Output
+Pin 5: NC
+
+</PRE>
+
+Note: Pins 3 and 4 are the collector and emitter of the output transistor in a
+darlington configuration.  Pins 2 and 4 are the two base emitter junctions in
+of the darlington pair.
+
+<h3><A NAME="cpSTR50041A">STR50041A - ECG1894</A></h3>
+<PRE>
+
+TV Voltage regulator, 41.8 V, 1.1 A.  5 lead formed SIP.
+
+Pin 1: Vout sense
+Pin 2: Base drive
+Pin 3: Input
+Pin 4: Common
+Pin 5: Soft start
+
+</PRE>
+<h3><A NAME="cpSTR51041">STR51041 - ECG1895</A></h3>
+<PRE>
+
+TV Voltage regulator, 41.8 V, 1.1 A.  5 lead formed SIP.
+
+See the section: "STR54041 - ECG1796" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR53041">STR53041 - ECG1840</A></h3>
+<PRE>
+
+TV Voltage regulator, 41.8 V.  5 lead formed SIP.
+
+See the section: "STR54041 - ECG1796" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR53043">STR53043 - ECG1841</A></h3>
+<PRE>
+
+TV Voltage regulator, 43 V.  5 lead formed SIP.
+
+See the section: "STR54041 - ECG1796" for pinout.
+
+</PRE>
+<h3><A NAME="cpSTR54041">STR54041 - ECG1796</A></h3>
+<PRE>
+
+TV Voltage regulator, 114.5 V.  5 lead formed SIP.
+
+Pin 1: Vout sense
+Pin 2: Base drive
+Pin 3: Input
+Pin 4: Common
+Pin 5: Vout control
+
+</PRE>
+<h3><A NAME="cpSTR5412">STR5412</A></h3>
+<PRE>
+
+This is a 103 volt regulator typically used in live chassis TV SMPS.
+
+Pin 1: Collector of chopper (NPN)
+Pin 2: Base
+Pin 3: Ground
+Pin 4: Emitter
+Pin 5: B+ adjust (if required)
+
+</PRE>
+<h3><A NAME="cpSTR58041">STR58041</A></h3>
+<PRE>
+
+Hybrid voltage regulator, output 115 V.
+
+Pin 1: V out sense
+Pin 2: Base drive
+Pin 3: Input
+Pin 4: Common
+Pin 5: V out control
+
+</PRE>
+<h3><A NAME="cpSTR80145">STR80145</A></h3>
+<PRE>
+
+(From: yonymar@aol.com).
+
+The STR80145 is used in computer monitors. It is called a "Hybrid
+Auto-Switch Module-Doubler". It allows monitors to operate at 110v or 220v
+without having to use a selector switch. At 220v AC the IC allows the
+bridge rectifier to function normally and pass the rectified AC to the
+filter caps, at 110v AC the bridge rectifier voltage is sent to this IC to
+be doubled to the equivalent of the 220v operation, automatically. The
+rest of the circuit operates as if the input were 220v AC.
+
+Pin 1: Delay
+Pin 2: T1
+Pin 3: T2
+Pin 4: Gate
+Pin 5: Common 
+
+</PRE>
+<p>
+<A NAME="cpt"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>T</h2>
+<h3><A NAME="cpTA7120">TA7120</A></h3>
+<PRE>
+
+Audio Preamp.
+
+Pin 1: Preamp Res
+Pin 2: Input
+Pin 3: Feedback
+Pin 4: Gnd
+Pin 5: Bypass
+Pin 6: Output
+Pin 7: Vcc
+
+</PRE>
+<h3><A NAME="cpTA7136AP">TA7136AP - ECG1464</A></h3>
+<PRE>
+
+Audio Preamplifier IC, Vcc = +/- 15v typical, Vg - 92 dB, 7 pin SIP.
+
+Pin 1: Feedback
+Pin 2: Input
+Pin 3: Feedback
+Pin 4: (-)Vcc
+Pin 5: Bias
+Pin 6: Output
+Pin 7: (+)Vcc
+
+</PRE>
+<h3><A NAME="cpTA7203">TA7203 - ECG1154</A></h3>
+<PRE>
+
+AF Power Output, 2 Channel, 2 W/channel, 14 pin DIP-W, Vcc = 14 V typical:
+
+Pin 1: Decoupling
+Pin 2: Decoupling
+Pin 3: Ch 2 in
+Pin 4: Feedback Ch 2
+Pin 5: Phase compensation
+Pin 6: Phase compensation
+Pin 7: Ch 2 out
+Pin 8: Vcc
+Pin 8: Ch 1 out
+Pin 10: Phase compensation
+Pin 11: Phase compensation
+Pin 12: Feedback Ch 1
+Pin 13: Ch 1 in
+Pin 14: GND
+
+</PRE>
+<h3><A NAME="cpTA7204">TA7204 - ECG1153</A></h3>
+<PRE>
+
+AF Power Output, 4.2 W, 10 pin SIP HS, Vcc 12.5 V typical.
+
+Pin 1: GND
+Pin 2: AF out
+Pin 3: Vcc
+Pin 4: Bypass
+Pin 5: Feedback
+Pin 6: Feedback
+Pin 7: Bypass
+Pin 8: Feedback
+Pin 8: Input bypass
+Pin 10: AF input
+
+</PRE>
+<h3><A NAME="cpTA7222A">TA7222AP - ECG1278</A></h3>
+<PRE>
+
+AF PO 5.8 W.  10 pin SIP-HS.
+
+Pin 1: Vcc
+Pin 2: Ripple reject
+Pin 3: Muting control
+Pin 4: AF signal input
+Pin 5: FB filter
+Pin 6: Gain adjust
+Pin 7: GND 
+Pin 8: GND
+Pin 9: AF output
+Pin 10: Bootstrap
+
+</PRE>
+<h3><A NAME="cpTA7267">TA7267 - ECG7064</A></h3>
+<PRE>
+
+VCR loading/Bidirectional motor driver, 1 A. Vcc = 18 V (typical).
+
+I would expect the normal output voltage to be close to whatever you have
+for Vcc (just a guess).
+
+Pin 1: In 1
+Pin 2: In 2
+Pin 3: Out 1
+Pin 4: Ground
+Pin 5: Out 2
+Pin 6: Ve
+Pin 7: Vcc
+
+</PRE>
+<h3><A NAME="cpTA7291S">TA7291S</A></h3>
+<PRE>
+
+Bidirectional motor driver.
+
+Pin 1: In 1
+Pin 2: Vcc
+Pin 3: Out 2
+Pin 4: NC
+Pin 5: GND
+Pin 6: Vs
+Pin 7: Out 1
+Pin 8: Vref
+Pin 9: In 1
+
+Not sure if the second (or first) In1 is a typo - this is from ECG7043.
+
+</PRE>
+<h3><A NAME="cpTA7313AP">TA7313AP - ECG1465</A></h3>
+<PRE>
+
+AP PO, .5 W, 8 ohms, Vcc = 6 V (typical), 9 pin SIP.
+
+Pin 1: Hi Freq Comp
+Pin 2: Input
+Pin 3: Feedback
+Pin 4: Hi Freq Comp
+Pin 5: GND
+Pin 6: Out
+Pin 7: Vcc
+Pin 8: Bootstrap
+Pin 9: Ripple Filter
+
+</PRE>
+<h3><A NAME="cpTA7317P">TA7317P</A></h3>
+<PRE>
+
+Speaker protection IC:
+
+Pin 1: Power on-off detection/Over current detection  (typical voltage -0.6V)
+Pin 2: Direct voltage detection input (Typical voltage 0V)
+Pin 3: Gnd
+Pin 4: Gnd
+Pin 5: Substrate (Typical voltage -0.8V)
+Pin 6: Relay drive output/Typical voltage low 0.9v
+Pin 7: Gnd
+Pin 8: Muting circuit/Typical voltage 2.8v
+Pin 9: Regulator input/Typical voltage 2.8v
+
+This IC senses over current or a DC offset on the output to the speakers.
+In the event of a offset it will operate a relay to remove any connection
+between the amp and speakers so to prevent DC flowing through the speakers
+and damage them.
+
+</PRE>
+<h3><A NAME="cpTA7559P">TA7559P - ECG778A</A></h3>
+<PRE>
+
+Dual op-amp.
+
+Pin 1: Output one
+Pin 2: Invert input 1
+Pin 3: Noninvert input 1
+Pin 4: V neg.
+Pin 5: Noninvert input 2
+Pin 6: Invert input 2
+Pin 7: Output 2
+Pin 8: V pos.
+
+</PRE>
+<h3><A NAME="cpTA75902P">TA75902P - ECG987</A></h3>
+<PRE>
+
+Quad op-amp.
+
+Pin 1: Out 1
+Pin 2: -In 1
+Pin 3: +In 1
+Pin 4: +Vcc
+Pin 5: +In 2
+Pin 6: -In 2
+Pin 7: Out 2
+Pin 8: Out 3
+Pin 9: -In 3
+Pin 10: +In 3
+Pin 11: . (I assume -Vcc or Ground?)
+Pin 12: +In 4
+Pin 13: -In 4
+Pin 14: Out 4
+
+</PRE>
+<h3><A NAME="cpTA8201AK">TA8201AK - ECG1832*</A></h3>
+<PRE>
+
+* May not be identical mechanical or electrical equivalent but should work
+in majority of applications (!!).
+
+12 W, AF PO.  Vcc = 13.2 V, RL = 4 ohms.  7 pin inline.
+
+Pin 1: Input
+Pin 2: NFB
+Pin 3: Ripple rejection
+Pin 4: Gnd
+Pin 5: Out 2
+Pin 6: Vcc
+Pin 7: Out 1.
+
+</PRE>
+<h3><A NAME="cpTAA611A12">TAA611A12 - ECG1113</A></h3>
+<PRE>
+
+2.1 W Audio Amp, 15 V Vs max. Rl = 8 ohms. 14 pin DIP.
+
+Pin 1: Bootstrap
+Pin 2: NC
+Pin 3: Frequency Compensation
+Pin 4: Frequency Compensation
+Pin 5: Feedback
+Pin 6: NC
+Pin 7: Input 
+Pin 8: Ground
+Pin 9: NC
+Pin 10: Ground
+Pin 11: NC
+Pin 12: Output
+Pin 13: NC
+Pin 14: Vs
+
+</PRE>
+<h3><A NAME="cpTAA2761A">TAA2761A</A></h3>
+<PRE>
+
+Dual op amp.
+
+Pin 1:	+In A
+Pin 2:	-In A
+Pin 3:	V+
+Pin 4:	-In B
+Pin 5:	+In B
+Pin 6:	Out B
+Pin 7:	V-
+Pin 8: 	Out A
+
+</PRE>
+<h3><A NAME="cpTC9174P">TC9174P</A></h3>
+<PRE>
+
+(From: Kim (103114.1526@compuserve.com).)
+
+Interface IC for I/O Port Extension from Toshiba.
+
+It is used for extension of output of digital tuning system controller LSIs,
+TC9301AN/ 02AF/ 03AN.
+
+Maximum Ratings (Ta=25 degree C)
+Supply Voltage (Vdd) = -0.3 ~ 7.0 V
+Input Voltage (Vin) = -0.3 ~ Vdd+0.3 V
+Allowable Power Dissipation (Pd) = 600 mW
+Output Voltage (Vout) = 20 V
+
+Pin 1: GND			Pin 16: Vdd
+Pin 2: Output Port (OP)-1	Pin 15: Strobe Signal Input (STB)
+Pin 3: OP-2			Pin 14: Clock Signal Input (CK)
+Pin 4: OP-3			Pin 13: Serial Data Input (SI)
+Pin 5: OP-4			Pin 12: Serial Data Output (SO)
+Pin 6: OP-5			Pin 11: OP-10
+Pin 7: OP-6			Pin 10: OP-9
+Pin 8: OP-7			Pin 9:  OP-8
+
+</PRE>
+<h3><A NAME="cpTDA1170">TDA1170 - ECG1289</A></h3>
+<PRE>
+
+TV Vertical deflection system IC.
+
+Pin 1: Ramp Out
+Pin 2: Vcc
+Pin 3: Flyback
+
+Tab 1: Gnd
+
+Pin 4: Amp Out
+Pin 5: Vs
+Pin 6: Vreg Out
+Pin 7: Height Adj
+Pin 8: Sync in
+Pin 9: Osc.
+
+Tab 2:  Gnd
+
+Pin 10: Amp Im
+Pin 11: Comp
+Pin 12: Ramp Gen
+
+</PRE>
+<h3><A NAME="cpTDA1175P">TDA1175P</A>
+<PRE>
+
+Vertical output IC, PowerDIP16, supply voltage +35 volts max, +10 V min.
+
+Pin 1: Ramp out, 1 V
+Pin 2: Supply voltage
+Pin 3: Flyback
+Pin 4: Ground and heatsink
+Pin 5: Ground and heatsink
+Pin 6: Power amplifier output
+Pin 7: Power amp supply voltage, range -0.5 to +10 V
+Pin 8: Reg voltage, +6.7 volts
+Pin 9: Height Adjustment
+Pin 10: Sync input
+Pin 11: Oscillator
+Pin 12: Ground and heatsink
+Pin 13: Ground and heatsink
+Pin 14: Amp input, 2.27 volts
+Pin 15: Compensation
+Pin 16: Ramp generator
+
+</PRE>
+<h3><A NAME="cpTDA1541A">TDA1541A</A></h3>
+<PRE>
+
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+
+Pin 1: Latch Enable(split mode)/Word Select(multiplexed modes)
+Pin 2: Bit clock input
+Pin 3: Data input (left chanel data in split mode)
+Pin 4: Right channel data in split mode, otherwise not used.
+Pin 5: Analogue Ground
+Pin 6: Right channel audio output
+Pin 7-13: Decoupling.  Connect to ground via separate 0.1 uF cap on each pin.
+Pin 14: Digital ground
+Pin 15: -15V supply
+Pin 16,17: Oscillator capacitor (connect 470pF between these 2 pins)
+Pin 18-24: Decoupling (7 more 0.1 uF capacitors)
+Pin 25: Left channel audio output
+Pin 26: -5V supply
+Pin 27: Digital mode select input
+Pin 28: +5V
+
+Modes:
+
+Pin 27 = -5V:  Separate channel data streams on pins 3 and 4. Pin 1 = latch
+               enable
+
+Pin 27 = 0V:  Time multiplexed offset binary data on pin 3. Pin 1 = word select
+              (low = left, high = right)
+
+Pin 27 = +5V: Time multiplexed 2's complement data on pin 3. Pin 1 = word 
+              select again.
+
+</PRE>
+<h3><A NAME="cpTDA1670A">TDA1670A/TDA1675 - ECG1862</A></h3>
+<PRE>
+
+TV vertical deflection output, 35 V max Vs, 15 pin SIP-HS.
+
+Pin 1: Amp output
+Pin 2: Amp supply
+Pin 3: Osc
+Pin 4: Osc
+Pin 5: Sync in
+Pin 6: Osc
+Pin 7: Height adj
+Pin 8: Gnd
+Pin 9: Ramp generator
+Pin 10: Ramp out
+Pin 11: Amp in +
+Pin 12: Amp in -
+Pin 13: Blanking out
+Pin 14: Vs
+Pin 15: Flyback
+
+</PRE>
+<h3><A NAME="cpTDA1770A">TDA1770A</A></h3>
+<PRE>
+
+Pin 1: Blank ouput
+Pin 2: +supply
+Pin 3: Flyback
+Pin 4: NC
+Pin 5: Ground
+Pin 6: Ground
+Pin 7: Ampl out
+Pin 8: Ampl supply
+Pin 9: Osc
+Pin 10: Osc
+Pin 11: Sync input
+Pin 12: Osc
+Pin 13: NC
+Pin 14: Height adj
+Pin 15: Ground
+Pin 16: Ground
+Pin 17: Ramp generator
+Pin 18: Ramp out
+Pin 19: Ampl in+
+Pin 20: Ampl in-
+
+</PRE>
+<h3><A NAME="cpTDA1905">TDA1905 - ECG7000</A></h3>
+<PRE>
+
+AF PO, 5W, Vcc = 14 V, Rl = 4 ohms.
+
+Pin 1: Out
+Pin 2: Vcc
+Pin 3: Bootstrap
+Pin 4: Threshold
+Pin 5: Muting
+Pin 6: Invert In
+Pin 7: Svr
+Pin 8: Non-Inverting In
+Pin 9-16: Ground 
+
+</PRE>
+<h3><A NAME="cpTDA2003">TDA2003 - ECG1288</A></h3>
+<PRE>
+
+10 W AF Power Amp.  TO220 5 Pin.
+
+Pin 1: + In
+Pin 2: - In
+Pin 3: Gnd
+Pin 4: Out
+Pin 5: V+
+
+</PRE>
+<h3><A NAME="cpTDA2005">TDA2005 - ECG1396</A></h3>
+<PRE>
+
+20 Watt bridge amp for car radio, manufactured by SGS-Thomson.
+
+Pin 1:  Input 1 (+)
+Pin 2:  Input 1 (-)
+Pin 3:  Svrr
+Pin 4:  Input 2 (-)
+Pin 5:  Input 2 (+)
+Pin 6:  Ground
+Pin 7:  Bootstrap 2
+Pin 8:  Output 2
+Pin 9:  +Vs
+Pin 10: Output 1
+Pin 11: Bootstrap 1
+
+</PRE>
+<h3><A NAME="cpTDA2040">TDA2040 - ECG1376</A></h3>
+<PRE>
+
+AF PO 22 W, Vcc = 32 V, Rl = 4 ohms.
+
+Pin 1: -In
+Pin 2: +In
+Pin 3: -Vs
+Pin 4: Out
+Pin 5: +Vs
+
+Pin 3 connected to case.
+
+</PRE>
+<h3><A NAME="cpTDA2577">TDA2577 - ECG1632</A></h3>
+<PRE>
+
+Horizontal, Vertical Oscillator, Sync, Driver. Vcc1 = 12 V typical.
+
+Pin 1: Vertical Drive Out
+Pin 2: Vertical Feedback
+Pin 3: Vertical Frrequency Adj
+Pin 4: Vertical Sync Sep
+Pin 5: Video Input
+Pin 6: Horizontal Sync Sep
+Pin 7: Horizontal Sync Sep
+Pin 8: Slow Phse Det
+Pin 9: Ground
+Pin 10: Vcc
+Pin 11: Horizontal Drive Out
+Pin 12: Horizontal Flyback Input
+Pin 13: Mute Out
+Pin 14: Phase Det.
+Pin 15: Horizontal Frequency Adjust
+Pin 16: Start Circuit Stab
+Pin 17: Sandcastle Out
+Pin 18: Coincidence Det
+
+Aside from those that have obvious meanings, I do not know what the
+other signals do.
+
+</PRE>
+<h3><A NAME="cpTDA2578A">TDA2578A</A></h3>
+<PRE>
+
+Synchronisation circuit with vertical oscillator and driver stages.
+
+Pin 1: Vertical Drive output 
+Pin 2: Veritcal feedback (e.g. from sense components, bottom of yoke circuit) 
+Pin 3: Vertical oscillator timing components
+Pin 4: Vertical sync separator R/C network
+Pin 5: Video input
+Pin 6: Horizontal sync separator input
+Pin 7: Sync slicer output (connnect to 6 via RC network)
+Pin 8: Slow (horizontal) phase detector RC timing components
+Pin 9: Ground
+Pin 10: +12V
+Pin 11: Horizontal Drive output
+Pin 12: Horizontal flyback pulse input
+Pin 13: Mute and 50/60Hz indentification
+Pin 14: Phase detector 2 timing capacitor
+Pin 15: Horizontal oscillator timing components
+Pin 16: Startup current input
+Pin 17: Sandcastle pulse output
+Pin 18: Coincidence detector timing capacitor
+
+</PRE>
+<h3><A NAME="cpTDA3505">TDA3505</A></h3>
+<PRE>
+
+Chroma Control Circuit.
+
+Pin 1:  Red Signal Out
+Pin 2:  Storage Cap Cutoff Green
+Pin 3:  Green Signal Out
+Pin 4:  Storage Cap Cutoff Blue
+Pin 5:  Blue Signal Out
+Pin 6:  Vcc
+Pin 7:  Storage Cap Blue
+Pin 8:  Storage Cap Green
+Pin 9:  Storage Cap Red
+Pin 10: Sandcastle Pules In
+Pin 11: Signal Switch In
+Pin 12: B Signal In
+Pin 13: G Signal In
+Pin 14: R Signal In
+Pin 15: Y Signal In
+Pin 16: Sat Control Voltage
+Pin 17: R-Y In
+Pin 18: B-Y In
+Pin 19: Contrast Control Voltage In
+Pin 20: Brightness Control Voltage In
+Pin 21: White Point Adjust Blue
+Pin 22: White Point Adjust Green
+Pin 23: White Point Adjust Red
+Pin 24: GND
+Pin 25: Beam Current Control In
+Pin 26: Auto Cutoff Control In
+Pin 27: Storage Cap Leakage Current
+Pin 28: Storage Cap Cutoff Red
+
+</PRE>
+<h3><A NAME="cpTDA3654">TDA3654 - ECG1754</A></h3>
+<PRE>
+
+TV vertical deflection, 26 V typ.
+
+9 pin SIL (the TDA3654Q has the pins bent to a sort of 'DIL' pinout - either
+can be easily converted to the other shape).
+
+Pin 1: Vertical drive input
+Pin 2: Ground
+Pin 3: Vertical drive input (may be linked to pin 1)
+Pin 4: Ground
+Pin 5: Output
+Pin 6: Output stage power (Diode to V+, capacitor between 6 and 8)
+Pin 7: Protection (to shut down CRT if sacn fails)
+Pin 8: Flyback (capacitor to pin 6)
+Pin 9: V+ (supply voltage)
+
+</PRE>
+<h3><A NAME="cpTDA4190">TDA4190 - ECG1633</A></h3>
+<PRE>
+
+TV sound IF, tone, volume, FM detector, preamp, Po = 4 W, Rl = 16 ohms,
+Vs = 24 V typical.  20 pin DIP.
+
+Pin 1: Turn iff muting
+Pin 2: Sound IF input
+Pin 3: IF decoupling/VCR switch
+Pin 4: IF decoupling/VCR switch
+Pin 5: Gnd
+Pin 6: Gnd
+Pin 7: Detector (FM)
+Pin 8: Detector (FM)
+Pin 9: De-emphasis/Aux output
+Pin 10: VCR input/output
+Pin 11: Tone control capacitor
+Pin 12: Tone control
+Pin 13: Volume control
+Pin 14: DC VC output
+Pin 15: Gnd
+Pin 16: Gnd
+Pin 17: AF output
+Pin 18: Vcc
+Pin 19: AF PA feedback
+Pin 20: AF PA input
+
+</PRE>
+<h3><A NAME="cpTDA4440">TDA4440</A></h3>
+<PRE>
+
+Video-If-Amplifier for color and monochrome television receiver.
+Manufactured by Telefunken electronics.  Vs = 10 to 15 V.
+		
+Pin 1: Input
+Pin 2: NC
+Pin 3: Gnd
+Pin 4: Decoupling (connect to an electrolitic capacitor).
+Pin 5: To Tuner
+Pin 6: Tuner control
+Pin 7: Gating pulse
+Pin 8,9: 38.9 MHz tank
+Pin 10: NC
+Pin 11: Negative video output
+Pin 12: Positive Video output
+Pin 13: Vs
+Pin 14: NC
+Pin 15: Gnd
+Pin 16: Input
+
+</PRE>
+<h3><A NAME="cpTDA4555">TDA4555</A></h3>
+<PRE>
+
+Multistandard Color Convertor.
+
+Pin 1:  (R-Y) Out
+Pin 2:  SECAM (R-Y) De-emph
+Pin 3:  (B-Y) Out
+Pin 4:  SECAM (B-Y) Ref In
+Pin 5:  SECAM (B-Y) Ref Out
+Pin 6:  SECAM (B-Y) De-emph
+Pin 7:  SECAM (R-Y) Ref Out
+Pin 8:  SECAM (R-Y) Ref In
+Pin 9:  GND
+Pin 10: Delay Chroma Signal In
+Pin 11: DC Ref Delay Line
+Pin 12: Out Chroma S/D Line
+Pin 13: Vcc
+Pin 14: Work PT Con Chroma Amp
+Pin 15: Chroma Signal In
+Pin 16: ACC
+Pin 17: Hue Control/Service Switch
+Pin 18: Phase Control Osc
+Pin 19: Crystal for Osc
+Pin 20: NTSC ID
+Pin 21: PAL/SECAM ID
+Pin 22: SECAM ID Ref
+Pin 23: SECAM ID Sel
+Pin 24: Sandcastle In
+Pin 25: Switch Voltage In/Out NTSC 4.4
+Pin 26: Switch Voltage In/Out NTSC 3.5 
+Pin 27: Switch Voltage In/Out SECAM
+Pin 28: Switch Voltage In/Out PAL
+
+</PRE>
+<h3><A NAME="cpTDA4601">TDA4601</A></h3>
+<PRE>
+
+SMPS controller.  Vcc = 15 V typ.
+
+Pin 1: Reference
+Pin 2: Zero detection
+Pin 3: Feedback
+Pin 4: Sawtooth Generator
+Pin 5: Shutdown
+Pin 6: Gnd
+Pin 7: Sink output
+Pin 8: Source output
+Pin 9: Vcc
+
+</PRE>
+<h3><A NAME="cpTDA4605">TDA4605</A></h3>
+<PRE>
+
+SMPS controller.
+
+Pin 1: Regulation input
+Pin 2: Primary current simulation
+Pin 3: Primary voltage monitoring
+Pin 4: Gnd
+Pin 5: Output
+Pin 6: Supply voltage
+Pin 7: Soft-start
+Pin 8: Zero crossing detector
+
+</PRE>
+<h3><A NAME="cpTDA8340">TDA8340</A></h3>
+<PRE>
+
+(From: Alex Suhisky (a1ex@q-net.net)
+  and  Peter Radlberger (p.radlberger@blackbox.at).)
+
+Television IF amplifier and demodulator.
+
+Supply voltage (pin 11)                         - 12V,
+Video output voltage (peak-to-peak, pin 12)     - 2.7 V
+AFC output voltage swing (peak-to-peak, pin 5)	- 10 V
+
+Pin 1:  Balanced IF input
+Pin 2:  IF amplifier decoupling
+Pin 3:  Tuner AGC starting point adjustment
+Pin 4:  Tuner AGC output
+Pin 5:  AFC output
+Pin 6:  AFC on/off switch and sample-and-hold capacitor
+Pin 7:  Reference carrier pi/2 rad.phase shift
+Pin 8:  IF picture carrier passive regeneration
+Pin 9:  IF picture carrier passive regeneration
+Pin 10: Reference carrier pi/2 rad.phase shift
+Pin 11: Positive supply (Vcc)
+Pin 12: Video output
+Pin 13: Gnd (Vee)
+Pin 14: IF AGC capacitor and VCR switch
+Pin 15: IF amplifier decoupling
+Pin 16: Balanced IF input
+
+</PRE>
+<h3><A NAME="cpTDA9102C">TDA9102C</A></h3>
+<PRE>
+
+Pin 1: R1
+Pin 2: C2
+Pin 3: Phase comparater out
+Pin 4: Horizontal TTL in
+Pin 5: C5
+Pin 6: H power Gnd
+Pin 7: H out
+Pin 8: H playback
+Pin 9: Phase comparator out
+Pin 10: H phase adjust
+Pin 11: Substrate digital Gnd
+Pin 12: V frequency preset
+Pin 13: C13
+Pin 14: V TTL in
+Pin 15: V ramp out
+Pin 16: V amplifier adjust
+Pin 17: V linearity adjust
+Pin 18: Linear output
+Pin 19: Vertical reference
+Pin 20: Vs
+
+</PRE>
+<h3><A NAME="cpTEA2037A">TEA2037A - ECG1888</A></h3>
+<PRE>
+
+Horizontal/Vertical deflection output, Vcc = 14 V. 16 pin DIP.
+
+Pin 1: Frame osc
+Pin 2: Flyback generator
+Pin 3: Frame flyback
+Pin 4: Gnd
+Pin 5: Gnd
+Pin 6: INPUT Inverse
+Pin 7: Frame power supply
+Pin 8: Frame OUTPUT      
+Pin 9: Line Osc.
+Pin: 10: Phase Detector
+Pin: 11: Flyback
+Pin: 12: Gnd
+Pin: 13: Gnd
+Pin: 14: Output Line
+Pin: 15: Input Video
+Pin: 16: +Vcc
+
+</PRE>
+<h3><A NAME="cpTEA5500">TEA5500</A></h3>
+<PRE>
+
+Coded locking circuit for security systems.
+
+(From: Paul Grohe (grohe@galaxy.nsc.com).)
+
+Vs 7V max, Is 1.8-3.2 mA, 8 V zener across supply pins!!!
+
+Pin 1: Gnd
+Pin 2: Cosc 	Ocsillator capacior to Vp ~1nF
+Pin 3: S2	Output 2	Open collector, active low
+Pin 4: S1	Output 1	      "
+Pin 5: E10
+Pin 6: E9
+Pin 7: E8
+Pin 8: E7
+Pin 9: E6
+Pin 10: E5
+Pin 11: E4
+Pin 12: E3
+Pin 13: E2
+Pin 14: E1
+Pin 15: DATA	Data input
+Pin 16: Vp	Pos. supply
+
+Encoder: Pin 15 to Vp, Output: tie pins 3&4 together, this is your 
+output, open collector. E1-E10 set code (connect to either Vp or gnd). 
+Key V+ to transmit.
+
+Decoder, pin 15 to Vp, E1-E10 set code, pins 3&4 open collector outputs 
+active when code matches. Third unsucessfull try disables input! (three 
+strikes and your out!) 
+
+Illegal codes are E1-E10=High or E1-E9=High with E10=low.
+
+</PRE>
+<h3><A NAME="cpTL494">TL494 - ECG1729</A></h3>
+<PRE>
+
+Pulse width modulator control circuit.  Vcc = 15 V typical.  16 pin DIP.
+
+Pin 1: Non-inverted in
+Pin 2: Inverted in
+Pin 3: Feedback
+Pin 4: Dead time control
+Pin 5: CT
+Pin 6: RT
+Pin 7: Ground
+Pin 8: Collector 1
+Pin 9: Emitter 1
+Pin 10: Emitter 2
+Pin 11: Collector 2
+Pin 12: Vcc
+Pin 13: Output control
+Pin 14: Vref
+Pin 15: Inverted in
+Pin 16: Non-inverted in
+
+</PRE>
+<p>
+<A NAME="cpuz"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<h2>U to Z</h2>
+<h3><A NAME="cpUA78GU">UA78GU(1C) - ECG953</A></h3>
+<PRE>
+
+Adjustable regulator, 5 to 30 V, 1 A.
+
+               -----
+               | O | <-Common (heatsink tab)
+               -----
+               |   |
+               -----
+                ||||
+                1234
+
+Pin 1: Common
+Pin 2: Input
+Pin 3: Output
+Pin 4: Control
+
+</PRE>
+<h3><A NAME="cpUA2240CN">UA2240CN - ECG893 - SK7712</h3>
+<PRE>
+
+Programmable Timer/Counter.  Vcc = 5 V typ.
+
+Pin 1:  Fo (out)
+Pin 2:  Fo/2 (out)
+Pin 3:  Fo/4 (out)
+Pin 4:  Fo/8 (out)
+Pin 5:  Fo/16 (out)
+Pin 6:  Fo/32 (out)
+Pin 7:  Fo/64 (out)
+Pin 8:  Fo/128 (out)
+Pin 9:  Ground
+Pin 10: Reset
+Pin 11: Trigger
+Pin 12: Mod/sync
+Pin 13: Timing/rc network
+Pin 14: Time-base (out)
+Pin 15: Regulator (out)
+Pin 16: Vcc
+
+</PRE>
+<h3><A NAME="cpUC3842AN">UC3842AN</A></h3>
+<PRE>
+
+Switchmode power supply controller.  8 pin DIP.
+
+Pin 1: Comp
+Pin 2: Vfb
+Pin 3: Isen
+Pin 4: Rt/Ct
+Pin 5: Gnd
+Pin 6: Out
+Pin 7: Vcc
+Pin 8: Ref (+5)
+
+</PRE>
+<h3><A NAME="cpUDN2993LB">UDN2993LB</A></h3>
+<PRE>
+
+Pin 1: Load supply
+Pin 2: Enable(A)
+Pin 3: Phase(A)
+Pins 4-7: Gnd
+Pin 8: Out(1A)
+Pin 9: Out(2A)
+Pin 10: V(ea)
+Pin 11: V(eb)
+Pin 12: Out(2B)
+Pin 13: Out(1B)
+Pin 14-17: Gnd
+Pin 18: Phase (B)
+Pin 19: Enable (B)
+Pin 20: Logic supply
+
+</PRE>
+<h3><A NAME="cpULN2003A">ULN2003A - ECG2013</A></h3>
+<PRE>
+
+7 Input Darlington Driver 500mA
+
+Pin 1: In 1
+Pin 2: In 2
+Pin 3: In 3
+Pin 4: In 4
+Pin 5: In 5
+Pin 6: In 6
+Pin 7: In 7
+
+Pin 8: Gnd
+Pin 9: Common connection point for the cathodes of the internal free
+       wheeling diodes connected to each driver output.
+
+Pin 10: Out 7
+Pin 11: Out 6
+Pin 12: Out 5
+Pin 13: Out 4
+Pin 14: Out 3
+Pin 15: Out 2
+Pin 16: Out 1
+
+</PRE>
+<h3><A NAME="cpULN3718M">ULN3718M</A></h3>
+<PRE>
+
+Pin 1: Decoupling
+Pin 2: Power Ground
+Pin 3: Signal Ground
+Pin 4: Output
+Pin 5: Vcc
+Pin 6: N/C
+Pin 7: N/C
+Pin 8: Input
+
+</PRE>
+<h3><A NAME="cpULN3751Z">ULN3751Z</A></h3>
+<PRE>
+
+Pin 1: Non-inverting input
+Pin 2: Inverting input
+Pin 3: Substrate/-Vs
+Pin 4: Output
+Pin 5: +Vs
+
+</PRE>
+<h3><A NAME="cpuPA53C">uPA53C - ECG2084</A></h3>
+<PRE>
+
+5 Input Darlington Driver, 500mA.
+
+Pin 1:  NC
+Pin 2:  In 1
+Pin 3:  In 2
+Pin 4:  In 3
+Pin 5:  In 4
+Pin 6:  In 5
+
+Pin 7:  Gnd
+Pin 8:  NC
+
+Pin 9:  Out 5
+Pin 10: Out 4
+Pin 11: Out 3
+Pin 12: Out 2
+Pin 13: Out 1
+Pin 14: NC
+
+</PRE>
+<h3><A NAME="cpuPC177C">uPC177C</A></h3>
+<PRE>
+
+Quad Comparator.
+
+Pin 1:  Output 1
+Pin 2:  Output 2
+Pin 3:  Vcc
+Pin 4:  Neg input 2
+Pin 5:  + input 2
+Pin 6:  - input 1
+Pin 7:  + input 1
+Pin 8:  - input 3
+Pin 9:  + input 3
+Pin 10: - input 4
+Pin 11: + input 4
+Pin 12: Gnd
+Pin 14: Output 3
+Pin 13: Output 4
+
+</PRE>
+<h3><A NAME="cpuPC1238">uPC1238 - ECG1378</A></h3>
+<PRE>
+
+AF Power Out, 10W, Vcc = 12V typ.  TO220, 5 pin.
+
+Pin 1: Non-inverting input
+Pin 2: Inverting input
+Pin 3: -Vcc
+Pin 4: Output
+Pin 5: +Vcc
+
+</PRE>
+<h3><A NAME="cpX24C44">X24C44</A></h3>
+<PRE>
+
+8 pin DIP.
+
+Pin 1: Chip enable	
+Pin 2: Serial clock
+Pin 3: Data input
+Pin 4: Data output
+Pin 5: Vcc
+Pin 6: Store
+Pin 7: Recall
+Pin 8: Vss
+
+</PRE>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#cptoc">Chip Pinouts Table of Contents</A>.
+<p>
+-- end V2.23c --
+<p>
+</BODY>
+</HTML>

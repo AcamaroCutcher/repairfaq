@@ -1,0 +1,303 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvtoscope.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Turning a TV (or monitor) into an oscill..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Turning a TV (or monitor) into an oscilloscope?</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvtoscope.htm">https://www.repairfaq.org/samnew/tvfaq/tvtoscope.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Turning a TV (or monitor) into an oscill..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvbafranktv.htm">&lt;&lt;&nbsp;Building a Frankenstein T..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvdavspos.htm">Displaying a video signal..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvtoscope">Turning a TV (or monitor) into an oscilloscope?</A></h3>
+
+This question comes up so often and it does sound like a neat project to
+give a defunct TV a second life.  Don't expect to end up with a Tek 465
+on the cheap when you are done.  However, it could be a fun learning
+experience.
+<p>
+<b>CAUTION</b>: See the safety recommendations below.
+<p>
+You will be severely limited in the performance of such a scope.  TVs and
+monitors are designed to operate at a very narrow range of horizontal scan
+rates and the high voltage is usually derived from the horizontal deflection.
+So, you would need to retain the original deflection system for this purpose
+at least.
+<p>
+<ol>
+<li>You will need to disconnect the deflection yoke from the horizontal and
+ vertical deflection circuits of the TV or monitor without killing the HV.
+ (also, doing all this without killing yourself as well).  Depending on
+ the design, this may be as simple as unplugging the yoke connector.  More
+ than likely, you will need to substitute a load for the horizontal
+ deflection coil. A coil from another sacrificial similar TV or monitor
+ would probably suffice.
+<p>
+ Warning: at this point you have a really bright spot in the middle of the
+ screen which will turn to a really black spot if the brightness is not turned
+ way down really really quickly.
+<p>
+<li>For the horizontal, you need a ramped current source.  You are driving
+ a non-ideal inductor (the deflection coil) so it has both inductance and
+ resistance.  Thus the waveform is a trapezoid - a voltage ramp (for the
+ resistive part) superimposed on a voltage step (for the inductive part).
+ This should not be too difficult.  Don't expect to be able to achieve
+ really fast sweep.  Even running at normal TV rates is non-trivial.
+<p>
+<li>Similarly, for the vertical you need to drive with a voltage (your signal)
+ controlled current source. However, if you are just screwing around, then
+ the linearity etc. for the vertical may not be that important.  In this
+ case, one way is to put a current sensing resistor in series with the
+ deflection coil and use this in a power op amp type of feedback
+ arrangement.  (You could do this for (2) as well.
+<p>
+<li>There is a good chance that the original brightness control will work
+ as an intensity adjustment.  However, with some TVs and monitors, this
+ depends on receiving a valid video signal.  You may need to improvise.
+ If you do want to control the intensity from a signal source, you
+ should be able to tap into the drive signals going to the little board
+ on the neck of the CRT.
+<p>
+<li>Don't expect high bandwidth, uniform response, or any of the other
+ things you take for granted with a decent scope.  That takes work.
+ However, as a fun project, this certainly qualifies.  Interchanging
+ the functions of the horizontal and vertical deflection yoke (and
+ rotating it 90 degrees) may provide a better match of horizontal
+ and vertical bandwidth to your intended applications or experiments.
+<p>
+<li>With a color TV or monitor, these experiments could be quite interesting
+ and educational but there may be color fringing effects since you are not
+ compensating for certain aspects of dynamic convergence at all.
+<p>
+<li>SAFETY: Once you disconnect the deflection yoke from the TV or monitor's
+ circuits, move the original circuits out of the way and put a barrier
+ between between you and the rest of the TV or monitor. All you will need are
+ connections to the deflection yoke on the CRT (unless you want to do
+ intensity modulation in which case you will need to drive the video
+ output(s) to the CRT cathodes.  I would recommend against doing this
+ if your unit is one of those with a totally 'live' chassis as there would
+ be additional safety hazards and circuit complications).
+</ol>
+<p>
+(From: Chris Crochet (ccrochet@premier.net).)
+<p>
+Hehehe... Actually, I've done this one. :)
+<p>
+I've got two old IBM mainframe terminals, painted like charred metal,
+hooked up to each channel of the 'B' speaker outputs on my stereo.  It's
+strange looking and always an attention getter when I have guests.  Not
+to mention, the long-persistence phosphor they use makes interesting
+tracers :)
+<p>
+One caveat, at least on these monitors (I don't know what other monitors
+this might apply to).  When you turn them off, the circuitry shuts down
+in the following order: horizontal drive first, electron gun second, and
+vertical drive last.  Therefore, if there is no vertical deflection,
+which would be the case if the stereo is quiet, the active electron beam
+becomes perfectly stationary during the course of shutdown, thus burning
+a hole in the phosphor.  Oops :)  I found it more effective to hook the
+stereo into the HORIZONTAL drive, thus avoiding this problem.  Not quite
+like your average oscilloscope.
+<p>
+Another interesting effect -- if the electron gun is active during
+vertical blanking interval, it seems to deflect so far that it bounces
+off the SIDES of the picture tube, and sprays all over the phosphor,
+making some interesting images.
+<p>
+(From: Lance Edmonds (lanceedmonds@xtra.co.nz).
+<p>
+Some years ago ELEKTOR and Electronics Australia magazines published articles
+on a design for this.  Dick Smith Electronics in both NZ & Australia used to
+sell the kit.
+<p>
+Max Bandwidth was a startling 10 or 15Khz. Enough for elementary audio
+servicing.
+<p>
+Those magazines also published designs for delayed sweep & trigger modules as
+additions to any basic 'scope.  Plus, a storage scope design, logic analyzer
+design, and a Dual trace emulator design.
+<p>
+Enough to keep the average hobbist/experimenter happy for quite a while (g).
+<p>
+(From: Dale H. Cook (dhcook@rev.net).)
+<p>
+Every few months someone will pop up with this question. A TV would not make a
+very good scope. Bandwidth would be limited and the amount of work needed to
+build the horizontal and vertical amplifiers, sweep and triggering circuits
+and so on wouldn't be worth the effort. You'd need even more work to add
+modern features such as delayed triggering and variable hold-off. Don't even
+think about multiple channels and the advantages they offer. In a time when I
+see used Tek 465s offered for $200 it certainly doesn't pay to try to convert
+a TV. If you are just looking for a challenging electronic project I can think
+of several that have a far better chance of yielding something useful.  Now,
+if you were starting with an antique set that used an electrostatic CRT you
+might do a bit better, but a 1937 Dumont will set you back about $3,000.00 or
+so - a little too much of an investment.
+<p>
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+<p>
+I've worked on the vector monitors that were used on some of the 1970's 
+minicomputers. These are essentially X-Y displays (not raster scanned), and
+would make audio-bandwidth 'scopes if given a timebase. I would guess at a
+bandwidth of the order of 100kHz.
+<p>
+Some of them (DEC, certainly, maybe Tektronix) were electromagnetically 
+deflected like a TV. However, there are a couple of things to be aware of.
+Firstly, the output amplifier, which drives the yoke at constant current, is
+pretty complex. Secondly, the yoke is specially made - the 2 sets of coils are
+pretty similar (unlike those in a TV), and the inductance is critical.
+<p>
+So, while I'll keep these monitors running, I'd not want to have to covert a
+TV into one :-).
+<p>
+(From: David Katz (DAVEkATZ@prodigy.net).)
+<p>
+If by chance what you want is an X-Y display for audio, not a (more typical)
+X-T, it's easy.  Just put a resistor in series with each yoke (about 100 ohms,
+5 W) and drive them with a stereo amp.
+<p>
+(From: Steve Roberts (osteven@akrobiz.com).)
+<p>
+Your best hope might be to get a older generation heart monitor from a
+hospital, these have a professional X-Y display module  to begin with, and
+are surprisingly easy to hack, mine was $10 at the local surplus shop.  The
+ultra long persistence phosphor is a pain/blessing depending on what you
+are doing.
+<p>
+For a description of what one person did, see:
+<A HREF="http://www.coslink.net/personal/dhartman/oscope.htm">Dan's Home-Built
+O-Scope</A> Page.
+<p>
+(From: Alan (revidyks@rocketmail.com).)
+<p>
+Apparently it's pretty hard to produce a decent scope.
+<p>
+It is, however, pretty easy to use the CRT as something like a scope,
+which I did recently with the built-in green screen monitor of a thing
+called a Kapro 2X. It was being thrown away, so I said I'd take it and
+have a look inside before throwing it away.
+<p>
+I wondered what if it was possible to drive the CRT from a source
+other than the computer video circuitry, so I did some tests, worked
+out how and by what voltage the deflectors were driven, (about 1v, 0.3A
+measured as an AC voltage).
+<p>
+Once I'd worked out that this was about the same as the output from a
+small stereo amp, I removed the horizontal signal from the CRT and hooked
+one channel of my stereo across the horizontal deflector , left
+the vertical deflector hooked up to it's (60Hz?, 30Hz?) signal, and switched
+it on. The results look pretty good, I get a full-screen moving trace
+of the sound wave. One other thing that I did was make the beam intensity
+constant by turning a knob marked 'B-SUB' a bit, this would have flooded
+the screen with 'white' ordinarily, but was perfect for me as I could now
+remove the computer motherboard all together.
+<p>
+I also tried connecting the left and right channels across the horizontal
+and vertical deflectors respectively (first disconnecting them from their
+normal inputs), which produced some really  cool looking lissijous (sp?)
+figure type things, that change and throb with the music- each CD seemed
+to have distinctive characteristics. Maybe I'll try two different pieces
+of music across the axes, could be interesting...
+<p>
+I'd love to try throwing some different signals of different frequencies
+and shapes across the axes too, especially in combination a with musical
+one. The 'best' results so far, have been from music with a strong bass,
+simple beat (cymbals with a bass drum look great), and not too many layers
+of guitars, vocals, etc. (too many sounds and it's an uninteresting mess...)
+<p>
+If you want more information or have any advice on or experience with
+this sort of thing, mail me...
+<p>
+If you're thinking of trying any of this, remember (in case you don't know)
+that TVs/Monitors can be REALLY dangerous even when switched off and
+unplugged.  See the section: <A HREF="tvsaf.htm">SAFETY</A>.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvbafranktv.htm">&lt;&lt;Building a Frankenstein T..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvdavspos.htm">Displaying a video signal..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

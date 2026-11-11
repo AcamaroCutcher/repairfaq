@@ -1,0 +1,2092 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uMD2/
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uMD2/">https://www.repairfaq.org/sam/uMD2/</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<title>Micro Measurement Display 2 (&micro;MD2)</title>
+<center>
+<h1>Micro Measurement Display 2 (&micro;MD2)</h1>
+<h2>
+For Homodyne Interferometers using Single Frequency Lasers,<br>
+Linear and Rotary Encoders, and Ring Laser Gyros<br>
+and<br>
+Heterodyne Interferometers using Two Frequency Lasers
+<p>
+Installation and Operation Manual</h2>
+<h3>Version 1.23b (29-Apr-24)
+</h3>
+</h2>
+<h3>
+<A HREF="../copyright.htm">Copyright &copy;</A> 1994-2024
+<br>
+Sam Goldwasser and Jan Beck<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<link rel="icon" href="https://www.repairfaq.org/sam/uMD2/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/uMD2/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<p>
+<A NAME="umd2toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#umd2pre">Preface</a>
+ <ul>
+ <li><A HREF="#umd2aac">Author and Copyright</a>
+ <li><A HREF="#umd2dis">DISCLAIMER</a>
+ <li><A HREF="#umd2ack">Acknowledgment</a>
+ </ul>
+<li><A HREF="#umd2int">Introduction</a>
+<li><A HREF="#umd2spc">Specifications</a>
+<li><A HREF="#umd2cos">Computer and Operating System Requirements</a>
+<li><A HREF="#umd2mssb">Minimal System Constructed on Solderless Breadboard</a>
+<li><A HREF="#umd2suasb">Assembly using the SG-&micro;MD2 Board</a>
+<li><A HREF="#umd2wcbls">Wiring the Cables</a>
+<li><A HREF="#umd2pins">&micro;MD2 Pin Assignments</a>
+<li><A HREF="#umd2frm">The &micro;MD2 Firmware</a>
+ <ul>
+ <li><A HREF="#umd2lvsf">Latest Versions of the Firmware</a>
+ <li><A HREF="#umd2fra">Firmware Hardware Assignments and Communications Format </a>
+ <li><A HREF="#umd2ardui">Loading the Ardiuno IDE</a>
+ <li><A HREF="#umd2ucf">Uploading the &micro;MD2 Firmware</a>
+ <li><A HREF="#umd2fts">Testing the Board and Firmware</a>
+ </ul>
+<li><A HREF="#umd2irg">The &micro;MD2 GUI</a>
+ <ul>
+ <li><A HREF="#umd2lvsg">Latest Versions of the GUI</a>
+ <li><A HREF="#umd2guimw">Main Window Controls and Readouts</a>
+ <li><A HREF="#umd2guiic">Interferometer Configuration Window</a>
+ <li><A HREF="#umd2guiec">Environmental Compensation Window</a>
+ <li><A HREF="#umd2guitm">Test Mode Window</a>
+ <li><A HREF="#umd2guima">Multiple Axis Support</a>
+ </ul>
+<li><A HREF="#umd2trb">Troubleshooting</a>
+<li><A HREF="#umd2ref">References</a>
+</ul>
+<p>
+<A NAME="umd2pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="umd2aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="umd2dis">DISCLAIMER</a></h4>
+
+&micro;MD2 is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+While every effort has been made to avoid this possibility, &micro;MD2 is an
+on-going development effort.  We will not be responsible for any consequences
+of such bugs including but not limited to damage to the construction crane you
+picked up on eBay for $1.98 + shipping, financial loss from ending up in
+the Antarctic when the compass orientation provided by
+your home-built ring laser gyro was off
+by 1,536 degrees, or bruising to your pet's ego from any number
+of causes directly or indirectly related to &micro;MD2. ;-)
+
+<h4><A NAME="umd2ack">Acknowledgment</a></h4>
+
+Thanks to Jan Beck for selecting the Teensy 4.0 and writing and testing
+the initial version of the firmware and providing support for enhancements
+and bug fixes.  He was also instrumental in developing the initial
+&micro;MD1 firmware and GUI.  And for getting me interested
+in actually getting involved in that project.  If anyone had told me 
+six months ago that I'd be writing code in C, MIPS assembly language,
+and Visual Basic - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)  Jan maintains the master GUI source code
+as well as slightly different versions of both the &micro;MD1 and
+&micro;MD1 firmware and a development blog on these and other projects.
+<br>
+<p>
+<A NAME="umd2int"></A>
+<hr>
+<h3>Introduction</h3>
+
+Note: Links to Web pages external to this document will open in a <i>single</i>
+separate tab or window depending on your browser's settings.
+<p>
+&micro;MD2 is an inexpensive system for precision readout of displacement
+(change in position), angle, straightness, and more
+in metrology applications using (homodyne) interferometry
+with single frequency lasers,
+as well as devices like linear and rotary
+encoders which produce Quad-A/B signals.  There is also limited support
+for use in heterodyne interferometry using two frequency lasers.  The
+later is currently a "works in progress", so for now, 
+<A HREF="https://www.repairfaq.org/sam/umd1/umd1.htm">Micro Measurement Display 1 (&micro;MD1)</a>
+is recommended for this with some exceptions that will be noted below.
+<p>
+While targeted for
+experimenters, hobbyists, and researchers, there is no reason why
+&micro;MD2 can't also be of value in science and industry.
+The hardware platform is a readily available inexpensive
+microcontroller development board which communicates via
+USB to a Windows PC, laptop, netbook, or tablet.
+<p>
+The graphics below show a rotary optical encoder which uses a pair of LEDs and
+photodiodes physically offset by 90 degrees to generate Quad-Sin-Cos analog
+signals which are then thresholded to yield Quad-A-B digital signals.
+The specific type of sequence is called a "Gray" code (not based on color
+but attibutable to someone named Frank Gray) and has the property that any
+possible allowable change in value is a change in only a single bit.
+This eliminates the ambiguity with sensors using the normal binary order
+where two bits can change at not quite the same time.
+<p>
+<center>
+<img src="../mipm/Encoder1.gif" height=300>
+<img src="../mipm/Encoder2.gif" height=300><br>
+<font size = 5>Rotary Encoder Digital Signals as a Function of
+ Orientation</font><p>
+</center>
+<p>
+(The animated encoder graphic seems to be all over the Web.  If anyone knows
+who the original copyright holder is, I will acknowledge them.)
+<p>
+Many other types of encoders produce similar signals.  They may use
+optical, mechanical, or magnetic sensing, among others.
+<p>
+The input to &micro;MD2 are the digital signals which can have change rates
+of many 10s of MHz.  The decoding is done in hardware and it is unlikely the
+upper limit will be reached by any practical application.
+There is no support for analog inputs now and probably never will be.
+However, there are hardware quadrature interpolators available that go in-line
+with the analog signals to multiply the effective resolution by anywhere
+from 2 to 1,000 or more, so they are a possible option were higher
+resolution is required.  Those made by Renishaw are relatively
+inexpensive on eBay.  There are also ICs available that perform
+this function.
+<p>
+For use with interferometers, the only difference is that the origin of
+the analog signals are from a different type of detector:
+<p>
+<h2>
+<center>
+<img src="inter1f-uMD2.gif">
+<br>
+Typical Homodyne Interferometer Setup using &micro;MD2</h2>
+</center>
+<p>
+This also applies to devices like Ring Laser Gyros (RLGs) which have
+similar types of detection schemes.
+<p>
+For homodyne, the native resolution of single-pass interferometers
+is 1/8th wavelength,
+usually 633/8 or ~79 nm.  But depending on the optics, this may be doubled
+or quadrupled without requiring interpolation.  Specifically, the Linear
+Interferometer (LI, shown above) and Single Beam Interferometer (SBI)
+have a native resolution of ~79 nm; the Plane Mirror Interferometer (PMI) and
+High Stability Plane Mirror Interferometer (HSPMI)
+have a native resolution of ~40 nm,
+and the High Resolution Plane Mirror Interferometer (HRPMI)
+has a native resolution of ~20 nm.  It is theoretically possible to convert
+a PMI or HSPMI into an HRPMI with the addition of a cube corner but the
+alignment could be quite hairy.
+<p>
+The heterodyne setup is similar except for the use of a two frequency laser:
+<p>
+<center>
+<img src="inter2f-uMD2.gif">
+<h2>Typical Heterodyne Interferometer Setup using &micro;MD2</h2>
+</center>
+<p>
+For heterodyne, the native resolution of single-pass interferometers
+is 1/4th wavelength for &micro;MD2,
+usually 633/4 or ~158 nm.  But depending on the optics, this may be doubled
+or quadrupled without requiring interpolarion.  Specifically, the Linear
+Interferometer (LI, shown above) and Single Beam Interferometer (SBI)
+have a native resolution of ~158 nm; the Plane Mirror Interferometer (PMI) and
+High Stability Plane Mirror Interferometer (HSPMI)
+have a native resolution of ~80 nm; and the High Resolution Plane Mirror
+Interferometer (HRPMI) has a native resolution of ~40 nm.
+Eventually, interpolation may be
+implemented to increase the resolution, but that is in the future.
+Where higher resolution is required, &micro;MD1 does implement
+interpolation and has an established track record.  So &micro;MD1
+should probably be used unless high-REF (above around 5 MHz) is required.
+Eventually &micro;MD2 will replace &micro;MD1
+but for now, it is still a "works-in-progress" and the main benefit
+is that it should work with the 20 MHz REF frequency of the Zygo
+7701 and 7702 lasers.
+<p>
+However, for stationary or slowly varying displacement (order of less than one
+wavelength per second), the use of a large value for the moving average
+in the GUI should result in a similar improvement in resolution as the
+sampling can be set up to be essentially random.
+<p>
+Note that &micro;MD2 refers specifically to the combination of the
+Teensy-based hardware and firmware.  It's possible there could be
+&micro;MD3, .... &micro;MDn - or &micro;MD0 - in the future using
+the same GUI. :) &micro;MD1 is already taken for the original version
+supporting heterodyne interferometry using two frequency lasers.
+<p>
+This document provides installation and operating instructions for the
+&micro;MD2 hardware and software using the SG-&micro;MD2 PCB.
+The PCB layout includes the line receivers and associated
+components for up to 3 measurement axes, eliminating hand wiring.
+It may also have small OLED display for local monitoring of the
+encoder or interferometer counting (primarily for diagnostics).
+<p>
+It is assumed the reader is
+familiar with homodyne and/or heterodyne
+interferometry.  Linear and rotary encoders generate signals to those from
+homodyne interferometers.
+If not, back up and start with Sam's Laser FAQ: <A target="umd2" HREF=
+"../laserlia.htm#liaintmet">Interferometers for Precision Measurement in
+Metrology Applications</A>.
+<p>
+Mote: Throughout this document, "&micro;MD2 board" or simply "board" refers
+to the SG-&micro;MD2 PCB.  "&micro;MD" refers to the Windows Graphical
+User Interface (GUI), which is identical for &micro;MD1 and &micro;MD2.
+<br>
+<p>
+<A NAME="umd2spc"></A>
+<hr>
+<h3>Specifications</h3>
+
+<ul>
+<li><b>Laser/encoder compatibility:</b>
+<p>
+ <ul>
+ <li><b>Homodyne (possibly with additional electronics):</b> Melles
+  Griot / Pacific Lasertec 05-STP-901/91x, Teletrac/Axsys/General Dynamics 150,
+  Thorlabs HRS015, and various models from REO, SIOS, and others, as well
+  as home-built single frequency HeNe lasers.  Multi-longitudinal lasers
+  (not single frequency) may also be used if the Path Length Difference
+  (PLD) between the REF and MEAS beams <i>including traversals through
+  the interferometer optics</i> is less than a few cm.
+  Suitable DC power supplies will be required for the laser and/or
+  detector electronics.  The &micro;MD2
+  board is powered from USB.  While all the common metrology lasers operate
+  at 633 nm, the wavelength is a settable parameter in the software, so
+  devices with other wavelengths can be accomodated.
+  Linear and rotary encoders with digital Quad-A-B formats (or Analog
+  Quad-Sin-Cos formats if converted to digital).
+  Interpolation may be done externally.  The "wavelength" for lasers or
+  encoder rulings may be set from 1 nm to 10 mm in 0.001 nm increments
+  in the GUI.
+<p>
+ <li><b>Heterodyne:</b> HP/Agilent/Keysight 5501A/B, 5517A/B/C/D,
+  5518A, 5519A/B, Excel 1001A/B/F, Zygo 7705, and Zygo 7701/2/12/14/22/14
+  as well as clones or home-built
+  two frequency HeNe lasers with a REF/split frequency from below 1 MHz to
+  more than 20 MHz.  If the laser does not have a built-in optical receiver, a
+  10780A/B/C or Zygo 7008 or equivalent will be needed.  Suitable DC power
+  supplies will be required for the laser and/or optical receiver.  The 
+  &micro;MD2 board is powered from USB.  While all the common metrology lasers
+  operate at 633 nm, the wavelength is a settable parameter in the software, so
+  devices with other wavelengths can be accomodated.
+</ul>
+<p>
+<li><b>Signal compatibility:</b> Differential inputs including RS422 and ECL
+ or PECL, and single-ended inputs like TTL and CMOS.  Analog inputs may be
+ accepted directly under some conditions (generally if their amplitudes and
+ offsets are closely matched), but more likely will require
+ conditioning (offset/gain/threshold adjustment).
+<p>
+<li><b>Interferometer optics support:</b> Linear Interferometer (LI, 10702A),
+ Plane Mirror Interferometer (PMI, 10706A/B), Single Beam Interferometer
+ (SBI, 10705A), High Resolution Plane Mirror
+ Interferometer (HR-PMI, 10716A), Angular Interferometer (10770A),
+ Long Range Straightness Interferometer (LRSI, 10775A),
+ Short Range Straightness Interferometer (SRSI, 10774A), including
+ older versions as well Excel, Zygo, and other clone optics, and other
+ configurations like differential interferometers.  Relevant
+ measurement parameters may be set for older, non-standard, and/or
+ for home-built interferometers, and to accomodate other
+ interferometer configurations which have a different multiplier
+ coeficient with respect to displacement or angle including
+ squareness and flatness.
+<p>
+<li><b>Display:</b> Graphical User Interface (GUI) runs on Windows PC
+ (not included).  Click for a sneak peek at the <A target="umd2"
+ HREF="http://repairfaq.cis.upenn.edu/Misc/uMD2/uMD2.gif">&micro;MD2
+ Main Window</A>.  Note that there is no requirement that the GUI must
+ be used.  The raw data from the firmware can be input to another
+ application of the user's choice via the USB port as it is simply
+ a space-delimited text stream.  There is no communication in the
+ other direction (to the firmware).  Details are left as an exercise
+ for the user but the format is included later in this document. ;-)
+ The GUI is identical to the one used with &micro;MD1.
+<p>
+<li><b>Number of axes:</b> Up to three independant axes are supported by
+ the firmware.  The GUI can display their values with a "primary" axis
+ selected among them for the main readout and graphing.  The values for
+ the other axes will also be displayed (but not shown in the graph).
+ There are no current plans for anything beyond this.
+<p>
+<li><b>Measurement modes:</b> Displacement, Velocity, Angle, Straightness
+ Long, Straightness Short, and Frequency (Discrete Fourier Transform (DFT)
+ of the displacement data up to about 100 Hz).  Flatness, squareness,
+ and other measurements that can be framed in terms of the modes, above,
+ should be possible.  And Encoder Angle mode enables correct reading of
+ rotary encoders and ring laser gyros.  All 3 axes must use
+ the same parameters.
+<p>
+<li><b>Units:</b> nm, &micro;m, mm, cm, m, in, ft for displacement,
+ Straightness Long, and Straightness Short, with /s for Velocity;
+ arcsec, arcmin, degree for Angle measurements.
+<p>
+<li><b>Plotting/graphing:</b> A real-time graph with automatic
+ vertical scaling and selectable horizontal compression
+ displays the trend of the selected parameter (e.g., displacement).  The
+ DFT is able to display a rough analysis of the velocity data in
+ the frequency domain.  The plot may be turned off (freeing up
+ desktop space and reducing CPU load if desired.
+<p>
+<li><b>Environmental compensation:</b> Manual entry of temperature, pressure,
+ and humidity.  Digital sensor inputs are not supported due to limited
+ interest and too many hassles in getting them to work correctly with
+ &micro;MD1.  But there is nothing fundamental preventing sensors to
+ be added with firmware developed by the user.  And there is space on
+ the SG-&micro;MD2 to install you favoriate varieties. ;-)  However,
+ uMD Central will not provide debugging support under any foreseeable
+ circumstances up to and including the exchange of large quantities of
+ folding money or Bitcoin. ;-)
+<p>
+<li><b>Resolution:</b>
+<p>
+ <ul>
+ <li><b>Homodyne:</b> Basic resolution is 1/8, 1/16 or 1/32
+   wavelength for Displacement at 633 nm depending on the interferometer
+   optics, or 4 counts per cycle.  With a Plane Mirror Interferometer (double
+   pass), the resolution is ~40 nm.
+<p>
+ <li><b>Heterodyne:</b> Basic resolution is 1/4, 1/8 or 1/16
+   wavelength for Displacement at 633 nm depending on the interferometer
+   optics.  With a Plane Mirror Interferometer (double pass), the resolution
+   is ~80 nm.
+ </ul>
+<p>
+ An adjustable weighted average to smooth data may be applied to the readout
+ and graph.  There is no interpolation for either homodyne or heterodyne.
+ However, for stationary or slowly varying displacement (order of less than one
+ wavelength per second), the use of a large value for the moving average
+ in the GUI should result in a similar improvement in resolution as the
+ sampling can be set up to be essentially random.  To take advantage of this,
+ the "#define REF_Sync" and "#define Interpolation" must be commented out
+ in the firmware (V2.47r or above).  Without doing this, sampling syncs
+ with REF and displacement will tend to be increments of 1/2, 1/4, or 1/8
+ wavelength depending on the interferometer optics.
+<p>
+<li><b>Maximum range:</b> Displacement data is stored as 32 bit
+ signed integer where the basic increment is the resolution.
+ for a linear interferometer with a
+ basic increment of 79 nm,  +/-2 billion counts is around
+ +/-316 meters.  However, if the GUI display is reset, the range may be
+ further limited by the values sent from the firmware.
+<p>
+<li><b>Slew rate:</b> For all practical purposes, the count rate is limited
+ by the signal source and interface.  The Teensy Quad-A-B processing is
+ done in fast hardware and has an upper limit of many 10s of MHz.
+<p>
+<li><b>Data logging:</b> Capture allows displacement data to be saved to a
+ file at the sample rate.  The current default is 1,000 s/s.  (All other
+ modes are a function of this data.)  This value is in an obvious location
+ in the firmware and can be changed if desired over a relatively wide range.
+ But there could be side-effects and any request to explain
+ strange behavior if the value is changed may be ignored by Tech support
+ since they probably don't understand it either. :)
+<p>
+<li><b>Error detection:</b>
+<p>
+ <ul>
+ <li><b>Homodyne:</b> None.
+<p>
+ <li><b>Heterodyne:</b> REF dropout (REF or Head Error), beam dropout (MEAS
+  or Path Error), LOS (Loss Of Signal Error, both REF and MEAS disappear),
+  The detection duration sensitivity is about 1/300th of a second or more.
+  Also Slew (Rate+) Error (stage speed too fast in the direction that increases
+  MEAS frequency,  Slew (Rate-) Error (stage speed too fast in the direction
+  that decreases MEAS frequency.
+ </ul>
+<p>
+<li><b>Test capability:</b> Software-based displacement function
+ generator can be used to simulate the behavior with no laser or
+ interferometer or even the data acquisition hardware hooked up.
+ Includes constant, ramp, triangle, and sinusoid functions with
+ adjustable frequency/slope, amplitude, and offset.  For testing,
+ the error detection may be turned off.
+<p>
+<li><b>Hardware platform:</b> Teensy 4.0 which is based on the ARM
+ Cortex-M7 600 MHz CPU, plugged into the SG-&micro;MD2 PCB.
+ The board is powered from USB, which is also used for
+ firmware download and communications
+ with the PC-based GUI.  The Teensy 4.0 is available from many suppliers
+ for around $20.  The SG-&micro;MD2 PCB is now available as
+ a kit of SG-&micro;MD2 parts from me direct or on eBay, and
+ includes lifetime tech support. ;-)
+<p>
+<li><b>Local display:</b> Optional 0.96" 128x64 pixel OLED mounts on
+ SG-&micro;MD2.  This is only intended as a confirmation of activity
+ of the firmware and axis inputs with minimal formatting: Just the
+ firmware version, a unique sequence number, and the raw hardware
+ counts or displacement for axis 1,2,3.  It does NOT currently nor
+ likely ever will duplicate the functions of the GUI, sorry.
+ However, user enhancements to the firmware are possible and are encouraged
+ as long as we won't be involved in their debugging. ;-)
+<p>
+<li><b>Firmware development environment:</b> Arduino IDE, which is a free
+ download from www.arduino.cc.
+ The Quadencoder library may need to be downloaded separately.
+ Firmware is written in C.  But as a user, these are
+ only required to compile and upload the firmware to the SG-&micro;MD2 board.
+ Where I provide the board as part of &micro;MD2, a version of the
+ firmware will be preloaded.  But updates in case of bug fixes (Arrrrgggg!)
+ will require being able to compile and upload.  And there will probably
+ be at least every 1/2 microsecond initially.
+<p>
+<li><b>GUI development environment:</b> Microsoft Visual Studio.  The original
+ development was done under VS 2013, abut later
+ versions work.  This isn't of any consequence for the user
+ since the Windows executable is provided.  The &micro;MD2 GUI
+ may be test driven in "Test Mode" with simulated data
+ by downloading <A HREF="https://www.repairfaq.org/sam/uMD2/umd2.exe">&micro;MD2.exe</A>.
+ (However, this version is not guaranteed to be the most up-to-date.)
+<p>
+<li><b>PC requirements:</b> PC/laptop/netbook running Windows XP/Vista/7/10
+ higher with MS Net Framework 4.0 or higher for the GUI.  It's possible
+ the Arduino IDE requires Win 7 or higher, but this hasn't been tested.
+ These will run on almost any PC with a free USB port that isn't totally
+ ancient.  The firmware uploader can even be run from a USB thumb drive
+ if there isn't enough free disk space to load UECIDE.  The GUI requires
+ minimal disk space or memory.  For a full development environment using
+ Microsoft Visual Studio, 0.5 GB of free main memory (after Windows hogs
+ the rest of it) and 2 GB free disk space is recommended.  But again, as
+ a user, this is not needed.
+<p>
+<li><b>Firmware and GUI cost:</b> These will be free for hobbyist,
+ experimenter, research, and other non-commercial users.  The cost
+ for commercial users has not been determined but should be very modest
+ at most.
+<p>
+<li><b>Support:</b> Lifetime Tech support will be provided via email and
+ the &micro;MD2 Web site (this manual).  "Lifetime" is defined to be the
+ life of the user or the duration of the user's interest in precision
+ measurement.  This definition is subject to change without notice. ;-)
+ However, while the source code may be provided and bug reports are welcome,
+ we will NOT support unauthorized changes to either the firmware or GUI unless
+ they are deemed by our experts to be critical to the future of the
+ Universe! ;-)  And as multiple words of advice, all but the most trivial
+ modification of the firmware is guaranteed
+ to create multiple gray hairs regardless of your age even though
+ a number of the lines of code have comments, which may or may
+ not mean anything intelligible. :)  Furthermore, at some point I will have
+ purged my brain of detailed knowledge of the firmware's finer details
+ due to its limited memory capacity (my brain, not the Teensy), so
+ don't expect assistance in implementing anything beyond changes to
+ comments as the backups are not accessible. ;-)
+</ul>
+<p>
+Specifications are subject to change without notice. :-)
+<p>
+<A NAME="umd2cos"></A>
+<hr>
+<h3>Computer and Operating System Requirements</h3>
+
+Everything that follows assumes the use of Windows.  If you're
+really smart and run Linux instead, sorry. ;-)  (However, the GUI
+may run on Linux under something called "wine" so there may be hope.)  The
+&micro;MD2 GUI is known to work under Win XP, Vista, 7, and 10,
+and should be fine on
+Win 8 as well.  Microsoft Net Framework 4.0 or higher is required
+to run &micro;MD2.  Net 4.0 or a more recent version is probably on
+your computer already but is available free from the Microsoft Web site.
+Win 7 or higher may be required to compile and upload the firmware.
+<p>
+<A NAME="umd2mssb"></A>
+<hr>
+<h3>Minimal System Constructed on Solderless Breadboard</a></h3>
+
+Since the external interface to the Teensy is very simple, a version of
+&micro;MD2 can be put together on a solderless breadboard (or prototyping
+board).  While this may not run at the maximum speed supported
+by the Teensy, it would be a quick way of getting something working.
+Some typical basic interface circuits for the homodyne version
+are shown below:
+<p>
+<center>
+<img src="uMD2-Wiring3.gif"><br>
+<font size = 5>Minimal Parts Count Input Circuits</font>
+</center>
+<p>
+<b><font color="red">
+CAUTION: Teensy pins are NOT 5V tolerant - they will be unhappy if
+a 5 V signal is connected to them directly.  Thus any signal
+that may go higher than 3.3 V should NEVER
+be connected to them, even for an instant.  Bad things may happen.
+In the case of the Quad-Sin-Cos decoder,
+the LEDs provide enough voltage drop so the input to the Teensy
+will not be greater than 3.3 V since the outputs of the LM393 are
+open collector.  For the Quad-A-B input, the resistor voltage
+dividers reduce the output of the UA9637 under 3.3 V (exactly as on
+the SG-&micro;MD2 PCB.</b></font>
+<p>
+The LM393 is an 8 pin DIP so it, along with the Nano and other parts, will
+easily fit on the typical 250 column 2-1/4 x 3-1/4 inch
+solderless breadboard with room to
+spare.  For the Quad-Sin-Cos Decoder version, the photodiodes can be
+somewhat remote connected with twisted pairs.  The 1M ohm positive
+feedback resistor adds a small amount of hysteresis to filter
+out fuzzy noise on the signals which appears to be capable of inducing
+oscllation and totally messing up the displacement due to bogus
+excessive slew rate.  Or something. :)  For the Quad-A-B Differential version
+(RS422), the input cables can be long and also be twisted with a single
+100 ohm resistor between the two inputs for termination, but
+there needs to be a common ground connection somewhere.
+While the UA9637 is essentially a voltage comparator with built-in
+hysteresis, it CANNOT be used with photodiode inputs because its
+bias current is too high.  The difference in resistor values for
+the red and green LEDs balances their brightnesses, mostly.  Of course,
+the LEDs aren't *really* essential. ;-)
+<p>
+Tne value of 100K for the photodiode load resistors
+has been selected as suitable for the typical ~1 mW SLM laser to result
+in the signal going from near 0 to around 3 V.  It's not necessary to
+have them be adjustable since the threshold settings are adjustable.
+But you can if you wish, and of course change their value to reflect
+the real world situation of your laser power and losses in the Quad
+decoder.  If the source is differential analog (typically each 1 V p-p),
+the signals can go directly to the comparator inputs dispensing with
+the load resistors and trim-pot.
+<p>
+A photo of such a setup along with a parts list
+will be forthcoming.  The parts list references the designations
+on the schematic.
+<p>
+It is not anticipated that later versions will differ in any major way.
+This is supposed to be bare bones after all. ;-)
+<p>
+For this simple setup, a wireless breadboard with 25 columns should be
+adequate.  The Nano with soldered pins can plug in at the right side with
+the USB connector facing out, and the LM393 and associated components
+can be placed next to it.  Those connections that cannot be made with
+component leads should use pieces of #22-24 AWG solid wire.
+<p>
+The "cables" for the photodiodes can simply be twisted pairs.
+Keep them short but a foot or so should be fine.  If the source
+is something else like a commercial optical detector or signals
+from a self-contained laser/interferometer, a different type of
+termination than the load resistors may be needed.
+<p>
+For more information on the Quad decoder and interface, see
+<A target="uMD0" HREF="quadins1.htm">Construction Guidelines for Basic
+Quadrature-Sin-Cos Decoder and Quad-A-B Interface Kits</a>.  Some of it
+is redundant but there are more detailed instructions on mounting
+the optical parts and the actual circuits and wiring.  Ignore the
+specifics for &micro;MD0. ;-)
+<p>
+<A NAME="umd2suasb"></A>
+<hr>
+<h3>Assembly using the SG-&micro;MD2 Board</h3>
+
+The current PCB version is V1.00, which is shown below.  Clicking on these
+will bring up higher resolution versions in a single separate tab or window
+depending on your browser settings:
+<p>
+<center>
+<A target="uMD2" HREF="SG-uMD2-PCB-V1.0.gif"><img src="SG-uMD2-PCB-V1.0.gif"
+ height=400></a> &nbsp; &nbsp; &nbsp; &nbsp;
+<A target="uMD2" HREF="SG-uMD2-PCB-V1.22-150.gif"><img src="SG-uMD2-PCB-V1.22-150.gif" height=400></a> &nbsp; &nbsp; &nbsp; &nbsp;
+<A target="uMD2" HREF="SG-uMD2-1.0-3Axiss.jpg"><img src="SG-uMD2-1.0-3Axiss.jpg" height=400></a>
+<br>
+<h3>SG-&micro;MD2 V1.00 PCB Layout Diagram (Left), SG-&micro;MD2 V1.22 PCB Layout Diagram (Center), and Three Axis Populated V1.00 PCB
+ with OLED Display (Right)<br>
+<font size =3>(JB1 and JB2 Jumpered for Normal Operation; JB3 and JB4
+ Jumpered for OLED GND on the Left and VCC on the Right)</h3>
+</center>
+<p>
+V1.22 and V1.23 are virtually identical.  Kits are currently shipping with
+the V1.23 PCB.
+<p>
+It is not anticipated that later versions
+will differ in any major way, but there will be some changes so a different
+assembly manual will be provided for each where appropriate since some
+part numbers and locations may have changed.  These manuals include
+complete parts lists and Heathkit&trade;-style step-by-step assembly
+instructions.
+<p>
+<ul>
+<li><A target="uMD2" HREF="SG-uMD2-V1.0-am.htm">Assembly Instructions for
+ SG-&micro;MD2 Version 1.00 PCB</A>
+<li><A target="uMD2" HREF="SG-uMD2-V1.2-am.htm">Assembly Instructions for
+ SG-&micro;MD2 Version 1.22 PCB</A>
+<li><A target="uMD2" HREF="SG-uMD2-V1.3-am.htm">Assembly Instructions for
+ SG-&micro;MD2 Version 1.23 PCB</A>
+</ul>
+<p>
+<A NAME="umd2wcbls"></A>
+<hr>
+<h3>Wiring the Cables</a></h3>
+<p>
+For differential RS422-type signals, it's usually not necessary to run the
+return to the board even if there is no common ground connection between the
+board and their source.  The terminating
+resistors will provide the ground reference.  In fact, under some conditions
+where everything is tied together with a common ground, the return connections
+could add noise due to a ground loop.  The line receivers only care about
+the difference between the voltage levels for each signal
+pair as long as the absolute voltage levels are
+within their common mode and absolute voltage specifications.
+For cables of a few feet or less, it's almost certain that no
+connections are required for the Returns.  But for long runs,
+shielded cable or twisted pairs may be desirable.  This won't
+apply to most hobbyist/experimenter applications. :)  There has to be
+a common Ground somewhere though, usually via the power supply.
+<p>
+For single-ended signals like TTL, there are locations on the &micro;MD2 PCB
+for a voltage divider to set a threshold reference.  Check the schematics.
+A trace with runs from there across the board with pads near each axis
+so it's easy to wire it to the
+unused UA9637 inputs.  For TTL, the threshold should be set at around 1.4 V.
+For analog 0-1 V signals, set it at 0.5 V.  If they aren't all the same,
+some creativity will be required. :)
+<p>
+Using the 5 pole screw terminal blocks, attaching cables is a cinch.  Each
+of the pairs of outer two pins is the signal and its complement.  The
+center pin is GND.  Strip
+the wires to about 3/16" or 4 mm and insert so that no bare wire is exposed,
+tighten the screw.  If connectors are preferred, 5 pin Molex/AMP headers
+can be installed in place of the terminal blocks (not included in the kits
+but readily available).  For other connector types, adapters can be easily
+constructed.  Or 2 pin connectors can be substituted if desired.
+<p>
+<A NAME="umd2pins"></A>
+<hr>
+<h3>Arduino Pin Assignments</a></h3>
+
+There's probably little need to know this unless something goes wrong. ;-)
+<p>
+Pins are labeled on the Teensy 4.0 PCB:
+<p>
+<PRE>
+   Pin   Arduino Labeling     Homodyne        Heterodyne
+ ------------------------------------------------------------
+  U1-1         GND              GND             GND
+  U1-2         D0               1A              REF
+  U1-3         D1               1B               -
+  U1-4         D2               2A               -
+  U1-5         D3               2B               -
+  U1-6         D4                -               -
+  U1-7         D5               3A               -
+  U1-8         D6                -               -
+  U1-9         D7               3B               -
+  U1-10        D8                -               -
+  U1-11        D9                -             MEAS1
+  U1-12        D10               -             MEAS2
+  U1-13        D11               -               -
+  U1-14        D12               -               -
+
+  U1-15        D13          Stutus LED           -
+  U1-16        D14               -             MEAS3
+  U1-17        D15               -               -
+  U1-18        D16               -               -
+  U1-19        D17               -               -
+  U1-20        D18               -               -
+  U1-21        D19               -               -
+  U1-22        D20               -               -
+  U1-23        D21               -               -
+  U1-24        D22               -               -
+  U1-25        D23               -               -
+
+  U1-26        3.3V             3.3V            3.3V
+  U1-27        GND              GND             GND
+  U1-28      VIN (5V)         VIN (5V)        VIN (5V)
+</PRE>
+<p>
+<b><font color="red">
+CAUTION: Teensy pins are NOT 5V tolerant - they will be unhappy if
+a 5 V signal is connected to them directly.  Thus any signal
+that may go higher than 3.3V should NEVER
+be connected to them, even for an instant.  Bad things may happen.  3.3V
+is acceptable through a current limiting resistor (just to be doubly safe,
+for the micro that is).  Hooking raw power to what may be a logic output
+(accidentally or otherwise) is never a good thing!  P.S. "Unhappy" and
+"Bad things may happen" could mean that you'll ruin the Teensy board.
+</font></b>
+<p>
+The pin assignments for REF, MEAS1, MEAS2, and MEAS3 for heterodyne are
+preliminary and may change without any notice of any kind, even to the
+developers.
+<p>
+<A NAME="umd2frm"></A>
+<hr>
+<h3>The &micro;MD2 Firmware</h3>
+
+<h4><A NAME="umd2lvsf">Latest Versions of the Firmware</a></h4>
+
+The (non-Alpha) versions of the firmware are absolutely guaranteed to be new
+and improved in terms of features, capabilities, and performance.  This
+probably means there will be some new and improved bugs as well.  The Alpha
+versions are even more likely to have some juicy bugs.  Please contact us via
+the link at the top of this page should any dare to appear (or for any
+other legitimate reason). ;-)
+<p>
+There is separate firmware for homodyne and heterodyne and whatever version
+is pre-loaded will likely be out of data anyhow. :( :)  For this reason, and
+because it may be necessary to configure the firmware, one of the following
+should be compiled and loaded:
+<p>
+<ul>
+<li><b>Homodyne firmware:</b> <A target="uMD2"
+ HREF="uMD2_fw_v1.26.ino">&micro;MD2 Firmware Version 1.26</a> (7-Mar-2022).
+<p>
+<li><b>Latest heterodyne firmware:</b> <A target="uMD2"
+ HREF="uMD2_fw_v2.20.ino">&micro;MD2 Firmware Version 2.20</a> (16-Apr-2022).
+ Pin assignments for REF, MEAS1, MEAS2 and MEAS3 have changed and match
+ the SG-&micro;MD2 V1.2 PCB.
+<p>
+ V2.20 includes support for the optional OLED display of REF and MEAS(s).
+ The "#define OLED..." needs to be uncommented out and the OLED library
+ must be installed.
+<p>
+<li><b>Heterodyne Special REF OLED display firmware:</b> <A target="uMD2"
+ HREF="uMD2_fw_v2.47r.ino">&micro;MD2 Firmware Version 2.47r</a> Provides
+ optional display of REF frequency on OLED, either by itself in large
+ numbers or in small numbers along with the other annotations.  This can
+ be used as a stand-along frequency counter from 10 Hz to >20 MHz, which
+ is how it is set up here and should work fine for monitoring Zeeman lasers
+ with an HP 10780 optical receiver.  Use for &micro;MD2 displacement at
+ your own risk. ;-)  This is actually the pre-Alpha interpolation firmware
+ which has bugs.  Definitely avoid the temptation to enable the
+ interpolation options (which will also require a few jumpers on the
+ SG-&micro;MD2 PCB prior to PCB artwork V1.22).  I cannot
+ guarantee that the Sun will not
+ go nova at a random time under some unspecified conditions if that
+ code is run. :( :)  You were warned. ;-)
+<p>
+<li><b>Heterodyne firmware:</b> <A target="uMD2"
+ HREF="uMD2_fw_v2.09.ino">&micro;MD2 Firmware Version 2.09</a> (9-Feb-2022).
+ Original pin assignments for REF, MEAS1, MEAS2, and MEAS3.
+</ul>
+
+<h4><A NAME="umd2fra">Firmware Hardware Assignments and Communications Format</a></h4>
+
+Here are the Teensy signals for both homodyne and heterodyne:
+<p>
+<b>Homodyne V1.26:</b> This should be stable.
+<p>
+<pre>
+   Input  Timer  Arduino Pin  Teensy Pin
+ -----------------------------------------
+    1A      1        D1          3
+    1B      1        D2          4
+    2A      2        D3          5
+    2B      2        D4          6
+    3A      3        D5          7
+    3B      3        D7          9
+</pre>
+<p>
+<b>Heterodyne firmware V2.20:</b> This version frees up D13 to be the used
+for status or the heartbeat indicator, as well as shortening PCB trace
+lengths.  V2.20 and V2.09 are otherwise functionally equivalent.
+These also apply to V2.47r and other newer versions should they appear.
+<p>
+<pre>
+   Input  Timer  Arduino Pin  Teensy Pin
+ -----------------------------------------
+    REF     2        D0          2
+   MEAS1    4        D9         11
+   MEAS2    1       D10         12
+   MEAS3    3       D14         16
+</pre>
+<p>
+<b>Heterodyne firmware V2.09:</b> Original released version.  About the only
+reason to use V2.09 would if you have already wired the jumpers on the
+SG-&micro;MD2 PCB with these pin assignments.
+<p>
+<pre>
+   Input  Timer  Arduino Pin  Teensy Pin
+ -----------------------------------------
+    REF     4        D9         11
+   MEAS1    1       D10         12
+   MEAS2    2       D13         15
+   MEAS3    3       D14         16
+</pre>
+<p>
+The status LED on D13 is the heartbeat/status indicator for homodyne
+depending on firmware version.  Currently it pulses at between a
+1 and 2 Hz rate.  Since heterodyne firmware V2.09 MEAS2 uses that pin,
+it is not available.  The availability of that critical LED is the
+major reason for the firmware upgrade.  This is all fully subject
+to change without any notice. ;-)
+<p>
+Most of these details are really only relevant if there is a desire to
+modify the firmware, which is not advised since no support will be provided
+if even 1 character in a comment field is changed without prior approval
+from &micro;MD2 Central. :)  This approval process normally requires a minimum
+of 3 years, 7 months, 24 days, 11 hours, 35 minutes, and 22.37 seconds, but
+often takes a lot longer. :-)  For wiring using the firmware provided,
+only the pin assignments matter.
+<p>
+Note that if updating firmware, the GUI may also need to be updated
+and vice-versa.  However, given the stability of the GUI, this is unlikely.
+And none of the 5,263,782.5 known bugs are significant enough
+to recall the &micro;MD2 crew back from their extended vacation any time soon.
+<p>
+Here is the communications format between the firmware and GUI.  This
+information is of little relevance if using the GUI, but will be
+useful if writing your own application software or for data analysis.
+Each of the values is sent as an ASCII string representing a signed (if
+needed) decimal number separated by spaces at the sampling rate.
+The firmware maintains a FIFO buffer so that if the USB
+data is delayed for some reason, no data should be lost (hopefully):
+<p>
+The same format is used for both homodyne and Heterodyne modes but
+not all fields will be filled in or relevant for homodyne.
+<p>
+<PRE>
+ Standard (Single Axis) Data (8 values):
+
+   0: Axis 1 Count/REF Frequency Count* = REF frequency/Sample Frequency
+   1: MEAS Frequency Count 1* = MEAS 1 frequency/Sample Frequency
+   2: Displacement 1 (in 1/2, 1/4, or 1/8 wavelength)
+   3: Velocity Count 1 = (Displacement 1 - Previous Displacement 1)/Sample Frequency
+   4: Phase 1 = Signed fractional offset between Displacement increments.  The
+      typical range is -128 to +127 (8 bit 2's complement).
+
+      If Phase is not valid, then an error code is sent instead (heterodyne
+      only):
+
+        0x200 = no counter 1st REF
+        0x400 = no counter 2nd REF
+        0x800 = no counter MEAS 1
+        0x1000 = no PORTB 1st REF
+        0x2000 = no PORTB 2nd REF
+        0x4000 = no PORTB MEAS 1
+
+   5: Sequence Number (Unique serial number for each sample)
+   6: LowSpeedCode (See below)
+   7: LowSpeedData (see below)
+ 
+   The following 8 values will also be sent when Multiple Axis Mode is active:
+
+   8: Axis 2 Count/MEAS Frequency Count 2*
+   9: Displacement 2
+  10: Velocity Count 2
+  11: 0/Phase 2
+  12: Axis 3 Count/MEAS Frequency Count 3*
+  13: Displacement 3
+  14: Velocity Count 3
+  15: 0/Phase 3
+
+  LowSpeedCode (specifies contents of LowSpeedData):
+
+     0-99: GUI Data/Control:
+
+      0: No Data
+      1: Laser Power
+      2: Signal Strength
+      3: Temperature 1 (XXX.YY, &deg;C, 0 to 70.00)
+      4: Temperature 2 (XXX.YY, &deg;C, 0 to 70.00)
+      5: Pressure (XXX.YY mBar, 500.00 to 2000.00)
+      6: Humidity (XXX.Y percent, 0 to 100.0)
+
+      8: Sample Frequency (XXX.YY Hz)
+
+     10: Firmware Version (XXX.YY)
+
+     20: Homodyne Interferometer (if non-zero)
+          Low byte: # homodyne axes
+          Next byte: counts/cycle (4 for quadpulse)
+
+     (Not all of these are currently implemented.)
+
+   100-199: Diagnostics
+
+   200-255: Reserved
+</PRE>
+<p>
+* The REF and MEAS Counts are the incremental change since the last sample,
+NOT the total value.
+<p>
+<hr>
+
+<h4><A NAME="umd2ardui">Loading the Arduino IDE</a></h4>
+
+(If you purchased the from me directly, or via eBay, the latest released
+version of the firmware has been preloaded, so the following step should not
+be necessary unless a later release is available or you would like to hack
+the firmware - which is not really recommended.)
+<p>
+The Arduino IDE will work with all versions of the firmware.
+As of Spring 2021, the latest version that supports the Teensy
+is 1.8.13.  It can be downloaded free from the
+<A HREF="https://www.repairfaq.org/sam/uMD2/arduino.cc">Arduino Web Site</a> but since it isn't the latest,
+go to "Software", "Previous Release", and there will be an option for
+version 1.8.13.  Save it to your Downloads directory or any other convenient
+location.  It will probably be an executable, so just run it.
+There is no actual installation, it will just unpack
+and copy files to the selected Arduino program directory.
+(With Windows, this is typically located under "Program Files"
+or something similar but has no relation to where the actual
+sketches and contributed libraries may be located.)  It can
+be named anything but "Arduino IDE" or "Arduino V1.8.13" are suggestions.
+<p>
+Go to <A HREF="https://www.pjrc.com/teensy/td_download.html">Download
+Teensyduino....</a> and follow the instructions for your OS (assuming
+Windows).  If this is your first time using an Arduino board, it may 
+ask to install the device driver.  When it finished, start the
+Arduino IDE and go to "Tools", "Board", "Teensyduino", and select
+"Teensy 4.0".
+<p>
+If the OLED display is enabled ("#define OLED 1" is present and not
+commented out near the start of
+the firmware), an additional library will be required.
+Go to "Tools", "Manage Libraries", search for "u8x8" and install the
+library that it finds.
+<p>
+Plug the board into any available USB port.  Windows should recognize it.
+Go to "Tools", "Port", and select the correct port.  With the &micro;MD2
+firmware, it will be named something like "COM7 Serial (Teensy 4.0)".
+<p>
+Note: Plugging in a virgin :) Teensy (one probably having only the Blink
+sketch or another one that doesn't open a COM port) may result in Windows
+issuing notifications about installing a new device.  It's best to wait until
+that completes before attempting to upload a sketch.  Before then, the COM
+Port in "Tools","Port" may be something strange.  This should not be an
+issue with Teensys having &micro;MD2 firmware pre-loaded.
+<p>
+Windows seems to like to reassign Teensy COM ports for unfathomable reasons,
+so check COM port setting for uploads and the &micro;MD2 GUI.
+<br>
+<hr>
+
+<h4><A NAME="umd2ucf">Uploading the &micro;MD2 Firmware</a></h4>
+
+If you purchased the from me directly, or via eBay, the latest released
+version of the firmware has been preloaded, so the following step should not
+be necessary unless a later release is available or you would like to hack
+the firmware - which is not really recommended.
+<p>
+The firmware (via the links, above)
+is provided as a source file which probably has an extension
+of ".pde" or ".ino" (though the specific name doesn't matter - it's just a
+text file).  However, the name may NOT contain any dashes "-" due to the
+peculiar restrictions of Java or something.  Make a directory with the name of
+the firmware (without the extension) and put the firmware file there.
+For example, if the file is named umd2_FW_v123.ino, make a directory
+called umd2_fw_v123. and put umd2_FW_v123.ino in it.  Note that case matters so
+the name of the directory and name of the firmware file (without the
+extension) must match case character-by-character exactly.  Thus
+Interferometer.pde is not the same as interferometer.pde
+<p>
+In my experience so far, compiling and uploading firmware has been a bit
+fiddly for the Teensy 4.0, mostly related to the USB (COM) port assignments
+and whether or not the software or hardware reset button needs to be
+depressed.  These were never issues with the Atmega boards.
+More to come on this topice as it becomes available.
+<p>
+<ol>
+<li>Plug the board into a USB port.  I've occasionally seen problems
+ using a USB port replicator though these generally are acceptable.  But if
+ the board doesn't come up or behavior is more erratic than
+ usual, go to a direct USB port.
+<p>
+<li>Use Ctrl-O to open the firmware file.
+ Select the directory, double click on it, and then
+ open the firmware file itself.  The source code should
+ appear in the same window unless a file is already open, in which
+ case a new window will appear.
+<p>
+ (Or for testing, just go to Files->Examples->01.Basics->Blink and upload that.
+ It's easy to make change and then see immediately that thay are taking
+ effect without risking the rest of the Universe.)
+<p>
+<li>Use Ctrl-U to compile and upload the firmware to the board.  This
+ typically takes a minute or two, unlike UECIDE which may finish
+ almost before the command is issued. :( :)
+ Once complete, status lines will appear at the bottom of the
+ Arduino window, the board will be automatically reset
+ and start running the firmware.  No other status messages will appear
+ unless there are errors.
+<p>
+ Windows should recognize that the COM port dropped out momentarily and
+ reappeared.  The &micro;MD2 firmware will be spitting out sequences of numbers
+ at the sampling rate.  These may be viewed by going to:
+ Tools->Serial Monitor.  With no interferometer hardware, they will
+ be rather boring with only the sixth value incrementing sequentially
+ (Sequence Number) and the 7th and 8th values
+ cycling among some obscure numbers (Low Speed Code and Low Speed Data).
+ To Windows, the board appears as a COM port.  Thus any application
+ that processes COM port data can be used in place of the &micro;MD2 GUI,
+ should this be desired.
+<p>
+ If the firmware crashed somehow, Windows may display a
+ message saying something about the USB port not working.  But that
+ shouldn't happen with any firmware downloaded from <i>here</i>. :)
+ And on rare occasions a cosmic ray or hardware glitch may result in
+ the upload failing with a checksum or other error.  Just
+ try again.  If the selected COM port is incorrect, cancel and retry.
+<p>
+ Sometimes the Arduino IDE decides to change the COM port for no good
+ reason I can fathom.  Go to Tools->Port, and make sure it has
+ selected the COM Port with "(Teensy)" after it.
+</ol>
+<p>
+Once loaded, the firmware is retained in non-volatile memory so this only
+needs to be done at most once - or until a firmware update is available!
+<p>
+The firmware may also be compiled without uploading by using Ctrl-R.  Since
+you haven't messed with the code, it should compile without errors.
+This is slightly faster for testing and doesn't use the board at all so it
+can be off doing whatever it pleases. :)
+<p>
+Important: Terminate any instances of the &micro;MD2 GUI before uploading
+the firmware and put the board into program mode (again if necessary)
+AFTER doing this even if LED1 is flashing.
+
+<h4><A NAME="umd2fts">Testing the Board and Firmware</a></h4>
+
+With &micro;MD2 firmware loaded, the simplest way to test that the board
+is working without running the GUI is to use the "Serial Monitor" (under
+"Tools" in the Arduino IDE.) With the board reset, then open the Serial
+Monitor.  For only one axis enabled, the terminal
+window should begin spewing forth data similar
+to the following:
+
+<p>
+<pre>
+  0 0 0 0 0 18016 0 0
+  0 0 0 0 0 18017 10 124
+  0 0 0 0 0 18018 8 100000
+  0 0 0 0 0 18019 0 0
+  0 0 0 0 0 18020 0 0
+  0 0 0 0 0 18021 0 0
+  0 0 0 0 0 18022 0 0
+  0 0 0 0 0 18023 0 0
+  0 0 0 0 0 18024 0 0
+  0 0 0 0 0 18025 0 0
+  0 0 0 0 0 18026 0 0
+  0 0 0 0 0 18027 0 0
+  0 0 0 0 0 18028 0 0
+  0 0 0 0 0 18029 20 4099 
+  0 0 0 0 0 18030 0 0
+</pre>
+<p>
+If all three axes are enabled in the firmware,
+the terminal window should begin spewing forth data similar
+to the following:
+<p>
+<pre>
+  0 0 0 0 0 18016 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18017 10 124 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18018 8 100000 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18019 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18020 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18021 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18022 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18023 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18024 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18025 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18026 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18027 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18028 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18029 20 4099 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18030 0 0 0 0 0 0 0 0 0 0
+</pre>
+<p>
+If there is a display like one of these with the 6th number incrementing
+by 1, the board is probably working.
+<p>
+(Should you care, the 6th and 7th values are the "Low Speed Code" and
+"Low Speed Data", respectively.  10,124 is the firmware version 1.24;
+8,100000 is the sample rate of 1,000 x 100, and 20,4099 specifies 3 homodyne
+axes + a homodyne multiplier of 4 x 256.)  Refer back to the main &micro;MD2
+manual for more info.
+
+<h4><A NAME="umd2fcf">Frequency Counter Firmware</a></h4>
+
+If the OLED is present, V2.47r firmware and above has the option to display
+the REF frequency and can be used as a stand-alone frequency counter for this
+or any other application which can provide a signal to the REF RS422 inputs.
+It has been tested with HP 5517B/C/Ds lasers up to at least 4 MHz but should
+respond well beyond 20 Mhz.
+<p>
+For the REF frequency display, the following statements near the beginning
+of the firmware should be set as shown below:
+<p>
+<pre>
+   #define OLED 1                // Enables OLED
+// #define OLED_Displacement 1   // Disables display of displacement counts
+   #define OLED_REF 2            // Enables display of REF frequency
+</pre>
+<p>
+This will display the REF frequency in large digits on the OLED.  Other
+combinations of the #defines for these three parameters may result in
+strange behavior but feel free to fix that. ;-)
+<p>
+Only power to the SG-&micro;MD2 PCB is required for the REF frequency
+display.  Power is most conveniently provided by a USB port, USB charger cube,
+or 5 VDC power supply to +5V on the board or via the USB connector.
+(A USB backup battery pack would also work but these may shut down
+if the current is too low, as is likely here.)  If connected to a USB port,
+&micro;MD2 will still behave normally for measurements.
+<br>
+<p>
+<A NAME="umd2irg"></A>
+<hr>
+<h3>The &micro;MD2 GUI</h3>
+<h4><A NAME="umd2lvsg">Latest Version of the GUI</a></h3>
+
+The GUI has been stable for several years with &micro;MD1, with only a
+few updates mostly relating to environmental compensation.  It is compatible
+with all versions of the firmware.  The GUI for &micro;MD2 is identical.
+<p>
+<ul>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD2/uMD_GUI-v1.0.7670.24304.exe">&micro;MD
+  GUI Version 1.0.7670.24304, 12-31-2020</a>
+<p>
+ <b>Bug fixes:</b> Extended range of wavelengths from 0.001 nm to 10 mm;
+  fixed diagnostic readouts for homodyne mode, more or less.
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD2/uMD_GUI-v1.0.7283.30117.exe">&micro;MD
+ GUI Version v1.0.7283.30117 (11-Dec-2020)</a>
+<p>
+ <b>Bug fixes:</b> Forces number conversion to use USA format to prevent
+  the GUI from crashing if the PC was set up in a different country.
+  Eliminates the gross scale error in Frequency plots (but still may
+  be off by 20 percent depending on sample rate, and more if using the
+  ultra-low sample rate for hobbyist laser support).
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD2/uMD_GUI-v1.0.7227.21258.exe">&micro;MD
+ GUI Version v1.0.7227.21258 (15-Oct-2020)</a>
+<p>
+ <b>Additions:</b> Adds homodyne support for selectable number of
+  counts/cycle defined in the firmware.  Updates copyright date. ;-)
+</ul>
+<p>
+Save the &micro;MD2 GUI .exe file into any convenient directory.  (There's
+a small chance that the first time it's run, an error is produced since
+there is no configuration file associated with it.  Simply continue and the
+GUI will come up.  When it is closed using "Finish", valid settings will be
+saved so that the error should ot appear again.)
+<p>
+When started, the &micro;MD2 GUI (henceforth simply called the "GUI")
+comes up in Displacement mode with graphing enabled.  The only action
+required by the user is to select the USB COM port.  Once selected,
+the readout and graph will begin displaying the interferometer data.
+<p>
+Even if there is no encoder or interferometer hardware attached to the
+board, it is
+possible to confirm that the Teensy is talking to the GUI.  Go to "USB Port"
+and select the same COM as used to upload the firmware.  The graph should
+immediately start scrolling to the left indicating that it is accepting
+valid data, even if it is all 0s.  With homodyne, there will be no error
+detection, but the fact that it started scrolling means the communications
+link is working.
+<p>
+<b>Important:</b>
+<p>
+<ul>
+<li>DO NOT reset the board while the &micro;MD2 GUI is running.
+ The GUI will need to be aborted, the board may need to be reset again,
+ and only then can the GUI be restarted.
+<p>
+<li>The GUI can be started at any time but the firmware must
+ be running <i>before</i> the USB COM port is selected or else the Universe
+ may implode. :)  Confirmation of this issue is left as an exercise for
+ the user. ;-)  There is usually no need to restart the firmware when
+ restarting the GUI.  However, it is recommended, especially if it
+ has been running for a long time.  If the GUI behaves strangely,
+ exitting the GUI and resetting the firmware may be required.
+<p>
+ IMPORTANT: The pushbutton on the Teensy PCB is NOT for reset, it initiates
+ a load of the last compiled firmware.  Go figure. :( :)  So, the only real
+ way to reset the firmware is to unplug the USB cable.  A hard reset button
+ may be added to future versions of the SG-&micro;MD2 PCB.
+<p>
+<li>For the type fonts in the GUI to be correctly sized,
+ the display scaling may need to be set to 100% in Windows.
+ If it works OK, don't worry, be happy. :-)  But if some characters appear a
+ bit too large in Windows 10: right click on the Desktop, "Display
+ Settings", "Scale and Layout".  There is a similar option in Window 7.
+ For XP, you're on your own. :) This is not a bug in the GUI, it appears to
+ be an issue in Visual Studio.
+<p>
+<li>When installed on slow pre-Jurassic computers :), avoid running other
+ applications at the same time and disable the screen saver as well as the
+ dim or turn off screen power saving options to avoid random errors due to
+ excessive latency.
+</ul>
+<p>
+For homodyne mode with &micro;MD2, the default sample rate is
+fixed at 1,000 samples/second.  (1 ks/s/).  This can be changed
+in the firmware.  While doing so is strongly discouraged, setting
+to one of those used by &micro;MD1 (457.76, 610.35, or 732.42 s/s)
+will not cause problems and the DFT should then return reasonable
+results, hopefully.
+<p>
+The following is intended for homodyne systems; for specific aspects of
+the GUI screen displays for heterodyne systems, refer to the
+<A HREF="../uMD1/uMD1.htm">Micro Measurement Display 1 (&micro;MD1)
+Installation and Operation Manual</a>.  The actual GUi is identical.
+<p>
+The data includes counts for each axis including displacement, and velocity;
+a unique sequence number to identify samples; as well as other
+low speed data such as environmental
+sensors and diagnostics.  (More info can be found a few paragraphs above.)
+The GUI displays are updated at approximately 60 Hz.
+<p>
+All the screenshots below <i>except for ring laser gyro</i>
+use simulated data, which was more convenient for developing
+this manual!  However, it also means you can play around and recreate
+these displays before building your interferometer.
+
+<h4><A NAME="umd2guimw">Main Window Controls and Readouts</a></h4>
+
+This graphic below shows the typical GUI main window at startup.
+<p>
+<center>
+<img src="Main_Window_D0H.gif">
+<h4>&micro;MD2 Main Window in Displacement Mode with Graphing Enabled (Startup Settings)</h4>
+</center>
+<p>
+<h4>Main Window Controls</h4>
+<p>
+The first set are the selection buttons at the top of the window.  Note that
+except for USB Port, these require only a single click to activate:
+<p>
+<ul>
+<li><b>Finish</b> is the same as close or exit. :)
+<p>
+<li><b>Open Log File</b> is used to select the (optional) file for data
+ capture.  This is a text file that will accumulate raw data from the
+ USB COM Port when capture is enabled.  The button's label will change
+ to "Close Log File".
+<p>
+ The log file is closed and its name and path are saved upon exiting the GUI.
+<p>
+<li><b>Inteferometer Configuration</b> opens a window to allow
+ settings for the type of
+ interferometer, units for display, paremeters for straightness and
+ angular optics to be entered.  Although it may be possible to set
+ the interpolation checkbox, it currently will have no effect.
+<p>
+<li><b>Environmental Compensation</b> opens a window to enable
+ the temperature, pressure, and humidity to be entered manually.
+<p>
+<li><b>Test Mode</b> opens a window which
+ provides a means of exercising the GUI with a
+ software function generator, and also determines whether error detection
+ and diagnostic readouts are enabled, neither of which are valid in
+ Homodyne mode.
+<p>
+<li><b>Help</b> is a menu that may select "Information" which presently
+ tells the user to read this manual ;-) or "About" which lists the
+ GUI and firmware versions, and has links to the authors.
+<p>
+<li><b>USB Port</b> provides selection of the USB COM port for the
+ interferometer and monitor.
+<p>
+ <ul>
+ <li>The first COM port to be opened is assumed to be for the interferometer
+  board.  Make sure the selection matches the one labaled "Teensy" in the
+  Arduino IDE.
+<p>
+  With the Teensy in particular, Windows may get confused about which COM
+  Ports are available and pop up multiple ones with the same number.  In
+  that case, it's the first instance that should be valid.
+<p>
+ <li>If a second COM port is opened, the current averaged displacement values
+  will be sent to it as a line of text at a rate of once every
+  (Graph Schollrate * 16 samples).  For example, if the Scrollrate is 10, then
+  a line will be sent every 160 samples.
+  One use would be for another device to detect motion limits.
+  The format depends on the number of active axes:
+<p>
+  <ul>
+  <li><b>Single axis:</b> Displacement:*
+  <li><b>Multiple axes:</b> Displacement1: Displacement2: Displacement3:*
+  </ul>
+<p>
+  The values are signed long integers of the designated displacement(s)
+  in nanometers including averaging and axis flip.  (Same as the readouts.)
+  The "*" can be used by the parser at the receiving end to
+  detect the end of line.
+<p>
+  To indicate that the Monitor COM port is active, a "+" will appear
+  to the left of the "Graph Averaging On" label, flashing at the rate
+  of the data lines being sent.  Its color is subject to change without
+  notice. :)  Note that the graph does NOT need to be visible for the
+  data to be transmitted.
+ </ul>
+<p>
+ Note: Once a USB port has been opened, the selection
+ cannot be changed or closed.  Code to close an open USB port is purported to
+ do bad things and has been disabled.  If an incorrect USB port was selected
+ by accident, exit the GUI and restart.  Any open USB port will be closed
+ upon exiting.
+</ul>
+<p>
+<center>
+  <img src="Main_Window_D5H.gif">
+<h4>&micro;MD2 Main Window with Test Mode Function Generator Triangle Displacement Waveform</h4>
+</center>
+<p>
+These may all be accessed via Alt-first letter.
+<p>
+The next set are the buttons, checkboxes, and other widgets on the
+main window:
+<p>
+<ul>
+<li><b>Displacement</b> selects basic measurement of position or distance.
+ It is probably the mode that will be used most often.  The displacement
+ data is also what all other measurements are based on.
+<p>
+<li><b>Velocity</b> selects measurement of linear velocity defined as
+ rate of change of displacement.
+<p>
+<li><b>Angle</b> selects angle mode and assumes the use of special
+ angular interferometer optics, either commercial from HP or similar,
+ or home-built.
+<p>
+ When the "Encoder" checkbox in Interferometer Configuration is checked
+ &micro;MD2 will use the constant small angle increment WTIHOUT the Trig
+ calculation and the text will change to "Encoder Angle".
+ This is useful with rotary encoders and ring laser gyros.
+<p>
+<li><b>Straightness Long</b> selects straightness mode using long range
+ straightness optics.
+<p>
+<li><b>Straightness Short</b> selects straightness mode using short range
+ straightness optics.
+<p>
+<li><b>Flatness</b> measurements using the angular interferometer optics with
+ the 55282A Flatness Accessory Kit (10773A Flatness Mirrors and 10759A
+ Foot Spacing Kit) should be possible in &micro;MD2
+ but I have been unable to determine
+ how exactly it's supposed to work.  There is no explicit Flatness
+ button.  Flatness seems to be a linear
+ deviation based on the combination of the measured angle and foot spacing
+ dimensions (2, 4, or 6 inches).  For small deviations, it may be as
+ simple as using the Encoder Angle option with a specific Angle Reflector
+ Spacing value.  However, the result would still be in angular units.
+ Alternatively, using "Straightness Short" with a custom value for
+ "Straightness Short Coefficient" set to the
+ ratio of the foot spacing to the angle reflector spacing 
+ may be better.  For example,
+ using the 2 inch (50.8 mm) foot Spacing plate and standard 32.61 mm
+ 10771A Anguler Reflector, the Straightness Short Coefficient would
+ be set to 1.558, and 3.116 for  the 4 inch and 4.673 for the 6 inch.
+ But for maximum precision, the calculation may need to
+ be done using an external application like Excel or Matlab operating
+ on the raw data.  However, it would appear that the error for a 1 degree
+ angle (which would be HUGE) is less than 1 part in 10<sup>6</sup>.
+ If anyone understands the Flatness measurement, or
+ has used &micro;MD2 for Flatness, or doesn't agree with these
+ conclusions - or does, please contact me via email.
+<p>
+<li><b>Disable Graph</b> toggles whether to show the graph or not and will
+ change to "Enable Graph" when the graph is off.  The data for
+ the graph is still saved when disabled but certain functions like the
+ DFT (Frequency) computation are not performed.  Disabling the graph
+ both saves space on the computer screen and reduces computational load.
+<p>
+<li><b>Enable Capture</b> toggles the acquisition of raw data from the
+ USB COM port.  The log file must first be opened for this button to have
+ any effect.  Then, the label will change to "Disable Capture" and the
+ button will turn green signifying that capture is enabled and running.
+ Once the log file is open, capture may be turned on and off at will
+ with data appended to the open log file.  Prior to each segment, the
+ line "Sample Frequency = XXX.XX Hz" is stored.
+<p>
+ There are three options to select what data is saved:
+<p>
+ <ol>
+ <li>For all conditions using interferometer data EXCEPT where the Test Mode
+  function generator is set to Constant and is OFF, only
+  Displacement and Sequence Number are saved.
+<p>
+  The format is: "D: Displacement N: Sequence Number" where
+  Displacement and Sequence Number are values in decimal.  The Displacement
+  an integer multiple of wavelength times the multiplier depending on the
+  type of interferometer.  Example:
+<p>
+     D: 51643 N: 15345
+<p>
+  Assuming the use of a Plane Mirror Interferometer (10706A) with a
+  Homodyne Multiplier of 4 ("#define HomodyneMuliplier 4" in the firmware),
+  the Displacement would be 51643 * 39.56 nm or
+  approximately 2.043 mm.
+<p>
+ <li>When the Test Mode function generator is set to Constant and OFF,
+  ALL interferometer data is captured without any annotation.
+<p>
+  The format in Single Axis Mode (8 values) is: "REFFrequencyCount
+  MEASFrequencyCount Displacement VelocityCount Phase SequenceNumber
+  LowSpeedCode LowSpeedData".  Example:
+<p>
+  1534 1532 51643 2 144 15345 0 0
+<p>
+  The format in Mulitiple Axis Mode (16 Values) is: "REFFrequencyCount
+  MEAS1FrequencyCount Displacement1 Velocity1Count Phase1 SequenceNumber
+  LowSpeedCode LowSpeedData MEAS2FrequencyCount Displacement2 Velocity2Count
+  Phase2 MEAS3FrequencyCount Displacement3 Velocity3Count Phase3".
+<p>
+  With Homodyne mode, only Displacement1, Velocity1Count, SequenceNumber.
+  LowSpeedCode, and LowSpeedData are valid.  The others will probably be 0s.
+<p>
+ <li>Where the Test Mode function generator is ON and thus it is desired
+  to capture the simulated Test Mode data, Axis 1 data is stored.
+<p>
+  The format regardless of mode is: "R: REFFreqeuncyCount M: MEASFrequencyCount
+  D: Displacement V: VelocityCount P: Phase N: SequenceNumber T" where the
+  "T" signifies that this is Test Mode data.  Example:
+<p>
+  R: 0 M: D: 51643 V: 2 P: 0 N: 15345 T
+</ol>
+<p>
+ Caution: The log file can grow rapidly - especially where all the data is
+ stored - so it's probably not the sort of thing to do for hours on end
+ unless you have stock in a disk drive manufacturer! :)
+<p>
+ All these formats have a fixed number of fields that are space-delimited.
+ Thus importing the log file into programs like Excel or  Matlab should be
+ straightforward (if the size of the file doesn't break it).
+<p>
+<li><b>Averaging</b> adjust the "strength" of a moving average from 0 (no
+ averaging) to 999 (1000 samples of averaging).  It is a logarithmic
+ scale so each third of movement represents approximately a factor of 10.
+ The color also changes from black to violet to remind you that averaging
+ is taking place. :)
+<p>
+ The effects differ for homodyne and heterodyne:
+<p>
+ <ul>
+ <li><b>Homodyne:</b> Since there is no hardware or firmware interpolation,
+  averaging will only make a difference with very noisey or jittery signals.
+<p>
+ <li><b>Heterodyne:</b> With no firmware interpolation, the sampling is
+  random with respect to REF and MEAS, so averaging should have the effect
+  of increasing the effective resolution for slowly varying displacements.
+  (This applies to firmware V2.20, or V2.47r with both Interpolation and
+  REF_Sync disabled.)
+ </ul>
+<p>
+ The Averaging coeeficient is saved upon exiting the GUI.
+<p>
+<li><b>Reset Display</b> zeros the displacement and clears any errors
+ that may have occurred.
+<p>
+<li><b>Suspend</b> freezes the readout and graph and the button label
+ changes to "Resume" and its color changes to yellow.  Pressing the
+ button then restarts the readout and
+ graph at exactly the point they left off.  Thus, any change in position
+ or other parameter of the interferometer is not detected while suspended.
+<p>
+ Suspend is useful when making adjustments to the inteferometer beam path
+ and/or laser.
+<p>
+<li><b>Graph Averaging On checkbox</b> determines whether averaging is
+ also applied the graph.  Thus the graph can show raw data even if the
+ readout is averaged.  (Does not apply to Frequency mode.)
+<p>
+<li><b>Time Compression</b> applies a sub-sampling factor to change the
+ rate of the graph scrolling.  It does NOT average intermediate samples -
+ they are lost.  (Applies to all except Frequency mode.)
+<p>
+ The Time Compression factor is saved upon exiting the GUI.
+<p>
+<li><b>Displacement, Velocity, Straightness Long, and Straightness Short
+ Range</b> select the vertical axis scaling for their respective modes
+ including Auto (which is the default).
+</ul>
+<p>
+The format is slightly modified when Frequency mode is selected.  This
+graphic shows the actual DFT of the triangle waveform in the one above.
+Note that the DFT coefficients go as 1/N rather than 1/N-squared because
+it's actually using the velocity data, which is a squarewave.
+<p>
+<center>
+<img src="Main_Window_F3H.gif">
+<h4>&micro;MD2 Main Window in Frequency Mode with Graphing Enabled</h4>
+</center>
+<p>
+<ul>
+<li><b>Frequency</b> selects frequency mode which displays the frequency
+ content of the <i>velocity</i> data up to about 100 Hz on the graph.
+ (The 0 to 30 Hz range is shown.)
+ It uses a Discrete Fourier Transform algorithm operating on the
+ velocity data <i>from the graph</i>.  Thus, the Velocity button
+ is also highlighted when
+ Frequency is selected to indicate this.  The actual algorithm computes
+ the power spectral density and takes its square root.
+<p>
+ The horizontal scale is approximately accurate for real data.  The vertical
+ scale is somewhat arbitrary.  The Main Readout shows Displacement
+ data when in frequency mode.
+<p>
+ There may still an error of up to 25 percent is the actual values since they
+ depend on the sample rate being used, which varies depending on the sample
+ rate.  The uMD technical department has not gotten
+ around to provided corrected labels, can you believe that? :)
+<p>
+ Selecting Frequency sets Time Compression to 1 since the graph data is
+ used for the DFT calculation.  There will also be a delay in the Frequency
+ plot accuracy depending on the DFT Frequency Range and input
+ signal as data is accumalated.
+<p>
+<li><b>DFT Frequency Range</b> determines the span for Frequency mode.
+ (Does not apply to other modes.)
+<p>
+ The DFT Frequency Range is saved upon exiting the GUI.
+<p>
+<li><b>DFT Amplitude Range</b> selects the vertical axis scaling for
+ Frequency mode, including Auto (which is the default).
+</ul>
+
+<h4>Main Window Indicators</h4>
+
+Next are the various fields for displaying information in the Main Window:
+<p>
+<center>
+<img src="Main_Window_D9H.gif">
+<h4>&micro;MD2 Main Window Showing Most Indicator Fields</h4>
+</center>
+<p>
+<p>
+<ul>
+<li><b>Main Readout</b> always shows the value of the measurement for the
+ mode that is selected <i>except</i> when in Frequency mode, in which case
+ it shows Displacement.
+<p>
+ The units for the Main Readout, as well as for the graph vertical axis
+ (all except Frequency mode) are selected in the Interferometer
+ Configuration window.  The options are nm, &micro;m, mm, m, in, and ft for
+ all but angle, which has arcsec, arcmin, and degree.  For velocity,
+ "/s" is added.  The same units also apply to the graph
+ "Range" selection and vertical axis of the graph.
+<p>
+<li><b>WL</b> is the wavelength <i>after</i> environmental compensation
+ (if enabled).
+<p>
+ For encoder applications with environmental compensation
+ OFF and "LI / Other" selected in "Interferometer Configuration", the
+ resolution will be WL / (HomodyneMultiplier * 2).
+<p>
+<li><b>Simulated Data</b> will be present whenever the Test Mode function
+ generator is ON to remind you that it's too pretty (or ugly) to be
+ interferometer data. :)
+<p>
+<li><b>Error Detection Off</b> will be present when the Error Detection
+ checkbox is not checked in the Test Mode window.  Error detection is
+ disabled for homodyne mode anyhow.
+<p>
+<li><b>Log File</b> displays the name of the current open file for data
+ capture.  The Capture button will only have an effect if a log file
+ is open.
+</ul>
+
+<h4><A NAME="umd2guiic">Interferometer Configuration Window</a></h4>
+
+These entries provide for selection of the type of interferometer used for
+displacement/velocity measurements, the measurement units to be used
+for the Main Readout and graph, parameters for the strightness and
+angular optics, and whether to enable use sub-count interpolation.
+All interferometer configuration parameters are saved when exiting the GUI.
+<p>
+<center>
+<img src="IC_Window-2.gif">
+<h4>&micro;MD2 Interferometer Configuration Window</h4>
+</center>
+<p>
+<b>Linear coefficienets:</b>
+<p>
+These settings only affect linear measurements.
+<p>
+<ul>
+<li><b>LI / Other (1X)</b> is used for the 10702A Linear Interferometer
+ or other interferometers with a resolution of 1/2 wavelength like the
+ Single Beam Interferometer (10705A).  It will typically also be used
+ for linear and rotary encoders and other directly sources of Quadrature
+ signals which along with the "#define HomodyneMuliplier n" in the firmware
+ determine the effective resolution.
+<p>
+<li><b>PMI (2X)</b> is used for the 10706A Plane Mirror Interferometer,
+ 10706B High Stability Plane Mirror Interferometer, or other interferometer
+ with a resolution of 1/4 wavelength.
+<p>
+<li><b>HR PMI (4X)</b> is used with the 10716A High Resolution
+ Plane Mirror Interferometer or other interferometer with a resolution
+ of 1/8 wavelength.
+</ul>
+<p>
+<b>Units (as appropriate)</b>
+<p>
+<ul>
+<li><b>nm, &micro;m, mm, cm, m</b> select Metric units which apply to
+ displacement, velocity, and straightness measurements in the readouts
+ and graph.
+<p>
+<li><b>in, ft</b> select English units which apply to displacement,   
+ velocity, and straightness measurements in the readouts and graph.
+<p>
+<li><b>arcsec, arcmin, degree</b> select the units to be used for angle
+ measurements in the readouts and graph.
+</ul>
+<p>
+Known quirk: If neither the COM Port or Test Mode is active, switching
+among the Units buttons will only change the Units lable and/move the
+decimal point/precision without affecting the readings.  Just thought
+you should know. ;-)
+<p>
+<b>Parameters (as appropriate)</b>:
+<p>
+<ul>
+<li><b>Angle Reflector Spacing</b> enables the precise spacing parameter of
+ the angular optics to entered.  The default of 36.610 mm is for the 10770A
+ Angular Interferometer with 10771A Angular Reflector.    This
+ may also be set to some other value to accomodate an angle interferometer
+ with a different coefficient.  (Range 1 to 100 mm in steps of 0.001 mm.)
+<p>
+<li><b>Straightness Long Coefficient</b> enables the precise multiplier for
+ the straigntness long interferometer to be selected.  The default of 360 is
+ for the 10775A Long Range Straightness Interferometer with Cal 1.00.  This
+ may also be set to some other value to accomodate an interferometer
+ configuration with a different multiplier coefficient relative to
+ displacement.  (Range 100 to 1000 in steps of 0.01.)
+<p>
+<li><b>Straightness Short Coefficient</b> enables the precise multiplier for
+ the straigntness short interferometer to be selected.  The default of 36
+ is for the 10774A Short Range Straightness Interferometer with Cal 1.00.
+ This may also be set to some other value to accomodate an
+ interferometer confirguration with a different multiplier coefficient
+ relative to displacement.  (Range: 1 to 100 in steps of 0.001.)  May
+ also be used for Flatness.
+</ul>
+<p>
+<b>Miscellaneous</b>:
+<p>
+<ul>
+<li><b>Reverse Polarity</b> flips the sign of the checked
+ axes.  The measured direction of motion depends on the type
+ of laser (5501A/B versus 5517) and type and orientation
+ of the interferometer.  Applies to all modes and graph.  Frequency
+ will not change in the steady state, but since it uses the velocity graph
+ data, there will be a transient if the polarity of the primary axis
+ is changed on the fly.
+<p>
+<li><b>Encoder Checkbox</b> enables linear angle calculation with respect
+ to half wavelengths / Angle Reflector Spacing if checked.  Useful
+ for devices like rotary encoders and ring laser gyros.
+ The combination of the Angle Reflector Spacing and Wavelength then
+ define the encoder's resolution.  The text for angle mode will
+ change to "Encoder Angle" if the Encoder Checkbox is checked.
+ This is also equivalent to using the small angle approximation
+ for angle, but all the time. :)
+<p>
+ The graphic below shows µMD1 being used to test a home-built ring laser gyro.
+ It is being rotated by hand on a Lazy Susan turntable.  A combination
+ of Angular Reflector Spacing and the other resolution parameters can be
+ used to adjust the scale factor to read correctly.
+<p>
+<center>
+<img src="../sgrlg1ar.gif">
+<h4>Screen Shot of Sam's RLG Angle Readout using µMD1</h4>
+</center>
+<p>
+<li><b>Interpolation Checkbox</b> This has no effect in homodyne mode.
+</ul>
+
+<h4><A NAME="umd2guiec">Environmental Compensation Window</a></h4>
+
+This provides for entry of temperature, pressure, and humidity, or to
+select the use of environmental sensor data if available.  All environmental
+compensation parameters are saved when exiting the GUI.
+<p>
+<center>
+<img src="EC_Window-1.gif">
+<h4>&micro;MD2 Environmental Compensation window</h4>
+</center>
+<p>
+<ul>
+<li><b>Temperature Value</b> may be entered in degrees C, F, or K as
+ specified by the Temperature Units Select.  Any change results in
+ the compensation factor being recalculated.
+<p>
+<li><b>Temperature Units Select</b> may be used to specify degrees C, F, or K.
+ When selected, the temperature value is reset to 20, 68, or 293
+ degrees, for C, F, and K, respectively.
+<p>
+<li><b>Temperature Auto Checkbox</b> enables the use of a temperature sensor
+ if available.  If the Auto checkbox is checked but no sensor is available,
+ the value will not change. 
+<p>
+ If the Temperature Auto checkbox is checked, nothing should change since
+ the homodyne firmware doesn't send any sensor data.
+<p>
+ Test Mode sends 34 &deg;C.
+<p>
+<li><b>Pressure Value</b> may be entered in mm/Hg or mBar (hPa) as
+ specified by the Pressure Units Select.  Any change results in
+ the compensation factor being recalculated.
+<p>
+<li><b>Pressure Units Select</b> may be used to specify mm/Hg or mBar.  When
+ selected, the pressure value is reset to 760 or 1,000 for mm/Hg and mBar,
+ respectively.
+<p>
+<li><b>Pressure Auto Checkbox</b> enables the use of a pressure sensor
+ if available.  If the Auto checkbox is checked but no sensor is available,
+ the value will not change. 
+<p>
+<p>
+ If the Pressure Auto checkbox is checked, nothing should change since
+ the homodyne firmware doesn't send any sensor data.
+<p>
+ Test Mode sends 567 mm/Hg.
+<p>
+<li><b>Humidity Value</b> may be entered in increments of 1%.  Any change
+ results in the compensation factor being recalculated.
+<p>
+<li><b>Humidity Units Select</b> Only relative humidity is supported.
+ Sorry, live with it. :)  When selected, the humidity value reverts back
+ to 50 percent.
+<p>
+<li><b>Humidity Auto Checkbox</b> enables the use of a humidity sensor
+ if available.  If the Auto checkbox is checked but no sensor is available,
+ the value will not change.
+<p>
+<p>
+ If the Humidity Auto checkbox is checked, nothing should change since
+ the homodyne firmware doesn't send any sensor data.
+<p>
+ Test Mode sends 89%.
+<p>
+<li><b>Wavelength Correction Buttons:</b> turn Environmental Correction on
+  and off.  Changing their state also resets the display.  The default is ON
+  (using 20 &deg;C, 760 mm/Hg, and 50% RH).
+<p>    
+<li><b>Vacuum Wavelength</b> is the nominal wavelength which may be found
+ in the spec sheet for the specific laser.  For reference, the default value
+ is 632.991372 nm (should it get changed accidentally or otherwise).
+<p>
+ For use with encoders, it can be set to almost anything.
+<p>
+<li><b>Wavelength Correction On and Off</b> determine if environmental
+ compensation is enabled.  The corrected wavelength will be displayed
+ as WL in the Main Window.
+<p>
+ For use with encoders, it should be set to Off.
+</ul>
+<p>
+Note 1: With the current GUI, the Factors for Temperature, Pressure, and
+Humidity will change based on the entered values
+However, their exact value is not guaranteed to
+be meningful and should only be considered for trends.  This was supposed
+to be fixed when the environmental calculations were corrected using the
+NIST formulas, but the staff assigned to do the work took a couple decades
+off, sorry.
+<p>
+Note 2: With Environmental Compensation turned OFF, the vacuum wavelength
+is used in calculations.  Therefore, Environmental Compensation should
+be turned ON for laser interferometers even if using standard values.
+
+<h4><A NAME="umd2guitm">Test Mode Window</a></h4>
+
+The primary use of Test Mode is to exercise the GUI without the need for
+a laser or actual interferometer hardware. :)  The only other user function
+that is useful would to disable error detection suring setup and alignment
+of the laser and optics.
+<p>
+<center>
+<img src="TM_Window-2.gif">
+<h4>&micro;MD2 Test Mode Window</h4>
+</center>
+<p>
+<ul>
+<li><b>Simulated Data On/Off</b> controls the software function generator.
+ When enabled, its data overrides the data from the USB port.  The waveform
+ is not affected by the Interferometer Configuration.
+<p>
+<li><b>Waveform - Constant, Ramp, Triangle, Sine</b> select the function.
+<p>
+ The Waveform is saved upon exiting the GUI.
+<p>
+<li><b>Frequency</b> selects the function generator frequency with range
+ from 0.1 to 1 kHz.  The slider increment is 1 percent of the selected range.
+ The entered frequency for the triangle and sine waveforms roughly
+ corresponds to real-time but this is not guaranteed.
+<p>
+<li><b>Amplitude</b> selects the function generator amplitude with ranges
+ from 0.01 to 1.  The slider increment is 1 percent of the selected range.
+<p>
+<li><b>Offset</b> selects the function generator offset with a range
+ of +/-1 to +/-100.  The slider increment is +/-1 percent of the selected
+ range.
+<p>
+<li><b>REF</b> is used as the REF frequency for the function generator
+ to compute MEAS and DIFF, irrelevant for Homodyne mode.
+<p>
+ The REF value is saved upon exiting the GUI.
+<p>
+<li><B>Units</b> apply to amplitude with the same options as for the
+ interferometer - nm, &micro;m, mm, cm, m, in, ft.  These apply <i>only</i>
+ to the output of the function generator and do NOT affect the Main Window
+ units settings.  There are no angle units.
+<p>
+ Note that while Test Mode will operate in Angle mode, the values it sends
+ are always linear displacements.  Thus, what this really means may be too
+ difficult for the average human brain to evaluate and may result in an
+ overload and an unintentional brain reboot endless loop. :)
+<p>
+ The Units selection is saved upon exiting the GUI.
+<p>
+<li><b>Multiple Axis Mode Checkbox</b> enables the function generator to
+ send data to any combination of up to 3 axes.  When checked, axis select
+ checkboxes appear below it to enable the selected axes.  More on multiple
+ axis options below.
+<p>
+<li><b>Axis 1, Axis 2, and Axis 3 checkboxes</b> select the desired
+ axes for use with the Test Mode function generator.
+<p>
+<li><b>Diagnostic Readout Check box</b> enables the display to show
+ a variety of criptic values including the sample
+ rate, percent of cycles (or something) spent in the firmware processing
+ and percent spent in communications.  Only the sample display is
+ currently meaningful, always set at 1,000 s/s.
+<p>
+ Under some conditions, this may cause the current values of displacement
+ from the SG-&micro;MD2 firmware to be displayed instead of resetting the
+ GUI readouts to 0s when the COM Port is opened, which may be a feature or
+ a bug depending on your point of view.  Never mind that diagnostics
+ and reset should be totally unrelated to anything.  Live with it or
+ figure out how it works and then tell us. ;-)
+<p>
+ The Diagnostic Readout state is saved upon exiting the GUI.
+<p>
+<li><b>Reset Display</b> replicates the function of the reset button in the
+ Main Window.
+</ul>
+
+<h4><A NAME="umd2guima">Multiple Axis Support:</a></h4>
+
+While the firmware handles up to three measurement axes, only limited
+support is provided in the GUI due to the software complexity and lack of
+demand at the present time.  (Though it's unlikely any amount of demand
+will make the slightest difference.)  What is present should be enough to get
+started.  It's possible this could chenge in the future but don't hold
+your breath in anticipation.  It may never happen.
+<p>
+The "#define Homodyne n" or "#define Heterodyne n" line in the firmware
+specifies how many axes will be displayed.  The value for "n" may be 1 or 3.
+Setting it to 2 will do the same thing as 3.
+<p>
+<center>
+<img src="Main_Window_X2H.gif">
+<h4>&micro;MD2 Main Window with Multiple Axes Active</h4>
+</center>
+<p>
+All GUI functions apply to the primary axis, which defaults on startup
+to Axis 1.  The primary axis is what the Main Readout, REF/MEAS/DIFF
+frequency displays, frequency analysis, averaging, and graph
+apply to.  Clicking on the Axis 1, Axis 2, or Axis 3 labels will
+select it to be the primary axis and change the color of the selected
+axis label to identify it as the primary axis.  The units of the primary
+axis are also used for the others.  Error detection (if enabled)
+only applies to the primary axis.  Averaging is NOT applied to the
+Axis 1, Axis 2, or Axis 3 readouts, <i>even the one that is the same as
+the primary axis</i>.
+<p>
+Note that in Multiple Axis Mode, the communications format sends somewhat
+more data over the USB COM port and the GUI must perform more computation.
+Thus this may cause problems for a wimpy pre-Jurassic PC operating on
+the hairy edge of what's possible.  Once Multiple Axis Mode is entered
+using the interferometer hardware, the only way to return to Single Axis
+Mode is to restart both the firmware and GUI.  This is because neither has
+any way to know whether dropouts of measurement clock signals are due to
+a beam path being momentarily interruprted or an axis actually being shut
+off (whatever that might mean).
+<p>
+Test Mode is also capable of exercising all three axes singly or in combination
+but the function generator data will be the same for all.  This is controlled
+by the Multiple Axis Mode checkbox.  When enabled, Axis 1, Axis 2, and
+Axis 3 checkboxes will appear below it with Axis 1 being the default
+on startup.  Turning Multiple Axis Mode off will put the GUI back in
+Single Axis Mode.  But this will be overidden when Test Mode is turned
+off if the USB port is enabled and the firmware is running with multiple axes.
+<p>
+Multiple Axis GUI support is currently under development.  Specifications and
+behavior are subject to numerous changes without notice. ;-)  However, no
+major features beyond what are described above are anticipated to be
+implemented in the GUI.
+
+<h4>Help Menu</h4>
+
+<ul>
+<li><b>Information</b> has only one purpose at present: To direct you to
+ this &micro;MD2 Installation and Operation Manual! ;-)
+<p>
+<center>
+<img src="Information_Window-1.gif">        
+<h4>&micro;MD2 Information Window</h4>                            
+</center>
+<p>
+<li><b>About</b> lists the GUI build and firmware versions, and provides links
+ our (Jan and Sam) Web sites.
+</ul>
+<p>
+<center>
+<img src="About_Window-1.gif">        
+<h4>&micro;MD2 About Window</h4>                            
+</center>
+<p>
+<A NAME="umd2trb"></A>
+<hr>
+<h3>Troubleshooting</h3>
+
+Naturally, all is expected to go smoothly.  But if it doesn't, here are
+some common problems.  Some of these may be bugs in the firmware or GUI
+as hard as that is to believe.  So, if you find something that cannot
+be solved based on what's below, contact us for a timely response:
+<p>
+<ul>
+<li><b>GUI won't start and generates error about value out of range:</b>
+ Ignore the error by hitting "continue" as there is no configuration file.  The
+ GUI should come up.  Close it using "Finish" and it will save a valid
+ configuration file and the error will not appear again except possibly
+ if a new GUI Build is run since each one has a unique configuration
+ file.  (This error should not occur but at least be prepared!)
+<p>
+<li><b>GUI starts but then generates error about value out of range:</b>
+ If you are in a location where the interpretation of "." and "," differs
+ (e.g., Brazil), numbers with decimal points may get screwd up.  One specific
+ instance is that for the wavelength in the Environmental Compensation window,
+ the decimal point gets ignored so that 632.993172 is interpreted
+ as 632991372, which is obviously out of range.  Sorry, you'll just
+ have to move your entire operation to the USA (or at least set the
+ environment that way for now). ;-)
+<p>
+<li><b>There is no valid USB Port available:</b> The firmware is not running
+ or has crashed.  (Hard to believe!)  Exit the GUI and assuming the firmware
+ has been loaded, press the RESET button.  With the present firmware, after
+ about 1 second, LED3 should be on at reduced brightness when the firmware
+ has started.  It's actually flashing at the sample frequency but this may
+ not be obvious except by waving your eyeballs.
+<p>
+<li><b>GUI generates error when the USB Port is selected:</b> This means
+ either the firmware is not producing the proper communications sequence
+ or more likely, the board has simply gotten out of sync.  Selecting the
+ USB Port a second time will usually clear it.
+<p>
+<li><b>Graph is not scrolling after USB Port is selected:</b> Similar to
+ above.  First try selecting the USB Port again, but may require exiting
+ the GUI, pressing RESET, and reatsrting the GUI.  Attempting to run
+ with an incompatible version of the firmware or firmware not properly loaded
+ or in a peculiar state can also produce this error.
+<p>
+<li><b>There is no change in displacement even when there should be:</b>
+ Assuming the Quad-A-B signals are coming from the correct sources (laser and
+ optical receiver, respectively), this usually means the interferometer
+ is installed or assembled incorrectly (e.g., backwards), is misaligned.
+<p>
+<li><b>Displacement takes off up or down out of control:</b>
+ In rare cases, such behavior can be due to noisy signals as a
+ result of crosstalk or improper termination.  If a 50 MHz or higher bandwidth
+ oscilloscope is available, check the quality of the Quad-A-B signals.
+ And while the default value of 150 ohms for the terminating
+ resistors is generally satisfactory, depending on your wiring run length
+ and other factors, using a different (probably lower value) may be necessary.
+ Substituting a UA9639 for the UA9637 (if used) may also help.
+ It is a slower part and will tend to filter out any glitches.  This
+ wouldn't be a preferred solution though and might earn you an "F" in
+ my CSE371 Intro to Computer Design course. :( :)
+<p>
+<li><b>Displacement or velocity values are off by an integer factor:</b> The
+ Interferometer Configuration does not match you interferometer hardware.
+<p>
+<li><b>Angle or Straightness values are not accurate:</b> The parameters of
+ your interferometers are non-standard.  They may be adjusted over a wide
+ range in Interferometer Configuration.
+<p>
+<li><b>Update of GUI readouts and other indicators is sporadic or slow:</b>
+ While &micro;MD2 should run on just about any computer that still runs,
+ this cannot be guaranteed for a 20 year old machine.  Time to Upgrade.
+ However, CPU intensive applications like antivirus scans can hog resources.
+ The USB subsystems on some computers are more efficient than others and
+ there's no way to predict performance based on make or model.
+<p>
+<li><b>Sensor values are not updating in real-time:</b> There are no hardware
+ sensors so this is normal.  Enter the environmental settings manually.
+</ul>
+<p>
+<A NAME="umd2ref"></A>
+<hr>
+<h3>References</h3>
+
+These links open in a <i>single</i> new window or tab.
+
+<h4>SG-&micro;MD2</h4>
+<ol start = 1>
+<li><A target="uMD2" HREF="SG-uMD2-V1.0-am.htm">Assembly Instructions for
+ SG-&micro;MD2 Version 1.00 PCB</A>
+<li><A target="uMD2" HREF="SG-uMD2-V1.2-am.htm">Assembly Instructions for
+ SG-&micro;MD2 Version 1.23 PCB</A>
+<li><A target="uMD2" HREF="SG-uMD2-V1.3-am.htm">Assembly Instructions for
+ SG-&micro;MD2 Version 1.22 PCB</A>
+<li><A target="uMD2" HREF="sgum2sch1.1.pdf">SG-uMD2 V1.1 Schematic</a>
+</ol>
+<p>
+<h4>Teensy 4.0</h4>
+<ol start=4>
+<li><A target="uMD2" HREF="https://www.pjrc.com/teensy/pinout.html">Teensy Pinouts</a>
+<li><A target="uMD2" HREF="https://www.pjrc.com/teensy/schematic.html">Teensy Schematics</a>
+<li><A target="uMD2" HREF="https://www.pjrc.com/teensy/techspecs.html">Teensy Specification Comparison</a>
+<li><A target="uMD2" HREF="https://www.pjrc.com/teensy/IMXRT1060RM_rev2.pdf">i.MX RT1060 Processor Reference Manual</a>
+<li><A target="uMD2" HREF="https://gist.github.com/anecdata/84b0165d42655c7381aa109d6d1c4145">Teensy 4.0 microcontroller Pin to Board Mappings</a>
+<li><A target="uMD2" HREF="https://www.ic.unicamp.br/~celio/mc404-s2-2015/docs/ARM-GCC-Inline-Assembler-Cookbook.pdf">ARM GCC Inline Assembler Cookbook</a>
+</ol>
+<p>
+<h4>Arduino</h4>
+<ol start = 9>
+ <li><A target="uMD2" HREF="https://www.arduino.cc/en/Main/Software">Arduino IDE, Refernce, Tutorials, more</a>
+ <li><A targer="uMD2" HREF="https://www.pjrc.com/teensy/td_download.html">Download Teensy 4.0 Library (Teensyduino)</a>
+ <li><A target="uMD2" HREF="https://www.pjrc.com/teensy/td_libs_Encoder.html">Encoder Library, for Measuring Quadrature Encoded Position or Rotation Signals</a>
+</ol>
+<p>
+<h4>Jan Beck's Information</h4>
+<p>
+<ol start = 12>
+<li><A target="uMD2" HREF="https://sites.google.com/site/janbeck/">Interferometer Project Pages</a>
+<li><A target="uMD2" HREF="https://github.com/janbbeck/InterferometerGUI/">Github &micro;MD1 GUI Source Code Repository</a>
+<li><A target="uMD2" HREF="https://www.youtube.com/watch?v=-YGJwq2y-uk">Short Video Describing Jan's and Sam's &micro;MD1 Boards</a>
+https://www.janbeck.com/Interferometer1/hp5508a-interferometer-replacement-hardware-2-0-heterodyne">Jan's HP5508A interferometer replacement hardware 2.0! - Heterodyne</a>
+</ol>
+<hr>
+<p>
+</html>

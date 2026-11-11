@@ -1,0 +1,114 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcftelhplj.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Testing the erase lamps on an HP LaserJe..&nbsp;&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: Testing the erase lamps on an HP LaserJets</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcftelhplj.htm">https://www.repairfaq.org/samnew/printfaq/pcftelhplj.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">Testing the erase lamps on an HP LaserJe..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;<a href="pcfsou2.htm">&lt;&lt;&nbsp;Guide to disassembly and ..</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfljec51.htm">HP LaserJet error code 51&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcftelhplj">Testing the erase lamps on an HP LaserJets</A></h3>
+
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+<p>
+There's a very quick test for the erase lamps in these printers (SX engine).
+Open the cover, and swing it right open. There's a plastic post that 
+comes down from the cover at the back left with 2 contacts in it. It goes 
+into a slot on the left side of the fuser when the printer is closed.
+<p>
+Check for continuity between the 2 contacts in the cover. I have no idea 
+what the right resistance would be, but it's less than 1k. If it's 
+open-circuit then most likely one of the lamps is burnt out. There are 5 
+of them, in series.
+<p>
+If the lamps are good and there are still erase lamp problems, then 
+remove the fuser, take the cover off the left side of it (1 screw on top) 
+and unscrew the PCB under it. Check the 2SD1414 power transistor Q331 on 
+this board (it's the erase lamp driver). If that doesn't do it, check the 
+components around it. R335 (1.8 Ohm) is the current sense resistor in 
+Q331's emitter circuit, L331 is a filter choke in series with the lamp 
+supply, and Q331 is a current sense transistor that removes the base 
+drive from Q331 if the thing overcurrents.
+<p>
+I suppose it could be a problem with the cable back to the DC controller
+or even the DC controller itself, but that's unlikely. 
+<p>
+If you've still not found the problem, though, post again and I'll think 
+again.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+</body>
+</html>

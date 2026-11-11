@@ -1,0 +1,886 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/manuals/hobspcl1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>One, Two, or Three Axis Laser Interferometer Displacement
+ Measurement System Installation and Operation Manual</title>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/manuals/hobspcl1.htm">https://www.repairfaq.org/sam/manuals/hobspcl1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<center>
+<h1>One, Two, or Three Axis Laser Interferometer Displacement Measurement
+ System<br>
+ Installation and Operation Manual</h1>
+<h2>Version 1.33 (16-Mar-26)</h2>
+<h3>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ Email Links Page</A>.
+</center>
+
+<A NAME="hobspcl1toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#hobspcl1int">Introduction</A>
+<li><A HREF="#hobspcl1pof">Principles of operation</A>
+<li><A HREF="#hobspcl1wir">Wiring power to the laser and optical receiver</A>
+<li><A HREF="#hobspcl1sui">Setting up the interferometer</A>
+<li><A HREF="#hobspcl1aln">Aligning the interferometer</A>
+<li><A HREF="#hobspcl1trb">Troubleshooting</A>
+</ul>
+<p>
+<hr>
+
+<h3><A NAME="hobspcl1int">Introduction</A></h3>
+
+This manual provides installation and operation information for
+the interferometer laser displacement measurement
+systems parts provided in the Hewlett Packard (HP) Laser Measurement Systems -
+Hobbyist Specials.
+<p>
+Note: Most references will be to Hewlett Packard (HP) components as
+they are most common.  But some equivalents from Excel or Zygo may appear from
+time-to-time so be prepared for confusing labeling. ;( ;-)
+<p>
+This guide deals specifically with setting up the laser, interferometer,
+optical receiver, and their power supplies.  Complete information on wiring
+the chipKit DP32 or SG-&micro;MD1 board to the REF MEAS signals and running
+the &micro;MD1 Windows GUI may be found in the
+<A target="a" HREF="../uMD1/index.html">&micro;MD1
+Installation and Operation Manual</A> or
+<A target="a" HREF="../uMD2/index.html">&micro;MD2
+Installation and Operation Manual</A>.
+(Note: These and the links below open in a <i>single</i> new tab or window.)
+<p>
+<blockquote>
+ <b><font color=dark red>IMPORTANT: If any of the interferometers are from
+ Excel in a kit sold prior to 2024, it will be necessary to confirm that the
+ Polarizing Beam Splitter (PBS) cube (labeled 1011A or 1012A) functions
+ correctly.  I have recently come across a small number of
+ Excel PBSs - even new/NOS ones - where the coating on the diagonal is defective
+ even though it looks pristine by eye.  At the normal (perpendicular)
+ angle of incidence they are either marginal or totally ineffective at
+ behaving like a PBS.</font></b>
+<p>
+ The simplest way to test the PBS uses the 5517 laser with a linear
+ polarizer (LP, which can be one for a camera but NOT a circular
+ polarizer).  Power the laser until READY comes on solid.  Remove
+ everything from the interferometer - cube corner(s) and quarter wave
+ plate(s) - and place it in the beam with the label at the top and an
+ edge parallel to the beam.  Position the LP in the beam between the
+ laser and PBS with its axis of polarization vertical.  If the PBS is
+ good, there will be almost no light coming out the front with most being
+ reflected to one side.  (If the axis of polarization for the LP is
+ not labeled, rotate it until almost no light gets through.  For a
+ defective PBS, there may be no such orientation even if the incident
+ beam is perfectly perpendicular to the face of the PBS.)  Rotate the PBS a
+ few degrees either way around the vertical axis and very little light
+ should still get through.  Rotate the PBS 90 degrees around the
+ vertical axis and repeat.  The behavior should be similar except that
+ the reflected beam will exit from the opposite face.  If either test
+ behaves strangely, contact me for a replacement.  I will pay shipping
+ for the replacement and to return the original.  Sorry about that.
+ These have been included in the Hobby Special kits for several years
+ but just recently, someone found a defective one.  It had never
+ occurred to me to even test these as high quality PBS cubes should
+ not go bad, or be bad from the factory.
+ I'm leaning more toward degradation of the dielectric coating
+ as the cause even though there is no visible evidence of it.
+<p>
+ All interferometer PBSs are now routinely tested for this issue, so they
+ should all be acceptable going forward.
+ I have not found any defective genuine HP/Agilent PBSs, but even some
+ of those have a very small acceptance angle.  But never fear, the Hobby Special
+ limited unlimited warranty will cover the interferometers for the
+ duration of your research project.  Just make sure alignment is PERFECT!
+</blockquote>
+
+<h3><A NAME="hobspcl1pof">Principles of operation</A></h3>
+
+<p>
+More information than you probably need or want to know on
+this technology may be found at:
+<p>
+<ul>
+<li><A target="a" HREF="../laserlia.htm#liaintmet">Interferometers for
+ Precision Measurement in Metrology Applications</a>
+<li><A target="a"
+ HREF="../laserhst.htm#hstish3">Hewlett-Packard/Agilent/Keysight
+ Stabilized HeNe Lasers</a>
+</ul>
+<p>
+The following is just a summary.
+<p>
+The technique here is based on what's known as
+"heterodyne interferometry" which utilizes
+a two-frequency HeNe laser and special optics to precisely measure changes
+in distance (called "displacement") down to the nanometer scale.  Other
+types of measurements including those for angle and straightness can be
+performed with appropriate interferometer optics.
+<p>
+In a nutshell, the two-frequency laser sends out a pair of superimposed
+beams that differ in optical frequency by a relatively constant amount (called
+REF), one polarized horizontally and the other polarized vertically.
+REF is typically in the low MHz range which provides
+a convenient "carrier" for signal processing.  Optics
+separate the two beams, sending one to a (generally) fixed reflector,
+and the other to some tool or device whose position needs to be
+measured precisely.  Both beams then return to an optical receiver
+where another difference frequency (called MEAS) is generated.  With no
+movement, REF and MEAS have the same frequency and the
+phase relationship between the two beams is constant.
+But if the tool or whatever moves, the frequency and thus
+phase relationship between REF and MEAS will change due to doppler shift.
+With the simplest interferometer optics, a phase change of 360 degrees
+represents a position change of 1/2
+wavelength of the light from the laser, approximately 632.8 nm for
+the HeNe lasers most often used.  The precise wavelength for these
+lasers is specified to 6 decimal places (e.g., 632.991372 nm for
+the HP/Agilent 5517B) with a wavelength accuracy of 0.1 ppm over
+the life of the laser.
+<p>
+Using the two-frequency approach rather than a basic Michelson or
+similar interferometer, among other things makes these systems
+more immune to misalignment by eliminating issues of fringe counting
+and direction, and fringe contrast, and they are less susceptible to
+changes in signal level as the laser ages, dust settles on the
+optics, or alignment changes.
+<p>
+The diagrams below show the organization of a single axis system using
+&micro;MD1 or &micro;MD2 for the processing and measurement display.
+Both provide capabilities similar to those of an HP-5508A Measurement
+Display - and a lot more.  For 2 or 3 axes, the interferometer optics,
+remote (Test Arm) reflector, and optical receiver would be replicated,
+along with 1 or 2 non-polarizing beam-splitters to divide the output
+of the laser.
+<p>
+<center>
+<img src="inter2f-uMD1.gif"><br>
+<img src="inter2f-uMD2.gif">
+</center>
+<p>
+By default these systems will come with &micro;MD2.  However, while the
+&micro;MD1 kit is no longer available, the SG-&micro;MD1 PCB and Digikey
+"Cart" with all the requireed electronic components may be substituted at
+slightly lower cost..
+<p>
+<b>IMPORTANT: The laser provided with this kit is currently a some version
+of a 5517.  Nearly all are in the smalll rectangular case used by the
+5517B/C/D etc, but a few may be in the larger trapazoidal case of the 5517A.
+Functioanlly they are identical.
+<p>
+Since 5501Bs have been used in the past, info on them is also
+included here.  The differences are as follows:</b>
+<p>
+<ul>
+<li><b>Connector(s):</b> The 5517 has a single large connector while the
+ 5501B has separate connectors for Power and the Reference signal.
+<p>
+<li><b>Power:</b> Both use +/-15 VDC for power but the 5517 requires +15 VDC
+ at 2.3 A max and -15 VDC at 100 mA max while the 5501B requires +15 VDC
+ at 1.2 A max and -15 VDC at 1 A max.  Appropriate power adapters or
+ cased power supplies are included in the kits with ample reserve to power
+ the 10780(s) optical receiver(s).
+<p>
+ The Excel 1001B and 1001F do NOT require -15 VDC.  But a 15 VDC adapter for
+ -15 VDC will be included anyhow just in case a 5517 laser is subtituted
+ in the future.
+<p>
+<li><b>F1/F2 component orientation:</b> For the 5517 F1 (lower
+ optical frequency) is horizontal while for the 5501B F1 is vertical.
+ The only effect is to swap the direction of motion in each axis.
+<p>
+<li><b>Laser on and READY:</b>Warmup from power on to locked with READY
+ on solid may take a minute or so longer with the 5501B.  However, unlike
+ stock 5501Bs where the laser tube isn't turned on for several minutes
+ after power on, the ones I provide have been modified to turn on the laser
+ tube immediately so they behave just like 5517s in that regard.
+</ul>
+<p>
+The photo below shows the typical parts included in a single axis system
+using a 5517 laser:
+<p>
+<ul>
+<li><b>HP/Agilent 5517 laser (left):</b> The laser provided in this
+ kit may NOT fully meet HP/Agilent specifications in terms of output
+ power and/or REF frequency.  However, the power should be more than
+ adequate for an experimental system.  REF may not match that of any
+ of the standard 5517 laser models.  However, the measurement
+ accuracy will not suffer.  The primary effect of the value of
+ the REF frequency is to limit the maximum slew rate of the remote
+ reflector.  Higher REF means faster movement can be dealt with.
+ The minimum in the kit may be 1.4 MHz, about 0.2 meters/second using
+ a Linear Interferometer, 0.1 m/s with a Plane Mirror Interferometer.
+ Where higher speed is desirable, a laser with a higher REF can be
+ requested.  However, these lasers tend to have lower power, and &micro;MD1
+ provides slightly better sub-&micro;m resolution with lower REF.
+<p>
+<li><b>Circular laser head connector (front next to laser):</b>
+ this will be used to build a cable to connect the laser to the
+ power supplies and measurement board.
+<p>
+<li><b>Plane Mirror Interferometer (PMI, 10706A for HP version, back next to
+ laser) or Linear Interferometer with parts to construct PMI):</b>
+ This may be used as-is as a PMI with a planar mirror (shown next to it),
+ or may be reconfigured as a Linear Interferometer (LI) similar to a 10702A
+ with a remote retroreflector.  For short travel (up to a few feet),
+ the PMI is acceptable and has double the resolution of the LI.  For
+ longer travel or long distances, an LI may be preferred as it is less
+ sensitive to changes in remote reflector orientation.
+<p>
+ There is also a lower cost option which substitutes a generic Cube-Corner
+ (CC) for one of the 10703A CCs of the PMI. as well as a more basic
+ option with a 10702A cube, 10703A CC, and generic CC for implemenation
+ of a linear interferometer ONLY.
+<p>
+ Except for the unmounted generic CC, these components may be from
+ Hewlett Packard/Agilent/Keysight, Excel, or Zygo.  They are all physically and
+ functionally equivalent.
+<p>
+ &micro;MD2 can also be used with angle and straightness optics, but
+ those from HP/Agilent are extremely expensive, even surplus.  However,
+ in principle, these can be built from less expensive standard parts.
+<p>
+<li><b>Planar mirror:</b> Approximately 3/4 x 3/4 inch high quality
+ front surface aluminized mirror on a cheesy
+ but functional adjustable mount.  With care, the mirror may be removed from 
+ from the mount using a single-edge razor blade in the seam.  Heat will not
+ work as the adhesive appears to be RTV silicone.
+<p>
+<li><b>Optical receiver (10780A/B/C or 10780F/U, middle next to laser):</b>
+ The 10780A/B/C includes a photodiode behind a lens with a polarizer at 45
+ degrees with a very sensitive AC-coupled preamp.  It must be set up
+ in the return beam from the interferometer and connects to the +15
+ VDC power supply and measurement board.  For most of the lasers
+ supplied with these kits, any of the versions of the 10780 are
+ satisfactory.  But where a higher REF laser has been ordered, a
+ higher speed version will be supplied.  The 10780 runs on +15 VDC.
+<p>
+ Note: The 10780F/U does not have a focusing lens or polarizer since it is
+ normally intended for use with an optical fiber.  There
+ is ample power here such that a focusing lens should not be
+ required and a polarizer will be pre-attached, so nothing additional needs
+ to be done if the optical receiver is a 10780F/U.
+<p>
+ The optical receivers will come with a pair of red and black wires for power.
+ Red is for +15 VDC but double check!  A pair of bare male pins stuffed into the
+ connector are for MEAS.
+<p>
+ Nearly all the optical receivers are from Hewlett Packard/Agilent/Keysight
+ (10780) but a few may be from Excel (1031).  They are all physically and
+ functionally equivalent.
+<p>
+<li><b>SG-&micro;MD2 measurement board and parts
+ (middle):</b> &micro;MD2 accepts REF and MEAS and sends measurement data to
+ a Windows PC via USB (from which it is also powered).  All new shipments
+ will receive the SG-&micro;MD2 kit of parts.
+<p>
+ There is a link below to the &micro;MD2 manual which includes Heathkit&trade;-
+ style instructions for its assembly and testing.
+<p>
+<li><b>DC power supplies/wall adapters (right):</b>  These usually consist of a
+ large one for +15 VDC for the laser and optical receiver(s).  (For a while
+ they were actually rated 16 VDC requiring one or two series diodes to drop
+ the voltage, but those haven't shipped in years.) A smaller power pack
+ provides the -15 VDC required by the laser.  Unless noted, both
+ of these are universal and will run on 100 to 240 VAC without changing any
+ jumpers or switches.
+<p>
+ There will be cut wires for connections and/or screw terminal blocks
+ that plug onto the power pack output barrel connectors.  (However, if
+ one of the power packs is rated 16 VDC as noted above, 1 or 2 diodes
+ MUST be installed in-line with the output.  Observe the polariaty - the
+ bar on the diode(s) should
+ face AWAY from the power pack.  These usually run slightly high because
+ the current used by the laser is well below their ratings, so 2 diodes is
+ probably an acceptable default.)
+</ul>
+<p>
+For the 5501B version, the connectors and power packs will be different but
+all other parts are essentially the same.
+<p>
+Styles of some of these parts may vary.
+<p>
+<center>
+<img src="Hobspcl1p1.jpg" height=400>&nbsp; 
+<img src="Hobspcl1p2.jpg" height=400><p>
+<b><font size="5">Photo of Typical Parts for Single Axis System using 5517 Laser (Left) and 5501B Laser (Right) with Original &micro;MD1</font><br>
+<font size="4">The interferometers shown are the 10702/6A PBS with 10703A CC, 10722A QWP, and generic CC</font></b>
+</center>
+<p>
+For a 2-axis system, a non-polarizing beam-splitter is necessary to divide
+the output of the laser into two approximately equal parts, and a second
+interferometer and optical receiver are required.  For a 3-axis system,
+an additional set of similar parts is required.  The beam-splitters
+may be 1:1 or 2:1.  Either is acceptable.  The power won't be equal
+but the laser should have enough power.  The &micro;MD1 and &micro;MD2
+boards can handle up to 3 axes.
+<p>
+Note that the laser included with the single axis system may be lower power
+than with the 2 (or 3) axis system, but should still have enough power for
+those if desired.
+
+<h3><A NAME="hobspcl1wir">Wiring power and signals to the laser and
+ optical receiver</A></h3>
+
+The wiring can be done first, or after the interferometer optics are
+mounted.  However, even coarse alignment will be a lot simpler if the laser
+and optical receiver are powered.
+<p>
+<b>Power supplies/wall adapters</b>
+<p>
+CAUTION: ONLY change connections (including plugging or unplugging stuff)
+with power OFF!  Otherwise bad things may happen.
+<p>
+The laser requires +/-15 VDC.  Therefore, a pair of power supplies
+are provided.
+<p>
+<ul>
+<li>For the 5517, if they aren't the same size, the
+ larger one is for the +15 VDC to the laser,
+ which requires up to 2.3 amps, and for the 10780 optical receiver.  If
+ the actual supply is rated 16 VDC (check the label), see the notes above
+ on connections.
+<p>
+ The smaller power pack is for the -15 VDC, used only by the laser.
+ The common point between them is to the negative of the +15 VDC supply and
+ the positive of the -15 VDC supply.  One or both may have DC power plugs
+ attached as well mating screw terminal connectors or power jacks.  These
+ may be used, though soldering the wires is more secure and eliminates
+ the chance of plugging the wrong power pack into the wrong connector.
+<p>
+<li>For the 5501B, both power packs are identical and power jacks have been
+ included so they can be pluggable to the laser and optical receiver.
+ The common point between them is to the negative of the +15 VDC supply and
+ the positive of the -15 VDC supply.  However, the plugs can be cut off
+ and power packs can be wired directly if desired.
+</ul>
+<p>
+There may also be an option to substitute a cased +/-15 VDC switchmode power
+supply for the power packs.  Wiring of that should be self explanatory
+as all the connections are labeled.  The only "gotcha" is that the two
+outputs may be totally isolated so that the common point will need to be
+tied together.  Take care when wiring this supply, especially the line
+voltage inputs.  Add strain reliefs or tape so that wires can't be ripped out.
+<p>
+Unless you opted for the optional HP cable, it will be necessary to wire
+up the laser head connector to the DC power packs and REF input to REF
+header on the &micro;MD1 board.  With the optional cable, two sets of
+wires from the cable are built-in and they just need to be
+attached to the power supplies and REF/MEAS on the &micro;MD1 board.
+<p>
+<ul>
+<li><b>HP-5517 Laser Head Connector (Power and Reference) J2</b>
+<br>
+<img src="../5517con1.jpg"><br>
+<p>
+<PRE>
+   Pin      Function
+ ------------------------------------------------------------------
+    A       No Connection on 5517 (MEAS signal level on 5518A)
+    B       ~MEAS (Not used on 5517) (2)
+    C        MEAS    "          "
+    D       Signal Return (MEAS)
+    E       ~REF (Zeeman beat signal from internal optical
+    F        REF  receiver's differential line driver.)
+   G,H      Ground
+    J       +15 VDC Sense
+    K       +15 VDC
+    L       -15 VDC
+    M       +15 VDC
+   N,P      Cable Shield
+    R       Signal Return (REF)
+    S       Ground
+    T       +15 VDC
+    U       Cable Shield
+</PRE>
+<p>
+The +15 VDC output of the power pack should be wired to <b>all</b> of
+the +15 VDC pins on the connector - J,K,M,T.  A single fat wire
+can be run to the supply (e.g., #18 AWG) with short lengths of #22 for
+each of the connector pins.  (If the power supply you are using has
+a voltage sense input, pin J can be run separately to that.)
+<p>
+Ground should also be wired to all its pins - G,H,S - in a similar manner.
+<p>
+The current for the -15 VDC supply, pin L,
+is low - less than 100 mA - so a single #22 wire is sufficient.
+<p>
+All other connections should be soldered or secured with wire nuts and/or
+screw terminals.  DO NOT just wrap them together!  Loose connections creates
+reliability issues and kills stuff.
+<p>
+With an HP laser head cable (10791 or 10881), hooking up power is as simple
+as connecting 3 wires.  BUT THE HP CABLES HAVE A FUNNY COLOR CODE for power!
+The power cable is the one with three wires with the following colors:
+<p>
+<ul>
+<li><b>+15 VDC:</b> Red.
+<li><b>Ground:</b> Yellow.
+<li><b>-15 VDC:</b> Black. 
+</ul>
+<p>
+They will probably just be stripped wires though stock HP cables may have
+spade lugs or a DIN connector.  It would be worthwhile to confirm continuity
+through to the laser head connector with a DMM using the pinout for it, above,
+or even to the fuses inside the laser head.
+<p>
+There will likely also be another connector on a thin part of the cable,
+probably a funny 4-pin BNC like one that mates with the 10780 optical
+recevier.  That connector
+is actually for REF when using one of the HP measurement boards.  For our
+purposes, the cable will need to be cut at a location that provides a
+convenient length and then wired (1) for the REF input to &micro;MD2
+(or &micro;MD1 if you found this in a time capsule) and (2) the
+4-pin BNC for the output of the 10780.  The
+color coding for those wires is also strange and it is not known whether
+it is the same for all versions of the cable, so a DMM will be required.
+<p>
+<li><b>HP-5501B power and reference connectors</b>  This is for, uh, reference
+ only since systems are no longer being shipped with 5501Bs:
+<p>
+<img src="../5501con1.jpg"><br>
+<p>
+<b>5501B Reference Connector</b>
+<p>
+<PRE>
+   Pin      Function                              Socket View
+ ---------------------------------------------         A
+    A*      Accessory +15 VDC fused                    o
+    B*      +15 VDC return                         D o   o B
+    C       Reference (difference) frequency           o
+    D       Complement of pin C                        C
+</PRE>
+<p>
+<b>5501B Power Connector</b>
+<p>
+<PRE>
+   Pin      Function                              Socket View
+ ---------------------------------------
+    A       +15 VDC input                          D o  o A
+    B       -15 VDC input
+    C*      +5 VDC output (test-point)             C o  o B
+    D       Power ground
+</PRE>
+</ul>
+<p>
+One of the circular connectors provided with kit will fit the POWER connector.
+The other will probably need to be modified to fit the REF connector as the
+standard connector must have its inner shell rotated by 45 degrees to fit.
+If the two connectors differ, the one for REF will have pins that are not
+installed, but they may both be like that.
+The inner rubber shell that holds the pins needs to be pressed out and
+rotated 45 degrees.  I usually do that by trimming around the edges with
+a thin blade to free it up and then carefully pushing it out using a rod
+or the butt-end of a large drill bit on a drill press.  Then rotate the
+shell by 45 degrees in the <i>correct direction</i> and push it back in.
+After confirming it's in the proper orientation so the labeling is
+correct, some rubber adhesive can be added to secure it.  But that's
+usually not needed as it will be reasonably tight without it.
+Alternatively, or until you get up the courage to abuse the connector,
+inserting pins for REF and REF- will work fine.  The GND is not even needed
+as long as there is a GND running to the chipKit or SG-&micro;MD1 board from
+the PWR connector(junction of the - on the +15 VDC power pack and + on
+the -15 VDC power pack).
+<p>
+<b>10780A/B/C optical receiver</b>
+<p>
+The mating connector for these is a strange 4 pin BNC, which is unobtanium
+for less than 3 arms and 2 legs (if one can find it at all).  Therefore,
+where a mating connector has not been provided, two male pins and a 2 pin female
+connector has been included that will mate with it.  The 2 wire power cable
+will probably already be plugged into the 10780 and the color of the wires
+is correct - red for +15 VDC and black for GND/common.  But never assume I
+didn't make a mistake, so double check it!
+The male pins will need to be soldered to wires for MEAS.  Put
+heatshrink over them once attached to wires to
+prevent shorts and secure with hot-melt glue if desired.
+<p>
+<PRE>
+   BNC Pin   Function
+ -----------------------------------------------------------------
+  1 (LL,F)    ~MEAS (Zeeman beat signal pair from
+  2 (UL,F)     MEAS  differential line driver.)
+  3 (LR,M)    Return (also BNC shell and receiver case.)
+  4 (UR,M)    +15 VDC
+
+        _____
+       |     |
+       |     |
+       | TP  |
+       |     |
+       |     |
+  MEAS | x o | +15 VDC
+ ~MEAS | x o | Return
+       |_____|
+</PRE>
+<p>
+(Sometimes the connector insert gets rotated slightly.  But the "x" denotes
+a socket while the "o" denotes a pin.)
+<p>
+If there are a pair of wires sticking out of the 10780, red is
++15 VDC and black is GND/return.  The pins are for MEAS/~MEAS.
+<p>
+If you are fortunate enough to have received a mating connector, or better
+yet, one with a piece of cable attached, use a DMM to confirm the connections
+since the color coding varies.
+<p>
+To avoid ground loops, the case of the 10780 should NOT be connected to
+anything - use insulating "hardware" to secure it to the optical table
+or whatever.  The 10780 originally comes with rectangular black plastic
+insulators, but these often have a habit of disappearing after awhile.
+Nylon washers with Nylon screws work just as well.
+<p>
+There may be a gain trim-pot accessible on the top of the 10780 (B version
+and higher).  If response is erratic, it can be adjusted.  Usually they can
+be turned all the way up.  If that results in instability, just back off until
+it quiets down.  If the optical receiver is a 10780A, the gain adjustment is
+internal.  Normally, these do not need adjustment.  Regardless, it will
+probably be fine without adjustment.  However, if the laser locks (READY
+on solid) but there is no output (or signal LED) on the 10780, the gain
+may be set too low.  (Though more likely, the alignment needs tweeking.)
+check the REF signal from the
+laser either with a scope or the REF readout on &micro;MD1 to confirm
+that it is actually locking correctly.  Around 100-120 &micro;W should be
+sufficient for the laser to lock; the 10780 requires under 10 &micro;W
+to produce a valid signal.  Also, if you have a 10780F or 10780U
+with a black or silver fiber connector instead of a lens
+instead of a 10780A/B/C, it has no lens and no polarizer so there may be
+no signal unless the laser power were higher and a linear polarizer
+at 45 degrees was added in front of the optical window.  See the notes below.
+<p>
+"TP" is the single pin via a feed-through used to monitor signal level
+during interferometer alignment.  Its output is non-linear, being
+compressed at the upper end with strong inputs.  Monitoring it with
+a DMM or scope is useful during interferometer alignment.
+<p>
+<b>Notes on the types of optical receivers</b>
+<p>
+In nearly every kit going forward, the optical receiver will be ready to go
+and nothing needs to be done to it, so the following is for information only.
+And it matters only if using free-space beams; for use with optical fibers,
+standard remote fiber receivers will be provided.
+<p>
+<ul>
+<li><b>HP/Agilent 10780A/B/C or Excel 1031A:</b> These are the standard
+ free-space optical receivers and have a focusing lens
+ and linear polarizer built in, so nothing else is required.
+<p>
+<li><b>HP/Agilent 10780F/U or Excel 1031F with fiber connector:</b> If using
+ these with free-space beams, a minimum of a linear polarizer at 45 degrees
+ will be required.  If one is not already attached, it will be included in
+ the bag with the optical receiver.  (For use with an optical fiber, nothing
+ else is needed as it will plug directly into the optical receiver.)
+<p>
+<li><b>HP/Agilent 10780F/U or Excel 1031F with the fiber connector removed:</b>
+ A Linear Polarizer (LP) will be attached to the front.  If the original small
+ area photodiode is present inside, there will be a small focusing lens
+ attached to the <i>inner surface</i> of the LP to reduce the size of the
+ beam and concentrate it on the active part of the photodiode.
+</ul>
+<p>
+<b>Initial testing</b>
+<p>
+(The following assumes a 5517 laser.  Contact me if you dug out a moldy
+5501B version of the kit from your attic. ;-)
+<p>
+Double check your wiring and then apply AC power to both power supplies
+and measure their output voltages with no load.  Their outputs should be
+close to +/-15 VDC.
+<p>
+Remove AC power, wait for the voltages on the supplies to decay, and then
+connect the laser.  Turn power back on.  Immediately, 3 of the 4 LEDs
+on the back of the laser should come on - all except READY.  Anywhere from
+instantly to awhile after that, a beam should appear.  Make sure the turret
+at the front of the laser has its large hole at the top.
+<p>
+<b><font color="darkred">IMPORTANT: Some lasers may require up to a minute or possibly even more for
+the beam to appear.  While the laser in the kit is probably high mileage,
+even youthful $10,000 lasers may take some time to start.  But if there isn't a
+beam within a couple minutes, power down and double check the power the
+power supplies and connections.  Others may not restart
+immediately if powered off and back on again or may flicker - wait a few
+minutes before repowering if this is the case.  Failure to do so may result
+in damage to both the laser tube and HeNe laser power supply brick inside
+the laser.  If none of this helps, please contact me.
+<p>
+CAUTION: DO NOT plug or unplug connectors until the voltage has decayed
+to close to 0 V (indicated by ALL LEDs on the back of the laser head
+going out).  If pins make contact in the wrong order, an internal fuse
+in the laser may blow at the very least.  But it could be worse.  It wouldn't
+hurt to wire an LED+current limiting resistor across each power supply
+output to monitor this (though the LEDs on the laser will serve when
+connected).
+</font></b>
+<p>
+After a couple minutes, the READY LED should start flashing.  With a beam
+present, after another 2 minutes or so, it should stay on solid.  The laser
+is ready for use.  (A minute or more possible for the 5501B.)
+<p>
+Aim the 10780 directly into the laser.  (It must be roughly aligned with the
+X or Y axis to get a signal.)  The green LED at the
+top of the optical receiver should light indicating that it is
+detecting the f1/f2 difference frequency.  An oscilloscope on
+MEAS or ~MEAS would then show a squarewave at the REF frequency.
+There is a gain adjustment inside the 10780 which affects the
+sensitivity, especially for small signals.  For the 10780A,
+it is hidden by the top cover.  Usually, there should be no need
+to touch it, but on the off chance that it had been set too low,
+loosen the small screws at either end of the 10780A and
+remove the top cover.  It's the trimpot facing up.  Turn it fully
+clockwise.  (DO NOT touch any other trim-pot.)
+At the same time, drill a hole in the cover at the
+trim-pot location for the future. :)
+(For the 10780B/C/F/U, there is an access hole in the top cover.)
+Sometimes, there will be instability if turned too high.  If
+a signal is detected with no beam into the optical receiver, back
+it off.
+<p>
+<b>Connecting &micro;MD1 or &micro;MD2</b>
+<p>
+&micro;MD1 usually comes with headers and mating connectors while
+&micro;MD2 usually comes with screw terminal blocks, which are handier
+if cables don't need to be changed.  One type can be
+substituted for the other - parts are readily available.
+<p>
+Cables will need to be constructed for REF from the laser and MEAS from
+the optical receiver.  For runs of a few feet or less, twisted pairs for
+REF/~REF and MEAS/~MEAS will suffice.
+The common/grounds should be run
+to the common point of the power supplies but they don't need to be
+in the cables and the cables don't need to be shielded.
+The 150 ohm terminating resistors
+on the &micro;MD1 board will provide the needed connection so that
+the inputs to the line receiver are at the proper level.
+<b>For the normal RS422 differential signals provided by the 5517/5501B laser
+and 10780 optical receiver,
+BOTH the true and complement polarities of each one must be
+connected to the  &micro;MD1 or &micro;MD2 inputs
+or else strange and random behavior will result.  For a single
+channel Homodyne system this means 1A and 1B, and 2A and 2B.
+For a single channel Heterodyne system this means REF and ~REF, and MEAS1 and
+~MEAS1 as shown below for &micro;MD2:</b>
+<p>
+<center>
+<img src="../uMD2/Heterodyne_Wiring1.gif">
+<h2>Typical &micro;MD2 Wiring for a Single Axis System with Signals for Two and Three Axes Shown</h2>
+</center>
+<p>
+The extension to multi-channel systems should be obvious. ;-)
+<p>
+Complete information on wiring the SG-&micro;MD1 and SG-&micro;MD2 boards
+and connecting them to the REF and MEAS signals, and running the &micro;MD1
+GUI may be found in the
+<A HREF="../uMD1/index.html">&micro;MD1 Installation and Operation Manual</A> and
+<A HREF="../uMD2/index.html">&micro;MD2 Installation and Operation Manual</A>,
+respectively.
+<p>
+Once it hooked up and live, the built-in frequency counter readouts of the
+&micro;MD GUI can be used to monitor REF and MEAS.  However, an oscilloscope
+will still be better at detecting marginal signal quality due to poor
+alignment or other problems.  It's best to connect MEAS to channel 1
+and use that for the trigger; REF to channel 2.  Dig out an old analog
+scope and put it to good use! ;-)  Low cost digital scopes are available
+that would be suitable - under $100 for one the plugs into USB on a PC.
+<p>
+The signals from the laser and optical receiver(s) should be a pair of
+complementary square waves at the REF frequency of the laser
+with an amplitude of 1 to 5 V.  When properly terminated, they should be
+fairly clean but won't be perfect.  However, there should be no glitches
+or other unsightly blemishes that could confuse the RS422 receivers.
+<p>
+The common issues seem to be with respect to glitches on the signal(s)
+resulting in double-counting.  Check the cables and termination
+if this happens.  Contact me if it persists even after your most heroic
+efforts. ;-)
+<p>
+<b>Wiring additional axes</b>
+<p>
+The same laser will drive multiple axes.
+Power for the optical receivers for MEAS2 and/or MEAS3 can be taken from
+the +15 VDC power supply.  There is plenty of extra capacity.
+<p>
+MEAS2/~MEAS2 and/or MEAS3/~MEAS3 should be run from their optical receivers
+to the respective inputs on the &micro;MD1 or &micro;MD2
+board.  Their grounds do not need to be connected (as long
+as there is a ground path for axis 1).
+
+<h3><A NAME="hobspcl1sui">Setting up the interferometer</A></h3>
+
+Any of the common interferometer configurations can be used with &micro;MD1
+or &micro;MD2.  Those for displacement (relative distance) are shown below:
+<p>
+<center>
+<img src="../hpintrf1.gif">
+</center>
+<p>
+Depending on version, the Hobbyist Special kits include either of the following
+for each axis:
+<p>
+<ol>
+<li><b>10702A with 10703A, Generic CC:</b> Standard Linear Interferometer (LI)
+ with with unmounted CC trihedral prism.
+<p>
+<li><b>10702A with 10703A, second 10703A:</b> Standard Linear Interferometer
+ (LI) with standard mounted CC.
+<p>
+<li><b>10702A with 10703A, 10722A, Generic CC:</b> Plane Mirror Interferometer
+ but with one non-HP CC.  Also 3/4x3/4 inch planar mirror on cheezy mount.
+<p>
+<li><b>10702A with 10703A, second 10703A, 10722A:</b> Standard Plane Mirror
+ Interferometer.  A standard HP mount for the interferometer will be included
+ pending availability.  Also a 3/4x3/4 inch planar mirror on cheesy mount.
+</ol>
+<p>
+With 2 axes, a non-polarizing beam-splitter (10700A or 10701A) will also be
+included to divide the output of the laser, and second one for 3 axes.
+<p>
+By removing and/or rearranging the PMI components, these can also be used as
+Linear Interferometers with remote retro-reflectors.
+<p>
+Where a bare trihedral prism is included for the second retro-reflector
+rather than a 10703A,
+if intending to use it in the PMI, it will need to be attached to the
+PBS cube.  This can be done using glue or tape as long as care is taken
+not to damage the optical surfaces.
+<p>
+For serious applications, (4) is recommended to minimize the clunkiness
+factor if nothing else. ;-)  But by assuring that the
+generic CC is in the reference path (F2 in the diagrams), (3)
+should be acceptable for long distances.
+<p>
+Note that the components of the interferometers can be rearranged
+for right-angle instead of straight-through operation and/or the
+locations of the laser and optical receiver can be swapped.  The only
+consequence in measurement is that the sign of the displacement may flip.
+Any configuration that results in a similar beam paths inside the
+interferometer
+will be satisfactory.  The only restrictions is that all components must
+be oriented on a multiple of 90 degrees so that the f1/f2 components
+always align with X or Y.  There are ways around
+this requirement but that's for the advanced course. ;-)  And it's best
+to orient the 10703As (cube-corners)
+so that the beam does not intercept an edge of the prism.  This will
+depend on both the configuration and whether the beams are above each-other
+or next to each-other, and can be done visually.
+<p>
+The more compact Single Beam Interferometer (SBI, 10705A with 10704A RR) can
+also be used along with a remote 10704A RR or equivalent.  The resolution will
+be the same as that of the LI.
+<p>
+Here are some options for the "Tool" in a demonstration system above:
+<p>
+<ul>
+<li><b>Micrometer adjusted linear stage:</b> Check the accuracy of
+ your micrometer. :)  This is certainly the simplest and most straightforward.
+<p>
+<li><b>Voice coil positioner (loudspeaker woofer) with function generator:</b>
+ Show how very low amplitude signals can be converted to motion and detected.
+ Or, use the loudspeaker as a microphone and detect sounds!  With &micro;MD1,
+ tapping on my computer table 2 stories up and at the other end of the house
+ can be easily detected (with the GUI running via Windows Remote Desktop). 
+<p>
+<li><b>Machine tool calibration:</b> Attach the cube-corner or mirror to the
+ carriage on your Southbend lathe or Bridgeport milling machine.
+<p>
+<li><b>CD (or DVD) drive sled:</b> Use $$$$ equipment to monitor which track
+ is being played on your favorite CD! :)
+</ul>
+
+<h3><A NAME="hobspcl1aln">Aligning the interferometer</A></h3>
+
+Power the laser and optical receiver and wait for the laser to come READY.
+<p>
+<ul>
+<li>Once the laser and other components are in the general position of where
+ they are to be located, first align the laser beam with the interferometer.
+ For a linear or plane mirror interferometer, the beam
+ should be offset about 1/4 inch horizontally from the center, resulting
+ in a return beam for F2 (without the remote retro-reflector) of about
+ 1/2 inch.  This spacing is not critical as long as both the outgoing
+ and return beams aren't cut off.  The interferometer and laser beam
+ axes should be aligned.  Confirm that the retro-reflectors (cube-corners,
+ 10703As) are oriented so that the beam does not cross a prism edge.
+ If it does, rotate the 10703A(s) by 90 degrees.
+<p>
+ <b>IMPORTANT:</b> On some of the interferometer PBS cubes, the acceptance
+ angle for correct operation is quite narrow, so alignment of the PBS with the
+ axis of the laser may be critical.
+<p>
+ For the LI, make sure the direction of the beam into  the interferometer is
+ correct.  For the PMI, the QWP should face the remote plane mirror.  Pay
+ attention to the beam path diagram on the PBS cube.
+<p>
+ Note that the alignment of the interferometer (LI or PMI) itself is not that
+ critical and it does NOT need to be on an adjustable mount.  For the LI
+ the RR also does not need to be on an adjustable mount but needs to be
+ mounted so that the direction and spacing of the outgoing and return
+ beams are correct.  For the PMI, the remote plane mirror should be on
+ an adjustable mount because the reflected beam must be parallel
+ to the outgoing beam.  This becomes more critical as the overall distance
+ and range of travel increases.
+<p>
+<li>Align the optical receiver with the return beam.
+ Put a DMM or oscilloscope on the signal level test-point of the
+ 10780 to assist in alignment.  The response is non-linear, being
+ compressed at the upper end.  It may help to put an optical
+ filter in the laser beam to reduce the beam power for this.
+ There may be a detected signal even without the remote
+ reflector, especially if the laser is higher power (e.g., 400 uW).
+ This is due to imperfect coatings, imperfect alignment, and not totally
+ pure f1/f2 components.  Monitor
+ the signal level (there is a testpoint on the HP/Agilent receivers for
+ this) and fine tune the interferometer alignment to minimize it.
+<p>
+<li>Set up the remote cube-corner or mirror (as determined by the
+ specific interferometer configuration) so that its return beam
+ is precisely superimposed on the return beam to the optical receiver.
+ At this point, there should be s strong signal.  If you have an oscilloscope
+ or frequency counted monitoring the output of the optical receiver,
+ it will be at the REF frequency of the particular laser and should
+ appear clean with minimal jitter.
+<p>
+ For demonstration purposes, the reflector can be relatively close to
+ the interferometer, but that is not required.  It would certainly be
+ more dramatic to have it across the room!  However, for larger distances,
+ the quality of the cube-corner or mirror may be more critical.  And,
+ vibrations caused by HVAC or a bus down the street will show up in
+ the readout!  And, distance changes due to temperature changes
+ will be clearly visible as a slow drift.
+</ul>
+<p>
+With genuine HP/Agilent optics, it's very easy to get all this working
+together.  Even modest misalignment can be tolerated, though the
+signal quality may degrade somewhat.  Once everything is aligned,
+make sure it's all locked down.  Except for the remote reflector
+(cube-corner or mirror), nothing else should move!  Even with the
+non-HP retroreflector, as long as it is mounted securely, there
+should not be stability issues.
+
+<h3><A NAME="hobspcl1trb">Troubleshooting</A></h3>
+
+What trouble?
+
+Coming soon.
+<p>
+<li>Back to <A HREF="#hobspcl1toc">Hobbyist Special Interferometer Table of Contents</A>.
+<p>
+-- end V1.33 --
+<p>
+<br>
+<hr>
+</body>
+</html>

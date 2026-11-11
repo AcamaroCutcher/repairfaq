@@ -1,0 +1,1548 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/pwrfaq.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>International Power and Standards Conversion</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/pwrfaq.htm">https://www.repairfaq.org/sam/pwrfaq.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+International Power and Standards Conversion
+</h1>
+<h2>
+Version 1.12a (02-Dec-06)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="ipstoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#ipspre">Preface</a>
+ <ul>
+ <li><A HREF="#ipsaac">Author & Copyright</A>
+ <li><A HREF="#ipsdis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#ipsint">Introduction</a>
+ <ul>
+ <li><A HREF="#ipssap">Scope and Purpose of this Document</a>
+ <li><A HREF="#ipsrif">Related Information</a>
+ </ul>
+<p>
+<li><A HREF="#ipstcv">Types of Conversion</a>
+ <ul>
+ <li><A HREF="#ipsymi">You Mean it is More Than Just the Type of Plug?</a>
+ <li><A HREF="#ipspcv">Power Conversion</a>
+ <li><A HREF="#ipsvsc">Video Standards Conversion</a>
+ <li><A HREF="#ipsbcs">Broadcast (and Cable) Standards</a>
+ </ul>
+<p>
+<li><A HREF="#ipsvci">Voltage Conversion Issues and Common Types of Voltage
+    Converters</a>
+ <ul>
+ <li><A HREF="#ipshtg">How to Get Power for Equipment A to Work with Equipment
+    B</a>
+  <ul>
+  <li><A HREF="#ipstts">True Transformers</a>
+  <li><A HREF="#ipsulv">Using a Low Voltage Transformer to Increase or Reduce
+    Line Voltage</a>
+  <li><A HREF="#ipstbc">Thyristor Based Converters</a>
+  <li><A HREF="#ipsmas">Motor Alternators</a>
+  <li><A HREF="#ipsssc">Solid State (AC->DC->AC) Converters</a>
+  <li><A HREF="#ipsrepc">Design of High Efficiency Power Inverters</a>
+  <li><A HREF="#ipsspcc">Some Power Converter Companies</a>
+  </ul>
+ <li><A HREF="#ipswad">What Appliances will be Damaged by Reduced Voltage?</a>
+  <ul>
+  <li><A HREF="#ipshbd">How Big a Difference in Voltage Before a Converter is
+    Needed</a>
+  <li><A HREF="#ipsevr">Effects of Improper Voltage on Resistive Loads</a>
+  <li><A HREF="#ipsevc">Effects of Improper Voltage on Constant Power Loads</a>
+  <li><A HREF="#ipsevt">Effects of Improper Voltage on Transformer Loads</a>
+  <li><A HREF="#ipsevm">Effects of Improper Voltage on Motor Loads</a>
+  </ul>
+</ul>
+<p>
+<li><A HREF="#ipslfi">Line Frequency (50/60 Hz) Issues</a>
+ <ul>
+ <li><A HREF="#ipsifc">Is Frequency Conversion Needed?</a>
+ <li><A HREF="#ipseif">Effects of Improper Frequency</a>
+ <li><A HREF="#ipsewp">Equipment that Will Probably not Care About the Line
+    Frequency</a>
+ <li><A HREF="#ipsemw">Equipment that May Work with a Different Line
+    Frequency</a>
+ <li><A HREF="#ipsemp">Equipment that May have Problems on Different Line
+    Frequency</a>
+ </ul>
+<p>
+<li><A HREF="#ipsrsd">Rcommendations for Specific Equipment</a>
+ <ul>
+ <li><A HREF="#ipsgcs">General Considerations</a>
+  <ul>
+  <li><A HREF="#ipstvv">Television Sets and Video Cassette Recorders</a>
+  <li><A HREF="#ipssma">Small Appliances</a>
+  <li><A HREF="#ipsclk">Clocks</a>
+  <li><A HREF="#ipsfll">Fluorescent Lamps</a>
+  <li><A HREF="#ipsaud">Audio Equipment</a>
+  <li><A HREF="#ipsrad">Radios, Tuners, Receivers</a>
+  <li><A HREF="#ipsmic">Microwave Ovens</a>
+  <li><A HREF="#ipspcs">PCs and Laptop/Notebook Computers</a>
+  <li><A HREF="#ipslas">Laser Printers</a>
+  <li><A HREF="#ipsnlp">Non-Laser Printers</a>
+  </ul>
+ <li><A HREF="#ipsteo">Taking Equipment Overseas (or Vice-Versa)</a>
+  <ul>
+  <li><A HREF="#ipscdo">CD Players</a>
+  <li><A HREF="#ipsmoo">Microwave Ovens</a>
+  <li><A HREF="#ipsbte">Buying a TV in Europe</a>
+  </ul>
+</ul>
+<p>
+<li><A HREF="#ipsioi">Items of Interest</a>
+ <ul>
+ <li><A HREF="#ipstvs">TV, Shortwave, Power Worldwide</a>
+ <li><A HREF="#ipsvsr">About the Vertical Scan Rate</a>
+ <li><A HREF="#ipsduc">Determining Unknown Connection on International Power
+    Transformers</a>
+ <li><A HREF="#ipsrtp">Running Three-Phase Motors on Single-Phase Power</a>
+ <li><A HREF="#ipsnev">A Note on Voltage in Europe</a>
+ </ul>
+</ul>
+<p>
+<A NAME="ipsint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="ipsaac">Author and Copyright</h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="ipsdis">DISCLAIMER</h3>
+
+While every effort has been made to assure that the information in this
+document is accurate and complete, there is no way to guarantee that it will
+apply to your particular equipment.  Depending on the specific design, what
+works in most cases may result in unacceptable performance, blown fuses or
+tripped circuit breakers, or overheating and possible fire, damage to the
+powered equipment or property.
+<p>
+We will not be responsible for improper operation, equipment or collateral
+damage, or expenses resulting from following the suggestions contained herein.
+<p>
+<A NAME="ipsint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="ipssap">Scope and Purpose of this Document</a></h3>
+
+The following types of questions arise quite often:
+<ul>
+<li>Question: Will my U.S. made TV and VCR work in Europe?
+<p>
+  Answer: A simple step down transformer to convert from 220 to 110 V will
+  probably permit them to work together (i.e., to play previously recorded
+  tapes) but you will not be able to receive any cable or broadcasts.
+<p>
+<li>Question: I have a microwave oven but will be moving to France.  Would I be
+  better off selling it or getting a power adapter?
+<p>
+  Answer: Due to the high wattage of a microwave oven, converting the power
+  will be costly.  Sell it and buy a new one at your destination.
+<p>
+<li>Question: Should I bring by European appliances back to the U.S.?
+<p>
+  Answer: This depends on the specific appliances.  See the remainder of
+  this document!
+<p>
+<li>Question: Will my Onkyo receiver work in Japan?
+<p>
+  Answer: Not without some modifications - which may not be worth it.
+</ul>
+We cannot generally provide an answer based on your exact model equipment
+and the specific standards in use.  There are too many variations to deal
+with in this sort of document.   However, the information contained herein
+in conjunction with the type and specifications of the equipment you own and
+the power and standards in use at your destination hsould enable you to make
+an informed decision.
+
+Note that if you plan to be moving between countries with different standards,
+it may pay to invest in appliances and electronic specifically designed for
+multisystem operation.  However, there are all sorts of definitions of
+'multisystem' - not all will handle what you need so the specifications must
+be checked carefully and even then, marketing departments sometimes get in
+the way of truth in advertising!  Again, the information in this document
+and the links below should aid in this effort.
+
+<h3><A NAME="ipsrif">Related Information</a></h3>
+
+A great deal of specific country information is available at:
+<ul>
+<li><a href="http://kropla.com/electric.htm">World Electric Guide</a>
+</ul>
+including power, plug configurations, telephones, and TV standards.
+<p>
+This should help you issues involved before you reach your destination!
+<p>
+<A HREF="http://www.interpower.com/ic/guide.htm">Panel Components - Guide to
+Worldwide Plug/Socket Patterns and Power Mains</A> has information and photos.
+<p>
+In addition, we deal with general issues related to adapting entertainment
+equipment and appliances to different power and the implications of reduced
+or increased voltage and frequency.
+<p>
+Note: this initial release will concentrate mostly on power issues.  Later,
+we will deal with video, communications, and phones systems.  For those, the
+documents:
+<a href="vidconv.htm">Notes on Video
+Conversion</a>,
+<a href="monfaq.htm">Troubleshooting and
+Repair of Computer and Video Monitors</a>,
+<a href="tvfaq.htm">Troubleshooting and
+Repair of Television Sets</a>, and
+<a href="vcrfaq.htm">Troubleshooting and
+Repair of Video Cassette Recorders</a>, and others at
+this site may contain some of the information you seek on these other topics.
+<p>
+<A NAME="ipstcv"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<h2>Types of Conversion</h2>
+<h3><A NAME="ipsymi">You Mean it is More Than Just the Type of Plug?</a></h3>
+<p>
+It would be nice if all you had to do was match up a plug and socket to make
+anything in the universe work together.  Unfortunately, while this does work
+for some things - garden hoses, for example :-) - it rarely is as simple as
+this for electrical power, video, or communications.
+<p>
+<h3><A NAME="ipspcv">Power Conversion</a></h3>
+<p>
+This relates to what comes out of the wall socket.  Nearly every country in
+the world uses an AC voltage between 90 and 240 V at 50 or 60 Hz.  There may
+be some exceptions (like 600 V at 25 Hz powering portions of the New York City
+subway system or 28 V at 400 Hz on board an F-18 - but this is not something
+you are likely to need to deal with!) - if you encounter such unusual
+situations, we will be happy to add them to this document!
+<p>
+The three important considerations are:
+<ul>
+<li>Voltage - the RMS (Root Mean Square - you really don't need to worry about
+  the term) value of the nominal power line voltage.  (OK, if you really care,
+  the RMS value of an AC waveform will be equal to that of a DC voltage which
+  will have the same heating effect.  It is the squareroot of the mean
+  (average) of the waveform squared.  Got that? :-).
+<p>
+<li>Frequency - the number of cycles per second now expressed in Hz (pronounced
+  like the Hertz car rental company).  Almost all power around the world is AC.
+  There are some exceptions but you will be unlikely to encounter them.
+<p>
+<li>Plugs and sockets - there are several dozen variations (at least) with and
+  without a safety ground depending on your location.  If you purchase *the*
+  adapter that they recommend at the travel store, there is good chance it
+  will not fit when you actually get to your destination!  However, there are
+  universal plug and socket adapter sets which may have a better track record.
+</ul>
+<h3><A NAME="ipsvsc">Video Standards Conversion</a></h3>
+
+This relates to the scan rates, color encoding, and audio transmission of
+the baseband video signals in use in your country.
+<ul>
+<li>Scan rate - how many total scanning lines are used and how many times per
+  second a complete picture is 'painted' on the picture tube screen.  (Note
+  that exsiting TV standards use interlaced scanning - a picture is made up
+  of an even field (all the even numbered lines) and an odd field (all the
+  odd numbered lines) and a picture consists of both of these.  The most
+  common (pre-HTDV) are 525 lines at 30 Hz (e.g., U.S. NTSC) and 625 lines
+  at 25 Hz (e.g., U.K. PAL).  However, there are others.
+<p>
+<li>Color Encoding - the way the color information is combined with the basic
+  monochrome (black and white) picture signal.  These differ between NTSC
+  and PAL and there are several variations for PAL as well.  The effect of
+  a TV with the wrong decoding circuitry will be either a black and white
+  picture or possibly color interference effects.
+<p>
+<li>Audio - the location of the subcarrier frequency for the sound information
+  among other things may differ as well.
+</ul>
+<h3><A NAME="ipsbcs">Broadcast (and Cable) Standards</a></h3>
+<ul>
+<li>Radio - AM and FM channel locations and spacing.
+<p>
+<li>Video - VHF and UHF channel assignments, color encoding, audio carrier,
+ etc.
+<p>
+<li>Telephone - ???
+</ul>
+<A NAME="ipsvci"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<h2>Voltage Conversion Issues and Common Types of Voltage Converters</h2>
+<h3><A NAME="ipshtg">How to Get Power for Equipment A to Work with Equipment
+ B</a></h3>
+<p>
+There are a variety of approaches to adapting equipment designed for one
+power system to another.
+<ul>
+<li>Transformers will always work but may be too heavy or expensive to justify
+  their use.
+<p>
+<li>Electromechanical approaches go back quite far, are quite efficient, but
+  are heavy, bulky, noisy, not very flexible.
+<p>
+<li>Solid state converters vary widely in complexity, capabilities, and cost.
+  Some may destroy motors or electronic equipment and this may not be obvious
+  from the product description.
+</ul>
+Note that in cases, the proper (or close enough) power may be available
+already.
+<ul>
+<li>Where 110 VAC is standard, 220 VAC is usually present in the residence
+  since the power originates from a 220-0-220 VAC utility (pole) transformer.
+  In some cases, a suitable outlet will even be present though usually one will
+  have to be added.  Whether this is worth the effort and expense for a $30
+  coffeemaker you picked up in your travels is another matter. :-)
+<p>
+  In industrial or office buildings, 208 VAC will be available (since they use
+  three-phase power but that is another story) and this may be close enough
+  for most applications (though heating appliances won't be quite as zippy  as
+  if they were running on the proper 220 VAC and therefore your eggs may take
+  a little longer to cook).
+<p>
+<li>Where 220 VAC is standard, hotels and other public buildings may provide
+  110 VAC convenience outlets for foreign visitors.  While the frequency will
+  probably still be the standard 50 Hz for these countries, many appliances
+  don't care.  See the chapter: "Frequency Issues".
+<p>
+<li>Many appliances have a voltage selector switch usually near the power cord
+  entrance though some may require changing internal jumpers.  See your user
+  manual!  This is particularly true of appliances that are typically used
+  overseas like shavers.
+<p>
+<li>Many types of equipment like laptop computers, camcorders, and computer
+  monitors, use universal switching power supplies that automatically adapt
+  at anything from 100 to 240 V, 50 to 400 Hz (maybe even DC).  With these,
+  the nameplate will clearly specify this universal operation.  However, you
+  cannot assume this!  Applying 240 V to a device that doesn't accept it WILL
+  result in damage or a meltdown.
+<p>
+<li>Where a power transformer is used as with most audio equipment, there may
+  dual primary windings, possibly with additional taps, to permit the unit to
+  be configured for almost any voltage.  Unfortunately, manufacturers often
+  save a few pennies by using a power transformer in equipment for sale in the
+  U.S. with only a 115 VAC primary.  You may be able to determine this by
+  checking the wiring to the primary of the transformer - if each of the line
+  wires goes to a pair of terminals/wires into the transformer, it is likely
+  that the required pair of windings is present and can be rewired in series.
+  If they only go to a single terminal/wire, then this probably can't be done.
+</ul>
+<h4><A NAME="ipstts">True Transformers</a></h4>
+<p>
+This refers to devices that consist solely of a pair (at least) of windings
+on an iron core.  There are no other devices in a transformer beyond possibly
+a switch, indicator light, thermal protector, and/or a fuse or circuit breaker,
+and a plug or terminal block for input and socket or terminal block for output.
+<p>
+In the following, we assume that the two voltages are 110 VAC and 220 VAC.
+Similar comments apply if the ration is not 2:1.
+<p>
+There are several types including:
+<ul>
+<li>Isolated step-up for converting from 110 VAC to 220 VAC.
+<li>Isolated step-down for converting from 220 VAC to 110 VAC.
+<li>Autotransformer step-up for converting from 110 VAC to 220 VAC.
+<li>Autotransformer step-down for converting from 220 VAC to 110 VAC.
+</ul>
+Autotransformers are cheaper but do not provide line isolation which may
+be desirable.  In general, a step-up or step-down transformer can be used
+backwards to effect the opposite conversion - whether this is possible is
+a construction detail.  In addition, a 1:1 isolation transformer can be used
+as a 1:2 (stepup) or 2:1 (stepdown) autotransformer with a VA rating twice
+of what it would be when used normally.
+<p>
+The relevant parameters characterizing a tansformer consist of:
+<ul>
+<li>Voltage - The ratio of the number of turns of wire on the output winding(s)
+  and input winding determines the output:input voltage ratio.  Electrically,
+  input and output can be interchanged to obtain the opposite conversion. 
+  Whether this is supported by the packaging is another story.
+<p>
+<li>Power/VA capacity: The size of the core and the wire determine the power
+  handling capability.  VA is simply the voltage (V) multiplied by the current
+  (A) for the input or output.  For a resistive load like a space heater or
+  light bulb, this is the same as true power in watts (W).  Due to unavoidable
+  losses in the transformer, the input and output ratings are not quite the
+  same.  The transformer must be capable of supplying the required VA of the
+  desired maximum load without exceeding the current rating of the input line.
+<p>
+<li>Frequency: The relevant values are 50 Hz or 60 Hz.  There may be issues of
+  core saturation occurring when attempting to run a transformer designed for
+  60 Hz on the same input voltage but at 50 Hz.  (There is no going the other
+  way.)  This isn't an issue if the transformer has been engineered with
+  adequate safety margins but could result in overheating and failure for a
+  'designed as cheaply as possible. unit.  This probably isn't that likely but
+  if the transformer gets excessively hot or has an unusual amount of hum,
+  saturation may be the problem.  Running it on slightly reduced input voltage
+  may help but whether this is a viable option depends on many factors and the
+  rest of the equipment may end up being unhappy.  See the chapter:
+  <A HREF="#ipsifc">Is Frequency Conversion Needed?</a>.
+</ul>
+Transformers of adequate capacity can be used with all types of equipment.
+<p>
+However, they are heavy and costly and do not convert frequency.  Thus, they
+may be unsuitable in some situations and there may be cheaper more appropriate
+alternatives.  A *suitable* transformer large enough to power a space heater
+would weigh about 50 pounds and cost perhaps $200 - much more than the the
+space heater is worth.
+<p>
+<h4><A NAME="ipsulv">Using a Low Voltage Transformer to Increase or Reduce
+ Line Voltage</a></h4>
+<p>
+Sometimes, it is only necessary to adjust the voltage by 10 or 20 V to be
+fully compatible.  For example, this might be the case when using domestic
+Japanese gear in the U.S. and vice-versa.  Their line voltage is closer to
+100 VAC compared to our 115 VAC.
+<p>
+An easy way to change the voltage by 15 V (for example) up or down, is to
+obtain a transformer with a 110 V primary and around a 15 V secondary.  The
+secondary current rating needs to be at least equal to the load requirements.
+Wire it up so the secondary is in-phase in series with the AC to the load to
+boost voltage (as shown below) or out-of-phase to reduce it.
+<p>
+Note: To obtain exactly the correct voltage will require a slightly higher or
+lower voltage transformer than this simple explanation would indicate since
+the input voltage will be slightly lower or higher than the transformer's
+rated input voltage.  This is usually not an issue since precise voltage to an
+appliance or piece of electronic equipment is generally not required.
+<PRE>
+
+                             +------------+
+                             |            |
+               AC In o-------+--+         |
+                               o )|| +----+
+                                 )||(
+          105 VAC Line   Primary )||( Secondary
+                                 )||( o
+                                 )|| +---------o AC Out
+               AC In o-------+--+
+                             |                          120 VAC to Load
+                             +-----------------o AC Out
+
+</PRE>
+
+<h4><A NAME="ipstbc">Thyristor Based Converters</a></h4>
+
+These are the low cost devices available at Radio Shack or a travel accessories
+store that weigh almost nothing and have huge power ratings.  They operate by
+switching the power on to the load at the appropriate time during each cycle
+of the AC voltage (120 or 100 times a second) resulting in approximately the
+proper power being delivered to the load.
+<p>
+Thyristor based converters are for converting from 220 VAC to 110 VAC without
+changing frequency with major restrictions:
+<ul>
+<li>WARNING:  These are suitable ONLY for resistive loads like light bulbs,
+  space heaters, and frying pans WITHOUT induction motors, transformers, or
+  electronic controls.
+<p>
+<li>They are designed to provide approximately the correct *power* conversion
+  factor for resistive loads (and possibly universal motors).  The maximum
+  voltage may still be close to that of the input - 220 V.  This will instantly
+  (or at least quickly destroy electronics and may destroy induction motors,
+  transformers, and other similar loads rated for 110 VAC only slightly more
+  slowly.
+<p>
+<li>The output is very spike-y unlike the smooth sinusoid of the normal power
+  line AC.  This in itself may result in addition problems including radio
+  frequency interference (RFI) and equipment buzz or hum.
+</ul>
+<p>
+Since all a thyristor (triac) can easily do is turn on - it has to wait until
+the end of the cycle to turn off - to get the same effective power from a 220
+VAC input as a 110 V input will require a higher peak voltage with a duty
+cycle of much less than 100 percent.  Capacitors in the power supply of
+typical electronic like to charge to the peak - BLAM!  The high peak voltage
+can result in breakdown of underrated insulation and have other undesirable
+effects on devices like induction motors and transformers.  Even equipment
+for which these are supposedly designed can be destroyed or may represent a
+safety risk since there can be much higher voltages inside than normal.
+
+<h4><A NAME="ipsmas">Motor Alternators</a></h4>
+
+Before the development of solid state power devices, these represented an
+efficient, if bulky way of converting both voltage and frequency.  A
+synchronous induction motor is coupled to an alternator (AC generator) on the
+same shaft.  By designing with the appropriate number of poles for each, this
+could easily, if noisily, perform both voltage and frequency conversion.
+
+<h4><A NAME="ipsssc">Solid State (AC->DC->AC) Converters</a></h4>
+
+These provide efficient conversion of both voltage and frequency in a light
+weight compact package.  The best of these generate an output nearly identical
+to the power obtained from the wall socket and operate as follows:
+<ul>
+<li>Rectify and filter AC input to provide direct current (DC).
+<p>
+<li>Chop the DC at a high frequency controlling both polarity and amplitude to
+  synthesize a replica of the desired power (sinusoidal) waveform.
+<p>
+<li>Use a transformer to step this up to the required voltage
+<p>
+<li>Provide a filter to remove the high frequencies from the output.
+</ul>
+The waveform before smoothing would look similar to the following:
+<PRE>
+                     ||                  ||              
+                   ||||||              ||||||            
+                  ||||||||            ||||||||           
+                 ||||||||||          ||||||||||         
+                 ||||||||||          ||||||||||          
+                           ||||||||||          ||||||||||
+                           ||||||||||          ||||||||||
+                            ||||||||            ||||||||
+                             ||||||              ||||||            
+                               ||                  ||
+</PRE>
+After smoothing, the result would be very similar to a sinusoid.
+<p>
+This more costly approach enables arbitrary voltage *and* frequency conversion
+but as we will se later, this is rarely needed.  For an idea of how to design
+such a converter, see the section: <A HREF="#ipsrepc">Design of High
+Efficiency Power Inverters</a>.
+<p>
+Cheaper models simply generate a square wave or modified sinewave at the
+appropriate frequency:
+<p>
+Squarewave:
+<PRE>
+                  _________           _________
+                 |         |         |         |          
+                 |         |         |         |          
+                 |         |         |         |          
+                 |         |         |         |          
+                           |         |         |         |
+                           |         |         |         |
+                           |         |         |         |
+                           |_________|         |_________|
+</PRE>
+Modified sinewave:
+<PRE>
+                     _____                 _____  
+                    |     |               |     |         
+                    |     |               |     |         
+                    |     |               |     |         
+                 ___|     |____       ____|     |____          
+                               |     |               |    |
+                               |     |               |    |
+                               |     |               |    |
+                               |_____|               |____|
+</PRE>
+
+The nice thing about the modified sinewave is that its RMS and peak values
+match that of the true sinusoid (as well as other advantages in terms of
+harmonic content).  If you don't know what this means, don't worry,  Your life
+doesn't depend on it.  One implication, however, is that heating loads and
+electronic devices which rectify and filter the input power will see the same
+effective voltage.
+<p>
+For many devices including all resistive loads, either of these approaches is
+adequate.  However, devices with motors and/or transformers will be much
+happier with smoothed sinusoidal power.  Switching power supplies (except
+universal types) will be underpowered with the simple squarewave inverter and
+may overheat running near full load.
+
+<h4><A NAME="ipsrepc">Design of High Efficiency Power Inverters</a></h4>
+
+Here is a general recipe - season to taste. :)
+
+(From: James Meyer (notjimbob@earthlink.net).)
+
+<ol>
+<li>Make a DC to DC converter using any one of several standard designs
+ available almost anywhere.  Pick a design using switch-mode control and a
+ high frequency transformer.  The input voltage you already know.  Make the
+ output voltage adjustable over a 0 to 170 volt range by way of a low-level
+ input signal of maybe 0 to 10 volts.  The output current will be whatever
+ you want for the 120 volt AC output current.  You'll probably want to have a
+ transformer in there to isolate the output from the input, but it will be a
+ small one because the frequency will be very much higher than 60 Hz.
+<p>
+<li>Build a signal generator that puts out a 0 to 10 volt signal that looks
+ like a half-wave rectified 60 Hz waveform.  Use that to control the DC to DC
+ converter.
+<p>
+<li>Then use an H-bridge switch on the output of the 0 to 170 volt converter
+ to get alternate plus and minus output.  Use a square wave that changes state
+ at each 0 volt output point of the input signal to drive the H-bridge.
+</ol>
+
+Using this approach, you can step the input voltage up to the peak of the sine
+wave that you want at the output with a decent converter that can be very
+efficient and produce little waste heat.
+<p>
+The H-bridge MOSFETs are also only switches so they can be efficient.  Plus,
+you're switching currents at the output voltage level which is a lot smaller
+than the current at the DC input.
+<p>
+You'll get a sine wave at the output and the whole thing should be simple and
+fairly cheap.  The high frequency switching converter will be the hardest part
+to get going because of the wide adjustable output voltage range required, but
+I think it will still be easier than the "brute force" method.
+
+<h3><A NAME="ipsspcc">Some Power Converter Companies</a>
+
+Here are a few random companies that offer power converters.  I am in no
+way endorsing their products and have no direct knowledge of their quality
+or performance.  Listed in alphabetical order.
+<ul>
+<li><A HREF="http://www.starkelectronic.com/st500.htm">Stark Electronic</A>
+<li><A HREF="http://www.voltagevalet.com/converters.html">Voltage Valet</A>
+<li><A HREF="http://www.walkabouttravelgear.com/">Walkabout Travel Gear</A>
+<li><A HREF="http://www.toddsystems.com/home.html">Todd Systems</A>
+</ul>
+
+<h3><A NAME="ipswad">What Appliances will be Damaged by Reduced
+ Voltage?</a></h3>
+
+Here is a summary of various appliance types and how they are affected
+by the severely reduced voltages possible during a brownout:
+<ul>
+<li>Resistance heating elements/incandescent bulbs/ and similar will not be
+  damaged and will actually last longer.  Of course, light and/or heat will
+  be reduced.
+<p>
+<li>Constant horsepower loads like refrigeration compressors will be severely
+  stressed and may burn out.
+<p>
+<li>Shaded pole motors will run slow but will probably not be damaged.  Many
+  of these are designed to survive a stalled condition as well.
+<p>
+  Examples: fans and some blowers, can openers, pencil sharpeners.
+<p>
+<li>Capacitor run and other larger induction motors without a starting switch
+  will run slow with reduced torque.  However, if they stall, overheating
+  and burnout is possible.
+<p>
+  Examples: some blowers, dishwashers.
+<p>
+<li>Motors with a starting switch may not reach starting winding cutout speed
+  and result in motor damage - burnt out starting winding.
+<p>
+  Examples: washing machines, cloths dryers, circulator and other larger
+  pumps, large furnace blowers, stationary shop tools.
+<p>
+<li>Universal motors will run slow with decreased torque and reduced cooling.
+  There may be a range of speeds over which they will overheat.
+<p>
+  Examples: vacuum cleaners, electric leaf blowers, many other portable
+  line powered tools
+<p>
+<li>Switching power supplies will run hot and may fail.
+<p>
+  Examples: TVs, some VCRs, computers (PCs and laptops), monitors, and
+  some peripherals,
+<p>
+<li>Linear power supplies will probably just not regulate well resulting
+  in hum in audio or hum bars in video.
+<p>
+  Examples: Stereo receivers, CD players, cassette decks, phones, some
+  fax machines, some printers.
+<p>
+<li>Anything with relays may have problems with the relays not operating
+  reliably or cycling.
+<p>
+  Examples: heating and cooling systems, garage door openers, etc. but
+  most of these will have other components more severely affected.
+</ul>
+For appliances with more than one type of device like a microwave oven,
+all factors must be considered.  For this example, the oven will heat at
+a reduced power level (which is safe) but the cooling fan(s) will also
+run more slowly resulting in possible overheating and failure of the
+magnetron.  A convection space heater may overheat for similar reasons.
+
+<h4><A NAME="ipshbd">How Big a Difference in Voltage Before a Converter is
+ Needed</a></h4>
+<blockquote>
+"I would like to bring a variety of small to medium-sized Japanese
+ electrical products (100V 50/60 Hz) with me when I move back to the U.S.
+ (e.g., lights, rice-cooker, cassette player, VCR...) Individual
+ transformers like those sold in travel shops are quite expensive.  Is it
+ possible buy a large number of small stepdown transformers -- or to make
+ them as kits?  Any advice would be greatly appreciated."
+</blockquote>
+First, for some of these like the VCR, the 15% difference between 115 VAC
+and 100 VAC may not matter.  The only way to be sure is to check with the
+manufacturer.
+<p>
+For others like the rice cooker, it too may be ok if it uses a thermostat
+to control its heating element.
+<p>
+However, the simplest way to reduce 115 to 100 VAC is to buy or construct 
+an autotransformer.
+<p>
+To construct one, you need a stepdown transformer with an output of about
+15 V (for this example) and a secondary current rating at least equal to
+your total current needs.  Then, the primary is connected to the line and
+the secondary is wired anti-phase in series with the loads and the line.
+<p>
+For devices using AC adapters, I would just replace the AC adapters with
+a US version.
+
+<h4><A NAME="ipsevr">Effects of Improper Voltage on Resistive Loads</a></h4>
+<ul>
+<li>Incandescent light bulbs.  Light output will increase or decrease by a
+  greater relative percentage than the voltage change.  Life will be impacted
+  dramatically.  The life function for an incandescent light bulb is roughly
+  (V/Vo)^^14.  This is the actual voltage divided by the nominal voltage 
+  raised to the 14th power!  A 5 percent increase in voltage will decrease
+  life by about 50%.
+<p>
+  With greatly excessive voltage (i.e., running a 110 V light bulb on 220 V),
+  burnout will be nearly instantaneous - the bulb may even explode.
+<p>
+  With reduced voltage, the light output will be reduced and life will be
+  extended dramatically as well.  However, efficiency decreases faster than
+  voltage so it doesn't make sense to use bulbs on lower voltage unless they
+  are in a hard-to-reach spot as the energy cost dominates.  Extending the
+  life of a 25 cent bulb just doesn't save money in the end especially if
+  a higher wattage or additional bulbs must be used to make up the light
+  reduction.
+<p>
+<li>Space heaters (excluding fans) and heating appliances like rice cookers,
+  deep fryers, toaster, etc.  Power is proportional to the square of the
+  voltage.  Reduced voltage will result in less heat or longer cycles (if
+  thermostatically controlled).  Excessive voltage will result in more heat or
+  shorter cycles.  However, there could be fire risk if the appliance is not
+  designed with adequate insulation and safeguards to handle the extra power.
+<p>
+  With greatly excessive voltage, heating devices will blow a fuse or internal
+  thermal protector, the AC fuse or circuit breaker, or burn out.
+</ul>
+<h4><A NAME="ipsevc">Effects of Improper Voltage on Constant Power
+ Loads</a></h4>
+<ul>
+<li>Induction motors.  These are found in refrigeration equipment (fridges,
+  freezers, air conditioners, dehumidifiers), air compressors, washing
+  machines, dryers, some stationary shop tools, pumps, and many other
+  domestic and industrial applications.
+<p>
+  An induction motor is a nearly constant speed drive.  Reduce the voltage
+  and it will still try to maintain almost the same speed.  Where the load
+  is constant, this means that it will draw greater current to compensate
+  for the reduced voltage (remember: P = constant = V*I).  This will result
+  in excessive heating and stress.  The equipment may fail to start properly
+  at all or cycle on its thermal/overcurrent protector.  Its life may be
+  shortened or it may burn out quickly.
+<p>
+  Excess voltage isn't good either since the construction may result in
+  magnetic core saturation which will also result in overheating, added
+  noise (hum), and lower efficiency.
+<p>
+<li>Regulated switchmode power supplies
+<p>
+  These share many of the characteristics of induction motors in that they
+  will attempt to maintain the same power to the load.  Thus, at low line
+  voltage, they will draw additional current and internal parts may be
+  stressed to the point of (possibly catastrophic) failure.  Unlike induction
+  motors, this is much more difficult to predict as it is highly design
+  dependent.
+<p>
+  Usually a slight reduction or increase in voltage will not affect the
+  performance or longevity.  However, unless specified as a universal input
+  (90 to 240 VAC) or where specific recommendations are available, remaining
+  within a 10 percent window is best.  This is especially critical on the low
+  side when running near full load.
+<p>
+  Running a non-universal switching power supply from a squarewave inverter
+  result in overheating and subsequent failure near full load.  The reason is
+  that the peak value of the input waveform is about 7/10ths of that from the
+  normal AC line and the current must increase to compensate.
+</ul>
+<h4><A NAME="ipsevt">Effects of Improper Voltage on Transformer Loads</a></h4>
+
+While the ideal transformer (the one they may have taught you about in EE101)
+doesn't care about its actual input voltage, real transformers do.  If the
+voltage increases significantly above what it was designed for, the core may
+saturate.  This means that the magnetic field in the core cannot increase any
+further and the result is to effectively short circuit the input (above a
+certain voltage on the waveform).  At the very least, this will result in
+excessive heating and hum or buzz.  The transformer may burn out if a fuse
+doesn't blow first.
+<p>
+How much excess voltage is acceptable is not something that can be determined
+without testing.  Some transformers are designed very conservatively (bigger
+cores, more copper, etc.) while others just barely get away with running on
+the nominal line voltage.
+<p>
+Certainly, 2:1 will be too much for almost any transformer.  You may get away
+with a 25% increase without too many problems.
+<p>
+It is possible to test for this by slowing increasing the input voltage while
+monitoring input current.  Up until saturation, it will increase linearly
+with voltage.  As saturationg sets in, a small increase in voltage will result
+in a large increase in current and increased buzz or hum as well.
+<p>
+Reducing voltage to a transformer is not a problem unless the load will then
+demand more current - which may result in excessive heating and failure.
+
+<h4><A NAME="ipsevm">Effects of Improper Voltage on Motor Loads</a></h4>
+<ul>
+<li>As noted above, induction motors are constant speed devices so that the
+  current will tend to decrease as voltage is increased and increase as voltage
+  is decreased.  There can also be core saturation effects just as with
+  transformers.
+<p>
+<li>Universal motors - those found in vacuum cleaners, portable shop tools, and
+  so forth - will run with a speed that it related to input voltage (unless
+  feedback regulated).  On low voltage, the speed will be lower and your
+  vacuum cleaner won't suck as well.  Since it uses bypass air to cool the
+  motor, it may overheat also.  On higher than normal voltage, it will run
+  faster adding wear and tear to the bearings.  Blowers and flywheels may
+  disintegrate if not designed for the added centrifugal loads.
+<p>
+<li>Fan motors - these are shaded pole induction type usually and so lossy to
+  begin with that speed will vary with voltage.  Again, bad things may happen
+  at too low or too high voltage but they will probably survive modest changes.
+</ul>
+<p>
+<A NAME="ipslfi"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<h2>Line Frequency (50/60 Hz) Issues</h2>
+<h3><A NAME="ipsifc">Is Frequency Conversion Needed?</a></h3>
+
+The question of 50 Hz vs. 60 Hz always comes up in conjunction with
+international power.  However, except for equipment with induction motors
+(e.g., fans, compressors), or where the line frequency is used for timing
+(electric or line powered electronic clocks), the line frequency may be
+irrelevant.
+
+<h3><A NAME="ipseif">Effects of Improper Frequency</a></h3>
+<ul>
+<li>Clocks/timers run slow or fast.  Devices that depend on synchronous motors
+  or count the cycle of the line voltage directly like desk or alarm clocks,
+  clocks in clock radios, appliance timers, anti-burglery timers, and so forth,
+  will run fast or slow by the precise ratio of the correct to actual line
+  frequency.  In nearly all cases, this will be either 5/6 or 6/5 based on
+  the ratio of 50 to 60 Hz and vice-versa.
+<p>
+  In the case of synchronous motors, there is nothing you can do - the speed
+  is determined by construction and the gear ratios.
+<p>
+  Those that are entirely electronic may have a switch or jumper (probably
+  inside) to select the AC frequency - 50 or 60 Hz.
+<p>
+  Many devices use an internal quartz crystal for the clock or timer and will
+  not be affected at all.  Devices like VCRs may or may not use the power line
+  for timing.  Of course, battery operated equipment will always use an
+  internal quartz crystal as there is no connection to the power line.
+<p>
+<li>Transformer core saturation - excessive heating.  Reducing the frequency of
+  the input to a transformer also increases the likelihood of core saturation.
+  Therefore, going from 60 Hz to 50 Hz may be a problem for your stereo (which
+  likely uses a power transformer) if its design is marginal.  As with voltage,
+  there is no way to know except by testing unless the nameplate specifically
+  states a frequency spec - 50/60 Hz.
+<p>
+<li>Induction motor speed and torque.  As noted, these are nearly constant
+  speed devices dependent on power line frequency:
+<p>
+ <ul>
+ <li>Going from 50 Hz to 60 Hz: motor will run fast with reduced torque.
+<p>
+ <li>Going from 60 Hz to 50 Hz: motor will run slow with reduced torque.
+ </ul>
+<p>
+<li>Note that most modern electronic equipment (with the possible exceptions
+  listed above) does not depend on the power line frequency for anything.
+  This includes CD players, cassette decks, servo-drive turntables, TVs
+  (unless there is an on-screen line timed clock), VCRs (ditto), computers,
+  monitors, printers, fax machines, etc.
+</ul>
+<h3><A NAME="ipsewp">Equipment that Will Probably not Care About the Line
+ Frequency</a></h3>
+
+The following are generally insensitive to frequency (50/60 Hz):
+<p>
+<ul>
+<li>Appiances with only heating elements (e.g., toaster, radient space heater)
+  and incandescent light bulbs.
+<p>
+<li>Devices with universal motors (e.g., vacuum cleaner, electric drill).
+<p>
+<li>Fluorescent lamps using electronic ballasts (including many compact
+  fluorescents).
+<p>
+<li>TVs, VCRs, computers, monitors, universal AC adapters, other devices
+  using switching power supplies.  (The a clock may run at an incorrect
+  rate if it depends on the power line frequency.)
+</ul>
+<p>
+However, note different TV standards will likely result in your TV and VCR
+working together but not able to receive or record broadcasts or cable.
+<p>
+Some equipment explicitly states the acceptable voltage and frequency range.
+In the case of a universal power adapter, this may range from 90 to 260 V
+DC or AC up to 400 Hz - or more.
+
+<h3><A NAME="ipsemw">Equipment that May Work with a Different Line
+ Frequency</a></h3>
+
+The following will probably work when going from 50 Hz power to 60 Hz power and
+may work going the other way.  However, transformer cores designed for 60 Hz
+may saturate on 50 Hz and run hotter and/or blow internal fuses and cooling
+fans will run slower - this should be checked to make sure there is no hazard:
+<p>
+<ul>
+<li>Audio equipment (e.g., receivers, CD players, tape decks, servo locked
+  turntables).  However, since the broadcast channel spacing may differ,
+  tuning may not operate correctly.)
+<p>
+<li>Devices using wall wart AC adapters with actual transformers (these are
+  massive as opposed to universal AC adapters which weigh almost nothing)
+  (e.g., calculators, boomboxes, telephones and answering machiens, external
+  modems and CDROM drives, dust busters hand vacs).  However, the phone system
+  may not be compatible.)
+<p>
+<li>Printers, fax machines, and other computer peripherals which use a power
+  transformer in their power supply.
+<p>
+<li>Microwave ovens (power is related somewhat to frequency, cooling fans and
+  turntables will run slow on 50 Hz).
+<p>
+<li>Fans and blowers (will run slower on 50 Hz).
+<p>
+<li>Convection space heaters (shaded pole fan motor will run faster on 60 Hz).
+  If designed for 60 Hz and run off 50 Hz, it will run slower possibly
+  resulting in overheating.
+</ul>
+<p>
+
+<h3><A NAME="ipsemp">Equipment that May have Problems on Different Line
+ Frequency</a></h3>
+
+The following may have problems:
+<p>
+<ul>
+<li>Audio equipment using AC motors like some turntables and reel-to-reel
+  tape decks.  Speed will be incorrect.  Mechancial adapters may be available.
+<p>
+<li>Clocks and devices with built in clocks or timers.  Many of these depend
+  on the power line frequency for timekeeping.  They will therefore run
+  at a 5/6 or 6/5 rate when the frequency changes.  (This may be desirable -
+  your day could last 20% longer! :-)  ).
+<p>
+<li>Electric shavers depending on a resonant linear motor (vibrator).  The
+  frequency difference may be enough to kill the resosnance and result in
+  weak or no blade motion.  (Remingtons used to use this technique; I do
+  not know what manufacturers still do.)
+<p>
+<li>Large fixed power devices like refrigeration compressors.  
+<p>
+<li>Equipment with a combination of resistive heating elements and/or induction
+  motors and/or electronics.  One or more subsystems may have performance or
+  overheating problems.
+<p>
+<li>Fluorescent lamps and fixtures using iron ballasts.
+</ul>
+<p>
+<A NAME="ipsrsd"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<h2>Recommendations for Specific Equipment</h2>
+<h3><A NAME="ipsgcs">General Considerations</a></h3>
+
+The sections below summarize the major issues with respect to common
+appliances and consumer electronic equipment.  Following these are those
+which relate specifically to moving overseas or vice-versa.
+ 
+<h4><A NAME="ipstvv">Television Sets and Video Cassette Recorders</a></h4>
+
+A voltage converter - preferably a true transformer or modified or true
+sinewave inverter will be needed to adapt the voltage unless the unit has
+a universal power supply.
+<p>
+Modern TVs do not care about power line frequency at all as they do not
+have any power transformer.  Really old sets may run into core saturation
+problems but these are mostly dead by now.
+<p>
+Note: the video frame rate is not tied to the power line in any way.
+Therefore, a U.S. TV with a 60 Hz (actually 59.94 Hz) frame rate will work
+just fine in a country with 50 Hz power assuming the voltage is correct.
+However, it will not be compatible with broadcast or cable or likely a VCR
+purchased in that country - see below.
+<p>
+VCRs may use a small power transformer in the power supply so changing from
+60 Hz to 50 Hz may result in overheating though probably not likely.
+<p>
+However, taking a VCR and TV from the U.S. to a European country, for
+example, may not be worth it.  They will work fine with each-other (as
+long as the voltage is proper) but the video standards in foreign countries
+are not compatible with those in the U.S.  Therefore, it may be better to
+buy new equipment overseas unless you are taking your prized collection of
+videos and will obtain other equpiment to deal with broadcast and cable.
+There are also services for copying video cassettes from one standard to
+another and these may represent an alternative to lugging the equipment
+with you.
+
+<h4><A NAME="ipssma">Small Appliances</a></h4>
+
+Specific recommendations will depend on the actual devices inside the
+appliance - motors, heating elements, timers, and so forth.
+<ul>
+<li>For appliances containing ony heating elements - no fans or other motors -
+  any type of voltage converter will be suitable.  For example, the very
+  inexpensive and light weight thryistor type of 220 VAC to 110 VAC type
+  should work fine with a waffle iron.
+<p>
+<li>Where motors are involved, a true transformer will be best but may be
+  excessively heavy or expensive.
+<p>
+<li>With timers, the line frequency will also be important.
+<p>
+<li>If the appliance is powered by a wall adapter outputting DC, a substitute
+  wall adapter may be the best option.
+</ul>
+<h4><A NAME="ipsclk">Clocks</a></h4>
+
+Electric clocks using a synchronous motor would require a motor or gear
+transplant - not worth it.  Of course, you could just live with shorter or
+longer days :-).
+<p>
+Clocks using the power line to drive an electronic display may have a jumper
+to select 50 or 60 Hz.  Even this may not be worth the effort to locate as
+it is likely not going to be labeled.
+
+<h4><A NAME="ipsfll">Fluorescent Lamps</a></h4>
+
+For those using iron ballasts, both voltage and frequency will be significant.
+Though it may be possible to come up with a formula which incorporates both,
+the best thing to do is to only use the line voltage for which the unit
+was designed.
+<p>
+Where the frequency isn't the same, the current through the lamp may differ,
+most likely too high in going from 60 Hz to 50 Hz, too low the opposite
+way.  If the current is too high, there could be shortened lamp life at the
+very least or even a serious fire hazard.  If the current is too low, the
+lamp may not remain on in a stable manner, flickering, or constantly
+restarting.  Initial starting could also be affected.
+<p>
+If they use electronic ballasts, the frequency probably won't matter.  Some
+"universal" types, can accommodate an input voltage from 90 to 250 VAC up to
+400 Hz or even DC.
+<p>
+In all cases, it is best to consult with the manufacturer if the product
+label doesn't explicitly indicate "50/60 Hz" operation.  When in doubt,
+leave them behind since there is really no way to be sure of the safety
+issues.
+
+<h4><A NAME="ipsaud">Audio Equipment</a></h4>
+
+These include tuners, amplifiers, receivers, tape decks, CD players, etc.
+<p>
+Except for the tuner or tuner portion of the receiver, the only issue is power.
+Audio equipment almost always uses a transformer type power supply so the
+comments in the previous chapters should apply.  A voltage converter will be
+needed to go from 110 VAC to 220 VAC or vice-versa.  In this case, it really
+should be a true transformer.  Anything else is quite likely to introduce
+unaccceptibel interference in the form of a hum or buzz even if it doesn't
+result in any damage to the equipment.  As noted, going from 60 Hz to 50 Hz
+could intruduce problems of transformer core saturation in marginally designed
+equipemnt as well.
+
+<h4><A NAME="ipsrad">Radios, Tuners, Receivers</a></h4>
+
+In addition to the power issues (see the section: <A HREF="#ipsaud">Audio
+equipment</a>, station frequencies and channel spacing differ from country
+to country.
+
+<h4><A NAME="ipsmic">Microwave Ovens</a></h4>
+
+If the voltage is different, sell where you are located and buy a new one at
+your destination.  The power involved would require a large, heavy, expensive
+voltage converter - preferably a true transformer.  It doesn't make sense for
+a $150 microwave.
+<p>
+Line frequency doesn't affect the performance of a microwave that much (perhaps
+a 5 percent increase in cooking power from 50 Hz to 60 Hz) but the timer and
+clock will likely be affected and may not be easily adjusted - not at all in
+the case of a mechanical timer though there may be a jumper for an electronic
+timer.  However, the turntable and cooling fan motors will also be affected
+and attempting to account for all the variations is probably just not worth it!
+
+<h4><A NAME="ipspcs">PCs and Laptop/Notebook Computers</a></h4>
+
+Check your equipment.  Most PC power supplies have a switch to select between
+110 VAC and 220 VAC.  Some have universal power supplies that will work within
+a range of voltage between 90 and 240 V AC (up to 400 Hz) or DC.  The latter
+is generally true of laptop/notebook power packs.
+<p>
+Similary, monitors may use a switch or jumper to select voltage or have
+a universal power supply.
+<p>
+PCs and monitors do not use the line frequency for anything - not even the
+real time clock.
+
+<h4><A NAME="ipslas">Laser Printers</a></h4>
+
+These may use a switching or transformer based power supply.  This is not the
+real problem.  What is, is the power for the fuser - several hundred watts.
+Therefore, if using a true transformer for voltage conversion, a large one
+will be required.
+<p>
+Some may have universal power supplies - check your instruction manual!
+
+<h4><A NAME="ipsnlp">Non-Laser Printers</a></h4>
+
+These will usually use a power transformer type power supply so a voltage
+converter will be needed.  The frequency will only matter with respect to
+transformer core saturation.  Nothing in a printer depends on line frequency.
+
+<h3><A NAME="ipsteo">Taking Equipment Overseas (or Vice-Versa)</a></h3>
+
+When does it make sense to take an appliance or piece of electronic equipment
+to a country where the electric power and possibly other standards differ?
+<p>
+For anything other than a simple heating appliance (see below) that uses a
+lot of power, my advise would be to sell them and buy new when you get there.
+For example, to power a microwave oven would require a 2kVA step down (U.S.
+to Europe) transformer.  This would weigh about 50 pounds and likely cost
+almost as much as a new oven.
+<p>
+Note that some places like Japan may even have varying power specifications
+in different parts of the country.  Isolated areas such as islands may have
+their own power generators with very erratic and voltage and frequency.  The
+following discussion assumes power from a large (national) grid.
+<p>
+There are several considerations:
+<ol>
+<li>AC voltage - in the U.S. this is nominally 115 VAC but in actuality
+   may vary from around 110 to 125 VAC depending on where you are located.
+   Many European countries use 220 VAC while voltages as low as 90 or 100
+   VAC or as high as 240 VAC (or higher?) are found elsewhere.
+<p>
+<li>Power line frequency - in the U.S. this is 60 Hz.  The accuracy,
+   particularly over the long term, is excellent (actually, for all intents
+   and purposes, perfect) - better than most quartz clocks.  In many foreign
+   countries, 50 Hz power is used.  However, the stability of foreign power
+   is a lot less assured.
+<p>
+<li>TV standards - The NTSC 525L/60F system is used in the U.S. but other
+   countries use various versions of PAL, SECAM, and even NTSC.  PAL
+   with 625L/50F is common in many European countries.
+<p>
+<li>FM (and other) radio station channel frequencies and other broadcast
+   parameters differ.
+<p>
+<li>Phone line connectors and other aspects of telephone equipment may differ
+   (not to mention reliability in general but that is another issue).
+<p>
+<li>Of course, all the plugs are different and every country seems to think
+   that their design is best.
+</ol>
+For example, going to a country with 220 VAC 50 Hz power from the U.S.:
+<p>
+For electronic equipment like CD players and such, you will need a small
+step down transformer and then the only consideration power-wise is the
+frequency.  In most cases the equipment should be fine - the power
+transformers will be running a little closer to saturation but it is
+likely they are designed with enough margin to handle this.  Not too
+much electronic equipment uses the line frequency as a reference for
+anything anymore (i.e., cassette deck motors are DC).
+<p>
+Of course, your line operated clock will run slow, the radio stations
+are tuned to different frequencies, TV is incompatible, phone equipment
+may have problems, etc.
+<p>
+Some equipment like PCs and monitors may have jumpers or have universal
+autoselecting power supplies - you would have to check your equipment
+or with the manufacturer(s).  Laptop computer, portable printer,  and
+camcorder AC adapter/chargers are often of this type.  They are switching
+power supplies that will automatically run on anywhere from 90-240 VAC,
+50-400 Hz (and probably DC as well).
+<p>
+Warning: those inexpensive power convertors sold for international travel
+that weigh almost nothing and claim to handle over a kilowatt are not
+intended and will not work with (meaning they will damage or destroy)
+many electronic devices.  They use diodes and/or thyristors and do not
+cut the voltage in half, only the heating effect.  The peak voltage may
+still approach that for 220 VAC resulting in way too much voltage on the
+input and nasty problems with transformer core saturation. For a waffle
+iron they may be ok but not a microwave oven or stereo system.  I also
+have serious doubts about their overall long term reliability and fire
+safety aspects of these inexpensive devices..
+<p>
+For small low power appliances, a compact 50 W transformer will work fine
+but would be rather inconvenient to move from appliance to appliance or
+outlet to outlet.  Where an AC adapter is used, 220 V versions are probably
+available to power the appliance directly.
+<p>
+As noted, the transformer required for a high power heating appliance is
+likely to cost more than the appliance so unless one of the inexpensive
+convertors (see above) is used, this may not pay.
+
+<h4><A NAME="ipscdo">CD Players</a></h4>
+
+Fortunately, the standard for the CDs themselves is the same everywhere in
+the explored universe  Yes, even Australia :-).  Thus, there should be no
+issues of incompatibility.  The differences will relate only to the power
+supply.
+<p>
+First, check your user's manual (which you of course have saved in a known
+location).  It may provide specific instructions and/or restrictions.
+<p>
+Most component type CD players use a simple power supply - a power transformer
+followed by rectification, filter capacitors, and linear regulators.  These
+will usually only require a small step up or step down transformer to operate
+on a different voltage.  Since power requirements are minimal, even a 50 VA
+transformers should be fine.  WARNING: never attempt to use one of those cheap
+lightweight power adapters that are not true transformers to go from 220 V to
+110 V as they are designed only for heating appliances.  They will smoke your
+CD player (or other equipment not designed to handle 220 V to 240 V input).
+<p>
+Some CD players may have dual voltage power transformers which can be easily
+rewired for the required voltage change or may even have a selector switch
+on the rear panel or internally.
+<p>
+The frequency difference - 50 or 60 Hz should not be a problem as nothing in
+a CD player uses this as a timing reference.  The only slight concern would
+be using a CD player specified for 60 Hz on 50 Hz power - the transformer
+core may saturate and overheat - possibly blowing the internal fuse.  However,
+I don't really think problems are likely.
+<p>
+For portable CD players, if your wall adapter does not have a voltage selector
+switch, obtain one that is rated for your local line voltage or use a suitable
+transformer with the one you have.  As with power transformers, a frequency
+difference may cause a problem but this is not likely.
+
+<h4><A NAME="ipsmoo">Microwave Ovens</a></h4>
+
+Microwave ovens are high power appliances.  Low cost transformers or
+international voltage adapters will not work.  You will need a heavy
+and expensive step down or step up transformer which will likely cost
+as much as a new microwave oven.  Sell the oven before you leave and
+buy a new one at your destination.
+<p>
+Furthermore, for microwave ovens in particular, line frequency may make
+a difference.  Due to the way the high voltage power supply works in a
+microwave oven, the HV capacitor is in series with the magnetron and thus
+its impedance - which depends on line frequency - affects output power.
+<p>
+High voltage transformer core saturation may also be a problem.  Even with
+no load, these may run hot even at the correct line frequency of 60 Hz.
+So going to 50 Hz would make it worse - perhaps terminally - though this
+is not likely.
+<ul>
+<li>Going from 50 Hz to 60 Hz at the same line voltage may slightly increase
+  output cooking power (and heating of the magnetron).  The line voltage
+  could be reduced by a small amount to compensate.
+<p>
+<li>Going from 60 Hz to 50 Hz may slightly decrease output power and possibly
+  increase heating of the HV transformer due to core losses.  Using a slightly
+  lower line voltage will reduce the heating but will further decrease the
+  cooking power.
+</ul>
+The digital clock and timer will likely run slow or fast if the line frequency
+changes as they usually use the power line for reference.  Of course, this may
+partially make up for your change in output power! :-)
+
+<h4><A NAME="ipsbte">Buying a TV in Europe</a></h4>
+
+<blockquote>
+"I have the following question for you specialists:
+<p>
+ Can I buy a TV in any west-european country and use it in any other west
+ European country?  For example, buying a TV in the Netherlands and use it in
+ Greece or buying in France and using in England.
+<p>
+ Any help would be appreciated as I do not really trust the sale people
+ at the store."
+</blockquote> 
+Neither would I.
+<p>
+Along with the multiple audio/video formats, there may be differences in
+channel frequency assignments between the various countries.
+<p>
+Channel 5 in country X may not be on the same actual frequency as Channel 5
+in country Y or Z. The channel spacings or modulation may also be different.
+<p>
+(From: Phil Nichols (in5379@wlv.ac.uk).)
+<p>
+Plus, in different countries the audio signal can be transmitted at a
+different frequency relative to the vision signal. Great! Perfect
+picture, no sound!
+<p>
+I believe most continental European countries use PAL B (narrow vision
+bandwidth; sound carrier 5.5MHz higher than vision carrier), whereas the
+UK and Ireland use PAL I (wider vision bandwidth; sound carrier 6MHz
+higher than vision carrier).
+<p>
+The wisest thing is to decide which countries you are most likely to
+want to visit with your TV, find out what transmission system they use,
+then go looking for a TV which can use that/those system(s).
+<p>
+Almost all TVs in west Europe are compatible (PAL-B/G), except Britain
+(PAL-I) and France (SECAM-L).  Greece is also using SECAM, but on very few
+channels and not all the time.
+<p>
+(From: Wolfgang Schwanke (wolfi@berlin.snafu.de).)
+<p>
+This is correct, but maybe not the whole story.
+<p>
+There are differences in the broadcast bands used.  At least Italy uses
+different channel allocations than the rest of the PAL-B/G crowd. Germany
+uses frequencies on cable that are unused elsewhere, which only special
+tuners can get.  Also, there are different methods for transmitting stereo
+sound (NICAM vs. analogue).
+<p>
+New TVs nowadays (sold in Europe anyway) are often all-world-standard
+all-frequency-bands, because it's easier for the manufacturer to make a "one
+for all" set instead of having so many different designs for every country.
+But don't rely on it.
+<p>
+(From Jeroen Stessen (Jeroen.Stessen@philips.com).)
+<p>
+Oh boy, here goes another long story:
+<p>
+PAL-plus is an attempt to extend the life-cycle of terrestrial PAL
+transmissions by including compatible wide-screen (16:9)
+transmissions. It is an advanced variant of the letterbox format, this
+means that when you receive a PAL-plus widescreen program on an older
+4:3 receiver you will see black bars top and bottom.  It was
+originally developed in Germany (university of Dortmund in cooperation
+with German terrestrial broadcasters and some setmakers). Later a
+large consortium of European and Japanese setmakers took over and
+finished the job. Strangely, the German broadcasters seem to use
+PAL-plus only very rarely.
+<p>
+The PAL-plus standard comprises three extensions to the PAL-standard:
+<ol>
+<li>Vertical helper. In order to compensate for the fact that 1/4 of
+   the video lines are not used, which would deteriorate vertical
+   resolution for the widescreen viewer, the missing vertical 
+   information has been coded into the black lines in a manner as
+   to be nearly invisible on a 4:3 receiver (you see some dark blue). 
+   The 16:9 PAL-plus receiver combines 432 visible lines plus 144 
+   helper lines into 576 new visible lines.
+<p>
+<li>Colour-plus. The PAL colour carrier is modulated in a slightly
+   different way (making use of correlation between 2 fields) in
+   order to give a cleaner Y/C separation in the PAL-plus receiver.
+<p>
+<li>Signalling bits from which the receiver can conclude whether
+   the transmission is 4:3/16:9/PAL-plus and adapt the display
+   format accordingly. The bandwidth of these bits is low enough
+   to survive recording on a VHS recorder.
+</ol>
+In order to enable a poor-man's PAL-plus receiver, the standard
+permits using the mark "PAL-plus" if at least the vertical helper
+reconstruction is included. Colour-plus is optional, so you will find
+sets on the market with only half of the PAL-plus extension.
+<p>
+PAL-plus may also be combined with teletext, ghost cancellation
+reference, digital Nicam stereo, VPS, PDC and what-you-have more.
+Theoretically it can be broadcast over a satellite channel too, but it
+was not designed for that and some aspects of a satellite channel do
+indeed give interesting technical problems.
+<p>
+There are also sets marketed as "PAL-plus compatible". These are
+mostly widescreen sets without any PAL-plus processing at all, but
+they allow switching of the display format between 4:3 and 16:9. They
+may well do that automatically, based on the signalling bits.
+<p>
+There are 2 methods for displaying a 4:3 letterboxed signal on a 16:9
+display, without using the PAL-plus helper lines:
+<ol>
+<li>Increase of the vertical deflection amplitude to display only the centre
+ 432 lines.
+<p>
+<li>Vertical interpolation without using the helper, to convert 432 lines
+ into 576 lines and display on a 576 lines display.
+</ol>
+Both modes may be called "movie expand".  Only when you really convert to
+full-resolution widescreen will it be called "widescreen".
+<p>
+And there are 4 methods for displaying a regular 4:3 signal on a 16:9 display
+(regular PAL, has nothing to do with PAL-plus):
+<ol>
+<li>Decrease of the horizontal deflection amplitude, this gives black bars
+ left and right.
+<p>
+<li>Horizontal interpolation, to convert N pixels to 3/4*N pixels.  Both
+ modes may be called "4:3" or "normal"
+<p>
+<li>Non-linear horizontal deflection waveform, called "Panorama mode" by JVC,
+ works by increasing the S-capacitor value.
+<p>
+<li>Non-linear horizontal interpolation, called "Superwide" by Philips, works
+ with an advanced sample-rate convertor.
+</ol>
+With both modes, the left and right edges of the picture will be stretched to
+fill the left and right bars, but the aspect ratio of the centre part of the
+picture will hardly be affected.
+<p>
+Interesting, ain't it ?
+<p>
+(From: Allan Mounteney (allan@amounten.demon.co.uk).)
+<p>
+RE: Is there a TV set that covers international standards?
+<p>
+The answer is YES.
+<p>
+Reason I know is that I was with a company that made computers with TV-OUT
+for world wide use and wanted something that could show that the TV Out worked
+for various countries.
+<p>
+This ONE and ONLY one we could find Three years ago came from Germany and
+covered PAL, SECAM and the American NTSC systems and came with a note that
+said from the time of making/selling that set it would not work in just one
+small country in South America.  All features (including audio) were
+adjustable from the front panel menu and it was a Grundig 17" job. I am
+advised that there is a load of others on the market now.
+<p>
+The company who seemed to know all about these international sets and gave us
+good service at that time was Andrew McCulloch Ltd in Cambridge UK. Phone:
+44(0)1223-351825 
+<p>
+<A NAME="ipsioi"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<h2>Items of Interest</h2>
+<h3><A NAME="ipstvs">TV, Shortwave, Power Worldwide</a></h3>
+<p>
+(From: Mark Zenier (mzenier@netcom.com).)
+<p>
+A book, "The World Radio TV Handbook" published by Billboard that covers TV,
+along with where all the world's shortwave radio transmitters are, and what
+sort of power comes out of the wall plug all around the world.  It has a new
+edition each year and costs around $25 to $30.
+
+<h3><A NAME="ipsvsr">About the Vertical Scan Rate</a></h3>
+
+TVs never ever used the line frequency for vertical rate.  The vertical rate
+is not even equal to line frequency, actually 59.94 Hz (NTSC).  It was set
+originally to 60 Hz to minimize the visibility of interference between the
+deflection and power transformer.  When NTSC added color, it changed to
+59.94 Hz.  And, TVs no longer have power transformers.
+
+<h3><A NAME="ipsduc">Determining Unknown Connections on International Power
+ Transformers</a></h3>
+
+Most likely, you can figure this out if you can identify the input connections.
+<p>
+There will be two primary windings.  Each of these may also have additional
+taps to accommodate various slight variations in input voltage.
+<p>
+For the U.S. (110 VAC), the two primary windings will be wired in parallel.
+For overseas (220 VAC) operation, they will be wired in series.  When
+switching from one to the other make sure you get the phases of the two
+windings correct - otherwise you will have a short circuit!  It is best
+to test with a Variac so you can bring up the voltage gradually and catch
+your mistakes before anything smokes.
+<p>
+An multimeter on the lowest resistance scale should permit you to determine
+the internal arrangement of any taps.
+<p>
+With any luck, the transformer wiring will even be labeled on the case!
+
+<h3><A NAME="ipsrtp">Running Three-Phase Motors on Single-Phase Power</a></h3>
+
+This may be an issue if you picked up a South Bend lathe with a 10 foot bed
+at a garage sale for $1 or more realistically with professional shop equipment
+like large saws or planars.
+<p>
+A three-phase motor will run on single-phase power once started - but at
+somewhat reduced output power (horsepower).  The very simple approach (compared
+to complete conversion) is to just provide a means for starting.  The motor
+will then run at the correct speed (assuming the line frequency is the same)
+but will not be able to develop full torque before stalling.  Actually
+converting single-phase to three-phase will likely be more expensive than
+replacing the motor.
+<p>
+There is some info at the
+<A HREF="http://www.metalwebnews.com/howto/ph-conv/ph-conv.html">Building a
+Phase Converter</a> site.
+
+<h3><A NAME="ipsnev">A Note on Voltage in Europe</a></h3>
+
+(From:  Michael Salem (4ms2u$ms@michaels.demon.co.uk).)
+<p>
+Until recently voltage in the UK was 240 VAC nominal, +- 6%. Voltage 
+in most of the rest of Europe was 220 VAC. A few years ago voltages 
+throughout Europe were harmonized to 230 VAC. This caused very little 
+disruption; no change to power stations or distribution systems, no 
+equipment problems caused by the change.
+<p>
+Why so trouble-free?
+<p>
+It was a politicians' change: Voltage didn't change at all (at least 
+in the UK). The permissible voltage in the UK used to be between 226V 
+and 253V (240+/-6%). It is now 230V -6% +10%; i.e., anything between 
+216V and 253V. The actual voltage is exactly what it always was, it's 
+just <i>called</i> 230V. Presumably as power stations and distribution 
+equipment age and are replaced the actual voltage will decrease; but 
+I have certainly measured the maximum permissible 253V in June 2000.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#ipstoc">Power FAQ Table of Contents</A>.
+<p>
+-- end V1.12a --
+</PRE>
+</BODY>
+</HTML>

@@ -1,0 +1,507 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/Blu-ray/site1/optics.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Blu-ray Reader Dissection by Leslie Wright and Sam Goldwasser -
+ Optics Page</title>
+
+<meta name="keywords" content="blu-ray laser diode, blu ray laser pointer,
+violet laser diode, violet laser pointer, blu ray, blu ray laser">
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/Blu-ray/site1/optics.html">https://www.repairfaq.org/sam/Blu-ray/site1/optics.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+<center>
+Copyright &copy; 2007-2011,
+ Leslie Wright <a target="aa" href="http://www.fineartradiography.com/">
+   www.fineartradiography.com</a> and
+ Sam Goldwasser <a target="aa" href="../../../index.html">
+   www.repairfaq.org</a>, All Rights Reserved.
+<p>
+<hr>
+<p>
+<h1>Dissection of a Blu-ray Reader Assembly:<br>
+The Optics</h1>
+<h2>Leslie Wright and Samuel Goldwasser</h3>
+<br>
+<form action="http://translate.google.com/translate" target="aa">
+ <nobr><b>Translate this page with Google:</b>
+ <select name="langpair">
+ <option value="en|fr">Fran&ccedil;ais</option>
+ <option value="en|de">Deutsch</option>
+ <option value="en|es">Espanol</option>
+ </select>
+ <input name="hl" value="en" type="hidden">
+ <input name="prev" value="/language_tools" type="hidden">
+ <input name="u" value=
+  "http://www.fineartradiography.com/hobbies/lasers/blu-ray/index.html"
+   type="hidden">
+ <input value="OK" style="font-size: 11px;" type="submit">&nbsp;</nobr>
+</form>
+<br>
+<h3><a href="index.html">Return to Blu-ray Page</a></h3>
+<br>
+
+</center>
+<p>
+The optical assembly contains some very strange and novel optics, unlike
+anything ever seen in an optical pickup before. Because of this the optical
+assembly now has its own page!
+<p>
+Sam Goldwasser and I have done a number of patent searches in order
+to determine exactly how this fascinating thing works!
+It would appear that the strange components are a result of Sony using
+its three diode laser, and a common beam-path for all the used
+wavelengths. This approach reduces the size of the pickup (as opposed
+to two objective designs), but does make the optical design somewhat
+complex!
+<p>
+Here are photos of the PS3 sled, the KES-400A:
+<p>
+<center>
+<a target="aa" href="ps3diode-images/kes400a-t.jpg">
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 444px;
+height: 300px;" alt="KES-400A Sled Top"
+src="ps3diode-images/kes400a-ts.jpg"></a>
+<a target="aa" href="ps3diode-images/kes400a-b.jpg">
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 446px;
+height: 300px;" alt="KES-400A Sled Bottom"
+src="ps3diode-images/kes400a-bs.jpg"></a>
+<p>
+(Click on photo for closeup.)
+</center>
+<p>
+The top view of the PS3 sled shows the objective lens and the elaborate
+flex-PCB that interconnects all the electronic components (more on this
+below). The Laser diode sits in the little metal mount
+on the right.  The bottom view is what is visible by removing the
+cover and a pair of little brackets that help to ensure that
+the optics components stay in place.  The first and most
+obvious oddment here is the lens on its servo (the large black object)
+and is pictured below, removed from the sled.
+<p>
+<center>
+<a target="aa" href="ps3diode-images/kes400az.jpg">
+<img style="border: 3px solid ; width: 488px; height: 331px; color:
+rgb(255, 255, 255);" alt="KES-400A Zoom Collimator"
+src="ps3diode-images/kes400azs.jpg"></a>
+<p>
+(Click on photo for closeup.)
+</center>
+<p>
+The metal cylinder is a micro-stepper motor which moves the lens mounted
+on the plastic bracket via screw drive on a linear track.  The unit plugs
+into the flex-PCB via the 8 conductor flex-cable.  To get an idea of
+the scale, that motor is about 6 mm (1/4") long.
+<p>
+At first I had concluded that this was needed on account of the three
+wavelengths used giving different focal lengths, since passing 405 nm
+through a single lens will give a shorter FL than passing 780 nm
+through it. However, Sam was recently sent an HD-DVD pickup, with two
+objectives, and separate paths for the 405 nm and 660/780 nm. The optical
+path for 405 nm ALSO contains a similar zoom lens as shown below:
+<p>
+<center>
+<a target="aa" href="ps3diode-images/hddvd1-t.jpg">
+<img style="border: 3px solid ; width: 405px; height: 300px; color:
+rgb(255, 255, 255);" alt="HD-DVD Sled Top"
+src="ps3diode-images/hddvd1-ts.jpg"></a>
+<a target="aa" href="ps3diode-images/hddvd1-b.jpg">
+<img style="border: 3px solid ; width: 407px; height: 300px; color:
+rgb(255, 255, 255);" alt="HD-DVD Sled Bottom"
+src="ps3diode-images/hddvd1-bs.jpg"></a>
+<p>
+(Click on photo for closeup.)
+</center>
+<p>
+The photo of the top of the HD-DVD sled shows the dual objective lenses, both
+mounted on the same actuator assembly.  The upper lens is for the CD and DVD
+and the lower lens is for the HD.  Note that the marking on the PCB actually
+says "BD/HDP".  I'm calling it HD-DVD because that's what I was told by
+the person who sent it to me (Sam) but it may indeed be designed for both
+BD and HD-DVD operation, probably made by LG.  Unfortunately, the model
+of the equipment it was removed from is not known.
+<p>
+In the photo of the bottom of the HD-DVD sled, the path for the 405 nm laser
+is the lower path and travels right to left.  Note the zoom lens assembly!
+The upper path traveling left to right is 660/780 nm (note there is no
+beamsplitter evident here, just a single collimating lens and turning
+mirror! This is because the Laser diodes, beamsplitter, and
+photodiodes, are integrated into one can! This is fairly common in
+modern DVD/CD players, and according to some of the patents
+have seen this is how the combined 405/660/780 nm diode will
+most likely end up!)
+<p>
+After some serious patent digging, it is apparent that the objective
+lens sits less than 600 &mu;m away from the disc when reading Blu-ray
+discs.  Since there are Blu-ray discs that are multilayer, you would probably
+end up with the objective considerably closer to, if not embedded in
+the disc, when reading deeper layers! The collimating lens on the servo
+is therefore variable so as to extend the range of focal lengths
+available at the objective.
+<p>
+The variable focus servo lens moves on a linear track driven by a
+micro-stepper motor.  An LED and photodiode arrangement
+and a small `flag` ("photointerrupter"), provides the a
+position reference.
+<p>
+<hr>
+<center><h2>The Rest of the assembly</h2></center>
+
+The individual parts of the assembly shown below, stripped from
+the sled, and arranged roughly with the same relationship they had
+in <i>situ</i>. Each piece has been carefully examined, and an explanation of
+its function explained.
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 600px;
+height: 400px;" alt="KES-400A Parts Eplosion!"
+src="ps3diode-images/explosion.jpg">
+</center>
+<p>
+<b>Exploded view of the optical parts in the head</b>
+
+<ul>
+<li>A: Original location of laser diode - see the
+ <a href="diode.html">Laser Diode Page</a>.
+<li>B+C: Original photodiode array positions.
+<li>D: Holographic grating to split the beam into main and two
+ sub-beams.
+<li>E: Negative elliptical lens for the violet PD focus control.
+<li>F: Small polarizing beam splitter cube for the violet LD
+ (reflects returning violet beam into violet PD array).
+<li>G: Large polarizing beam splitter cube for the IR/red LD
+ (reflects returning IR/red beam into IR/red PD array).
+<li>H: Two small plastic optics. The smaller one is a negative cylindrical lens
+ for the IR/red PD focus control; the larger one is a diffraction grating,
+ possibly to correct for the difference in wavelength between the
+ IR and red LDs (660 nm and 780 nm) (Thanks Sam!)
+<li>I: Variable focus servo unit and lens to extend the range of focal lengths
+ of the system without the objective touching the disc).
+<li>J: Mutli-segment LCD panel for wavefront aberration correction.
+<li>K: Negative miniscus doublet lens (very long focal length, about 1 metre!).
+<li>L: Turning mirror.
+<li>M: Wave Plate.  This would be expected to be a Quarter Wave Plate (QWP)
+ based on similar optics in other pickups, but its behavior is somewhat strange
+ compared to a known QWP.
+<li>N: Objective (disk read) lens with voice-coil focus and tracking
+ servos.  This lens is very special and comprises of something that looks
+ like a zone plate below a very high numerical aperture objective with a
+ very unique shape.  More below.
+</ul>
+<p>
+Item "J" is very unusual. It comprises of a small LCD, approximately 4 mm
+square with a polymer flex-cable attached.  On the cable near the window
+is a small IC.
+<p>
+<center>
+<img style="border: 3px solid ; width: 300px; height: 200px; color:
+rgb(255, 255, 255);" alt="KES-400A Weird LCD Thing"
+src="ps3diode-images/weird.jpg">
+</center>
+<p>
+<a target="aa" href="http://www.electricstuff.co.uk/">
+<span style="text-decoration: underline;">Mike Harrison</span></a>
+has some pictures of the unit being powered at: <a target="aa"
+href="http://www.electricstuff.co.uk/violaser.html">
+http://www.electricstuff.co.uk/violaser.html</a>
+<p>
+Since it is a peculiar item to find in an optical pickup, we trawled
+through the patents again, to find its exact function.
+According to the patents, it is there primarily to correct wavefront
+aberration, and in addition, spherical aberration, astigmatism, and coma.
+These are the following patent references, showing the segmented
+electrode pattern, and technical explanations:
+<p>
+<ul>
+<li><a target="aa"
+ href="http://www.freepatentsonline.com/20060067196.html">
+ http://www.freepatentsonline.com/20060067196.html</a>,
+ U.S. Patent Application Publication #2006/0067196 A1:
+ "Optical pickup and optical disk drive using same" (Sony).
+<p>
+<li><a target="aa"
+ href="http://www.freepatentsonline.com/20020001273.html">
+ http://www.freepatentsonline.com/20020001273.html</a>,
+ U.S. Patent Application Publication #2002/0001273 A1:
+ "Optical pickup" (Non-Sony).
+</ul>
+<p>
+<hr>
+<center><h2>The Objective Lens</h2></center>
+
+<center>
+<a target="aa" href="ps3diode-images/kes400ao-t.jpg">
+<img style="border: 3px solid ; width: 380px; height: 278px; color:
+rgb(255, 255, 255);" alt="KES-400A Objective Lens Assembly Top"
+src="ps3diode-images/kes400ao-ts.jpg"></a>
+<a target="aa" href="ps3diode-images/asphere1.jpg">
+<img style="border: 3px solid ; width: 358px; height: 278px; color:
+rgb(255, 255, 255);" alt="KES-400A Objective Lens Asphere"
+src="ps3diode-images/asphere1s.jpg"></a>
+<p>
+(Click on photo for closeup.)
+</center>
+<p>
+The final curiosity, deserving of more explanation, is the objective lens.
+We noticed that the lens has a peculiar
+raised dimple in the middle, surrounded by two flat anular rings. I had
+noticed, that when a laser is shone though it, that a pattern of rings appears
+on a surface in front of the lens.
+<p>
+We have not found a patent relating to the lens surface, though we
+concur, that the raised portion on the outer surface of the objective
+is there, to shorten further, an already short focal length. The rear
+surface of the lens is highly aspheric, having a profile like the
+pointed end on an egg.
+<p>
+When the objective was removed for investigation, a circular
+diffraction grating was discovered right behind it.
+A laser at 660 nm was shone through this grating, and resulted is a
+small central spot surrounded by several thick rings.
+A laser at 405 nm was shone through the grating, and this time, a tiny
+central spot was produced. All of the junk in the beam was neatly
+dispensed with by the grating!
+<p>
+I had concluded that this was what it was for, but we turned to the
+patents again for solid proof of application.
+The following is an edited excerpt from a patent describing the function of the
+concentric ring diffraction grating, which is actually three in one:
+<p>
+<blockquote>
+"The diffractive optical element diffracts the light (@660 nm), so that
+ the diffracted light is incident on the objective lens at an optimal
+ divergent angle, whereas the second diffractive part of the diffractive
+ optical element diffracts the the light beam (at 405 nm) so that the
+ diffracted light is incident on the objective lens in an optimal
+ amount, and at an optimal divergent angle. As a result, the spot shape
+ and the amount of the light beam, having each of the wavelengths can be
+ made appropriate with respect to (the type of media used)".
+</blockquote>
+<p>
+From:
+<ul>
+<li><a target="aa"
+ href="http://www.freepatentsonline.com/20070035837.html">
+ http://www.freepatentsonline.com/20070035837.html</a>,
+ "Optical pickup and optical disc apparatus".
+</ul>
+Specifically, the problem relates to the difference of disc thicknesses
+(DVD as opposed to Blu-ray), and the reduction of spherical aberration
+caused by them.
+<p>
+Below are photos of the bottom of the objective lens assembly.  The optical
+element visible in these photos is a molded plastic disk with a zone plate
+on the bottom surface and possibly a Fresnel corrector on the top surface.
+Both surfaces are AR coated.  This optic is separate from the objective asphere
+shown above.
+<p>
+(These may actually implement a diffractive optic
+called a "Harmonic Optical Element" (not to be confused with a Holographic
+Optical Element with the same acronym).  See:
+<A HREF="http://www.optoiq.com/index/photonics-technologies-applications/lfw-display/lfw-article-display/352182/articles/laser-focus-world/volume-45/issue-2/features/diffractive-optics-harmonic-optical-element-simplifies-blu-ray-optics.html">DIFFRACTIVE OPTICS: Harmonic optical element simplifies Blu-ray
+optics</A>.  For this discussion, we'll stay with our terminology.)
+<p>
+The zone plate on the bottom surface - a series of circular rings
+with a variable pitch from center to edge - shows
+up quite well in the left photo, and especially in the closeup on the right.
+<p>
+<center>
+<a target="aa" href="ps3diode-images/kes400ao-b.jpg">
+<img style="border: 3px solid ; width: 429px; height: 314px; color:
+rgb(255, 255, 255);" alt="KES-400A Objective Lens Assembly Bottom"
+src="ps3diode-images/kes400ao-bs.jpg"></a>
+<a target="aa" href="ps3diode-images/zoneplate1.jpg">
+<img style="border: 3px solid ; width: 393px; height: 314px; color:
+rgb(255, 255, 255);" alt="KES-400A Objective Lens Zone Plate Bottom"
+src="ps3diode-images/zoneplate1s.jpg"></a>
+<p>
+(Click on photo for closeup.)
+<p>
+Closeup of bottom of objective lens assembly showing zone plate in center of lens.
+</center>
+<p>
+I inspected a zone plate extracted from the objective under a microscope
+at a magnification of 430X.  One side (the bottom surface) consists of
+approximately 96 embossed
+circular rings with alternating heights differing by perhaps 0.005 mm.  (So,
+48 pairs.)  It appears to have been molded and the lower height rings tend
+to accumulate debris.  There is a clear area in the center (probably flat)
+with a diameter of about 0.19 mm with the overall diameter of the embossed
+area being about 2 mm.  The pitch (distance between the rings) decreases
+smoothly from about 0.04 mm at the edge of the central clear area to about
+0.005 mm at the outer edge of the embossed area.  These measurements have
+an uncertainty of +/-25 percent or more. :)  Both sides are AR coated.  A
+simplified diagram is shown below with 5 sets of rings instead of 48 or so.
+The left part is of the zone plate side of the optic.
+Note that this is NOT the same as a Fresnel lens, though the superficial
+appearance is similar. For the zone plate, the rings alternate between
+two constant heights.  A Fresnel lens consists of rings that follow the
+contour of the original normal bulk lens and so look more like prisms in
+cross-section.
+<p>
+<center>
+Simplified and Not To Scale!!!!<br>
+<img style="border: 3px solid ; width: 748px; height: 304px; color:
+rgb(255, 255, 255);" alt="Zone Plate Diagram"
+src="ps3diode-images/zone2.gif"><br>
+Left Diagram: Zone Plate (Bottom Surface); Center Diagram: Cross-Section; Right Diagram: Fresnel Corrector (Top Surface).
+</center>
+<p>
+Speaking of which....
+The other side (top surface) may be an aspheric Fresnel corrector - a Fresnel
+lens with a non-spherical profile.  It also has a set of rings, but they
+appear to be of similar shape (not pairs of rings), There are 24 or so
+rings with the spacing decreasing from center to middle, and then
+increasing to the edge of the same area as for the zone plate.  This
+lens appears to have a net negative curvature based on its appearance
+when illuminated with a light source at a grazing angle and by
+adjusting focus with a wide open transmission light source and
+observing debris and defects on the surface.  However, my confidence
+level here is not very high, so it could be the opposite!  The diagram
+definitely greatly exaggerates the depth at the very least!  The edge
+of every 5th ring is slightly brighter with the grazing light source,
+indicating a slight change in average height.  So, the height may
+increase for 4 rings and then drop back.  (This can't be shown in the
+diagram because I was too lazy to try to draw out a large enough
+number of rings.)  And, there are 2 more rings slightly outside this
+area but separated from it.  But it's not possible to accurately
+determine the surface contour with any light microscope I have
+available.  In fact, I can't be absolutely positive they are even
+angled like a Fresnel lens - they may simply be thin grooves.  The
+outer two rings may very likely be just that - grooves or raised
+ridges (as drawn) but not part of any lens.  Perhaps someone can check this out
+on an SEM? :)
+<p>
+While the zone plate pattern is very obvious, the Fresnel pattern is just
+barely visible to the unaided eye indicating that its height may not be
+very much.  The height of both patterns is highly exaggerated in the
+diagrams!
+<p>
+In an effort to further determine the optical properties of the zone plate, a
+collimated HeNe laser with a beam diameter approximately equal to the embossed
+area of the zone plate was used. but the results weren't very enlightening
+(no pun....).  There was a tiny dot, which was perhaps just what passed
+through the central area without change, and a rapid spreading of the beam
+(as with a short focal length negative) lens, but with many very noticeable
+ring artifacts.
+<p>
+<hr>
+<center><h2>The Flex-PCB</h2></center>
+
+Here are top and bottom views of the unfolded flex-PCB on the KES-400A sled.
+OK, I know this isn't "optics" unless you count the LD can and PD arrays
+stuck on in two places, but so be it. :)
+<p>
+<center>
+<a target="aa" href="ps3diode-images/kes400a-pcbt.jpg">
+<img style="border: 3px solid ; width: 400px; height: 416px; color:
+rgb(255, 255, 255);" alt="KES-400A Flex-PCB Top"
+src="ps3diode-images/kes400a-pcbts.jpg"></a>
+<a target="aa" href="ps3diode-images/kes400a-pcbb.jpg">
+<img style="border: 3px solid ; width: 400px; height: 416px; color:
+rgb(255, 255, 255);" alt="KES-400A Flex-PCB Bottom"
+src="ps3diode-images/kes400a-pcbbs.jpg"></a>
+<p>
+(Click on photo for closeup.)
+</center>
+<p>
+This is by far the most elaborate wiring of any optical pickup I've ever
+seen.  Also, interestingly, there are connectors for the objective lens
+assembly (upper left), zoom collimator (upper middle), and LCD panel
+(lower left) - they plug in and are thus easily replaced (at least in
+principle since alignment might still be an issue).
+Note the two photodiode arrays set at an angle on their mini-PCBs (surface
+mount via solder balls).  The one on the larger section of PCB is
+for the CD/DVD (IR/red) signal and the one on the smaller section of PCB
+if for the BD (violet) signal.
+<p>
+<hr>
+<center><h2>Comparison with PS2 Optical Block</h2></center>
+
+Below are photos of a PVR-802W optical block for a PS2 "slim-line"
+system.  (This is apparently similar to a KHM-430 and KHS-430.)
+So, the PVR-802W is only for CD/DVD, and as expected is much simpler.
+However, unlike some other PS2 optical blocks like the KHS-400B which
+use a hologram laser diode with almost everything inside the LD
+package, this one uses a 5.6 mm diameter laser diode can package
+similar to the one in the KES-400A, but with only red and IR laser
+diodes and a monitor photodiode (and 4 leads, along with discrete
+optics, and a Brewster-angle window.
+<p>
+<center>
+<img style="border: 3px solid ; width: 618px; height: 365px; color:
+rgb(255, 255, 255);" alt="KES-400A Flex-PCB Top"
+src="ps3diode-images/pvr802w2.jpg"></a>
+<p>
+Top and bottom of PS2 PVR-802W optical block (upper) along with its optical
+components (lower, from left to right: Dual laser diode, diffraction grating,
+beamsplitter plate, collimating lens, turning mirror, objective lens assembly.
+</center>
+<p>
+Note that the sheet metal shields have been removed from the
+PVR-802W, though that doesn't reveal anything terribly exciting.
+The resolution is the same as in the KES-400A photos at the top of this page.
+<p>
+The legs of the laser diode package can be found sticking out at the
+upper right edge of the bottom views, while the PD array is below it.
+The PCB is also much simpler.
+Compare the optical components laid out in a line with the similar
+photo of the ones in the KES-400A!  The beamsplitter is simply a
+partially reflecting plate.  In the view of the bottom of the optical
+block, the beamsplitter can just barely be seen under the larger flex
+cable and the edge of the collimating lens is visible to its left.
+<p>
+<hr>
+<center><h2>Laser Power Measurements</h2></center>
+
+Sam measured the laser light exiting the objective. With 5 mW of input,
+the output is 300 &mu;W
+and thats before switching segments on and off in the LCD. Given Sony's
+quite lossy design (distance from the diode(s) to the collimator, and
+the number of optical surfaces the beam has to travel through) is is
+quite reasonable to conclude that the diodes are run at more than 5mW,
+perhaps as high as 8 or 9 mW. This certainly agrees with the readings
+taken from the violet laser diode, suggesting stable output as high
+as 15 mW.
+<p>
+<hr>
+<center><h2>For More Information</center></h2>
+
+There have been extensive discussions on the USENET newsgroup
+alt.lasers, and the Internet forums
+<A target="aa" HREF="http://www.photonlexicon.com">Photon Lexicon</A> and
+<A target="aa" HREF="http://www.laserpointerforums.com">Laser Pointer
+Forums</A>.
+Checking the archives for those will probably turn up more than you ever
+wanted to know.  You can contact Leslie at: lesliewright8@hotmail.com
+and Sam through the Feedback form at
+<A target="aa" href="../../../index.html">RepairFAQ.org</A>.
+For a wealth of information about Laser related stuff, and plenty
+of diagrams, go to
+<a target="aa" href="../../lasersam.htm">Sam's
+Laser FAQ</a>.
+
+<center><h3><a href="index.html">Return to Blu-ray Page</a></h3></center>
+<center><h3><a href="../index.html">Return to Laser Pages</a></h3></center>
+<p>
+<hr>
+<p>
+<center>
+Copyright &copy; 2007-2011,
+ Leslie Wright <a target="aa" href="http://www.fineartradiography.com/">
+   www.fineartradiography.com</a> and
+ Sam Goldwasser <a target="aa" href="../../../index.html">
+   www.repairfaq.org</a>, All Rights Reserved.
+</center>
+<p>
+<hr>
+</body>
+</html>

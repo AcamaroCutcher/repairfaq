@@ -1,0 +1,172 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvtslbt.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="The series light bulb trick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: The series light bulb trick</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvtslbt.htm">https://www.repairfaq.org/samnew/tvfaq/tvtslbt.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">The series light bulb trick&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvsttlpt.htm">&lt;&lt;&nbsp;Safe troubleshooting tech..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvgiatv.htm">Getting inside a TV&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvtslbt">The series light bulb trick</A></h3>
+
+When powering up a TV (or any other modern electronic devices with expensive
+power semiconductors) that has had work done on any power circuits, it is
+desirable to minimize the chance of blowing your newly installed parts should
+there still be a fault.  There are two ways of doing this: use of a Variac to
+bring up the AC line voltage gradually and the use of a series load to limit
+current to power semiconductors.
+<p>
+Actually using a series load - a light bulb is just a readily available cheap
+load - is better than a Variac (well both might be better still) since it will
+limit current to (hopefully) non-destructive levels.
+<p>
+What you want to do is limit current to the critical parts - usually the
+horizontal output transistor (HOT).  Most of the time you will get away with
+putting it in series with the AC line.  However, sometimes, putting a light
+bulb directly in the B+ circuit will be needed to provide adequate protection.
+In that location, it will limit the current to the HOT from the main filter
+capacitors of line connected power supplies.  This may also be required with
+some switchmode power supplies as they can still supply bursts of full (or
+excessive) current even if there is a light bulb in series with the AC line.
+<p>
+Actually, an actual power resistor is probably better as its resistance is
+constant as opposed to a light bulb which will vary by 1:10 from cold to hot.
+The light bulb, however, provides a nice visual indication of the current
+drawn by the circuit under test.  For example:
+<p>
+<ul>
+<li>Full brightness: short circuit or extremely heavy load - a fault probably
+ is still present.
+<p>
+<li>Initially bright but then settles at reduced brightness: filter capacitors
+ charge, then lower current to rest of circuit.  This is what is expected
+ when the equipment is operating normally.  There could still be a problem
+ with the power circuits but it will probably not result in an immediate
+ catastrophic failure.
+<p>
+<li>Pulsating: power supply is trying to come up but shutting down due to
+ overcurrent or overvoltage condition.  This could be due to a continuing
+ fault or the light bulb may be too small for the equipment.
+</ul>
+<p>
+Note: for a TV or monitor, it may be necessary (and desirable) to unplug the
+degauss coil as this represents a heavy initial load which may prevent the unit
+from starting up with the light bulb in the circuit.
+<p>
+The following are suggested starting wattages:
+<p>
+<ul>
+<li>40 W bulb for VCR or laptop computer switching power supplies.
+<li>100 W bulb for small (i.e., B/W or 13 inch color) TVs.
+<li>150 to 200 W bulb for large color or projection TVs.
+</ul>
+<p>
+A 50/100/150 W (or similar) 3-way bulb in an appropriate socket comes in
+handy for this but mark the switch so that you know which setting is which!
+<p>
+Depending on the power rating of the equipment, these wattages may need to be
+increased.  However, start low.  If the bulb lights at full brightness, you
+know there is still a major fault.  If it flickers or the TV (or other device)
+does not quite come fully up, then it should be safe to go to a larger bulb.
+Resist the temptation to immediately remove the series light bulb totally from
+the circuit at this point - I have been screwed by doing this.  Try a
+larger one first.  The behavior should improve.  If it does not, there
+is still a fault present.
+<p>
+Note that some TVs and monitors simply will not power up at all with any kind
+of series load - at least not with one small enough (in terms of wattage) to
+provide any real protection.  The microcontroller apparently senses the drop
+in voltage and shuts the unit down or continuously cycles power.  Fortunately,
+these seem to be the exceptions.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvsttlpt.htm">&lt;&lt;Safe troubleshooting tech..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvgiatv.htm">Getting inside a TV&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

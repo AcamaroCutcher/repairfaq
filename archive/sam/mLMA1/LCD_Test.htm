@@ -1,0 +1,177 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/mLMA1/LCD_Test.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/mLMA1/LCD_Test.htm">https://www.repairfaq.org/sam/mLMA1/LCD_Test.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<h2>Testing the ST7789 LCD using the Atmega 328P Nano 3.0 and Arduino IDE</h2>
+
+For just testing the ST7789 SPI LCD, only the following hardware is required:
+<p>
+<center>
+<img src="Nano_LCD_Wiring1.gif">
+</center>
+<p>
+The resistor values for the level shifter are not critical as long as long
+as they are approximately in the ratio of 2:1.  So 1K with 470 to 510
+ohms should be fine.  But they shouldn't be much smaller (due to
+drive considerations) and if too large, there may be problems with
+the frequency response.  Under some undetermined conditions, a
+100 pF capacitor between D11 and GND is needed
+to prevent erratic behavior.  There is probably a race condition in
+the ST7789 library SPI timing.
+<p>
+If you have an mLMA1 PCB, it can be used to test the LCD before fully
+populating it.  The level shifter resistors are all in one
+block under the LCD.  R7-R10 are ~500 ohm; R11-R14 are ~1K ohm.
+(The specific values included in the kit may vary slightly but should
+be in the approximate 2:1 ratio.)
+Or the circuit, above, can be built on a prototyping
+board or solderless breadboard.  Double check the wiring and
+make sure the connections are secure.
+<p>
+<h3>Installing the Arduino IDE</h3>
+<p>
+The following are the steps to do a clean installation of the Arduino IDE and
+device drivers.  If there already is an Arduino IDE installed and it is
+totally screwed up, it should be replaced or updated.  This can be done
+without losing any of your Sketches.  If it works, don't fix it unless
+it becomes clearly broken with the Nano. ;-)  But if it's very old, the
+updating is recommenedd so that most of the old bugs have been removed
+and only new bugs remain. ;-)
+<p>
+Go to <A target="LCD" HREF="https://www.arduino.cc/en/Main/Software">Arduino Software</a>
+and install the current version of the Arduino IDE (V1.8.13 as of Jan 2021).
+(I'm not sure if the board needs to be plugged in to a USB port during
+this process, but mine was.  During the install process, it will ask to
+install the drivers.  Reply "Yes" to all its requests.  When the Arduino
+IDE is started for the first time, go to "Tools", "Board", and select
+"Arduino Nano".  If the Nano is plugged in, an new COM port should appear
+(in addition to any that were there originally) under "Tools", "Port".
+<p>
+If a new COM port DOESN'T appear when the Nano is plugged in, it probably
+means your Nano is a clone (most are) and the next step will be required.
+
+<h3>Installing the CH340 Device Driver</h3>
+
+There are at least two flavors of the Atmega 328P Nano 3.0 board, which differ
+primarily in their USB interface.  The original genuine Nano used FDDI.
+But most of the inexpensive Nanos on eBay and elsewhere are clones that
+due to copyright restrictions, changed the interface.  They use what's called
+a CH340 chip.  It is very likely the Nanos you have are of this type.  That's
+fine, as their capabilities are essentially identical to the high priced
+variety.  But a special device
+driver for the CH340 chip is required which may be installed
+from <A target="LCD" HREF="https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers/all">Sparkfun How to Install CH340 Drivers</a>.  That Web page
+also shows how to determine which type of interface your Nano has.  Follow the
+instructions for your OS.  The original driver should be uninstalled first
+if that option is shown, then the CH340 driver should be installed.  It may
+need to be done twice if the first time doesn't confirm success.
+<p>
+More info on software, drivers, and more
+at <A target="LCD" HREF="https://www.arduino.cc/en/Guide/Windows#toc1">Getting
+Started with Arduino and Genuino on Windows</A>.
+<p>
+<h3>Required C Libraries for Testing the LCD</h3>
+<p>
+Several Libraries are needed by the LCD test sketch.
+Use these links to download the .zip files into any convenient directory.
+Then the libraries can be installed from within the Arduino IDE.
+Go to "Sketch", "Include Library", "Add Zip Library".
+<p>
+<ul>
+<li><A target="LCD" HREF="https://github.com/adafruit/Adafruit-GFX-Library/archive/master.zip">Adafruit GFX Library</a>.
+<li><A target="LCD" HREF="https://github.com/adafruit/Adafruit-ST7735-Library/archive/master.zip">Adafruit ST7735 and ST7789 Library</a>.
+</ul>
+<p>
+The SPI library is also needed, but that can be loaded from within
+the Arduino IDE.  Go to "Sketch", "Include Library", "SPI".
+
+<h3>Configure the Arduino IDE for the Atmega 328P Nano 3.0</h3>
+
+Go to: "Tools":
+<p>
+<ul>
+<li><b>Board:</b> Arduino Nano.
+<li><b>Processor:</b> Atmega328P (Old Bootloader).
+<li><b>Programmer:</b> AruinoISP".
+<p>
+A very few of the commodity Nano boards have the "New Bootloader",
+so if it fails to upload, try changing to the other one: Atmega328P.
+
+<h3>Load the Sketch:</h3>
+
+Save <A target="LCD" HREF="https://www.repairfaq.org/sam/mLMA1/ST7789_TST3">ST7789_TST3: 240x240  ST7789 LCD Test
+Firmware using the Arduino IDE</A> to your Arduino sketch directory.  It is a
+directory with the actual ST7789_TST3.ino sketch in it.
+<p>
+ST7789_TST3 is a variation of a number of similar sketches found on the Web
+that can exercise the LCD without requiring any hardware much beyond the Nano
+and a few resistors.  The normal mLMA1 firmware may also
+be used.  Either of these can also be used to determine if a
+specific LCD comes up in normal or 8 color mode (see the mLMA1 manual
+for details.
+
+<h3>Uploading Firmware using the Arduino IDE</h3>
+
+The following assumes that the Arduino IDE and USB device driver have been
+installed as described above.
+<p>
+<ol>
+<li>Plug the Nano 3.0 board into a USB port.  Windows should recognize it
+ with the usual annoying sound of a USB device.  I've
+ occasionally seen problems using a USB port replicator though these
+ generally are acceptable.  But if the Nano isn't detected, use
+ a direct USB port.  It should come up as an additional USB Port, not the
+ same as any that were there before the Nano was plugged.  If not, it probably
+ means the USB device driver was not properly installed.
+<p>
+<li>Use Ctrl-O to open the firmware (.ino) file under the directory of
+ the same name.  The source code will appear in a new window.  
+<p>
+<li>Use Ctrl-U to compile and upload the firmware to the board.
+ This may take a minute or more even on a fast PC.
+ Near the end, the LEDs on the board will begin
+ flashing in several different patterns in anticipation of
+ getting new and (hopefully) improved firmware. ;-)
+ The board will be automatically reset and start running the firmware.
+ During this time, unless explcitly enabled, there will only be a green
+ bar that does something not really useful and near the end there will be only
+ a confirmation message similar to the following:
+<p>
+<pre>
+  Sketch uses 18834 bytes (61%) of program storage space. Maximum is
+  30720 bytes.  Global variables use 873 bytes (42%) of dynamic memory,
+  leaving 1175 bytes for local variables. Maximum is 2048 bytes.
+</pre>
+<p>
+It is possible to turn on "Verbose Mode" for both compilation and uploading,
+but what is displayed ends up being only most useful to other machines. :)
+<p>
+The firmware is retained in non-volatile memory so uploading only
+needs to be done once - or until a new version is available!
+<p>
+The firmware may also be compiled without uploading by using Ctrl-R.  Since
+you haven't messed with the code, it should compile without errors.
+This is slightly faster for testing and doesn't use the board at all so it
+can be off doing whatever it pleases. :)
+<p>
+The LCD_Test sketch displays a variety of text and graphics in a continuous
+loop which confirms that all of the above steps were successful.
+Congratulations, this probably only took 10 times as long as you were
+hoping. :)
+<p>
+If LCD_Test seems to upload correctly but the LCD doesn't do anything
+reasonble, simply try one of the example sketches like "Blink" to confirm
+that the Arduino IDE and USB are working.
+Go to "Files","Examples","01.Basics","Blink" to load it.  Then follow
+the instructions above to compile and upload.  Changing the values of
+the delay(1000); instructions can be done to quickly confirm that
+code is working.
+
+</html>

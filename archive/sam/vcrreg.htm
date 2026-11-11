@@ -1,0 +1,708 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/vcrreg.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>VCR Power Supply Hybrid Regulators</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/vcrreg.htm">https://www.repairfaq.org/sam/vcrreg.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+VCR Power Supply Hybrid Regulators
+</h1>
+<h2>
+Version 1.29
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="vrtoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#vrpre">Preface</A>
+ <ul>
+ <li><A HREF="#vraac">Author and Copyright</a>
+ <li><A HREF="#vrack">Acknowledgments</A>
+ <li><A HREF="#vrdpc">Device Pinouts Contributions</A>
+ <li><A HREF="#vrdis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#vrint">Introduction</A>
+ <ul>
+ <li><A HREF="#vrsap">Scope and Purpose of this Document</A>
+ <li><A HREF="#vrdmv">Does My VCR Use a Hybrid Voltage Regulator?</A>
+ <li><A HREF="#vrwts">When to Suspect the Regulator</A>
+ <li><A HREF="#vrsaf">Safe Troubleshooting of Hybrid Regulators</a>
+ <li><A HREF="#vrtes">Testing</A>
+ </ul>
+<p>
+<li><A HREF="#vrpin">VCR Hybrid Voltage Regulator Pinouts</A>
+ <ul>
+ <li><A HREF="#vrSTK791">STK791</A>
+ <li><A HREF="#vrSTK5331">STK5331</A>
+ <li><A HREF="#vrSTK5332">STK5332</A>
+ <li><A HREF="#vrSTK5333">STK5333 - ECG7036</A>
+ <li><A HREF="#vrSTK5338">STK5338</A>
+ <li><A HREF="#vrSTK5339">STK5339</A>
+ <li><A HREF="#vrSTK5342">STK5342 - ECG7035</A>
+ <li><A HREF="#vrSTK5372">STK5372 - ECG1883</A>
+ <li><A HREF="#vrSTK5421">STK5421</A>
+ <li><A HREF="#vrSTK5422">STK5422</A>
+ <li><A HREF="#vrSTK5431">STK5431</A>
+ <li><A HREF="#vrSTK5436">STK5436 - ECG1876</A>
+ <li><A HREF="#vrSTK5441">STK5441 - ECG1734</A>
+ <li><A HREF="#vrSTK5451">STK5451 - ECG1735</A>
+ <li><A HREF="#vrSTK5461">STK5461 - ECG7027</A>
+ <li><A HREF="#vrSTK5464">STK5464 - ECG7023</A>
+ <li><A HREF="#vrSTK5466">STK5466 - ECG1821</A>
+ <li><A HREF="#vrSTK5467">STK5467</A>
+ <li><A HREF="#vrSTK5471">STK5471 - ECG1822</A>
+ <li><A HREF="#vrSTK5477">STK5477 - ECG7034</A>
+ <li><A HREF="#vrSTK5481">STK5481 - ECG1823</A>
+ <li><A HREF="#vrSTK5482">STK5482</A>
+ <li><A HREF="#vrSTK5486">STK5486 - ECG7038</A>
+ </ul>
+</ul>
+<p>
+<A NAME="vrpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#vrtoc">VCR Regulator Pinouts Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="vraac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="vrack">Acknowledgments</A></h3>
+
+Much of this list was compiled from entries in the ECG Semiconductor Master
+Replacement Guide and from replies to postings on the sci.electronics.repair
+newsgroup.
+<p>
+Data for a several of the parts (those marked with *) has been generously
+provided by: Colin M. (colinmc@mail.zynet.co.uk).
+<blockquote>
+"Note that a number of chips produce the same output voltage at two pins:
+ These outputs are separate.  Separate DC inputs are also required.  Our
+ thanks to Sanyo Semiconductor (Europe) GmbH for supplying data on these
+ devices and to Eugene Trundle for technical advice.
+<p>
+ Original data taken from a reference pulished by Television magazine.
+ Scanned in by Colin McCormick.  All errors to be blamed on Logitech
+ Direct OCR software."
+</blockquote>
+
+<h3><A NAME="vrdpc">Device Pinouts Contributions</A></h3>
+
+This list was compiled from replies to postings on the USENET newsgroup:
+<A HREF="news:sci.electronics.repair">sci.electronics.repair</A>
+and will be updated as new requests come in.  Contributions are welcome.
+Please email in a format similar to those listed below.  If you provide
+additional comments, your name and email address will be listed as well.
+
+<h3><A NAME="vrdis">DISCLAIMER</a></h2>
+
+While every effort has been made to assure that the pinout information in this
+document is accurate, errors are possible and sometimes the databooks
+themselves are even in conflict.
+<p>
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+<A NAME="vrint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#vrtoc">VCR Regulator Pinouts Table of Contents</A>.
+<h2>Introduction</h2>
+
+<h3><A NAME="vrsap">Scope and Purpose of this Document</A></h3>
+
+This document provides pinouts for some of the common hybrid multiple
+output voltage regulators used in a large number of VCRs.  A good source
+for this information is the ECG Semiconductor Master Replacement Guide
+(or the SK/NTE or other similar databooks).
+
+<h3><A NAME="vrdmv">Does My VCR Use a Hybrid Voltage Regulator?</A></h3>
+
+VCRs typically use one of these types of power supplies:
+<ol>
+<li>Power transformer with linear regulator using 78/79XX parts or discrete
+   components.  The power transformer will be large and right near the
+   AC line cord.
+<p>
+<li>Power transformer with hybrid regulator like STK5481 or any of its
+   cousins - multioutput with some outputs switched by power on.  Again,
+   the power transformer will be large and right near the AC line cord.
+   The regulator will be a black box with multiple pins soldered to a
+   circuit board and will be mounted on a heatsink usually in the vicinity
+   of the power transformer.
+<p>
+<li>Small switching power supply.  Most common problems: shorted
+   semiconductors, bad capacitors, open fusable resistors.  In this case there
+   is usually no large power transformer near the line input but a smaller
+   transformer amidships.  See the document:
+   <A HREF="smpsfaq.htm">Notes on the
+   Troubleshooting and Repair of Small Switchmode Power Supplies</A> for info
+   on these types of supplies.
+<p>
+<li>Combo of the previous (for example, a power transformer feeding a
+   switching supply) - these are less common.
+</ol>
+<h3><A NAME="vrwts">When to Suspect the Regulator</A></h3>
+
+Failure of one or more outputs of the power supply can result in symptoms
+anywhere from a totally dead VCR to problems in one subsystem such as the
+tuner or display.  Multiple systems failures are a likely indication of
+a power supply problem as well.
+
+<h3><A NAME="vrsaf">Safe Troubleshooting of Hybrid Regulators</a></h3>
+
+WARNING: Read, understand, and follow the recommendations in the document:
+<A HREF="https://www.repairfaq.org/REPAIR/safety.htm">Safety Guidelines for
+High Voltage and/or Line Powered Equipment</A> before attempting any power
+supply repairs.  While most of the devices listed here operate at low voltages,
+there may be exceptions.  And, you may be in the vicinity of exposed line
+voltage terminals when probing the hybrid's pins.
+
+<h3><A NAME="vrtes">Testing</A></h3>
+
+First identify a suitable ground for your multimeter.  With the VCR
+unplugged, test for continuity between the ground pin of the regulator
+and the chassis or a metal shield.  Don't use the hybrid's ground pin
+as clipping anything to it increases the chance of an unfortunate short
+circuit.
+<p>
+Check the outputs with the VCR both on and off if possible.  The on/off
+should change with the power unless the unswitched output is dead and
+thus everything is dead.
+<p>
+If any are low or 0, the regulator is most likely bad.  Failure of these
+regulator blocks is a very likely cause where a VCR exhibits multiple
+system failures.  While it is possible for an excessive load to be dragging
+down the power supply output, failure of the hybrid regulator is a lot
+more likely.
+<p>
+However, also check the input voltage - typical values are 20 - 30 V DC.
+Defective rectifier diodes or filter capacitors can result in a low voltage
+or high ripple input which can result in low, noisy, or unstable outputs.
+<p>
+For erratic problems or those that only occur under certain operating
+conditions, monitor the outputs on an oscilloscope (a storage scope would
+be nice) to see if they dip or have any noise on them.
+<p>
+<A NAME="vrpin"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#vrtoc">VCR Regulator Pinouts Table of Contents</A>.
+<h2>VCR Hybrid Voltage Regulator Pinouts</h2>
+
+<h3><A NAME="vrSTK791">STK791</A></h3>
+<PRE>
+
+VCR Regulator.
+
+(From Ken Koskie (aw345@lafn.org).)
+
+The voltages should be approximately the same in all modes: Off, EE, Play,
+and Record.
+ 
+Pin 1: VI1 6.7 V
+Pin 2: VI1 6.7 V
+Pin 3: 0.0V
+Pin 4: 0.0V
+Pin 5: VO  6.8 V
+Pin 6: NC
+Pin 7: GND
+Pin 8: VI2 18.5 V
+
+</PRE>
+<h3><A NAME="vrSTK5331">STK5331</A></h3>
+<PRE>
+
+* Three output series regulator in an eight-pin package:
+
+Pin 1: +5.1 V output
+Pin 2: +6.05 V input
+Pin 3: Load resistor
+Pin 4: Load resistor
+Pin 5: +12.3 V output
+Pin 6: on/off
+Pin 7: +30 V max input
+Pin 8: Chassis
+
+</PRE>
+<h3><A NAME="vrSTK5332">STK5332</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator: 13 V at 1 A, 6.05 V at 1 A, 5.1 V at .5 A.
+
+Pin 1: VO3 +5.1 V
+Pin 2: VO2 +6.05 V
+Pin 3: VI2
+Pin 4: Vb
+Pin 5: VO1 +13 V
+Pin 6: Gnd/SW
+Pin 7: VI1
+Pin 8: Gnd
+
+</PRE>
+<h3><A NAME="vrSTK5333">STK5333 - ECG7036</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator. 15 V at 1 A, 5.8 V at 1 A, 5.1 V at 1 A,
+8 Pin SIP.
+
+Pin 1: GND
+Pin 2: VO3 +5.1 V
+Pin 3: VO2 +5.8 V
+Pin 4: VI2
+Pin 5: Vb
+Pin 6: VO1 +15 V
+Pin 7: SW
+Pin 8: VI1
+
+</PRE>
+<h3><A NAME="vrSTK5338">STK5338</A></h3>
+<PRE>
+
+* Three output series regulator in an eight-pin package.
+
+Pin 1: Chassis
+Pin 2: 5.1 V output
+Pin 3: 5.8V output
+Pin 4: 30V max. do. input
+Pin 5: Load resistor
+Pin 6: 12.3V output
+Pin 7: On/off switching
+Pin 8: 30V max d.c. input
+
+</PRE>
+<h3><A NAME="vrSTK5339">STK5339</A></h3>
+<PRE>
+
+* Three-output series regulator in an eight-pin package.
+
+Pin 1: Chassis
+Pin 2: +5.1 V output
+Pin 3: +5.8 V output
+Pin 4: +30 V max input
+Pin 5: Load resistor
+Pin 6: +12.3 V output
+Pin 7: On/off switching
+Pin 8: +30 V max input
+
+</PRE>
+<h3><A NAME="vrSTK5342">STK5342 - ECG7035</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator. 12.3 V @ 1A, 6.0 V @ 1A, 5.3 V @ .6 A.
+
+Pin 1: VO3 +5.25 V
+Pin 2: VO2 +6.0 V
+Pin 3: Vb
+Pin 4: Vb
+Pin 5: VO1 +12.3 V
+Pin 6: Cutoff
+Pin 7: VI1
+Pin 8: GND
+
+</PRE>
+<h3><A NAME="vrSTK5372">STK5372 - ECG1883</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator. 12.1 V @ .8 A, 12 V @ .8 A, 5.3 V @ 1 A.
+8 pin SIP.
+
+Pin 1: VO3 5.3 V (switched)
+Pin 2: Cutoff (control input for 12 V output)
+Pin 3: VI2 (input for VO3, 10 V typical)
+Pin 4: VO2 12 V (switched)
+Pin 5: VO1 12.1 V (and input to VO2)
+Pin 6: Vb (control for VO1)
+Pin 7: VI1 (input for 12 V outputs, 18 V typical)
+Pin 8: Gnd
+
+</PRE>
+<h3><A NAME="vrSTK5421">STK5421</A></h3>
+<PRE>
+
+* Four-output series regulator in a fifteen-pin package.
+
+Pin 1: +12.3 V output
+Pin 2: Load resistor
+Pin 3: +12 V output (unswitched)
+Pin 4: Decoupling
+Pin 5: +30 V max input
+Pin 6: Link to pin 5
+Pin 7: +30 V max input.
+Pin 8: +16 V output (unswitched)
+Pin 9: Link to pin 8
+Pin 10: +9.55V output
+Pin 11: Load resistor
+Pin 12: Chassis
+Pin 13: On/off switching
+Pin 14: Decoupling
+Pin 15: Decoupling
+
+</PRE>
+<h3><A NAME="vrSTK5422">STK5422</A></h3>
+<PRE>
+
+* Four output series regulator in a fifteen pin package.
+
+Pin 1: +12V output
+Pin 2: Load resistor
+Pin 3: +12V output
+Pin 4: Decoupling
+Pin 5: +30 V max input
+Pin 6: Link to pin 5
+Pin 7: +30 V max input
+Pin 8: +13 V output
+Pin 9: Link to pin 8
+Pin 10: +9.5 V output
+Pin 11: Load resistor
+Pin 12: Chassis
+Pin 13: On/off switching
+Pin 14: Decoupling
+Pin 15: Decoupling
+
+</PRE>
+<h3><A NAME="vrSTK5431">STK5431</A></h3>
+<PRE>
+
+Pin 1:  Out 5.1 V
+Pin 2:  NC
+Pin 3:  Out 12 V
+Pin 4:  Ctrk 12 V
+Pin 5:  In 12 V
+Pin 6:  In 5 V
+Pin 7:  In 15 V
+Pin 8:  In 9.5 V
+Pin 9:  Out 15 V
+Pin 10:  Out 9.5 V
+Pin 11:  Ctrl 9.5 V
+Pin 12:  Gnd
+Pin 13:  Ctrl 4 V
+Pin 14:  Ctrl .6 V
+Pin 15:  Ctrl 15 V   
+
+</PRE>
+<h3><A NAME="vrSTK5436">STK5436 - ECG1876</A></h3>
+<PRE>
+
+Pin 1:	VO4 +6V
+Pin 2:	NC
+Pin 3:	VO3 +12V
+Pin 4:	Bypass
+Pin 5:	VI2
+Pin 6:	VO3 +12V
+Pin 7:	VI1
+Pin 8:	VO1 +13V
+Pin 9:	VO1 +13V
+Pin 10:	VO2 +9.5V
+Pin 11:	IB2
+Pin 12:	GND
+Pin 13:	On/Off
+Pin 14:	Bypass
+Pin 15	Bypass
+
+</PRE>
+<h3><A NAME="vrSTK5441">STK5441 - ECG1734</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.  12V @ 2A, 9V @ 1A, 5.5V @ .5A.  15 Pin SIP.
+
+Pin 1:	VO3 +5.5 V
+Pin 2:	NC
+Pin 3:  NC
+Pin 4:	NC
+Pin 5:	NC
+Pin 6:	VI2
+Pin 7:	VI1
+Pin 8:	VO1 +12V
+Pin 9:	VO1 +12V
+Pin 10:	VO2 +9V
+Pin 11:	Bias
+Pin 12:	GND
+Pin 13:	Cutoff
+Pin 14:	Bypass
+Pin 15:	Ripple Filter
+
+</PRE>
+<h3><A NAME="vrSTK5451">STK5451 - ECG1735</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.   16V @ 1A, 12V @ 1A, 12V @ 1.5 A,
+11.9 V @ 1.5A.
+
+Pin 1:  11.9 V Output 4
+Pin 2:  Control Volt
+Pin 3:  DC Input 2
+Pin 4:  Reference input
+Pin 5:  12V Output 3
+Pin 6:  Reference input
+Pin 7:  16V/12V Output 1/2
+Pin 8:  Reference input
+Pin 9:  DC input 2
+Pin 10: DC input 1
+Pin 11: Hi/Lo volt switch
+Pin 12: GND
+Pin 13: on/off control
+Pin 14: Heater switch (??)
+Pin 15: Reference input
+
+</PRE>
+<h3><A NAME="vrSTK5461">STK5461 - ECG7027</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.  12V @ 1A, 12V @ 1A, 5.1V @ .5A.  15 Pin SIP.
+
+Pin 1:	VO3 +5.1 V
+Pin 2:	NC
+Pin 3:  NC
+Pin 4:	NC
+Pin 5:	NC
+Pin 6:	VI2
+Pin 7:	VI1
+Pin 8:	VI1
+Pin 9:	VO1 +12V
+Pin 10:	VO2 +12V
+Pin 11:	IB2
+Pin 12:	GND
+Pin 13:	Cutoff VO1
+Pin 14:	Cutoff VO2
+Pin 15:	IB1
+
+</PRE>
+<h3><A NAME="vrSTK5464">STK5464 - ECG7023</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.  12V @ 1A, 12V @ 1A, 5.3V @ 1A.  12 Pin SIP.
+
+Measured input voltages (your mileage may vary): VI1 = 18 V, VI2 = 8.5 V
+
+Pin 1:	VO3 +5.3 V
+Pin 2:	NC
+Pin 3:  NC
+Pin 4:	NC
+Pin 5:	VI2
+Pin 6:	VI1
+Pin 7:	VI1
+Pin 8:	VO2 +12V
+Pin 9:	VO1 +12V
+Pin 10:	VO1/VO2 Cutoff
+Pin 11:	GND
+Pin 12:	Vb
+
+</PRE>
+<h3><A NAME="vrSTK5466">STK5466 - ECG1821</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.
+
+Pin 1: VO3 +5.3 V
+Pin 2: NC
+Pin 3: NC
+Pin 4: NC
+Pin 5: NC
+Pin 6: VI3
+Pin 7: VI1 and 2
+Pin 8: VI1 and 2
+Pin 9: VO2 +12 V
+Pin 10: VO1 +12 V
+Pin 11: NC
+Pin 12: GND
+Pin 13: On/off
+Pin 14: On/off
+Pin 15: Vb (probably around 13-14 V)
+
+</PRE>
+<h3><A NAME="vrSTK5467">STK5467</A></h3>
+<PRE>
+
+* Three output series regulator in a twelve pin package.
+
+Pin l: +5.3 V Output
+Pin 2: NC
+Pin 3: NC
+Pin 4: NC
+Pin 5: +30 V max input
+Pin 6: +30 V max input
+Pin 7: Link to pin 6
+Pin 8: +12.1 V output
+Pin 9: +12.1 V output
+Pin 10: Pin 9 output cut off
+Pin 11: Chassis
+Pin 12: Load resistor
+
+</PRE>
+<h3><A NAME="vrSTK5471">STK5471 - ECG1822</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.  12 V @ 1.5 A, 12 V @ 1.5 A, 5.3 V @ .5 A.
+10 Pin SIPP.
+
+Pin 1: Iout 3 for 5.3 V
+Pin 2: Vout 3 control
+Pin 3: Iin 3
+Pin 4: Iout 2 for 12 V (emitter)
+Pin 5: Ib 2 (base)
+Pin 6: Iin 2 (collector)
+Pin 7: Iout 1 for 12 V (emitter)
+Pin 8: Ib 1 (base)
+Pin 9: Iin 1 (collector)
+Pin 10: GND
+
+It appears as though Pin 1 is the output of an IC regulator for the 5.3 V.
+Pin 3 is the Vin - 20 V typ.  Pin 2 is some kind of on off control.
+
+Pins 4-6 and 7-9 are the emitter, base, and collector for the two
+12 V outputs.  These are simple Darlington transistors setup to
+drive the outputs in an emitter follower configuration.
+Vin typ of 30 V.
+
+Deduced from schematic in ECG.
+
+</PRE>
+<h3><A NAME="vrSTK5477">STK5477 - ECG7034</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.  12v @ 1A, 12V @ 1A, 5.1V @ 1A.
+
+Pin 1:  GND
+Pin 2:  VI2
+Pin 3:  N/C
+Pin 4:  VO3 +5.1V
+Pin 5:  VO2 +12V
+Pin 6:  VB
+Pin 7:  VI1
+Pin 8:  VO1 +12V
+Pin 9:  VB
+Pin 10: VI1
+Pin 11: N/C
+Pin 12: GND
+
+</PRE>
+<h3><A NAME="vrSTK5481">STK5481 - ECG1823</A></h3>
+<PRE>
+   
+Pin 1:	Ib3
+Pin 2:	VI2
+Pin 3:	VO4 +5.3 V
+Pin 4:	VO3 +12.1 V
+Pin 5:	VO3/VO4 ON/OFF
+Pin 6:	VO2 +12.2 V
+Pin 7:	Ib2
+Pin 8:	VI1
+Pin 9:	VO1 +12.0 V
+Pin 10:	Ib1
+Pin 11:	VI1
+Pin 12:	GND
+
+</PRE>
+<h3><A NAME="vrSTK5482">STK5482</A></h3>
+<PRE>
+
+* Four output series regulator in a fifteen pin package.
+
+Pin 1: Chassis
+Pin 2: +30 V max input
+Pin 3: +5.1 V output
+Pin 4: +12 V output
+Pin 5: Bias/+12V output switching
+Pin 6: +30 V max input
+Pin 7: +5.8 V output
+Pin 8: Bias/pin 7 output switching
+Pin 9: Link to pin 2
+Pin 10: Load resistor/pin 7 output switching
+Pin 11: +13/+15V output
+Pin 12: Pin 11 output switching
+Pin 13: Link to pin 6
+Pin 14: Pin 11 output switching
+Pin 15: Chassis
+
+</PRE>
+<h3><A NAME="vrSTK5486">STK5486 - ECG7038</A></h3>
+<PRE>
+
+VCR Positive Voltage Regulator.  13V @ 1A, 12.2V @ 1A, 6V @ 1A, 5.1V @ 1A,
+5.1V @ 1A, 15 Pin SIP.
+
+Pin 1:	VO5 +5.1 V
+Pin 2:	NC
+Pin 3:  VO4 +5.1 V
+Pin 4:	VI2
+Pin 5:	NC
+Pin 6:	VO3 +6 V
+Pin 7:	VB
+Pin 8:	VB
+Pin 9:	VO2 +12.2 V
+Pin 10: Cutoff
+Pin 11:	VI1
+Pin 12:	VO1 +13 V
+Pin 13:	Cutoff
+Pin 14:	VI1
+Pin 15:	GND
+
+</PRE>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#vrtoc">VCR Regulator Pinouts Table of Contents</A>.
+<p>
+-- end V1.30 --
+<p>
+</BODY>
+</HTML>
+
+

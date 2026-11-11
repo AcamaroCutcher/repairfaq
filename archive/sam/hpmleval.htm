@@ -1,0 +1,1561 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/hpmleval.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Considerations in Evaluating Used or Rebuilt Hewlett Packard/Agilent/Keysight Metrology Lasers</title>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/hpmleval.htm">https://www.repairfaq.org/sam/hpmleval.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<A NAME="top">
+<p>
+<center>
+<h1>Considerations in Evaluating Used or Rebuilt<br>
+ Hewlett Packard/Agilent/Keysight Metrology Lasers</h1>
+<h2>Version 1.71 (1-Nov-26>)</h2>
+<h3>
+<A HREF="lasersam.htm">
+Sam's Laser FAQ</A>, <A HREF="copyright.htm">Copyright &copy<A> 1994-2022
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+</center>
+<p>
+<hr>
+<p>
+<h2>Abstract</h2>
+
+Keysight Technologies <A HREF="#ref">[1]</A> (formerly Agilent Techologies
+and before that Hewlett Packard or HP) is perhaps the leading supplier of
+two-frequency HeNe metrology lasers. used in all areas of precision
+manufacturing.  The most well known application is probably for
+sub-micron positioning in semiconductor wafer steppers.  These lasers
+generally have a long-life (50,000 hours typical) but when they do fail,
+replacement with a new laser at relatively high cost ($9,000 and up) has
+always been the low risk option for critical applications.  However,
+HP/Agilent/Keysight lasers are also available surplus (used or "preowned"),
+often at very attractive prices, but nearly always in unknown operating
+condition with equally unknown life expectancy.  And, a few companies do
+claim to offer rebuild services or rebuilt lasers at greatly reduced cost
+compared to a new one.  This note addresses the issues that might arise with a
+used or rebuilt laser, and their impact on measurement precision
+and service life.  Although not addressed here explicitly, these
+same considerations would apply to lasers from other manufacturers
+claimed to be functionally equivalent to those from HP or Agilent.
+<p>
+(Except as specifically noted, throughout this document, "Keysight",
+"Agilent", and "HP" or "Hewlett Packard" may be used interchangeably,
+since the technology is virtually identical.)
+<p>
+<hr>
+<p>
+<h2>Introduction</h2>
+
+HP/Agilent/Keysight metrology lasers are Helium-Neon (HeNe) lasers that use
+the Zeeman effect from an axial magnetic field to split a single longitudinal
+lasing mode into two modes that are orthogonally polarized and offset in
+optical frequency from each-other by several MHz <A HREF="#ref">[2]</A>.
+One component called the "measurement
+beam" is sent to a remote "Test Arm" whose position is
+to be measured and returned via a mirror or retro-reflector, while the other
+component called the "reference beam" is returned locally from a fixed
+retroreflector.  These are combined in a high speed photodiode producing a
+beat signal via heterodyning.  When the Test Arm moves, it results in a
+Doppler shift changing this beat frequency.  By comparing the phase of
+the beat signal (called MEAS) with a locally generated un-shifted
+version (called REF), the position of the Test Arm can be
+determined down to a resolution of 10 nanometers (nm) or better.  And,
+through computation and/or special optics, velocity, angle, straightness,
+and other measurements can be made with similar precision.
+<p>
+<center>
+<A HREF="inter2f.gif"><img  WIDTH=791  src="inter2f.gif" border=0></A>
+</center>
+<p>
+The Test Arm may be a tool head in a CNC milling machine, a stage in a
+semiconductor wafer stepper, a voice coil positioner in a hard
+drive servo writer, or any number of other precision devices.
+A single laser can be used with many independent measurement axes
+through the use of beamsplitters, separate interferometer optics and
+optical receivers, and associated digital processing channels.
+<p>
+The key attributes that make these lasers ideal for metrology applications are
+that they produce two optical frequency components a few MHz apart that are
+linearly polarized, orthogonal, and oriented along the X and Y axes
+(horizontal and vertical) relative to the laser baseplate.  The optical
+frequencies are highly stable and the corresponding wavelength (the actual
+"yard stick") thus should be as well.  And, they remain stable for the life
+of the laser without any maintenance.  (However, environmental factors like
+temperature, pressure, and humidity must to be taken into consideration as
+they have a significant effect on wavelength.)
+Since the two frequencies originate from the same laser
+cavity as a TEM00 (single spatial) mode beam, they are
+inherently perfectly aligned with each-other, something not necessarily
+true of alternative techniques using other means such as an Acousto-Optic
+Modulator (AOM) to generate the second frequency component.
+<p>
+A typical 5517B laser with its covers removed is shown below:
+<p>
+<center>
+<A HREF="hp5517l1.jpg"><img  HEIGHT=250  src="hp5517l1t.jpg" border=0></A>
+&nbsp; &nbsp; &nbsp; 
+<A HREF="hp5517r1.jpg"><img  HEIGHT=250  src="hp5517r1t.jpg" border=0></A>
+<h3>HP-5517B Laser Showing Tube Assembly on the Left and Type I Control PCB on
+  the Right</h3> 
+</center>
+<p>
+(Lasers made by Agilent starting around 2004 use a totally redesigned
+control PCB using mostly SMT parts which I call the "Type II Control PCB",
+but they are functionally equivalent and interchangeable.)
+<p>
+The heart of HP/Agilent two-frequency lasers is the
+custom HeNe laser tube assembly, which represents most of the cost of the
+laser.  When the heart degrades to the point of making the laser unusable,
+the choices are either to obtain a replacement laser, do
+a heart transplant, or perform a heart rebuild.  The transplant
+is simple, quick, and low risk: Find a good tube assembly in a laser
+that is broken for some other reason and pop it into a chassis with
+good electronics.  Only one trivial adjustment is required.  Problem
+solved.  However, there's one slight difficulty with this approach:
+HP/Agilent lasers don't often fail for reasons other than the tube,
+and when they do, repair is generally very straightforward.  So, there
+isn't a huge availability of good tubes in bad lasers.
+<p>
+Used HP/Agilent metrology lasers are also widely available.  But many of
+these are already unusable due to low output power or other problems
+with the tube.  Thus, finding one with both acceptable performance and
+adequate life expectancy requires a knowledge of what to look for and
+what tests to perform.
+<p>
+Lasers used in metrology applications are often run 24/7 from the day
+they are installed until the day they die or fail preventive
+maintenence checks.  Such lasers invariably find their way to eBay and
+unscrupulous sellers will either claim the "came from a working
+environment", or an inability to test them.  The working environment
+claim may not be inaccurate, it's just that the laser was pulled
+because <i>it</i> was dead, not that the line was shut down! :)
+But if a seller is reputable, has performed a few basic tests,
+and offers a warranty (even a relatively short one giving the buyer an
+opportunity to more fully test it), then a previously owned unit may
+be perfectly acceptable with low risk.  Even where it has failed for
+other reasons like a bad HeNe laser power supply, a broken laser with
+a good tube may be easily repaired.
+<p>
+However, if it were possible to rebuild a bad tube,
+then this opens up a third possibility with performance potentially
+equal to that of a new laser at a fraction of the cost.
+When done properly, the laser would perform essentially like new and
+have a decent life expectancy (though possibly not as long as that
+of the original long-lived custom HP/Agilent tube).
+<p>
+A photo of a typical tube assembly removed from an HP laser is shown below:
+<p>
+<center>
+<A HREF="5517b-t1.jpg"><img  WIDTH=700  src="5517b-t1.jpg" border=0></A>
+<h3>Tube Assembly from HP-5517B Laser</h3>
+</center>
+<p>
+And a diagram of the internal structure of a typical tube assembly is
+shown below:
+<p>
+<center>
+<A HREF="hp5517t1.gif"><img  WIDTH=900  src="hp5517t1.gif" border=0></A>
+</center>
+<p>
+The tube assemblies in 5517C/D (and the 5501B) lasers are physically
+nearly identical while those in 5517E/F/G lasers have internal
+modifications to accomdate their shorter cavity length but are
+otherwise similar.  By around 2012, this same laser tube design made its way
+into all 5517 lasers.  The 5517A, as well as the 5518A/B and 5519A
+tube assemblies have a single-piece cast-metal casing with keying
+pegs to mount in their enclosures with no alignment.  But the glass
+laser tube, magnet, and optical components in these are physically similar
+to those in 5517B/C/Ds and 5501B.  The very old 5501A, and even older
+5500A/B/C lasers used tube assemblies that were quite different with
+PieZo Transducer (PZT) tuning rather than thermal tuning.  Rebuild options for
+these would likely be limited to regasing since the PZT tuning can't
+easily be replicated with a common commercial HeNe laser tube.
+However, most of the functional issues dealt with below would also apply
+to them.  And in most applications, the 5501B is a
+drop-in replacement for the 5501A, so it's unlikely that anyone will
+consider rebuilding the 5501A commercially.  Very few
+5500Cs (and even fewer, if any, 5500A/Bs) are still in use making
+rebuilding of these even less likely.  However used 5500Cs
+may be desirable for people wanting to keep legacy systems running
+with minimal effort and cost, so evaluation considerations are still
+relevant.
+<p>
+The Agilent/Keysight N1211A/Z4203 "Fiber AOM Laser" use a similar
+laser tube assembly.  Therefore, except for specific mounting and alignment
+considerations once installed, everything below is also relevant for them.
+<p>
+<A HREF="#top">Back to Top</A>
+<p>
+<hr>
+<p>
+<h2>Used ("Previously Owned") HP/Agilent Metrology Lasers</h2>
+
+For many applications, a very viable alternative is to purchase a used laser.
+Assuming such a laser hasn't been modified or tampered with (or rebuilt!),
+most of the issues associated with rebuilt lasers will not exist.
+Only two parameters really change significantly with use and these are
+the laser output power (which declines, especially towards end-of-life)
+and to a lesser extent, the REF (split) frequency (which tends to increase
+slightly as a side effect of the decrease in output power).  The principle
+remaining issue would be that the laser tube starts reasonably quickly
+and runs reliably without any dropout, sputtering, or flickering; and
+that it will continue to do so with an acceptable lifespan.
+I do not know if Agilent lasers with the Type III control
+PCB (SHARK DSP-based and not very common and not even really
+of recent vintage) have run-time meters, but it is likely they do.
+However, those with Type I Control PCBs (pre-around 2004, as well
+as all Hewlett Packard lasers) definitely do not and it is assumed
+that Type II Control PCB (after around 2004 and an emulation of the
+Type I Control) PCB also do NOT.  However, it's
+generally possible to get a good feel for the health and expected remaining 
+life of any given unit through simple tests and comparison of output power and
+REF (split) frequency with the measured values when new, which can
+often be found on the label (if the seller hasn't conveniently removed it!).
+They may also be available from Agilent by referencing the serial number
+of the tube assembly, but Agilent probably would not release this
+information except to the original owner.
+<p>
+When semiconductor fab lines shut down, the lasers often become
+available at various stages of their life.  They appear on eBay and
+from many surplus dealers at costs ranging from $25 or less to
+several thousand dollars.  However, almost any of these may be
+less than the cost of a rebuilt laser - and much less than the
+$8,000-$10,000 or more price tag of a new laser from Agilent.
+5501Bs, 5517As, 5517Bs, and some
+5517Cs are widely available.  The 5517Ds are less common in working
+condition possibly because they are the highest performance
+common HP/Agilent laser still in use on state-of-the art fab lines,
+so they tend to become available only when pulled from service
+due to low power or associated (tube) failure.
+<p>
+If it were possible to have confidence in the operating condition and
+life expectancy of a previously owned laser, this would represent a low
+risk alternative to either a new or rebuilt one.  Most of the evaluation
+guidelines for rebuilt lasers apply to used ones as well, so that would be
+a starting point.
+<p>
+<A HREF="#top">Back to Top</A>
+<p>
+<hr>
+<p>
+<h2>Rebuild Options</h2>
+
+There are a few companies who will rebuild the tube assembly or sell you
+a laser with a rebuilt tube assembly.  Although I have yet to see a typical
+cost, the amount of labor involved (more below) would suggest that it is
+a substantial fraction of the cost of a new laser, probably 1/2 or more.
+And there is some risk since depending on the quality and
+type of rebuild, the laser may not perform to spec or have a short life.
+A semiconductor wafer stepper (one of the most common applications of these
+lasers) is a very expensive piece of equipment often run around the clock.
+Downtime is costly, and errors in fabrication only found after wafers
+have been completed are even more costly.  So it's not clear at what point the
+modest savings of a rebuilt laser installed once or twice over the entire
+life of the machine can be justified against the risk.  Nonetheless,
+some large semiconductor companies are known to have seriously considered
+going this route and may be using rebuilt lasers in production.  Below are
+a few examples of rebuilt HP/Agilent lasers I've come across over the years.
+<p>
+<center>
+<A HREF="hakrbld1.jpg"><img  height=300  src="hakrbld1.jpg" border=0></A>
+&nbsp;&nbsp;&nbsp;
+<A HREF="hakrbld2.jpg"><img  height=300  src="hakrbld2.jpg" border=0></A>
+&nbsp;&nbsp;&nbsp;
+<A HREF="hakrbld3.jpg"><img  height=300  src="hakrbld3.jpg" border=0></A>
+&nbsp;&nbsp;&nbsp;
+<A HREF="hakrbld4.jpg"><img  height=300  src="hakrbld4.jpg" border=0></A>
+<h3>Examples of Rebuilt HP/Agilent/Keysight Tube Assemblies.  Left to right: 5501B, 5517DL, N1211A #1, N1211A #2</h3>
+</center>
+<p>
+The differences in appearance of these tube assemblies
+are mostly related to the rebuilder's
+style. :)  They have nothing to do with the laser model, split
+frequency, or beam size.
+While the N1211A (for the Z4203 Fiber AOM Laser) does have slightly
+different dimensions, the grossness of the frames, and bulbous optics
+mount on the second one, is inexplicable, except perhaps to make
+it difficult to install them in a 5501B or 5517!  The conventional HeNe
+laser tube, magnet, and heater are physically similar.
+<p>
+(Note: I am not at liberty to divulge and/or am not even absolutely sure of
+the name of the companies who rebuilt these lasers or others
+I've tested, being either acquired from a third party or eBay,
+so please do not ask.  There aren't
+that many doing this so a Web search should be able to locate them.
+The only one I can name is <A HREF="http://www.pactec2ndsource.com">Pactec
+Second Source</a> with whom I am affiliated.  They can be contacted through
+their Web site or I can provide an email contact.  DISCLAIMER: I receive a
+small commission on each rebuild.)
+<p>
+The HP/Agilent tube assembly consists of the actual glass HeNe laser tube,
+a permanent magnet, beam expander, and adjustable waveplates.  The part
+that goes bad is the glass HeNe laser tube, which is mounted within the magnet
+using a rubbery potting compound.  Rebuilding the laser tube will require
+that it be removed from the tube assembly as shown below:
+<p>
+<center>
+<A HREF="5517b-t2.jpg"><img  WIDTH=800  src="5517b-t2.jpg" border=0></A>
+<h3>Major Components of Typical HP/Agilent 5517B/C/D or 5501B Tube Assembly</h3>
+</center>
+<p>
+This tube assembly was also from a 5517B, but there are some very minor
+physical differences, which are mostly of little consequence, among
+other models using the "Long" type tube.  While the collimation of the
+output beam can be fine tuned by freeing up the knurled section of the
+black beam expander with a heat gun, it is not adjustable in terms
+of the beam diameter, and this may make
+it more difficult to match up with a non-HP/Agilent laser tube.
+<p>
+Lasers like the 5517E/F/G as well as late model 5517B/C/Ds use slightly
+different tube design called a "Short" type tube, which as its name
+implies, is shorter than the Long tubes. ;-)  However, nearly everything
+discussed below applies to them as well, though they produce a narrower
+lower divergence beam which means the beam expanders for the Long and Short
+tubes differ.
+<p>
+Rebuilding an HP/Agilent tube assembly can take two forms:
+<p>
+<ul>
+<li><b>Regas the existing tube:</b> This requires extracting the glass tube
+ from its potting compound in the magnet/optics assembly, breaking the seal
+ in a controlled manner in an inert gas, pumping it down
+ to a high vacuum, baking out contamination, filling with
+ highly pure helium and neon gases in a specific ratio to a specified
+ pressure, and sealing it off.  If the vacuum system is ultra-clean and
+ the gases are pure enough and the internal mirrors haven't degraded
+ over 50,000 hours of use and the cathode is still healthy, the tube may work
+ like new and last awhile.  Else, it may not work any better than before
+ and/or may last a few minutes.  The regasing procedure takes several hours to
+ several days and is very labor-intensive when done in low volume.  So even
+ this "simple" approach won't exactly be low cost.  If the cathode
+ has reached end-of-life and/or the mirrors have degraded, then these
+ internal parts may need to be replaced (or in some instances, cleaned
+ or reprocessed in-place), greatly complicating the
+ entire process and driving up the cost.
+<p>
+<center>
+<A HREF="hp5517tb.jpg"><img  WIDTH=800  src="hp5517tb.jpg" border=0></A><br>
+<h3>Glass HeNe Laser Tube Extracted from 5517B Laser</h3>
+</center>
+<p>
+ The second view shows the glass nipple at the bottom that would need to be
+ carefully cut in a dust-free environment and attached to the vacuum/gas
+ handling system.
+<p>
+ This glass laser tube is normally not considered a separate replaceable
+ component, only the complete magnet/optics assembly (with the tube).
+ And Agllent probably won't sell the tube assembly to a third party
+ anyhow.  While most other parts of the the currently supported lasers
+ may be obtained at highly inflated prices direct from Agilent, laser
+ tube assemblies are listed as: "Not orderable, contact Agilent for
+ repair service".  And even if they could be ordered, the cost would
+ probably be nearly the price of a new laser, if not more.
+<p>
+ Removing the glass tube intact from the tube assembly
+ is the sort of thing that anyone in their right mind would only attempt
+ at most once unless appropriate noxious chemicals
+ are available to dissolve the potting compound without damaging anything
+ else in the assembly (except that they likely rot human internal organs).
+ Mechanical removal using piano wire, saws, knives, and other instruments
+ of torture is possible, though extremely tedious and time consuming
+ for most of the lasers with tubes that conform to the diagram, above.
+ Even the trained monkeys hired to do this would consider it cruel and
+ unusual punishment and quit after 1 or 2
+ tubes despite the promise of unlimited bananas. :)
+ For all tubes, it might be possible to simply cut the magnet
+ lengthwise with a low vibration high speed diamond cutoff wheel,
+ and then replace the magnet with a new one.  Once the magnet is
+ gone, it's relatively easy to pick and peel off the potting compound.
+ While the glass tube is physically the same for the 5517A, 5518A,
+ and 5519A/B, removing it requires cutting apart the outer casing.
+ But, if the glass tube is to be reused as with
+ regasing, the extraction must be done with great care to avoid
+ damage to the glass envelope or internal components.  Otherwise,
+ a hammer and chisel will suffice. :-)
+<p>
+ The benefit of regasing is that most of the vital original parameters
+ of the special HeNe laser tube are preserved, especially if it is replaced in
+ the same magnet/optics assembly at the same orientation so that no
+ adjustments of the waveplates are required.  Thus, the beam diameter and
+ divergence, and the stability of the internal heater should be unchanged.
+ However, without knowing the original isotope ratio and gas fill pressure,
+ there could still be differences in optical frequency, split (Zeeman, REF)
+ frequency, and other parameters.  While the cavity loss and Zeeman magnet
+ strength probably have the dominant effect on the REF frequency and are likely
+ the primary means of setting it for lasers up through the 5517D (4.0 MHz max),
+ both the isotope ratio and gas fill pressure
+ have a dramatic impact on the optical frequency of the center
+ of the neon gain curve.  And either of them (though especially the isotope
+ mix) could affect the effective width of the neon gain curve, and this
+ impacts the mode pulling that gives rise to the Zeeman split of
+ the central longitudinal mode, and thus the REF frequency.  Based on data from
+ industry sources, it appears that HP/Agilent lasers use a gas-fill that
+ is weighted toward <sup>20</sup>Ne to narrow the gain bandwidth.
+<p>
+<li><b>Replace the original (glass) laser tube with a conventional HeNe laser
+ tube and external heater:</b>  The physical process of doing this is
+ straightforward: Find a suitable HeNe laser tube about 5 to 6 inches
+ long, add an external thin film or wire-wound heater, and mount it
+ inside the existing magnet/optics assembly after having removed its
+ original tenant <A HREF="#ref">[3,4]</A>.
+ This can be done (with difficulty) on your
+ kitchen table and the laser will lock just fine and even produce a
+ two frequency output, but there may be one slight problem: Using a
+ conventional HeNe laser tube could result in a REF frequency that is
+ substantially different than expected and likely too low, probably
+ by enough to make the laser unsuitable for its original application.
+ And, there can be other issues like rogue and/or impure modes as
+ described in subsequent paragraphs.
+<p>
+ A typical conventional 6 inch HeNe laser tube is shown below:
+<p>
+<center>
+<A HREF="uphnlt1.jpg"><img  WIDTH=550  src="uphnlt1.jpg" border=0></A><br>
+<h3>Typical HeNe Laser Tube from a Barcode Scanner</h3>
+</center>
+<p>
+ Then, a heater with electrical characteristics similar to those of the
+ heater in the original tube must be installed on the exterior of the
+ replacement tube:
+<p>
+<center>
+<A HREF="hprhhlt1.jpg"><img  src="hprhhlt1.jpg" border=0></A>
+<h3>Conventional HeNe Laser Tube with Heater, Ballast, and Cables Added</h3>
+</center>
+<p>
+ The tube above was actually mounted in the magnet assembly from an HP-5501A
+ laser (because that was available) and installed in a 5517D laser chassis
+ (because that was available).  It locked and produced a usable output,
+ though at a REF frequency of only 1.2 MHz.  Normally, a 5501A would be
+ between 1.5 and 2 MHz, but due to the use of the standard tube, the REF
+ frequency was lower.
+<p>
+ When a similar tube was installed in the magnet from
+ a 5517B laser which normally has a REF frequency of 1.9 to 2.4 MHz, it
+ produced a beat frequency of only about 1.3 MHz max.  But these two tubes
+ had been selected for high output power.  When the rear mirror was
+ deliberately misaligned to reduce the output power, it was possible
+ to obtain REF frequencies from 1.5 to 2.4 MHz at somewhat lower, but
+ still very decent output power.  This would exceed the HP/Agilent
+ minimum power specification by a factor of 2 or 3 when set for the
+ 5517A or 5517B REF frequency, and still be comfortably above it when
+ set for the 5517C REF frequency.  It might
+ be possible to reach the range for the 5517D (3.4 to 4.0 MHz), though
+ that my be marginal.  So, in a pinch, a standard tube might work, but
+ would be a less than optimal solution due to the much lower life
+ expectancy of the typical small HeNe laser tube - 12,000 to 16,000 hours.
+<p>
+ A tube with a mirror adjuster added was then installed in the magnet assembly
+ from the 5517B laser shown above, and that was installed in the 5517B body
+ as shown below:
+<p>
+<center>
+<A HREF="hprtiil3.jpg"><img  WIDTH=800  src="hprtiil3.jpg" border=0></A><br>
+<h3>HeNe Laser Tube with External Heater Installed in
+ 5517B Magnet Assembly in 5517B Laser Body</h3>
+</center>
+<p>
+ After adjustment of the waveplates, it produced a good MEAS signal, in fact
+ actually cleaner than that of the commercially rebuilt laser described
+ below.
+<p>
+ These were only lab experiments, never intended to find
+ their way into commercial products or applications.  Nonetheless, it's
+ quite possible that the rebuilt laser I tested was implemented in a
+ similar way.  (More on its characteristics below.)  And, it is known
+ based on photos and descriptions that several companies rebuild 5517B/C/D
+ lasers using a conventional HeNe laser tube and external heater.
+<p>
+ The benefit of using a conventional HeNe laser tube
+ is that it doesn't require high vacuum equipment, ultra pure gases,
+ glass working, and other sophisticated processing by the
+ laser rebuilder.  When done on a small quantity basis, these can require
+ substantial investment in high tech equipment and the skills to go
+ with it.  Even if the laser tube supplier has to modify their "recipe"
+ starting with the mirror parameters (reflectance and radius of curvature),
+ but possibly gas-fill (He:Ne ratio and pressure) as well, that should be
+ much less expensive and risky than developing the capability to rebuild
+ tubes in-house.  A company that produces HeNe laser tubes routinely, will
+ have the experience to get the processing correct.  And since there's
+ no need to save the original tube, it can be removed from the magnet
+ assembly quickly using any method that works. :)  However, as time passes,
+ fewer companies manufacture HeNe lasers of any type, and getting their
+ attention to provide a custom tube or even modify an existing design
+ for a small production run will be challenging, to say the least.
+ Money may talk but it would likely have to be way more than could
+ be justified based on projected sales.  Thus, an off-the-shelf tube
+ is probably the only viable option.
+<p>
+ Many parameters of the laser can change converting to a non-HP/Agilent
+ tube and some of these may impact
+ measurement performance and lifetime.  Two key issues with such a rebuilt
+ laser that I have tested were the beam alignment and profile, and jitter
+ or "fuzz" in the MEAS signal.  The beam alignment and profile can be dealt
+ with by devoting sufficient care in optics selection, and final adjustment and
+ testing.  However, the fuzz was traced to the existence of "rogue"
+ longitudinal modes in the laser output, due to a laser tube that had too
+ long a cavity.  Normally, the output of these lasers when locked is a
+ single Zeeman-split longitudinal mode consisting of the two frequency
+ components, F1 and F2, separated by a few MHz.  Rogue modes are additional
+ longitudinal modes (generally far away from the main modes) and tend to not
+ be oriented with the X and Y axes so they cause potential problems in the
+ interferometer.  And life expectancy is a total unknown.  Small conventional
+ tubes may have a relatively short life, possibly as little as 5K to 10K hours.
+<p>
+ The Zygo 7705 laser which has specifications similar to those of a 5517D
+ is based on a very short tube of conventional design with a total length
+ of around 10 cm (roughly 9 cm between mirrors).  It is a custom long-life
+ tube made by or for Zygo and is not available for non-Zygo uses.  The
+ closest commercial HeNe laser tube is the Spectra-Physics 007 (same as the
+ Melles Griot 05-LHR-007) with a cavity length of about 11 cm.  These were
+ used in large quantities for HeNe laser-based hand-held barcode scanners.
+ These are now very obsolete, so availability of new tubes would be unlikely.
+ However, in experiments similar to those above but using an SP-007, no rogue
+ modes were present.  Overall performance was promising with relatively clean
+ REF and MEAS signals, but there were still some deficiencies which might
+ be fundamental to the tube design.  Even if these could be resolved, without
+ modification, tubes like the SP-007 would likely only be suitable as
+ 5517A/B replacements, not for the 5517C/D/E/F/G.  And their life would
+ be quite short compared to the HP/Agilent or even Zygo tubes.  So, with
+ the SP-007 being problematic even for the 5517A/B, it's
+ unlikely that any off-the-shelf HeNe laser tube will be truly suitable,
+ especially for lasers like the 5517D which are in most demand in terms
+ of replacements.  Unless someone has the resources to have a company like
+ Melles Griot produce a totally custom tube to their specifications,
+ rebuilding HP/Agilent lasers in this way with acceptable performance
+ and decent life expectancy may not be feasible.  And statements to the
+ contrary should be taken with a grain of optical glass. :-)
+<p>
+ Note that the time-to-lock from a cold start is generally much longer when a
+ tube like this is used since the heater whose electrical power is imited
+ must raise the temperature of a much larger volume of glass (the tube's
+ outer envelope) so the effects are slower.  With very small narrow tubes
+ and a heater winding that spans nearly their entire length, this difference
+ may be minimal but for those similar in size to barcode
+ scanner tubes and a short heater, it could be double or more - over
+ 10 minutes compared
+ 4 or 5 minutes for a standard 5517 laser.  This is generally of no consequence
+ for a system that is turned on once and left on 24/7 until it dies.  But the
+ "Tool" it is in may complain if the time-to-READY exceeds a specific value.
+ In that case, power cycle or reset it and the subsequent warm-up time should be
+ acceptable.
+<p>
+ <b>Companies Selling Replacement Tubes</b>
+<p>
+ I am aware of two suppliers for glass HeNe laser tubes designed to replace
+ those in HP/Agilent/Keysight lasers.  Neither tube manufacturer provides the
+ complete tube assemblies at present, only the glass laser tube itself:
+<p>
+ <ul>
+ <li><b><A HREF="http://www.pacificlasertec.com">Pacific Lasertec
+  (PLT):</a></b> PLT
+  acquired the HeNe-related assets of Melles Griot including all personnel and
+  manufacturing/testing facilities, so they are fully equipped to produce
+  reliable HeNe laser tubes and lasers.  PLT offers several models of "LHZ"
+  tubes of conventional design specifically to replace those
+  in HP/Agilent/Keysight lasers.  Several models currently in production
+  cover split frequencies between
+  1.5 (5517A, 5501B) and 4.0 MHz (5517D).  PLT is working on increasing
+  that to cover split frequencies up to that of the 5517GL and beyond.
+<p>
+  DISCLAIMER: I am a small investor in and consultant for PLT and was
+  involved in the design of the LHZ tubes.
+<p>
+ <li><b><A HREF="http://www.lasos.com">LASOS</a></b> LASOS
+  (formerly part of Siemens)</a> also has several modesl of replacement tubes
+  covering a split
+  frequency range of at least 1.5 (5517A, 5501B) to 2.8 MHz (5517C).
+  The LGR-7695 tubes from LASOS have worked well when they met
+  specifications but getting a specific split frequency has been spotty
+  in the past.
+ </ul>
+<p>
+ With both of these, one cannot expect to just drop the tube into a magnet
+ from which the bad tube was removed without possibly requiring magnetic
+ field tuning up or down.  For any given model, there was a wide range of
+ magnetic fields to accomodate variations in tube parameters.  If the field
+ needs to be increased to boost the split frequency, the laser should be
+ checked for rogue modes using an SFPI.
+ The ballast requirements may also differ for these
+ conventional tubes compared to either Long or Short HP/Agilent/Keysight
+ tubes, generally requiring additional ballast resistance at the anode
+ and/or cathode to assure the dropout current is sufficiently below the
+ 3.5 mA default operating current over temperature and lifetime.  Contact
+ the respective manufacturer for details.
+</ul>
+<p>
+<A HREF="#top">Back to Top</A>
+<p>
+<hr>
+<p>
+<h2>Potential Issues</h2>
+
+The following are the main things to check either by testing (where
+possible) or getting data from the supplier or better yet, from their
+previous customers.  A rigorous acceptance test procedure can identify
+many of the issues that can affect performance.  However, specifications and
+the experience of others must be used to predict long term stability and life.
+Some of these will only apply to lasers with rebuilt tubes since most of the
+fundamental parameters affecting performance are unlikely to have changed on
+used lasers unless they have been tampered with or modified.
+<p>
+<ul>
+<li><b>Beam profile:</b> The normal HP/Agilent beam profile is probably
+ described best as a Gaussian that is cut off.  The 3 mm and 9 mm beams
+ have the same shape as the 6 mm beam, but 1/2 and 3 times the diameter,
+ respectively.  The easiest thing to do is to compare the beam profile of
+ the candidate laser with a genuine one.  For many applications, the exact
+ beam profile is not that important and was simply selected based on the
+ desired interferometer optics.  But where long measurement distances
+ are involved, for example, getting the maximum benefit from a larger
+ diameter beam may be required.
+<p>
+ The beam profile on a used laser should not have changed unless someone
+ attempted to adjust it or swap optics to convert from one beam diameter
+ to another (e.g., from 6 mm to 9 mm).  Swapping standard HP/Agilent
+ beam expanders doesn't usually cause problems.
+<p>
+ The near field beam profile of a laser rebuilt using a conventional HeNe
+ laser tube was found to be noticeably different than that of an original
+ HP/Agilent laser with the 9 mm beam diameter option and in fact could
+ not be installed in at least some Tools.  There is a distinct hot
+ spot in the center, very obvious by eye.
+ While it should be possible to make this laser
+ work in its intended application when new, it may be more sensitive to
+ changes in interferometer alignment or may degrade more rapidly compared
+ to the normal 9 mm beam profile. The profile looks more like a 6 mm beam
+ where the edges are not cut off, as is normally the case with the HP/Agilent
+ optics, rather than a true 9 mm beam where a higher power diverging lens is
+ substituted in the beam expander and the center portion is enlarged by 50
+ percent.  So, this may just be a 6 mm beam expander with a larger output
+ aperture.  Thus, the behavior will be somewhere between that of the normal
+ 6 mm and 9 mm optics.  In principle, it should be possible to correct
+ the beam profile by decreasing the focal length of the expanding lens
+ in proportion to the ratio of beam diameters, assuming the collimating
+ lens has a large enough diameter and appropriate aperture. 
+<p>
+<li><b>Mode alignment, balance, and purity:</b> If the waveplates are
+ mis-adjusted, the output will suffer.  Test the alignment by
+ rotating a polarizer in front of the laser and confirming that the
+ Zeeman beat signal from a high speed photodiode or optical receiver
+ (virtually) totally disappears when aligned with the X or Y axis.
+ Test the mode balance by comparing the optical power through the
+ polarizer when oriented with the X and Y axes.  The two values
+ should be within 10 percent of each other.  Due to a slight polarization
+ preference in the output beam sampler, H:V ratios for HP/Agilent lasers
+ typically range from 1.02:1 to 1.08:1, though 1:1 and 1.15:1
+ may still be acceptable.  Errors in mode alignment
+ or purity will result in interference between F1 and itself, and F2 and
+ itself in the interferometer optics.  The result will be low
+ frequency level shifts of the envelope
+ of the detected signal from the photodiode in the optical receiver.
+ This may result in jitter in the MEAS signal similar to the presence of
+ rogue modes not aligned with the X and Y axes of the laser
+ baseplate described below.  Unequal mode balance will reduce
+ the available optical MEAS signal level relative to laser output power.
+ Such issues may be more critical with higher performance Tools.
+<p>
+ None of these is likely to change in a significant way over the useful life of
+ the laser.  However, when the output power declines to well below the
+ HP/Agilent spec'd minimum, amplitude ripple in the output power due
+ to laser current ripple from plasma oscillations and/or the HeNe laser
+ power supply itself, can interfere with a clean beat frequency.
+<p>
+<li><b>Rogue modes:</b> The axial magnetic field
+ splits the neon gain curve in two and shifts one copy above and
+ the other copy below the original center frequency.  These produce the
+ left and right circularly polarized Zeeman modes.  However, since the
+ two parts of the gain curve are shifted in opposite direction,
+ the effective width of the overall gain curve is larger than the 1.6 GHz or so
+ that would be expected, making possible these rogue modes even in a short
+ tube.  Where a non-genuine laser tube is used, any number
+ of deficiencies can result in low level longitudinal modes that shouldn't be
+ there, and it's possible that these won't be aligned with X or Y.
+ Even if a laser is rebuilt with the same HP/Agilent laser tube after
+ it has been regassed or totally refurbished, there could be rogue modes
+ if the He and Ne isotope differs, most notably if a natural
+ isotope gas fill is used rather than pure or nearly pure isotopes.
+ Or if the fill pressure is higher.  This is because the effective
+ neon gain bandwidth is larger.
+<p>
+ The basic setup used to evaluate HP/Agilent lasers is shown below:
+<p>
+<center>
+<A HREF="tfiltst1.gif"><img  WIDTH=867  src="tfiltst1.gif" border=0></A>       
+</center>
+<p>
+ Any HP/Agilent 5501A/B or 5517A/B/C/D/E/F/G laser can be very quickly
+ evaluated for basic functionality.  The oscilloscope display was what
+ initially called attention to the rogue mode issue.
+<p>
+ The effect of rogue modes that aren't aligned with the X and Y axes
+ will be interference or baseband fringes that will result in low
+ frequency level shifts of the signal in the optical receiver as the tool or
+ stage is moved.  Essentially the same thing will happen if the normal
+ Zeeman (F1 and F2) modes are not pure or are not aligned with the
+ X and Y axes.  (Or the entire laser isn't aligned with its baseplate
+ parallel to the X or Y axis.)  This may cause small transient errors
+ in position while the tool or stage is in motion. However, the end-points
+ may be accurate if the DC level shift resulting from the periodic static
+ errors is ignored by the AC-coupled optical receiver circuitry.
+<p>
+ The MEAS signal may become fuzzy from duty cycle variations but only when
+ the position is changing.  It will appear normal when everything is
+ stationary.  While the exact effect on accuracy is not
+ known, theory suggests that there could be errors of up to 10s of nanometers
+ while the tool or stage is in motion, but no error at the end-points,
+ though the settling time may be larger.  However, there could be ripples
+ in the velocity (or other) function  that needs to be feedback controlled
+ between end-points.
+<p>
+ The symptoms are as follows: The MEAS signal out of the optical
+ receiver should be a clean square-wave with approximately a 50 percent duty
+ cycle.  As the remote mirror or cube corner moves, the period/frequency of the
+ square-wave gets smaller or larger due to Doppler shift but the duty cycle
+ remains the same.  The system determines position by accumulating the
+ relative phase difference between MEAS and REF, which is a square-wave
+ of fixed frequency, the unmodified Zeeman beat output of the laser
+<p>
+ These two photos show an example of a normal MEAS signal with clean rising
+ and falling edges, and a MEAS signal where there is a small amount of movement
+ of the remote mirror.  In fact, it's likely that both the rising and falling
+ edges are moving back and forth, but since the oscilloscope only triggers on
+ the rising edge, that one appears sharp.  (The jaggedness in the falling
+ edge is an artifact of the wiring termination.)
+<br>
+<center>
+<img src="5517rms1.jpg"> &nbsp; &nbsp; &nbsp;  <img src="5517rmm1.jpg">
+<h3>Normal MEAS Signal on Left; Corrupted MEAS Signal on Right</h3>
+</center>
+<p>
+ The photos below made using a Scanning Fabry-Perot Interferometer (SFPI) show
+ the longitudinal modes of a normal 5517 laser on the left with those of a
+ 5517 laser rebuilt using a conventional HeNe laser tube that had rogue modes
+ on the right:
+<p>
+<center>
+<img src="5517nm1.jpg"> &nbsp; &nbsp; &nbsp;  <img src="5517rm1.jpg"><br>
+<h3>SFPI Display of Normal Single Mode Laser on Left; Laser wirh Rogue Modes on Right</h3>
+</center>
+<p>
+ The large peaks consist of both F1 and F2, but the SFPI: is unable to resolve
+ the difference in frequency of only a few MHz.  These are the normal
+ split longitudinal mode of the Zeeman laser.  As can be seen, there is no
+ evidence of any other modes in the left photo display of the normal
+ 5517 laser.  In fact, a genuine HP/Agilent laser will have at most 2 modes
+ present as warmup when the modes are sweeping though the split neon gain
+ curve, but supports only a single (split) mode when it is locked and centered.
+ The display of the laser on the right with the rogue
+ modes has a pair of smaller peaks on either side of the main peak for
+ a total of 3 modes.
+<p>
+ The FSR of the SFPI is 2 GHz.  (The FSR or Free Spectral
+ Range is essentially the longitudinal mode spacing of the SFPI cavity, and
+ is thus the maximum extent in optical frequency over which there is no
+ aliasing in the display -  it is unique.)  So, a 2 GHz FSR means that the
+ longitudinal mode separation of the laser is either around
+ 667 MHz or 1.33 GHz (aliasing due to the 2 GHz FSR).  A mode spacing of
+ 667 MHz cannot be correct as that would imply a distance between
+ laser tube cavity mirrors of almost 9 inches - more than the available
+ space!  So, the smallest peak to the left of the large peak of the
+ Zeeman modes actually goes with the previous large peak.
+ And the other not quite as small peak to the right of
+ the large peak of the Zeeman modes actually goes with the next large peak.
+ Thus, the spacing of the rogue modes with respect to the F1/F2
+ modes are approximately +/-1.3 GHz corresponding to a laser tube cavity
+ length of about 11.3 cm or 4.4 inches.
+<p>
+ I did eventually confirm by visual inspection after removing the back cover
+ and beam expander that the tube is indeed slightly less than 5 inches
+ in overall length, which would be consistent with that cavity length
+ after accounting for the thickness of the mirrors.  I also sent the raw
+ beam across the room and confirmed that it is TEM00 and no higher order
+ spatial modes were evident.  And, with very very careful adjustment of the
+ SPFI alignment which causes its FSR to effectively double to 4 GHz, the
+ display was as expected with one large central mode (F1/F2 displayed
+ as a single mode due to the limited resolution of the SFPI) and two
+ weak modes on either side around 1.3 GHz away.
+<p>
+ The diagrams below show why rogue modes can be present.  If the tube
+ is too long and its longitudinal mode spacing (the FSR of the tube
+ equal to c/2*L) is thus small enough, an adjacent longitudinal mode
+ on each split neon gain curve may be above threshold and thus oscillate.
+ One will be approximately 1 FSR above and the other will be
+ approximately 1 FSR below the Zeeman modes.  (The distance is
+ approximate due to mode pulling effects.)
+<p>
+<center>
+<A HREF="zeemode3.gif"><img  WIDTH=826 src="zeemode3.gif" border=0></A>
+</center>
+<p>
+ Normally, with the main lasing mode centered on the gain curve as it
+ is here, there would be no chance of any other longitudinal
+ modes having enough gain to lase in a tube with a cavity length
+ of less than about 7 inches.  (The difference between the optical
+ frequencies of the F1 and F2 modes is greatly exaggerated in this diagram.
+ If drawn to scale, they would almost merge into a single line and can thus
+ be considered to be centered.)  However, Zeeman splitting effectively
+ widens the gain bandwidth for lasing with one part moving higher
+ and the other part moving lower in optical frequency as shown above.
+ So even a very short tube can produce rogue modes under some
+ conditions.  The use of isotopically pure neon
+ may be required to suppress rogue modes since it results
+ in a much narrower gain curve and thus a narrower Zeeman split gain curve.
+ Thus, HP/Agilent tubes with their 5 inch cavity length are rogue-mode-free.
+ The cavity losses, most notably due to mirror reflectivity, also
+ determine whether modes that are on the tales of the gain curve
+ will oscillate.  So, a long tube with lower reflectivity mirrors
+ could still be free of rogue modes, at the expense of output power
+ in the Zeeman modes.  This is all a balancing act and unfortunately for this
+ tube, it fell over. :( :)
+<p>
+ By rotating a polarizer in front of the laser while observing the SFPI
+ display, it was possible to determine the orientation of the rogue modes.
+ They were orthogonal to each-other and at approximately a 30 degree
+ angle with respect to X and Y.  At this point, such a result was expected
+ (actually hoped for since it was the only explanation that made sense!)
+ but still surprising, as all the longitudinal modes of a laser tube are
+ normally oriented along a single axis, or orthogonal to it, and these
+ were off by 30 degrees.  However, this could mean that the rogue modes are
+ elliptically polarized (before entering the waveplates) rather than
+ being (nearly pure) circularly polarized like the Zeeman modes.
+<p>
+ The reason that the rogue modes at 30 degrees cause signal degradation is
+ that some portion of each rogue mode passes through both the reference arm
+ and measurement arm of the interferometer, and thus they interfere with
+ themselves at the optical receiver, resulting in the baseband fringes.
+ These change the level of the signal envelope, and confuse the receiver
+ electronics, essentially by shifting the threshold that is used to convert
+ to the optical receiver's digital output.  This effect is similar to that
+ of misaligned or impure normal (F1/F2) modes.
+<p>
+ The signal jitter using a 10780A or 10780C optical receiver is
+ probably a worst case.  The higher performance E1708A or E109A may be
+ less susceptible to signal envelope level fluctuations.
+<p>
+ By adjusting the waveplates, it was possible to produce a MEAS signal
+ with little or no jitter.  In fact, by eye, the signal quality was
+ such that on any other laser, it wouldn't warrant a second glance.
+ However, when set this way, there was significant crosstalk between
+ F1 and F2 indicating that their output was probably elliptically polarized
+ rather than purely linearly polarized.  The signal should nearly disappear
+ when a polarizer is aligned with the X or Y axis, but with this laser,
+ it's amplitude was still 20 or 30 percent of the peak with the polarizer
+ oriented at 45 degrees.
+<p>
+ The good news is that since the two rogue modes are already low level,
+ they may actually disappear after the laser is used awhile and the
+ overall gain (and output power) decreases!
+<p>
+ Rogue modes (at least those that are not aligned with the X and Y axes)
+ should not be present in used lasers.
+<p>
+ For a much more in-depth treatment of this topic, see reference
+ <A HREF="#ref">[5]</A>.
+<p>
+ Note that even if rogue modes are present, if they are aligned with the X and
+ Y axes, the only effect will be to slightly decrease the signal level relative
+ to output power.  It's possible that careful adjustment of the waveplates
+ could eliminate the effects of the rogue modes by aligning them with
+ the X and Y axes.  It's also possible that rogue modes could exist in genuine
+ HP/Agilent lasers but go undetected if aligned in this way.  Testing with an
+ SFPI is not something that would be done routinely.  However, with one
+ exception, all tests
+ I've made with HP/Agilent as well as Excel two-frequency lasers show that
+ there is NO evidence of rogue modes when the Zeeman-split mode is centered
+ and locked.  Zero, zip, null. :)  The one exception was a like-new 5517C
+ laser, and these were down around 1 percent relative to the F1/F2 modes,
+ still likely of no consequence.  They may actually have been higher order
+ spatial modes.
+<p>
+<li><b>Transient errors:</b> There can be any number of causes of faults
+ that result in a momentary loss of lock or loss of signal.  In general,
+ if a used HP/Agilent laser, or one with a regased tube, gets through the
+ normal warmup and locks without problems, the chance of these is quite low.
+ But if the tube is operating on the edge of stability due to a high
+ dropout current, there is a chance of the discharge going out and restarting,
+ though once this occurs, it generally will continue and get worse,
+ especially as the tube heats up.  This is most likely to occur with a tube
+ that has many thousands of hours under its belt, but could also be due
+ to an incorrectly matched ballast resistance or a bad or improperly
+ adjusted HeNe laser power supply, among other causes.  CAUTION: Do not
+ allow a flickering or sputtering condition to continue as it can eventually
+ destroy both the laser tube and power supply.
+<p>
+ I've only seen one instance of a 5517 laser that exhibited random dropouts,
+ likely due to a poor internal cathode connection.  These would result in the
+ tube actually winking out and restarting with a frequency of a few minutes
+ to many hours.  It's possible the laser had been dropped or otherwise
+ abused but there was no visible evidence of anything out of the ordinary
+ even after examining the glass laser tube itself.
+<p>
+ However, due to the change in thermal characteristics of a laser rebuilt
+ with a conventional tube, a loss of lock after READY has come on solid
+ may not be unusual but the laser will eventually settle down and behave.
+<p>
+<li><b>Life expectancy:</b> The original HP/Agilent HeNe laser tubes are
+ specially processed to result in an expected life of 50,000 hours.
+ If the tube is simply regased, without replacing the cathode, the resulting
+ life may be substantially shorter and possibly near zero.  End-of-life
+ for many HeNe tubes is when the "pickling" - oxide coating - on the 
+ cathode degrades or disappears.  At that point, the bare aluminum
+ experiences significant sputtering which can even overcoat the mirror
+ at that end of the tube.  So, simply refilling a tube may not even restore
+ it for a few hours.  If the cathode is still good, then lifetime will
+ depend to a large extent on the level of residual contamination from the
+ vacuum/backout/gas fill operation.  Although a working HeNe laser tube
+ can be made in one's basement, it takes a high technology setup to
+ produce a tube that can last thousands of hours.
+<p>
+ Where a new conventional (but possibly modified) HeNe laser tube has been
+ installed, the lifetime will depend on its construction and quality.
+ Typical commercial HeNe laser tubes have an expected life of 10,000
+ to 20,000 hours with some going to 40,000 hours.  But since a very
+ small tube must be used in the the HP/Agilent lasers (due both to space
+ limitations and the required longitudinal mode structure), the life could
+ be much shorter.  The cathode area is small and the gas reservoir is small.
+ Such tubes may have a life of only 5,000 hours, though there are exceptions -
+ Small Zygo tubes last 20,000 hours.
+<p>
+<li><b>Beam alignment:</b> In either type of rebuild, the replacement or
+ regased tube needs to be mounted and potted within the magnet/optics assembly.
+ Even relatively large centering and pointing errors will be taken care
+ of by the adjustments of the laser mounting platform of the machine
+ into which the laser will be installed.  But some machines
+ may be particularly finicky about alignment, with little adjustment range.
+ Examples include some ASML steppers.  And even if the laser will install,
+ decent alignment is one indication of care taken in the rebuild process.
+ If tube alignment inside the magnet is extremely bad, the beam may be
+ partially cut off by the beam sampler aperture of the laser chassis.  There
+ are at least two sizes of beam sampler apertures and a tube with a 9 mm
+ diameter beam cannot be installed in the smaller of these without very
+ likely cutting off a part of it.  If the alignment is way off, this may
+ be unavoidable even with the correct aperture.
+<p>
+ This should not be an issue with a used laser unless the tube assembly
+ has been removed and reinstalled, or transferred to a different laser
+ body, and then only horizontal alignment can really change unless something
+ is preventing proper seating of the tube assembly feet.  Then it's
+ just a matter of loosening the 4 mounting screws and readjusting it
+ horizontally.  (On lasers with a pair of flat-head tube mounting
+ screws, even changes in horizontal alignment are not likely assuming
+ the two flat-head screws were carefully tightened before the other
+ two screws.)
+<p>
+ For a rebuilt laser, a large pointing error most likely indicates poor
+ attention to detail during the final alignment.  Depending on the design
+ of the beam expander and access to its adjustments, it may be necessary
+ to remove the tube assembly and perform the alignment with the aid of
+ a jig that precisely positions the tube assembly with respect to a pair
+ of apertures through which the beam should be adjusted to pass cleanly.
+ However, since the tube will likely already be potted and fixed in the
+ magnet assembly, it probably won't be possible to select the beam height
+ and vertical angle independently so some compromise will be needed.
+<p>
+<li><b>Time to lock (READY LED on solid):</b> For a regased tube, this should
+ be essentially unchanged.  But with a conventional tube and external heater,
+ it may be longer, possibly much longer.  While this is normally of little
+ consequence in a system run continuously, if it exceeds 10 minutes, some
+ associated equipment like the HP-5508A Measurement Display
+ will produce a Laser Fail hard error which will require power cycling
+ the 5508A (which also power cycles the laser).  At that point, it will
+ lock quickly since the tube will be near operating temperature.
+<p>
+ A rebuilt laser using a conventional HeNe laser tube required about 7
+ minutes before the READY LED started flashing, and over 9 minutes
+ for the READY LED to come on solid.  It just barely got in under the
+ deadline.
+<p>
+ A used laser with adequate output power should lock in the normal
+ 4 minutes if it has the Type I or Type II Control PCB and the temperature
+ set-point is adjusted correctly.  Only when the output power is very low
+ and well below HP/Agilent specs, will locking time be
+ affected.  The laser may never lock, or it may only lock after the
+ output power has climbed above 80 to 120 &micro;W for most versions.
+ However, lasers with the Type III Control PCB tend to take longer to
+ lock - 6 minutes or more.  These are not very common though.
+<p>
+<li><b>Zeeman beat (REF) frequency:</b> The 5501B and each of the versions
+ of the 5517 (A/B/C/D/E/F/G) have a specific range for this when new.  When
+ a laser is rebuilt, it may change even if the same physical glass laser
+ tube is replaced in the magnet/optics assembly.  This is due to the use
+ of a gas-fill that differs in the He and Ne isotope percentages compared
+ to  HP/Agilent lasers, the He:Ne ratio, and fill pressure.  If a natural
+ isotope gas fill is used rather than pure or nearly pure isotopes, REF
+ will likely decline, possibly quite substantially.  (On one test using
+ a 5517D tube, it went down around 20 percent.  This was in part due to
+ the maximum REF frequency apparently NOT occurring where it locked
+ as it does with most HP/Agilent lasers, but even the peak was much
+ lower.)  And REF will certainly change if a conventional
+ tube is used to replace an HP/Agilent tube.  The precise REF frequency
+ (also called the beat or split frequency) is not
+ critical and in fact, even for a given laser, will vary somewhat while the
+ laser is warming up and even slightly during operation,
+ and may not even be the same from one power cycle
+ to the next.  Furthermore, over time as the laser is used and the gain
+ (and output power) decline, the REF frequency will tend to increase.  For
+ a very high mileage laser whose output power has dropped way below the
+ HP/Agilent specification (typically 180 &micro;W minimum), it may be 50
+ percent or more above what it was when new.  But 10 or 20 percent is
+ more likely where the laser still meets output power spec.
+<p>
+ So, a rebuilt laser should be checked to make sure the REF frequency
+ is acceptable, either based on the model and options of the original
+ laser, or based on those of the Tool in which it is to be installed.
+ A higher REF frequency translates into a higher maximum velocity capability
+ for the measurement system, so a rebuilt laser with a higher REF frequency
+ should be acceptable if the data processing electronics can handle it
+ without producing measurement errors, or aborting due to detecting that
+ it is out of range.  But the expected increase in REF frequency due to
+ aging should be factored into the determination of whether it will
+ continue to work correctly later.  A rebuilt laser with a short useful
+ life will be no bargain.  However, if the REF frequency is below the
+ spec'd minimum, performance may be unacceptable in speed-critical
+ applications, or the machine may generate an error during self test and
+ refuse to work at all.
+<p>
+ The actual REF frequency of a used laser should not be an issue except
+ to the extent it has increased with use, which may be a tip-off to its
+ future life expectancy.  Even if the output power is well above the
+ spec'd minimum, an excessively high REF frequency may indicate that the
+ original output power was much greater, and the laser is probably near
+ end-of-life.  However, the REF frequency can be lowered relatively easily
+ so a bargain laser the seems healthy in all other respects may still be
+ useful.  It is also sometimes possible to increase REF, for example, to
+ convert a 5517B into a laser that meets all 5517C specifications.
+<p>
+ However, since it is possible to reduce the REF frequency and place it back
+ into the acceptable range by reducing the Zeeman magnet strength (which
+ as a byproduct may slightly increase output power), even knowing the original
+ value for REF when new is not a foolproof way of flagging a high mileage
+ laser.  The modified REF could even be lower than what it was originally!
+ Without data on the original measured external magnetic field (which probably
+ doesn't exist), there is no way to know positively that a laser hasn't
+ been modified in this manner.  Thus output power is still the
+ more reliable indication of laser health, even taking into consideration
+ the small boost that may occur when reducing the magnet strength.
+<p>
+<li><b>Absolute optical frequency/wavelength:</b> Either type of rebuild is
+ likely to result in a change to the optical frequency, and the corresponding
+ wavelength used in the measurements.  The He:Ne isotope ratio and gas fill
+ pressure have the most effect, which can be can result in a difference of
+ up to several hundred MHz compared to the original HP/Agilent specifications.
+ (A 1 ppm change in wavelength and thus dimensional calibration
+ is around 474 MHz.)
+ However, even in the worst case, the normal calibration process will take
+ any frequency offset into account and environmental factors like ambient
+ temperature end up being orders of magnitude more more significant.
+ A one &deg;C change in ambient temperature results
+ in approximate a 1 ppm change in wavelength, and thus measurement
+ accuracy.  Environment compensation hardware and software takes this
+ into account along with the initial physical calibration with respect to
+ a known length standard.
+<p>
+ A rebuilt laser using a conventional HeNe laser tube was tested to be
+ about 75 MHz above a healthy HP/Agilent laser.  This is still only about
+ 0.15 ppm difference, though it does represent a much larger deviation
+ than even an end-of-life original HP/Agilent laser.
+<p>
+ The test setup is shown below:
+<p>
+<center>
+<A HREF="tfiltst3.gif"><img WIDTH=964   src="tfiltst3.gif" border=0></A>
+</center>
+<p>
+<li><b>Short term optical frequency/wavelength stability:</b>  Where the
+ laser tube has been regased, this will probably be similar to that of the
+ original.  Even with a conventional tube and external heater, the short
+ term fluctuations in optical frequency (and thus wavelength) will probably
+ be quite small assuming the laser is in a relatively constant temperature
+ environment.  However, the external heater stabilized tube may be more
+ sensitive to ambient temperature fluctuations, though still quite
+ acceptable.
+<p>
+ A rebuilt laser using a conventional HeNe laser tube had a frequency
+ variation over 8 hours of less than +/-2 MHz, and this is very
+ conservative.  It could be much less.
+<p>
+ The optical frequency tends to decrease with use.  For a used laser, it's
+ never likely to be so low as to not meet HP/Agilent specs for optical
+ frequency, but this, too, can be used as a guide to the health of the
+ laser.
+<p>
+<li><b>Long term optical frequency/wavelength stability:</b> All HeNe lasers
+ drift in optical frequency as they age, mainly due to the decrease in
+ gas pressure inside the tube.  This is probably the main reason that the
+ long term specification for stability is an order of magnitude worse than
+ the short term one.  Both types of rebuilds should be similar in this regard,
+ and still be within HP/Agilent specifications.
+<p>
+<li><b>Amplitude stability:</b> HP/Agilent lasers typical exhibit a power
+ increase of up to 10 percent or even more after initial lock (READY on solid).
+ With the rigid structure of the mirror spacing rod and mirrors, most of the
+ change is believed to be due to the gas temperature and other laser physics
+ issues - not physical alignment - and tends to be greater for high mileage
+ tubes.  Conventional tubes are also subject in addition to significant
+ effects due to mirror alignment at both ends of the tube and may result
+ in the output power declining after full warmup.
+<p>
+<li><b>Pointing stability:</b> One reason the glass tubes in HP/Agilent 
+ lasers are almost totally potted is to guarantee that the alignment
+ with respect to the beam expander and laser output doesn't change.  And
+ even this isn't always entirely successful over their life.  Any
+ drift in the alignment of the tube will result in a change in beam
+ angle, position, and/or profile.  It's likely impossible to
+ fully inspect the mechanical arrangement of the tube in the laser
+ to determine how its mounted.  Check that all mounting points are
+ secured with a material that won't come loose over time.  Any fastening
+ screws should be sealed to prevent movement.
+<p>
+ Most common HeNe laser tubes can have some detectable change in beam
+ pointing as they warm up from dimensional changes in the tube structure
+ and mirror mount stems until reaching thermal equilibrium.  HP/Agilent
+ tubes much less susceptible to these effects due to their rigid glass
+ construction.
+<p>
+ Testing output alignment from power-on through locking and a few hours
+ after that can be done by sending the beam 10, 20, 50 feet or more and
+ monitoring its position and profile with a time lapse camera or similar
+ setup.  Even very small changes in beam pointing from the laser tube may
+ be amplified by the beam expander.
+<p>
+<li><b>Power stability:</b> (This applies only to used, regased, or rebuilt
+ HP/Agilent lasers with Long tubes.)  The laser cavity in these tubes is
+ formed by mirrors held against the precision ground ends of the
+ mirror spacing rod by springs (refer to the detailed tube diagram, above).
+ There are no adjustments.  However, it's possible for the rod to fracture
+ either from a severe physical shock to the laser or possibly simply
+ from residual bending stress resulting from imperfect alignment of the
+ front and back glass parts of the tube envelope when fused together.
+ The effects will be minimal if the pieces remain firmly in contact and
+ mirror alignment doesn't change.  Otherwise, power could drop and be
+ sensitive to vibration or vary significantly from one power cycle
+ to the next.  (For Short tube lasers, the result is always total failure
+ since it is attached only at the back end!)
+<p>
+ A simple test for a fractured rod is to press *gently* sideways on the glass
+ protrusion at the back of Long tubes.  Here, "gently" means no more than a
+ pound or so - we don't want to break the thing!  There should be little or
+ no change in output power regardless of the orientation of the force.  A
+ laser tube with a fractured rod that passes the other tests may still be
+ usable but the only way to know if it will remain consistent would be to
+ run it for many hours and power cycles.
+</ul>
+<p>
+<A HREF="#top">Back to Top</A>
+<p>
+<hr>
+<p>
+<h2>Acceptance Testing Summary</h2>
+
+With an arrangement similar to the one shown in the diagram above,
+"Two-Frequency Interferomter Laser Tester", along with a polarizer,
+laser power meter, and high speed photodiode, most of the following
+tests can be performed in under 10 minutes.  However, it will be desirable
+to run the laser for a few hours or more to make sure everything remains
+stable, but this can be essentially unattended if the measurement
+display catches laser loss-of-lock or dropout errors as does the 5508A.
+(The only test that will require a somewhat more complex setup is
+the one for optical frequency, and performing that is probably not
+essential in most cases.)
+<p>
+Confirm that the +/-15 VDC power supplies have the required specifications
+(voltage accuracy and current ratings).  It would also be desirable to
+run everything on a power conditioner and/or constant voltage (e.g., Sola)
+transformer to rule out incorrect or noisy power as a cause of unexpected
+behavior, should any occur.  And, of course, if the cabling isn't idiot-proof,
+double check the connections BEFORE applying power!
+<p>
+<ol>
+<li><b>Starting:</b> Except for the 5501B, a new or rebuilt laser should
+ produce an output beam almost immediately, though many used lasers will
+ require a few seconds to a minute or more to come on (though they will
+ typically restart instantly if power is interrupted).  The
+ 5501B doesn't turn the laser tube on until the internal mirror spacing
+ rod has reached operating temperature, usually about 2 minutes.  At that
+ point, the yellow "Laser" LED signifies that the laser tube should be on.
+ A slow start tube that doesn't light up within a few seconds may cause
+ the controller to go through multiple attempts at locking, extending the
+ lock time to much more than the typical 4 minutes.
+<p>
+ A laser that takes a long time to start but runs reliably may be perfectly
+ acceptable, especially in applications where the laser is then run
+ continuously for days or longer.  However, starting can be hard on the
+ HeNe laser power supply, and some measurement display electronics will
+ give up after a fixed amount of time like 10 minutes, and produce a
+ non-recoverable hard error.
+<p>
+<li><b>Running:</b> Once the laser starts, it should remain on until power
+ is removed.  Any dropout, sputtering, or flickering is a cause to reject
+ the laser unless corrective action is taken.  But this is usually beyond
+ the capabilities (or desires!) of the end-user.  It's essential to monitor
+ the laser status until at least when it locks (READY on solid) since
+ marginal tubes may only start misbehaving after they warm up.
+<p>
+<li><b>Locking:</b> Most of the 5517 lasers, the 5519A/B, 5519A, and 5501B
+ typically lock (READY LED on solid) in about 4 minutes.  A bit less or a bit
+ more doesn't matter, but a very long lock time could indicate other
+ underlying problems, and may result in a hard error from some measurement
+ electronics.  But it is normal for some versions of 5517 lasers to take
+ 10 minutes or more to lock.  A very short lock time could indicate that
+ the internal temperature adjustment is not set properly, and the laser
+ may lose lock after awhile.
+<p>
+ The 5500A/C and 5501A should lock in 10 to 20 seconds as they use PZT
+ rather than thermal tuning, which is much faster.
+<p>
+ A healthy used laser should lock in about the same time as a new laser.
+ However, a rebuilt laser with a conventional HeNe laser tube may take
+ much longer to lock.  And a used laser with marginal output power may
+ go through a few locking cycles before the power has climbed high enough
+ to be acceptable.
+<p>
+<li><b>Locked output power:</b> The optical output power from the front of
+ the laser with the normal (large) aperture should exceed the minimum
+ specification for the particular laser.  For most of these, it's 180 &micro;W,
+ but may be slightly lower (120 &micro;W) for some, like the 5517B and 5501A.
+ For original HP/Agilent laser tubes, the output power will generally increase
+ slightly after the laser locks and over the next hour or so, especially
+ for used lasers with higher mileage tubes.  However, it is normal for the
+ precise output power to differ slightly each time the laser is powered
+ on based on which precise mode order (actual spacing rod temperature)
+ to which it locks.
+<p>
+ Sometimes, the locked output power when new is printed on a label on the
+ backplate of the laser.  Depending on the specific model and options and
+ particular sample, this can range from around 250 &micro;W to over
+ 600 &micro;W.  How far the output power has declined relative to the
+ printed value is good indication of the laser's usage, though this is not
+ necessarily a linear function.  However, being near the minimum acceptable
+ value would be a cause for rejection.
+<p>
+ For a rebuilt laser with a conventional tube, the output power may go
+ <i>down</i> slightly as the mirror alignment changes slightly with
+ temperature.  This doesn't generally happen with HP/Agilent tubes
+ which use a rigid (glass or Zerodur) mirror spacing rod for alignment.
+<p>
+ Note that a measurement of output power should only be considered
+ accurate once the laser has locked and READY is on solid.  Before then,
+ it may vary by 25 percent or more due to mode sweep, especially for a high
+ mileage tube whose output power has declined significantly compared to its
+ value when new.
+<p>
+<li><b>Beam profile:</b> The normal beam profile for HP/Agilent lasers
+ is along the lines of the center portion of a Gaussian with the sides
+ cut off, not the typical full Gaussian TEM00 spatial mode of a common
+ HeNe laser.  The beam profile won't change in a used laser, though the
+ variation from center to edge will tend to increase as the power declines.
+ But a rebuilt laser with a conventional tube may not have matched optics,
+ so almost anything is possible.  To make it seem like there is more power, the
+ rebuild company may used optics that pass more of the beam, resulting in 
+ a hot spot in the center.  The easiest way to check is to compare
+ with an original HP/Agilent laser with a similar size beam option.
+ Two possible effects of a sub-optimal beam profile will be to decrease
+ MEAS signal amplitude and make interferometer alignment more critical.
+ For many applications, the exact beam profile may not matter, but for
+ some equipment, there may be specific installation tests that will
+ fail if the beam profile isn't close to the original from HP/Agilent.
+<p>
+<li><b>Mode alignment and mode purity:</b> When a polarizer (sheet polarizer
+ or polarizing beam splitter cube such as from an HP interferometer) is
+ rotated in the output beam, the signal from a fast photodetector
+ (displayed on an oscilloscope or RF spectrum analyzer) should vary from a
+ maximum to almost non-existent.  For the mode alignment to be acceptable, the
+ maximum should occur within less than 1 degree of +/-45 degrees and the
+ minimum within less than 1 degree of 0 and 90 degrees.  For the mode purity
+ to be acceptable, the ratio of maximum to minimum signal amplitude should
+ be much greater than 100:1.  Check at both 0 and 90 degrees as acceptable
+ performance at one doesn't guarantee it at the other, though differences
+ are generally small.
+<p>
+ Neither mode alignment nor mode purity should change in a used laser.  But in
+ a rebuilt (or new!) laser, alignment being off by more than a degree or so
+ would be an indication of bad quality control during final adjustment of the
+ waveplates.  Lack of pronounced null points when the polarizer is aligned
+ with the X or Y axes indicates crosstalk between the F1 and F2 optical
+ frequencies and may also be the result of errors in waveplate adjustment,
+ or that the waveplates were set up to eliminate the effects of rogue
+ modes in a rebuilt laser at the expense of mode purity.  These problems
+ should be corrected by the supplier, and if not possible, the laser should
+ be rejected as both have the potential to introduce periodic static or
+ dynamic measurement errors.
+<p>
+<li><b>Mode balance:</b> The output power in the X and Y polarized modes
+ should be within about 10 percent of each-other.  While a slightly larger
+ difference won't really affect performance, it may be an indication of
+ an electronics problem resulting in a significant optical frequency offset,
+ and possible loss-of-lock after awhile.
+<p>
+<li><b>REF signal:</b> Once the laser has locked (READY on solid), an
+ optical receiver should produce a clean stable
+ waveform (squarewave) with crisp sharply delineated tops and bottoms and
+ rising and falling edges.  Any fuzz here may indicate amplitude ripple of
+ the optical output.  This is most likely to be present in lasers with low
+ output power and high mileage, caused by current ripple in the
+ switchmode HeNe laser power supply and/or plasma
+ oscillations in the laser tube.  The frequency is typically from
+ 40 to 100 kHz for current ripple and 600 to 800 kHz for plasma oscillations.
+ Sometimes, plasma oscillations will disappear once the tube has fully
+ warmed up, but where they are always present (as with tubes that don't
+ want to stay lit), corrective action may be needed.
+<p>
+ Before locking when there is no REF signal, it's not unusual for an optical
+ receiver set at maximum sensitivity to produce an output due to very low level
+ amplitude ripple caused by the HeNe laser power supply, particularly older
+ versions like the VMI PS-148 (or one that is defective).  An HeNe laser power
+ supply with lower current ripple like the VMI PS-373 would probably eliminate
+ the residual ripple, but as long as REF is clean once locked, it's probably
+ of little consequence.
+<p>
+<li><b>REF frequency:</b> The actual frequency should be within the lower and
+ upper limits for the particular laser model (e.g., 2.4 to 3.0 MHz for
+ the standard 5517C) and options (some of which spec a slightly higher
+ than normal REF frequency).  If it
+ is near or beyond the upper limit, this may still be acceptable as
+ HP/Agilent signal processing electronics tend to be rather tolerant, but some
+ equipment may be very fussy, or may simply be designed so close to the
+ limit that it will fail to track properly.  However, a high REF frequency
+ in a used laser could also indicate that it is high mileage, as the REF
+ frequency tends to increase as a result of changes in tube parameters.
+<p>
+ A REF frequency that is very close to or below the
+ minimum spec'd value for the particular model laser (e.g., 2.42 MHz for
+ a 5517C spec'd at 2.4 to 3.0 MHz) may indicate that the wrong tube is
+ installed (a 5517B in this example) by someone trying to pass a
+ 5517B off as a 5517C, or that some "event" has reduced the
+ strength of the Zeeman magnet.  REF is typically set at 10 to 20 percent
+ above the spec'd minimum in new lasers to account for a downward drift
+ after warmup in the hottest working environment.
+<p>
+<li><b>MEAS signal (stationary):</b> This should be the same as the REF
+ signal, above - clean and stable.
+<p>
+<li><b>MEAS signal (moving):</b> The MEAS waveform from the optical receiver
+ should be clean, just like REF.  Movement of the "Target" will result in
+ the period/frequency of the waveform changing, but at any instant, it should
+ have virtually no fuzz or other indication of instability.  Misaligned,
+ impure, or rogue modes can result in both amplitude and duty cycle changes,
+ with the most obvious result being fuzzy rising and/or falling edges
+ (depending on the scope triggering).
+<p>
+<li><b>Transient errors:</b> The easiest way to check for these is to
+ install the laser in an interferometer, or even simply with an optical
+ receiver monitoring its output, and use the normal error detection
+ capabilities of a measurement display like the HP 5508A to catch
+ any loss of signal events over several hours.  Alternatively, a data
+ acquisition system can be used to monitor the H and V polarized output
+ power, and possibly the REF frequency.  Transient errors are relatively
+ uncommon with these lasers, so testing for them is probably not worth
+ the additional effort.  Any failure should be caught early on by the
+ measurement electronics in the intended application.
+<p>
+<li><b>Optical frequency:</b> For a rebuilt laser, knowing the optical
+ frequency is probably not very important as long as any machine calibration
+ procedure takes the corresponding variation in wavelength into consideration.
+ The optical frequency for rebuilt lasers may be quite different from the
+ original, especially those using conventional tubes.
+<p>
+ For a used laser, the optical frequency relative to a similar known
+ laser that is new, has seen little use, or has been run for a known
+ amount of time, can provide another indication of how much use it has
+ seen.  The difference in optical frequencies for a healthy laser will
+ typically be only a few MHz, while one near end-of-life may be lower
+ by 15 MHz or more.
+<p>
+ It's not clear that knowing the absolute optical frequency is of much
+ added value for any of these lasers, except possibly to use it as a
+ reference in testing other similar lasers in the future.  So, comparing
+ with a low mileage HP/Agilent laser is as good as comparing with an
+ iodine stabilized HeNe laser.
+<p>
+ (Although the HP/Agilent specification for laser wavelength changed by
+ -0.000018 nm, an amount corresponding to an optical frequency increase
+ of +14 MHz between the 5517B and 5517C, there is no evidence that an actual
+ change was made in the design of the laser.  Testing shows no obvious
+ difference in the optical frequencies of the 5517A, 5517B, 5517C, 5517D,
+ or 5517E, or the 5501B.)
+<p>
+ However, since this test does require another similar HP/Agilent laser in
+ known working condition, and a somewhat more complex setup to perform,
+ the time, effort, and expense may not be justified if the other tests
+ indicate good health.
+</ol>
+<p>
+Note that the above list does not include the temperature set-point adjustment
+as described in the HP/Agilent manual.  This should be valid for new, used,
+or rebuilt lasers with HP/Agilent tubes.  But, it may need to be modified for a
+rebuilt laser with a conventional tube.
+<p>
+<A HREF="#top">Back to Top</A>
+<p>
+<hr>
+<p>
+<h2>Discussion and Conclusions</h2>
+
+A used or rebuilt HP/Agilent metrology laser may represent a viable alternative
+to a high cost new laser or previously owned laser in uncertain condition.
+For a used laser, it's critical to measure key parameters to determine
+the likely condition of the laser.  The most important would be the laser
+output power, followed by the REF frequency and optical frequency.
+<p>
+However, depending on the technique and quality of the work in rebuilding a
+laser, a new set of isseus can arise, requiring careful acceptance testing
+and periodic checks of performance.  So far, there is very limited data on
+these lasers.  I have only tested a single 5517D from a single company
+that had installed a conventional tube in place of the original HP tube.
+This laser (used as the example above) had very obvious beam profile and
+rogue mode issues.  Quite possibly, it could be made to work in
+certain applications, perhaps all but the most critical ones.  However,
+there have been reports from Field Service personnel of an inability to
+follow the manufacturer's alignment procedure due to some aspect of this
+laser, possibly the beam profile.  But that at least could probably
+be corrected through modification of the beam expander optics.
+However, I do not believe that any adjustment
+(e.g., realignment of the waveplates) or modification could eliminate
+the rogue modes since they inherently appear at an angle to the
+desired modes.  They could potentially compromise signal quality and accuracy,
+though it is not known to what extent either of these would impact a practical
+application.  And of course, with any laser that has been modified
+without HP/Agilent's strict quality control, there would be some risk,
+so rigorous adherence to a weekly or monthly test and calibration
+regiment would be essential in identifying and tracking any changes
+in performance over time.
+<p>
+These same issues could occur with other Zeeman lasers such as those from
+Excel Precision <A HREF="#ref">[6]</A>,
+Zygo Corporation <A HREF="#ref">[7]</A> or other companies claiming
+to have compatible Zeeman lasers.  Excel's 1001A/B/F and
+Zygo's 7705 are similar to those from HP/Agilent but both use HeNe laser
+tubes of conventional design, though most likely with special modifications
+to satisfy the requirements of the Zeeman laser application.
+(The other metrology lasers from Zygo such as the 7701 and 7702
+are based on different technology.  These already use HeNe laser tubes of
+conventional design custom built by or for Zygo to achieve long life
+but it may be possible to use tubes from other manufacturers as replacements
+<A HREF="#ref">[8]</A>.  There would still be some areas that could
+change if the laser is rebuilt, but they would be limited
+to slight differences in beam profile, and a likely shorter life
+<A HREF="#ref">[9]</A>.)<p>
+<p>
+Several companies have listings for Zeeman split two-frequency
+<p>
+<ul>
+<li>PLASMA (Russian) <A HREF="#ref">[10]</A>
+ offers the LGN-212 series of lasers that appears to include models
+ that are functionally equivalent to those from HP/Agilent.
+<p>
+<li>Wavetronics (Korean) <A HREF="#ref">[11]</A> offers the
+ WT307B/C/D which appear to be clones of the HP/Agilent 5517B/C/D.
+ They also claim to be able to repair HP/Agilent lasers.
+<p>
+<li>VM-TIM (German) <A HREF="#ref">[12]</A> lists a laser with functional
+ specifications similar to those of the 5517A but with no
+ other information.  They claim to be able to provide lasers with
+ higher REF frequencies but all appear to be custom built.
+</ul>
+<p>
+However, nothing is known about these companies
+beyond what is listed on their Web sites and that is minimal
+in all cases, so their products would need to be evaluated
+in the same way as rebuilt lasers.  So far, inquiries have
+either been ignored or the replies have not been very helpful.
+<P>
+If anyone has a rebuilt HP/Agilent laser or one of these or other clones,
+I would be happy to evaluate its performance based on the tests described
+above.  Please contact me via the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ Email Links Page</A>
+for more informataion.
+<p>
+<A HREF="#top">Back to Top</A>
+<A NAME="ref">
+<p>
+<hr>
+<p>
+
+<h2>References and Links</h2>
+
+<ol>
+<li><A HREF="http://www.keysight.com/">Keysight Technologies</A>.  Search
+ for a specific model laser or system, or "metrology lasers".  Their
+ Web site has specifications for all current
+ lasers and systems but little if any on older models like the 5501B
+ that they consider obsolete and no longer support.  There is also
+ extensive technical information on all aspects of Agilent metrology
+ systems and components.
+<p>
+<li>General information on HP/Agilent/Keysight metrology lasers and systems:
+ Sam's Laser FAQ chapter "Commercial HeNe Lasers", sections starting with:
+ <A HREF="laserhcl.htm#hclish3">
+ Hewlett-Packard/Agilent HeNe Lasers</A>.
+<p>
+<li>Building or modifying two-frequency metrology lasers:
+ Sam's Laser FAQ chapter "Home-Built Helium-Neon Laser", sections
+ starting with <A HREF="laserchn.htm#chndzees">
+ Two-Frequency HeNe Lasers Based on Zeeman Splitting</A>.
+<p>
+<li>Experiments in rebuilding HP/Agilent lasers:
+ Sam's Laser FAQ chapter "Home-Built Helium-Neon Laser", section:
+ <A HREF="laserchn.htm#chnichlt">
+ Installing a Common HeNe Laser Tube in an HP 5517 or 5501B</A>.
+<p>
+<li>In depth treatment of measurement anomolies due to rogue or off-axis
+ modes: "An investigation of two unexplored periodic error sources in
+ differential-path interferometry", Tony Schmitz and John Beckwith,
+ Precision Engineering, volume 27, issue 3, July 2003, pages 311-322.
+<p>
+<li><A HREF="http://www.excelprecision.com/">Excel Precision</A>.  Very
+ little technical information.  Excel appears to be out of business.
+<p>
+<li><A HREF="http://www.zygo.com/">Zygo Corporation</A>.  Go to:
+ "Stage Position (OEM)" or search for "ZMI".
+<p>
+<li>General information on Zygo metrology lasers and systems:
+ Sam's Laser FAQ chapter "Commercial HeNe Lasers", sections starting with:
+ <A HREF="laserhcl.htm#hclzyl1">Zygo HeNe
+ Lasers</A>.
+<p>
+<li>Companion document: <A HREF="zymleval.htm">Considerations in Evaluating
+ Used or Rebuilt Zygo Metrology Lasers</A>.
+<p>
+<li><A HREF="http://plasmalabs.com/">PLASMA - Research Institute of Gas
+ Discharge Devices (Russia)</A>.  Go to: "HeNe Lasers", "Stabilized Lasers",
+ "LGN-212-1".
+<p>
+<li><A HREF="http://wavetronics.co.kr/">Wavetronics, Inc. (Korea)</A>.  Go
+ to "Product", "WT307".
+<p>
+<li><A HREF="http://www.vm-tim.de/">VM-TIM (Germany)</A> Go to "Laser",
+  "He-Ne-Lasers", and scroll down to "He-Ne-Lasers Stabilized".
+</ol>
+<p>
+<A HREF="#top">Back to Top</A>
+<p>
+<hr>
+<b><center>
+ <A HREF="lasersam.htm">Sam's Laser FAQ</A>,
+ <A HREF="copyright.htm">Copyright &copy<A> 1994-2022,
+ Samuel M. Goldwasser, All Rights Reserved.<br>
+ I may be contacted via the <A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+ Email Links Page</A>.</center></b>
+<hr>
+<p>
+</body>
+</html>

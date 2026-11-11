@@ -1,0 +1,151 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvttvpsfe.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Typical TV power supply front end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Typical TV power supply front end</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvttvpsfe.htm">https://www.repairfaq.org/samnew/tvfaq/tvttvpsfe.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Typical TV power supply front end&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvstndbyp.htm">&lt;&lt;&nbsp;Standby power supplies</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvtotdead.htm">Totally dead set&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvttvpsfe">Typical TV power supply front end</A></h3>
+
+The partial schematic below is similar to those found in the majority of
+TVs sold in countries with 110 to 120 VAC power.  Many parts are not shown
+including the power switch or relay, RFI bypass capacitors across the
+rectifier diodes, and RFI line filter.
+<p>
+<PRE>
+
+                                         Bypass resistor
+     Line fuse   Main bridge  Fusable    +----/\/\-----+
+           _      rectifier   resistor   |   +-----+   |
+     H o--_ --+------|>|---+---/\/\--+---+---| REG |---+---+---o B+
+              |            |         |       +-----+       |
+              |  +---|>|---+     C1 _|_ Main    |         _|_ Regulator
+   115 VAC    |  |           400 uF --- filter  |         --- output
+              +--|---|&lt;|---+  200 V  |  cap     |          |  capacitor
+                 |         |         |          |          |
+ +-> N o---------+---|&lt;|---+---------+----------+----------+---o Non-isolated
+ |                                                                 return
+ +-> G - Power line earth ground via building wiring
+
+</PRE>
+<p>
+<li>The line fuse is typically 2 to 4 A, usually a normal fast blow type.  Even
+ so, it may not blow as a result of faults down the line - the fusable
+ resistor or regulator may fail first.
+<p>
+<li>The main bridge rectifier is often composed of 4 discrete diodes (similar
+ to 1N400Xs) but may also be a single unit.  Failures - usually shorted diodes
+ - are common.
+<p>
+<li>The main filter capacitor can range in size from 200 to 800 uF or more
+ at 200 to 250 V.  THIS CAN BE LETHAL!  A typical TV may continue to work
+ at normal line voltage without any noticeable degradation in performance
+ (hum bars, hum in sound, or shutdown) even if this capacitor is reduced
+ in value by 75%.  Its uF value is therefore not critical.
+<p>
+<li>The regulator is often an IC or hybrid module.  Failures resulting in no
+ or reduced output, or no regulation are common.
+<p>
+<li>The regulator output capacitor is needed for the B+ regulator to function
+ properly.  If this capacitor is reduced in value or develops a high ESR,
+ regulation may fail resulting in instability, oscillation, or excessive
+ B+ and shutdown.
+<p>
+<li>The regulator bypass resistor reduces the amount of current control needed
+ of the regulator.  Caution: even if the regulator has been pulled, the B+
+ line will have substantial voltage as a result of this resistor.
+</ul>
+ 
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvstndbyp.htm">&lt;&lt;Standby power supplies</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvtotdead.htm">Totally dead set&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

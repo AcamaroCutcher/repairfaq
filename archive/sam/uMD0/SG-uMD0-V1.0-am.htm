@@ -1,0 +1,655 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uMD0/SG-uMD0-V1.0-am.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<TITLE>Assembly Instructions for the SG-&micro;MD0 - RS422 and Analog Inputs</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uMD0/SG-uMD0-V1.0-am.htm">https://www.repairfaq.org/sam/uMD0/SG-uMD0-V1.0-am.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<h1>
+Assembly Instructions for the SG-&micro;MD0 - RS422 and Analog Inputs<br>
+</h1>
+<h2>
+Version 1.00 (27-Feb-21)
+<br>
+</h2>
+<h3>
+<A HREF="https://www.repairfaq.org/sam/uMD0/copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="https://www.repairfaq.org/sam/uMD0/emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<link rel="icon" href="https://www.repairfaq.org/sam/uMD0/uMD1-16.ico?v=2" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/uMD0/uMD1-16.ico?v=2" type="image/x-icon">
+
+<p>
+<A NAME="umd0.0toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#sgumd1.0pre">Preface</a>
+ <ul>
+ <li><A HREF="#sgumd1.0aac">Author and Copyright</a>
+ <li><A HREF="#sgumd1.0dis">DISCLAIMER</a>
+ <li><A HREF="#sgumd1.0ack">Acknowledgment</a>
+ </ul>
+<li><A HREF="#sgumd1.0int">Introduction</a>
+<li><A HREF="#sgumd1.0sch">Schematics for &micro;MD0 Version 1.0</a>
+<li><A HREF="#sgumd1.0dai">Step-by-Step "Heathkit&trade;-style" Assembly
+ Instructions for SG-&micro;MD0 PCB Version 1.0</a>
+<li><A HREF="#sgumd1.0sei">Reference Voltage for Single Ended Digital Input</a>
+<li><A HREF="#sgumd1.0epl">Parts Lists</a>
+</ul>
+<p>
+<A NAME="sgumd1.0pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="sgumd1.0aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="https://www.repairfaq.org/sam/uMD0/emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="https://www.repairfaq.org/sam/uMD0/copyright.htm">Copyright &copy<A> 1994-2016
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="sgumd1.0dis">DISCLAIMER</a></h4>
+
+&micro;MD0 is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+While every effort has been made to avoid this possibility, &micro;MD2 is an
+on-going development effort.  We will not be responsible for any consequences
+of such bugs including but not limited to damage to the construction crane you
+picked up on eBay for $1.98 + shipping, financial loss from ending up in
+the Antarctic when the compass orientation provided by
+your home-built ring laser gyro was off
+by 1,536 degrees, or bruising to your pet's ego from any number
+of causes directly or indirectly related to &micro;MD0. ;-)
+
+<h4><A NAME="sgumd1.0ack">Acknowledgment</a></h4>
+
+Thanks to Jan Beck for providing support for enhancements
+and bug fixes and tolerating my silly C coding questions.
+He was also instrumental in developing the initial
+&micro;MD1 firmware and GUI.  And for getting me interested
+in actually getting involved in that project.  If anyone had told me 
+six months ago that I'd be writing code in C, MIPS assembly language,
+and Visual Basic - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)  Jan maintains the master GUI source code
+as well as slightly different versions of both the &micro;MD1 and
+&micro;MD2 firmware and a development blog on these and other projects.
+<br>
+<p>
+<A NAME="sgumd1.0int"></A>
+<hr>
+<h3>Introduction</h3>
+
+The &micro;MD0 kit of parts includes everything necessary for
+a 1 axis readout.  The extension to 2 or 3 axes is left as an
+exercise for the user.  But unlike &micro;MD1 and &micro;MD2,
+this is quite straightforward without adding too many gray hairs. ;-)
+However, total change rate for all 3 axes will not increase above
+what is was for a single axis and may actually decline.
+<p>
+<b><font color="brown">
+This document provides detailed instructions for assembling the SG-&micro;MD0
+PCB <font color="blue"> Version 1.0.</font>.
+A similar document will be provided when other versions are available
+(which is doubful).  No major changes are anticipated but since some
+parts may change, it is critical to use the correct manual.  Check
+the marking on the PCB to confirm the version.
+</font></b>
+<p>
+All components are through-hole and except as noted,
+should seat flush on the
+PCB.  They shouldn't be suspended in mid-air swinging in the breeze. :)
+Unfortunately, due to a minor error, parts are not labeled on the
+silkscreen for V1.00, so the schematic and SG-&micro;MD2 PCB layout diagram
+will need to be used to identify parts placement.
+<p>
+A low power soldering iron with narrow tip and thin (e.g., #22 AWG) rosin-core
+solder will be required.  DO NOT even think about attempting this without
+suitable soldering equipment.  It's well worth the investment.  A Weller
+soldering gun or propane torch will not work. :)  Rosin core solder is also
+essential.  And while
+I'm quite confident that you never make mistakes, a means of component removal
+such as a de-soldering pump (e.g., SoldaPullt&trade;) will be highly desirable.
+Screwing up component removal can easily ruin the PCB and is not covered
+under the unlimited limited warranty. :-)  The total investment should
+not exceed $100.
+<p>
+Proper soldering technique will be such that the exposed solder on each
+pad should be shiny with a concave profile.  It should not be a blob and
+just needs to fill the hole.  Solder is not glue.
+Some excess solder doesn't hurt anything
+but looks unprofessional.  A 10X magnifier may come in handy for
+inspection.  Residual rosin can be cleaned off with
+isopropyl alcohol or an environmentally-friendly electronic solvent.
+However, leaving the rosin alone is also acceptable (if ugly).
+<p>
+Total assembly time for a single axis system should be under one half hour
+for someone proficient
+in fine soldering.  Cutting component leads to 1/4 to 3/8 inch before
+installation will simplify soldering as the long leads won't be poking
+you in the face. :( :)  Then trim flush after soldering.
+<p>
+The Atmega 328P Nano 3.0 microcomputer is fully assembled including
+all pins.  So as noted in the main SG-&micro;MD0 manual, it
+can be constructed on a solderless breadboard
+for testing at least.  Later, it can be transferred to a prototyping
+board the SG-&micro;MD0 PCB with soldered connections.  The same parts
+layout can be used for either.  The
+only parts not included in the kit are jumper wires for the solderless
+breadboard, and wiring for any cables to the photodiodes.
+<p>
+<b>IMPORTANT:</b> All the resistors are labeled using the standard color
+as shown below.  Normal color vision
+is required to be able to identify these reliably.  Even then, it is sometimes
+difficult to confirm the values that differ in one band or in poor lighting.
+And a magnifier may be required to read
+some markings on these and other components.  If in doubt, have someone
+else assemble the kit or assist you.
+<p>
+For those not familiar with the common resistor color code
+(Black/0, Blown/1, Red/2, Orange/3, Yellow/4, Green/5, Blue/6, Violet/7,
+Gray/8, White/9), two of the resistors near the 8 pin UA9637 ICs in
+the layout diagram are are 680 (blue-gray-brown
+or 68 with 1 zero) ohms and 330 (33 with 1 zero) ohms.  The gold stripe
+indicates 5 percent tolerance on the value but for the use here, tolerance
+doesn't matter.  (It's possible the resistors you use will have 4 stripes
+where 3 of them are the value and the 4th is the multiplier, along with one
+for tolerance.  If in doubt confirm the value with a multimeter.)  The chart below is from Digikey.  (If the link decays, a Web search will readily
+locate another one.)
+<p>
+<center>
+<img src="http://www.digikey.com/-/media/Images/Marketing/Resources/Calculators/resistor-color-chart.jpg"><br>
+<h3>Resistor Color Code Chart (from the Digikey Web site)</h3>
+</center>
+<p>
+
+<h3><A NAME="sgumd1.0sch">Schematic for the SG-&micro;MD2 Version 1.0</a></h3>
+
+The schematic for both the RS422 and Quad-Sin-Cos (analog) versions
+may be found at: <A HREF="https://www.repairfaq.org/sam/uMD0/sgumd0sch1.0.pdf">SG-&micro;MD0
+Version 1.0 Schematic</A>.
+<p>
+Printing out the schematic and having it available for reference while
+installing the parts on the solderless breadboard.
+
+<h3><A NAME="sgumd1.0pcb">SG-&micro;MD2 PCB Layout Version 1.0</A></h3>
+
+Refer to the SG-&micro;MD2 board layout below.   Clicking on these
+will bring up higher resolution versions in a single separate tab or window
+depending on your browser settings:
+<p>
+<center>
+<A target="uMDas0" HREF="sgum0v10-pcb1.gif"><img
+ src="sgum0v10-pcb1.gif" height=515></a>. &nbsp; &nbsp;
+<A target="uMD2asm" HREF="uMD0-PCB1.jpg"><img
+ src="uMD0-PCB1.jpg" height=515></a> &nbsp; &nbsp;
+<br>
+<h3>SG-&micro;MD0 V1.0 PCB Layout Diagrams for V1.0 Schematics (Left)
+and PCB Populated for Sin/Cos Input (Right)<br>
+</center>
+
+<h3><A NAME="sgumd1.0dai">Step-by-Step "Heathkit&trade;-style" Assembly
+ Instructions for SG-&micro;MD0 PCB Version 1.0</a></h3>
+
+Print out this document so each step can be checked off ( ) as it is completed.
+<p>
+The parts list below assumes populating both the Sin/Cos analog parts and the
+RS422 input parts.  But is not required.
+<p>
+<ol>
+<li>( ) Confirm that all parts are present and undamaged:
+<p>
+ <ul>
+ <li>( ) 1x blank SG-&micro;MD0 V1.0 PCB.  Confirm the version on the
+  silkscreen below the location of the USB connector.  Inspect for plating
+  or other defects.
+<p>
+ <li>( ) 1x Atmega 328P Nano 3.0 PCB with pins in antistatic bag or box.
+ <li>( ) 1x 30 pin wide DIP socket (may be larger needing trimming) or a
+  pair of 15 pin SIPP socket strips.
+ <li>( ) 2x 8 pin DIP socket.
+ <li>( ) 2x 3 mm red LED.
+ <li>( ) 2x 3 mm green LED.
+ <li>( ) 3x 0.1 &micro;F ceramic capacitor (marked with 104 or 0.1).
+ <li>( ) 1x LM393P, 8 pin DIP in antistatic foam.
+ <li>( ) 1x UA9637 or UA9639, 8 pin DIP in antistatic foam.
+ <li>( ) 4x 100K ohm 1/8 W Resistor (Brown-black-Yellow-gold).
+ <li>( ) 1x 470K ohm 1/8 W Resistor (Yellow-violet-yellow-gold).
+ <li>( ) 2x 2-3K ohm 1/8 W Resistor (See color code chart).
+ <li>( ) 2x 20-50K ohm 1/8 W Resistor (See color code chart).
+ <li>( ) 2x 10K ohm trim-pot.
+ <li>( ) 2x 100 ohm 1/4 or 1/2 W resistor (Brown-black-brown-gold).
+ <li>( ) 1x 1K ohm 1/8 W Resistor (Brown-black-red-gold).
+ <li>( ) 2x Osram sfh206k or similar silicon photodiode
+ <li>( ) 2x 8 pin 0.3" DIP socket
+ <li>( ) 4 pole screw terminal block
+ <li>( ) 6 pole screw terminal block
+ </ul>
+<p>
+IMPORTANT: LEDs are really fragile with respect to soldering and tend to
+die open easily.  Make sure the leads are not stressed when heat is
+applied - the LED should be able to jiggle slightly in the holes - and
+keep the iron on them for as little time as possible.
+<p>
+<li>( ) If there is a large DIP socket, it is for
+ is for MPB1, the Teensy 4.0, and may need to be trimmed to 28 positions.
+ Rather than the DIP socket, there may a deep socket strip requiring
+ cutting and trimming, or a pair of 14 pin deep socket strips that my just
+ require smoothing at the ends..  If cutting is required, DO NOT attempt
+ to slice it between pin positions - sacrifice one position and then file
+ the ends smooth.
+<p>
+<li>( ) Carefully insert it in the PCB confirming no bent pins.  Rather
+ than flipping a coin :), orient it so the large cutout faces the USB to
+ the left.  Then solder
+ two corners and confirm it seats flat, then solder the other pins.  Inspect
+ for solder bridges and unsoldered pins.
+<p>
+<li>( ) Install the 8 pin sockets for U1,U2 (SKT2,SKT3).
+ Note orientation - the cutout goes to the right as viewed in the layout
+ diagram.  Solder and inspect for solder bridges and unsoldered pins.
+<p>
+<li>( ) Install C1,C2 (0.1 &micro;F).  C1,C2 are the oval outlines
+ to the right of U1,U2 respectively.
+<p>
+<li>( ) Install R3,R9 (100K ohms).
+<p>
+<li>( ) Install R4,R10 (470K ohms).
+<p>
+<li>( ) Install R5 (2-3K ohms).
+<p>
+<li>( ) Install R6,R12 (1K ohms).
+<p>
+<li>( ) Install R11 (20-50K ohms).
+<p>
+<li>( ) Install R1,R7 (100K ohm trim-pot).
+<p>
+<li>( ) Install R2,R8 (10K ohm trim-pot).
+<p>
+<li>( ) Install R15 (10K ohm trim-pot).
+<p>
+<li>( ) Install R2,R8 (10K ohm trim-pot).
+<p>
+ <li>( ) Install LED1,LED3 (3 mm red LED).
+ <li>( ) Install LED2,LED4 (3 mm green LED).
+<p>
+  The anode is the longer lead
+  and goes to the right as viewed in the layout diagram.  The flat is the
+  cathode and goes to the left.  Cut the leads about 1/10" from the body
+  if the LED can't be inserted to sit flush on the PCB.  Take care not
+  to overheat or stress the leads on the LED when soldering.  Be as quick
+  as possible.
+<p>
+<li>( ) Install STB1,STB2 (screw terminal blocks).  Make sure the entrance
+ holes for the wires face away from the
+ PCB!  Solder a middle pin and confirm they are flat on the PCB, then
+ solder the others.  Check for solder bridges and unsoldered pins.
+<p>
+ Headers may substituted for the screw terminal blocks if desired.
+<p>
+<li>( ) Test the Nano before doing anything to it.  If it fails this test,
+ contact me before proceeding.
+<p>
+ <ul>
+ <li>Connect it to a USB port using the USB A to USB Mini B cable.
+  Assuming the &micro;MD0 firmware has been installed, after a
+  second or so, digital pin D13, the on-board LED, acts as a
+  heartbeat monitor and
+  should start flashing in some pattern not yet fully determined, but
+  it will be unlike the "Blink" sketch. ;-)
+<p>
+  IMPORTANT: Don't assume the Nano has the correct firmware! Since Nanos
+  are used for several different kits and/or there may have been firmware
+  updates since it was loaded.  If in doubt, load the correct firmware
+  before proceeding beyond this point.  The
+  version can be confirmed in the &micro;MD GUI, below.
+<p>
+ <li>It should also be spitting out data via the USB COM port.  In the
+  Arduino IDE, go to Tools->Port and select the port that it is plugged
+  into.  It should show something like: COM5 "Serial".
+<p>
+ <li>Go to Tools-Serial Monitor.  A window should appear showing data
+  being sent to the COM port.  It will be mostly boring but the 6th value
+  should be incrementing by 1, probably at around 1 kHz:
+<p>
+<PRE>
+  0 0 0 0 0 18016 0 0
+  0 0 0 0 0 18017 10 124
+  0 0 0 0 0 18018 8 100000
+  0 0 0 0 0 18019 0 0
+  0 0 0 0 0 18020 0 0
+</PRE>
+<p>
+<p>
+(The 6th value is a sequence number which should be incrementing by 1.  The
+other values are, well, you don't want to know what they are.)
+<p>
+ Unplug the USB cable.
+</ol>
+<p>
+The following steps diverge depending on whether the analog (Sin/Cos) or
+digital (RS422 A/B) interface is being used.  Without some rework to the PCB
+and enhancements to the firmware, they cannot be active at the same time,
+though most of the parts will happily coexist.
+<p>
+<b>Analog Sin/Cos Version:</b>
+<p>
+<ol start=19>
+<li>( ) Install R0 (1K ohm typical).  This is simply protection for the
+ USB 5V and photodiodes.
+<p>
+<li>( ) Plug the LM393 IC into the U1 position.
+<p>
+ The dot or cutout
+ should face to the right - these ICs are upside-down compared to the
+ Nano part labeling as shown in the layout diagram.
+<p>
+<li>( ) Carefully plug the Nano into the 30 pin socket.  The USB connector
+ faces off the right side of the PCB as shown in the layout diagram.
+ Make sure all pins are seated and none are hanging off the socket.
+ CAUTION: Make sure all the pins line up with their entry points in the
+ socket to avoid squashing the leaf spring contacts.
+<p>
+<li>( ) Reattach the USB cable.  After a second or so, the Nano
+ LED should start flashing as before.  Unplug the USB cable.
+<p>
+<li>( ) (Optional) Any sort of activity on the analog inputs should be able
+ to fool the GUI into at least twitching, though it may not count properly.
+ Set all the trim-pots mid-range.  If LED1 and LED3 are installed, just
+ touching the inputs on the 4 pole screw terminal block with a moistened
+ finger may be sufficient to cause them to change state.  If not,
+ <i>carefully</i> momentarily connecting the inputs through a 10K ohm or larger
+ resistor to +5 VDC should do it.
+<p>
+<li>( ) Start the &micro;MD GUI and select the COM port.
+ The graph should start scrolling.  But now, if you do the
+ moistened finger thing, it should be possible to get the displacement
+ to at least jump up or down, though getting them to actually increment
+ or decrement continuously will require
+ a finger dance to simulate a Quad sequence.  Once confirmed, unplug the
+ USB cable.
+</ol>
+Congratulations, you're all set to go. ;-)
+<p>
+<b>Assembly of the Photodiode Input Circuit and/or Photodiode PCB:</b>
+<p>
+These simplify the mounting and wiring of the photodiodes and beam-splitters.
+There are two types.  They both include spots for two photodiodes, a
+protection resistor, and bypass capacitor, along with a 4 pole screw
+terminal block or 4 pin header.  They can be mounted on a optical post or
+via small screws, or using duct tape and bailing wire - or putty. ;-)
+For both of these, the beam enters from the top (in the diagrams).
+<p>
+The larger one designated "QD1" is designed to accept a
+variable attenuator plate oriented at around 30 degrees used as a
+non-polarizing beam-splitter.  The small angle minimizes the difference
+in polarization sensitivity for the two beams.  It can also accept
+a NPBS or PBS cube.
+<p>
+<center>
+<A target="uMDas0" HREF="sgum0v10-QD1-pcb1.gif"><img
+ src="sgum0v10-QD1-pcb1.gif" height=284></a>. &nbsp; &nbsp;
+<A target="uMDas0" HREF="https://www.repairfaq.org/sam/uMD0/qdetpcb1.jpg"><img
+ src="https://www.repairfaq.org/sam/uMD0/qdetpcb1.jpg" height=284>. &nbsp; &nbsp;
+<A target="uMDas0" HREF="https://www.repairfaq.org/sam/uMD0/quaddet1.jpg"><img
+ src="https://www.repairfaq.org/sam/uMD0/quaddet1.jpg" height=284></a>. &nbsp; &nbsp;
+<h3>SG-&micro;MD0 Quad Detector PCB Layout Diagram (Left) and PCB Populated
+ (Right)</h3>
+</center>
+<p>
+The smaller one designated "QD2" or "QD3" (same thing) is
+intended for a 4-6 mm NPBS or PBS cube, or small (true 50:50) beam-splitter
+plate oriented at 45 degrees.
+<p>
+<center>
+<A target="uMDas0" HREF="sgum0v10-PDs-pcb1.gif"><img
+ src="sgum0v10-PDs-pcb1.gif" height=137"></a>. &nbsp; &nbsp;
+<A target="uMDas0" HREF="https://www.repairfaq.org/sam/uMD0/dpdet1.jpg"><img
+ src="https://www.repairfaq.org/sam/uMD0/dpdet1.jpg" height=137></a>.
+<h3>SG-&micro;MD0 Quad Detector PCB Layout Diagram (Left) and PCB Populated
+ awaiting Beam-Splitter (Right)</h3>
+</center>
+<p>
+The mounting of the beam-splitter is left as a creative exercise
+for the user.  One option would be suitable spacers and double-sided tape
+or 5 Minute Epoxy.
+<p>
+The photodiodes should be installed at the optimal height taking the same
+care in soldering as with the LEDs - no stress on the leads and heating
+for a short a time as poosible to achieve a good joint.  Note that if\
+using the Attenuator Plate, the actual glass piece is alightly tilted
+so that the reflected beam ends up lower than the transmitted beam and
+thus the two photodiodes must be installed at different heights.
+<p>
+1 or 2 wires or male-male jumpers can be secured at each position of
+the 4 pole screw terminal blocks.  Molex-type headers can be substituted
+for the terminal blocks to be able to use easily detachable cables.
+The are readily available but may not be included.
+<p>
+<b>Digital RS422 A/B Version:</b>
+<p>
+<ol start = 19>
+<li>( ) Since the default firmware ONLY works using the input pins assigned
+ to the analog interface, jumpers must be added on the SG-&micro;MD0 PCB to
+ connect the outputs of the UA9637 to these, which can be done on HDR1: Pins
+ 4 to 2 and pins 5 to 3.
+<p>
+ CAUTION: With these jumpers in place, the LM393 for the analog interface
+ should NOT be installed.  Otherwise the outputs of
+ the UA9637 could be pulled to ground, which it may not like.
+<p>
+<li>( ) (Optional) If intending to power an encoder or similar device from
+ the +5 VDC available from the PCB, install a jumper wire for JP1.  But
+ pay attention to the maximum available current from your USB.  This can't
+ be used to power a 1/2 HP motor. ;-)
+<p>
+<li>( ) Plug the UA9637 IC into the U2 position.  The dot or cutout
+ should face to the right - the IC is upside-down compared to the
+ Nano part labeling as shown in the layout diagram.
+<p>
+<li>( ) Reattach the USB cable.  One or both LEDs near U1 and U2 (if
+ installed may come on, and the Nano LED should start flashing as before.
+<p>
+<li>( ) (Optional test) Here is the nifty bit. ;-)  Moisten a finger (doesn't
+ matter which one) and touch the pins on STB2.  With some practice, it will be
+ possible
+ to make the LEDs near U2 to go on and off as the input to the line receivers
+ cause them to toggle.  While the behavior is not really predictable, just
+ the fact that they change indicates the the line receiver is working.
+ Since the UA9637 has some hysteresis, it latches but the slight charge
+ from your electric personality is enough to toggle it.  CAUTION: Don't
+ get carried away, these parts can be damaged by static discharges.
+ So, no cat's fur and plastic rods, please. :( ;-)
+ (This will not be possible if the terminating resistors are installed, thus
+ the reason for holding off on them for now.)
+<p>
+<li>( ) Start the &micro;MD GUI and select the COM port.
+ The graph should start scrolling.  But now, if you do the
+ moistened finger thing, it should be possible to get the displacement
+ to at least jump up or down, though incrementing
+ or decrementing continuously will require
+ a finger dance to simulate a Quad sequence.  Once confirmed, unplug the
+ USB cable.
+<p>
+<li>( ) (Optional) Install R13,R15 (100 ohms).  These are the terminating
+ resistors for the RS422 inputs.  100 ohms is the default
+ for applications using RS422 drivers with long cables.  If being driven in
+ some other way and/or if the cables are short, some other value may
+ be better or they may not be needed at all.  If in doubt, use sockets.
+</ol>
+<p>
+Congratulations, you're all set to go.
+<p>
+Note: Even though the RS422 inputs are differential, there may need to be a
+common ground between the systems.  This will need to be evaluated on a
+case-by-case basis.
+
+<h3><A NAME="sgumd1.0sei">Reference Voltage for Single Ended Digital
+ Input</a></h3>
+
+Where the input signals are differential with approximately equal average
+levels and an amplitude more than about 0.5 V, the UA9637 RS422 receivers
+are all that's needed.  This includes Quad-Sin-Cos analog which will
+automagically convert to digital, but only if there is sufficient
+drive current.  Direct photodiode signals probably will not work
+without buffering.
+<p>
+Where the input signals are single-ended such as normal TTL,
+a reference voltage would need to be provided in place of the
+other differential inputs  Something along the lines of:
+<p>
+<PRE>
+           +5V
+            o
+            |
+            \
+         Ru /
+            \
+            /
+            |
+            +------+-----o Threshold Voltage
+            |      |
+            \     _|_
+         Rl /  Cb ---
+            \     _|_
+            /      -
+           _|_
+            -
+</PRE>
+<p>
+The threshold voltage should be selected to be approximately mid-way between
+the nominal high and low levels.  For standard TTL, this would be 1.4 V.  The
+resistor values can be in the 10K range with Cb of 0.5 &micro;F.  While
+the SG-&micro;MD0 PCB doesn't have locations for these parts, they could
+easily be added attached to the 6-pole screw terminal block since it has
+GND and can have +5 VDC on a pin.
+
+<h3><A NAME="sgumd1.0epl">Parts Lists</A></h3>
+
+These are for both the analog and RS422 versions.  Note that the part numbers
+on the PCB and schematic PDF do NOT match the ones on the pseudo-schematics in
+the &micro;MD0 manual, sorry.
+<p>
+The LEDs (along with their
+associated current limiting resistors) can be omitted if desired.
+But every digital system requires some lights! ;-)
+Refer to the schematic for more details.
+<p>
+<b>Common Parts</b>
+<p>
+<PRE>
+ Reference   Description             Comments
+-------------------------------------------------------------------------------
+   MPB1      Atmega 328P Nano 3.0    Nano soldered to header
+   PCB1      SG-&micro;MD0 V1.0 PCB       Custom PCB
+   SKT1      30 pin 0.6" DIP socket  For Nano (PCB version only)
+</PRE>
+<p>
+<b>Quad-Sin-Cos Analog Version Parts List</b>
+<p>
+<PRE>
+ Reference   Description                  Comments
+-------------------------------------------------------------------------------
+   PCB2      Quad Decoder V1.0  PCB       For mounting PDs and beam-splitter
+
+    C1       Capacitor  0.1 &micro;F            U1 5 V bypass
+
+   LED1      3 mm red LED                 Threshold Sin, A
+   LED2      3 mm green LED               Threshold Cos, B
+
+    R1       Trip-pot, 100K, 1/4W         Sin (Channel A) Sensitivity
+    R2       Trim-pot, 10K                Sin (Channel A) Threshold
+    R3       Resistor, 100K, 1/4W         Sin (Channel A) trim-pot isolation
+    R4       Resistor, 470K, 1/4W         Sin (Channel A) hysteresis
+    R5       Resistor, 2-3K, 1/4W         Red LED current limitin
+    R6       Resistor, 1K, 1/8W           Channel A pullup
+
+    R7       Trip-pot, 100K, 1/4W         Cos (Channel B) Sensitivity
+    R8       Trim-pot, 10K                Cos (Channel B) Threshold
+    R9       Resistor, 100K, 1/4W         Cos (Channel B) trim-pot isolation
+   R10       Resistor, 470K, 1/4W         Cos (Channel B ) hysteresis
+   R11       Resistor, 30-50K, 1/4W       Green LED current limiting
+   R12       Resistor, 1K, 1/8W           Channel B pullup
+
+   PCB2      Quad Decoder PCB             PDs and bias network (optional)
+   PD1       Silicon photodiode           Sin (Channel A) of Quad-A-B detector
+   PD2       Silicon photodiode           Cos (Channel B) of Quad-A-B detector
+
+   SKT1      30 pin 0.6" DIP socket       For Nano
+   SKT2      8 pin 0.3" DIP socket        For LM393
+
+   STB1      4 pole screw terminal block  Photodiode bias and inputs
+
+    U1       IC, LM393, 8 pin DIP         Sin/Cos thresholding
+</PRE> 
+<p>
+<b>RS422 Version Parts List</b>
+<p>
+<PRE>
+ Reference   Description
+-------------------------------------------------------------------------------
+    C1       Capacitor,0.1 &micro;F             U2 5 V bypass
+
+   LED3      3 mm red LED                 RS422 A
+   LED4      3 mm green LED               RS422 B
+
+   R13       Resistor, 100 ohms, 1/4 W    Termination
+   R14       Resistor, 2-3K ohm, 1/4 W    Red LED current limiting
+   R15       Resistor, 100 ohms, 1/4 W    Termination
+   R16       Resistor, 20-50K ohm, 1/4 W  Green LED current limiting
+
+    U2       IC, UA9637, 8 pin DIP        RS422 line receiver
+
+   SKT3      8 pin 0.3" DIP socket        For UA9637
+
+   STB2      6 pole screw terminal block  Photodiode bias and inputs
+</PRE>
+<p>
+<br>
+<hr>
+<p>
+-- end V1.00 --
+<p>
+</BODY>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</HEAD>
+

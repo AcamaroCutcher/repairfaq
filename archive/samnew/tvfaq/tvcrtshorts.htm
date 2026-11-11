@@ -1,0 +1,169 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvcrtshorts.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Shorts in a CRT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Shorts in a CRT</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvcrtshorts.htm">https://www.repairfaq.org/samnew/tvfaq/tvcrtshorts.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Shorts in a CRT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvrgbfog.htm">&lt;&lt;&nbsp;Red, green, or blue full ..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvpisofcs.htm">Providing isolation for a..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvcrtshorts">Shorts in a CRT</A></h3>
+
+Occasionally, small conductive flakes or whiskers present since the day of
+manufacture manage to make their way into a location where they short out
+adjacent elements in the CRT electron guns.  Symptoms may be intermittent or
+only show up when the TV or monitor is cold or warm or in-between.  Some
+possible locations are listed below:
+<p>
+<ul>
+<li>Heater to cathode (H-K).  The cathode for the affected gun will be pulled
+ to the heater (filament) bias voltage - most often 0 V (signal ground).  In
+ this case, one color will be full on with retrace lines.  Where the heater
+ is biased at some other voltage, other symptoms are possible like reduced
+ brightness and/or contrast for that color.  This is probably the most
+ common location for a short to occur.
+<p>
+<li>Cathode to control grid (K-G1).  Since the G1 electrodes for all the guns
+ are connected together, this will affect not only the color of the guilty
+ cathode but the others as well.  The result may be a very bright overloaded
+ <b>NEGATIVE</b> picture with little, none, or messed up colors.
+<p>
+<li>Control grid to screen (G1-G2).  Depending on circuitry can result in any
+ degree of washed out or dark picture.
+<p>
+<li>Screen to focus (G2-F).  Screen (G2) and focus voltage will be the same and
+ the controls on the flyback will interact.  Result will be a fuzzy white
+ raster with retrace lines and little or very low contrast picture.  Symptoms
+ will be similar to those of a flyback with breakdown in the focus/screen
+ divider network.
+<p>
+<li>Focus to high voltage (F-HV).  High voltage will be pulled down - probably
+ arcing at the focus spark gaps/other protective devices.  Line fuse and/or
+ HOT may blow.  A high impedance short may only result in increased focus
+ voltage but this is probably unusual.
+<p>
+<li>Other locations between electron gun elements as feed wires.
+</ul>
+<p>
+Except for the high voltage to other places, the short may actually be located
+in the CRT <b>SOCKET</b> or even on the CRT neck board, probably in the spark
+gap(s) for the problem pins.  Remove the socket and test between the suspect
+pins on the CRT itself.  If the CRT itself is fine, the spark gaps should be
+inspected and cleaned/repaired and/or components replaced.  At this point, the
+cause may still be present - a short inside the flyback for example resulting
+in excessive voltage on one or more pins.
+<p>
+Assuming this is not the case, replacing the CRT may be the best solution
+but there are a variety of 'techniques' that can often be used to salvage a
+TV that would otherwise end up in the dump since replacing a CRT is
+rarely cost effective:
+<p>
+<ol>
+<li>Isolation - this will usually work for H-K shorts as long as only one gun
+ is involved.
+<p>
+<li>Blowing out the short with a capacitor - depending on what is causing the
+ short, this may be successful but will require some experimentation.
+<p>
+<li>Placing the CRT (TV or monitor) face down on a soft blanket and <b>GENTLY</b>  tapping the neck to dislodge the contamination.  Depending on the location
+ of the short, one side or the other might be better as well.  Sometimes,
+ this can be done in-place while watching the picture.
+</ol>
+<p>
+A combination of (2) and (3) may be required for intermittent shorts which
+don't appear until under power.  See the sections below for additional
+details.  However, for shorts involving the focus and high voltage elements,
+even a sharp edge can result in arcing even if there is no actual short.
+There is no remedy for these types of faults.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvrgbfog.htm">&lt;&lt;Red, green, or blue full ..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvpisofcs.htm">Providing isolation for a..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

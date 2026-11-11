@@ -1,0 +1,204 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/laser/ssltech/rwhyag2.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="https://www.repairfaq.org/sam/laser/ssltech/rwhyag2_files/filelist.xml">
+<link rel=Edit-Time-Data href="https://www.repairfaq.org/sam/laser/ssltech/rwhyag2_files/editdata.mso">
+<!--[if !mso]>
+<![endif]-->
+<title>Holographic Yag Laser</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceType"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceName"/>
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+
+<body bgcolor=white background="Image14.gif" lang=EN-US link=blue vlink=purple
+style='tab-interval:.5in'>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/laser/ssltech/rwhyag2.htm">https://www.repairfaq.org/sam/laser/ssltech/rwhyag2.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+
+<div class=Section1>
+
+<p><a href="index.html">&nbsp;Home</a><span style='color:navy'> </span><span
+style='color:blue'>Return to Main Page<o:p></o:p></span></p>
+
+<p><b><i><span style='font-size:13.5pt;color:red'>HOLOGRAPHIC YAG LASER VERSION
+2<o:p></o:p></span></i></b></p>
+
+<p><img border=0 width=500 height=4 id="_x0000_i1025" src="Image19.gif"></p>
+
+<p>&nbsp;</p>
+
+<p><b>POWER SUPPLY <o:p></o:p></b></p>
+
+<p>After initial tests, the power supply was upgraded by using a voltage tripler
+to prevent the need to replace transformers. The oscillator and amplifiers uses
+a 50ufd 2kv caps and at 1549 volts would up to 60 joules for each Nd:yag
+cavity. Power supply schematic: <a href="yag3.dxf">yag3.dxf</a> </p>
+
+<p><a href="yagsch3.jpg">yagsch3.jpg </a>JPEG of the schematic but better to
+use dxf viewer as you can zoom/pan etc for better detail.</p>
+
+<p>Free dxf viewer from Solid works: <a
+href="http://www.solidworks.com/pages/products/DWGgateway/eDrawings-Free3Dand2DCADViewerandPublisher.html">http://www.solidworks.com/pages/products/DWGgateway/eDrawings-Free3Dand2DCADViewerandPublisher.html
+</a></p>
+
+<p><b>OSCILLATOR PERFORMANCE.<o:p></o:p></b></p>
+
+<p>SECOND TEST:</p>
+
+<p>Output energy. <a href="yago1.gif">yago1.gif</a> <a href="yago2.gif">yago2.gif</a>
+at a voltage of 1488volts and 55 joule input, the laser oscillator produced
+6.8mj of q switched TEM00 output. This test indicated that modifications would
+be needed to achieve a higher gain and output. </p>
+
+<p>Q switch output. As a starting point a single polished only (no AR coating)
+5.5mm x 5.5mm Cr4+:yag q switch with T=0.4 will be used at the Brewster angle
+of 61.2 degrees. The design is to add multiple q switches which increase
+polarization extinction and reduce initial transmission to allow higher q
+switch energy. </p>
+
+<p>Output pulse width. <a href="yago3.gif">yago3.gif</a> Output pulse width was
+30 nanoseconds. With a single T=0.4 q switch, multiple pulses were observed for
+the 6.8 to 7.5mj output. These pulses basically were 2mj each. At 1166volts and
+34 joules of input, a single q switch pulse of 2mj was observed. When two T=0.4
+q switches were used and at the 1488volts and 55 joule input produced two
+pulses of 7mj total output which had 15 to 20 nanoseconds of pulse width.</p>
+
+<p>Longitudinal mode behavior observed. With just the two plate etalon, <a
+href="hyagl3.jpg">hyagl3.jpg</a> up to full modulation of the temporal pulse
+width was observed with a TEK2465B analog 400mhz oscilloscope. Modulation
+displayed as a clean smooth periodic sine type, suggests the laser was
+producing only a few longitudinal modes. Some shots had more modes based on
+more ragged random modulations. This suggest the laser's coherence length was
+around 20 inches with the two plate etalon. Very fast analog scopes are good at
+observing the temporal modulations. Very sharp ragged modulations on the pulse
+envelopes have been documented in research papers to show that coherence length
+drops down to 1 or 2cm. Typical digital scopes due to Nyquist limitations will
+not present this information which can be in the hundreds picosecond regime.
+Compare <a href="yago3.gif">yago3.gif</a> from a 100 million sample/sec DSO
+(10nsec resolution) and <a href="hyagl3.jpg">hyagl3.jpg</a>. from the above
+analog scope with a 1.337nsec resolution . The modulations seen on the analog
+are about 3ns periods on the 30ns pulse whereas on the DSO only 10ns can be
+resolved and the modulation information is lost. <span style='color:blue'>The
+test setup </span><a href="test.jpg">test.jpg</a><span style='color:blue'> used
+was a Tektronix 2465B a 400 MHz analog scope 0.875 nsec rise time set at 50ohm
+impedance with Thorlabs DET210 detector with a 1ns rise time. In order to get a
+general idea of what the total composite rise time of the measuring equipment,
+it was calculated as follows: 0.875nsec for the scope, 0.011nsec for each bnc
+connector, 0.15nsec for the RG58 10ft cable, and 1nsec for the detector for a
+total system rise time = 1.337nsec = sqrt(0.875^2+0.011^2+0.011^2+0.15^2+1^2)
+or in this case 4 nanosec pulses would look like 4.2nsec pulses. <o:p></o:p></span></p>
+
+<p><a href="etalon3.jpg">etalon3.jpg</a> With a single plate etalon mounted in
+the third kinematic mount and aligned to form another Fabry Perot resonator,
+the laser achieved single longitudinal mode more than 80 percent of the time
+and only occasional 2<sup>nd</sup> mode developed but no more than 20 percent
+modulation suggesting the second mode was much weaker and not a major
+contributing mode. In essence the laser now operates as a TEM00 single
+longitudinal mode <a href="hyagl4.jpg">hyagl4.jpg</a> This would suggest a
+coherence length in meters. Here is the oscillator with two of the two plate
+etalons used for testing. This configuration also was single longitudinal mode.
+<a href="etalon4.jpg">etalon4.jpg</a></p>
+
+<p>Spatial mode. <a href="iris.jpg">iris.jpg</a> 0.42 to 0.44 inch setting on iris
+diaphragm helped to assure TEM00 mode. Fresnel number was 0.67 Zapit Burn marks
+indicated nice round smooth Gaussian like pattern with no noticeable
+depolarization loss. The small diameter of the beam helped in this regard. Once
+single longitudinal mode is confirmed then the spatial mode is also checked at
+the same time. If TEM00 mode is observed at the same time then it can be
+assured to only contain this mode. Else multi mode axial modes can allow multi
+mode TEMs. The power in the bucket test or the M<sup>2</sup> test can be
+performed to verify the degree of TEM00 mode to the other possible low order
+TEM modes in multi longitudinal mode output. The older and not as accurate
+&amp;ldquo;power in the bucket&amp;rdquo; test is based on an energy meter at a
+measured distance using the hyperbolic propagation function and the resonator's
+calculated beam waist at OC with an aperture in front of the meter head to
+measure the power difference with and without the aperture. Gaussian beam have
+predictable power loss based on a given aperture size and additional TEM modes
+will be partially lost from the energy measurement.</p>
+
+<p>To align the laser. Open iris. Place card after the OC. Observe card while
+adjusting <st1:place w:st="on"><st1:PlaceName w:st="on">HR.</st1:PlaceName> <st1:PlaceType
+ w:st="on">Center</st1:PlaceType></st1:place> all reflections. Close iris to
+minimal opening. Make sure iris is centered on the alignment beam. Adjust both
+etalons to place reflection( reflection that is going back to HR) centered on
+iris. Close iris to 0.44 inch. Fire laser adjust HR to max output. </p>
+
+<p>To obtain good spatial quality and maximum effect, the two kinematic mounted
+etalons must be adjusted accurately to each other and the HR. Zapit paper was
+used to fine tune the two etalons to each other. By observing the burn pattern
+and adjusting the single etalon additional burn marks can be brought to overlap
+with the main HR and two plate etalon burn pattern. The use of multiple plate
+resonant reflectors requires careful alignments of the individual kinematic
+mounts if good spatial beam quality is to be maintained.</p>
+
+<p>Polarity. Two orthogonal axis was measured as 4.32mj and 0.69mj with these
+axis not precisely aligned with the actual polarized output. These numbers
+suggest a polarization efficiency ratio of at least 85% due to the use of two
+Brewster angled q switches. Two T=0.4 q switches are used in a tent arrangement
+to provide a higher degree of linear polarization by increasing the extinction
+ratio per pass. The tent configuration minimizes the lateral offset of the beam
+caused by the Brewster angle. <a href="tent.jpg">tent.jpg</a> <a href="tent.gif">tent.gif</a></p>
+
+<p>Q switches will be upgraded to a lower transmission values in order to get
+to a single pulse. As output power is increased an increase in absorption is
+needed to reduce the number of q switch pulses. Liquid dye q switches easily
+allow an increase in dye concentration, but for crystals they only work in a
+very limited range. Here is an example of a specific dye concentration in
+ethanol being added to a holographic ruby laser <a href="dyecell.jpg">dyecell.jpg</a>
+a fixed value crystal does have the advantage of not needing maintenance. The
+above detailed yag oscillator created a single 2mj pulse at T=0.4, 3.5mj at
+T=0.16. Additional values of initial transmission are being investigated as
+T=0.1 and T=0.04 (96% initial absorption). </p>
+
+<p>The amplifier is hard mounted on PVC plate to provide electrical isolation
+to the cavity since it also is charged to 10kv during the flashlamp triggering.
+The anode and cathodes of the flashlamp are also insulated mounted. <a
+href="hyamp1.jpg">hyamp1.jpg</a> The amplifiers is built similar to the
+oscillator. 6.35mm x 100mm Nd:yag rod with a single 7mm ID bore x 100mm arc
+length flashlamp.</p>
+
+<p>Beam expander optics. Normally necessary to keep the output energy level
+below the 10 joule per centimeter squared level to prevent rod end/coating
+damage. But due to optical pumping of the yag rods that creates a negative
+lensing, the passing beam expanded. Oscillator beam output was 1mm, but due the
+negative lensing effect amplifier 1, the beam expanded to 3mm. It is
+anticipated that amplifier 2 will expand the beam further to between 5 to 6mm
+before SHG crystal. So it appears that the beam expanders may not be needed
+with regard to energy level.</p>
+
+<p>Beam quality looks good at the output of amplifier 1. The 7mj pulses were
+amplified by amplifier stage 1 to 39mj which is a 5x increase with 60joule
+input.</p>
+
+<p>&nbsp;</p>
+
+<p><img border=0 width=500 height=4 id="_x0000_i1026" src="Image19.gif"></p>
+
+<p><span style='color:blue'>&nbsp;<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

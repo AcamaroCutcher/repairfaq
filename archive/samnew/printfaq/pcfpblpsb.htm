@@ -1,0 +1,160 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcfpblpsb.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Packard Bell laser printer - strange bug printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: Packard Bell laser printer - strange bug</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcfpblpsb.htm">https://www.repairfaq.org/samnew/printfaq/pcfpblpsb.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">Packard Bell laser printer - strange bug</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pcfodfaxpa4.htm">&lt;&lt;&nbsp;Okidata FAX machine - Pri..</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfpcfweb.htm">Printer, copier, and fax ..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<A NAME="pcfunr"></A><H2>Unresolved Problems</H2>
+<h3><A NAME="pcfpblpsb">Packard Bell laser printer - strange bug</A></h3>
+
+(From: Jordin Kare (jtk@s1.gov).)
+<p>
+<blockquote>
+"Just picked up a used Packard Bell laser printer with some problems and
+ could use help...
+<p>
+ Print engine is not one I'm familiar with.  It's an 8 ppm engine
+ that uses separate drum and developer assemblies.  The drum 
+ assembly is attached to the top section, which hinges upwards.
+ The developer assembly is attached to the bottom section, and uses
+ a replaceable cylindrical toner cartridge similar to that used
+ in older Canon NP-series copiers.  The whole developer assembly
+ can also be removed.
+<p>
+ Paper tray mounts underneath unit, and paper follows an "S" shaped
+ path through printer, stacking face-down on top.  Front panel has
+ a ~16 char. LCD display and typical button/LED set (ON LINE, Form
+ feed, Menu, Test, Reset).
+<p>
+ (Sorry, don't have the model # to hand.  Printer was built in late 1993.)
+<p>
+ Printer executes power on self test OK, warms up, and goes on line.
+<p>
+ Problem 1:  Take it off line and push test, and the motor whirs briefly,
+ then stops.  The LCD display then reads:  'ERROR 74-M: MOTOR'.  Reset has
+ no effect; printer must be power cycled to get it to restart.
+<p>
+ Interesting variation:  The top section is held down by two large catches
+ at the right and left sides of the printer.  The 'hooks' are released by a
+ button on the top section.  It's possible to get only the right-side hook
+ to catch, leaving the left side 'loose' and raised by about 1/4 inch.  In
+ this condition, the printer will start up and work fine (except for problem
+ 2 below) for many pages.  Eventually, it will stop with ERROR 74-M again.
+ Pushing down the left side will cause an immediate ERROR 74-M.
+<p>
+ I assume there's something binding or sticking a bit in the various rollers,
+ such that the motor draws too much current or otherwise triggers an error
+ when the top is latched down.  Releasing the top on one edge reduces the
+ pressure on the various rollers and thus the load on the motor.  But I can't
+ find any obvious points of sticking.
+<p>
+ Problem 2:  When the printer <b>DOES</b> work, with the cover popped, the leading
+ edge of the page, down to the first line of print, is dark grey.  The grey
+ is faint on the first page or after a restart or long idle, but uniformly
+ dark on all pages thereafter.  It tends to be striped along the page (varying
+ darkness as you move left-to-right; uniform as you move top-to-bottom).  The
+ grey disappears at the first line of text.  There's also a slight "ghost";
+ text printed near the top of a page is repeated faintly further down the
+ page, apparently displaced by one rotation of the drum.
+<p>
+ This seems most likely due to a bad cleaning blade or clearing corona.
+ Anyone have any suggestions other than replacing the drum assembly?
+ Also, anyone recognize this print engine, so I can track down
+ parts via sources other than Packard-Bell?"
+</blockquote>
+<p>
+<br>
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfodfaxpa4.htm">&lt;&lt;Okidata FAX machine - Pri..</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfpcfweb.htm">Printer, copier, and fax ..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

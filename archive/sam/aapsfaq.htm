@@ -1,0 +1,3396 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/aapsfaq.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Notes on the Troubleshooting and Repair of AC Adapters, Power Supplies,
+and Battery Packs, and Other Related Information</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/aapsfaq.htm">https://www.repairfaq.org/sam/aapsfaq.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+
+<br>
+<h1>
+Notes on the Troubleshooting and Repair of AC Adapters, Power Supplies, and
+Battery Packs</h1>
+<h2>
+- and -
+<br>
+Other Related Information<br>
+Version 1.19 (14-Jan-13)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="adpstoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#adpspre">Preface</a>
+ <ul>
+ <li><A HREF="#adpsaac">Author and Copyright</a> 
+ <li><A HREF="#adpsdis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#adpsint">Introduction</a>
+ <ul>
+ <li><A HREF="#adpssod">Scope of this Document</a>   
+ <li><A HREF="#adpssaf">SAFETY</a>
+ </ul>
+</ul>
+
+<h3>PART I - AC Wall Adapters and Power Packs</h3>
+
+<ul>
+<li><A HREF="#adpsgen">General AC Adapter Information</a>
+ <ul>
+ <li><A HREF="#adpsacb">AC Adapter Basics</a>
+ <li><A HREF="#adpsrat">About AC Adapter Ratings</a>
+ <li><A HREF="#adpspyu">Protect Yourself from "Unknown AC Adapter Syndrome"</a>
+ <li><A HREF="#adpswda">Why do AC Adapters Usually Use Heavy Transformers?</a>
+ <li><A HREF="#adpscaa">Compact AC Adapters</a>
+ <li><A HREF="#adpssac">Substituting AC Adapters</A>
+ <li><A HREF="#adpsnos">Caution about Switchmode Adapters and Chargers</A>
+ </ul>
+<p>
+<li><A HREF="#adpsaca">AC Adapter Troubleshooting and Repair</a>
+ <ul>
+ <li><A HREF="#adpsact">AC Adapter Testing</a>
+ <li><A HREF="#adpspwa">Pocket AC Adapter Tester/Polarity Checker</a>
+ <li><A HREF="#adpsgia">Getting Inside an AC Adapter</a>
+ <li><A HREF="#adpsacr">AC Adapter Repair</a>
+ <li><A HREF="#adpsacs">AC Adapter Substitution and Equipment Damage</a>
+ <li><A HREF="#adpsdpl">Determining Voltage and Polarity of AC Adapter Powered Devices</a>
+ <li><A HREF="#adpsprp">Power Reversal - Better Pray</a>
+ <li><A HREF="#adpsref">Additional References</a>
+</ul>
+<p>
+<li><A HREF="#adpsadm">AC Adapter Modifications or Enhancements</a>
+ <ul>
+ <li><A HREF="#adpsacv">Using AC Adapters in Series for Multiple Voltages</a>
+ <li><A HREF="#adpsach">Using AC Adapters in Series for Higher or Lower Voltage</a>
+ <li><A HREF="#adpsrbw">Replacing Batteries With an AC Adapter</a>
+ <li><A HREF="#adpscao">Converting an AC Output Wall Adapter to DC</a>
+ <li><A HREF="#adpsaai">Adding an IC Regulator to a Wall Adapter or Battery</a>
+ </ul>
+</ul>
+
+<h3>Part II - Power Supplies in Consumer Electronic Equipment (Including UPSs)</h3>
+
+<ul>
+<li><A HREF="#adpseps">Equipment Power Supplies</a>
+ <ul>
+ <li><A HREF="#adpstps">Types of Power Supplies</a>
+ </ul>
+<p>
+<li><A HREF="#adpstro">Power Supply Troubleshooting</a>
+ <ul>
+ <li><A HREF="#adpstdp">Totally Dead Power Supply (Non-Switching Type)</a>
+ <li><A HREF="#adpslom">Low or Missing Power Supply Outputs (Non-Switching Type)</a>
+ <li><A HREF="#adpsuni">Uninterruptible Power Supplies (UPSs) and Power Inverters</a>
+ </ul>
+</ul>
+
+<h3>Part III - Protection Devices in Consumer Electronic Equipment</h3>
+
+<ul>
+<li><A HREF="#adpspro">Protection Devices</a>
+ <ul>
+ <li><A HREF="#adpsafi">About Fuses, IC Protectors, and Circuit Breakers</a>
+ <li><A HREF="#adpsfpm">Fuse Post Mortems</a>
+ <li><A HREF="#adpsfcb">Fuse or Circuit Breaker Replacement</a>
+ <li><A HREF="#adpsiot">Comments on Importance of Thermal Fuses and Protectors</a>
+ </ul>
+</ul>
+
+<h3>Part IV - Power Transformers in Consumer Electronic Equipment</h3>
+
+<ul>
+<li><A HREF="#adpstrn">Power Transformers</a>
+ <ul>
+ <li><A HREF="#adpsctt">Common Types of Transformers</a>
+ <li><A HREF="#adpstpt">Testing a Power Transformer</a>
+ <li><A HREF="#adpsicu">Identifying the Connections on an Unknown Power Transformer</a>
+ <li><A HREF="#adpsdui">Determining Unknown Connections on International Power Transformer</a>
+ <li><A HREF="#adpsdpv">Determining Power (VA) Ratings of Unknown Transformers</a>
+ <li><A HREF="#adpsdrf">Determining the Ratings of a Fried Power Transformer</a>
+ </ul>
+<p>
+<li><A HREF="#adpsttr">Transformer Troubleshooting and Repair</a>
+ <ul>
+ <li><A HREF="#adpstfd">Transformer Fault Diagnosis</a>
+ <li><A HREF="#adpsrpt">Rewinding Power Transformers</a>
+ </ul>
+</ul>
+
+<h3>Part V - Batteries in Consumer Electronic Equipment</h3>
+
+<ul>
+<li><A HREF="#adpsbat">Batteries and Battery Packs</a>
+ <ul>
+ <li><A HREF="#adpsbte">Battery Technology</a>
+ <li><A HREF="#adpsbba">Battery Basics</a>
+ <li><A HREF="#adpbatcap">Capacities and Discharge Characteristics of Common Batteries</a>
+ <li><A HREF="#adpsbch">Battery Chargers</a>
+ <li><A HREF="#adpdcbc">Dave's Comments on Building Charger for Small Lead-Acid Batteries</A>
+ <li><A HREF="#adpsnsu">Substituting NiCds for Alkalines</a>
+ <li><A HREF="#adpscle">Can a Large Electrolytic Capacitor be Substituted for a NiCd?</a>
+ <li><A HREF="#adpsdac">Determining the Actual Capacity of a NiCd Battery Pack</a>
+ <li><A HREF="#adpsmem">NiCd Batteries and the Infamous 'Memory Effect'</a>
+ <li><A HREF="#adpsmem1">Memory Effect in NiMH Batteries?</a>
+ <li><A HREF="#adpscar">Care and Feeding of NiCds</a>
+ <li><A HREF="#adpsclo">Why There Will Never Actually be Closure on This Topic</a>
+ <li><A HREF="#adpsnmh">Nickel Cadmium Versus Nickel-Metal-Hydride in a Nutshell</a>
+ <li><A HREF="#adprnfab">Randy's Notes on First Aid for NiCd Battery Packs</a>
+ <li><A HREF="#adpsitu">Identifying Technology of Unmarked Battery Packs</a>
+ <li><A HREF="#adppledb">Powering LEDs with Batteries</a>
+</ul>
+<p>
+<li><A HREF="#adpsbpt">Battery Problem Troubleshooting and Repair</a>
+ <ul>
+ <li><A HREF="#adpsbpr">Problems with Battery Operated Equipment</a>
+ <li><A HREF="#adpsnbw">NiCd Battery Pack Will Not Hold a Charge</a>
+ <li><A HREF="#adpsbwi">What is This Thing in my NiCd Battery Pack?</a>
+ <li><A HREF="#adpszap">Zapping NiCds to Clear Shorted Cells</a>
+ <li><A HREF="#adpstcn">Tom's Comments on NiCd Care and Feeding</a>
+ <li><A HREF="#adpsbjc">Battery Juice and Corroded Contacts</a>
+ <li><A HREF="#adpsexp">Exploding Batteries - These Things Really Happen</a>
+ <li><A HREF="#adpssol">Soldering Tabs Onto NiCd Batteries</a>
+</ul>
+<p>
+<li><A HREF="#adpsbri">Battery Related Information</a>
+ <ul>
+ <li><A HREF="#adpsaut">Automotive Power</a>
+ <li><A HREF="#adpstst">How Do Those On-Battery or On-the-Package Battery Testers Work?</a>
+ <li><A HREF="#adpsbel">Battery Eliminator for Laptop or Appliance with Dead NiCds</a>
+ </ul>
+</ul>
+<p>
+<A NAME="adpspre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapter and Power Supplies Table of
+ Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="adpsaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="adpsdis">DISCLAIMER</a></h3>
+
+AC adapters, transformers, and even batteries, are critical safety components.
+Replacement with an improperly rated or incompatible device can result in
+damage or destruction of the powered equipment as well as the risk of shock or
+electrocution in certain cases.
+<p>
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+<A NAME="adpsint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="adpssod">Scope of this Document</a></h3>
+
+This collection of information deals with the troubleshooting, repair, and
+use (normal or unconventional) of AC (wall) adapters, transformers, equipment
+power supplies (non-switching type), and batteries used in portable electronic
+devices and power tools.
+<p>
+<ul>
+<li>AC adapters (may also be called: wall adapters, power packs, or wall warts)
+are those boxes hanging on the end of the power cords of many modern consumer
+electronic devices.  Their output may be a single AC or DC voltage, or
+several, with or without regulation.  Most of those outputting AC are simple
+transformers and with the addition of a diode or bridge and filter capacitor
+for DC.  (Often, people refer to all types of AC adapters including those
+outputting DC as 'transformers' but this is not really correct.)  Others
+(those that are compact and weigh almost nothing) may be sophisticated
+switchmode power supplies.  In most cases, the output will be totally
+isolated from the power line for safety.  However, some that are
+designed for applications like battery chargers may <b>not</b> be line
+isolated and should not therefore be used for any other purposes.
+<p>
+<li>Transformers in this context refer to the actual magnetic components
+ which may be found in AC adapters or equipment power supplies.
+<p>
+<li>Equipment power supplies are those portions of the equipment that
+ provide various (usually DC) voltages for its operation.  Note that in this
+ document, non-switchmode types are discussed.  For switchmode power supply
+ information, see the document: <A HREF="smpsfaq.htm">Notes on the
+ Troubleshooting and Repair of Small Switchmode Power Supplies</A>.
+<p>
+<li>Batteries are found in all sorts of portable equipment nowadays.  The
+ discussions in this document related directly to problems and repair.  This is
+ not intended as a comprehensive battery "FAQ".
+</ul>
+<p>
+Note: This document replaces the chapters relating to these topics in the
+documents "Notes on the Troubleshooting and Repair of Small Household
+Appliances and Power Tools" and "....Audio Equipment and Other Miscellaneous
+Stuff".
+<p>
+Where another document is referenced, it is assumed to be at this site.
+If the link doesn't work, find the document of the same name at the
+<A HREF="../index.html">Sci.Electronics.Repair FAQ</A> or one
+of its mirror sites.
+
+<h3><A NAME="adpssaf">SAFETY</a></h3>
+
+For the common transformer based AC adapter, there is no danger anywhere inside
+the device once unplugged.  For the switchmode variety, see the document:
+<A HREF="smpsfaq.htm">Notes on the Troubleshooting and Repair of Small
+Switchmode Power Supplies</A> for information beyond what is covered in this
+document.
+<p>
+Any internal overcurrent fuses or thermal fuses represent essential safety
+features of an AC adapter.  These must <b>not</b> be removed except during
+testing.  Where a fuse is found to be blown, use only an exact replacement.
+I really don't recommend running a repaired cobbled together AC adapter
+unattended in any case since even the sealed case provides some additional
+amount of fire protection.  Inexpensive replacements are generally available.
+<p>
+For power supplies inside equipment, the same basic precautions apply but
+access and repair are generally much more easily accomplished.
+<p>
+The only real danger from an unplugged heavy iron transformer would be
+accidentally dropping it on your foot. :(
+<p>
+<A NAME="adpsgen"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>General AC Adapter Information</h2>
+<h3><A NAME="adpsacb">AC Adapter Basics</a></h3>
+
+It seems that the world now revolves around AC Adapters or 'Wall Warts'
+as they tend to be called.  There are several basic types.  Despite the
+fact that the plugs to the equipment may be identical THESE CAN GENERALLY
+NOT BE INTERCHANGED.  The type (AC or DC), voltage, current capacity, and
+polarity are all critical to proper operation of the equipment. Use of an 
+improper adapter or even just reverse polarity can permanently damage or
+destroy the device.  Most equipment is protected against stupidity to a
+greater or lessor degree but don't count on it.
+<p>
+The most common problems are due to failure of the output cable due to flexing
+at either the adapter or output plug end.  See section:
+<A HREF="#adpsact">AC Adapter Testing</a>.
+<p>
+<ol>
+<li>AC Transformer.  All wall warts are often called transformers.  However,
+ only if the output is stated to be 'AC' does the device consist of only
+ a (stepdown) transformer.  These adapters typically put out anywhere from
+ 3 to 20 VAC or more at 50 mA to 3 A or more.  The most common range from
+ 6 to 15 VAC at less than 1 A.  The regulation is typically very poor so
+ that an adapter rated at 12 VAC may put out 15 VAC with no load and drop
+ to less than 12 VAC at rated load.  However, some may actually output up to
+ <i>two times</i> the rated voltage <i>or more</i> with a light load.  To
+ gain agency approval, the transformer needs to be protected 
+ internally so that there is no fire hazard even if the output is shorted.
+ There may be a fuse or thermal fuse internally located (and inaccessible).
+<p>
+ If the output tested inside the adapter (assuming that you can get it
+ open without total destruction - it is secured with screws and is
+ not glued or you are skilled with a hacksaw - measures 0 or very low with no
+ load but plugged into a live outlet, either the transformer has failed or
+ the internal fuse had blown.  In either case, it is probably easier to
+ just buy a new adapter but sometimes these can be repaired.  Occasionally,
+ it will be as simple as a bad connection inside the adapter.  Check the
+ fine wires connected to the AC plug as well as the output connections.
+ There may be a thermal fuse buried under the outer layers of the
+ transformer which may have blown.  These can be replaced but locating
+ one may prove quite a challenge.  Also see the section:
+ <A HREF="#adpsiot">Comments on Importance of Thermal Fuses and
+ Protectors</a>.
+<p>
+<li>DC Power Pack. In addition to a step down transformer, these include at
+ the very least a rectifier and filter capacitor.  There may be additional
+ regulation but most often there is none.  Thus, while the output is DC,
+ the powered equipment will almost always include an electronic regulation.
+<p>
+ As above, you may find bad connections or a blown fuse or thermal fuse
+ inside the adapter but the most common problems are with the cable.
+<p>
+<li>Switching Power Supply.  These are complete low power AC-DC converters
+ using a high frequency inverter.  Most common applications are laptop
+ computers and camcorders.  The output(s) will be fairly well regulated
+ and these will often accept universal power - 90-250 V AC or DC.
+<p>
+ Again, cable problems predominate but failures of the switching power
+ supply components are also possible.  If the output is dead and you have
+ eliminated the cable as a possible problem or the output is cycling on
+ and off at approximately a 1 second rate, then some part of the switching
+ power supply may be bad.  In the first case, it could be a blown fuse,
+ bad startup resistor, shorted/open semiconductors, bad controller,
+ or other components.  If the output is cycling, it could be a shorted
+ diode or capacitor, or a bad controller.  See the document:
+ <A HREF="smpsfaq.htm">Notes on the Troubleshooting and Repair of Small
+ Switchmode Power Supplies</a> for more info, especially on safety while
+ servicing these units.
+</ol>
+<p>
+Also see the chapter on "Equipment Power Supplies" in the document:
+<A HREF="audiofaq.htm">Notes on the Troubleshooting and Repair of Audio
+Equipment and Other Miscellaneous Stuff</A>.
+
+<h3><A NAME="adpsrat">About AC Adapter Ratings</a></h3>
+
+The following mainly applies to AC adapters using transformers.  Those based
+on switchmode power supplies adapters have tended to be well designed with
+decent regulation and realistic ratings.  Of course, they are generally also
+much more expensive!
+<p>
+There is no standard for rating AC adapters.  When a particular adapter is
+listed as, say, 12 V, 1 A max, there's a good chance the output will average
+12 V when outputting 1 A but what it does at lower currents is not known.
+In fact, lightly loaded, the output voltage may be more than double its
+nameplate rating!  This could be disastrous where a piece of equipment is
+plugged into it that doesn't expect such a high voltage.  The rating also
+doesn't say anything about the ripple (for DC models) - it could be almost
+anything.
+<p>
+The lifetime of an AC adapter (particularly those outputting DC) when run
+at or near its nameplate rating may be very short.  Why?  Because they often
+use low temperature (cheap!) components that can't take the heat.  For AC
+output models, the transformer itself may fail (or at least the thermal fuse).
+For DC models, the electrolytic capacitor(s) may go bad very quickly.  The
+likely result will be that the output voltage will disappear entirely (AC
+models) or drop in value with greatly increased ripple (DC models).
+<p>
+Where the adapter is used with its intended equipment, one can presume the
+manufacturer did the proper testing to assure compatibility and adequate life
+(though this isn't always the case!).  However, where it is used in some other
+application, the life of the adapter and the equipment may be much shorter
+than expected, possibly failing almost immediately.
+
+<h3><A NAME="adpspyu">Protect Yourself from "Unknown AC Adapter Syndrome"</a></h3>
+
+Apparently, manufacturers of equipment powered by AC adapters have discovered
+that they can improve their bottom line by <i>not</i> printing the AC adapter
+ratings on the device itself, and possibly not even in the user manual.  I
+don't know whether this is actually done for liability reasons (so you aren't
+tempted to actually use an AC adapter other than their own exorbitantly
+priced replacement) or just to same 3 microcents on printing ink but the net
+result is that the owner has no idea what adapter in that drawer that collects
+adapters is the correct one.  They could at least specify a particular model
+adapter if they don't think the average consumer has an intelligence greater
+than a carrot.
+<p>
+For example, I own 2 U.S. Robotics modems.  One uses a 9 VAC adapter; the
+other uses a 20 VAC adapter.  The power jacks are identical and totally
+unmarked.  Guess what happens if I guess wrong?  With too little voltage,
+the modem may appear to work but be unreliable.  With too much voltage, the
+smoke will very likely be released instantly. :(
+<p>
+To save yourself a lot of hassle and possible damaged equipment, put a label
+on each AC adapter powered device you own with the voltage, current, AC or
+DC (with polarity), and model number of the adapter (make one up if nothing
+is obvious and put it on the device and adapter).  Then, if you misplace the
+adapter, you'll know what to look for and if it is nowhere to be found, will
+have enough information to purchase a replacement.
+
+<h3><A NAME="adpswda">Why do AC Adapters Usually Use Heavy Transformers?</a></h3>
+
+The main reasons are safety and cost.
+<p>
+Line isolation is essential for safety with respect to electrical shock - no
+part accessible to the user must be connected to either side of the power line.
+A regular transformer provides this automatically.  While combinations of
+passive components can reduce the risk of shock, nothing quite matches the
+virtually fail-safe nature of a simple transformer between the power line and
+the low voltage circuitry.  To achieve similar isolation without a line
+transformer generally requires a switchmode power supply which actually
+contains a small high frequency transformer to provide the isolation.  Until
+recently, such systems were much more expensive than a simple iron transformer
+but that is changing and many modern devices do now use a wall adapter based on
+this approach.  These can be recognized by their light weight, DC (probably
+regulated) output, and the required warnings NOT to cut them off and replace
+them with an ordinary plug!  I wonder how many people have ignored the
+warnings when their equipment stopped working and replaced that fat "plug"?
+What a scenario for disaster!
+
+<h3><A NAME="adpscaa">Compact AC Adapters</a></h3>
+
+These use switchmode power supply technology and can therefore be quite small
+and light weight.  In addition to the applications noted below, they are
+turning up on a variety of other high tech gadgets from shavers to Personal
+Digital Assistants.
+<p>
+WARNING: DON'T attempt to disassemble or repair one of these unless you are
+familiar with the safety and troubleshooting information for larger switchmode
+power supplies - they can be quite deadly.  See the document:
+<A HREF="smpsfaq.htm">Notes on the Troubleshooting and Repair of Small
+Switchmode Power Supplies</a>.
+<p>
+(From: Mike Schuster (schuster@panix.com).)
+<p>
+For some reason I've been fascinated by tiny wall wart AC adaptors that use
+switch mode power supplies, since they're light and can supply more
+current than similar linear power cubes.
+<p>
+One type that keeps catching my eye is used a lot for "AC travel charger"
+accessories for cellular phones. These things connect via a cable to the
+bottom of a cell phone, much like the cigarette-lighter "charger/saver"
+accessories, only these are driven by house current.
+<p>
+The typical wart is a small rectangular box, about the size of two 9V
+transistor batteries side by side, manufactured in China or Taiwan. The
+wall side is distinguished by the fact that the AC prongs line up with the
+long axis of the box, rather than the other way around as with most wall
+cubes. This makes it possible to put them side by side on an AC power
+strip. The opposite face contains a tri-mode LED which may display red,
+green, or orange under conditions I've yet to figure out.
+<p>
+Recently I noticed one of these thingies in K-Mart as part of a modular
+power system for cell phones. There are several models of cigarette
+lighter cords, however the actual 12VDC car plug in _interchangeable_ and
+connected to the cable using a 4-pin modular telephone handset jack. Each 
+model comes with a cable constructed to mate with the phone it's sold for.
+<p>
+Next to these on the pegboard is a variant of the wall wart being
+discussed, also having a 4-pin handset socket, and sold as an accessory to
+the DC cords. Instead of using the cigarette lighter plug, you connect the
+cable to the wall wart and create a new device which uses house current. 
+So I picked up the wall wart and started to play.
+<p>
+It's marked as being capable of 5-15 VDC at 750 mA. Playing with the 4
+output pins; one is ground, two are tied together and supply 14.35 VDC
+open circuit, and can deliver about 1.5 amps. The other reads about 13 
+volts between it and the ground. Unpowered there is a small leakage between 
+the ground and the "13 volt" pin.
+<p>
+Looking inside, there are two 8-pin DIPs on the PC board; both having
+identifiers sanded off. One is near the transformer end and the other is
+near the DC output end. All of the DC side output traces lead, directly or
+indirectly, to the second IC.
+<p>
+My guess is that the "13 volt" pin is really used to program the output
+voltage between ground and the other two pins that are tied together. The
+cable sold for any specific phone has some passive components inside that
+will cause the second IC to produce the required output voltage. Am I
+warm?
+<p>
+I'd like to try programming this myself ... any ideas? Resistors?
+<p>
+(From: David Neff.)
+<p>
+A note on a similar if not the same system.  I hacked a bit into the Igo
+Juice power supplies with hopes of charging various devices via solar panels.
+I bought a bunch of close-out tips for the system and broke them open to see
+how the pins relate to output.  There were resistors between pins in the tips
+and I would assume as you did that this "told" the power supply what output
+to give on what pins.  Cheaper than hacking more was to just buy tips with
+output voltages I needed and adapt the plugs if necessary to sizes that fit
+my devices.  I used the discontinued (close-out and cheap at the time) Igo
+dual power adapter which can handle a range of DC voltages and output stable
+voltages to charge cell phones, cameras, music players, etc.
+
+<h3><A NAME="adpssac">Substituting AC Adapters</A></h3>
+
+This relates to replacing a missing or broken adapter for which the
+specifications are known.
+<p>
+<ul>
+<li>They must both be the same type with respect to AC or DC.  (In rare
+ instances, either will work but this is the exception and there is no
+ way to know without examining the circuit unless this capability is
+ explicitly stated on the device or in the user manual.)
+<p>
+ If DC, the polarity must be the same.  Even if the connectors are identical,
+ it's a coin toss as to whether the center is positive or negative.  However,
+ the cable can be cut and spliced if incorrect polarity is the only problem.
+<p>
+<li>The replacement much have at least the same current rating.  Higher
+ current is fine as long as it isn't ridiculously more (like 5 times).
+<p>
+<li>The connectors should be identical (including the size of the center
+ hole).  If the old adapter is dead, and it's not a cable problem near
+ the connector, cutting and splicing in the old connector on the new
+ adapter is acceptable as long as it's done very carefully and double
+ checked for wiring errors and short circuits.
+<p>
+<li>The output voltage with no load must not be much greater than the listed
+ value unless you know for sure that the equipment can take it, or that
+ the other adapter behaved similarly.  If the original adapter was regulated,
+ then the new one should be as well.  If the original adapter was a
+ switchmode type (light as a feather), then it was almost certainly
+ regulated.  The replacement doesn't need to be switchmode unless weight
+ is an issue, but it must be regulated.
+</ul>
+<p>
+Use a multimeter to check wall adapters found in your junk drawer and take
+one along to garage sales, thrift stores, and the like - even Radio Shack!
+Some simple tests of no load voltage and polarity can quickly identify a
+suitable adapter as long as their current rating is known (from the label).
+
+<h3><A NAME="adpsnos">Caution about Switchmode Adapters and Chargers</A>
+
+This applies to the type of adapter or battery charger that plugs into the
+an AC socket and is light as a feather.  These utilize switchmode
+technology to chop the rectified and filtered input at high frequency
+and convert it to low voltage DC.  They are now found included with
+most information technology devices such as routers and cell phone chargers.
+<p>
+Replacements are available on eBay and elsewhere for next to nothing but
+beware, these may be dangerous for your devices as well as you.  They are
+often built with as few parts as possible so corners end up being
+cut in terms of regulation, noise/ripple filtering, and safety:
+<p>
+<ul>
+<li><b>Regulation:</b> Switchmode adapters are usually supposed to
+ be similar to regulated DC power supplies in behavior with varying input
+ voltage and load.  Most of those shipped with name-brand devices are well
+ regulated from no load to full load over the spec'd input voltage range.
+ Cheap third-party chargers are often very poor, dropping to 50 percent
+ of the spec'd voltage or less at well below full load.
+<p>
+<li><b>Noise and ripple:</b> Input and output filtering may be sacrificed
+ resulting in both more transmitted noise back to the power line, higher
+ ripple on the output, and radiated Radio Frequency Interference (RFI).
+ These may be many times that of a high quality unit.
+<p>
+<li><b>Safety:</b> Unlike heavy wall adapters using large iron 50/60 Hz
+ transformers, these have input circuitry running at up to 300 V which must
+ be very well isolated from the low voltage output. Corners may be cut in
+ terms of the amount of insulation in the tiny transformer, physical
+ separation of the high voltage (input) and low voltage (output) circuitry,
+ and build quality.  Further, many if not most of these have never been
+ tested by any of the certification agencies including Underwriters
+ Laboratories (UL) - even if the UL symbol is present!
+</ul>
+<p>
+It's also quite possible that the adapter or charger packaged with a
+name-brand device is no better, but the likelihood of this is smaller.
+<p>
+Also see the section:
+<A HREF="audiofaq.htm#audipcrhg">Notes on iPhone/iPad USB Chargers</A> which
+includes tests of a dozen or so USB chargers and includes relatively simple
+electrical tests that can be done with only a DMM and some power resistors
+to at least confirm the unit meets the regulation specs - which in itself
+is a reasonable indication of better quality.
+<p>
+<A NAME="adpsaca"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>AC Adapter Troubleshooting and Repair</h2>
+<h3><A NAME="adpsact">AC Adapter Testing</a></h3>
+
+AC adapters that are not the switching type (1) and (2), above, can easily
+be tested with a VOM or DMM.  The voltage you measure (AC or DC) will
+probably be 10-25% higher than the label specification.  If you get no
+reading, wiggle, squeeze, squish, and otherwise abuse the cord both at
+the wall wart end and at the device end.  You may be able to get it to
+make momentary contact and confirm that the adapter itself is functioning.
+<p>
+The most common problem is one or both conductors breaking internally
+at one of the ends due to continuous bending and stretching.
+<p>
+Make sure the outlet is live - check with a lamp.
+<p>
+Make sure any voltage selector switch is set to the correct position.
+Move it back and forth a couple of times to make sure the contacts are clean.
+<p>
+If the voltage readings check out for now, then wiggle the cord as above in
+any case to make sure the internal wiring is intact - it may be intermittent.
+<p>
+Although it is possible for the adapter to fail in peculiar ways, a
+satisfactory voltage test should indicate that the adapter is functioning
+correctly.
+<p>
+It's also possible that the power jack on the device itself is damaged from
+use or abuse.  If possible, confirm proper operation with a <b>COMPATIBLE</b>
+adapter.  With battery operated devices, there is usually a set of
+contacts that should close when the adapter is removed to connect the internal
+battery to the circuitry.  If these don't operate properly, the device may not
+work off batteries (they may appear to not be charged), the AC adapter, or
+both.  Check the jack for obvious signs of damage (cracked, loose, etc.).  A
+squirt of contact cleaner into the jack may clear up intermittent contact
+problems not due to actual damage.
+
+<h3><A NAME="adpspwa">Pocket Wall Adapter Tester/Polarity Checker</a></h3>
+
+This handy low cost device can be built into an old ball point pen case or
+something similar to provide a convenient indication of wall adapter type,
+operation, and polarity:
+<pre>
+
+            Probe(+) o-----/\/\-----+----|>|----+---o Probe(-)
+                         1K, 1/2 W  | Green LED |
+                                    +----|<|----+
+                                       Red LED
+</pre>
+
+<ul>
+<li>The green LED will light up if the polarity of an adapter with a DC output
+  agrees with the probe markings.
+<p>
+<li>The red LED will light up if the polarity of an adapter with a DC output is
+  opposite of the probe markings.
+<p>
+<li>Both LEDs will light up if your adapter puts out AC rather than DC.
+<p>
+<li>The LED brightness can provide a rough indication of the output voltage.
+</ul>
+
+<h3><A NAME="adpsgia">Getting Inside an AC Adapter</a></h3>
+
+Manufacturers come up with all sorts of creative ways of making access a
+challenge:
+
+<ul>
+<li>Some are secured with screws - possibly with strange heads.  If this is the
+  case, disassembly is possible without damage, at least in principle.
+  However, you may need to find or improvise for the special tool.
+<p>
+<li>Some are fully potted and impossible to open without dynamite.  Forget it,
+  move on with your life. :)  These will feel solid and there will be no 'give'
+  when pressing the sides.
+</ul>
+
+For those that are glued:
+
+<ul>
+<li>A hacksaw or thin file can be used to carefully cut along the glue line
+  just deep enough so that the two halves can be popped apart.  Make sure you
+  don't rip into internal components!  Gently whacking a large knife with a
+  soft mallet may be a bit more persuasive. :)
+<p>
+<li>A vise can be used to squeeze on diagonally opposing corners which will
+  hopefully pop the case open along the glue line (or somewhere!).
+</ul>
+
+After the repair, the two halves (or pieces!) can be glued back together
+using something like Duco Cement or windshield sealer.
+
+<h3><A NAME="adpsacr">AC Adapter Repair</a></h3>
+
+Although the cost of a new adapter is usually modest, repair is often
+so easy that it makes sense in any case.
+<p>
+The most common problem (and the only one we will deal with here) is the
+case of a broken wire internal to the cable at either the wall wart or
+device end due to excessive flexing of the cable.
+<p>
+Usually, the point of the break is just at the end of the rubber cable
+guard.  If you flex the cable, you will probably see that it bends more easily
+here than elsewhere due to the broken inner conductor.  If you are reasonably
+dextrous, you can cut the cable at this point, strip the wires back far
+enough to get to the good copper, and solder the ends together.  Insulate
+completely with several layers of electrical tape.  Make sure you do not
+interchange the two wires for DC output adapters!  (They are usually marked
+somehow either with a stripe on the insulator, a thread inside with one
+of the conductors, or copper and silver colored conductors.  Before you
+cut, make a note of the proper hookup just to be sure.  Verify polarity
+after the repair with a voltmeter.
+<p>
+The same procedure can be followed if the break is at the device plug end
+but you may be able to buy a replacement plug which has solder or screw
+terminals rather than attempting to salvage the old one.
+<p>
+Once the repair is complete, test for correct voltage and polarity before
+connecting the powered equipment.
+<p>
+This repair may not be pretty, but it will work fine, is safe, and will
+last a long time if done carefully.
+<p>
+If the adapter can be opened - it is assembled with screws rather than
+being glued together - then you can run the good part of the cable inside
+and solder directly to the internal terminals.  Again, verify the polarity
+before you plug in your expensive equipment.
+<p>
+WARNING: If this is a switching power supply type of adapter, there are
+dangerous voltages present inside in addition to the actual line connections.
+Do not touch any parts of the internal circuitry when plugged in and make
+sure the large filter capacitor is discharged (test with a voltmeter)
+before touching or doing any work on the circuit board.  For more info on
+switching power supply repair, refer to the document:
+<A HREF="audiofaq.htm">Notes on the Troubleshooting and Repair of Small
+Switchmode Power Supplies</a>.
+<p>
+If it is a normal adapter, then the only danger when open are direct
+connections to the AC plug.  Stay clear when it is plugged in.
+
+<h3><A NAME="adpsacs">AC Adapter Substitution and Equipment Damage</a></h3>
+
+Those voltage and current ratings are there for a reason.  You may get
+away with a lower voltage or current adapter without permanent damage but
+using a higher voltage adapter is playing Russian Roulette.  Even using
+an adapter from a different device - even with similar ratings, may
+be risky because there is no real standard.  A 12 V adapter from one
+manufacturer may put out 12 V at all times whereas one from another
+manufacturer may put out 20 V or more when unloaded.
+<p>
+A variety of types of protection are often incorporated into adapter
+powered equipment.  Sometimes these actually will save the day.
+Unfortunately, designers cannot anticipate all the creative techniques
+people use to prove they really do not have a clue of what they are doing.
+<p>
+The worst seems to be where an attempt is made to operate portable devices
+off of an automotive electrical system.  Fireworks are often the result,
+see below and the section on: "Automotive power".
+<p>
+If you tried an incorrect adapter and the device now does not work there
+are several possibilities (assuming the adapter survived and this is not
+the problem):
+
+<ol>
+<li>An internal fuse or IC protector blew.  This would be the easiest to
+ repair.
+<p>
+<li>A protection diode sacrificed itself.  This is usually reverse biased
+   across the input and is supposed to short out the adapter if the
+   polarity is reversed.  However, it may have failed shorted particularly
+   if you used a high current adapter (or automotive power).
+<p>
+<li>Some really expensive hard to obtain parts blew up.  Unfortunately,
+   this outcome is all too common.
+</ol>
+
+Some devices are designed in such a way that they will survive almost anything.
+A series diode would protect against reverse polarity.  Alternatively, a large
+parallel diode with upstream current limiting resistor or PTC thermistor, and
+fuses, fusable resistors, or IC protectors would cut off current before the
+parallel diode or circuit board traces have time to vaporize.  A crowbar
+circuit (zener to trigger an SCR) could be used to protect against reasonable
+overvoltage.
+<p>
+I inherited a Sony Discman from a guy who thought he would save a few bucks and
+make an adapter cord to use it in his car.  Not only was the 12-15 volts
+from the car battery too high but he got it backwards!  Blew the DC-DC
+converter transistor in two despite the built in reverse voltage protection
+and fried the microcontroller.  Needless to say, the player was a loss but the
+cigarette lighter fuse was happy as a clam!
+<p>
+Moral: those voltage, current, and polarity ratings marked on portable
+equipment are there for a reason.  Voltage rating should not be exceeded,
+though using a slightly lower voltage adapter will probably cause no harm
+though performance may suffer.  The current rating of the adapter should
+be at least equal to the printed rating.  The polarity, of course, must be
+correct.  If connected backwards with a current limited adapter, there may be
+no immediate damage depending on the design of the protective circuits.  But
+don't take chances - double check that the polarities match - with a voltmeter
+if necessary - before you plug it in!  Note that even some identically marked
+adapters put out widely different open circuit voltages.  If the unloaded
+voltage reading is more than 25-30% higher than the marked value, I would
+be cautious about using the adapter without confirmation that it is acceptable
+for your equipment.  Needless to say, if you experience any strange or
+unexpected behavior with a new adapter, if any part gets unusually warm, or if
+there is any unusual odor, unplug it immediately and attempt to identify the
+cause of the problem.
+<p>
+Or, a more dramatic result of the same principles:
+<p>
+(From: Don Parker (tazman@yournet.com).)
+<p>
+A guy brought a Johnson Messenger CB to my shop a few decades back.  He had
+been told it would run on 12 VDC *and* 115 VAC - so he tried it!  I never saw
+so many little leads sticking up from any PCB since - that once were capacitors
+and top hat transistors.  There was enough fluff from the caps to have the
+chassis rated at least R-10 :->).
+
+<h3><A NAME="adpsprp">Power Reversal - Better Pray</a></h3>
+
+<blockquote>
+"That's right, I reversed power and ground on a Sony XR-6000 AM/FM cassette
+ car stereo. (12V negative ground).
+<p> 
+ The little fellow made a stinky smell, so I assume that at least one
+ component is cooked."
+</blockquote>
+
+If it had not been turned on before you discovered your error, the damage
+may have been limited to the display and some filter caps.  Then again...
+<p>
+The problem is that an auto battery has a very high current capacity and
+any fuses respond too slowly to be of much value in a situation such as
+this.  Any capacitors and solid state components on the 12 V bus at the
+time power was applied are likely fried - well done.
+
+<blockquote>
+"Is there any hope of my repairing it?  (This assumes I show more ability
+ than I did when installing it.)  Which part(s) are likely damaged?"
+</blockquote>
+
+(From: Onat Ahmet (onat@turbine.kuee.kyoto-u.ac.jp).)
+<p>
+Well, based on that last statement ;-) 
+
+<ul>
+<li><b>Bad:</b> car batteries can provide amps and amps of current (much worse
+      than reverse connecting a wall adapter for example.)
+<p>
+<li><b>Good:</b> The stinking might be due to a component getting too hot
+      and vaporizing the solder paste/preserver/dust on it, but
+      not actually giving up the ghost.
+<p>
+      I would find and check any fuses, or components directly
+      in-line with or parallel to the power lines (the latter
+      might include the IC's unfortunately...)
+<p>
+<li><b>Good:</b> There might have been a protecting diode somewhere (but why
+      did it stink then (^_^)
+<p>
+<li><b>Neutral:</b> Did you disassemble it to see if there were any blackened
+       areas/components? Smell from a close distance; I can often
+       locate a burnt component that way even after a long time.
+</ul>
+
+If not, join the happy crowd, and gut the good old stereo for parts!
+
+<h3><A NAME="adpsdpl">Determining Voltage and Polarity of AC Adapter Powered Devices</a></h3>
+
+This is often required when the original adapter is lost or misplaced or isn't
+labeled so you are not sure if it is the correct one for your device.  It's
+amazing how many things like modems and phone answering machines don't list
+the voltage and polarity on the case - it's not like the extra printing would
+cost anything!  While I would stop short of calling this a conspiracy, there
+does appear to be an industry-wide practice of leaving out key information
+to encourage replacement of the equipment rather than the much less costly
+and much less profitable repair or replacement of only the wall adapter.
+Information on voltage, current, and AC or DC polarity, is often missing
+on the equipment itself.  And, absolutely totally incompatible wall adapters
+having similar plugs can be attached with the possible result being instant
+destruction of the device.  This even applies to equipment from the
+same manufacturer!  At least wall sockets are standardized - wall adapters
+are not.
+<p>
+If you are simply replacing a broken adapter with a universal
+type, check the label on the old one - they almost always provide this
+information.  There are three issues: AC versus DC, the voltage, and polarity.
+Unfortunately, fully determining these requirements experimentally can be
+non-trivial.  While many devices have built in protection for reverse polarity
+(which would probably also include putting AC into a device requiring DC),
+others do not and may be damaged or may at least blow an internal fuse.  Few
+devices protect against extreme overvoltage.
+<p>
+If you have a multimeter, there are also some tests you can perform without
+opening the device but they are not foolproof.  Here are some general
+guidelines.  The more of these you can confirm, the greater the confidence
+of avoiding disaster.
+<p>
+<ol>
+<li>The best way would be to find the information without serious testing.
+ It may be readily available:
+<p>
+ <ul>
+ <li>Examine the device for labels, either embossed near the power jack
+  or on the rear or underneath such as:
+ <pre>
+
+  DC 5V ----    AC 12 V ~
+        ____            _
+
+ </pre>
+<p>
+ <li>If there is a voltage listed but no indication of AC/DC, 6 V or less is
+  likely to be DC (and may require decent regulation; higher voltages could
+  be either AC or DC (probably filtered but unregulated though not always).
+<p>
+ <li>A symmetric (non-polarized) jack means it is supposed to operate on AC.
+<p>
+ <li>If the device has a metal case or you can get to the metal shields
+  on connectors, check for continuity to the power jack.  This probably is
+  the negative input (though no guarantee - some manufacturers do really
+  strange things!).
+<p>
+ <li>Check your user manual!
+<p>
+ <li>Contact the manufacturer or their Web site.
+</ul>
+<p>
+<li>The next best way would be to open it up and trace enough of the power
+  circuitry to identify components which have obvious voltage ratings and
+  polarities like electrolytic capacitors.  There may even be labeling on
+  the circuit board.
+<p>
+ <ul>
+ <li>There will almost always be at least one electrolytic cap very near the
+  power input.
+<p>
+ <li>If there is nothing between it and the power jack, then polarity will
+  be that of the cap and you will have an upper bound on voltage (but the
+  actual safe operating voltage will probably be considerably less).
+<p>
+ <li>If there is a diode in series with the cap, then the voltage and
+  polarity will be as above (except for the 0.7 or so V diode drop) and
+  the device is probably designed to operate on DC (and possibly AC but
+  there may not be enough filtering).
+<p>
+ <li>If there is a bridge rectifier or multiple rectifier diodes between the
+  input and any DC loads, it is probably designed to operate on AC.
+<p>
+ <li>If the device also has a battery compartment and the battery powers the
+  device the same way as the adapter (possibly with one connection going
+  through a diode or an interlock on the power jack), then the AC adapter
+  polarity and voltage will be the same (+/- 0.7 V or so) as the battery.
+  However, some devices use totally different means of powering themselves
+  with battery and AC operation!
+ </ul>
+<p>
+<li>If you have a multimeter for which you know the polarity of its output on
+ the ohms ranges (VOMs may be reversed from the probes; DMMs are often the
+ same - this can be determined by testing a diode or with another meter),
+ then test on the low ohms range first in one direction, than the
+ other.   This is like applying a very low safe voltage to the device:
+<p>
+<ul>
+ <li>Open in one direction and a charging cap (resistance starts low and
+  increases relatively slowly) indicates a series diode (protection or a
+  rectifier).  The probe polarity where the cap is charging is the correct one.
+  (Note: once the internal caps charge up, reversing the leads again may
+  result in an apparent open reading.)
+<p>
+ <li>A diode drop in one direction and charging cap in the other indicates a
+  parallel protection diode.  Again, the slowly charging direction is correct.
+<p>
+ <li>Symmetric behavior may indicate it is supposed to use AC.  However, this
+ could just mean that a filter cap is directly across the input and DC is
+ required.
+</ul>
+</ol>
+<p>
+Anything else will probably require you do (1) or (2). And, except for
+manufacturer supplied information, even these are no guarantee of anything!
+<p>
+Once AC versus DC and polarity (if relevant) are determined, start low on
+voltage to see at what point the device behaves normally.  Depending on
+design, this may be quite low compared to the recommended input voltage or
+very near it - no way to really know.  Devices with motors and solenoids
+may appear to operate at relatively low voltage but fail to do the proper
+mechanical things reliably if at all.  RF devices capable of transmitting
+may behave similarly when asked to transmit.  Devices with more constant
+power requirements may operate happily at these reduced voltages.  However,
+depending on the type of power supplies they use, running at a low voltage
+may also be stressful (e.g., where DC-DC converters are involved).
+<p>
+NOTE: Some devices with microcontrollers and/or logic will require a fast
+power turn-on so it may be necessary to switch off and then on for each
+input voltage you try for proper reset.
+<p>
+Again, determining the requirements from the manufacturer is best!
+
+<h3><A NAME="adpsref">Additional References</a></h3>
+
+Jonathan Gordon has a frew eBook that is available
+at the iBookstore (Apple itunes): <A HREF="https://itunes.apple.com/us/book/test-ac-power-adapters/id583698707?mt=11">TEST AC Power Adapters</A>.
+<p>
+I (Sam) have not been able to go through this as I don't have an i-anything,
+but it sounds like something useful.
+<p>
+<A NAME="adpsadm"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>AC Adapter Modifications or Enhancements</h2>
+<h3><A NAME="adpsacv">Using AC Adapters in Series for Multiple Voltages</a></h3>
+
+Where a bipolar DC power supply is needed, it is possible to create this
+with a pair of DC output adapters in series.  Each adapter must have voltage
+and current ratings adequate for your application.  They can be used with or
+without external regulators (see the section: <A HREF="#adpsaai">Adding an IC
+Regulator to a Wall Adapter or Battery</a>.  Since they are fully isolated
+from the AC line and each other, they can be tied together with any desired
+polarity and common point.
+<p>
+The only cautions are that if one of them is unpowered for any reason (it falls
+out of the AC outlet!) or the current rating of one of the adapters is
+exceeded, then current may be forced through the other one in
+the wrong direction possibly damaging its electrolytic capacitors or other
+components.  To prevent this possibility, place a rectifier like a 1N4002
+(this is 1 A, use a larger one if your adapters are really huge) in REVERSE
+across each output.  This will bypass current safely around the internal
+circuitry.
+<p>
+The idea of using multiple adapters can be extended to even more outputs but
+this is left as an exercise for the student.
+
+<h3><A NAME="adpsach">Using AC Adapters in Series for Higher or Lower Voltage</a></h3>
+
+Wall adapters are totally isolated from everything (except possibly for a
+very high value resistor to one side of the AC line which for this purpose
+can be ignored) so using one set of wires as a common for the series
+connection won't blow anything.
+<p>
+However, obtaining an AC adapter with the proper ratings for long term use
+would be a good idea.
+<p>
+There are two cases:
+<ol>
+<li>DC output.  It's probably not recommended and only the sum case (higher
+   voltage output) is generally possible but will work (at least for testing
+   purposes) as long as neither current rating is exceeded and both units are
+   powered.  (Else, you could end up with the wrong polarity on one of the
+   unit's electrolytic capacitors.)
+<p>
+<li>AC output.  There should be no problem as long as the current rating of
+   neither adapter is exceeded.  Unless they are identical units, you will
+   probably have to experiment with the phasing to get the sum or difference
+   of the voltages WITHOUT the equipment attached!
+<p>
+   WARNING: If one of the adapters is not plugged in, high voltage (possibly
+   even more than the normal line voltage) may appear on its exposed prongs
+   due to the AC from the other adapters present on its output (being stepped
+   up going the wrong way through the transformer).  The voltage and available
+   current may be enough to be dangerous in some cases.
+<p>
+   CAUTION: For the difference case, if one of the units isn't powered, you
+   may get a HIGHER voltage than expected at the output of the series
+   combination which may let the smoke out of your equipment. :(
+</ol>
+
+<h3><A NAME="adpsrbw">Replacing Batteries With an AC Adapter</a></h3>
+
+While most appliances that run off of internal batteries also include a socket
+for an wall adapter, this is not always the case.  Just because there is no
+hole to plug one in doesn't necessarily mean that you cannot use one.
+<p>
+The type we are considering in this discussion are plug-in wall adapter that
+output a DC voltage (not AC transformers).  This would be stated on the
+nameplate.
+<p>
+The first major consideration is voltage.  This needs to be matched to the
+needs of the equipment.  However, what you provide may also need to be well
+regulated for several reasons as the manufacturer may have saved on the cost
+of the circuitry by assuming the use of batteries:
+<p>
+<ul>
+<li>The maximum voltage supplied by a battery is well defined.  For example,
+  4 AA cells provide just over 6 V when new.  The design of the device may
+  assume that this voltage is never exceeded and include no internal regulator.
+  Overheating or failure may result immediately or down the road with a wall
+  adapter which supplies more voltage than its nameplate rating (as most do
+  especially when lightly loaded).
+<p>
+<li>Most wall adapters do not include much filtering.  With audio equipment,
+  this may mean that there will be unacceptable levels of hum if used direct.
+  There are exceptions.  However, there is no way of telling without actually
+  testing the adapter under load.
+<p>
+<li>The load on the power source (batteries or adapter) may vary quite a bit
+  depending on what the device is doing.  Fresh batteries can provide quite
+  a bit of current without their voltage drooping that much.  This is not
+  always the case with wall adapters and the performance of the equipment
+  may suffer.
+</ul>
+<p>
+Thus, the typical universal adapter found at Radio Shack and others may not
+work satisfactorily.  No-load voltage can be much higher than the voltage at
+full load - which in itself may be greater than the marked voltage.  Adding
+an external regulator to a somewhat higher voltage wall adapter is best.  See
+the section: <A HREF="#adpsaai">Adding an IC Regulator to a Wall Adapter or
+Battery</a>.
+<p>
+The other major consideration is current.  The rating of the was adapter must
+be at least equal to the *maximum* current - mA or A - drawn by the device
+in any mode which lasts more than a fraction of a second.  The best way to
+determine this is to measure it using fresh batteries and checking all modes.
+Add a safety factor of 10 to 25 percent to your maximum reading and use this
+when selecting an adapter.
+<p>
+For shock and fire safety, any wall adapter you use should be isolated and
+have UL approval.
+<p>
+<ul>
+<li>Isolation means that there is a transformer in the adapter to protect you
+  and your equipment from direct connection to the power line.  Most of the
+  inexpensive types consist of nothing more than a transformer (and for DC
+  types), rectifier and filter capacitor.  However, if what you have weighs
+  almost nothing and is in a tiny case, it may be meant for a specific purpose
+  like a battery chargers or rechargeable device where human contact is not
+  possible and may not include line isolation.  But, if there is a low voltage
+  plug with exposed contacts and/or the powered equipment has exposed shields
+  or other parts, the compact light-weight types are actually miniaturized
+  switchmode power supplies which are functionally equivalent to the heavier,
+  bulkier adapters and do provide line isolation.
+<p>
+<li>UL (Underwriters Lab) approval means that the adapter has been tested to
+  destruction and it is unlikely that a fire would result from any reasonable
+  internal fault like a short circuit or external fault like a prolonged
+  overload condition.
+</ul>
+<p>
+To wire it in, you can obtain a socket like those used on appliances with
+external adapter inputs - from something that is lying in your junk-box
+or a distributor like MCM Electronics.  Use one with an automatic disconnect
+(3 terminals) if possible.  Then, you can retain the optional use of the
+battery.  Cut the wire to the battery for the side that will be the outer
+ring of the adapter plug and wire it in series with the disconnect (make
+sure the disconnected terminal goes to the battery and the other terminal
+goes to the equipment).  The common (center) terminal goes to other side of
+the battery, adapter, and equipment as shown in the example below.  In this
+wiring diagram, it is assumed that the ring is + and the center is -.  Your
+adapter could be wired either way.  Don't get it backwards!
+<p>
+<pre>
+                         +--+
+                       X V  | (Inserting plug breaks connection at X)
+      Battery (+) o-------  |
+      Adapter (+) o---------+------------------o Equipment (Ring, +)
+                             \______
+                                      o===+
+      Battery/                            |
+      Adapter (-) o-----------------------+----o Equipment (Center, -)
+</pre>
+<p>   
+WARNING: if you do not use an automatic disconnect socket, remove the battery
+holder or otherwise disable it - accidentally using the wall adapter with
+the batteries installed could result in leakage or even an explosion!
+<p>
+A possibly simpler alternative is to fashion a 'module' the size and shape
+of the battery or battery pack with screw contacts at the same locations and
+connect your external power supply to it.  For example, a couple of pieces
+of wooden dowel rod about 2-1/4" long taped together with wood screws in the
+appropriate ends would substitute for a pair of side-by-side AA batteries.
+Then, you don't need to modify the Walkman or whatever at all (or at most
+just file a slot for the wire to exit the battery door).
+
+<h3><A NAME="adpscao">Converting an AC Output Wall Adapter to DC</a></h3>
+
+Where a modest source of DC is required for an appliance or other device,
+it may be possible to add a rectifier and filter capacitor (and possibly
+a regulator as well) to a wall adapter with an AC output.  While many wall
+adapter output DC, some - modems and some phone answering machines, for
+example - are just transformers and output low voltage AC.
+<p>
+To convert such an adapter to DC requires the use of:
+<p>
+<ul>
+<li>Bridge rectifier - turns AC into pulsating DC.
+<li>Filter capacitor - smooths the output reducing its ripple.
+<li>Regulator - produces a nearly constant output voltage.
+</ul>
+<p>
+Depending on your needs, you may find a suitable wall adapter in your junk
+box (maybe from that 2400 baud modem that was all the rage a couple of years
+ago!).
+<p>
+The basic circuit is shown below:
+<pre>
+
+            Bridge Rectifier   Filter Capacitor
+
+    AC o-----+----|>|-------+---------+-----o DC (+)
+            ~|              |+        |
+   In from   +----|<|----+  |       +_|_   Out to powered device
+   AC wall               |  |      C ___   or voltage regulator
+   Adapter   +----|>|----|--+       - |
+             |           |            |
+    AC o-----+----|<|----+------------+-----o DC (-)
+            ~                -
+
+</pre>
+Considerations:
+
+<ul>
+<li>An AC input of Vin VRMS will result in a peak output of approximately
+  1.4 Vin - 1.4 V.  The first factor of 1.4 results from the fact that the
+  peak value of a sinusoid (the power line waveform) is 1.414 (sqrt(2))
+  times the RMS value.  The second factor of 1.4 is due to the two diodes
+  that are in series as part of the bridge rectifier.  The fact that they
+  are both about 1.4 is a total coincidence.
+<p>
+  Therefore, you will need to find an AC wall adapter that produces an output
+  voltage which will result in something close to what you need.  However,
+  this may be a bit more difficult than it sounds since the nameplate rating
+  of many wall adapters is not an accurate indication of what they actually
+  produce especially when lightly loaded.  Measuring the output is best.
+<p>
+<li>Select the filter capacitor to be at least 10,000 uF per 1000 mA of output
+  current with a voltage rating of at least 2 x Vin.  This rule of thumb will
+  result in a ripple of less than 1 V p-p which will be acceptable for many
+  devices or where a voltage regulator is used (but may be inadequate for
+  some audio devices resulting in some 120 Hz hum.  Use a larger or additional
+  capacitor or a regulator in such a case.
+<p>
+<li>Suitable components can be purchased at any electronics distributor as well
+  as Radio Shack.  The bridge rectifier comes as a single unit or you can put
+  one together from 1N400x diodes (the x can be anything from 1 to 7 for these
+  low voltage applications).  Observe the polarity for the filter capacitor!
+</ul>
+
+The following examples illustrate some of the possibilities.
+
+<ul>
+<li>Example 1: A typical modem power pack is rated at 12 VAC but actually
+  produces around 14 VAC at modest load (say half the nameplate current
+  rating).  This will result in about 17 to 18 VDC at the output of the
+  rectifier and filter capacitor.
+<p>
+<li>Example 2: A cordless VAC battery charger adapter might produce 6 VAC.
+  This would result in 6 to 7 VDC at the output of the rectifier and filter
+  capacitor.
+</ul>
+
+Limiting your load to the VA ratings of the transformer should keep it from
+overheating.  Whether you will get a decently smooth output will depend on how
+much filtering you have AND on the peak current available from the transformer
+to recharge the filter capacitors on each half-cycle.  A high quality
+transformer (e.g. something from a manufacturer like Stancor or Thorderson
+that is designed with much more copper) will be much much better in this
+respect.  A wall adapter is likely to have limited peak current and
+significant droop.
+<p>
+Adding an IC regulator to either of these would permit an output of up to
+about 2.5 V less than the filtered DC voltage.
+
+<h3><A NAME="adpsaai">Adding an IC Regulator to a Wall Adapter or Battery</a></h3>
+
+For many applications, it is desirable to have a well regulated source of
+DC power.  This may be the case when running equipment from batteries as
+well as from a wall adapter that outputs a DC voltage or the enhanced adapter
+described in the section: <A HREF="#adpscao">Converting an AC Output Wall
+Adapter to DC</a>.
+<p>
+The following is a very basic introduction to the construction of a circuit
+with appropriate modifications will work for outputs in the range of about
+1.25 to 35 V and currents up 1 A.  This can also be used as the basis for a
+small general purpose power supply for use with electronics experiments.
+<p>
+For an arbitrary voltage between about 1.2 and 35 V what you want is an IC
+called an 'adjustable voltage regulator'.  LM317 is one example - Radio Shack
+should have it along with a schematic.  The LM317 looks like a power
+transistor but is a complete regulator on a chip.
+<p>
+Where the output needs to be a common value like +5 V or -12 V, ICs called
+'fixed voltage regulators' are available which are preprogrammed for these.
+Typical ICs have designations of 78xx (positive output) and 79xx (negative
+output).
+<p>
+For example:
+<pre>
+            Positive                   Negative
+        Voltage Regulator          Voltage Regulator
+     -----------------------    -----------------------
+         7805      +5 V             7905      -5 V
+         7809      +9 V             7909      -9 V
+         7812     +12 V             7912     -12 V
+         7815     +15 V             7915     -15 V
+</pre>
+and so forth.  Where these will suffice, the circuit below can be simplified
+by eliminating the resistors and tying the third terminal to ground.  Note:
+pinouts differ between positive and negative types - check the datasheet!
+<p>
+Here is a sample circuit using the LM317:
+<pre>
+
+                    I +-------+ O                       
+    Vin (+) o-----+---| LM317 |---+--------------+-----o Vout (+)
+                  |   +-------+   |              |
+                  |       | A     /              |
+                  |       |       \ R1 = 240     |
+                  |       |       /              |           ___
+                 _|_ C1   |       |            +_|_ C2      |_0_|  LM317
+                 ___ .01  +-------+             ___ 1 uF    |   |  1 - Adjust
+                  |  uF   |                    - |          |___|  2 - Output
+                  |       \                      |           |||   3 - Input
+                  |       / R2                   |           123
+                  |       \                      |
+                  |       |                      |
+    Vin(-) o------+-------+----------------------+-----o Vout (-)
+
+</pre>
+Note: Not all voltage regulator ICs use this pinout.  If you are not using an
+LM317, double check its pinout - as well as all the other specifications.
+<p>
+For the LM317:
+<p>
+<ol>
+<li>R2 = (192 x Vout) - 240, where R2 in ohms, Vout is in volts and must be at
+   between 1.2 V and 35 V.
+<p>
+<li>Vin should be at least 2.5V greater than Vout.  Select a wall adapter with
+   a voltage at least 2.5 V greater than your regulated output at full load.
+<p>
+   However, note that a typical adapter's voltage may vary quite a bit
+   depending on manufacturer and load.  You will have to select one that
+   isn't too much greater than what you really want since this will add
+   unnecessary wasted power in the device and additional heat dissipation.
+<p>
+<li>Maximum output current is 1 A.  Your adapter must be capable of supplying
+   the maximum current safely and without its voltage drooping below the
+   requirement in (2) above.
+<p>
+<li>Additional filter capacitance across C1 on input to the regulator
+   may help (or be required) to reduce its ripple and thus
+   the swing of its input.  This may allow you to use an adapter with a lower
+   output voltage and reduce the power dissipation in the regulator as well.
+<p>
+   Using 10,000 uF per *amp* of output current will result in less than 1 V
+   p-p ripple on the input to the regulator.  As long as the input is always
+   greater than your desired output voltage plus 2.5 V, the regulator will
+   totally remove this ripple resulting in a constant DC output independent
+   of line voltage and load current fluctuations.  (For you purists, the
+   regulator isn't quite perfect but is good enough for most applications.)
+<p>
+   Make sure you select a capacitor with a voltage rating at least 25% greater
+   than the adapter's *unloaded* peak output voltage and observe the polarity!
+<p>
+   Note: wall adapters designed as battery chargers may not have any filter
+   capacitors so this will definitely be needed with this type.  Quick check:
+   If the voltage on the adapter's output drops to zero as soon as it is pulled
+   from the wall - even with no load - it does not have a filter capacitor.
+<p>
+   Note that increasing the uF value of the output capacitor (C2) will
+   generally not have much effect, but probably won't hurt.
+<p>
+<li>The tab of the LM317 is connected to the center pin - keep this in mind
+   because the chip will have to be on a heat sink if it will be dissipating
+   more than a watt or so.  P = (Vout - Vin) * Iout.  
+<p>
+<li>There are other considerations - check the datasheet for the LM317
+   particularly if you are running near the limits of 35 V and/or 1 A.
+</ol>
+
+More information on this topic can be found in the document:
+<A HREF="samschem.htm">Various Schematics and Diagrams</a>.
+
+<p>
+<A NAME="adpseps"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Equipment Power Supplies</h2>
+<h3><A NAME="adpstps">Types of Power Supplies</a></h3>
+
+See the document:
+<A HREF="safety.htm">Safety Guidelines for High Voltage and/or Line Powered
+Equipment</A> before tackling any power supply problems!
+<p>
+If your equipment uses an AC adapter (wall wart), see the sections on those
+devices.
+<p>
+The power supplies built in to consumer electronic equipment are usually
+one of three types or a hybrid combination of these (There are no doubt
+others):
+
+<ol>
+<li>Power transformer with linear regulator using 78/79XX ICs or discrete
+ components.  The power transformer will be large and very near the
+ AC line cord.
+<p>
+<li>Power transformer with hybrid regulator like STK5481 or any of its
+ cousins - multioutput with some outputs switched by power on.  If it
+ has one of these, check ECG, SK, or NTE, or post to sci.electronics.repair
+ and someone can probably provide the pinout.  Again, the power transformer
+ will be large and very near the AC line cord.
+<p>
+<li>Small switching power supply. Most common problems: shorted semiconductors,
+ bad capacitors, open fusable resistors.  In this case there is usually
+ no large power transformer near the line input but a smaller transformer
+ amidships.  This is rare in audio equipment as the switching noise is
+ difficult to keep out of the audio circuits.  These are more often found
+ found in some VCRs, TVs, monitors, fax machines, and printers.
+</ol>
+
+Some comments for each type:
+
+<ol>
+<li>Troubleshooting is quite straightforward as the components are readily
+ identified and it is easy to trace through from the power transformer,
+ bridge or centertapped full wave rectifiers, regulators, caps, etc.
+<p>
+<li>Failures of one or more of the outputs of these hybrid regulators
+ are very common.  Use ECG/STK/NTE cross reference to identify the correct
+ output voltages.  Test with power switch in both positions.  Any
+ discrepancy indicates likely problem.  While an excessive load dragging
+ down a voltage is possible, the regulator is the first suspect.
+ Replacement cost is usually under $10.
+<p>
+<li>Switching supplies.  These are tougher to diagnose, but it is possible
+ without service literature by tracing the circuit and checking for
+ bad semiconductors with an ohmmeter.  Common problems - dried up
+ capacitors, shorted semiconductors, and bad solder joints.   See the
+ document: <A HREF="smpsfaq.htm">Notes on the Troubleshooting and Repair of
+ Small Switchmode Power Supplies</a> for more detailed information.
+</ol>
+
+<p>
+<A NAME="adpstro"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Power Supply Troubleshooting</h2>
+<h3><A NAME="adpstdp">Totally Dead Power Supply (Non-Switching Type)</a></h3>
+
+Don't overlook the possibility of bad solder connections or even a
+bad line cord or plug.  Maybe Fido was hungry.
+<p>
+First, make sure the outlet is live - try a lamp.  Even a neon circuit
+tester is not a 100% guarantee - the outlet may have a high resistance
+marginal connection.
+<p>
+Check for blown fuses near the line cord input.  With the unit unplugged,
+test for continuity from the AC plug to the fuse, on/off switch and power
+transformer.  With the power switch in the 'on' position, testing across
+the AC plug should result in a resistance of 1 to 100 ohms depending on
+the size of the equipment:
+
+<ul>
+<li>Small AC adapter - 100 to 500 ohms.
+<li>Large AC adapter - 10 to 100 ohms.
+<li>VCR - 15 to 30 ohms.
+<li>Cassette deck or CD player - 25 to 100 ohms.
+<li>Stereo receiver or amplifier - .5 to 10 ohms.
+</ul>
+<p>
+If the fuse blew and the readings are too low, the transformer primary may
+be partially or totally shorted.  If the resistance is infinite even directly
+across the primary of the power transformer, it may be open or there may be
+an open thermal fuse underneath the outer layer of insulation wrapping.
+Also see the section: <A HREF="#adpsiot">Comments on Importance of Thermal
+Fuses and Protectors</a>.
+<p>
+If the fuse blew but resistance is reasonable, try a new fuse of the proper
+ratings.  If this blows instantly, there is still a fault in the power supply
+or one of its loads.  See the section: <A HREF="#adpsafi">About Fuses, IC
+Protectors, and Circuit Breakers</a>.
+<p>
+If these check out, then the problem is likely on the secondary side.
+One or more outputs may be low or missing due to bad regulator components.
+A secondary winding could be open though is is less common than primary side
+failure as the wire (in transistorized equipment at least) is much thicker.
+
+<h3><A NAME="adpslom">Low or Missing Power Supply Outputs (Non-Switching Type)</a></h3>
+
+Once the line input and primary circuits have been found to be good (or at
+have continuity and a resistance that is reasonable, the problems is
+most likely in the secondary side - fuses, rectifiers, filter capacitors,
+regulator components, bad connections, excess load due to electronic
+problems elsewhere.
+<p>
+Depending on the type of equipment, there may be a single output of several
+outputs from the power supply.  A failure of one of these can result in
+multiple systems problems depending on what parts of the equipment use what
+supply.
+<p>
+Check for bad fuses in the secondary circuits - test with an ohmmeter.  (I
+once even found an intermittent fuse!)  Try a new fuse of the same ratings.
+If this one blows immediately, there is a fault in the power supply or one of
+its loads.  See the section: <A HREF="#adpsafi">About Fuses, IC Protectors,
+and Circuit Breakers</a>.  The use of a series current limiting resistor - a
+low wattage light bulb, for example - may be useful to allow you to make
+measurements without undo risk of damage and an unlimited supply of fuses.
+<p>
+Locate the large electrolytic filter capacitor(s).  These will probably be
+near the power transformer connections to the circuit board with the power
+supply components.  Test for voltage across each of these with power on.  If
+they are in pairs, this may be a dual polarity supply (+/-, very common
+in audio equipment).  Sometimes, two or more capacitors are simply used
+to provide a higher uF rating.  If you find no voltage on one of these
+capacitors, trace back to determine if the problem is a rectifier diode,
+bad connection, or bad secondary winding on the power transformer (the
+latter is somewhat uncommon as the wire is relatively thick, however).
+<p>
+Dried up electrolytic capacitors will result in excessive ripple leading
+to hum or reduced headroom in audio outputs and possible regulation
+problems as well.  Test with a scope or multimeter on its AC scale (but
+not all multimeters have DC blocking capacitors on its AC input and these
+readings may be confused by the DC level).  If ripple is excessive - as a
+guideline if it is more than 10 to 20% of the DC level - then substitute
+or jumper across with a good capacitor of similar uF rating and at least
+the same voltage rating.
+<p>
+If you find voltages that are lower than expected, this could be due to bad
+filter capacitors, an open diode or connection (one side of a full wave
+rectifier circuit), or excessive load which may be either in the regulator(s),
+if any, or driven circuitry.
+<p>
+Disconnect the output of the power supply from its load.  If the voltage
+jumps up dramatically (or the fuse now survives or the series light bulb
+now goes out or glows dimly), then a short or excess load is likely.
+<p>
+If the behavior does not change substantially, the problem may be in the
+regulator(s).  Transistors, zener diodes, resistors, and other discrete
+components, and IC regulators like LM317s or 7809s can be tested with an
+ohmmeter or by substitution.  The most common failures are shorts for
+semiconductors, opens for resistors, and no or low output for ICs.
+<p>
+Where the supply uses a hybrid regulator like an STK5481, confirming
+proper input and then testing each output is usually sufficient to
+identify a failure.  A defective hybrid regulator will likely provide
+no or very low output on one or more outputs.  Confirm by disconnecting
+the load.  Test with any on/off (logic) control in both states.
+
+<h3><A NAME="adpsuni">Uninterruptible Power Supplies (UPSs) and Power Inverters</a></h3>
+
+CAUTION: reread safety guidelines as portions of these devices can be nasty.
+<p>
+Note: inexpensive UPSs and inverters generate a squarewave output so don't
+be surprised at how ugly the waveform appears if you look at it on a scope.
+This is probably normal.  More sophisticated and expensive units may use
+a modified sinewave - actually a 3 or 5 level discrete approximation to a
+sinewave (instead of a 2 level squarewave).  The highest quality units
+will generate a true sinewave using high frequency bipolar pulse width 
+modulation.  Don't expect to find this in a $100 K-Mart special, however.
+<p>
+A UPS incorporates a battery charger, lead-acid (usually) storage battery,
+DC-AC inverter, and control and bypass circuitry.
+<p>
+Note that if finding a UPS that provides surge protection is an important
+consideration, look for one that runs the output off of the battery at all
+times rather than bypassing the inverter during normal operation.  The battery
+will act as a nearly perfect filter in so far as short term line voltage
+variations, spikes, and noise, are concerned.
+<p>
+A DC-AC power inverter used to run line powered equipment from an automotive
+battery or other low voltage source is similar to the internal inverter in
+a UPS.
+<p>
+For a unit that appears dead (and the power has not been off for more than
+its rated holdup time and the outlet is live), first, check for a blown
+fuse - external or internal.  Perhaps, someone was attempting to run their
+microwave oven off of the UPS or inverter!
+<p>
+(See the section on: "Fuse post mortems" to identify likely failure mode.)
+<p>
+If you find one - and it is blown due to a short circuit - then there are
+likely internal problems like shorted components.  However, if it is blown
+due to a modest overload, the powered equipment may simply be of too high
+a wattage for the UPS or inverter - or it may be defective.
+<p>
+Failures of a UPS can be due to:
+<p>
+<ol>
+<li>Battery charging circuit - if the battery does not appear to be charging
+ even after an extended time, measure across the battery with the unit both
+ unplugged and plugged in.  The voltage should jump up some amount with
+ power on - when it is supposed to be charging.  Disconnect the battery
+ and try again if there is no action - the battery may be shorted totally.
+ Check for blown fuses, smoked parts, and bad connections.
+<p>
+<li>Battery - deteriorated or abused lead acid batteries are very common.
+ If the battery will not charge or hold a charge, battery problems are
+ likely.  A UPS (or any kind of lead-acid battery powered equipment) that
+ lies idle for a long time (say a year or two) without power to top off
+ the battery will likely result in a dead - not salvageable - battery due
+ to sulfation.  Symptoms will be: voltage on battery climbs to more than
+ 2.5 V per cell when first put on charge and even after a long charging
+ period, the battery has essentially no capacity.  If the battery voltage
+ is at its nominal value - even when the inverter should be running from it
+ (and there is no or low output), then there is a problem in the inverter
+ or its connections or there is excess load.
+<p>
+<li>Inverter - troubleshooting is similar to that required for a switchmode
+ power supply.  Common problems: shorted power semiconductors, open fusable
+ resistors, dried up electrolytic capacitors, and bad connections.  See the
+ document: <A HREF="smpsfaq.htm">Notes on the Troubleshooting and Repair of
+ Small Switchmode Power Supplies</a>.  A visual inspection may reveal parts
+ that have exploded or lost their smoke.
+<p>
+<li>Line bypass circuit (if used) - check for problems in the controller
+ or its standby power supply, or power switchover components, and bad
+ connections.
+</ol>
+<p>
+Here is some additional information on the basics and troubleshooting of
+uninterruptable power supplies.  Note that the following is from someone
+with a 230 VAC perspective so some aspects of the line circuitry may not
+apply to U.S.A. models.
+<p>
+(From: Lex Cunningham (lextron@iinet.net.au).)
+<p>
+UPSs come in all shapes and sizes, from 300 VA units for PCs to 3 phase
+units rated into the hundreds of kVA for use in industrial applications. The
+most common type readers of the repair newsgroup will come across will be
+single phase units with ratings up to 3 kVA. These mainly see use in
+domestic and commercial applications to provide protection for a single PC,
+a small network of PCs, or a server.
+<p>
+<b>Types of UPS:</b>
+<p>
+There are basically two types of UPS. With the standby type, the input
+voltage is switched to the output under normal conditions and the control
+electronics monitor the incoming line. Should the incoming line fail
+altogether, fall below a set  voltage, or rise above a set voltage, the
+inverter is powered up to support the load. When the line returns to normal,
+the inverter is turned off and the line is switched back to support the
+load. The marketing people use some odd terms for the standby type such as
+Line Interactive. What this means is that the UPS has Automatic Voltage
+Regulation of the output voltage. This is achieved by using boost and buck
+windings on the transformer. These windings are switched as necessary to
+maintain a relatively constant output voltage, even though the input voltage
+may be high or low.
+<p>
+The on-line type of UPS uses a dual conversion technique to deliver power to
+the load. The incoming line is converted to DC and then converted back to
+AC. The inverter runs continuously, hence the term on-line. These have the
+advantage of removing all of the line noise and no changeover delay. When
+the incoming line fails, a DC to DC converter is powered up to provide the
+DC rail required for the DC to AC inverter.
+<p>
+<b>Power Conversion Techniques:</b>
+<p>
+The standby UPS has two sub classes to describe the method of converting the
+battery supply to AC. The cheapest method is called quasi sine wave which
+uses pulse width modulation at the line frequency (50/60 Hz) to maintain the
+inverter output voltage. The output is basically a square wave of variable
+duty-cycle depending on the load. This square wave is applied to a transformer
+to obtain the required output voltage. To a switch mode power supply, the wave
+shape is not all that important.
+<p>
+The more expensive method is known as true sine wave. Pulse width modulation
+at 15 to 20 kHz is used to reconstruct a sine wave. This type of UPS is used
+in situations where square waves would cause overheating of electric motors.
+These are more complex than quasi sine wave units, and hence come at a
+higher price.
+<p>
+The on-line UPS uses high frequency PWM techniques and provides a sine wave
+output. The difference from the standby sine wave type is that the modern
+on-line inverter works directly at the line output voltage, rather than
+through a step up transformer.
+<p>
+<b>Safety Considerations:</b>
+<p>
+It can not be stressed enough that all UPS's are potential death traps. The
+line voltage in any country is lethal. Any voltage higher than around 50 V
+is considered hazardous.
+<p>
+<b>DC Safety:</b>
+<p>
+UPS's using a single 12 V battery can cause injury. The batteries used can
+supply large currents if short circuited. It is easy to lose a finger if a
+ring shorts the battery supply. The risk is that the ring becomes hot,
+causing cauterisation of the blood vessels. With no blood supply, the only
+solution is amputation.
+<p>
+The other risks of shorted batteries is the potential for the battery case
+to split open releasing electrolyte, and flying molten metal.
+<p>
+The DC supply of units in the 2 to 3 kVA range from 48 to 96 V. The 96 V
+units float the battery bank at 110 V, which will electrocute.
+<p>
+On-line units work at high voltages. In Australia, the nominal line voltage
+is 240 VAC which when rectified, results in power rails of plus and minus
+350 VDC. That is a total of some 700 V.
+<p>
+<b>AC Safety:</b>
+<p>
+When working on UPS's, the use of an earth leakage circuit breaker/residual
+current detector, or whatever they are known as in your part of the world,
+has to be considered mandatory.
+<p>
+<b>Other Safety:</b>
+<p>
+Some manufacturers, for cost reasons, do not use line monitoring
+transformers. Instead, high value resistors are used to divide the line
+voltage to a value suitable for the control electronics. This results in a
+machine that is technically totally live. Keep a watch out for these ones
+and test before touching.
+<p>
+Be aware that the ground clip of an oscilloscope probe is earth. Depending
+on wiring rules, earth may be bonded to neutral at the main switch/fuse
+panel. This is true in Australia. Use an oscilloscope with differential
+inputs designed for the job. A suitable alternative is an add on
+differential input unit in conjunction with a standard scope. The design
+presented in Elektor Electronics around 1994 works very well and with a
+bandwidth of 15 MHz, nothing will be missed.
+<p>
+<b>Battery Changing Procedures:</b>
+<p>
+There are a couple of types of UPS that have a strict battery change
+procedure. Failure to follow correct procedure results in the destruction of
+the UPS. Both types come from Lantech of Taiwan. This is not to say that
+only Lantech machines behave in this way. The ALi range from the mid 90's
+require the battery to be disconnected, and the reservoir capacitors on the
+main board discharged using a 220 ohm, 5 W resistor. Before reconnecting the
+battery, the unit must be plugged into the line to precharge the capacitors.
+Failure to discharge or precharge the capacitors causes destruction of the
+inverter output devices. This procedure is noted on a sticker inside the
+unit.
+<p>
+The current AI-UPS range requires reservoir capacitor precharging using a 1K
+ohm, 1 W resistor between the battery and the main board, however it is good
+practice to do the discharge part as well. This procedure is only noted on
+19 inch rack mount units. There is no warning on stand alone machines.
+<p>
+<b>Common UPS Faults</b>
+<p>
+<ul>
+<li><b>UPS shuts down in backup mode:</b>
+<p>
+ The most common fault ever seen is sulphated batteries. The constant
+ charging causes the electrolyte to dry out and the lead plates to become
+ lead sulphate. This results in a battery that has a greatly reduced capacity
+ resulting in the UPS shutting down on line failure. To determine a poor
+ battery, check for swelling of the battery case, or do a load test while
+ monitoring the battery voltage. If the battery voltage falls rapidly to
+ below 12 volts, then it is faulty. Also, if the battery charges rapidly from
+ below 12 volts to 13.8 volts, it is faulty. Always replace all batteries in
+ a bank, or the new one(s) will fail quickly.
+<p>
+<li><b>UPS will not start:</b>
+<p>
+ Most UPS's will not start unless there is sufficient input voltage. Assuming
+ the fuse is not blown or circuit breaker is good, check the input cutout
+ relay. The coils have been known to burn out.
+<p>
+ Even with an input voltage, the UPS will not start if the battery is flat.
+ This can be caused by battery age, a faulty charger, or running the UPS
+ until low voltage shutdown. If possible program the UPS to shut down at 30%
+ remaining capacity as this increases the life of the battery and ensures
+ there is sufficient power to restart when the line is restored.
+<p>
+ The Best Power (Sola in Oz) range of machines will go into fault mode at
+ power up if an internal fault is detected. Two of the causes are flat
+ batteries or the output relay not switching over. The 510 range has a
+ problem with the output relay not switching over. This is caused by an
+ electrolytic in the battery charger circuit failing. This is associated with
+ the auxiliary winding on the transformer. The capacitor fails leaving the
+ relay with insufficient voltage to switch, the microprocessor detects no
+ output voltage and enters fault mode. Replacing the capacitor with a bipolar
+ type capable of handling the high frequency ripple currents solves the
+ problem.
+<p>
+ Some UPS's will not work from their front panel controls as they have been
+ programmed into a certain mode to suit shutdown software. This requires the
+ use of a programming utility from the manufacturer to reprogram the unit.
+<p>
+<li><b>UPS stays in backup mode:</b>
+<p>
+ Check the line monitoring transformer windings. In units without
+ transformers, check the RF chokes and resistors. This particularly applies
+ to Lantech units.
+<p>
+<li><b>Other faults:</b>
+<p>
+ All faults can be traced using standard fault finding techniques. If the
+ fault simply can not be found, take the unit to your friendly UPS service
+ tech for an opinion. You will be charged for the work, but then the
+ technician likes to eat as well!
+</ul>
+<p>
+<A NAME="adpspro"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Protection Devices</h2>
+<h3><A NAME="adpsafi">About Fuses, IC Protectors, and Circuit Breakers</a></h3>
+
+The purpose of fuses and circuit breakers is to protect both the wiring
+from heating and possible fire due to a short circuit or severe overload
+and to prevent damage to the equipment due to excess current resulting
+from a failed component or improper use (i.e., excess volume to loudspeakers).
+<p>
+Fuses use a fine wire or strip (called the element) made from a metal which
+has enough resistance (more than for copper usually) to be heated by current
+flow and which melts at a relatively low well defined temperature.  When the
+rated current is exceeded, this element heats up enough to melt (or vaporize).
+How quickly this happens depends on the extent of the overload and the type
+of fuse.
+<p>
+Fuses found in consumer electronic equipment are usually cartridge type
+consisting of a glass (or sometimes ceramic) body and metal end caps.  The
+most common sizes are 1-1/4" mm x 1/4" or 20 mm x 5 mm.  Some of these have
+wire leads to the end caps and are directly soldered to the circuit board but
+most snap into a fuse holder or fuse clips.  Miniature types include: Pico(tm)
+fuses that look like green 1/4 W resistors or other miniature cylindrical or
+square varieties, little clear plastic buttons, etc.  Typical circuit board
+markings are F or PR.
+<p>
+IC protectors are just miniature fuses specifically designed to have a
+very rapid response to prevent damage to sensitive solid state components
+including intergrated circuits and transistors.  These usually are often
+in TO92 plastic cases but with only 2 leads or little rectangular cases
+about .1" W x .3" L x .2" H.  Test just like a fuse.  These may be designated
+ICP, PR, or F.
+<p>
+Circuit breakers may be thermal, magnetic, or a combination of the two.
+Small (push button) circuit breakers for electronic equipment are most
+often thermal - metal heats up due to current flow and breaks the circuit
+when its temperature exceeds a set value.  The mechanism is often the
+bending action of a bimetal strip or disc - similar to the operation of
+a thermostat.  Flip type circuit breakers are normally magnetic.  An electro-
+magnet pulls on a lever held from tripping by a calibrated spring.  These
+are not usually common in consumer equipment (but are used at the electrical
+service panel).
+<p>
+At just over the rated current, it may take minutes to break the circuit.
+At 10 times rated current, the fuse may blow or circuit breaker may open
+in milliseconds.
+<p>
+The response time of a 'normal' or 'rapid action' fuse or circuit breaker
+depends on the instantaneous value of the overcurrent.
+<p>
+A 'slow blow' or 'delayed action' fuse or circuit breaker allows instantaneous
+overload (such as normal motor starting) but will interrupt the circuit
+quickly for significant extended overloads or short circuits.  A large thermal
+mass delays the temperature rise so that momentary overloads are ignored.  The
+magnetic type breaker adds a viscous damping fluid to slow down the movement
+of the tripping mechanism.
+
+<h3><A NAME="adpsfpm">Fuse Post Mortems</a></h3>
+
+Quite a bit can be inferred from the appearance of a blown fuse if the
+inside is visible as is the case with a glass cartridge type.  One
+advantage to the use of fuses is that this diagnostic information is
+often available!
+<p>
+A fuse which has an element that looks intact but tests open may have just
+become tired with age.  Even if the fuse does not blow, continuous cycling
+at currents approaching its rating or instantaneous overloads results in
+repeated heating and cooling of the fuse element.  It is quite common for
+the fuse to eventually fail when no actual fault is present.
+<p>
+A fuse where the element is broken in a single or multiple locations blew
+due to an overload.  The current was probably more than twice the fuse's
+rating but not a dead short.
+<p>
+A fuse with a blackened or silvered discoloration on the glass where the
+entire element is likely vaporized blew due to a short circuit.
+<p>
+This information can be of use in directly further troubleshooting.
+
+<h3><A NAME="adpsfcb">Fuse or Circuit Breaker Replacement</a></h3>
+
+As noted, sometimes a fuse will blow for no good reason.  Replace fuse,
+end of story.  In this situation, or after the problem is found, what are
+the rules of safe fuse replacement?  It is inconvenient, to say the least,
+to have to wait a week until the proper fuse arrives or to venture out to
+Radio Shack in the middle of the night.
+<p>
+Even with circuit breakers, a short circuit may so damage the contacts or
+totally melt the device that replacement will be needed.
+<p>
+Four parameters characterizes a fuse or circuit breaker:
+
+<ol>
+<li>Current rating - this should not be exceeded (you have heard about not
+ putting pennies in fuse boxes, right?)  (The one exception to this rule
+ is if all other testing fails to reveal which component caused the fuse to
+ blow in the first place.  Then, and only then, putting a larger fuse in
+ or jumpering across the fuse  **just for testing** will allow the faulty
+ component to identify itself by smoking or blowing its top!)  A smaller
+ current rating can safely be used but depending on how close the original
+ rating was to the actual current, this may blow immediately.
+<p>
+<li>Voltage rating - this is the maximum safe working voltage of the circuit
+ (including any inductive spikes) which the device will safety interrupt.
+ It is safe to use a replacement with equal or high voltage rating.
+<p>
+<li>Type - normal, fast blow, slow blow, etc.  It is safe to substitute
+ a fuse or circuit breaker with a faster response characteristic but
+ there may be consistent or occasional failure mostly during power-on.
+ The opposite should be avoided as it risks damage to the equipment
+ as semiconductors tend to die quite quickly.
+<p>
+<li>Mounting - it is usually quite easy to obtain an identical replacement.
+<p>
+ However, as long as the other specifications are met, soldering a normal
+ 1-1/4" (3AG) fuse across a 20 mm fuse is perfectly fine, for example.
+ Sometimes a fuse will have wire leads and be soldered directly onto the
+ circuit board.  However, your own wires can be carefully soldered to the
+ much more common cartridge type to create a suitable replacement.
+</ol>
+
+<h3><A NAME="adpsiot">Comments on Importance of Thermal Fuses and Protectors</a></h3>
+
+Like a normal fuse or circuit breaker, a thermal fuse or thermal protector
+provides a critical safety function.  Therefore, it is extremely ill advised
+to just short it out if it fails.  Some designs even make this option extra
+tempting by providing an easy way to bypass even one buried inside a power
+transformer - using an additional, normally unused terminal.
+<p>
+For testing, it is perfectly acceptable to temporarily short out the device
+to see if the equipment then operates normally without overheating.  However,
+while these fuses do sometimes just fail on their own, most likely, there was
+another cause.  If you know what it was - you were trying to charge a shorted
+battery pack, using your window fan to mix cement, or something was shorted
+externally, then the fuse served its protective function and the equipment is
+fine.  IT SHOULD BE REPLACED WITH THE SAME TYPE or the entire transformer,
+motor, or whatever it was in should be replaced!  This is especially critical
+for unattended devices.  Otherwise, especially with unattended devices, you
+have a situation where if the overload occurred again or something else
+failed, the equipment could overheat to the point of causing a fire - and your
+insurance company may refuse to cover the claim if they find that a change was
+made to the circuit.  And even for portable devices like blow dryers and
+portable power tools, aside from personal safety should the device
+malfunction, the thermal protector is there to prevent damage to the
+equipment itself - don't leave it out!
+
+<p>
+<A NAME="adpstrn"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Transformers</h2>
+<h3><A NAME="adpsctt">Common Types of Transformers</a></h3>
+
+A transformer consists of a laminated iron or ferrite core and 2 or more
+insulated windings that are most often not connected to each other directly.
+If one set of windings is used as the input for AC power or an audio signal
+(the 'primary' winding), the voltage appearing on each of the other windings
+(the 'secondary' winding(s)) will be related by the ratio of the number of
+turns on each of the windings.  However, you don't get something for nothing:
+The current is related by the inverse of this ratio so the power doesn't
+change (except due to unavoidable losses).
+<p>
+Transformers are used in nearly every type of electronic equipment both for
+power and signals, and throughout the electrical distribution network to
+optimize the voltage/current used on each leg of the journey from the power
+plant to the user.
+<p>
+The types we are interested in with respect to household appliances, power
+tools, and consumer electronic equipment are most often use to convert the AC
+line voltage to some other value, lower or higher:
+
+<ol>
+<li>Low voltage power transformer are found in AC wall adapters and electronic
+ equipment as part of their power supplies to generate 1 or more DC voltages
+ to run the device, recharge its batteries, etc.  Their outputs are
+ typically between 2 and 48 VAC but almost any other value is possible.
+<p>
+<li>High voltage power transformers are found in microwave ovens, old TVs and
+ audio equipment based on vacuum tubes, oil burner ignitions, and some neon
+ signs.  Their output can go as high as 15 kV or more.
+<p>
+<li>Flyback (or LOPT), inverter, and other more specialized transformers are
+ driven by a high frequency oscillator or chopper in various equipment like
+ TVs and monitors (HV, LV, and other power supplies), PCs and some of their
+ peripherals, electronic flash units.  Note that these will NOT operate from
+ the AC line directly and are therefore useless unless driven by a proper
+ electronic circuit.
+</ol>
+
+There are also a couple of other common types of AC line operated
+transformers used in servicing:
+
+<ol start=4>
+<li>Isolation transformers are wound 1:1 so that the output voltage is the same
+ as the input voltage.  However, with no direct connection between windings,
+ equipment can be tested with less risk of shock.
+<p>
+<li>Variable transformers (or "Variac") allow the output voltage to be
+ adjusted between 0 and full (or slightly above) line voltage which is
+ useful for testing purposes where the behavior of a piece of equipment
+ is being determined.
+</ol>
+
+See the document: <A HREF="tshoot.htm">Troubleshooting of Consumer Electronic
+Equipment</a> for more information on these types of transformers.
+
+<h3><A NAME="adpstpt">Testing a Power Transformer</a></h3>
+
+Here are some simple tests to perform where you want to determine if a used
+(or new) power transformer with known specifications is actually good:
+
+<ol>
+<li>Look for obvious signs of distress.  Smell it to determine if there is any
+ indication of previous overheating, burning, etc.
+<p>
+<li>Plug it in and check for output voltages to be reasonably close (probably
+ somewhat high) to what you expect.
+<p>
+<li>Leave it on for awhile.  It may get anywhere from just detectable to
+ moderately warm but not to hot to touch and it shouldn't melt down, smoke,
+ or blow up.  Needless to say, if it does any of the latter, the tests are
+ concluded!
+<p>
+<li>Find a suitable load based on: R = V/I from the specifications and make
+ sure it can supply the current without overheating.  The voltage should
+ also not drop excessively between no and full load (but this depends on the
+ design, quality of constructions, whether you got it at Radio Shack :-),
+ etc.
+</ol>
+
+<h3><A NAME="adpsicu">Identifying the Connections on an Unknown Power Transformer</a></h3>
+
+Start with a good multimeter - DMM on the lowest ohms scale or VOM on the
+X1 resistance range.  (You will need to be able to measure down to .1 ohms
+for many of these.)  This will permit you to map the windings.
+<p>
+First, identify all connections that have continuity between them.  Except for
+the possible case of a water soaked transformer with excessive leakage, any
+reading less than infinity on the meter is an indication of a connection.  The
+typical values will be between something very close to 0 ohms and 100 ohms.
+<p>
+Each group of connected terminals represents one winding.  The highest reading
+for each group will be between the ends of the winding; others will be lower.
+With a few measurements and some logical thinking, you will be able to
+label the arrangement ends and taps of each winding.
+<p>
+Once you do this, applying a low voltage AC input (from another power
+transformer driven by a Variac) will enable you to determine voltage ratios.
+Then, you may be able to make some educated guesses as to the primary and
+secondary.  Often, primary and secondary windings will exit from opposite
+sides of the transformer.
+<p>
+For typical power transformers, there will be two primary wires but
+international power transformers may have multiple taps as well as a
+pair or primary windings (possibly with multiple taps) for switching
+between 110/115/120 VAC and 220/230/240 VAC operation.  Typical color
+codes for the primary winding(s) will be black or black with various
+color stripes.  Almost any colors can be used for secondary windings.
+Stripes may indicate center tap connections but not always.
+<p>
+Note: for safety, use the Variac and another isolated transformer for this.
+<p>
+Here is a more specific example:
+
+<blockquote>
+"I recently purchased at a local electronics surplus store at 35volt center
+ tap 2A transformer for a model railroad throttle (power supply).  The
+ secondary wires are red-red/yellow-red and I understand how to hook up the
+ secondary in order to get two 17.5 volt sources.  My dilemma is the
+ primary.  There are SIX black wires (black, black/red, black/blue,
+ black/green, black/yellow, black/grey).  Two of the wires were already
+ stripped and I hooked these up to 115 VAC but no voltage on the secondary
+ side.  Does anyone have any ideas?  I don't know the manufacturer, the
+ transformer is in an enclosed case (no open windings).  I also don't know
+ if it has multiple primaries that must be connected or if it has five taps
+ for different input voltages.  Any ideas????"
+</blockquote>
+
+Of course, I assume you did measure on the AC scale on the secondary! :-)
+Sorry, have to confirm the basics.  My natural assumption would also be
+that the striped wires were the ones you needed.
+<p>
+Here is a suggestion:
+
+<ol>
+<li>Use an ohmmeter to determine which sets of primary wires are connected.
+ The resistances will be very low but you should also be able to determine
+ which are just taps as the resistance between them will be very low.
+<p>
+<li>Since you already know what the secondary should be, power the secondary
+ from a low voltage AC source like another transformer.  Then measure
+ across each pair of primary wires.  You should be able to determine
+ which are the main wires and which are the taps.
+</ol>
+
+Using a combination of the above procedures should enable you to pretty
+fully determine what is going on.  I suspect that you have a pair of
+primary windings that can be connected either series (for 220) or parallel
+(110) and a tap but who knows.  Do the tests.  If in doubt, don't just
+connect it to 110 - you could end up with a melt-down.  Post your findings.
+
+<h3><A NAME="adpsdui">Determining Unknown Connections on International Power Transformers</a></h3>
+
+Most likely, you can figure this out if you can identify the input connections.
+<p>
+There will be two primary windings (resistance between the two will be
+infinite).  Each of these may also have additional taps to accommodate
+various slight variations in input voltage.  For example, there may
+be taps for 110/220, 115/230, 120/240, etc.
+<p>
+For the U.S. (110 VAC), the two primary windings will be wired in parallel.
+For overseas (220 VAC) operation, they will be wired in series.  When
+switching from one to the other make sure you get the phases of the two
+windings correct - otherwise you will have a short circuit!  You can test
+for this when you apply power - leave one end of one winding disconnected
+and measure between these two points - there should be close to zero voltage
+present if the phase is correct.  If the voltage is significant, reverse
+one of the windings and then confirm.
+<p>
+A multimeter on the lowest resistance scale should permit you to determine
+the internal arrangement of any taps on the primaries and which sets of
+secondary terminals are connected to each winding.  This will probably
+need to be a DMM as many VOMs do not have low enough resistance ranges.
+<p>
+It is best to test with a Variac so you can bring up the voltage gradually
+and catch your mistakes before anything smokes. 
+<p>
+You can then power it from a low voltage AC source, say 10 VAC from your
+Variac or even an AC wall adapter, to be safe and make your secondary
+measurements.  Then scale all these voltage readings appropriately.
+
+<h3><A NAME="adpsdpv">Determining Power (VA) Ratings of Unknown Transformers</a></h3>
+
+For a transformer with a single output winding, measuring temperature rise
+isn't a bad way to go.  Since you don't know what an acceptable temperature
+is for the transformer, a conservative approach is to load it - increase
+the current gradually - until it runs warm to the touch after an extended
+period (say an hour) of time.
+<p>
+Where multiple output windings are involved, this is more difficult since
+the safe currents from each are unknown.
+<p>
+(From: Greg Szekeres (szekeres@pitt.edu).)
+<p> 
+Generally, the VA rating of individual secondary taps can be measured.  While
+measuring the no load voltage, start to load the winding until the voltage
+drops 10%, stop measure the voltage and measure or compute the current. 10%
+would be a very safe value. A cheap transformer may compute the VA rating with
+a 20% drop. 15% is considered good. You will have to play around with it to
+make sure everything is OK with no overheating, etc.
+<p>
+(From: James Meyer (jimbob@acpub.duke.edu).)
+<p>
+With the open circuit voltage of the individual windings, and their DC
+resistance, you can make a very reasonable assumption as to the relative
+amounts of power available at each winding.
+<p>
+Set up something like a spread-sheet model and adjust the output current to
+make the losses equal in each secondary.  The major factor in any winding's
+safe power capability is wire size since the volts per turn and therefore the
+winding's length is fixed for any particular output voltage.  
+
+<h3><A NAME="adpsdrf">Determining the Ratings of a Fried Power Transformer</a></h3>
+
+A power transformer can die in a number of ways.  The following are the most
+common:
+
+<ul>
+<li>Primary open.  This usually is the result of a power surge but could also
+ be a short on the output leading to overheating.
+<p>
+ Since the primary is open, the transformer is totally lifeless.
+<p>
+ First, confirm that the transformer is indeed beyond redemption.  Some have
+ thermal or normal fuses under the outer layer of insulating tape or paper.
+<p>
+<li>Short in primary or secondary.  This may have been the result of
+ overheating or just due to poor manufacturing but for whatever reason, two
+ wires are touching.  One or more outputs may be dead and even those that
+ provide some voltage may be low.
+<p>
+ The transformer may now blow the equipment fuse and even if it does not,
+ probably overheats very quickly.
+<p>
+ First, make sure that it isn't a problem in the equipment being powered.
+ Disconnect all outputs of the transformer and confirm that it still has
+ nearly the same symptoms.
+</ul>
+
+There are several approaches to analyzing the blown transformer and/or
+identifying what is needed as a replacement:
+
+<ul>
+<li>If you have the time and patience and the transformer is not totally sealed
+ in Epoxy or varnish, disassembling it and counting the number of turns of
+ wire for each of the windings may be the surest approach.  This isn't as bad
+ as it sounds.  The total time required from start to dumping the remains in
+ the trash will likely be less than 20 minutes for a small power transformer.
+<p>
+ Remove the case and frame (if any) and separate and discard the (iron) core.
+ The insulating tape or paper can then be pealed off revealing each of the 
+ windings.  The secondaries will be the outer ones.  The primary will be the
+ last - closest to the center.  As you unwind the wires, count the number of
+ full turns around the form or bobbin.
+<p>
+ By counting turns, you will know the precise (open circuit) voltages of each
+ of the outputs.  Even if the primary is a melted charred mass, enough of the
+ wire will likely be intact to permit a fairly accurate count.  Don't worry,
+ an error of a few turns between friends won't matter.
+<p>
+ Measuring the wire size will help to determine the relative amount of
+ current each of the outputs was able to supply.  The overall ratings of
+ the transformer are probably more reliably found from the wattage listed
+ on the equipment nameplate.
+</ul>
+
+If you cannot do this for whatever reason, some educated guesswork will be
+required.  Each of the outputs will likely drive either a half wave (one
+diode), full wave (2 diodes if it has a centertap), or bridge (module or
+4 diodes).  For the bridge, there might be a centertap as well to provide
+both a positive and negative output.
+
+<ul>
+<li>You can sometimes estimate the voltage needed by looking at the components
+ in the power supply - filter cap voltage ratings and regulators.
+<p>
+<li>The capacitor voltage ratings will give you an upper bound - they are
+ probably going to be at least 25 to 50 percent above the PEAK of the input
+ voltage.
+<p>
+<li>Where there are regulators, their type and ratings and/or the circuit
+ itself may reveal what the expected output will be and thus the required input
+ voltage to the regulators.  For example, if there is a 7805 regulator chip,
+ you will know that its input must be greater than about 7.5 V (valleys of
+ the ripple) to produce a solid 5 V output.
+<p>
+<li>If there are no regulators, then the ICs, relays, motors, whatever, that
+ are powered may have voltage and current ratings indicating what power
+ supply is expected (min-max).
+</ul>
+<p>
+<A NAME="adpsttr"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Transformer Troubleshooting and Repair</h2>
+<h3><A NAME="adpstfd">Transformer Fault Diagnosis</a></h3>
+
+Some power transformers include a thermal fuse under the outer layers of
+insulation.  In many cases, an overload will result in a thermal fuse opening
+and if you can get at it, replacement will restore the transformer to health.
+Also see the section: <A HREF="#adpsiot">Comments on Importance of Thermal
+Fuses and Protectors</a>.
+<p>
+Where an open thermal fuse is not the problem, aside from bad solder or crimp
+connections where the wire leads or terminals connect to the transformer
+windings, anything else will require unwrapping one or more of the windings to
+locate an open or short.  Where a total melt-down has occurred and the result
+is a charred hunk of copper and iron, even more drastic measures would be
+required.
+<p>
+In principle, it would be possible to totally rebuild a faulty transformer.
+All that is needed is to determine the number of turns, direction, layer
+distribution and order for each winding.  Suitable magnet (sometimes called
+motor wire) is readily available.
+<p>
+However, unless you really know what you are doing and obtain the proper
+insulating material and varnish, long term reliability and safety are unknown.
+Therefore, I would definitely recommend obtaining a proper commercial
+replacement if at all possible.
+<p>
+See the section: <A HREF="#adpsrpt">Rewinding Power Transformers</a>.
+<p>
+However, DIY transformer construction is nothing new:
+<p>
+(From: Robert Blum (rfblum@worldnet.att.net).)
+<p>
+I have a book from the Government Printing Office . The title is: "Information
+for the Amateur Designer of Transformers for 25 to 60 cycle circuits" by
+Herbert B. Brooks. It was issued June 14, 1935 so I do not know if it is still
+in print.  At the time I got it it cost $.10.
+<p>
+(From: Mark Zenier (mzenier@netcom.com).)
+<p>
+"Practical Transformer Design Handbook" by Eric Lowdon.  Trouble is, last I
+checked it's out of print.  Published by both Sams and Tab Professional Books.
+<p>
+(From: Paul Giancaterino (PAULYGS@prodigy.net).)
+<p>
+I found a decent article on the subject in Radio Electronics,
+May 1983. The article explains the basics, including how to figure what
+amps your transformer can handle and how to size the wiring.
+
+<h3><A NAME="adpsrpt">Rewinding Power Transformers</a></h3>
+
+Here is some information and recommendations from people who have successfully
+repaired power transformers that have self destructed:
+<p>
+(From: colin@rowec.screaming.net.)
+<p>
+DISCLAIMER: There is a safety aspect of mains transformers.  Use this
+information entirely at your own risk.
+<p>
+I have wound and re wound several transformers. When I was first into
+Electronics (at about 12), I rewound a line output transformer of a colour
+TV. I reused the wire but I had to re insulate it by suspending it all around
+the garage and painting it with a special paint I had found. I would never do
+this again or suggest anyone else do it like this either! but it outlasted the
+tube.
+<p>
+Since then as an electronics engineer I have wound many SMPS transformers and
+rewound some working mains transformers to get different voltages.
+<p>
+If you do wind a transformer yourself you need a lot of patience and to be
+able to keep count of the number of turns (not as easy as it sounds) and
+strong fingers.
+<p>
+However, the mains transformers that I have come across that have blown up
+have been beyond repair. This is because the plastic former or bobbin usually
+melts with the heat that is generated by the fault current that flows when the
+insulation on the windings gives up. I would not attempt to try and wind a
+small mains transformer without the coil former as it would be too difficult
+to SAFELY keep the windings insulated from each other and get the required
+amount of wire to fit.
+<p>
+If the windings are severely shorted it would seem as though your transformer
+has suffered this fate. You would definitely have to replace all the windings.
+<p>
+There is of course the problem of finding out what voltage/current the
+windings were in the first place.
+<p>
+If the machine is only used at one input voltage you may be able to get away
+with one primary winding (where there were two before - a slight
+simplification but the wire will need to be slightly thicker - lower by 3 AWG
+numbers).
+<p>
+Apart from obtaining a direct replacement the best bet would be to find a
+transformer that has outputs that are the right voltages and sufficient
+current. This may be tricky and it may not fit inside the case. there are many
+places that sell of the shelf transformers. maybe you would need two
+transformers to get the right combination of voltages.
+<p>
+If you are very luck you might get just what you want from a junk shop.  or
+from a piece of junk equipment.
+<p>
+However if you are determined to try to wind a transformer there are several
+possibilities.
+<p>
+The most critical aspect of winding a mains transformer is the primary winding
+as the wire used is incredibly fine on small transformers and is easily
+damaged or even broken and good insulation is of the utmost importance. Also
+there is a heck of a lot wire and it becomes impracticable unless you are
+prepared to set up some sort of rig.  I would suggest that you consider the
+alternatives to winding this yourself which are :-
+
+<ul>
+<li>Buy a kit. Maplin in the UK do these in various sizes. the primary
+  winding comes ready wound, you just need the wire for the secondarys. It
+  comes with the information needed to calculate the number of turns and
+  diameter of wire to use from the voltage and current you need.
+<p>
+<li>Rewind a healthy transformer. I have done this several times. It is
+  imperative to dismantle the transformer without damaging the primary
+  winding insulation in any way. This is most difficult to do. Normally
+  the 'E' and 'I' laminations are tightly packed into the bobbin and the
+  first one to get out gets really bent up. It is unlikely that you you
+  would be able to do this successfully on a your first try. If it is
+  sealed with a lacquer or worse a hard setting sealant then it is almost
+  impossible. once you have removed the laminations you have to get at the
+  windings you are going to replace. sometimes a two piece plastic cover
+  clips over the bobbin.
+</ul>
+
+You must of course use a transformer that is big enough and has the correct
+primary voltage. given that the original failed and hand made transformers are
+never as compact as manufactured ones it would be best to use the biggest
+transformer that you can possible get to fit. For safety sake only use a
+modern transformer that is in good condition.
+<p>
+You may well be able to use one or more of the existing windings but you must
+bear in mind that each winding takes up an amount of space proportional to
+its current X voltage.
+<p>
+To work out the number of turns and size of wire in the windings you need to
+know the turns per volt of the new transformer. this can be found by counting
+one of the secondary windings and dividing by its rated voltage. The number of
+turns you need is this number times the voltage you want. The size of wire is
+determined by the current rating.  use the wire with the same area per amp as
+the existing winding.  The ends of the windings must be terminated
+properly. Use enameled copper wire. the enamel might need to be scraped of to
+enable soldering unless it is the self fluxing type and you have a very hot
+soldering iron. usually there are tags to solder the ends to.
+<p>
+Also, if it is in something like a tape recorder it most probably needs
+shielding.
+<p>
+It is up to you to ensure that the finished transformer is safe.  The best way
+to test the insulation is to test with a high voltage (a few kV) between
+primary and secondary and then between the core and each winding and check
+there is no leakage current.  with mains applied check that there is correct
+voltages at the outputs.  check that the transformer does not get too hot. All
+transformers get hot, some too hot to touch, but if after several hours its so
+hot that you skin sticks to it when you touch it it wont last very long !!
+<p>
+There are various places to get the EC wire and junk transformers, a search on
+the internet would be a good place to start.
+<p>
+(From: Bill Rothanburg (william.rothanburg@worldnet.att.net).)
+<p>
+I've done this.  It was more of an intellectual challenge, rather than
+something practical, but it can be done.  Some requirements:
+
+<ul>
+<li>A transformer which can be easily disassembled.  If the transformer is
+ saturated with varnish, expect problems.
+<p>
+<li>A lot of patience.
+<p>
+<li>A very good memory.
+<p>
+<li>A lot of patience.
+<p>
+<li>Reasonably good mechanical skills.
+</ul>
+<p>
+I had a relatively easy transformer to work with - single primary, dual
+secondaries.  The windings had not been saturated with varnish, so I was able
+to unwind them COUNTING THE TURNS.  Did I mention that this required a great
+deal of patience?  I was able to determine the wire gauge from the old
+windings.
+<p>
+The transformer had overheated to the point the plastic bobbin was garbage.  I
+was able to fabricate a replacement using fish paper and lots of varnish.
+<p>
+To assist in rewinding I built a "tool" to help - Actually a crank through a
+piece of wood.  The bobbin was held in place by a couple of nuts and spacers.
+The actual rewinding was the easiest part of the process.
+<p>
+If I were to try this again, I would definitely use a thermal protector in the
+transformer.
+
+<p>
+<A NAME="="adpsbat"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Batteries and Battery Packs</h2>
+<h3><A NAME="adpsbte">Battery Technology</a></h3>
+
+The desire for portable power seems to be increasing exponentially with
+the proliferation of notebook and palmtop computers, electronic organizers,
+PDAs, cellular phones and faxes, pagers, pocket cameras, camcorders and
+audio cassette recorders, boomboxes - the list is endless.
+<p>
+Two of the hottest areas in engineering these days are in developing
+higher capacity battery technologies (electrochemical systems) for
+rechargeable equipment and in the implementation of smart power management
+(optimal charging and high efficiency power conversion) for portable devices.
+Lithium Ion and Nickel Metal Hydride are among the more recent additions to
+the inventory of popular battery technologies.  A variety of ICs are now
+available to implement rapid charging techniques while preserving battery
+life.  Low cost DC-DC converter designs are capable of generating whatever
+voltages are required by the equipment at over 90% efficiency
+<p>
+However, most of the devices you are likely to encounter still use pretty
+basic battery technologies - most commonly throwaway Alkaline and Lithium
+followed by rechargeable Nickel Cadmium or Lead-Acid.  The charging circuits
+are often very simple and don't really do the best job but it is adequate
+for many applications.
+<p>
+For more detailed information on all aspects of battery technology, see
+the articles at:
+<p>
+<ul>
+<li><A HREF="../ELE/F_Battery.html">Sci.Electronics
+ Battery FAQs</A>
+</ul>
+<p>
+Many major battery manufacturers have extensive technical information on
+their Web sites, though not all of it may be unbiased.
+There is more on batteries than you ever dreamed of ever needing.  The
+sections below represent just a brief introduction.
+<p>
+A very few additional references include:
+<p>
+<ul>
+<li><A HREF="https://www.repairfaq.org/sam/http/www.batteryuniversity.com/">Battery University</A>.
+<p>
+<li><A HREF="https://www.repairfaq.org/sam/http/www.wikipedia.com/">Wikipedia</A>.  Search for
+ "battery typtes" or "battery technologies".
+<p>
+<li>For design references (and even complete schematics) for battery
+ chargers and power management, try
+ <A HREF="http://www.maxim-ic.com/">Maxim Semiconductors, Inc.</A>.
+<p>
+<li><A HREF="http://www.microchip.com/">Microchip Semiconductors, Inc.</A>.
+ In additional to custom chips, they also talk about using PICs
+ to do the jobs of the intelligent protector and charger.
+</ul>
+<p>
+
+<h3><A NAME="adpsbba">Battery Basics</a></h3>
+
+A battery is, strictly speaking, made up of a number of individual cells
+(most often wired in series to provide multiples of the basic cell voltage
+for the battery technology - 1.2, 1.5, 2.0, or 3.0 V are most common).
+However, the term is popularly used even for single cells.
+<p>
+Five types of batteries are typically used in consumer electronic equipment:
+<p>
+<ol>
+<li>Alkaline - consisting of one or more primary cells with a nominal terminal
+ voltage of 1.5 V.  Examples are AAA, AA, C, D, N, 9V ('transistor'),
+ lantern batteries (6V or more), etc.  There are many other available
+ sizes including miniature button cells for specialty applications like
+ clocks, watches, calculators, and cameras.  In general recharging of
+ alkaline batteries is not practical due to their chemistry and
+ construction.  Exceptions which work (if not entirely consistently as of
+ this writing) are the rechargeable Alkalines (e.g., 'Renewals').
+ Advantages of alkalines are high capacity and long shelf life.  These now
+ dominate the primary battery marketplace largely replacing the original
+ carbon-zinc and heavy duty types.  Note that under most conditions, it
+ not necessary to store alkaline batteries in the 'fridge to obtain maximum
+ shelf life.
+<p>
+<li>Lithium Ion - these primary cells have a much higher capacity than
+ alkalines.  The terminal voltage is around 3 volts or a bit more per cell.
+ These are often used in cameras, laptop computers, and other products
+ where their high cost is offset by the convenience of long life, light weight,
+ and compact size.  Lithium batteries in common sizes like 9V are beginning
+ to appear.  In general, I would not recommend the use of lithiums for use
+ in applications where a device can be accidentally left on - particularly
+ with kids' toys.  Your batteries will be drained overnight whether
+ a cheap carbon zinc or a costly lithium.  However, for smoke alarms,
+ the lithium 9V battery (assuming they hold up to their longevity claims)
+ is ideal as a 5-10 year service life without attention can be expected.
+<p>
+<li>Nickel Cadmium (NiCd) - these are the most common type of rechargeable 
+ battery technology use in small electronic devices.  They are available in
+ all the poplar sizes.  However, their terminal voltage is only 1.2 V per
+ cell compared to 1.5 V per cell for alkalines (unloaded).  This is not the 
+ whole story, however, as NiCds terminal voltage holds up better under load
+ and as they are discharged.  Manufacturers claim 500-1000 charge-discharge
+ cycles but expect to achieve these optimistic ratings only under certain
+ types of applications.  In particular it is usually recommended that
+ NiCds should not be discharged below about 1 V per cell and should not
+ be left in a discharged state for too long.  Overcharging is also an enemy
+ of NiCds and will reduce their ultimate life.  An electric shaver is an
+ example of a device that will approach this cycle life as it is used
+ until the battery starts to poop out and then immediately put on charge.
+ If a device is used and then neglected (like a seldom used printing
+ calculator), don't be surprised to find that the NiCd battery will not
+ charge or will not hold a charge next time the calculator is used.
+<p>
+<li>Nickel-Metal-Hydride (NiMH) - These are gradually replacing NiCds
+ in portable devices.  They have the same terminal voltage (1.2 V per
+ cell) and are charged in a similar manner to NiCds.  Advantages
+ include a supposed total lack of any voltage depression or memory
+ effect.  Disadvantages include a higher self discharge rate and
+ less tolerance of overcharging.  NiMH cells CANNOT be charged using
+ the same fast charger or built in charger of typical devices that
+ were designed for NiCds.
+<p>
+<li>Lead Acid - similar to the type used in your automobile but generally
+ specially designed in a sealed package which cannot leak acid under most
+ conditions.  These come in a wide variety of capacities but not in standard
+ sizes like AA or D.  They are used in some camcorders, flashlights, CD
+ players, security systems, emergency lighting, and many other applications.
+ Nominal terminal voltage is 2.0 V per cell.  These batteries definitely do
+ not like to be left in a discharged condition (even more so than NiCds) and
+ will quickly become unusable if left that way for any length of time.
+</ol>
+
+<h3><A NAME="adpbatcap">Capacities and Discharge Characteristics of Common Batteries</a></h3>
+
+Check out this <A HREF="http://www.candlepowerforums.com/vb/showthread.php?64660-Alkaline-Battery-Shoot-Out">Alkaline Battery Shoot Out (Candlepower Forum,
+2012)</a> for more than you probably ever wanted to know about a variety of the
+most common small batteries (AAA, AA, D).  The data is mostly for Alkaline
+cells but also has some comparisons with heavy duty (ZnCl) and lithium-ion.
+
+<h3><A NAME="adpsbch">Battery Chargers</a></h3>
+
+The (energy storage) capacity, C, of a battery is measured in ampere hours
+denoted a A-h (or mA-h for smaller types).  The charging rate is normally
+expressed as a fraction of C - e.g., .5 C or C/2.
+<p>
+In most cases, trickle charging at a slow rate - C/100 to C/20 - is easier on
+batteries.  Where this is convenient, you will likely see better performance
+and longer life.  Such an approach should be less expensive in the long run
+even if it means having extra cells or packs on hand to pop in when the others
+are being charged.  Fast charging is hard on batteries - it generates heat and
+gasses and the chemical reactions may be less uniform.
+<p>
+Each type of battery requires a different type of charging technique.
+
+<ol>
+<li>NiCd batteries are charged with a controlled (usually constant) current.
+ Fast charge may be performed at as high as a .5-1C rate for the types of
+ batteries in portable tools and laptop computers.  (C here is the amp-hour
+ capacity of the battery.  A .5C charge rate for a 2 amp hour battery
+ pack would use a current equal to 1 A, for example.)  Trickle charge at a
+ 1/20-1/10C rate.  Sophisticated charges will use a variety of techniques
+ to sense end-of-charge.  Inexpensive chargers (and the type in many cheap
+ consumer electronics devices) simply trickle charge at a constant current.
+<p>
+ Rapid chargers for portable tools, laptop computers, and camcorders, do at
+ least sense the temperature rise which is one indication of having reached
+ full charge but this is far from totally reliable and some damage is
+ probably unavoidable as some cells reach full charge before others due
+ to slight unavoidable differences in capacity.  Better charging techniques
+ depend on sensing the slight voltage drop that occurs when full charge
+ is reached but even this can be deceptive.  The best power management
+ techniques use a combination of sensing and precise control of charge
+ to each cell, knowledge about the battery's characteristics, and state
+ of charge.
+<p>
+ While slow charging is better for NiCds, long term trickle charging is
+ generally not recommended.
+<p>
+ Problems with simple NiCd battery chargers are usually pretty easy to
+ find - bad transformer, rectifiers, capacitors, possibly a regulator.
+ Where temperature sensing is used, the sensor in the battery pack may
+ be defective and there may be problems in the control circuits as well.
+ However, more sophisticated power management systems controlled by
+ microprocessors or custom ICs and may be impossible to troubleshoot for
+ anything beyond obviously bad parts or bad connections.
+<p>
+<li>Lead acid batteries are charged with a current limited but voltage
+ cutoff technique.  Although the terminal voltage of a lead-acid battery is
+ 2.00 V per cell nominal, it may actually reach more than 2.5 V per
+ cell while charging.  For an automotive battery, 15 V is still within
+ the normal range of voltages to be found on the battery terminals when
+ the engine (and alternator) are running.
+<p>
+ A simple charger for a lead-acid battery is simply a stepped down rectified
+ AC source with some resistance to provide current limiting.  The current
+ will naturally taper off as the battery voltage approaches the peaks
+ of the charging waveform.  This is how inexpensive automotive battery
+ chargers are constructed.  For small sealed lead-acid batteries, an IC
+ regulator may be used to provide current limited constant voltage charging.
+ A 1 A (max) charger for a 12 V battery may use an LM317, 3 resistors,
+ and two capacitors, running off of a 15 V or greater input supply.
+<p>
+ Trickle chargers for lead-acid batteries are usually constant voltage and
+ current tapers off as the battery reaches full charge.  Therefore, leaving
+ the battery under constant charge is acceptable and will maintain it at the
+ desired state of full charge.
+<p>
+ Problems with lead-acid battery chargers are usually pretty easy to
+ diagnose due to the simplicity of most designs.
+</ol>
+
+<h3><A NAME="adpdcbc">Dave's Comments on Building Charger for Small Lead-Acid Batteries</A></h3>
+
+The following applies to the sort of lead-acid batteries found in some
+camcorders and other portable equipment:
+<p>
+(From: Dave Martindale (davem@cs.ubc.ca).)
+<p>
+The simple way is to build a power supply that outputs 13.8 volts regulated,
+with a current limit of 0.5 A.  13.8 V can be left connected to the
+battery forever without damage - this is called a float charge.  The
+0.5 A current limit protects the battery from drawing too much current
+and overheating if it's been deeply discharged.  This sort of charger
+will get the battery back up to 80% charge within a few hours, so it's
+fine for most uses.
+<p>
+However, when designing it, make sure the charger doesn't self-destruct
+if the input voltage goes away (due to AC power failure) while still
+connected to the battery.  With a standard series regulator, when the
+input power fails the whole battery voltage gets applied to the base-
+emitter junction of the output transistor in reverse.  Many transistors
+are only specified to withstand about 6 V reverse base-emitter voltage,
+so with this design your charger will be toast at the first power failure.
+<p>
+If you want higher-performance charging, there are special charge
+controller chips that provide 3 or more charge phases.  They are:
+
+<ul>
+<li>Constant current charge at maximum safe current (see battery spec
+  sheet) until the voltage rises to about 14.5 V.
+<p>
+<li>Constant voltage charge at 14.5 V until the current drops to a fraction
+  of the initial current limit.
+<p>
+<li>Float charge at 13.65 V after that.
+</ul>
+
+By using the 14.5 V instead of 13.8 V for the initial charge voltage, this
+type of charger gets the battery back up to 90% charged in considerably
+less time.  But if you only care about charging overnight, you don't need
+the extra complexity.
+<p>
+On the other hand, NiCd batteries can safely be charged in less than an
+hour with suitable electronics.  Lead-acid simply can't be recharged
+that fast.
+
+<h3><A NAME="adpsnsu">Substituting NiCds for Alkalines</a></h3>
+
+First note that rechargeable batteries are NOT suitable for safety critical
+applications like smoke detectors unless they are used only as emergency
+power fail backup (the smoke detector is also plugged into the AC line) and
+are on continuous trickle charge).  NiCds self discharge (with no load) at
+a rate which will cause them to go dead in a month or two.
+<p>
+For many toys and games, portable phones, tape players and CD players, and
+boomboxes, TVs, palmtop computers, and other battery gobbling gadgets, it
+may be possible to substitute rechargeable batteries for disposable primary
+batteries.  However, NiCds have a lower terminal voltage - 1.2V vs. 1.5V - and
+some devices will just not be happy.  In particular, tape players may not
+work well due to this reduced voltage not being able to power the motor
+at a constant correct speed.  Manufacturers may specifically warn
+against their use.  Flashlights will not be as bright unless the light
+bulb is also replaced with a lower voltage type.  Other equipment may
+perform poorly or fail to operate entirely on NiCds.  When in doubt, check
+your instruction manual.  And, there is a slight, but non-zero chance that
+some equipment may actually be damaged.  This might occur if its design
+assumed something about the internal resistance of the batteris; the resistance
+is much lower for NiCds than Alkalines.
+
+<h3><A NAME="adpscle">Can a Large Electrolytic Capacitor be Substituted for a NiCd?</a></h3>
+
+The quick answer is: probably not.  The charger very likely assumes that
+the NiCds will limit voltage.  The circuits found in many common appliances
+just use a voltage source significantly higher than the terminal voltage
+of the battery pack through a current limiting resistor.  If you replace
+the NiCd with a capacitor and the voltage will end up much higher than
+expected with unknown consequences.  For more sophisticated chargers, the
+results might be even more unpredictable.
+<p>
+Furthermore, even a SuperCap cannot begin to compare to a small NiCd for
+capacity.  A 5.5 V 1 F (that's Farad) capacitor holds about 15 W-s of energy
+which is roughly equivalent to a 5 V battery of 3 A-s capacity - less than
+1 mA-h.  A very tiny NiCd pack is 100 mA-h or two orders of magnitude larger.
+
+<h3><A NAME="adpsdac">Determining the Actual Capacity of a NiCd Battery Pack</a></h3>
+
+When a battery pack is not performing up to expectations or is not marked
+in terms of capacity, here are some comments on experimentally determining
+the A-h rating.
+<p>
+When laying eggs, start with a chicken.  Actually, you have to estimate
+the capacity so that charge and discharge rates can be approximated.
+However, this is usually easy to do with a factor of 2 either way just be
+size:
+<pre>
+        Size of cells       Capacity range, A-h
+     ---------------------------------------------
+             AAA               .2 - .4
+             AA                .4 - 1
+             C                  1 - 2
+             D                  1 - 5
+        Cordless phone         .1 - .3
+          Camcorder             1 - 3+
+       Laptop computer          1 - 5+
+</pre>
+
+First, you must charge the battery fully.  For a battery that does not
+appear to have full capacity, this may be the only problem.  Your charger
+may be cutting off prematurely due to a fault in the charger and not the
+battery.  This could be due to dirty or corroded contacts on the charger
+or battery, bad connections, faulty temperature sensor or other end-of-charge
+control circuitry. Monitoring the current during charge to determine if the
+battery is getting roughly the correct A-h to charge it fully would be a
+desirable first step.  Figure about 1.2 to 1.5 times the A-h of the battery
+capacity to bring it to full charge.
+<p>
+Then discharge at approximately a C/20 - C/10 rate until the cell voltages
+drops to about 1 V (don't discharge until flat or damage may occur).  Capacity
+is calculated as average current x elapsed time since the current for a NiCd
+will be fairly constant until very near the end.
+
+<h3><A NAME="adpsmem">NiCd Batteries and the Infamous 'Memory Effect'</a></h3>
+
+Whether the NiCd 'memory effect' is fact or fiction seems to depend on
+one's point of view and anecdotal evidence.  What most people think is
+due to the memory effect is more accurately described as voltage
+depression - reduced voltage (and therefore, reduced power and capacity)
+during use.
+<p>
+(The next section is from: Bob Myers (myers@fc.hp.com) and are based on a
+ GE technical note on NiCd batteries.)
+<p>
+The following are the most common causes of application problems wrongly
+attributed to 'memory':
+<ol>
+<li>Cutoff voltage too high - basically, since NiCds have such a flat
+ voltage vs. discharge characteristic, using voltage sensing to determine
+ when the battery is nearly empty can be tricky; an improper setting coupled
+ with a slight voltage depression can cause many products to call a battery
+ "dead" even when nearly the full capacity remains usable (albeit at a 
+ slightly reduced voltage).
+<p>
+<li>High temperature conditions - NiCds suffer under high-temp conditions; such
+ environments reduce both the charge that will be accepted by the cells
+ when charging, and the voltage across the battery when charged (and the
+ latter, of course, ties back into the above problem).
+<p>
+<li>Voltage depression due to long-term overcharge - Self-explanatory.  NiCds
+ can drop 0.1-0.15 V/cell if exposed to a long-term (i.e., a period of
+ months) overcharge.  Such an overcharge is not unheard-of in consumer gear,
+ especially if the user gets in the habit of leaving the unit in a charger
+ of simplistic design (but which was intended to provide enough current for
+ a relatively rapid charge).  As a precaution, I do NOT leave any of my
+ NiCd gear on a charger longer than the recommended time UNLESS the charger
+ is specifically designed for long-term "trickle charging", and explicitly
+ identified as such by the manufacturer.
+<p>
+<li>There are a number of other possible causes listed in a "miscellaneous"
+ category; these include -
+<p>
+<ul>
+<li>Operation below 0 degrees C.
+<li>High discharge rates (above 5C) if not specifically designed for such use.
+<li>Inadequate charging time or a defective charger.
+<li>One or more defective or worn-out cells.  They do not last forever.
+</ul>
+<p>
+To close with a quote from the GE note:
+<p>
+<blockquote>
+"To recap, we can say that true 'memory' is exceedingly rare.  When we see
+ poor battery performance attributed to 'memory', it is almost always certain
+ to be a correctable application problem.  Of the problems noted above,
+ Voltage Depression is the one most often mistaken for 'memory'.....
+</blockquote>
+<p>
+This information should dispel many of the myths that exaggerate the idea of
+a 'memory' phenomenon."
+</ol>
+<p>
+
+<h3><A NAME="adpsmem1">Memory Effect in NiMH Batteries?</a></h3>
+
+The party line is that Nickel-Metal-Hydride batteries do not have any
+memory effect.  Perhaps, perhaps not.
+See <A HREF="http://www.dvanhorn.org/NIMH/Index.php">HiMH Batteries, Memory,
+and Thermal Runaway</A> for one person's test results and other information.
+
+<h3><A NAME="adpscar">Care and Feeding of NiCds</a></h3>
+
+Here are six guidelines to follow which will hopefully avoid voltage
+depression or the memory effect or whatever:
+<p>
+(Portions of the following guidelines are
+ from the NiCd FAQ written by: Ken A. Nishimura (KO6AF))
+
+<ol>
+<li>DON'T deliberately discharge the batteries to avoid memory.  You risk
+ reverse charging one or more cell which is a sure way of killing them.
+<p>
+<li>DO let the cells discharge to 1.0V/cell on occasion through normal use.
+<p>
+<li>DON'T leave the cells on trickle charge for long times, unless voltage
+ depression can be tolerated.
+<p>
+<li>DO protect the cells from high temperature both in charging and storage.
+<p>
+<li>DON'T overcharge the cells.  Use a good charging technique.  With most
+ inexpensive equipment, the charging circuits are not intelligent and will
+ not terminate properly - only charge for as long as recommended in the
+ user manual.
+<p>
+<li>DO choose cells wisely.  Sponge/foam plates will not tolerate high
+ charge/discharge currents as well as sintered plate.  Of course, it
+ is rare that this choice exists.
+</ol>
+
+Author's note: I refuse to get involved in the flame wars with respect
+to NiCd battery myths and legends --- sam.
+
+<h3><A NAME="adpsclo">Why There Will Never Actually be Closure on This Topic</a></h3>
+
+(From: Mark Kinsler (kinsler@froggy.frognet.net).)
+<p>
+All of which tends to support my basic operating theory about the charging of
+nickel-cadmium batteries:
+
+<ol>
+<li>Man is born in sin and must somehow arrange for the salvation of his
+immortal soul. 
+<p>
+<li>All nickel-cadmium batteries must be recharged.
+<p>
+<li>There is no proper method of performing either task (1) or task (2) to the
+ satisfaction of anyone.  
+</ol>
+
+<h3><A NAME="adpsnmh">Nickel Cadmium Versus Nickel-Metal-Hydride in a Nutshell</a></h3>
+
+NiCds are inexpensive, reliable, and easy to charge, but may suffer from
+voltage depression (what people call the memory effect) from repeated shallow
+discharge cycles.
+<p>
+NiMHs have slightly higher capacity and no memory effect but have higher
+initial cost and are more sensitive to overcharging.  Must be used with
+compatible charger.
+
+<h3><A NAME="adprnfab">Randy's Notes on First Aid for NiCd Battery Packs</a></h3>
+
+CAUTION: Opening these battery packs will of course void any warranty but
+you knew that.  Also, make notes of exactly how the cells and anything else
+inside is arranged.  Improper reassembly can result in damage to equipment
+and/or risk of overheating should cells short inside the pack due to lack of
+or misplaced insulation.  Under no circumstances should all thermal switches
+be removed - not only are they a safety device to prevent excessive
+temperatures but may also be part of the charging circuit.  So, if they are
+removed, your next charge may be your last!  I'd highly recommend that all
+of them be replaced (from another pack as a last resort) and installed
+in exactly the same positions they were originally.
+<p>
+(From: Randolph Miller (randolph.miller2@verizon.net).)
+<p>
+Many "name brand" camcorder and other similar battery packs contain two or
+even 3 thermal switches (those rectangular, un-identifiable, wired
+between the cells).  They contain a bimetal strip operating a set of contacts
+which open at a preset temperature.  Often only one of these will fail,
+resulting in a $40 NiCad that won't charge.  Since these little suckers are
+pricey if ya kind find them, a safe and cheap fix, is to test the thermal
+switches for continuity (they should be closed at room temp) and remove the
+defective one.  If needed move the other, or at least one, to the mid-point
+of the cells series.  If a battery pack has 8 separate cells, (i.e.: a 9.6 V
+VHS-C camera pack) the thermal switch should be wired between the 4th and 5th,
+and as far away from the charging contacts as possible.  The extra switches
+were added as a safety factor but since the average one is designed to open
+at 87&deg;C, there is no fire hazard so long as the pack is re-sealed after
+working on it.
+<p>
+A quick fix for a NiCad pack left on the dashboard.  Since good ol' solar
+power can heat a battery pack to the point where the thermal protection can
+open (and even warp a case) you can be stuck at the soccer game with what
+seems like dead batteries.  The trick is to drop the temp below 87&deg;C. Wrap
+the battery in plastic so the contacts won't get wet, and stick it in the
+cooler with the kids lunch and your six-pack.  A few minutes and the
+thermistor should close.  letting the batter work normally.  Also, if the
+cord is long enough, never recharge a NiCad inside the car.  Place the
+battery and charger under the car, in the shade, so it doesn't heat quickly
+and will get a full charge.
+
+<h3><A NAME="adpsitu">Identifying Technology of Unmarked Battery Packs</a></h3>
+
+Since the nominal (rated) voltages for the common battery technologies
+differ, it is often possible to identify which type is inside a pack
+by the total output voltage:
+
+<ul>
+<li>NiCd packs will be a multiple of 1.2 V.
+<li>Lead-acid packs will be a multiple of 2.0 V.
+<li>Alkaline packs will be a multiple of 1.5.
+</ul>
+
+Note that these are open circuit voltages and may be very slightly higher
+when fully charged or new.
+<p>
+Therefore, it is generally easy to tell what kind of technology is
+inside a pack even if the type is not marked as long as the voltage
+is marked.  Of course, there are some - like 6 V that will be ambiguous.
+
+<h3><A NAME="adppledb">Powering LEDs with Batteries</a></h3>
+
+LEDs look like diodes with a high forward voltage drop.  Above the that
+voltage, the incremental resistance is very low and without current limiting,
+the current would be critically dependent on the exact voltage of the power
+source.  Most of the time, they are spec'd at a particular maximum current
+and need some means to limit the current to that value based on the input
+voltage.  Some devices may depend on the internal resistance of the batteries
+to provide the current limiting - this is a poor approach and depends greatly
+on the type and capacity of the batteries being used.  Most common is just a
+resistor but this provides no regulation and poor efficiency.  Better designs
+(used in LED flashlights) will use a DC to pulse inverter with regulation
+achieving constant light output regardless of battery state-of-charge and high
+efficiency.  LEDs can usually withstand short high current pulses and this
+allows the circuit to be designed with low losses.
+<p>
+The specifications for LEDs you see in electronics distributor's catalogs
+may look the same as those for incandescent lamps but they are not.
+Incandescent lamps provide their own current limiting; LEDs do not.
+It's possible to luck out and happen to have a given LED work without
+current limiting with a particular set of batteries but it hardly an
+acceptable design approach.  Slight variations in battery parameters will
+result in gross changes in light intensity and possible shortening of life
+or outright destruction of the LED.
+<p>
+<A NAME="adpsbpt"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Battery Problem Troubleshooting and Repair</h2>
+<h3><A NAME="adpsbpr">Problems with Battery Operated Equipment</a></h3>
+
+For primary batteries like Alkalines, first try a fresh set.  For NiCds,
+test across the battery pack after charging overnight (or as recommended
+by the manufacturer of the equipment).  The voltage should be 1.2 x n V
+where n is the number of cells in the pack.  If it is much lower - off by
+a multiple of 1.2 V, one or more cells is shorted and will need to be
+replaced or you can attempt zapping it to restore the shorted cells.  See
+the section: <A HREF="#adpszap">Zapping NiCds to Clear Shorted Cells</a>.
+Attempt at your own risk!
+<p>
+If the voltage drops when the device is turned on or the batteries are
+installed - and the batteries are known to be good - then an overload
+may be pulling the voltage down.
+<p>
+Assuming the battery is putting out the proper voltage, then a number of
+causes are possible:
+
+<ol>
+<li>Corroded contacts or bad connections in the battery holder.
+<li>Bad connections or broken wires inside the device.
+<li>Faulty regulator in the internal power supply circuits.  Test
+ semiconductors and IC regulators.
+<li>Faulty DC-DC inverter components.  Test semiconductors and other
+ components.
+<li>Defective on/off switch (!!) or logic problem in power control.
+<li>Other problems in the internal circuitry.
+</ol>
+
+<h3><A NAME="adpsnbw">NiCd Battery Pack Will Not Hold a Charge</a></h3>
+
+This applies if the pack appears to charge normally and the terminal
+voltage immediately after charging is at least 1.2 x n where n is the
+number of cells in the pack but after a couple of days, the terminal
+voltage has dropped drastically.  For example, a 12 V pack reads only 6 V
+48 hours after charging without being used.
+<p>
+What is most likely happening is that several of the NiCd cells have
+high leakage current and drain themselves quite rapidly.  If they are
+bad enough, then a substantial fraction of the charging current itself is
+being wasted so that even right after charging, their capacity is less
+than expected.  However, in many cases, the pack will deliver close to
+rated capacity if used immediately after charging.
+<p>
+If the pack is old and unused or abused (especially, it seems, if it
+is a fast recharge type of pack), this is quite possible.  The cause
+is the growth of fine metallic whiskers called dendrites that partially
+shorts the cell(s).  If severe enough, a dead short is created and no
+charge at all is possible.
+<p>
+Sometimes this can be repaired temporarily at least by 'zapping' using
+a large charged capacitor to blow out the whiskers or dendrites that
+are causing the leakage (on a cell-by-cell basis) but my success on
+these types of larger or high charge rate packs such as used in laptop
+computers or camcorders has been less than spectacular.  See the section:
+<A NAME="#adpszap">Zapping NiCds to Clear Shorted Cells</a>.
+
+<h3><A NAME="adpsbwi">What is This Thing in my NiCd Battery Pack?</a></h3>
+
+In addition to the NiCd cells, you will often find one or more small parts
+that are generally unrecognizable.  Normally, you won't see these until
+you have a problem and, ignoring all warnings, open the pack.
+<p>
+If it is a little rectangular silver or plastic box in series with one of the
+positive or negative terminals of the pack, it is probably a thermostat and
+is there to shut down the charging or discharging if the temperature of the
+pack rises too high.  (The manufacturer name "Klixon" would be a dead giveaway
+to identity.  Izuzu also makes these things.)  If it tests open at room
+temperature, it is bad.  With care, you can safely substitute a low value
+resistor or auto tail light bulb and see if the original problem goes away
+or at least the behavior changes.  However, if there is a dead short
+somewhere, that device may have sacrificed its life to protect your equipment
+or charger and going beyond this (like shorting it out entirely) should be
+done with extreme care.  These may be either mechanical (bimetal
+strip/contacts) or solid state (Polyfuse(tm) - increases resistance
+with overcurrent).
+<p>
+If it looks like a small diode or resistor, it could be a temperature
+sensing thermistor which is used by the charger to determine that the
+cells are heating which in its simple minded way means the cells are being
+overcharged and it is should quit charging them.  You can try using a
+resistor in place of the thermistor to see if the charger will now
+cooperate.  Try a variety of values while monitoring the current or
+charge indicators.  However, the problem may actually be in the charger
+controller and not the thermistor.  The best approach is to try another pack.
+<p>
+It could be any of a number of other possible components but they all serve
+a protective and/or charge related function.
+<p>
+Of course, the part may be bad due to a fault in the charger not shutting
+down or not properly limiting the current as well.
+
+<h3><A NAME="adpszap">Zapping NiCds to Clear Shorted Cells</a></h3>
+
+Nickel-Cadmium batteries that have shorted cells can sometimes be rejuvenated -
+at least temporarily - by a procedure affectionately called 'zapping'.
+<p>
+The cause of these bad NiCd cells is the formation of conductive filaments
+called whiskers or dendrites that pierce the separator and short the positive
+and negative electrodes of the cell.  The result is either a cell that will
+not take a charge at all or which self discharges in a very short time.  A
+high current pulse can sometimes vaporize the filament and clear the short.
+<p>
+The result may be reliable particularly if the battery is under constant
+charge (float service) and/or is never discharged fully.  Since there are
+still holes in the separator, repeated shorts are quite likely especially if
+the battery is discharged fully which seems to promote filament formation,
+<p>
+I have used zapping with long term reliability (with the restrictions
+identified above) on NiCds for shavers, Dustbusters, portable phones,
+and calculators.
+<p>
+WARNING: There is some danger in the following procedures as heat is
+generated.  The cell may explode!  Take appropriate precautions and don't
+overdo it.  If the first few attempts do not work, dump the battery pack.
+<p>
+<b>Attempt sapping at your own risk!!!</b>
+<p>
+You will need a DC power supply and a large capacitor - one of those 70,000
+uF 40 V types used for filtering in multimegawatt geek type automotive audio
+systems, for example.  A smaller capacitor can be tried as well.
+<p>
+Alternatively, a you can use a 50 to 100 A 5 volt power supply that doesn't
+mind (or is protected against) being overloaded or shorted.
+<p>
+Some people recommend the use of a car battery for NiCd zapping.  DO NOT be
+tempted - there is nearly unlimited current available and you could end with
+a disaster including the possible destruction of that battery, your NiCd,
+you, and anything else that is in the vicinity.
+<p>
+OK, you have read the warnings:
+<p>
+Remove the battery pack from the equipment.  Gain access to the shorted
+cell(s) by removing the outer covering or case of the battery pack and
+test the individual cells with a multimeter.  Since you likely tried
+charging the pack, the good cells will be around 1.2 V and the shorted
+cells will be exactly 0 V.  You must perform the zapping directly across
+each shorted cell for best results.
+<p>
+Connect a pair of heavy duty clip leads - #12 wire would be fine - directly
+across the first shorted cell.  Clip your multimeter across the cell
+as well to monitor the operation.  Put it on a high enough scale such
+that the full voltage of your power supply or capacitor won't cause any
+damage to the multimeter.
+<p>
+<b>Wear your eye protection!!!</b>
+
+<ol>
+<li>Using the large capacitor:
+<p>
+<ul>
+<li>Charge the capacitor from a current limited 12-24 V DC power supply.
+<p>
+<li>Momentarily touch the leads connected across the shorted cell to the
+ charged capacitor, + to +, - to -.  CAUTION: Polarity is critical - do it
+ backwards and you will make the problem worse, probably terminal.  There will
+ be sparks.  The voltage on the cell may spike to a high value - up to the
+ charged voltage level on the capacitor.  The capacitor will discharge almost
+ instantly.
+</ul>
+<p>
+<li>Using the high current power supply:
+<p>
+<ul>
+<li>Turn on the supply.
+<p>
+<li>Momentarily touch the leads connected across the shorted cell to the
+ power supply output, + to +, - to -.  CAUTION: Polarity is critical - do it
+ backwards and you will make the problem worse, probably terminal.  There will
+ be sparks.  DO NOT maintain contact for more than a couple of seconds.  The
+ NiCd may get warm!  While the power supply is connected, the voltage on the
+ cell may rise to anywhere up to the supply voltage.
+</ul>
+</ol>
+
+Now check the voltage on the (hopefully previously) shorted cell.
+<p>
+If the dendrites have blown, the voltage on the cell should have jumped
+to anywhere from a few hundred millivolts to the normal 1 V of a
+charged NiCd cell.  If there is no change or if the voltage almost
+immediately decays back to zero, you can try zapping couple more times
+but beyond this is probably not productive.
+<p>
+If the voltage has increased and is relatively stable, immediately
+continue charging the repaired cell at the maximum SAFE rate specified
+for the battery pack.  Note: if the other cells of the battery pack are
+fully charged as is likely if you had attempted to charge the pack, don't
+put the entire pack on high current charge as this will damage the other
+cells through overcharging.
+<p>
+One easy way is to use your power supply with a current limiting resistor
+connected just to the cell you just zapped.  A 1/4 C rate should be
+safe and effective but avoid overcharging.  Then trickle charge at
+the 1/10 C rate for several hours.  (C here is the amp-hour capacity of
+the cell.  Therefore, a 1/10 C rate for a 600 mA NiCd is 50 mA.)
+<p>
+This works better on small cells like AAs than on C or D cells since the
+zapping current requirement is lower.  Also, it seems to be more difficult
+to reliably restore the quick charge type battery packs in portable tools
+and laptop computers that have developed shorted cells (though there are
+some success stories).
+<p>
+My experience has been that if you then maintain the battery pack in
+float service (on a trickle charger) and/or make sure it never discharges
+completely, there is a good chance it will last.  However, allow the
+bad cells to discharge to near 0 volts and those mischievous dendrites
+will make their may through the separator again and short out the cell(s).
+
+<h3><A NAME="adpstcn">Tom's Comments on NiCd Care and Feeding</a></h3>
+
+(From: Tom Lamb (tlamb@gwe.net).)
+
+<ul>
+<li>Measuring NiCd capacity - I use a very simple/effective system. Put a 2.5
+ ohm resistor across the contacts of a cheap travel analog clock, which will
+ time the rundown. It is quite consistent for good cells.  A good typical 
+ AA NiCd will run one hour.
+<p>
+<li>NiCd zapping - I use a  1 ohm power resistor in series with a car battery,
+ though a series headlight will also work.  I charge for about 30 secs or
+ until warm, which will clear the whisker and put in enough charge to see if
+ the cell is salvageable.
+</ul>
+
+<h3><A NAME="adpsbjc">Battery Juice and Corroded Contacts</a></h3>
+
+Unless you have just arrived from the other side of the galaxy (where
+such problems do not exist), you know that so-called 'leak-proof' batteries
+sometimes leak.  This is a lot less common with modern technologies than with
+the carbon-zinc cells of the good old days, but still can happen.  It is
+always good advice to remove batteries from equipment when it is not being
+used for an extended period of time.  Dead batteries also seem to be more
+prone to leakage than fresh ones (in some cases because the casing material
+is depleted in the chemical reaction which generates electricity and thus
+gets thinner or develops actual holes).
+<p>
+In most cases, the actual stuff that leaks from a battery is not 'battery
+acid' but rather some other chemical.  For example, alkaline batteries
+are so called because their electrolyte is an alkaline material - just the
+opposite in reactivity from an acid.  Usually it is not particularly
+reactive (but isn't something you would want to eat).
+<p>
+The exception is the lead-acid type where the liquid inside is sulfuric acid
+of varying degrees of strength depending on charge.  This is nasty and should
+be neutralized with an alkaline material like baking soda before being
+cleaned up.  Fortunately, these sealed lead-acid battery packs rarely
+leak (though I did find one with a scary looking bulging case, probably
+due to overcharging - got rid of that is a hurry).
+<p>
+Scrape dried up battery juice from the battery compartment and contacts
+with a plastic or wooden stick and/or wipe any liquid up first with a dry
+paper towel.  Then use a damp paper towel to pick up as much residue as
+possible.  Dispose of the dirty towels promptly.
+<p>
+If the contacts are corroded, use fine sandpaper or a small file to remove
+the corrosion and brighten the metal.  Do not an emery board or emery paper
+or steel wool as any of these will leave conductive particles behind which
+will be difficult to remove.  If the contacts are eaten through entirely,
+you will have to improvise alternate contacts or obtain replacements.
+Sometimes the corrosion extends to the solder and circuit board traces as
+well and some additional repairs may be needed - possible requiring
+disassembly to gain access to the wiring.
+
+<h3><A NAME="adpsexp">Exploding Batteries - These Things Really Happen</a></h3>
+
+(From: Greg Raines (ghr@ix.netcom.com).)
+<p>
+When I was about 10 years old I was sitting in my dad's driveway in a '65
+Plymouth Fury III station wagon while he disconnected the trickle charger from
+the '67 Fiat in the garage.  I heard a pop and saw my dad throw his hands over
+his face, run to the back door and start kicking it to get someone to open it.
+Fortunately he wasn't injured.  But it was an eye opener.  It was probably 30
+or below, there was no flame present, and the double garage door was open (this
+happened in Connecticut).  Also in a Fiat 850 sport coupe the battery is in the
+trunk (front) so there really isn't anything up there that would cause a spark
+(engine & gas tank in back).  So it must have been a spark off of the charger
+when he pulled it off the terminal (he hadn't unplugged the charger).
+
+<h3><A NAME="adpssol">Soldering Tabs Onto NiCd Batteries</a></h3>
+
+When replacing NiCd batteries in packs or portable tools, it is often
+necessary to attach wires to the individual cells.  It may be possible to
+obtain NiCds with solder tabs attached (Radio Shack has these) but if
+yours do not, here are two ways that work.  They both require a (Weller)
+high wattage soldering gun.
+<p>
+I use a high power Weller (140 W) soldering gun.  Use fine sandpaper to
+thoroughly clean and roughen up the surface of the battery cell at both
+ends.  Tin the wires ahead of time as well.  Arrange the wire and cell
+so that they are in their final position - use a vise or clamp or buddy
+to do this.  Heat up the soldering gun but do not touch it to the battery
+until it is hot - perhaps 10 seconds.  Then, heat the contact area on the
+battery end while applying solder.  It should melt and flow quite quickly.
+As soon as the solder adheres to the battery, remove the heat without
+moving anything for a few seconds.  Inspect and test the joint.
+A high power soldering iron can also be used.
+<p>
+Here is a novel approach that appears to work:
+<p>
+(From: Clifford Buttschardt (cbuttsch@slonet.org).)
+<p>
+There is really no great amount of danger spot welding tabs!  They usually
+are made of pure nickel material.  I put two sharp pointed copper wires in
+a soldering gun, place both on the tab in contact with the battery case 
+and pull the trigger for a short burst.  The battery remains cool.
+<p>
+(From: mcovingt@ai.uga.edu (Michael Covington).)
+<p>
+Of course!  A soldering gun is a source of about 1.5 V at 100 A RMS.
+Should make a fine spot-welder.  You should write that up for QST
+("Hints and Kinks") or better yet, send it in a letter to the editor
+of "Electronics Now" (the magazine I write for).
+<p>
+<A NAME="adpsbri"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<h2>Battery Related Information</h2>
+<h3><A NAME="adpsaut">Automotive Power</a></h3>
+
+While it is tempting to want to use your car's battery as a power source
+for small portable appliances, audio equipment, and laptop computers,
+beware: the power available from your car's electrical system is not
+pretty.  The voltage can vary from 9 (0 for a dead battery) to 15 V under
+normal conditions and much higher spikes or excursions are possible.
+Unless the equipment is designed specifically for such power, you are
+taking a serious risk that it will be damaged or blown away.
+<p>
+Furthermore, there is essentially unlimited current available from the
+battery (cigarette lighter) - 20 A or more.  This will instantly turn
+your expensive CD player to toast should you get the connections wrong.
+No amount of internal protection can protect equipment from fools.
+<p>
+My recommendation for laptop computers is to use a commercially available
+DC-AC inverter with the laptop's normal AC power pack.  This is not the
+most efficient but is the safest and should maintain the laptop's warranty
+should something go wrong.  For CD players and other audio equipment, only
+use approved automotive adapters.
+
+<h3><A NAME="adpstst">How Do Those On-Battery or On-the-Package Battery Testers Work?</a></h3>
+
+There is a graded width resistance element that gets connected when you pinch
+those two points.  It heats up - substantially, BTW.  Some sort of liquid
+crystal or other heat sensitive material changes from dark to clear or yellow
+at a fairly well defined temperature.
+<p>
+Incidentally, since the current is significant, repeated 'testing' will drain
+the batteries - as with any proper under-load battery test!  This isn't an
+issue for occasional testing but if the kids figure how to do this....
+<p>
+Personally, I would rather use a $3 battery checker instead of paying for
+throw-away frills!
+
+<h3><A NAME="adpsbel">Battery Eliminator for Laptop or Appliance with Dead NiCds</a></h3>
+
+Even where you have the AC adapter, it is quite likely that simply removing
+the (shorted) battery pack will not allow you to use it.  This is because
+it probably uses the battery as a smoothing capacitor.  You cannot simply
+replace the battery with a large electrolytic capacitor because the battery
+also limits the voltage to a value determined by the number of cells in the
+pack.  Without it, the voltage would be much too high, possibly resulting in
+damage.  You could use N power diodes in series (i.e., N=Vb/.7) to drop the
+approximate voltage of the battery pack AND a large capacitor but you would be
+wasting a lot of power in the form of heat.
+<p>
+One alternative is to substitute a regulated power supply with an output equal
+to the the battery voltage and current capacity found by dividing the VA
+rating of the normal wall adapter by the battery's nominal terminal voltage
+(this will be worst case - actual requirements may be less).  Connect this
+directly in place of the original battery pack.  Unless there is some other
+sort of interlock, the equipment should be perfectly happy and think it is
+operating from battery power!
+<p>
+Also see the other parts of this document dealing with AC Adapters and
+Transformers.
+<p>
+<hr>
+<p>
+<li>Back to <A HREF="#adpstoc">AC Adapters and Power Supplies Table of
+ Contents</A>.
+<p>
+-- end V1.19
+<p>
+</BODY>
+</HTML>

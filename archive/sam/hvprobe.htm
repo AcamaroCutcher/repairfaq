@@ -1,0 +1,755 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/hvprobe.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Basics of High Voltage Probe Design</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/hvprobe.htm">https://www.repairfaq.org/sam/hvprobe.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Basics of High Voltage Probe Design
+</h1>
+<h2>
+Version 1.29 (08-Mar-09)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="shvtoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#shvpre">Preface</a>
+ <ul>
+ <li><A HREF="#shvaac">Author and Copyright</a> 
+ <li><A HREF="#shvdis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#shvint">Introduction</a>
+ <ul>
+ <li><A HREF="#shvsap">Scope and Purpose of This Document</a>
+ <li><A HREF="#shvsaf">SAFETY</a>
+ </ul>
+<p>
+<li><A HREF="#shvdes">High Voltage Probe Design</a>
+ <ul>
+ <li><A HREF="#shvbas">Basic Considerations</a>
+ <li><A HREF="#shvfre">Frequency Response</a>
+ </ul>
+<p>
+<li><A HREF="#shvdx">Simple High Voltage Probe Design Examples</A>
+ DMM</a>
+ <ul>
+ <li><A HREF="#shvdx1">50,000 V Maximum Using 10Mohm Z-in DMM</a>
+ <li><A HREF="#shvdx2">50,000 V Maximum Using 30kohm/V VOM</a>
+ <li><A HREF="#shvsam">Sample Circuit</a>
+ <li><A HREF="#shvcal">Calibration</a>
+ </ul>
+<p>
+<li><A HREF="#shvinf">More Information on High Voltage Probes</a>
+ <ul>
+ <li><A HREF="#shvcon">Construction of High Voltage Probes</a>
+ <li><A HREF="#shvhvf">High Voltage Probe Frequency Response</a>
+ <li><A HREF="#shvhva">High Voltage Probe for AC Measurements</a>
+ <li><A HREF="#shvmhf">More on Measuring High Frequency High Voltage</a>
+ <li><A HREF="#shvcom">Commercial High Voltage Probes</a>
+ </ul>
+</ul>
+<A NAME="shvpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#shvtoc">HV Probe Design Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="shvaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy;</a> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="shvdis">DISCLAIMER</h3></a>
+
+The devices, equipment, circuits, and other gadgets described in this document
+may be dangerous.  Much of it deals with potentially lethal voltages.  Getting
+electrocuted could ruin your whole day.  Using an inadequate or improperly
+designed or fabricated high voltage probe to measure high voltage can be
+equally dangerous.
+<p>
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+For really high voltage equipment, also see:
+<A HREF="http://www.pupman.com/safety.htm">Tesla Coils Safety Information</A>.
+<p>
+WARNING: The microwave oven is perhaps the most dangerous equipment you are
+likely to encounter around the house.  The high voltage (up to 5,000 V) along
+with the high current (1 A or more) availability make this an instantly lethal
+combination.  It is highly recommended that NO measurements be made on a
+powered microwave oven.  Only after the plug has been pulled and its high
+voltage capacitor has been safely discharged should you even think about
+touching or probing anything.  Most troubleshooting can be done with at most
+an ohmmeter.  See the document:
+<A HREF="micfaq.htm">Notes on the
+Troubleshooting and Repair of Microwave Ovens</A> for more information.
+By comparison, TVs, monitors, and even large helium-neon lasers, are tame.
+While still very dangerous, they don't have quite the deadly quality of the
+microwave oven!
+<p>
+<A NAME="shvint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#shvtoc">HV Probe Design Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="shvsap">Scope and Purpose of This Document</A></h3>
+
+There are all sorts of times when being able to determine the value of a
+high voltage DC source is desirable.  Most multimeters have a maximum range
+of 750 or 1,000 V.  (One exception is the workhorse Simpson 260 which has a
+5,000 V range).  Whether testing a TV with a dim picture, a helium-neon
+laser power supply that does work quite right, or troubleshooting some
+home-built high voltage project, the ability to measure 10, 20, 30, or more
+kV can come in handy.
+<p>
+This document provides information on constructing very basic high voltage
+probes suitable for measuring the high voltages found in consumer electronic
+equipment like TVs, monitors, and microwave ovens (though the latter is not
+recommended for safety reasons).
+<p>
+These simple approaches will work for DC and low frequency AC voltages but
+no effort is made to compensate for stray capacitance - which will seriously
+limit high frequency response.  However, some of the issues are discussed.
+<p>
+If you will be making HV measurements regularly, by all means invest in a
+real HV probe for your multimeter.  A commercial HV probe will still be a
+far better long term investment than some cobbled-together unit.  However,
+for occasional HV testing, what is described below can be built and used
+safely but probably won't have the accuracy, consistency, or frequency
+response of a good commercial probe.  Aside from purchasing a HV probe new,
+these do show up surplus as well as on eBay, possibly at greatly reduced
+prices.  Even if a model isn't available for your particular multimeter
+(which is likely), it should be possible to adapt almost any commercial
+probe to work with it, requiring at most a scaling factor when taking a
+reading.
+
+<h3><A NAME="shvsaf">SAFETY</h3></a>
+
+Read the associated document: <A HREF="safety.htm">Safety Guidelines for High
+Voltage and/or Line Powered Equipment</A> before attempting to work with high
+voltage systems.  High voltage can jump amazing distances when you least
+expect it.  The direct or indirect consequences of this can ruin your entire
+day or a whole lot more.
+<p>
+<A NAME="shvdes"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#shvtoc">HV Probe Design Table of Contents</A>.
+<h2>High Voltage Probe Design</h2>
+<h3><A NAME="shvbas">Basic Considerations</A></h3>
+
+CAUTION: DMMs may not be particularly forgiving of voltages on their inputs
+exceeding their specifications.  Autoranging DMMs may be even more likely to
+blowout as they are selecting the correct range - if there even is one.
+Depending on your electrical and mechanical components, the chance of excess
+voltage due to arc-over, leakage, or component breakdown may be a major
+consideration.  My analog VOM has survived many close encounters with HV.  You
+should not assume the same for the typical low cost or even expensive DMM.
+There is a reason for the high cost of commercial HV probes - these kinds of
+factors are incorporated (hopefully) in their design.
+<p>
+A simple high voltage probe for a DMM or VOM may be constructed from a pair of
+resistors.  This is suitable for DC measurements but without compensation,
+will have a unknown AC response due to the very high impedance and stray
+capacitance forming a filter - low pass or high pass depending on the amount
+of stray capacitance and input capacitance of your meter or scope.  However,
+this simple design is sufficient for the majority of consumer electronics work
+which are mostly DC measurements.  I have not characterized the AC response of
+this probe design.  However, if there is AC riding on your high voltage, it
+may mess up your readings if there is no compensation provided as it may act
+as a high pass filter.
+<p>
+To design the voltage divider, the input impedance of the meter must be taken
+into account.  There is a minor but significant difference between DMMs and
+VOMs.
+<ul>
+<li>DMM: Z-in is usually constant, often 10M ohms.
+<li>VOM: Z-in is the voltage range (full scale) times the ohms/volt rating of
+ the meter.
+</ul>
+Here is the basic circuit:
+<PRE>
+
+  High Voltage &lt;------/\/\/\/\/\---------+-------------> + to DMM/VOM
+                           R1            |                      |
+                                         \                      \
+                                      R2 /                   R3 /
+                                         \                      \
+                                         /                      /
+                                         |                      |
+  Ground Clip  &lt;-------------------------+-------------> - to DMM/VOM
+
+</PRE>
+R1 together with R2||R3 form a voltage divider where R3 is the internal
+resistance of the DMM or VOM on the scale for which the probe is designed.
+<p>
+While R2 is not strictly needed, it is recommended that it be included and
+approximately equal to the Z-in of the meter on the scale you will be using.
+The reason to include R2 is to insure that high voltage never can reach the
+meter.  The ground clip should be securely connected to the metal chassis of
+the device being tested - the frame of a microwave oven or CRT
+grounding/mounting strap of a TV or monitor - before it is powered up.  Both
+R1 and R2 should be located in the probe head.
+<p>
+The only difficult part is locating a suitable resistor for R1 that has high
+enough resistance and physically is long enough such that arc-over is avoided.
+<A HREF="http://www.caddock.com/">Caddock</A>,
+<A HREF="http://www.ohmcraft.com/">OhmCraft</A>,
+<A HREF="http://www.victoreen.com/">Victoreen</A>, and
+<A HREF="http://www.vishay.com/">Vishay</A>
+are among the major companies that manufacture suitable resstors.
+But don't expect them to pay  much attention to you for an order of 5
+resistors!  However, it may be possible obtain free samples if you explain
+what you're doing - and their lawyers don't get involved!  If this doesn't
+work out, electronics surplus outfits occasionally come up with odd lots of
+strange components such as these and they even show up on eBay from
+time-to-time.
+<p>
+The high value high voltage resistor can also be constructed from several equal
+lower value resistors in series if they are all approximately the same size.
+Another possibility is salvaging the focus divider networks from dead flybacks
+or TV/monitor voltage multiplier assemblies.  Even if the unit was discarded
+as being faulty, where there are no internal shorts in the HV rectifier or
+resistive network itself, the entire unit can be used intact.
+<p>
+In addition to basic safety precautions when working around high voltages,
+some form of equipment protection should be considered in provide an arc-over
+path to ground should there be arcing over the surface of the resistor as well
+as if the resistor should somehow decrease in value.  There is no telling what
+can happen under less than ideal damp or dirty conditions.
+<p>
+A 'corona', 'arc', or 'discharge' ring could be placed around the resistor near
+the low voltage end securely connected to the ground cable.  The idea is that
+any arcing over the surface should find this as its destination before
+obliterating your meter.
+<p>
+A variety of devices could be placed across R2 to limit the maximum voltage
+present in the event of a breakdown.  Suitable devices include neon light
+bulbs (NE2s without resistors); zener, avalanche, or ordinary diodes; or other
+semiconductor junction devices.  Traditional surge suppressors like MOVs and
+Tranzorbs may work but their off-state impedance may be too low compared to
+R2).  The neon bulb is good since its impedance is essentially infinite until
+its breakdown of 90 volts or so is reached.  In some cases, these devices will
+be destroyed (semiconductors may short) but they will have served their
+protective function and are a small price to pay to prevent you and your
+meter from being blown.
+
+<h3><A NAME="shvfre">Frequency Response</a></h3>
+
+Probe compensation similar to that used on oscilloscope probes can be
+implemented.  However, the determination of the capacitor values is beyond the
+scope of this note.  To put it simply, the ratio of the capacitance C1:C2
+(where C1 is across R1 and C2 is across R2||R3) needs to be equal to the ratio
+of R2||R3 to R1 (or equivalently, to the inverse of the voltage divider
+ratio).  C2 includes the stray capacitance and input capacitance of the meter
+or scope probe.  The capacitor across R1 would need to sustain the HV so that
+is another complication.  Since a 10x scope probe usually has an input
+impedance of 10M, the same design as used for the DMM would work with a
+scope.  Although I have not pursued this issue, it sounds like based on the
+ratio (1000:1 would mean that C1 would need to be extremely small, probably
+smaller than the stray capacitance of the R1 and the associated wire) you
+would need to add a capacitance for C2 and that there will be enough stray
+capacitance such that no physical C1 will be needed.
+<p>
+If you are only interested in DC measurements, putting a .1 uF capacitor
+across R2 should smooth out any 50/60 Hz or higher frequency ripple.
+<p>
+The implementation of full probe compensation is left as an exercise for the
+motivated student.
+<p>
+<A NAME="shvdx"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#shvtoc">HV Probe Design Table of Contents</A>.
+<h2>Simple High Voltage Probe Design Examples</h2>
+<h3><A NAME="shvdx1">50,000 V Maximum Using a 10Mohm Z-in DMM</A></h3>
+
+By my rule above, I will select R2 to be 10M ohms.  Fine adjustment of
+calibration could be made by making R2 out of a combination of a fixed
+resistor and a multiturn pot.
+<p>
+To minimally load the circuit under test, R1 should be as high as practical.
+Practical here means (1) low enough so that leakage over its surface is not a
+problem, (2) low enough that a reasonable voltage can be developed across
+R2||R3, and high enough so that loading of equipment being tested will not
+change the readings by more than a few percent.
+<p>
+R2||R3 is 5M ohm.  Selecting R1 to be 4,995M ohm will give a 1000:1 ratio so
+that 50,000 volts will read out as 50 V on the DMM.  4,995M ohm is high
+enough that loading of a 250M ohm focus network should not be an issue (5%).
+1000:1 is a nice easy to remember ratio.  You could go to something higher if
+loading is still a concern but then leakage current over the surface of R1
+becomes an even greater concern.  Even 5,000M ohm is about as close to an
+open circuit as you can get - any contamination whatsoever will change the
+calibration significantly.  You may find that using a resistance around
+1,000M will result in less of a problem and accept the circuit loading that
+this value implies.
+<p>
+For all practical purposes, you can use 5,000M instead of the exact value of
+4,995M.  The error of about 0.1 percent will be less than the error spec of
+most portable DMMs and much less than the error spec of any VOM.  And, you
+probably aren't going to risk your expensive precision bench multimeter on
+this lunacy anyhow!
+
+<h3><A NAME="shvdx2">50,000 V Maximum Using a 30kohm/V VOM</A></h3>
+
+This is a little more complicated because you need to pick a range and then
+calculate the Z-in for that range.  for example, for the 100 V range of a
+30kohm/V VOM, the Z-in will be 3M ohms.  For the same 5,000M ohm R1 and 10 M
+ohm R2, you would get a reading of 23 V (roughly) on the 100 V scale for a 50
+kV input.  The divide ratio in this case is about 218.
+<p>
+It is a simple matter to determine a scale and an R2 such that the actual high
+voltage measurement is easily calculated from the meter reading.  What you
+want is the ratio of R1 to R2||R3 to be a nice round number.  Note that
+switching ranges will produce some peculiar behavior due to this current
+division between R2 and R3.  A unique R2 must be selected for each range of
+interest.  You are already using nearly the maximum sensitivity of the meter
+and switching to a lower range will only slightly change the position of the
+needle unless you construct a range switch box as shown below.
+<p>
+Note that the 30kohm/V sensitivity of the VOM in the example is a bit
+unusual but was based on my cheap, old, but reliable Lafayette VOM,
+still going strong at 40+ years of age!  The most common sensitivity for
+a good quality VOM is 20kohm/V (though some were as high as 100kohm/V).
+But this will force you to actually think about the circuit (what a concept!)
+and adjust the resistance value accordingly. :)
+<p>
+<A NAME="shvsam"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#shvtoc">HV Probe Design Table of Contents</A>.
+<h2>Sample Circuit</h2>
+
+I have constructed a high voltage probe from the surplus bleeder resistor from
+a defunct video terminal.  For the probe tip, I used a discarded probe from a
+VOM.  The resistor and probe tip were mounted inside an insulating plastic
+tube with R2 included at its base.  A ground cable with an allegator clip
+provided the connection to the chassis.  A second pair of wires with banana
+plugs connected to the meter via a switchbox which could select between a DMM
+or a couple of different scales on a VOM.  Potting the entire HV head is a
+good idea to minimize the possibility of arc-over.  Remember that 50,000 V can
+jump several inches (2 inches in dry air approximately).  See above text for
+other suggestions on equipment/you protection (which is not shown).
+<p>
+This circuit uses only a 203M ohm high voltage resistor.  Since the internal
+resistance of a typical focus divider network is 200-300M ohm, this probe
+would obviously load such a circuit excessively.
+<PRE>
+                                      .
+   High Voltage &lt;----/\/\/\/\-----+--------+-------------+----o + to DMM/VOM
+                        R1        |   .    |             |
+                       203M       |   .    \             |
+                  (15W HV rated)  |   .    / R4          |
+                                  \   .    \ 360K    SW1 o
+                               R2 /   .    /            /
+                               1M \   .    |         3 o o o 1
+                                  /   .    |           | 2 |
+                                  |   .    \           \   \
+                                  |   . +->/ R5    R6  /   / R7
+                                  |   . |  \ 25K   1M  \   \ 810K
+                                  |   . |  / Adj       /   /
+                                  |   . |  |           |   |
+    Ground Clip &lt;-----------------+-----+--+-----------+---+--o - to DMM/VOM
+                                      .
+                      Probe Head      .    Range Switch Box
+                                      .
+</PRE>
+<ul>
+<li>SW1 - SPDT Center Off Toggle Switch.
+<li>All resistors except R1 are 1/4 watt 2%.
+<p>
+<li>50,000 V maximum based on the particular R1 I had laying around. 1000:1
+voltage division.
+<p>
+<li>SW1-1 = Radio Shack DMM on 3, 30, or 300 V scale (10M Zin).
+<li>SW1-2 = VOM, 25 V scale (30K ohms/V, 750K Zin).
+<li>SW1-3 = VOM, 100 V scale (30K ohms/V, 3M Zin).
+</ul>
+<p>
+
+Modifications to use a higher value R1 are straightforward.
+
+<h3><A NAME="shvcal">Calibration</A></h3>
+
+Unless you have a calibrated HV supply, a working TV for which you have the
+service manual makes a good starting point.  The proper high voltage is
+usually specified to within 5-10%.  If you have a line-transformer based HV
+supply (e.g., neon sign transformer, rectifier, capacitor), then this would be
+pretty accurate based on your power line voltage.  For a DMM with a constant
+input resistance, you can use a low voltage (like a few hundred V) on a lower
+range and extrapolate for the HV range.  However, for a VOM, you cannot use
+this technique since changing ranges also changes the parallel resistance of
+R2||R3.  You are already using nearly the full sensitivity of the meter.
+<p>
+<A NAME="shvinf"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#shvtoc">HV Probe Design Table of Contents</A>.
+<h2>More Information on High Voltage Probes</h2>
+<h3><A NAME="shvcon">Construction of High Voltage Probes</a></h3>
+
+(From: Duane C. Johnson (redrok@pclink.com).)
+<ol>
+<li>When you make the resister strings make sure that the maximum voltage
+ rating of the resisters is not exceeded. Most resisters have a maximum
+ rating of 200 volts. In this case I would not exceed 100 volts per
+ resister.
+<p>
+<li>Don't place the scope directly in series with the higher resisters. The
+ first resister should be in parallel with the scope and and ground or the
+ scope chassis. 
+<p>
+ This detail is important for safety reasons. If the connection to the scope
+ becomes disconnected then their will not be a dangerous shock hazard as
+ would be the case if the scope was in series.
+</ol>
+<p>
+(From: Larry G. Nelson Sr. (nr@ma.ultranet.com).)
+<p>
+You can do this with a high voltage resistor divider network. That is what is 
+in a high voltage probe you would buy. This can be very dangerous to you and 
+your equipment in the event of a failure. Please be very careful. I suggest a 
+fuse at the probe input and an MOV across the resistor to ground that will 
+connect to the scope and use a plexiglass tube to put it all in to contain the 
+bits if anything blows up.
+<p>
+(From: Kevin Astir (kferguson@aquilagroup.com).)
+<p>
+With respect to preventing high voltage arcing and corona, *do not* use RTV.
+<p>
+Places that carry the GC line will have some 'anti corona discharge dope'
+often called 'Q-dope'.  This is *the* stuff to use at HV.  You can clean it
+off with acetone when you discover that you didn't clean flux off good enough
+and have an arc underneath.  Epoxy and RTV have no such advantage, and RTV
+releases corrosive acid while curing to boot.
+<p>
+Heed the warnings of other respondents WRT resistor voltage.  As they said 100
+V per for garden variety resistors will yield a safe margin.  200V is typical
+max rating.
+<p>
+There are special HV resistors (up to 10 kV or so) made, available into the G
+Ohm range.  I don't know of a hobbiest source however.  If you know anyone who
+works in nuclear instrumentation field they may be able to snag one for
+you. (HV used as detector and PMT bias in radiation detectors).  This is what
+will be inside "real" HV probe from Fluke, or Tektronix.
+<p>
+Finally, I have a lot of experience, and am fairly blase' around HV, but in
+addition to "normal" 115V AC rules, (no rings, one hand in pocket, etc.) I
+*never* work on HV stuff (not even a TV or hi-pot test) alone.  And, I make
+sure the 'observer' knows CPR, even if I have to wait 2 days to fix TV, so
+girl friend can 'help'.
+
+<h3><A NAME="shvhvf">High Voltage Probe Frequency Response</A></h3>
+
+(From: Winfield Hill (hill@rowland.org).)
+<p>
+You can calculate this for yourself.  The parasitic lead-to-lead capacitance
+of a typical small resistor is 0.05 to 0.2pF.  The capacitance from the
+*middle* of the resistor and from any connection node between series resistors,
+to ground, may range from 1pF to 5pF or more depending upon your choice of a
+shielding scheme.  Longer glass resistors intended for high voltages have
+lower lead-to-lead capacitance, but higher distributed parallel capacitance.
+<p>
+As a worst case, imagine a 1000M ohm probe made with a 2-inch long resistor.
+To start, place the capacitance to ground from the midpoint.  If you assume
+5pF of parallel capacitance, you'll see you're in trouble even at 60Hz!
+<ul>
+<li>HV probes with usable high frequency response may have cleverly arranged 
+ shields which can be connected to ground, the attenuated signal output, 
+ and the input.  Some shields may overlap and may be adjustable, to provide
+ an adjustable capacitive divider that can swamp the remaining effects of the
+ resistor's capacitance.
+<p>
+<li>These probes can be very accurate at DC and high frequencies, but the skill
+ of the designer is tested in the transition between resistive and capacitive
+ divider action.  They can be very badly behaved in this transition region.
+ Basically the "center" of the resistor experiences a bypass to ground (a
+ severe dip in gain) or due to other HF components, a severe peak in gain.
+ This can easily be 50% and cover a decade.  Typically it'll happen at 20 to
+ 100 kHz.
+<p>
+ One solution invokes the capacitance from a few carefully-placed concentric
+ sleeves connected to the input and the signal output, plus an overall shield
+ or guard connected to ground.
+<p>
+<li>Poorly designed probes can suffer from mid- or high-frequency errors and
+ from severe pickup sensitivity to nearby rapidly-changing voltages.  For
+ example, I've seen probes that provide an output even when the measuring tip
+ is grounded!
+</ul>
+The classic low-voltage probe architecture of a pair pf RCs doesn't work for
+HV scope probes, unless (1) you're willing to have an overly high capacitive
+loading, or (2) you don't care about mid-frequency or pulse-shape response
+accuracy.  This is  because the RES1 value will be very high, 100M or more
+likely 1000M ohms, and physically long and large.  So the real circuit is
+like:
+<PRE>
+
+                +------------ CAP1 -------------+
+                |                               |
+Probe tip o--------- Rs -*- Rs -*- Rs -*- Rs -------- etc
+                         |      |      |
+                         Cs     Cs     Cs
+                         |      |      |
+                        Gnd    Gnd    Gnd
+
+</PRE>
+Because the Rs are so high, the probe becomes a good antenna, and a shield is
+mandatory.  Therefore the Cs "stray" capacitance is higher than you might
+think.  I think you see the problem.  
+<p>
+One solution is to make C1 very large, but it's just a matter of specs - if
+you want 1% performance over the whole range, C1 is a severe load.  There is
+a good overall solution, which I think is fairly clever (after thinking of it,
+I discovered the experts had beat me to it!).
+
+<h3><A NAME="shvhva">High Voltage Probes for AC Measurements</A></h3>
+
+(From Winfield Hill (hill@rowland.org).)
+<p>
+The usual method is simply to use a capacitive divider, a small 1 kV
+capacitor, etc., or make the HV capacitor yourself for really high voltages,
+like 5 to 20 kV, use an air neutralizing capacitor, etc.
+<p>
+Say for example, its a 3pF capacitor.  With shields.  With another more
+conventional capacitor, say 3000pF for the bottom of the attenuator, followed
+with a voltage buffer if desired, and you've got a nice wide-band 1000:1 HV
+probe installed in the system, good for mucho kV.
+
+<h3><A NAME="shvmhf">More on Measuring High Frequency High Voltage</A></h3>
+
+(The following was prompted by a request to measure the pulses in a capacitive
+discharge ignition system.)
+<p>
+(From: Winfield Hill (hill@rowland.org).)
+<p>
+You want to measure the voltage pulse or spike, so you'll need a high voltage
+high-frequency probe.  Many popular HV DC probes are not suitable, such as the
+Fluke 80K-40 probe.  Fluke does have a high-frequency HV probe, the PM9100,
+which is a 200 MHz, 4 kV probe.  For voltages higher than 4 kV, use a
+Tektronix P6015A probe (buy one on eBay), or you can make a probe yourself.
+<p>
+First let me strongly say that designing HV AC probes which include
+a resistor for DC measurements is not trivial.
+Read the rest of this document including my other comments on this
+subject in the previous sections.
+<p>
+You can see details of an impressive 500 kV five-foot probe design,
+<A HREF="http://members.tm.net/lapointe/High_Voltage_Probe.html">Rob's
+High Voltage Probe Page</A>.  Lacking a shield, this probe is suitable
+only for DC or low-frequency AC use.
+<p>
+For your purposes a simple ac-only probe should suffice.  Happily
+they are relatively easy to make.  The basic principle is to make
+a capacitive divider.  For example, a 3pF HV input capacitor with a
+3000 pF load capacitor will make a 1000:1 divider with perfect high-
+frequency response.  You can use a home-made 3 pF, 30 kV air capacitor.
+<p>
+Used with a standard 1M scope input the probe will have a 3 ms droop
+time constant and low-frequency roll-off of 53 Hz.  This is suitable
+for measuring all kinds of fast HV signals like auto ignition pulses,
+camera-flash triggers and discharges, TV flyback transformer outputs
+(before the HV diodes), Tesla-coil primary voltages, atomic-trap ring
+voltages, etc.  A 30 kV input will present a safe 30 V to the scope.
+<PRE>
+
+     3pF    3000pF
+  O---||--+--||-- GND             
+   \      |  ______________   
+    ''--> '--)_____________)-- scope
+  oops!                       
+
+</PRE>
+Sounds simple, but there are a few problems.  A big one is labeled
+oops! on the drawing above, namely unplanned capacitive paths from
+your HV signal to the divider junction.  To prevent this you'll need
+some cleverly designed shields. 
+<p>
+Because your 3 pF capacitor must be able to withstand 30 kV, it'll be
+much larger than you would at first imagine.  For example, I have
+used two 1/4-inch thick 4-inch diameter discs placed 1/2-inch apart,
+IIRC, held in place by metal bars to a long ceramic rod located off
+to one side.  Both discs had 1/4" rounded sides to prevent corona
+discharge.  The "lower" disc was grounded to act as a shield.  The
+low-voltage sense electrode was a thin copper shim-stock disc with
+a slightly smaller diameter, stuck to the ground disc with double-
+sided mylar tape.  A hole in the ground disc allowed a coax cable
+connection to the copper sensing disc.
+<PRE>
+                                             ,------------- HV
+                                            /
+    ,--------------------------------------+--,
+   |                                           |
+    '-----------------------------------------'
+
+       _____________________________________
+    ,------ | --------------------------------,
+   |        |                                  |
+    '------ | -+------------------------------'
+            |  |_________
+            '--)_________ cable
+
+</PRE>
+Keep in mind that you should get zero output with the HV probe tip
+grounded - with the wrong shield layout this is a tough requirement.
+<p>
+A smaller design might use two concentric metal tubes, with an outer
+shield and an inner low-voltage electrode.  The HV would be presented
+on a wire held in place in the center, making only 3pF of capacitance
+to the inner tube.  Holding the wire in place with a sturdy tip mount
+without unduly increasing the capacitance would be a design issue.
+<p>
+Calibrate the probes with low voltage AC signals and an AC RMS DVM.
+<p>
+A second issue is protecting the scope.  You have to absolutely sure
+your homemade 30 kV capacitor will not have a small breakdown event
+and destroy your scope!  One solution is to make a 1:3000 divider so
+the output is limited to 10 V and use a diode-protected opamp follower.
+Also, with the 10M resistor the droop time constant is better, 100 ms
+and the low-frequency -3dB point is lower, 1.6 Hz.
+<PRE>
+ 
+     3.33pF  0.01uF  
+  O---||--+--||-- GND         pair of diodes to +/-15V        
+          |  __________          |     FET opamp
+          '--)_________)- 10k -+-+---|\  follower
+            coax       |       |     | >--+-- 50 ---o To scope
+                      GND     10M  ,-|/   |
+                               |   '------'
+                              GND
+
+</PRE>
+
+<h3><A NAME="shvcom">Commercial High Voltage Probes</a></h3>
+
+(From: Frank Miles (fpm@u.washington.edu).)
+<p>
+Both Tektronix and Hewlett Packard sell HV probes rated at 5kV and up.
+Bandwidths are (at least) into the 100kHz area, probably more.  I imagine
+there are others.
+<p>
+The older Tek probes even had ports to refill with now-banned chemicals.  The
+newer ones don't, but are more expensive.
+<p>
+Frequency response is a significant concern.  Designing and manufacturing a
+decent HV probe is definitely non-trivial if you need flat frequency response.
+Many parts have significant voltage coefficients, too, as well as breakdown
+voltages.
+<p>
+(From Winfield Hill (hill@rowland.org).)
+<p>
+A significant part of the design effort (and cost) deals with, the problem of
+how to go smoothly from a resistive divider at low frequencies, to a
+capacitive divider at high frequencies, while keeping a constant attenuation
+value at mid-frequencies.  This isn't easy.  Consider for example, that an
+overall shield is clearly needed and must properly prevent the high-Z end of
+the probe from simply acting as an antenna (as some HV probes do! i.e.  ground
+the tip of the probe and *still* see large signals at the output).  This
+shield acts as a capacitance to ground for the HV resistor, routing some of
+the high-frequency current which is supposed to go to the output, to ground.
+Hence at some middle frequency there's a dip!  This is solved in various ways
+- with shields connected to the probe tip (but inside the ground), capacitors
+bypassing the resistor, special resistor construction, etc.  Most solutions
+can just as easily cause a region with a response hump, as well as a dip, or
+even both.  BTW, these problems are much harder if one seeks to make a probe
+with very low capacitive loading and high frequency response.  The Tek P6015A
+probe is 3pF, and you'll also note it has a veritable raft of response
+adjustments on the scope-input end.
+<p>
+Much of the cost of the probe is knowing how to do all this!
+<p>
+Incidentally, a low-cost intermediate-range HV probe is the Fluke PM9100,
+which is a 4kV 100:1 probe with a 200MHz bandwidth.  Also the Tek P5100 is
+rated to 2.5kV.  Most of these probes also have a derating above some d
+frequency.
+<p>
+Most of this mess you can avoid entirely by not attempting to make the probe
+measure DC (or at least not the whole frequency range).
+<p>
+(From: Sam.)
+<p>
+The person who contributed the following comments may not be totally unbiased
+but the information is still valid.
+<p>
+(From: Cicel Clenci (cicel@cic-research.com).)
+<p>
+I used many different probes on high voltage measurements and found out that
+their performance is terrible when exposed to even relatively low common mode
+voltage transients (100 V or more).  Even when using differential probes like
+Tektronix's P5200 or P5205 measurements can be influenced by common mode
+voltage transients.  You will get glitches on the output that are not there,
+these will confuse the engineers.  One big problem is the high input
+capacitance of the probe.  In order to get the best common mode rejection of
+the various transients and an accurate representation of the input waveform,
+you must reduce the input capacitance.  4 pF or 3 pF input capacitance is too
+high, when dealing with high voltage fast transients, and the compensation is
+not as easy as it might seem.  Look for 0.5 pF or lower input capacitance.
+There are many issues that need to be addressed when designing high voltage
+(differential probes).  Just take a look at
+<A HREF="http://cic-research.com/products.html">CIC Research HV Probes
+Page</a> for probes that outperform Tektronix's or LeCroy's probes.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#shvtoc">HV Probe Design Table of Contents</A>.
+<p>
+-- end V1.29 --
+<p>
+</BODY>
+</HTML>

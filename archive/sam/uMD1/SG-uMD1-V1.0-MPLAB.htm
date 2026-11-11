@@ -1,0 +1,439 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uMD1/SG-uMD1-V1.0-MPLAB.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<TITLE>Assembly Instructions for the SG-&micro;MD1 for MPLAB Version 1.0 PCB</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uMD1/SG-uMD1-V1.0-MPLAB.htm">https://www.repairfaq.org/sam/uMD1/SG-uMD1-V1.0-MPLAB.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<h1>
+Assembly Instructions for the SG-&micro;MD1 for MPLAB Version 1.0 PCB<br>
+</h1>
+<h2>
+Version 1.01 (20-Feb-20)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2022
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<link rel="icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+
+<p>
+<A NAME="umd1.0toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#sgumd1.0pre">Preface</a>
+ <ul>
+ <li><A HREF="#sgumd1.0aac">Author and Copyright</a>
+ <li><A HREF="#sgumd1.0dis">DISCLAIMER</a>
+ <li><A HREF="#sgumd1.0ack">Acknowledgment</a>
+ </ul>
+<li><A HREF="#sgumd1.0int">Introduction</a>
+<li><A HREF="#sgumd1.0sch">Schematic for SG-&micro;MD1 Version 1.0</a>
+<li><A HREF="#sgumd1.0pcb">PCB Layout for SG-&micro;MD1 Version 1.0</a>
+<li><A HREF="#sgumd1.0sbs">Step-by-Step "Heathkit&trade;-style" Instructions for SG-&micro;MD1 PCB Version 1.0 for MPLAB Support ONLY</a>
+<li><A HREF="#sgumd1.0epl">Parts List for SG-&micro;MD1 Version 1.0</a>
+</ul>
+<p>
+<A NAME="sgumd1.0pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="sgumd1.0aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2016
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="sgumd1.0dis">DISCLAIMER</a></h4>
+
+&micro;MD1 is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+While every effort has been made to avoid this possibility, &micro;MD1 is an
+on-going development effort.  We will not be responsible for any consequences
+of such bugs including but not limited to damage to the wafer FAB you
+picked up on eBay for $1.98 + shipping, financial loss from the use of
+37 spools of ABS due to the office 3-D printer fabricating a part 25.4x
+too large in all dimensions, or bruising to your pet's ego from any number
+of causes directly or indirectly related to &micro;MD1. ;-)
+
+<h4><A NAME="sgumd1.0ack">Acknowledgment</a></h4>
+
+Thanks to Jan Beck for selecting the chipKIT DP32 and writing and testing
+initial versions of the firmware and GUI.  And for getting me interested
+in actually getting involved in this project.  If anyone had told me 
+six months ago that I'd be writing code in C, MIPS assembly language,
+and Visual Basic - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)  Jan maintains the master GUI source code
+as well as slightly different versions of the firmware and a 
+development blog on the overall project.
+And a version of the firmware providing basic readout of displacement
+on any Bluetooth wireless device with a terminal APP, or with a bit
+more polished presentation (though not the complete GUI) on Android devices,
+may be found on Jan's Web site.  See that and more under "References".
+<br>
+<p>
+<A NAME="sgumd1.0int"></A>
+<hr>
+<h3>Introduction</h3>
+
+<b><font color="brown">
+This document provides assembly instructions for the minimal configuration
+to enable the SG-&micro;MD1 V1.0 PCB to support the downloading of the
+bootloader and other firmware directly via MPLAB, or via USB.
+</font></b>
+<p>
+There are no more bare V1.0 SG-&micro;MD1 PCBs so this document is for
+reference-only should have one of the assembled V1.0 PCBs.
+<p>
+<center>
+<img height=499 src="SG-uMD1-1.0-MPLAB-ZIFF.jpg">
+<br>
+<h3>SG-&micro;MD1 V1.0 PCB MPLAB Version with ZIFF Socket</h3>
+</center>
+<p>
+The 28 pin SDIP ZIFF socket is plugged into a leaf-spring socket which is
+plugged into a machine-pin socket.  The stack is glued together on the
+edges so that it easily plugs into the socket on the SG-&micro;MD1 PCB.
+Installing a right-angle header for JP6 would be beneficial as a straight
+header blocks the Reset and Program buttons.  Of course, the PIC32 can be
+plugged directly into the on-board socket.
+<p>
+All components are through-hole and except as noted in the detailed
+assembly procedure, should seat flush on the
+PCB.  They shouldn't be suspended in mid-air swinging in the breeze. :)
+Most components are identified on the silk-screen and with only a few
+exceptions, the label won't be obscured when the part is installed.
+<p>
+<A target="uMD1" HREF="SG-uMD1-1.0-1Axis.jpg">SG-&micro;MD1 V1.0 Single Axis
+PCB</A> shows the PCB populated with the parts for a single axis
+system without sensors.  Only the parts below the headers are required
+for MPLAB and USB download support.
+<p>
+A low power soldering iron with narrow tip and thin (e.g., #22 AWG) rosin-core
+solder will be required.  DO NOT even think about attempting this without
+suitable soldering equipment.  It's well worth the investment.  A Weller
+soldering gun or propane torch will not work. :)  Rosin core solder is also
+essential.  And while
+I'm quite confident that you never make mistakes, a means of component removal
+such as a de-soldering pump (e.g., SoldaPullt&trade;) will be highly desirable.
+Screwing up component removal can easily ruin the PCB and is not covered
+under the unlimited limited warranty. :-)
+<p>
+Proper soldering technique will be such that the exposed solder on each
+pad should be shiny with a concave profile.  It should not be a blob and
+just needs to fill the hole.  Solder is not glue.
+Some excess solder doesn't hurt anything
+but looks unprofessional.  A 10X magnifier may come in handy for
+inspection.  Residual rosin can be cleaned off with
+isopropyl alcohol or an environmentally-friendly electronic solvent.
+However, leaving the rosin alone is also acceptable (if ugly).
+<p>
+Total assembly time should be well under two hours for someone proficient
+in fine soldering.  Cutting component leads to 1/4 to 3/8 inch before
+installation will simplify soldering as the long leads won't be poking
+you in the face. :( :)  Then trim flush after soldering.
+<p>
+The USB driver is NOT required for MPLAB, only a USB port or charger
+to provide 5 VDC power.  CAUTION: If using a charger, confirm that its
+output is close to 5 VDC.  This should always be true for those from
+name brands like Apple.  But others that are non-genuine or counterfit
+may be all over the map.
+
+<h4><A NAME="sgumd1.0sch">Schematic for the SG-&micro;MD1 Version 1.0</a></h4>
+
+The schematic for the SG-&micro;MD1 Version 1.0 PCB may be found at
+<A HREF="sgum1sch1.0.pdf">SG-&micro;MD1 Version 1.0 Schematic</A>.
+This includes everything on the board.  For MPLAB, all that's needed
+are the PIC32-specific parts and parts associated with JP6.
+<p>
+Printing out the schematic and having it available for reference while
+assembling the PCB may be helpful.
+
+<h4><A NAME="sgumd1.0pcb">SG-&micro;MD1 PCB Layout Version 1.0</A></h4>
+
+Refer to the SG-&micro;MD1 board layout below. 
+<p>
+<center>
+<img src="SG-uMD1-PCB-V1.0.gif">
+ &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="SG-uMD1-1.0-MPLABs.jpg">
+<br>
+<h3>SG-&micro;MD1 V1.0 PCB Layout Diagram (Left) and MPLAB Version Populated PCB (Right)</h3>
+</center>
+<p>
+In essense, most parts below the headers (mid-board) are required to
+run the PIC32 and for it to communcate with the MPLAB programmer.
+
+<h3><A NAME="sgumd1.0sbs">Step-by-Step "Heathkit&trade;-style" Instructions for SG-&micro;MD1 PCB Version 1.0 MPLAB Support ONLY</a></h3>
+
+Only parts for MPLAB support are addressed here.
+<p>
+Print out this document so each step can be checked off ( ) as it is completed.
+<p>
+<ol>
+<li>( ) Confirm that all parts are present and undamaged:
+<p>
+ <ul>
+ <li>( ) 1x blank SG-&micro;MD1 V1.2 PCB.  Confirm the version on the
+  silkscreen near the location of the USB connector.  Inspect for plating
+  or other defects.
+<p>
+ <li>( ) 1x 28 pin SDIP socket.
+ <li>( ) 1x USB Micro B female connector.
+ <li>( ) 1x PIC32MX250F150B-50I/S PIC32 (28 pin SDIP in foam or tube).
+ <li>( ) 1x MCP1703T 3.3V regulator (TO92).
+ <li>( ) 2x tactile switch (pushbutton).
+ <li>( ) 2x 33 pF ceramic capacitor (marked with 33).
+ <li>( ) 5x 0.1 &micro;F ceramic capacitor (marked with 104 or 0.1).
+ <li>( ) 3x 4.7 &micro;F electrolytic capacitor.
+ <li>( ) 1x 10 &micro;F or 22 &micro;F tantalum capacitor (yellow gum drop).
+ <li>( ) 5x 3 mm LED.
+ <li>( ) 3x 51 ohm 1/8 W resistor (green-brown-black-gold).
+ <li>( ) 1x 200 ohm 1/8 W resistor (red-black-brown-gold).
+ <li>( ) 1x 680 ohm 1/8 W resistor (blue-gray-brown-gold).
+ <li>( ) 10x 10K ohm 1/8 W resistor (brown-black-orange-gold).
+ <li>( ) 1x 8 MHz crystal (2 pin sardine can).
+ <li>( ) 1x 6 pin socket strip or right angle header (choice optional -
+  a right angle header will not block the  buttons).
+ </ul>
+<p>
+<li>( ) Install the USB Micro B connector on the top of the PCB.  First
+ solder the through-hole tabs.  Confirm that the connector is flush on the
+ board before soldering the pins.  The tabs and pins may not quite poke
+ through the PCB so assure that solder actually flows down inside the
+ holes and reaches them.  Take care to avoid solder bridges between
+ the very closely spaced pins.
+<p>
+ Note that the through-hole USB connector is installed at a right angle to the
+ PCB.  If you would prefer one that is parallel to the PCB and are comfortable
+ soldering an SMD connector with legs that are only 1.3 mm apart and
+ barely accessible even with a narrow-tip soldering iron, they are
+ readily available from electronics distributors or eBay and should
+ be compatible with the PCB layout pattern.  Or if you can locate a
+ through-hole connector that installs flat on the PCB,
+ contact me via the email links at the top of this page. :)
+<p>
+<li>( ) Install a jumper wire between the two right-most pads of JP7 (near
+ the USB connector).  For &micro;MD1 there should never really be any need
+ so use external power.
+<li>( ) Install IC2 (MCP1703T, TO92).  It should stand off from the PCB by
+ 1/8th inch or so.  Make sure the outline matches
+<li>( ) Install C10,C11 (4.7 uF).  Note polarity: Positive is marked
+ on the PCB and is also the square pad.  Negative on the capacitor is
+ marked by a line.
+<p>
+<li>( ) Install LD0 (3 mm LED).  The anode is the longer lead and the square
+ pad on the PCB.  The cathode is the shorter lead and the flat on the body of
+ the LED.  Cut the leads about 1/10" from the body if the LED can't be inserted
+ to sit flush on the PCB.  Take care not to overheat or stress the leads on
+ the LED when soldering.
+<p>
+<li>( ) Install R26 (10K ohms).
+<p>
+<li>( ) Smoke test #1:  Plug the board into a live USB A socket or charger
+ via the included USB A to USB Micro B cable.  LD0 (Power) should come on
+ immediately.  If a DMM is available confirm that the voltage measured across
+ pins 28 and 27 of IC1 is between 3.2 V and 3.4 V.  Unplug.  And, uh, nothing
+ should smoke. ;-)
+<p>
+<li>( ) Install R22,R34,R35 (51 ohms).
+<li>( ) Install R24 (200 ohms).
+<li>( ) Install R25 (680 ohms).
+<li>( ) Install R23,R30,R31 (10K ohms).
+<li>( ) Install R4,R9 (150 ohms).
+<li>( ) Install R5,R10 (330 ohms).
+<p>
+<li>( ) Install C6,C7 (33 pF).  These may not be labeled on the
+  silk-screen.  They are adjacent to pins 8,9 and 10,11 of IC1.
+<p>
+  Note: The 33 pF and 0.1 &micro;F capacitors may appear identical.
+  Inspect their marking to identify them.
+<p>
+<li>( ) Install C3,C8,C9 (0.1 &micro;F).  Some of these may not be
+  labeled on the silk-screen.  0.1x0.2 inch parts having rounded ends 
+  without part numbers are 0.1 &micro;F caps.  They are near VR1,
+  and pins 23,24 and 27,28 of IC1.
+<p>
+  Note: The 33 pF and 0.1 &micro;F capacitors may appear identical.
+  Inspect their marking to identify them.
+<p>
+<li>( ) Install C4 (4.7 &micro;F).  Note polarity: Positive is marked
+ on the PCB and is also the square pad.  Negative on the capacitor is
+ the line.
+<p>
+<li>( ) Install C5 (10 &micro;F or 22 &micro;F tantalum capacitor, yellow
+ gum drop.)  Pay particular attention to the polarity.  These tend to
+ explode eventually if installed backwards.  The labeling should face away from
+ the PIC32 socket.
+<p>
+<li>( ) Install LD8 (3 mm LED) and R39 (10K).  The anode on the LEDs is the
+ longer lead and the square pad on the PCB.  The cathode is the shorter
+ lead and the flat on the body of the LED.  Take care not to overheat or
+ stress the leads on the LED(s) when soldering.
+<p>
+<li>( ) Install BTN1,BTN2 (pushbuttons).  Press in place flush against
+ the PCB.  Solder all 4 pins on each.
+<li>( ) Install SKT1 (28 pin SDIP socket).  The cutout on the
+ socket should match the cutout on the PCB.  First solder two diagonal corner
+ pins and confirm the socket is flush against the PCB.  Then solder the rest.
+<p>
+<li>( ) Install X1 (8 MHz crystal in sardine can).
+<p>
+<li>( ) Carefully inspect for unsoldered pins, solder bridges and
+ other blemishes.  Correct as needed.  THIS IS ESSENTIAL!
+ It would be bad form to blow the PIC32 due to an errant blob of solder. :(
+<p>
+<li>( ) Install 6 pin socket strip or right angle header at JP6.
+<p>
+<li>( ) Carefully plug in the PIC32 confirming that all pins are seated
+ and none are bent.  The dot or cutout on the chip should match the PCB
+ labeling.
+<p>
+<li>( ) Smoke test #2. :)  Plug the board into a USB A socket on
+ your PC or laptop or charger using the included cable.  The
+ power LED should come on.  And no smoke. :)
+<p>
+<li>( ) If the PIC32 has the bootloader installed, Press
+ Reset (BTN1) and hold it while also pressing Program (BTN2).
+ Release Reset and then release Program.  LED1 (LD8) should be flashing rapidly
+ indicating that the board is salivating in
+ anticipation of having new and improved firmware uploaded to it. ;-)
+ This confirms that the button circuitry is functional.  There should
+ be no actual need to load firmware as the latest version for &micro;MD1
+ will have been pre-installed so press Reset to exit boot mode.  Remove the
+ USB cable.
+<p>
+ If nothing happens even after multiple attempts, the PIC32 isn't running
+ for any number of reasons, or the bootloader is not present (as would be
+ the case if the PIC32 were ordered from an electronics distributor).  In
+ that case go to the next step.
+<p>
+<li>( ) Follow instructions for using MPLAB to download the bootloader.
+ For this, the PCB must be powered from external 5 VDC or USB, NOT the
+ programming header.  Once the bootloader is installed, UECIDE can be
+ used to download firmware.  Details on both in the <A HREF="uMD1.htm">Micro
+ Measurement Display 1 (&micro;MD1) Installation and Operation Manual</A>.
+<p>
+<li>( ) Congratulations!  It should now be possible to run internal programs
+ and/or to program the PIC32 via MPLAB.
+<p>
+<li>( ) If the &micro;MD1 firmware is downloaded and the &micro;MD1 GUI
+ is run, REF and MEAS may be counting slowly
+ at random since the inputs to the PIC32 are not connected to any
+ line receivers and are floating.  Touching their
+ respective pads may affect the behavior.
+</ol>
+
+<h4><A NAME="sgumd1.0epl">Parts List for SG-&micro;MD1 Version 1.0 MPLAB ONLY</A></h4>
+
+These are the required parts to run the PIC32 for the purposes of programming
+via MPLAB or USB.
+<p>
+<PRE>
+ Reference   Type      Part/Value     Function
+-------------------------------------------------------------------------------
+   BTN1    Pushbutton   SPST NO       Reset
+   BTN2    Pushbutton   SPST NO       Program
+
+    C3     Capacitor     0.1 &micro;F       IC1 3.3 V bypass
+    C4     Capacitor     4.7 &micro;F       IC1 VBUS bypass
+    C5     Capacitor     10 &micro;F Tant.  IC1 VCAP bypass
+    C6     Capacitor     33 pF        IC1 crystal bypass
+    C7     Capacitor     33 pF        IC1 crystal bypass
+
+    C8     Capacitor     0.1 &micro;F       3.3 V bypass
+    C9     Capacitor     0.1 &micro;F       3.3 V bypass
+
+    C10    Capacitor     4.7 &micro;F       VIN bypass
+    C11    Capacitor     4.7 &micro;F       3.3 V bypass
+
+    IC1    IC         PIC32MX250F150B-50I/S PIC32 28 pin SDIP
+    IC2    IC           MCP1703T      3.3 V regulator
+
+    LD0    LED          3 mm LED      Power LED
+    LD8    LED        3 mm HB LED     RB3 LED (chipKit LED1)
+
+   PCB1    PCB        SG-&micro;MD1-PCB     Blank SG-&micro;MD1 PCB
+
+    R22    Resistor  51 ohm, 1/8 W    PIC32 reset
+    R23    Resistor  10K ohm, 1/8 W   PIC32 reset
+    R24    Resistor  200 ohm, 1/8 W   PIC32 reset
+    R25    Resistor  680 ohm, 1/8 W   PIC32 crystal
+
+    R26    Resistor  10K ohm, 1/8 W   Power LED current limiting
+    R30    Resistor  10K ohm, 1/8 W   Program button bias network
+    R31    Resistor  10K ohm, 1/8 W   Program button bias network
+
+    R34    Resistor  51 ohm, 1/8 W    P32_PGD series resistor
+    R35    Resistor  51 ohm, 1/8 W    P32_PGC series resistor
+
+    R39    Resistor  10K ohm, 1/8 W   RB3 (LED1) current limiting
+
+   SKT1    Socket    28 pin, 300 mil  Socket for PIC32
+   SKT4    Socket    6 pin, SIP       Socket strip for JP6
+
+   USB1    Connector                  USB Micro B female connector
+
+    X1     Crystal       8 MHz        PIC32 master clock
+</PRE>
+<p>
+Notes:
+<p>
+<li>Some 0.1 &micro;F bypass caps may not have reference designators on the
+ silk-screen but their location should be obvious.  Refer to the photo of the
+ populated board.
+<p>
+<li>As with the chipKit DP32, VIN must be +5 VDC.
+</ol>
+<br>
+<hr>
+<p>
+-- end V1.01 --
+<p>
+</BODY>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</HEAD>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvbypsuc.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Bypassing the Startup Circuit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Bypassing the Startup Circuit</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvbypsuc.htm">https://www.repairfaq.org/samnew/tvfaq/tvbypsuc.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Bypassing the Startup Circuit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvdttttfff.htm">&lt;&lt;&nbsp;Dead TV with periodic twe..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvshortc.htm">Shorted Components&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvbypsuc">Bypassing the Startup Circuit</A></h3>
+
+Where the TV is dead and a startup problem is suspected, a TV service person
+would test for startup problems by injecting a signal into the base of the HOT
+of about 15.75 kHz.  If the TV then starts and runs once this signal is
+removed, the diagnosis is confirmed.  This is risky - you can blow things up
+if not careful (including yourself).  A 555 timer based circuit will work fine
+as a signal source for this.
+<p>
+<b>WARNING</b>: be careful if you do this.  The HOT circuit may be line-connected
+and it is possible to destroy the HOT and related components if this is not
+done properly.  I once managed to kill not only the HOT but the chopper
+transistor as well while working in this area.  An expensive lesson.
+<p>
+You can reduce the risk somewhat (to the TV at least) by using a series
+light bulb load and/or running on reduced line voltage.  The most important
+thing to avoid is putting in an excessively long drive pulse which will
+result in the flyback transformer saturating, huge amounts of current,
+and likely a dead HOT and possibly other parts if there is nothing to limit
+the current.  For NTSC/PAL, it is fairly safe to assume that a 50 percent
+duty cycle 15 to 16 kHz drive signal will not result in fireworks as long
+as there aren't other problems (like a shorted flyback/LOPT).
+<p>
+If after a second or so, the TV fires up (not literally!) and stays happy
+until it is turned off, a startup problem is almost certain.  It could be
+the standby supply (if used) or a dedicated startup circuit that has failed.
+<p>
+But, don't push your luck - if the TV starts after a second or so of your
+drive signal but doesn't continue to run when it is removed, don't be tempted
+to leave your circuit connected - it could still be stressing other parts.
+Find out why the normal horizontal drive is not being generated - possibly a
+power supply or horizontal oscillator problem.
+<p>
+If nothing happens, either startup is not the problem or there are other
+components that have failed preventing the HOT drive signal from having
+any effect.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvdttttfff.htm">&lt;&lt;Dead TV with periodic twe..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvshortc.htm">Shorted Components&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

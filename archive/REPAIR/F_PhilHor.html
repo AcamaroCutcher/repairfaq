@@ -1,0 +1,224 @@
+<!--
+  Mirrored from https://www.repairfaq.org/REPAIR/F_PhilHor.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/REPAIR/F_PhilHor.html">https://www.repairfaq.org/REPAIR/F_PhilHor.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+<html>
+<head>
+<title>Repairing Philips 20/21 Inch Monitor Horizontal Output</title>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</head>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Repairing Philips 20/21 Inch Monitor Horizontal Output
+</h1>
+<h2>
+Version 1.00
+<br>
+</h2>
+<h3>
+Copyright (C) 1998
+<br>
+Frank Gentges AK4R
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+Corrections or suggestions to: gentges@itd.nrl.navy.mil
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<b>Notice</b>I release this text file and the schematic drawing under the
+concept of the
+GNU copyleft as being mine and must be identified as such.  You may not claim
+it as your work but feel free to add and improve it.  No charge other than a
+nominal media charge of less than $6 can be made for it.  Enjoy and spread
+this information freely. Hopefully some more of these failed Philips monitors
+can once again be brought to life for someone to enjoy.
+<p>
+<hr>
+<h2>Introduction</h2>
+
+A little background first. A Phillips C2182 21 inch monitor failed with the
+horizontal folding around one edge but still working otherwise.  First it was
+sent to Philips repair that returned it because the main printed circuit board
+was no longer available.  They do not troubleshoot the board to the component
+level and the monitor was returned as dumpster fodder.  I then took a look at
+it even though I am not in the repair business because I saw it as an
+interesting challenge and a way to get a great monitor.
+<p>
+The monitor worked fine at lower resolutions but the edge was compressed the
+last quarter inch instead of folding around as had been seen earlier on
+another computer. The only visible failure was a burned 1/8th-watt resistor.
+<p>
+Philips has a maintenance manual for this monitor but it only has "functional
+schematics" which do not include the detailed schematics of the horizontal
+output circuit.  These functional schematics do include a lot of useful
+information including PC board ID numbers so it is useful for finding the
+horizontal output area.  I recommend getting one of these manuals and Philips
+seems to have a general policy of having reasonably priced manuals on their
+monitors which many other makers do not.
+<p>
+I also got the Philips manual they used in a monitor repair course that was
+mentioned the monitor repair FAQ.  While it had a lot of good information on
+monitors in general, it did not mention the totem pole type of horizontal
+output circuit in this monitor.
+<p>
+It was apparent that a detailed schematic would be very useful to guide
+troubleshooting but if I wanted it I would have to reverse engineer it.  The
+alternative was to search out bad components with an ohm meter part by part
+and hope I had found them all.  I rejected this and as it turned out, I was
+right, as I needed this information to understand and finally diagnose the
+failure and really fix it. I removed the printed circuit board and traced out
+the circuit over three evenings with short bursts of tedious work.
+
+<h2>Description of the Horizontal Deflection Circuit</h2>
+
+The <A HREF="20phil.gif">Horizontal Output Circuit</A> is an arrangement of 3
+high voltage, high
+current power FETs in a totem pole circuit.  When the bottom FET turns on, the
+next starts turning on and finally the third turns on.  This way Philips could
+get a 1500 volt 30 amp output circuit.  This is a demanding requirement that
+Philips could not meet with a single output device.
+<p>
+The power FETs used are each a Toshiba 2SK1544 and the data sheet was located
+on the Toshiba web site in Acrobat format (2sk1544.pdf) although the site no
+longer lists the data sheet for this device.  This is a 500 volt 30 amp device
+that is quite hefty.
+<p>
+The FETs are driven by Philips BC237 bipolar PNPs, a rather unremarkable
+transistor.  They were marked "C327" and a tiny "PH" was seen.  Considering
+that Phillips made the monitor, a search of the Philips web site was made.  It
+was located at
+<A HREF="http://www.semiconductors.philips.com/acrobat/7637.pdf">BC237
+Datasheet</A>.
+<p>
+Fast soft-recovery controlled avalanche diodes are used in the circuit and are
+each a Philips BYV96E. The diode data sheets were found on the Philips web
+site in Acrobat format at
+<A HREF="http://www.semiconductors.philips.com/acrobat/9875.pdf">>BYV96E
+Datasheet</A>. These were useful in understanding the circuit and its limits.
+
+<h2>The Failure</h2>
+
+The obvious failure was in the upper Power FET that was shorted between source
+and drain.  The two diodes, V801 and V807, transistor V809 failed along and
+resistor R805 was a crispy black color.
+<p>
+(At this point I pleadingly remind the reader about all these high voltages
+and currents in this monitor and assure you I, as anyone should, proceeded
+with great care to avoid damaging myself or the monitor beyond repair.
+Pleading off.)
+<P>
+With the upper power FET shorted, the output circuit was only rated at 1000
+volts rather than the 1500.  At 1280x1024 a scope showed a 1200-volt peak
+voltage using a special 2000-volt probe.  The drive voltage to the other side
+of the horizontal yoke went up a down with the horizontal width adjustment and
+as expected, so did the peak voltage on the horizontal output circuit.  (The
+horizontal width is adjusted by changing the D.C voltage on the horizontal
+yoke from a switching power supply on the mail board.)  Similarly, the peak
+voltage on the horizontal output circuit went up with the horizontal scan
+rate.  At 1600x1200 it would fold on the edge and other components would fail
+soon from breakdown stress.
+
+<h2>Discussion</h2>
+
+It appears that the horizontal output circuit was starting to break down at
+the observed 1200-volt level.  This explains how slightly different scan rates
+would either compress the edge or turn the edge on around at a slightly higher
+rate.
+<p>
+But this superb monitor should not be sentenced to its remaining life as a
+lower resolution monitor.  The failed parts were replaced.  It worked for a
+few minutes but when it was raised to the full 1600x1200 resolution it once
+again started folding on the left side and then suddenly R805 gave out a
+spectacular flash and smoke signal.  After removing the P.C. board it was
+found that the power FET along with all the previously failed parts had failed
+again.
+<p>
+On reflection, it appears that C801 was causing the failure.  This capacitor
+has a high frequency high voltage across it giving rise to considerable
+A.C. current.  The MKP378 series capacitor data sheet was found on the Philips
+web site at
+<A HREF="http://www.passives.comp.philips.com/pdf/mkp378.pdf">MKP378 Series
+Capacitor Datasheet</A>. On
+examination it was restricted from use as "resonance capacitors in fly-back
+applications" in the
+<A HREF="http://www.passives.comp.philips.com/pdf/97fcacp.pdf">Application
+Note</A>.  The <A HREF="http://www.passives.comp.philips.com/pdf/kp376.pdf">
+MMKP376 Datasheet</A> on the other hand
+indicated that capacitor's suitability for deflection circuits.
+<p>
+I suspect they discovered that the MKP378, while working, had too many
+failures in this stressing mode and modified the design to make the MKP378
+series which would not be so prone to these failures.  In the construction of
+these capacitors a number a individual sections are bussed together in
+parallel.  Problems in this bussing could cause some sections to disconnect
+due to heating from the high currents and the reduced capacitance would let
+the voltage raise on that section of the totem pole.  When C801 was removed it
+measured 2 nfd. low which is consistent with sections becoming disconnected
+but would not explain the failure alone.  Unfortunately, it is hard to
+generate the high currents in a test setup to demonstrate this failure theory.
+But the absence of failure after replacing it would seem to validate the
+theory.
+
+<h2>Repair</h2>
+
+The high-speed diodes and driver transistors are available from Philips and
+the power FET is available from MCM.  Philips can be reached at (800)292-6066
+and MCM can be reached at (800)543-4330.  The Philips number can also used to
+obtain the maintenance manuals for the C2182 and the C2082 mentioned earlier.
+<p>
+While the Philips parts site had come up with the BYV96E diodes and the BC327
+transistor they had no listings for the capacitors.  In the meantime a failed
+monitor which had had a life of daily service was found.  The capacitors were
+cannibalized.  They were in a sequence of 18, 18, 22 nfd. sequence rather than
+the 15, 15, 18 nfd. sequence in the original monitor.  The p.c. board had a
+higher revision level so the new sequence may have been related to finding a
+solution to failing capacitors.  I would be interested in hearing from anybody
+who knows how to buy these capacitors especially the MKP378 series.
+<p>
+Since the manual does not include the detailed schematic of the horizontal
+output stage it is available as a hand drawn GIF file.  I know the main circuit
+board where this section resides is also the same part number as the one for
+the C2082 which is a Trinitron" version of the monitor.  The C2082 was OEM'd
+to Compaq as a Q-Vision 200 monitor.  It was also OEMed to DEC with DEC
+markings as a FSR871CV.  I also suspect it is the same if not similar to other
+Philips 20 and 21 inch models and probably also OEMed by Philips to others.
+
+An additional problem was encountered during this repair.  To change out the
+power FET required removing the heat sink and replacing it.  The sharp edges
+of the new power FET next to the silicone insulator sheet gouged enough of a
+hole in the sheet to cause a high voltage break down since that power FET was
+at 1600 volts for a short period of the horizontal sweep.  It required a
+replacement from the cannibalized monitor.  It would be wise to use a little
+sandpaper to round the edges of the new power FET before installing it onto
+the board.  During assembly into the monitor be sure that the mounting holes
+for the P.C. board and the heat sink line up to avoid sliding the heat sink in
+relation to the P.C. board.
+<p>
+<hr>
+<p>
+-- end V1.00 --
+<p>
+</body>
+</html>
+

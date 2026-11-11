@@ -1,0 +1,729 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/other/Field/fcoafotc.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Calculator for Off-Axis Magnetic Fields due to One or Two Coils</title>
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/other/Field/fcoafotc.htm">https://www.repairfaq.org/sam/other/Field/fcoafotc.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+
+<p><script language="JavaScript"><!--
+var bcreated=false
+var index=0
+var msgWindow
+
+/*
+ *
+ * ELLIPTIC.C:  Functions for computing complete and incomplete elliptic
+ *              integrals of the first and second kind, and an example
+ *              of usage for computing magnetic fields due to a circular
+ *              current filament.
+ *
+ * DISCLAIMER
+ *
+ * Although every effort has been expended to ensure correctness, this 
+ * software is not guaranteed to be correct.
+ *
+ * You may do anything you want with this software, as long as you maintain
+ * the existing comments intact, including the names of the original
+ * authors.  If you modify this software, please indicate that fact in 
+ * your comments.
+ *
+ * E. Dennison (Nov 17, 1998)
+ *
+ */
+
+/*
+ * NOTE: constants declared in float.h for the x86 CPU are:
+ *
+ * DBL_EPSILON 2.2204460492503131e-016,smallest such that 1.0+DBL_EPSILON!=1.0
+ * DBL_MAX 1.7976931348623158e+308  maximum possible value for type double
+ * DBL_MIN 2.2250738585072014e-308  minimum possible positive value for double
+ *
+ * If you are compiling this code for a non-Intel CPU, your values for these
+ * constants may be different.
+ */
+
+
+
+/*
+ * F(k): complete elliptic integral of the first kind
+ */
+
+function F(k) 
+{
+	return drf(0.0,1.0-Math.pow(k,2),1.0)
+}
+
+/*
+ * drf.c:   Compute the complete or incomplete elliptic integral of the
+ *          first kind.
+ *
+ * Description:
+ *
+ *  For x,y and z non-negative and at most one of them zero, drf(x,y,z)
+ *  = integral from zero to infinity of 
+ *
+ *
+ *            -1/2     -1/2     -1/2
+ *  (1/2)(t+x)    (t+y)    (t+z)    dt.
+ *
+ *  If x, y or z is zero, the integral is complete.
+ *
+ *
+ * Credits:
+ *
+ *  This function is adapted by E. Dennison from FORTRAN code written by:
+ *
+ *  Carlson, B.C.
+ *  Notis, E.M
+ *  Pexton, R.L.
+ *
+ */
+function drf(x, y, z)
+{
+	with (Math)
+	{
+		c1 = 1.0/24.0;
+		c2 = 3.0/44.0;
+		c3 = 1.0/14.0;
+		errtol = pow((2.2204460492503131e-016)*4.0,1.0/6.0);
+		lolim = 5.0*2.2250738585072014e-308;
+		hilim = (1.7976931348623158e+308)/5.0;
+
+		xn = x;
+		yn = y;
+		zn = z;
+		epsilon = 2*errtol
+
+		while (epsilon >= errtol)
+		{
+			mu = (xn+yn+zn)/3.0;
+			xndev = 2.0-(mu+xn)/mu;
+			yndev = 2.0-(mu+yn)/mu;
+			zndev = 2.0-(mu+zn)/mu;
+			epsilon = max(max(abs(xndev),abs(yndev)),abs(zndev))
+			if (epsilon >= errtol)
+			{
+				xnroot = sqrt(xn);
+				ynroot = sqrt(yn);
+				znroot = sqrt(zn);
+				lambda = xnroot*(ynroot+znroot) +ynroot*znroot;
+				xn = (xn+lambda)*0.25;
+				yn = (yn+lambda)*0.25;
+				zn = (zn+lambda)*0.25;
+			}
+		}
+		e2 = xndev*yndev - pow(zndev,2);
+		e3 = xndev*yndev*zndev;
+		s = 1.0 + (c1*e2-0.1-c2*e3)*e2 + c3*e3;
+	    return s/sqrt(mu);
+	}
+}
+/* END drf() */
+
+/*
+ * Ej(k): complete elliptic integral of the second kind
+ */
+
+
+function Ej(k)
+{
+	return (drf(0.0,1.0-Math.pow(k,2),1.0)-(Math.pow(k,2)/3.0)*drd(0.0,1.0-Math.pow(k,2),1.0));
+}
+
+
+ /*
+  * FastE(k): fast, complete elliptic integral of the second kind.
+  *           Use this macro if the complete elliptic integral of
+  *           the first kind was previously computed for the same
+  *           value of k.
+  */
+
+function FastE(F,k)
+{
+	return ((F)-(Math.pow(k,2)/3.0)*drd(0.0,1.0-Math.pow(k,2),1.0))
+}
+
+
+
+/*
+ * drd.c:   Compute the complete or incomplete elliptic integral of the
+ *          second kind.
+ *
+ * Description:
+ *
+ *  For x and y non-negative, x+y and z positive, drf(x,y,z) = integral 
+ *  from zero to infinity of 
+ *
+ *
+ *            -1/2     -1/2     -3/2
+ *  (3/2)(t+x)    (t+y)    (t+z)    dt.
+ *
+ *  If x or y is zero, the integral is complete.
+ *
+ *
+ * Credits:
+ *
+ *  This function is adapted by E. Dennison from FORTRAN code written by:
+ *
+ *  Carlson, B.C.
+ *  Notis, E.M
+ *  Pexton, R.L.
+ *
+ */
+function drd(x, y, z)
+{
+	with (Math)
+	{ 
+		c1 = 3.0/14.0;
+		c2 = 1.0/6.0;
+		c3 = 9.0/22.0;
+		c4 = 3.0/26.0;
+		errtol = pow((2.2204460492503131e-016)/3.0,1.0/6.0);
+		lolim = 2.0/pow(1.7976931348623158e+308,2.0/3.0);
+		tuplim = pow(2.2250738585072014e-308,1.0/3.0);
+		tuplim = pow(0.1*errtol,1.0/3.0)/tuplim;
+		uplim = pow(tuplim,2.0);
+
+		xn = x;
+		yn = y;
+		zn = z;
+		sigma = 0.0;
+		power4 = 1.0;
+		epsilon = errtol*2
+		while (epsilon >= errtol)
+		{
+			mu = (xn+yn+3.0*zn)*0.2;
+			xndev = (mu-xn)/mu;
+			yndev = (mu-yn)/mu;
+			zndev = (mu-zn)/mu;
+			epsilon = max(max(abs(xndev),abs(yndev)),abs(zndev))
+			if (epsilon >= errtol)
+			{
+				xnroot = sqrt(xn);
+				ynroot = sqrt(yn);
+				znroot = sqrt(zn);
+				lambda = xnroot*(ynroot+znroot) +ynroot*znroot;
+				sigma = sigma+power4/(znroot*(zn+lambda));
+				power4 = power4*0.25;
+				xn = (xn+lambda)*0.25;
+				yn = (yn+lambda)*0.25;
+				zn = (zn+lambda)*0.25;
+			}
+		}
+		ea = xndev*yndev;
+		eb = zndev*zndev;
+		ec = ea-eb;
+		ed = ea-6.0*eb;
+		ef = ed+ec+ec;
+		s1 = ed*(-c1+0.25*c3*ed-1.5*c4*zndev*ef);
+		s2 = zndev*(c2*ef+zndev*(-c3*ec+zndev*c4*ea));
+		return 3.0*sigma+power4*(1.0+s1+s2)/(mu*sqrt(mu));
+	}
+}
+/* END drd() */
+
+
+
+function recalculate()
+{
+	with (Math)
+	{
+		muo = PI*4.0E-7
+		// start validating the input
+		a = parseFloat(document.theform.LoopRadius.value)
+		if (isNaN(a))
+		{
+			alert("Please enter a valid floating point value for mean radius of coils")
+			document.theform.LoopRadius.value = 1.0
+			return false
+		}
+		if (a==0.0)
+		{
+			alert("Please enter a non-zero value for mean radius of coils")
+			document.theform.LoopRadius.value = 1.0
+			return false
+		}
+		document.theform.LoopRadius.value = a
+
+
+		i1  = parseFloat(document.theform.LoopCurrent1.value)
+		if (isNaN(i1))
+		{
+			alert("Please enter a valid floating point value for current in coil 1")
+			document.theform.LoopCurrent1.value = 1.0
+			return false
+		}
+		document.theform.LoopCurrent1.value = i1
+
+		i2  = parseFloat(document.theform.LoopCurrent2.value)
+		if (isNaN(i2))
+		{
+			alert("Please enter a valid floating point value for current in coil 2")
+			document.theform.LoopCurrent2.value = 1.0
+			return false
+		}
+		document.theform.LoopCurrent2.value = i2
+
+
+		l = parseFloat(document.theform.Layers.value)
+		if (isNaN(l))
+		{
+			alert("Please enter a valid floating point value for number of layers")
+			document.theform.Layers.value = 1.0
+			return false
+		}
+		document.theform.Layers.value = l
+
+		t = parseFloat(document.theform.Turns.value)
+		if (isNaN(t))
+		{
+			alert("Please enter a valid floating point value for total number of turns per layer")
+			document.theform.Turns.value = 1.0
+			return false
+		}
+		document.theform.Turns.value = t
+
+		d = parseFloat(document.theform.Diam.value)
+		if (isNaN(d))
+		{
+			alert("Please enter a valid floating point value for wire spacing")
+			document.theform.Diam.value = 1.0
+			return false
+		}
+		document.theform.Diam.value = d
+
+		sx = parseFloat(document.theform.xSeparation.value)
+		if (isNaN(sx))
+		{
+			alert("Please enter a valid floating point value for x separation")
+			document.theform.xSeparation.value = 1.0
+			return false
+		}
+		document.theform.xSeparation.value = sx
+
+		sr = parseFloat(document.theform.rSeparation.value)
+		if (isNaN(sr))
+		{
+			alert("Please enter a valid floating point value for r separation")
+			document.theform.rSeparation.value = 1.0
+			return false
+		}
+		document.theform.rSeparation.value = sr
+
+		so = parseFloat(document.theform.oSeparation.value)
+		if (isNaN(so))
+		{
+			alert("Please enter a valid floating point value for o separation")
+			document.theform.oSeparation.value = 0
+			return false
+		}
+		document.theform.oSeparation.value = so
+
+		x = parseFloat(document.theform.AxialPos.value)
+		if (isNaN(x))
+		{
+			alert("Please enter a valid floating point value for axial position")
+			document.theform.AxialPos.value = 0.0
+			return false
+		}
+		document.theform.AxialPos.value = x
+
+		r = parseFloat(document.theform.RadialPos.value)
+		if (isNaN(r))
+		{
+			alert("Please enter a valid floating point value for radial position")
+			document.theform.RadialPos.value = 0.0
+			return false
+		}
+		document.theform.RadialPos.value = r
+
+		o = parseFloat(document.theform.OffsetPos.value)
+		if (isNaN(o))
+		{
+			alert("Please enter a valid floating point value for offset position")
+			document.theform.OffsetPos.value = 0.0
+			return false
+		}
+		document.theform.OffsetPos.value = o
+
+                /* Convert inches to meters */
+
+                a = a * .0254 ;
+                o = o * .0254 ;
+                r = r * .0254 ;
+                x = x * .0254 ;
+                d = d * .0254 ;
+                sx = sx * .0254 ;
+                sr = sr * .0254 ;
+                so = so * .0254 ;
+
+		/* begin computation here for coil 1 */
+
+                osign = 1;
+                rsign = 1;
+
+                B1xt=0;
+                B1vt=0;
+                B1ot=0;
+                B1rt=0;
+
+                asave = a;
+                osave = o;
+                rsave = r;
+                xsave = x;
+
+                x = xsave - (t-1)*d/2;
+
+                for ( jj=0;jj<t;jj++ )
+                  {
+
+                  a = asave - (l-1)*d/2;
+
+                  if (o < 0) osign = -1; 
+                  if (r < 0) rsign = -1; 
+
+                  v = sqrt(r*r + o*o);
+
+                  for ( kk=0;kk<l;kk++ )
+                    {
+
+                    al = (v)/a;
+		    alt4 = al*4.0;
+		    be = x/a;
+		    ga = x/v;
+		    al2 = al*al;
+		    be2 = be*be;
+		    q = pow(1+al,2)+be2;
+		    rq = sqrt(q);
+		    k = sqrt(alt4/q);
+		    fk = F(k);
+		    ek = FastE(fk,k);
+		    Ht = i1/(2.0*a*PI*rq);
+		    H1x = Ht*(ek*(1-al2-be2)/(q-alt4)+fk);
+		    H1v = (v==0.0)?(0.0):(Ht*ga*(ek*(1+al2+be2)/(q-alt4)-fk));
+
+                    B1xt = B1xt + H1x*muo;
+                    B1vt = B1vt + H1v*muo;
+
+                    a = a + d;
+                    }
+                  x = x + d;
+                  }
+
+                B1x = B1xt;
+                B1r = B1vt * r/v;
+                B1o = B1vt * o/v; 
+
+  		/* begin computation here for coil 2 */
+
+                B2xt=0;
+                B2vt=0;
+
+                i2 = i2 * i1;
+                rsign = 1;
+
+                r = sr - r;
+                o = so - o;
+
+                if (r < 0) rsign = -1; 
+
+                v = sqrt(r*r + o*o);
+
+                x = xsave + sx - (t-1)*d/2;
+
+                for ( jj=0;jj<t;jj++ )
+                  {
+
+                  a = asave - (l-1)*d/2;
+
+                  for ( kk=0;kk<l;kk++ )
+                    {
+		    al = v/a;
+		    alt4 = al*4.0;
+		    be = x/a;
+		    ga = x/(v);
+		    al2 = al*al;
+		    be2 = be*be;
+		    q = pow(1+al,2)+be2;
+		    rq = sqrt(q);
+		    k = sqrt(alt4/q);
+		    fk = F(k);
+		    ek = FastE(fk,k);
+		    Ht = i2/(2.0*a*PI*rq);
+		    H2x = Ht*(ek*(1-al2-be2)/(q-alt4)+fk);
+		    H2v = (v==0.0)?(0.0):(Ht*ga*(ek*(1+al2+be2)/(q-alt4)-fk));
+
+                    B2xt = B2xt + H2x*muo;
+                    B2vt = B2vt + H2v*muo;
+
+                    a = a + d;
+                    }
+
+                  x = x + d;
+                  }
+
+                B2x = B2xt;
+                B2r = -rsign * (B2vt * r/v);
+                B2o = B2vt * o/v; 
+
+                Bx = B1x + B2x;
+                Br = B1r + B2r;
+                Bo = B1o + B2o;
+
+                B1x = B1x.toFixed(12).replace(/0+$/, "");
+                B1r = B1r.toFixed(12).replace(/0+$/, "");
+                B1o = B1o.toFixed(12).replace(/0+$/, "");
+
+	        document.theform.B1x.value = B1x;
+	        document.theform.B1r.value = B1r;
+	        document.theform.B1o.value = B1o;
+
+                B2x = B2x.toFixed(12).replace(/0+$/, "");
+                B2r = B2r.toFixed(12).replace(/0+$/, "");
+                B2o = B2o.toFixed(12).replace(/0+$/, "");
+
+                document.theform.B2x.value = B2x;
+	        document.theform.B2r.value = B2r;
+	        document.theform.B2o.value = B2o;
+
+                Bx = Bx.toFixed(12).replace(/0+$/, "");
+                Br = Br.toFixed(12).replace(/0+$/, "");
+                Bo = Bo.toFixed(12).replace(/0+$/, "");
+
+	        document.theform.Bx.value = Bx;
+	        document.theform.Br.value = Br;
+	        document.theform.Bo.value = Bo;
+
+	}
+	return false
+}
+
+// --></script></p>
+
+<table border="0" cellpadding="3" cellspacing="0" width="1024">
+    <tbody><tr><br>
+    <td align="center"><font color="#000000" size="6">
+       <b>Calculator for Off-Axis Magnetic Fields due to One or Two Coils</b></td>
+    <tr>
+      <td align="center"><font color="#000000" size="4">
+       <b>Copyright &copy; 2014 Eric Dennison and Samuel M. Goldwasser, all Rights Reserved</b></td>
+    <tr>
+      <td><hr color="#FF0000" size="3" width="1024"></td>
+    <tr><td align="center"><img src="fcoafotc_files/fcimage3.gif"></td>
+    <tr>
+        <td><hr color="#FF0000" size="3" width="1024"></td>
+    <tr>
+      <td>This JavaScript calculator started out using Eric Dennison's
+      "Calculator for Off-Axis Fields due to a Current Loop" found on
+      the "Magnet Formulas" Web site (link below).
+      It was modified by me (Sam) to use units of inches instead of
+      meters (OK, so I'm old-fashioned or something. but inches are
+      more convenient for what I'm doing) and two coils wound using
+      multiple layers with multiple turns and wire of finite diameter.
+      This includes the special cases of solenoid (l=1) and pancake
+      coils (t=1).  The separation also allows for the special cases of the
+      Helmholtz (sr=0) and figure-eight (sx=0).  The math may not be precisely
+      exact but should be close unless I screwed up a sign or two. ;-)
+<p>
+      Enter the mean radius of the coils, current in coil 1 (i1) and
+      the relative current in coil 2 (i2 = the value multiplied by i1);
+      total number of layers (l), number of turns/layer (t), and wire
+      spacing (d); axial separation (sx), radial separateion (sr),
+      offset separation (so);
+      and the axial (x), radial (r), and offset (o) position of the measurement
+      point.  Then click "Calculate Magnetic Field Components" to determine
+      the contributions from each coil individually and the net field from both.
+<p>
+      The coordinate system is Cartesian with x,r,o for the three dimensions.
+      This is for legacy reasons.  I may change it someday. :)
+      For a single coil - which would be a common use of this calculator -
+      x (axial) and r (radial) makes the most sense.  For 2
+      coils, r is retained but would be equivalent to the y (vertical) coordinate
+      in the diagram.  Offset then stands in for z.
+<br><br>
+</td></tr>
+</tbody></table>
+
+<form name="theform">
+
+    <table border="0" cellpadding="0" cellspacing="0" width="1024">
+        <tbody>
+        <tr>
+          <td width="4%" align="right">&nbsp;</td>
+          <td width="15%" align="left"><font color="#000000"><b>Currents (amperes):</b></td>
+          <td width="8%" align="right"><font color="#d00000"><b>Coil 1 (i1)</b></td>
+          <td width="1%" align="right">&nbsp;</td>
+          <td width="8%"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="9" name="LoopCurrent1" value="1000" type="text"></td>
+          <td width="30%" align="right"><font color="#00a000"><b>Coil 2 (i2 relative to i1: 1=i1, 0=0, -1=-i1)</b></td>
+          <td width="1%" align="right">&nbsp;</td>
+          <td><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="4" name="LoopCurrent2" value="-1" type="text"></td>
+        </tr>
+        </tbody>
+    </table>
+
+<p>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="1024">
+        <tbody>
+        <tr>
+            <td width="4%" align="right">&nbsp;</td>
+            <td width="5%" align="left"><font color="#000000"><b>Coils:</b></td>
+            <td width="14%" align="right"><font color="#803000"><b>Radius (a, inches)</b></td>
+            <td align="center" width="1%">&nbsp;</td>
+            <td width="8"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+              <input size="7" name="LoopRadius" value="1.0" type="text"></td>
+            <td align="right" width="20%"><font color="#803000"><b>Wire Spacing (d, inches)</b></td>
+            <td align="center" width="1%">&nbsp;</td>
+            <td width="8"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+              <input size="6" name="Diam" value="0.05" type="text"></td>
+            <td width="10%" align="right"><font color="#803000"><b># Layers (l)</b></td>
+            <td align="center" width="1%">&nbsp;</td>
+            <td width="8"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+              <input size="4" name="Layers" value="2" type="text"></td>
+            <td align="right" width="12%"><font color="#803000"><b>Turns/Layer (t)</b></td>
+            <td align="center" width="1%">&nbsp;</td>
+            <td><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+              <input size="4" name="Turns" value="3" type="text"></td>
+        </tbody>
+    </table>
+
+<p>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="1024">
+        <tbody>
+        <tr>
+          <td width="4%" align="right">&nbsp;</td>
+          <td width="30%" align="left"><font color="#000000"><b>Separation of Centers of Coils (inches):</b></td>
+          <td width="8%" align="right"><font color="#0000c0"><b>Axial (sx)</b></td>
+          <td width="1%" align="right">&nbsp;</td>
+          <td width="8%"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="9" name="xSeparation" value="0" type="text"></td>
+          <td width="9%" align="right"><font color="#0000c0"><b>Radial (sr)</b></td>
+          <td width="1%" align="righy">&nbsp;</td>
+          <td width="8%"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="9" name="rSeparation" value="2.5" type="text"></td>
+          <td width="9%" align="right"><font color="#0000c0"><b>Offset (so)</b></td>
+          <td width="1%" align="right">&nbsp;</td>
+          <td><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="9" name="oSeparation" value="0" type="text"></td>
+        </tr>
+        </tbody>
+    </table>
+
+<p>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="1024">
+        <tbody>
+        <tr>
+          <td width="4%" align="right">&nbsp;</td>
+          <td width="31%" align="left"><font color="#000000"><b>Position at Measurement Point (inches):</b></td>
+          <td width="7%" align="right"><font color="#cc00cc"><b>Axial (x)</b></td>
+          <td width="1%" align="right">&nbsp;</td>
+          <td width="8%"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="9" name="AxialPos" value="0.75" type="text"></td>
+          <td width="9%" align="right"><font color="#cc00cc"><b>Radial (r)</b></td>
+          <td width="1%" align="right">&nbsp;</td>
+          <td width="8%"><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="9" name="RadialPos" value="1.25" type="text"></td>
+          <td width="9%" align="right"><font color="#cc00cc"><b>Offset (o)</b></td>
+          <td width="1%" align="right">&nbsp;</td>
+          <td><!--webbot bot="Validation" s-data-type="Number" s-number-separators=",." -->
+            <input size="9" name="OffsetPos" value="0" type="text"></td>
+       </tr>
+       </tbody>
+    </table>
+
+<p>
+
+    <table border="0" width="1024">
+       <tbody>
+       <tr>
+         <td><p align="center"><input name="B2" value="Calculate Magnetic Field Components" onclick="recalculate()" type="button"></p>
+         </td>
+       </tr>
+       </tbody>
+    </table>
+
+<p>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="1024">
+       <tbody>
+       <tr>
+         <td width="26%" align="right"><font color="#d00000"><b>Field due to Coil 1 (Tesla):</b></td>
+         <td width="10%" align="right"><font color="#d00000"><b>Axial (B1x)</b></td>
+         <td width="1%" align="right"></td>
+         <td width="13%"><input value="0.0" size="15" name="B1x" type="text"></td>
+         <td width="9%" align="right"><font color="#d00000"><b>Radial (B1r)</b></td> <td>&nbsp;</td>
+         <td width="1%" align="right"></td>
+         <td width="13%"><input value="0.0" size="15" name="B1r" type="text"></td>
+         <td width="9%" align="right"><font color="#d00000"><b>Offset (B1o)</b></td> <td>&nbsp;</td>
+         <td width="1%" align="right"></td>
+         <td><input value="0.0" size="15" name="B1o" type="text"></td>
+       </tr>
+       </tbody>
+    </table>
+
+<p>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="1024">
+       <tbody>
+       <tr>
+         <td width="26%" align="right"><font color="#00a000"><b>Field due to Coil 2 (Tesla):</b></td>
+         <td width="10%" align="right"><font color="#00a000"><b>Axial (B2x)</b></td>
+         <td width="1%" align="right"></td>
+         <td width="13%"><input value="0.0" size="15" name="B2x" type="text"></td>
+         <td width="9%" align="right"><font color="#00a000"><b>Radial (B2r)</b></td> <td>&nbsp;</td>
+         <td width="1%" align="right"></td>
+         <td width="13%"><input value="0.0" size="15" name="B2r" type="text"></td>
+         <td width="9%" align="right"><font color="#00a000"><b>Offset (B2o)</b></td> <td>&nbsp;</td>
+         <td width="1%" align="right"></td>
+         <td><input value="0.0" size="15" name="B2o" type="text"></td>
+       </tr>
+       </tbody>
+    </table>
+
+<p>
+
+    <table border="0" cellpadding="0" cellspacing="0" width="1024">
+       <tbody>
+       <tr>
+         <td width="26%" align="right"><font color="#d0c000"><b>Field due to Both Coils (Tesla):</b></td>
+         <td width="10%" align="right"><font color="#d0c000"><b>Axial (Bx)</b></td>
+         <td width="1%" align="right"></td>
+         <td width="13%"><input value="0.0" size="15" name="Bx" type="text"></td>
+         <td width="9%" align="right"><font color="#d0c000"><b>Radial (Br)</b></td> <td>&nbsp;</td>
+         <td width="1%" align="right"></td>
+         <td width="13%"><input value="0.0" size="15" name="Br" type="text"></td>
+         <td width="9%" align="right"><font color="#d0c000"><b>Offset (Bo)</b></td> <td>&nbsp;</td>
+         <td width="1%" align="right"></td>
+         <td><input value="0.0" size="15" name="Bo" type="text"></td>
+       </tr>
+       </tbody>
+    </table>
+</form>
+
+    <table border="0" width="1024">
+       <tbody><tr><td>
+       <hr color="#FF0000" size="3" width="1024">
+       More can be found at Eric Dennison's <a HREF="http://nbviewer.jupyter.org/github/tiggerntatie/emagnet-py/blob/master/index.ipynb">Magnet Formulas Web Site</A>.
+       <hr color="#FF0000" size="3" width="1024">
+       </tr></td>
+    </table>
+<br>
+</body>
+</html>
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram explorer · RepairFAQ companion</title>
+<meta name="description" content="All 667 ASCII circuit diagrams from the Sci.Electronics.Repair FAQ and Sam&#x27;s Laser FAQ, redrawn as animated schematics and 3D boards.">
+<meta property="og:title" content="Diagram explorer · RepairFAQ companion">
+<meta property="og:description" content="All 667 ASCII circuit diagrams from the Sci.Electronics.Repair FAQ and Sam&#x27;s Laser FAQ, redrawn as animated schematics and 3D boards.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../companion/assets/favicon.svg" type="image/svg+xml">
+<script>(function(){var r=document.documentElement,s=null;try{s=localStorage.getItem('quake-viz-theme')}catch(e){}
+r.classList.toggle('dark-mode',s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches);r.classList.add('js')})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../companion/assets/companion.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span>RepairFAQ<small>mirror &amp; companion</small></a>
+  <nav class="nav" id="nav" aria-label="Main"><a href="../index.html">Home</a><a href="../archive/index.html">Read the FAQs</a><a href="../companion/diagrams.html" aria-current="page">Diagrams</a><a href="../companion/credits.html">Credits</a></nav>
+  <button class="icon-btn" type="button" data-search-open aria-label="Search all FAQs (press /)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+  <button class="icon-btn" type="button" id="themeToggle" aria-label="Switch theme"></button>
+  <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<dialog class="search-dialog" id="searchDialog" aria-label="Search the FAQs">
+  <form method="dialog"><input class="search-input" type="search" placeholder="Search 4,405 pages: try “flyback”, “HeNe”, “microwave”…" aria-label="Search" autocomplete="off"></form>
+  <ul class="search-results"></ul>
+</dialog>
+
+<main id="main">
+<section class="section" style="padding-top:44px">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Diagram explorer</span>
+      <h1 style="font-size:clamp(2rem,4.5vw,3.2rem)">667 circuits, drawn in characters</h1>
+      <p>Every ASCII diagram in the FAQs, found automatically and redrawn. Click one for the animated and 3D views, the original text,
+      the passage it comes from, and its copyright notice. Drawings are by Samuel M. Goldwasser unless the FAQ credits someone else.</p></div>
+    <div class="toolbar">
+      <input class="search-input" id="q" type="search" placeholder="Filter by words in the diagram, its heading or its page: “flyback”, “Q1”, “ballast”…" aria-label="Filter diagrams">
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="toolbar">
+      <div class="chips" id="colls" role="group" aria-label="Collection"></div>
+    </div>
+    <div class="toolbar"><div class="chips" id="parts" role="group" aria-label="Contains"></div></div>
+    <div class="dgrid" id="grid"></div>
+    <div class="more"><button class="btn" id="more" type="button">Show more</button></div>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="wrap">
+  <div>
+    <h4>Credit where it is due</h4>
+    <p>All FAQ content is the work of <strong>Samuel M. Goldwasser</strong> and <strong>Filip M. Gieszczykiewicz</strong>,
+    and of the many contributors quoted by name throughout, © the original authors, all rights reserved.
+    The original and authoritative site is <a href="https://www.repairfaq.org/">https://www.repairfaq.org/</a>.
+    This is a free, non-commercial mirror, kept so the information lasts. It carries no ads and charges nothing.</p>
+    <p>Mirror and companion maintained by <a href="https://acamaro.com/">Acamaro Cutcher</a>.</p>
+  </div>
+  <div><h4>The FAQs</h4><ul>
+    <li><a href="../archive/sam/laserfaq.htm">Sam's Laser FAQ</a></li>
+    <li><a href="../archive/REPAIR/F_Repair.html">S.E.R FAQ table of contents</a></li>
+    <li><a href="../archive/sam/sammenu.htm">Silicon Sam's Technology Resource</a></li>
+    <li><a href="../archive/sam/copyright.htm">Copyright and fair use</a></li>
+  </ul></div>
+  <div><h4>Companion</h4><ul>
+    <li><a href="../companion/diagrams.html">Diagram explorer</a></li>
+    <li><a href="../companion/credits.html">Credits and terms</a></li>
+    <li><a href="../AI_DIAGRAM_GUIDE.md">Guide for AI diagram tools</a></li>
+    <li><a href="https://acamaro.com/projects/">acamaro.com projects</a></li>
+  </ul></div>
+</div></footer>
+<script src="../companion/assets/companion.js"></script>
+
+<script type="module">
+import { mount } from './assets/schematic.js';
+const COLL = { all: 'All', laser: "Sam's Laser FAQ", sam: 'Repair guides', repair: 'S.E.R FAQ', other: 'Other' };
+const PARTS = ['resistor','capacitor','diode','transistor','transformer','inductor','ground','switch','fuse','lamp/tube','ic','led','motor','battery'];
+const state = { q: '', coll: 'all', parts: new Set(), shown: 0 };
+const grid = document.getElementById('grid'), more = document.getElementById('more'), count = document.getElementById('count');
+const data = await fetch('data/diagrams.json').then(r => r.json());
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const params = new URLSearchParams(location.search);
+state.q = params.get('q') || ''; state.coll = params.get('c') || 'all';
+document.getElementById('q').value = state.q;
+
+function chips(el, items, isOn, onClick) {
+  el.innerHTML = items.map(([k, label]) => `<button class="chip" type="button" data-k="${k}" aria-pressed="${isOn(k)}">${label}</button>`).join('');
+  el.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => { onClick(b.dataset.k); render(true); }));
+}
+function drawChips() {
+  const present = new Set(data.map(d => d.collection));
+  chips(document.getElementById('colls'), Object.entries(COLL).filter(([k]) => k === 'all' || present.has(k)), k => k === state.coll, k => { state.coll = k; drawChips(); });
+  chips(document.getElementById('parts'), PARTS.map(p => [p, p]), k => state.parts.has(k), k => { state.parts.has(k) ? state.parts.delete(k) : state.parts.add(k); drawChips(); });
+}
+let list = [];
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  const el = e.target; io.unobserve(el);
+  try { mount(el, data[+el.dataset.i].ascii, { idPrefix: 'g' + el.dataset.i, title: el.dataset.t }); } catch (err) { el.innerHTML = '<pre class="ascii">' + esc(data[+el.dataset.i].ascii) + '</pre>'; }
+}), { rootMargin: '300px' });
+function render(reset) {
+  const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+  list = data.map((d, i) => [d, i]).filter(([d]) =>
+    (state.coll === 'all' || d.collection === state.coll) &&
+    [...state.parts].every(p => d.parts.includes(p)) &&
+    words.every(w => (d.heading + ' ' + d.title + ' ' + d.page + ' ' + d.ascii + ' ' + d.context).toLowerCase().includes(w)));
+  if (reset) { grid.innerHTML = ''; state.shown = 0; }
+  const next = list.slice(state.shown, state.shown + 24);
+  grid.insertAdjacentHTML('beforeend', next.map(([d, i]) => `
+    <a class="dcard" href="diagram.html#${d.id}">
+      <div class="thumb" data-i="${i}" data-t="${esc(d.heading)}"></div>
+      <div class="body"><h3>${esc(d.heading)}</h3><div class="src">${esc(d.title)}</div>
+      <div class="tags">${d.parts.slice(0, 5).map(p => `<span class="tag">${p}</span>`).join('')}</div></div>
+    </a>`).join(''));
+  grid.querySelectorAll('.thumb:not([data-seen])').forEach(t => { t.dataset.seen = 1; io.observe(t); });
+  state.shown += next.length;
+  count.textContent = `${list.length} of ${data.length} diagrams`;
+  more.hidden = state.shown >= list.length;
+}
+let timer;
+document.getElementById('q').addEventListener('input', e => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value; render(true); }, 160); });
+more.addEventListener('click', () => render(false));
+drawChips(); render(true);
+</script>
+</body></html>

@@ -1,0 +1,151 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvnopicorns.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="No picture or raster and no sound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: No picture or raster and no sound</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvnopicorns.htm">https://www.repairfaq.org/samnew/tvfaq/tvnopicorns.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">No picture or raster and no sound&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvpotttccc.htm">&lt;&lt;&nbsp;Power-on tick-tick-tick o..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvredwphb.htm">Reduced width picture and..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvnopicorns">No picture or raster and no sound</A></h3>
+
+The screen is blank with no raster at all.  There are indications that the
+channel numbers are changing in the display.  This indicates that some of the
+low voltages are present but these may be derived from the standby supply.
+<p>
+Assuming there is no deflection and no HV, you either have a low voltage power
+supply problem, bad startup circuit, or bad horizontal output transistor
+(HOT) or other bad parts in the horizontal deflection.
+<p>
+Check for bad fuses.
+<p>
+(If you have HV as indicated by static electricity on the front of the
+screen and you hear the high pitched whine of the horizontal deflection
+when it is turned on, then the following does not apply).
+<p>
+<ol>
+<li>Use an ohmmeter to test the HOT for shorts.  If it is bad, look for
+ open fusable resistors or other fuses you did not catch.
+<p>
+<li>Assuming it is good, measure the voltage on the collector-emitter
+ of the HOT (this is safe if there is no deflection).  You should see
+ the B+ - probably between 100 and 150 V.
+<p>
+<li>If there is no voltage, you have a low voltage power supply problem
+ and/or you have not found all the bad/open parts.
+<p>
+<li>If there is voltage and no deflection (no high pitched whine and no
+ HV), you probably have a startup problem - all TVs need some kind of
+ circuit to kick start the horizontal deflection until the auxiliary
+ power outputs of the flyback are available.  Some Zeniths use a simple
+ multivibrator for this - a couple of transistors.  Others power the
+ horizontal osc. IC from a special line-derived voltage.  The multivibrator
+ type are sometimes designed to fail if someone keeps turning the set on
+ and off (like kids playing) since the power rating is inadequate.
+<p>
+ Test the transistors if it is that type with an ohmmeter.  If one is
+ shorted, you have a problem.  The usual way a TV service person would
+ test for startup problems is to inject a signal to the base of the HOT
+ of about 15.75 kHz.  If the TV then starts and runs once this signal
+ is removed, the diagnosis is confirmed.  This is risky - you can blow
+ things up if not careful (including yourself).  See the section:
+ <A HREF="tvbypsuc.htm">Bypassing the Startup Circuit</A> for details.
+</ol>
+<p>
+If you hear the high pitched whine of the deflection and/or feel some static
+on the scree, confirm that the horizontal deflection and high voltage are
+working by adjusting the SCREEN control (probably on the flyback).  If you can
+get a raster then your problem is probably in the video or chroma
+circuits, not the deflection or high voltage.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvpotttccc.htm">&lt;&lt;Power-on tick-tick-tick o..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvredwphb.htm">Reduced width picture and..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

@@ -1,0 +1,2883 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uSLC1/
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uSLC1/">https://www.repairfaq.org/sam/uSLC1/</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+<title>Micro Stabilized Laser Controller 1 (&micro;SLC1)</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<center>
+<h1>Micro Stabilized Laser Controller 1 (&micro;SLC1)</h1>
+
+<h3>(For Single or Dual Mode and Two Frequency Axial Zeeman HeNe Lasers)</h3>
+<p>
+<h2>Installation and Operation Manual</h2>
+<h3>Version 2.59a (10-Dec-2024)
+</h3>
+</h2>
+<h3>
+<A HREF="../copyright.htm">Copyright &copy;</A> 1994-2024
+<br>
+Sam Goldwasser<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<p>
+<A NAME="uSLC1toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#uSLC1pre">Preface</a>
+ <ul>
+ <li><A HREF="#uSLC1aac">Author and Copyright</a>
+ <li><A HREF="#uSLC1dis">DISCLAIMER</a>
+ <li><A HREF="#uSLC1ack">Acknowledgement</a>
+ </ul>
+<li><A HREF="#uSLC1int">Introduction</a>
+<li><A HREF="#uSLC1spc">Specifications</a>
+<li><A HREF="#uSLC1las">HeNe Laser Assembly</a>
+<li><A HREF="#uSLC1wdp">Wiring Diagram and Parts List</a>
+<li><A HREF="#uSLC1ccl">Controlling Commercial Stabilized Laser Heads</a>
+<li><A HREF="#uSLC1stp">Controlling the Melles Griot 05-STP-91x Stabilized Laser</a>
+<li><A HREF="#uSLC1vou">Other Variations on &microSLC1</a>
+<li><A HREF="#uSLC1pcb">Schematic/Printed Circuit Board</a>
+<li><A HREF="#uSLC1pin">Arduino/Atmega Pin Assignments</a>
+<li><A HREF="#uSLC1cos">Computer and Operating System Requirements</a>
+<li><A HREF="#uSLC1lvs">Latest Versions of the Firmware and GUI</a>
+<li><A HREF="#uSLC1ucf">Uploading the &micro;SLC1 Firmware</a>
+<li><A HREF="#uSLC1irg">Installing and Running the &micro;SLC1 GUI</a>
+<li><A HREF="#uSLC1guif">GUI Operation</a>
+ <ul>
+ <li><A HREF="#uSLC1guiw">Main Window Controls and Indicators</a>
+ <li><A HREF="#uSLC1guizl">Use with Two-Frequency Zeeman Laser</a>
+ <li><A HREF="#uSLC1guih">Laser Firmware Hacking (Command) Window</a>
+ </ul>
+<li><A HREF="#uSLC1trb">Troubleshooting</a>
+<li><A HREF="#uSLC1tny">Controller-Only Version of uSLC1 for ATtiny85</a>
+<li><A HREF="#uSLC1promic">Version of uSLC1 for Pro Micro Atmega</a>
+<li><A HREF="#uSLC1ard">Specific Arduino Issues</a>
+ <ul>
+ <li><A HREF="#uSLC1brn">Burning Bootloaders into the Nano or Pro Micro</a>
+ <li><A HREF="#uSLC1kbr">Kludge to Prevent Arduino Build Errors</a>
+ </ul>
+<li><A HREF="#uSLC1frm">Firmware Technical Description</a>
+<li><A HREF="#uSLC1ref">References</a>
+</ul>
+<p>
+<A NAME="uSLC1pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="uSLC1aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="uSLC1dis">DISCLAIMER</a></h4>
+
+&micro;SLC1 is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+While every effort has been made to avoid this possibility, &micro;SLC1 is an
+on-going development effort.  We will not be responsible for any consequences
+of such bugs including but not limited to damage to the wafer FAB you
+picked up on eBay for $1.98 + shipping, financial loss from the waste of
+28 spools of ABS due to the office 3-D printer fabricating a part with
+random dimensions due to loss of lock, or bruising to your pet's ego
+from any number of causes directly or indirectly related to &micro;SLC1. ;-)
+
+<h4><A NAME="uSLC1ack">Acknowledgement</a></h4>
+
+Thanks to Jan Beck for getting me interested
+in microcomputer development.  If anyone had told me 
+six months ago that I'd be writing code for an Arduino-compatible
+board - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)
+Links to his Web information may be found under
+<A HREF="#uSLC1ref">References</a>.
+<br>
+<p>
+<A NAME="uSLC1int"></A>
+<hr>
+<h3>Introduction</h3>
+
+Micro Stabilized Laser Controller 1 (&micro;SLC1) is an inexpensive
+but highly flexible system for implementing a single or dual polarized
+mode stabilized HeNe laser or an Axial Zeeman two frequency HeNe laser
+like the ones shown in the diagram below.
+<p>
+<center>
+<img src="uSLC1d1.gif">
+<h3>Single or Dual Mode Stabilized HeNe Laser using &micro;SLC1 Running on Atmega 328 Nano 3.0</h3>
+</center>
+<p>
+&micro;SLC1 replaces most of the electronic components like op-amps
+and filter/feedback networks that an analog controller would require
+with a programmable microprocessor.  &micro;SLC1 is not
+unique in this regard as all but the simplest modern lasers are designed
+in a similar way.  A digital controller is not fundamentally superior to
+an analog one.  However, being easily programmable, it does provide much more
+flexibility to implement features and optimize performance.  &micro;SLC1
+is based on a readily available Arduino-compatible Atmega 328 Nano 3.0
+board, along with a hand-full of discrete electronic parts.  The firmware
+it runs should be capable of locking virtually any one or two mode
+HeNe laser (including Zeeman HeNe lasers) which meets certain criteria
+in terms of size and mode behavior.  But if needed, the firmware source
+code is available and can be easily modified.
+<p>
+&micro;SLC1 may be used to construct a very compact self-contained
+laser.  The photo below is of a JDSU Novette case - which in itself is
+among the smallest common (unstabilized) HeNe lasers with a Melles Griot
+barcode scanner tube and power supply, along with &micro;SLC1
+mounted inside including all its LEDs and USB connector on the
+back-panel.  Power is 5 VDC at 2 A provided by a wall adapter.
+Minor changes to the firmware locking parameters
+were required due to the low heater power and unvented case.
+It is a tight squeeze - constructing ships in bottles is probably
+less stressful. :)
+<p>
+<center>
+<img <img  WIDTH=800 src="../sgcshl1.jpg">
+<h3>Self-Contained Compact Stabilized HeNe Laser using &micro;SLC1</h3>
+</center>
+<p>
+This document provides assembly, installation, and operating
+instructions for the &micro;SLC1 hardware and firmware to be used with
+either a commercial laser head like a Spectra-Physics 117A/B/C
+or a home-built stabilized HeNe laser using, for example, a
+barcode scanner HeNe laser tube.  It also includes &micro;SLC1 Windows
+Graphical User Interface as an option to enable monitoring of the
+laser or to control or fine tune locking parameters.
+<p>
+For use with an two frequency axial Zeeman HeNe laser, there are minor
+changes:
+<p>
+<center>
+<img src="uSLC1z1.gif">
+<h3>Two Frequency Axial Zeeman HeNe Laser using &micro;SLC1 Running on Atmega 328 Nano 3.0</h3>
+</center>
+<p>
+It is assumed the reader is familiar
+stabilized HeNe lasers and has a need for one.  If not, there
+is probably little reason to be using &micro;SLC1.  The output
+of a stabilized HeNe laser doesn't look any different than
+that of a non-stabilized HeNe laser (or $1 laser pointer, for that
+matter). ;-)
+<p>
+The photo below shows an Axial Zeeman laser built almost totally from scratch.
+It doesn't even incorporate any HP/Agilent parts except for the recycled
+5501A baseplate, but that doesn't count. :)  The feedback for stabilization
+utlizes the waste beam from the back of the tube rather than the front (shown
+in the diagrams, above).  But the REF signal IS obtained via a beam-splitter
+in the main beam.
+<center>
+<img src="sgazl1p2.jpg">
+<h3>Sam's Home-Built Axial Zeeman Two Frequency HeNe Laser using &micro;SLC1</h3>
+</center>
+<p>
+The same setup could be configured as a (non-Zeeman)
+single or dual mode stabilized HeNe laser by removing the stacks of
+magnets surrounding the tube cylinder and Quarter WavePlates (QWPs) mounted
+in the blue sleeves at the rear and front (not visible), and adding
+a polarizer to select the desired mode.  Or as a transverse Zeeman laser
+by doing that and replacing the magnets with ones suitable for providing
+a transverse field.
+<p>
+With minor changes, &microSLC1 could be used with HeNe 
+lasers that have a PZT (PieZo Transducer) for cavity length control like
+the HP-5501A.  It should also be possible to control dual-cavity length
+systems using a heater around the tube for slow changes and a heater
+or induction coil on one or both mirror mount stems for fast changes.
+Other types of lasers (including non-HeNes), as well as devices
+like tunable filters (etalons), mode lockers, and laser stabilizers
+might also be adapted to &microSLC1.  See the section:
+<A HREF="https://www.repairfaq.org/sam/uSLC1/%3D""uSLC1vou">Variations on &microSLC1</A>.
+<p>
+Note: Links to Web pages external to this document will open in a <i>single</i>
+separate tab or window depending on your browser's settings.
+<p>
+<hr>
+
+<h3><A NAME="uSLC1spc">Specifications</h2>
+
+<ul>
+<li><b>Laser compatibility:</b> Well behaved random polarized red HeNe
+ laser tube up to about 10 inches in length with at most 3 longitudinal modes.
+ "Well behaved" refers to the mode sweep - at the present time, please restrict
+ use of &micro;SLC1 to non-flippers. ;-)  I do not know what it will do with
+ naughty tubes.
+<p>
+ A real-time frequency display for use with axial and transvese Zeeman HeNe
+ lasers is forthcoming.  (Locking is unchanged and will work
+ with these lasers now.)
+<p>
+ Here is a partial list of suitable commercial laser tubes/heads:
+<p>
+ <ul>
+ <li><b>Spectra-Physics 117, 117A, 117B, 117C, Melles Griot 05-STP-901:</b>
+  These are electrically
+  compatible with &microSLC1.  The 117, 117A, and 05-STP-901 laser heads
+  are plug compatible with the Rev 1.1 PCB.  (Minor wiring changes for
+  use with the Ver 1.0 PCB.)  The heater is 18 to 20 ohms cold with a
+  recommended maximum heater voltage of 12 V.  The tube runs on 4.5 mA
+  at around 2 kV.
+<p>
+ <li><b>Coherent 200:</b> The photodiode output signals are stronger than
+  for the SP-117/A and other lasers using the waste beam so that the P and S
+  mode gain trim-pots may need to be replaced with smaller values (probably
+  around 50K ohms).  The heater resistance is around 22 ohms with a
+  recommended maximum heater voltage of 30 to 35 V.  The tube runs on 6.5 mA
+  at around 1.8 kV.
+<p>
+ <li><b>Melles Griot, JDSU, Siemens/LASOS, others:</b> Random polarized tubes
+  for a single or dual mode laser up to 10 inches in length.  Except
+  for one very uncommon JDSU tube which already has a heater installed
+  (1103H), these will all require an external heater.  The heater
+  characteristics and heater voltage will depend to some
+  extent on the nominal tube discharge power.  &micro;SLC1 has been
+  tested with the Spectra-Physics 088 and Melles Griot 05-LHR-006.
+<p>
+ <li><b>Melles Griot, JDSU, Siemens/LASOS, other:</b> Random polarized tubes
+  for axial Zeeman laser 6 inches or less.  Specific samples would need to
+  be selected for low birefrigence producing a suitable beat signal inside
+  the Zeeman magnet.  These will all require an external heater.  The
+  maximum heater voltage will depend to some extent on the nominal tube
+  discharge power.
+<p>
+ <li><b>HP/Agilent/Keysight:</b> Axial Zeeman laser tubes in magnet - 5501B,
+  5517A/B/C/D, N1211A.  These all have an internal heater which is about 8
+  ohms cold with a recommended maximum heater voltage of 12 to 14 V.  They
+  <b>cannot</b> be used without a magnet as the modes are, well, weird. :( :)
+ </ul>
+<p>
+<li><b>Performance:</b> Frequency and intensity stabilization performance
+ should be similar to that of commercial systems.  One user has reported
+ that with the laser tube assembly inside a Plexiglas box, the short term
+ frequency stability was better than +/-2 MHz.  The locking algorithm
+ appears to be superior to most in terms of time-to-lock and adaptability
+ to environmental conditions.   And it is definitely superior in terms
+ of hackability. ;-)
+<p>
+<li><b>Stabilization modes (no pun...):</b> JP2 on the &micro;SLC PCB
+ selects the way that locking takes place:
+<p>
+ <ul>
+ <li><b>Frequency mode:</b> Locking is based on comparing the amplitudes of
+  the orthogonal longitudinal modes from the laser.  The amplitudes of the
+  modes are forced to be equal by controlling cavity length via the heater,
+  but an offset can be added using the GUI.  This is the default for most
+  commercial stabilized HeNes.
+<p>
+ <li><b>Intensity mode:</b> Locking is based on comparing the amplitude of one
+  of the orthogonal modes to a fixed reference.  <b>The firmware for Intensity
+  Mode may not be fully implemented.</b>
+</ul>
+<p>
+<li><b>Mode sensing:</b> Single ot dual photodiodes for the one or
+ two polarizations.  The sensitivity is determined by a single resistor
+ or trim-pot for each photodiode, though better immunity to electrical
+ noise may be obtained using a trans-impedance preamp.  Automatic
+ Gain Control (AGC) in firmware may be added in a future release but
+ don't hold your breath in anticipation.  Manual adjustment is available
+ via the GUI if desired.
+<p>
+<li><b>Heater:</b> For use with a 12 V heater power supply, the
+ resistance is Typically 10 to 20 ohms when cold wrapped around the
+ tube and covering at least 50 percent of its length.  For home-built
+ lasers, this may be constructed using copper insulated magnet wire or a Kapton
+ thin-film heater.  With an appropriate drive transistor and power supply,
+ other lower or higher heater resistances can be accomodated.
+<p>
+<li><b>Hardware platform:</b> The Atemga 328 Nano 3.0 is what I have
+ used due to its univeral availability and low cost.  But almost any other
+ Arduino-compatible board with hardware USB should work with at most
+ minimal changes.  Even the itty-bitty ATtiny85 Digispark board will work as
+ the controller, but without the extra bells and whistles, described near
+ the end of this manual.
+<p>
+<li><b>Modulation:</b> External analog input may be used to vary the
+ lock point at low speed - and thus optical frequency - by several
+ hundred MHz.  Please remind me to add this. ;-)
+<p>
+<li><b>Communications:</b> USB connection to PC for firmware upload and
+ optional &micro;SLC1 GUI.  (Not on ATtiny85 version.)
+<p>
+<li><b>Firmware:</b> Real time digital control implemented in C.
+<p>
+<li><b>Hardware indicators using Atmega 328 Nano 3.0 (LEDs, optional):</b>
+ The firmware provides drive signals for the following but the same functions
+ are present in the &micro;SLC1 GUI.
+<p>
+ <ul>
+ <li><b>P-Mode > S-Mode (Green LED) and S-mode > P-Mode (Orange LED):</b>
+  These display Loop Difference.  A bicolor common-anode LED could also be
+  used.  Alternatively, by changing 2 lines in the firmware, these can
+  display the amplitudes of the P-Mode and S-Mode independently.
+<p>
+ <li><b>Heater drive (Yellow LED):</b> This displays the power level
+  of the PWM heater drive signal.
+<p>
+ <li><b>Firmware state (Three LEDs for binary 0 to 7):</b>  A decimal
+  display could also be used.
+<p>
+ <li><b>Locked:</b> Blue LED on when locked.  For the minimalist, this is
+  the only indicator that's really needed. ;-)  The output could also be
+  used to signal other equipment that the laser is ready.
+<p>
+ <li><b>Error:</b> Red LED on if the laser is broken or is unable to lock
+  for some other reason.
+ </ul>
+<p>
+ The ATtiny85 version has only a single multi-function LED for status.
+<p>
+<li><b>Locking:</b> Automagical warmup and locking acquisition.  Warmup
+ time is typically less than 15 minutes from a cold start.  But it should lock
+ reliably regardless of ambient temperature and previous laser status.
+<p>
+<li><b>Control loop:</b> Adaptive digital Proportional-Integral-Differential.
+ The control loop runs at approximately 977 Hz.
+<p>
+<li><b>Graphical User Interface (GUI):</b> Windows &micro;SLC1 GUI
+ (optional) may be used to monitor laser status including all relevant
+ parameters duplicating or substituting for the LEDs, as well as to
+ change locking behavior and to modify most of the locking parameters
+ (for better or worse).  Changes may be saved to Atmega non-volatile
+ memory.  (Not available on ATtiny85 version.)
+<p>
+<li><b>Firmware and GUI cost:</b> These will be free for hobbyist,
+ experimenter, research, and other non-commercial users.  The cost
+ for commercial users has not been determined but should be very modest
+ at most.
+<p>
+<li><b>Support:</b> Lifetime Tech support will be provided via email and
+ the &micro;SLC1 Web site.  "Lifetime" is defined to be the life of the user or
+ the duration of the user's interest in stabilized laser technology.  This
+ definition is subject to change without notice. ;-)  However, while the
+ source code for the firmware is available by default and source code
+ for the GUI may be provided, we will NOT support unauthorized changes
+ unless they are deemed by our experts to be critical to the future of
+ the Universe! ;-)  But bug reports are welcome and
+ true improvements or useful features will be incorporated, and the
+ contributer will be acknowledged.
+</ul>
+<p>
+Specifications are subject to change without notice. :-)
+<p>
+<hr>
+
+<h3><A NAME="uSLC1las">HeNe Laser Assembly</a></h3>
+
+The heart of this system is the HeNe laser, which includes the laser
+tube itself, HeNe laser power supply, tube heater, and beam sampler and
+photodiodes monitoring the two polarized modes:
+<p>
+<ul>
+<li><b>HeNe laser tube:</b> The tube should be the common red (633 nm)
+ wavelength 5 to 10 inches (125 to 250 mm) in length with a TEM00 spatial
+ mode (not multimode).  It must be random-polarized and well behaved - not
+ a flipper (though even some flippers can be stabilized without difficulty).
+ These tubes typically have a total power output of 0.5 to over 4 mW.
+ Barcode scanner tubes that will manufactured by the 100s of thousands
+ in the 1980s are generally suitable.  Confirming non-flipper behavior
+ is easily done once connected to &micro;SLC1 with the GUI, or with
+ a polarizer and laser power meter.  Commercial HeNe laser heads from/for
+ stabilized lasers like the Spectra-Physics 117/A and similar Melles Griot
+ 05-STP-901 are compatible with these requirements.
+<p>
+ For a bare tube, ballast resistor(s) and appropriate wiring will also be
+ required.  Laser heads may plug into the power supply directly, though
+ adapters or some splicing may be required depending on the plug/sockets
+ on each.
+<p>
+<li><b>Compatible HeNe laser power supply:</b> This may be a bare "brick",
+ either AC or DC input, or a "lab-style" supply.
+<p>
+<li><b>Tube heater:</b> Stabilization is achieved by controlling the
+ cavity length of the laser tube down to sub-micro precision.  This
+ is done by heating the tube beyond where it would be with the discharge
+ current alone.  The controller then maintains this exact temperature
+ by balancing heating due to power to the heater and cooling via
+ convection and conduction to the environment based on optical feedback.  The
+ heater may be implemented by winding
+ insulated magnet wire around the tube or a Kapton thin-film heater
+ of appropriate size and resistance can be used.  The Kapton heater is
+ definitely easier to install, but are expensive and/or simply
+ unavailable unless you find a bargain on eBay.  But it must be
+ compatible in dimensions as well as resistance.  The optimum specs
+ for a tube that is 1 inch in diameter and 6 inches in length would
+ be between 2 and 2.5 inches in length x 3.2 inches in width to just
+ circle the tube with little or no overlap.  If using magnet wire, it
+ should be wound "Bifilar-style" to minimize any magnetic field.  Bifilar
+ means that a pair of wires connected at one end are wound
+ continuously with both connections at the opposite end resulting
+ in nearly perfect cancellation of its magnetic field.
+ The cold resistance of the heater should be between 12 and 24 ohms.
+ For a tube that is 1 inch in diameter and 6 inches in length, the
+ use of #34 AWG wire (approximately 0.007 inches in diameter and 0.261
+ ohms/foot) should result in a 20 ohm solenoid of around 2 inches
+ in length.  For a different size tube or different resistance or different
+ wire, you can do the calculations. :)  It's desirable to have
+ the heater cover at least 1/2 of the available tube but keep away
+ from the high voltage. :( :)  Having said all that, it's not critical
+ (except the avoiding the high voltage part!).  It's even possible to
+ heat only one or both mirror mount stems to control their length,
+ but this can be tricky and is left for the advanced course. ;-)
+<p>
+<li><b>Beam sampler and photodiodes:</b>  A polarizing beam-splitter
+ separates the P and S modes, and silicon photodiodes monitor each of these.
+<p>
+<li><b>Mounting:</b> A suitable mounting scheme must be provided
+ for these parts as well as a thermally leaky enclosure so that
+ heat can flow to the environment.  The mounting must be compliant
+ as the tube does need to expand and contract, if ever so slightly.
+ The heater should be covered by a small amount of insulation - a couple
+ layers of plastic sheet would be suitable.  The enclosure should not be
+ sealed but must isolate the laser tube from air currents which will tend
+ to upset the delicate balance for it to remain stable.
+</ul>
+<hr>
+
+<h3><A NAME="uSLC1wdp">Wiring Diagram and Parts List</a></h3>
+
+The diagram below - a sort of a hybrid between an electronic
+schematic and wiring diagram - shows the parts required for an Atmega328
+Nano 3.0 system (with or without the GUI) incorporating all the bells and
+whistles.  (Well at least the LEDs in decorator colors.)  But for basic
+functionality, LEDs for Locked and Error would be all that's needed.
+The heater is assumed to use 12 V but higher or lower voltage can be
+used as appropriate based on heater resistance.  The transistor and
+its base resistor should be suitable for anything up to around 2 amps.
+<p>
+<center>
+<img src="uSLC1_Wiring4.gif">
+<h4>&micro;SLC1 Schematic/Wiring Diagram using Atmega 328 Nano 3.0 with Default LED Resistor Values</h4>
+</center>
+<p>
+The following are the components required to put together a basic
+system for the controller.  These parts are available from
+electronics distributors like Digikey and should total no more than
+around $10 to $15.  The Atmega is available from many eBay sellers
+for as little as $2 delivered.  This list does NOT include the
+laser and its associated optical and electronic parts.
+<p>
+The &micro;SLC1 kits I provide will have most of the following:
+<p>
+<ul>
+<li>Atmega 328 Nano 3.0 development board.  This comes assembled with
+ the microprocessor preprogrammed with the firmware uploader and
+ is available via eBay from USA sellers for around $5, or from the
+ Far East for $2.50 or less.  These are probably all clones of the original
+ but appear to work fine.  It can also be found via Amazon and the major
+ electronics distributors, as well as direct from Adafruit, usually for
+ much more.  Regardless of which one you buy (if not from me), confirm
+ that it has the bootloader pre-installed.
+<p>
+ &micro;SLC1 should run with at most minor modifications on other
+ Arduino-compatible boards.  I did attempt to get the GUI to run on the
+ Pro Micro Atmega32U4, which is even smaller than the Nano.  So,
+ it really should be called Pico. ;-)  But several issues stood in the
+ way and that project has been shelved for now.  The &micro;SLC1 controller
+ (only, no GUI) does run on the femto-size ATtiny85. :)
+<p>
+ Designing your own PCB for the bare Atmega IC is also an option but at these
+ prices, it's hardly worth the effort unless the intention is to include it
+ as part of a larger system.  This is actually being done for a commercial
+ application. ;-)
+<p>
+<li>Custom SG-&micro;SLC1 PCB.
+<p>
+<li>USB A male to USB B Mini male cable (for Nano, other styles for
+ the ATtiny or Pro Micro).  This is used to upload the firmware and
+ run the GUI (if supported).
+<p>
+<li>Heater drive transistor.  High gain NPN power transistor.  Possibilities
+ include the KSD2012GTU and KSD880YTU, or any other NPN power transistor
+ with a gain at 0.5 to 1.0 A of 100 or more.  A base current limiting resistor
+ of around around 330 ohms will be required if using  a conventional NPN
+ transistor.  Using an N-channel MOSFET is
+ also possible but care must be taken to assure that the output drive voltage
+ from the Atmega digital pin is adequate to fully turn it on reliably.
+ This may require a buffer to boost it to 8 or 10 V.
+<p>
+ A snubber circuit consisting of a 0.1 uF capacitor and 1 ohm resistor may
+ be required to suppress a turn-off spike due to stray inductance.  Aside
+ from unsightly blemishes in the heater drive waveform, the absense of a
+ snubber was resulting in peculiar behavior of the PWM drive and mode
+ input signals.
+<p>
+<li>2 x 1M ohm (typical) trim-pots to adjust the polarized mode sensitivity
+ along with 2 x 0.1 uF caps to minimize noise pickup.  A pair of
+ trans-impedance preamps may be added where the highest level of
+ performance is desired.
+<p>
+<li>LEDs (optional) for hardware status indication.  These can be dispensed
+ with if using the GUI exclusively, or where status is monitored by another
+ system.  Then, perhaps keep only the Locked and Error LEDs, or none at all.
+ But with no lights, it would not qualify as an official digital system! ;-)
+<p>
+ <ul>
+ <li>1 x green LED and 1 x orange LED for the P-Mode and S-Mode indicators or
+  Loop Difference indicator.  Or a bicolor LED could be substituted
+  for the latter (with at most minimal firmware changes).
+ <li>1 x yellow LED for the heater drive indicator.
+ <li>3 x white LEDs for the binary state indicators.
+ <li>1 x blue LED for the Locked indicator.
+ <li>1 x red LED for the Error indicator.
+<p>
+ <li>8 1/4 W resistors for LED current limiting.  Their value will depend
+  on the specific LED color: White, blue, and high brightness green
+  (if included) require less than 1/10th of
+  the current of all others (except for super-bright green,
+  is even lower).  The default values should be fine,
+  but feel free to adjust the values to balance the
+  brightnesses if you're obsessive-compulsive about such things. ;-)
+<p>
+  Note that most of these resistor values have changed compared to those in
+  the previous version of the kits.  This is partly due to the annoying
+  extreme brightness of those LEDs using the original resistor values.
+ </ul>
+<p>
+ <li>For Zeeman lasers or where monitoring of REF frequency is desired
+  (used solely for display in the GUI), additional components may be
+  required to convert the signal to TTL.  The REF input (Arduino pin 5)
+  is configured with an internal pullup, so nothing special needs to be
+  done with it if not connected to anything.
+</ul>
+<p>
+Here is the detailed parts list.  The numbering refers to the &micro;SLC1
+Schematic and PCB described in the section: <A HREF="#uSLC1pcb">Schematic
+and Printed Circuit Board</a>.
+<p>
+<pre>
+ Prt#  Description                Comments
+--------------------------------------------------------------------------------
+ uPB1  Atmega 328 NANO             Arduino board with pins soldered
+
+  -    USB A to Mini USB B cable   1 to 3 foot to connect to PC
+
+  -    PCB, &micro;SLC1 V1.1             Updated V1.1 fixes State LEDs, 
+
+  -    Socket or strips, 30 pin    For Atmega 328 NANO, recommended for use
+                                    with PCB.  May need trimming.
+
+  D1  LED, yellow                  Heater
+  D2  LED, white                   State 0
+  D3  LED, white                   State 1
+  D4  LED, white                   State 2
+  D5  LED, green                   P-Mode
+  D6  LED, orange                  S-Mode
+  D7  LED, blue                    Locked
+  D8  LED, red                     Error
+
+  R1  Resistor, 1K ohm, 1/4 W      For Heater LED
+  R2  Resistor, 10K ohm, 1/4 W     For State0 LED
+  R3  Resistor, 10K ohm, 1/4 W     For State1 LED
+  R4  Resistor, 10K ohm, 1/4 W     For State2 LED
+  R5  Resistor, 33K ohm, 1/4 W     For P-Mode LED
+  R6  Resistor, 2.2K ohm, 1/4 W    For S-Mode LED
+  R7  Resistor, 10K ohm, 1/4 W     For Locked LED
+  R8  Resistor, 2.2K ohm, 1/4 W    For Error LED
+
+  Note: R1-R8 values are typical and do NOT agree with the schematics.  The
+  actual resistors may differ slightly but should be matched to the LEDs
+  included in the kit.  Adjust values to balance brightnesses of LEDs if
+  these don't result in an adquately pleasing experience. ;-)  The values
+  have changed from the past so if you are just getting around to building
+  a kit acquired a year ago, some of the old ones may be lower.
+  And, no, the 33K for R5 is not a typo.  That value would
+  be for a high brightness green LED.  It will be 2.2K for
+  a normal green LED - so check it specifically before soldering.
+
+  Or leave off the LEDs and their resistors entirely as the same information
+  is available in the &micro;SLC1 GUI. ;-)
+
+  R9  Resistor, 240 ohm, 1/4 W     Heater transistor base drive
+ R10  Resistor, 1 ohm, 1/4 W       Heater snubber
+
+ R11  Trim-pot, 1M ohm             P-Mode PD sensitivity adjust
+ R12  Trim-pot, 1M ohm             S-Mode PD sensitivity adjust
+
+ R13  Resistor, 1K ohm, 1/4 W      PD current limiting
+
+  Q1  Transistor, power            Heater driver KSD2012 or KSD880 typical
+
+  C1  Capacitor, 0.1 uF            Heater snubber
+
+  C2  Capacitor, 0.1 uF            +12V bypass
+
+  C3  Capacitor, 22 uF             +12V bypass
+
+  C4  Capacitor, 0.1 uF            +5V bypass
+  C7  Capacitor, 22 uF             +5V bypass
+
+  C8  Capacitor, 0.1 uF            Vin bypass
+  C9  Capacitor, 22 uF             Vin bypass
+
+  C5  Capacitor, 0.1 uF            P-Mode PD filter
+  C6  Capacitor, 0.1 uF            S-Mode PD filter
+
+  J1  Screw terminal block or      Power IN
+       header, 3 pin.
+                                   If header, a mating 3 pin shell and
+                                    3 socket pins will be included.
+
+  J2  Connector, 9 pin female RA   Laser head connector
+  P2  Connector, 9 pin male        Mates with above
+  H1  Hood for above               For laser head cable
+
+  J3  Screw terminal block or      REF IN
+       header, 2 pin.
+                                   If header, a mating 2 pin shell and
+                                    2 socket pins will be included.
+
+ JP1  3 pin jumper block+jumper    Nano power select.
+
+      When using USB power, JP1 can be open.  See CAUTION below if using
+      12 VDC power.
+      
+ JP2  2 pin jumper block+jumper    Frequency/Intensity mode select
+
+      JP2 can be open - Intensity stabilization is not fully implemented.
+      But adding it to the firmware would not be difficult . ;-)
+</pre>
+
+<p>
+For those not familiar with the common resistor color code
+(Black/0, Blown/1, Red/2, Orange/3, Yellow/4, Green/5, Blue/6, Violet/7,
+Gray/8, White/9), the resistors shown above are 150 ohms (brown-green-brown
+or 15 with 1 zero) ohms and 330 ohms (33 with 1 zero) ohms.  The gold stripe
+indicates 5 percent tolerance on the value but for the use here, tolerance
+doesn't matter.  (It's possible the resistors you use will have 4 stripes
+where 3 of them are the value and the 4th is the multiplier, along with one
+for tolerance.  If in doubt confirm the value with a multimeter.)  The chart
+below is from Digikey.  (If the link decays, a Web search will readily      
+find another one.)
+<p>
+<center>
+<img src="http://www.digikey.com/-/media/Images/Marketing/Resources/Calculators/resistor-color-chart.jpg"><br>
+<h3>Resistor Color Code Chart (from the Digikey Web site)</h3>
+</center>
+<p>
+The photo below shows the first version of &micro;SLC1.  It matches
+the schematic/wiring diagram above except for some minor details like
+specific part values, lack of filter capacitors and snubber, resistors
+instead of trim-pots for mode gain, and differences in LED colors.
+<p>
+<center>
+<img  WIDTH=800 src="../sghs3p1.jpg">
+<h4>Prototype &micro;SLC1 using OLD WIRING - DO NOT COPY</h4>
+</center>
+<p>
+Other parts like jumper wire (solid insulated #22-#26AWG for breadboard
+connections), cables to attach the PDs and heater, and connectors (if
+desired) will be required to complete the system.
+<p>
+Most of the connections on the breadboard are made with the electronic
+parts themselves or bits of excess wire cut from their leads. But
+there will be a need for a few insulated jumpers which should use
+#22-#24 solid hookup wire stripped to fit in the holes.
+<p>
+It may be desirable to wire the laser with the photodiodes and heater
+as a separate assembly, using some sort of connector to attach it to
+the controller.  One suggestion is to use DB9F (controller) and DB9M
+(laser) connectors wired according to the Spectra-Physics 117/A pinout:
+<p>
+<pre>
+       Pin   Function
+     ----------------------
+        1    Heater
+        2    Interlock
+        3    Ground
+        4    PD-P Anode
+        5    PD-P Cathode
+        6    Heater Power
+        7    Interlock
+        8    PD-S Anode
+        9    PD-S Cathode
+</pre>
+<p>
+DC power supplies for the heater (12 VDC at 1 A max assuming a heater of
+not less than 12 ohms cold resistance) and the Nano 3.0
+(5 VDC at less than 1/2 A, unless always connected to USB)
+will also be required.
+<p>
+<b><font color="red">
+CAUTION: The Nano 3.0 can take +12 VDC on VIN since it has an on-board
+5 V regulator.  But there can be problems when connecting to USB
+as I found out.  Inadvertent ground loops (or something) can result in
+erasing its brain or damaging the USB chip.  Exactly why this occurred is
+still not clear.  The NANO was connected to USB and then the 12 V adapter
+was plugged in, at which point the USB dropped out, never to be heard
+from again with this board.  The regulated wall adapter was on the same
+circuit and isolated in any case, so it <i>should not</i> have caused problems.
+The Atmega microprocessor is still running something so it's not totally
+dead, thus the suspicion that the problem is the USB chip.  But I've been
+unable to change it so far, even with a programmer.
+Until the cause can be determined and remedied, it is recommended that
+USB (or a USB wall adapter) be used to power everything but the heater,
+which must have its own separate supply even if it runs on 5 V.  When
+used without USB, VIN can be connected to the heater supply if is between
+7 and 12 V.  Above 12 V, the power dissipation in the LM78M05 on the NANO
+board could become problematic depending on the current consumption of
+the LEDs and any other loads.  However, an appropriate number of diodes
+like 1N4004s could be put in series with the heater voltage to drop it
+to a lower value for VIN.  A silicon diode will have a voltage drop of
+approximately 0.7 V.  To summarize: DO NOT attempt to power the Nano board
+from both USB and either VIN or 5V at the same time.
+</font></b>
+
+<h3><A NAME="uSLC1ccl">Controlling Commercial Stabilized Laser Heads</a></h3>
+
+Building your own laser is not essential.  &micro;SLC1 can be used with
+many commercial laser tubes/heads from, in, or intended for stabilized HeNe
+lasers.  While the PCB connector wiring is for the SP-117/A and functionally
+identical Melles Griot 05-STP-901, others can be accomodated with
+minor changes, mostly to the photodiode inputs and heater drive voltage.
+Beyond those, the loop would need to be tuned.  (But that would be the
+fun part!)
+<p>
+A few are listed below:
+<p>
+<pre>
+    Manufacturer/Model    
+  --------------------------------------
+    Coherent/Tropel 100,200
+    Lasangle RB-1
+    Melles Griot 05-STP-901
+    Newport NL-1
+    REO 32734,33099,39727
+    Spectra-Physics 117,117A,117B,117C
+    Zygo Axiom 2/20 and 7701,7702,7705
+</pre>
+<p>
+See the info on these and other stabilized HeNe lasers, and other related
+information in Sam's Laser FAQ under <A HREF="#uSLC1ref">References</a>.
+
+<h3><A NAME="uSLC1stp">Controlling the Melles Griot 05-STP-91x Stabilized Laser</a></h3>
+
+The Melles Griot 05-STP-910 and 05-STP-912 (and Aerotech Syncrolase 100 on
+which they are based) are intensity stabilized HeNe laser incorporating a
+built-in "locking adapter" attached to the cathode-end of the HeNe laser head
+and are unique in using an induction heating coil surrounding the cathode-end
+mirror mount, rather than the common thermal heater wrapped around the tube.
+This provides faster warmup and a compact laser package, but the present
+implementation is based on simple analog technology and doesn't always perform
+perfectly.  Specifically, due to the limited loop response (thermal
+and electronic), it may not be able to lock at as high a power as could be
+achieved with a more intelligent controller.  It may also be possible to better
+optimize the time to warm up and lock.
+<p>
+Although the existing &micro;SLC1 PCB (see below) won't fit inside the locking
+adapter a version lacking the LEDs, or using SMT components could be designed
+that would.  The only additional circuitry required
+would be the RF induction coil driver.  This is little more than an RC
+oscillator based on a logic inverter, a buffer, and power MOSFET.  The
+photodiode output can be treated the same was as in the normal stabilized
+laser implementation.
+<p>
+Alternatively (or for initial testing) rather than replacing the original
+circuitry entirely, it would be possible to tap into the existing locking
+adapter circuitry to control the RF driver and access the photodiode signal.
+The driver can be enabled by the normal PWM output from &micr;SLC1 while
+the normal single photodiode signal is available on a test-point and has
+a range including 0 to 5 V (though some protection should be added to
+prevent it from going above 5 V at the microprocessor input).  Specifics
+will depend on which version of the controller is being hacked but it
+should be straightforward even for the most modern SMT PCB.  See the
+Laser FAQ sections starting with:
+<A target="uSLC1" HREF="../laserhst.htm#hstatsl">Aerotech Stabilized HeNe Lasers</A>
+<p>
+Although the standard 05-STP-91x lasers are intensity stabilized,
+a second photodiode can be easily added for true frequency stabilization, only
+requiring a hole to be drilled in a cover plate so that the diverted beam
+from the existing PBS can hit it.  (The SMT PCB actually already has hooks
+in place for frequency stabilization by moving a jumper though this was
+never marketed.  However, the signal on the test-point is probably the
+offset difference of the two PD outputs so it still may be better to
+replace the original locking adapter PCB entirely.)
+<p>
+The standard &micro;SLC1 firmware would probably work with minor changes
+to the locking parameters, but to fully exploit the benefits of the
+induction heater and also lock near the peak of the output power during
+mode sweep will probably require some modifications to the code.  This is
+currently left as an exercise for the student but I would be happy
+to provide technical support via email. ;-)
+<p>
+With some clever modifications, locking on either side of the neon gain
+curve would be possible.  In addition, knowing the shape of the
+lasing output power curve, it should also be possible to "dial in"
+a specific optical frequency over a wide range, at least for the
+05-STP-912 where it has a more gradual change in amplitude versus
+optical frequency offset as shown in
+<A HREF="../mgstpms1.gif">Comparison of Output Power Profiles of the
+Tubes used in the Melles Griot 05-STP-910 and 05-STP-912 Stabilized
+HeNe Lasers</A>.  For these lasers, the lasing center wavelength is close to
+632.991 nm corresponding to an optical frequency of 473.612 THz.  For
+the 05-STP-912 using the LHR706 tube, the range would be +/-600 MHz except
+for a small area at exact line center and possibly up to 200 MHz
+on the blue side which is nearly flat and so could be tricky.  (Beyond around
+600 MHz on either side, a second mode may pop up.)  The lasing
+output power curve of the LHR704 tube in the 05-STP-910 (as shown in the
+above graphic) is relatively flat within around 350 MHz of line
+center, so locking there would probably not be possible.
+
+<h3><A NAME="uSLC1vou">Other Variations on &microSLC1</a></h3>
+
+With minor changes, &microSLC1 could be used with HeNe
+lasers that have a PZT (PieZo Transducer) for cavity length control like
+the HP-5501A.  It should also be possible to control dual-cavity length
+systems using a heater around the tube for slow changes and a heater
+or induction coil on one or both mirror mount stems for fast changes
+or just a mirror mount stem system like the Melles Griot 05-STP-91x
+lasers.  Other types of lasers (including non-HeNes), as well as devices
+like tunable filters (etalons), mode lockers, and laser stabilizers
+might also be adapted to &microSLC1.
+<p>
+<ul>
+<li><b>Lasers using PZTs for cavity length control:</b>
+ An output filter and voltage boost circuit would need to be added to
+ drive the PZT, and some firmware locking parameters would need
+ to be modified.  Specifically, the PWM output normally used for heater
+ drive would need to be passed through a filter to smooth it.  At the
+ ~1 kHz update rate of the PWM, a simple RC with a time constant of
+ 0.01 to 0.1 second should be satisfactory.  This must then drive a
+ circuit to boost the 0 to 5 V range of the PWM to the (usually) higher
+ needs of the PZT.  This can be up to several hundred volts.  With a
+ suitable power supply, this can be as simple as a single transistor
+ in a biased configuration.  For more sophistication, a switchmode boost
+ converter could be designed using discrete components or an SMPS IC.
+<p>
+<li><b>Dual cavity length control:</b> To improve the frequency response
+ of the feedback loop from perturbations or external modulation,
+ one approach is to have a slow loop for overall temperature control and 
+ a fast loop to adjust for changes.  For this, the PID algorithm could be
+ split into two to control overall tube temperature via the heater wrapped
+ around the glass and one or both mirror mount stems.  Different PID
+ gain settings may be required.  The means to drive the stems can either be
+ thermal since the response of the stems is much faster than the overall
+ tube, or via induction heating, which is even faster.  Either way, a low mass
+ coil is wrapped around one or both mirror mount stems and driven from a
+ separate output of the microprocessor.  Since there are no free PWM
+ outputs available, one of the Mode LED outputs would need to be sacrificed
+ for this.  However, the Mode LEDs could be combined using a single PWM
+ output with the remaining output when high driving the P-Mode LED and
+ the when low driving the S-Mode LED (or vice-versa).  For an induction heater,
+ a separate driver at about 1 MHz is used similar to that of the Melles
+ Griot 05-STP-91X lasers.  And as with these, the overall tube heater
+ can be dispensed with.  Then, there would no need to change the PWM
+ output assignments.
+<p>
+<li><b>Non-HeNe lasers:</b> Since the inputs to the firmware are either
+ one or two signals (P-Mode and S-Mode) and the output is a PWM signal
+ that can be converted to a continuously variable voltage or current,
+ any laser whose behavior can be controlled with similar signals should
+ be a candidate for &microSLC1.  For example, a Diode Pumped Solid State
+ (DPSS) laser where the output power is used as an input and pump diode
+ current is a function of the drive signal.
+<p>
+<li><b>Other devices:</b> A tunable filter or etalon or mode-locker
+ can provide a transmission, reflection, or fringe signal or signals
+ as the inputs to &microSLC1 and will typically be controlled by
+ a PZT or heater.  Where dual quadrature fringe signals are available,
+ the operation would be very similar to that of a dual mode HeNe.
+ Where only a single signal is available, it would be similar to that
+ of a single mode HeNe.
+</ul>
+<p>
+These tasks are also left as an exercise for the student. :)
+
+<h3><A NAME="uSLC1pcb">Schematic and Printed Circuit Board</a></h3>
+
+The ~2x2 inch &micro;SLC1 PCB has been designed
+to create a more permanent setup.  It has a DB9F
+for the laser head which is pin and function compatible with the
+Spectra-Physics 117/A and similar Melles Griot 05-STP-901 laser.
+The circuit is virtually identical to the one above,
+with just a few minor hooks for future enhancements.
+<p>
+<center>
+<img src="sgsl1sch.gif"></a>
+</center>
+<p>
+PCB Version 1.1 is now available.  It has corrected the
+layout errors of V1.0.  If you have a V1.0 PCB, see
+<A target="uSLC1" HREF="uSLC1_PCB_V1.0.htm">&micro;SLC1 PCB Version 1.0
+Corrections</A>.
+<br>
+<br>
+<center>
+<img src="uSLC1_V1.1_PCB1.gif">
+<img src="uSLC1_PCB1.gif">
+<img src="uSLC1p4.jpg">
+<h4>&micro;SLC1 V1.1 PCB Layout (Left), Rough Parts Layout Showing Controls, Indicators, and Connectors (Center), and Completed PCB doing "Lamp Test" (Right)</h4>
+</center>
+<p>
+The Nano 3.0 board should installed in a socket
+so that in the unfortunate circumstance that is
+goes bad (these things can happen!), replacement is straightforward.
+Attempting to desolder the Nano from the &micro;SLC1 PCB without damage
+would be difficult.  It will not fit in a machined pin socket but will in a
+leaf spring socket.  However, 30 pin sockets are difficult to find so making
+one up out of pieces of a pair of 24 pins sockets, a 40 pin socket, or two
+15 pin strips may be required.  A 40 pin leaf spring
+socket or pair of 15 pin strips is included in the kit.
+<p>
+Since the brightness versus power for LEDs
+can vary dramatically depending on type and color, the current limiting
+resistors for the LEDs should be selected before soldering to equalize
+their brightness (if you care).  For the LEDs I used, this required the
+resistance to range from 330 ohms to 33K ohms.  That is not a type - the blue,
+green, and white LEDs are much more sensitive than the others.
+<p>
+The 3 pin header is for
+power (+5 Ext, GND, +12V).  The +5V Ext is optional for VIN rather than
+12V.  The 2 pin header is for the REF
+frequency input for use with Zeeman lasers.
+Screw terminal blocks may be substituted for the headers and make
+assembly and connections simpler, but don't allow the PCB to be unplugged
+easily.
+<p>
+The remainder of the board is taken up with mundane things like resistors
+and capacitors. ;-)  Since its size is mostly limited by the Nano and DB9F,
+using SMT components would not be very beneficial and would make hobbyist
+assembly and modifications (and mine!) more of a pain.
+<p>
+Regardless of whether you decide to use the PCB, it may be desirable for
+the system to be first built up on a solderless breadboard to confirm that
+the default components are satisfactory.  Depending on the specific laser
+tube, the waste beam (of sampled beam) may be lower or higher in power
+than what is optimal for the P-Mode and S-Mode adjustments.  The snubber
+RC network may also need to be modified depending on
+the laser head cable length and type.  Also, LED
+brightness can vary significantly and their current limiting resistor
+values may need to be changed (probably to higher values to reduce the
+brightness).  With my assortment of LEDs, the resistor ranged from 330 ohms
+to 5.6K ohms to match brightness.  Of course, there's no need to install
+all the LEDs but they do add a touch of class. :)  If 330 ohm resistors are
+used for the State LEDs, the thing can probably be used as a reading light
+in Error State 7. :( :)
+
+<h3><A NAME="uSLC1pin">Atmega/Arduino Pin Assignments</a></h3>
+
+Here is a list of the Atmega 328 Nano 3.0 external pins used by &micro;SLC1:
+<p>
+<pre>
+ Arduino Pin   Physical Pin   Function
+--------------------------------------------------------------------------
+     D3             6         P-Mode LED (5V PWM, 0 to 100 percent)
+     D5             8         REF Frequency input (TTL 0 to ~6 MHz)
+     D6             9         Heater Drive (5V PWM, 0 to 100 percent)
+     D7            10         State bit 0 LED (0 or 5V)
+     D8            11         State bit 1 LED (0 or 5V)
+     D9            12         State bit 2 LED (0 or 5V)
+    D10            13         Locked LED (0 or 5V)
+    D11            14         S-Mode LED (5V PWM, 0 to 100 percent)
+    D12            15         Error LED (0 or 5V)
+    D13            16         Heartbeat LED (Atmega "L")
+
+     A0            20         P-Mode input (0 to 5V)
+     A1            21         S-Mode input (0 to 5V)
+     A2            22         External Modulation input (future, 0 to 5V)
+
+    +5V            27         +5 VDC from on-board regulator or USB
+    VIN            30         Optional DC input (+7 to +20 VDC)
+    GND           4,29        Ground/Common
+</pre>
+<p>
+See CAUTION above with respect to power.
+
+<h3><A NAME="uSLC1cos">Computer and Operating System Requirements</a></h3>
+
+If I sell you the Atmega board, a functional version of the firmware will
+already be installed.  In that case, in principle, the board can run totally
+standalone with no computer, using the defaults preprogrammed into the
+firmware.  However, being able to monitor the lasing
+modes and adjust their gain and offset (both hardware and firmware),
+confirm that the warmup to locking is optimal, and
+check the stability of the feedback loop and twiddle its parameters
+if necessary would be highly desirable.  For these, and to make any
+desired changes and save them will requires using the Windows GUI.
+<p>
+To compile and upload the firmware (either initially or to make any
+changes) and to run the Windows GUI will require a Window PC or laptop.
+Almost any vintage machine should suffice as long as it has at least one
+USB port and Microsoft Net Framework 4.0 or later is or can be installed.
+The &micro;SLC1 GUI has been tested
+on Windows XP, 7, and 10.  It should run on anything in between,
+but this has not been confirmed.  More on the software support
+environment below.
+<p>
+<hr>
+
+<h3><A NAME="uSLC1lvs">Latest Versions of the Firmware and GUI</a></h3>
+
+(These files are also available at <A target="uSLC1"
+ HREF="https://github.com/lasersam594/Micro-Stabilized-Laser-Controller-1-uSLC1">GitHub: Micro Stabilized Laser Controller 1: uSLC1</a>
+</A>.)
+<p>
+<ul>
+<li><b>Firmware:</b> <A HREF="uSLC1_fw_v58.ino">&micro;SLC1 Firmware
+ Version 58</a>.  Fixed reset if both modes too high or too low.
+<p>
+<li><b>Firmware:</b> <A HREF="uSLC1_fw_v56.ino">&micro;SLC1 Firmware
+ Version 56</a>.
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uSLC1/uSLC1_GUI.1.0.8829.18101.exe">&micro;SLC
+ GUI Version 4-Mar-2024 Build 1.0.8829.18101</a> Corrected manual link
+ and copyright date.  If this behave funny, go back to the one below. ;-)
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uSLC1/uSLC1_GUI.1.0.6284.18461.exe">&micro;SLC
+ GUI Version 16-Mar-2017 Build 1.0.6284.18461</a>.
+</ul>
+
+<h3><A NAME="uSLC1arddrvr">Installing the Arduino Device Driver</a></h3>
+
+Before the Atmega board can be used, a Windows device driver must be
+installed to enable upload of firmware and communications with the
+&micro;SLC1 GUI.
+<p>
+There are many ways of doing this - some which may be overly complex, but
+what I've done for the Atmega 328 Nano 3.0 board is to go to
+<A HREF="https://www.arduino.cc/en/Main/Software">Arduino Software</a> and
+install the current version of the Arduino IDE (V1.6.9 as of May 2016).
+(I'm not sure if the board needs to be plugged in to a USB port during
+this process, but mine was.  During the install process, it will ask to
+install the drivers.  Reply "Yes" to all its requests.  When the Arduino
+IDE is started for the first time, go to "Tools", "Board", and select
+"Arduino Nano".  If the Nano is plugged in, its COM port should appear
+under "Tools", "Port".  If you received the Nano from me, it will have
+&micro;SLC1 firmware.  Go to "Tools", "Serial Monitor".  The Serial
+Monitor windows should appear and after a few seconds start pumping
+out data from the board.  Select a baud rate of 57600 to turn it into
+something meaningful.  With no laser, the data should look something like:
+<p>
+<pre>
+ 0 0 0 9745 8 6104
+ 0 0 0 9746 10 144
+ 0 0 0 9747 11 5
+ 0 0 0 9748 15 260
+</pre>
+<p>
+(The 4th value is a sequence number which should be incrementing by 1.)
+<p>
+More info on software, drivers, and more
+at <A HREF="https://www.arduino.cc/en/Guide/Windows#toc1">Getting
+Started with Arduino and Genuino on Windows</A>.
+<p>
+The more complex installations may be required if you bought the Nano
+from eBay or off the back of a truck, depending on whether it
+has the genuine FTDI USB communications chip.  And even more complex
+if it doesn't have the bootloader installed.  Links for
+driver installation may be found under
+<A HREF="#uSLC1ref">References</a> under "Arduino".  Instructions
+for burning the bootloader may be found in the section:
+<A HREF="#uSLC1brn">Burning Bootloaders into the Nano or Pro Micro</a>.
+<p>
+The Arduino IDE can be used for compiling and uploading, though I prefer
+UECIDE, below, because compilation and uploading is much faster.
+For use with the Atmega328 Nano 3.0, either is fine.  However the
+ATtiny and Pro Micro may only be supported by the Arduino IDE.
+(The latter may come up as Arduino Leonardo though.)
+<p>
+<hr>
+
+<h3><A NAME="uSLC1uecide">Loading UECIDE</a></h3>
+
+UECIDE will work with all versions of the firmware.
+But the only version of UECIDE I've had success compiling
+firmware without errors is Version 0.8.8alpha17 though I assume that
+more recent versions like 0.8.8alpha22 should also be satisfactory.
+Assuming that, download it from
+<A HREF="http://uecide.org/">UECIDE: The Universal Embedded Computing IDE</a>.
+And other versions probably work, they just hate me. :( :)
+If for some reason 0.8.8alpha22 doesn't work for you, I can provide
+0.8.8alpha17, but it probably won't work for you either. ;-)
+<p>
+The UECIDE files should be unzipped to any convenient location on your
+computer.  UECIDE requires around 160 MB there, and another 600+ MB for
+support files typically somewhere like
+c:\users\YourUserID\AppData\Local\UECIDE.  This location can be changed
+in File->Preferences.  If doing this after having configured UECIDE,
+copy all the files to the desired destination first, then change the
+data directory in File->Preferences.  DO NOT delete the original UECIDE
+directory or the preferences file! :)  Otherwise, the configuration
+information will all be lost.
+<p>
+Compared to most applications, UECIDE takes <i>forever</i> to start up even on
+a fast PC.  So be patient.  That's the bad news.  The good news is that
+compiling and uploading takes literally only a few seconds, much faster
+than with the Arduino IDE or MPIDE (another one you don't need to know
+about).  Go figure. :)
+<p>
+The first thing UECIDE will likely do is to tell you that no boards are
+installed and then open the Plugin Manager.  If it does not, do it manually
+by going to Tools->Plugin Manager.  At first the pane along the left
+will only show the word "Plugins".  But after a couple minutes, it should
+update with a list: Plugins, Libraries, Boards, Cores, Compilers, System.
+The following are required:
+<p>
+<ul>
+<li><b>Libraries:</b>
+ <ul>
+ <li>No special libraries are required.  EEPROM.h is used but is included
+  by default.
+ </ul>
+<li><b>Boards:</b> Arduino -> Arduino Nano w/ Atmega 328.
+<li><b>Cores:</b> Arduino 1.6.x.
+<li><b>Compilers:</b> GCC 4.8.1 for AVR
+</ul>
+<p>
+For each of these click on "Install".  Installing the arduino board will
+probably automagically install the other related files and may
+take several minutes.  Confirm that each entry has a green check mark
+next to it.
+<p>
+Close the Plugin Manager and go to "Hardware" or check the status line
+at the bottom of the window to confirm that the
+proper Board (Arduino Nano w/ Atmega 328), core (Arduino 1.6.x)), and Compiler
+(GCC 4.8.1 for AVR) has been selected.  Correct it if not.
+<p>
+Some other quirks of UECIDE that I've found:
+<p>
+<ul>
+<li>Doing any File Open or Save As operations within UECIDE also take much
+ longer than directly in Windows.  Be more patient.
+<p>
+<li>UECIDE will crash instantly and then will crash if restarted should the
+ selected data directory (in File->Preferences) be changed to one that is
+ read-only (as it might be on a remote host).  There is no warning.  Fix the
+ relevant entry in the configuration file, typically at
+ c:\users\YourUserID\AppData\Local\UECIDE\preferences.txt (unless you moved it)
+ using Notepad or any other convenient text editor.
+ Or delete the file (but that will require redoing all the plugin stuff.
+<p>
+<li>On one PC, the USB mouse would freeze for a couple seconds preiodically
+ whenever UECIDE was running making it almost impossible to do anything, and
+ it continued even if UECIDE was minimized.  This appears to be related
+ to the "Automatic USB Device Discovery" option being enabled (the default)
+ and some peculiarity of the PC's USB subsystem and Windows.  To remedy it,
+ stop USB Device Discovery by going to Tools->Service Manager and clicking
+ on its entry, click on the stop icon, and disable Autostart by right-clicking
+ on the "yes" to change it to "no".  Then close and restart UECIDE.  Despite
+ what it says, the discovery process does not stop even though it says it's
+ stopped until the next time UECIDE is run.   Got that? :)  Or drag out and
+ dust off a PS2 mouse. :-)  This glitch went away after upgrading to
+ Windows 10.
+<p>
+<li>Occasionally out of the blue (even if not using it) UECIDE will put up a
+ message along the lines "I'm afraid UECIDE has
+ Crashed" with several options.  Usually hitting "Ignore" will allow it
+ to continue as though nothing happened, but a UECIDE restart may be required.
+</ul>
+<p>
+Plug the Atmega board into any available USB port.  The power LED
+should come on.  If I (Sam) sent you the Atmega board, it will have been
+loaded with a version of the &micro;SLC1 firmware and the user LED
+will be flashing at about a 5 Hz rate to let you know it is alive.
+Run the &micro;SLC1 GUI and check the firmware revision (Help->About).
+If it doesn't match the one above, it may be a good idea to update it.
+<p>
+Assuming the driver has already been installed, go to Hardware->Serial
+Terminal and select its COM port.  Typically, this will be the highest
+number COM port, or perhaps the only one, since no one uses real COM ports
+for much of anything anymore.
+<p>
+UECIDE should remember the configuration settings automatically upon exiting.
+These are tied to each instance of the UECIDE window, so it's possible to
+easily deal with multiple totally different board types.
+<p>
+<hr>
+
+<h3><A NAME="uSLC1ucf">Uploading the &micro;SLC1 Firmware</a></h3>
+
+The firmware is provided as a source file which probably has an extension
+of ".ino" (though the specific name doesn't matter - it's just a
+text file).  However, the name may NOT contain any dashes "-" due to the
+peculiar restrictions of Java or something.  Make a directory with the name of
+the firmware (without the extension) and put the firmware file there.
+For example, if the file is named uSLC1_FW_v123.ino, make a directory
+called uSLC1_fw_v123. and put uSLC1_FW_v123.ino in it.  Note that case
+matters so the name of the directory and name of the firmware file (without the
+extension) must match case character-by-character exactly.  Thus
+uSLC1_fw_v35.ino is not the same as uSLC1_FW_v35.ino.
+<p>
+<ol>
+<li>Plug the Nano 3.0 board into a USB port.  Windows should recognize it
+ with the usual annoying sound of a USB device it recognizes.  I've
+ occasionally seen problems using a USB port replicator though these
+ generally are acceptable.  But if the board doesn't come up, plug it into
+ a direct USB port.
+<p>
+<li>Use Ctrl-O to open the firmware file.
+ Select the directory.  The source code should
+ appear in the same window unless a file is already open, in which
+ case a new window will appear.  (If UECIDE thinks it's a firmware
+ directory, it won't even allow you to select the file but
+ will immediately open it.  If the name of the directory and
+ file don't match - including case - it will produce an error like
+ "file not found".  What a concept? ;-)
+<p>
+<li>Use Ctrl-U to compile and upload the firmware to the board.  This
+ typically takes only a few seconds on a PC that is less then 35 years old. :)
+ Near the end, the green status bar will extend nearly all the
+ way to the right and the LEDs on the board will then begin
+ flashing in several different patterns in anticipation of
+ getting new and (hopefully) improved firmware. ;-)
+ The board will be automatically reset and start running the firmware.
+ During this time, confirmation messages similar to the following will appear:
+<p>
+<pre>
+   <b>Compiling...</b>
+     * Compiling sketch...
+     * Compiling core...
+       > arduino
+     * Compiling libraries...
+     * Linking sketch...
+   <b>Compiling done.</b>
+   <b>Memory usage</b>
+     * Program size: 7532 bytes
+     * Memory size: 1092 bytes
+     * Compilation took 8.634 seconds
+   <b>Uploading firmware...</b>
+     * Resetting board...
+     * Uploading...
+     * Resetting board...
+     * Upload Complete
+</pre>
+</ol>
+<p>
+Once the firmware has started, all the LEDs will come on at full brightness
+for 2 seconds as a sort of "Lamp Test" (including the Heater LED if the heater
+supply is on) and then the on-board LED "L" should be flashing
+at a 5 Hz rate to let you know it's alive.
+<p>
+The firmware is retained in non-volatile memory so uploading only
+needs to be done once - or until a new version is available!
+<p>
+Uploading new firmware does not affect the user locking parameters stored
+in Atmega EEPROM.  However, should the format change (rarely), the firmware
+will revert to the default locking parameters.  In that case user parameters
+that differ from the defaults will need to be re-entered via the GUI Command
+window and then saved.
+<p>
+The firmware may also be compiled without uploading by using Ctrl-R.  Since
+you haven't messed with the code, it should compile without errors.
+This is slightly faster for testing and doesn't use the board at all so it
+can be off doing whatever it pleases. :)
+<p>
+<hr>
+
+<h3><A NAME="uSLC1irg">Installing and Running the &micro;SLC1 GUI</a></h3>
+
+Note that &micro;SLC1 does not require the GUI to control the laser, but
+it is convenient for troubleshooting and/or fine tuning locking parameters.
+<p>
+The latest &micro;SLC1 GUI may be downloaded from
+<A HREF="https://www.repairfaq.org/sam/uSLC1/uSLC1_GUI.1.0.6284.18461.exe">uSLC1_GUI.1.0.6284.18461.exe</a>.
+<p>
+Save the &micro;SLC1 GUI .exe file into any convenient directory.  (There's
+a small chance that the first time it's run, an error is produced since
+there is no configuration file associated with it.  Simply continue and the
+GUI will come up.  When it is closed using "Finish", valid settings will be
+saved so that the error should not appear again.)
+<p>
+Important: DO NOT reset the board while the &micro;SLC1 GUI is running.
+The GUI will need to be aborted, the board may need to be reset again,
+and only then can the GUI be restarted.  However, the GUI may be aborted
+and restarted ad-infinitum without affecting the firmware and laser. ;-)
+(However, installing or removing the USB cable may reset the firmware.)
+<p>
+The graphic below shows the typical GUI main window at startup.
+<p>
+<center>
+<img src="Main_Window_Startup13.gif">
+<h4>Typical &micro;SLC1 Main Window at Startup</h4>
+</center>
+<p>
+Yes, this bears remarkable similarity to the &micro;MD1 GUI due to having
+inhereted much of its DNA. ;-)  When first started, all the readouts
+are loaded with zeros and the fake LEDs are turned on to show that they
+are there. Sort of a high tech "lamp test". ;-)
+
+<h3><A NAME="uSLC1guif">GUI Operation</a></h3>
+
+The &micro;SLCS1 GUI (henceforth simply called the "GUI")
+comes up with the P-Mode amplitude in the main readout.  The only action
+required by the user is to select the USB COM port.  Once selected,
+the readouts and graph will begin displaying the data from the laser.
+Behind the scenes, the GUI has uploaded the Locking Control Block
+from the firmware to update its widgets with the current set of
+locking parameters.
+<p>
+<b>Important:</b> The GUI can be started at any time but the firmware must
+be running <i>before</i> the USB COM port is selected or else the Universe
+may implode or explode, which one occurs and when has yet to be determined. :)
+Confirmation of this issue is left as an exercise for
+the user. ;-)  There should be no need to reset the firmware when
+restarting the GUI - it will pick up where it left off.
+<p>
+Note that the GUI is NOT required to run the laser with the &micro;SLC1
+controller and starting or restarting the GUI has absolutely no effect
+on laser behavior.  (Or at least it shouldn't.)
+Unless messing with the parameters in the "Laser Firmware Hacking" (Command)
+window (which will be explained below), for most users, the GUI will only be
+used to monitor the laser.  Actually, for most laser <i>users</i>, there is
+no need for the GUI at all!  It's there primarily as a development
+aid and for unapologetic laser jock technoduibes. ;-)
+
+<h4><A NAME="uSLC1guimw">Main Window Controls and Indicators</a></h4>
+
+All possible controls and indicators are shown below.
+<p>
+<center>
+<img src="Main_Window_Widgets1.gif">
+<h4>All &micro;SLC1 Main Window Controls, Readouts, LEDs, and Graph</h4>
+</center>
+<p>
+The first set are the selection buttons at the top of the window.  Note that
+except for USB Port, these do not invoke drop-down menus and require only
+a single click to activate.
+<p>
+<ul>
+<li><b>Finish</b> is the same as close or exit. :)
+<p>
+<li><b>Open Log File</b> is used to select the (optional) file for data
+ capture.  This is a text file that will accumulate raw data from the
+ USB COM Port when capture is enabled.  When a log file is open, the
+ button's label will change to "Close Log File".
+<p>
+ The log file is closed and its name and path are saved upon exiting the GUI.
+<p>
+<li><b>Command</b> opens a window to allow laser jock access to the firmware
+ locking parameters.  Nearly everything that determines locking bahavior
+ can be modified, and most such changes are likely to be less than beneficial.
+ Thus the use of this "feature" should be avoided by ordinary mortals
+ and used with caution by those who consider themselves immortal
+ as this may be put to the test. ;-)
+<p>
+<li><b>Help</b> is a menu that may select "Information" which presently
+ tells the user to read this manual ;-) or "About" which lists the
+ GUI and firmware versions, and has links to the author.
+<p>
+<li><b>USB Port</b> provides selection of the USB COM port for the
+ laser conctroller.  Note: Once a USB port has been opened, the selection
+ cannot be changed or closed.  Code to close an open USB port is purported to
+ do bad things (also with ramifications for the future of the Universe)
+ and has been disabled.  If an incorrect USB port was selected
+ by accident, exit the GUI and restart.  Any open USB port will be closed
+ upon exiting.
+</ul>
+<p>
+These buttons may all be accessed via Alt-first letter.
+<p>
+The next set are the buttons for selecting what's shown in the Main Readout
+and what is plotted:
+<p>
+<ul>
+<li><b>P-Mode:</b> selects the P-polarized mode amplitude for display in
+ the Main Readout.  P-Mode and S-Mode are superimposed on the plot.
+<p>
+<li><b>S-Mode:</b> selects the S-polarized mode amplitude for display in
+ the Main Readout.  P-Mode and S-Mode are superimposed on the plot.
+<p>
+<li><b>Loop Difference:</b> selects P-Mode minus S-Mode plus Offset if in
+ Lock Type = Frequency or P or S Mode minus Reference Level if 
+ Lock Type = Intensity for display in the
+ Main Readout and the plot.  This is also the loop error signal used for
+ stabilization, but calling it "Loop Error" or "Mode Error" risks stirring
+ fear in the hearts of laser nerds.  True EEs have no trouble with this.  ;-)
+<p>
+<li><b>Heater Drive:</b> selects the power to the tube heater for display
+ in the Main Readout.  Heater Drive is shown in the plot.
+<p>
+<li><b>Disable Graph</b> toggles whether to show the graph or not and will
+ change to "Enable Graph" when the graph is off.  The data for
+ the graph is still stored when disabled.  Disabling the graph
+ both saves space on the computer screen and reduces computational load.
+<p>
+<li><b>Enable Capture</b> toggles the acquisition of raw data from the
+ USB COM port.  The log file must first be opened for this button to have
+ any effect.  Then, the label will change to "Disable Capture" and the
+ button will turn green signifying that capture is enabled and running.
+ Once the log file is open, capture may be turned on and off at will
+ with data appended to the open log file.  Prior to each segment, the
+ line "Sample Frequency = XX.XX Hz" is stored.  This value may be useful
+ for data analysis.  The Sample Frequency is approximately 61 Hz.
+<p>
+ The log file format is: PM:P-Mode SM:S-Mode HD:Heater Drive
+ SN:Sequence Number LSC:Low Speed Code LSD:Low Speed Data. 
+<p>
+<pre>
+      Item       Abbrev    Data Range    Value/Range 
+ -------------------------------------------------------
+     P-Mode        PM       0 to 1023     0 to +5 V
+     S-Mode        SM       0 to 1023     0 to +5 V
+  Heater Drive     HD        0 to 255   0.0 to 100.0 %
+  Sequence Number  SN        0 up :-)   Time * 977 / 16
+  Low Speed Code   LSC      16 bit int       --
+  Low Speed Data   LSD      32 bit int       --
+</pre>
+<p>
+ Low Speed Code and Low Speed Data are used to return information that
+ doesn't need to be displayed at the sample rate like State, Lock Time,
+ and firmware version, and read back the locking parameters from the
+ firmware, and monitor other aspects of the firmware.
+<p>
+ A typical snapshot of a logfile is shown below:
+<p>
+<pre>
+   Sample Frequency = 61.04 Hz
+
+   PM:594 SM:601 HD:142 SN:9743 LSC:0 LSD:0
+   PM:596 SM:604 HD:142 SN:9744 LSC:12 LSD:1590
+   PM:599 SM:606 HD:142 SN:9745 LSC:8 LSD:6104
+   PM:598 SM:604 HD:143 SN:9746 LSC:10 LSD:144
+   PM:594 SM:600 HD:143 SN:9747 LSC:11 LSD:5
+   PM:596 SM:604 HD:142 SN:9748 LSC:15 LSD:260
+   PM:600 SM:604 HD:143 SN:9749 LSC:0 LSD:0
+   PM:599 SM:604 HD:143 SN:9750 LSC:0 LSD:0
+   PM:599 SM:605 HD:143 SN:9751 LSC:0 LSD:0
+   PM:599 SM:606 HD:142 SN:9752 LSC:0 LSD:0
+   PM:596 SM:601 HD:143 SN:9753 LSC:101 LSD:0
+   PM:596 SM:601 HD:143 SN:9754 LSC:102 LSD:0
+   PM:597 SM:600 HD:144 SN:9755 LSC:103 LSD:0
+   PM:597 SM:601 HD:143 SN:9756 LSC:104 LSD:2
+   PM:597 SM:602 HD:143 SN:9757 LSC:105 LSD:1
+   PM:596 SM:601 HD:143 SN:9758 LSC:20 LSD:0
+   PM:598 SM:603 HD:143 SN:9759 LSC:0 LSD:0
+   PM:599 SM:604 HD:143 SN:9760 LSC:12 LSD:1593
+   PM:596 SM:600 HD:144 SN:9761 LSC:8 LSD:6104
+</pre>
+<p>
+ The Sample Frequency is 1/16th of the firmware control loop update rate
+ derived by: 16 MHz (Atmega I/O Clock) / 64 / 256 = 976.56 Hz.
+ 976.56 Hz / 16 = 61.04 Hz.
+<p>
+<li><b>Averaging</b> adjusts the "strength" of a moving average from 0 (no
+ averaging) to 0.999 (1000 samples of averaging).  It is a logarithmic
+ scale so each third of movement represents approximately a factor of 10.
+ The color also changes from black to violet to remind you that averaging
+ is taking place. :)
+<p>
+ The Averaging coeeficient is saved upon exiting the GUI.
+<p>
+<li><b>Graph Averaging On checkbox</b> determines whether averaging is
+ also applied the graph.  Thus the graph can show raw data even if the
+ readout is averaged.
+<p>
+<li><b>Time Compression</b> applies a sub-sampling factor to change the
+ rate of the graph scrolling.  It does NOT average intermediate samples -
+ they are lost.  The legend at the bottom of the plot shows the approximate
+ time between adjacent vertical lines for <i>new samples</i> like a quaint
+ paper strip chart recorder. :)
+<p>
+ The Time Compression factor is saved upon exiting the GUI.
+<p>
+<li><b>P-Mode and S-Mode, Loop Difference, and Heater Drive
+ Range</b> select the vertical axis scaling for their respective values.
+ It's unlikely that anything other than the defaults of 5V, 5V, +/-5V, and
+ 100% will ever be needed except perhaps for Loop Difference, which should
+ hover around 0 when the laser is locked, but will change dramatically if
+ one abuses it. :( :)
+</ul>
+<p>
+
+<h4>Main Window Indicators</h4>
+
+Next are the various fields for displaying information in the Main Window:
+<p>
+<ul>
+<li><b>Main Readout</b> always shows the value of the parameter selected
+ by the 4 buttons.
+<p>
+<li><b>P-Mode readout and PM LED (Green):</b> display the amplitude of the
+ P-polarised output from the laser tube.  The units are
+ volts based on the input to the Atmega pin.  The LED has a
+ logarithmic response to stretch low values to be more readily visible.
+ The displayed values at ~61 Hz are the average of the previous 16 values
+ at the firmware sample rate of ~977 Hz.
+<p>
+<li><b>S-Mode readout and SM LED (Orange):</b> display the amplitude of the
+ S-polarised output from the laser tube. The units are
+ volts based on the input to the Atmega pin.  The LED has
+ a logarithmic response to stretch low values to be more readily visible.
+ The displayed values at ~61 Hz are the average of the previous 16 values
+ at the firmware sample rate of ~977 Hz.
+<p>
+<li><b>Loop Difference readout and LD LED (Green/Orange):</b> display the
+ amplitude of the loop difference signal with no averaging. The units are
+ volts.  The response of the LED is boosted by a factor of around 20 so
+ +/-0.25 V will be result in maximum brightness and very small values
+ of Loop Difference can be seen.  The displayed loop difference depends
+ on Lock Type as follows:
+<p>
+ <ul>
+ <li><b>Frequency:</b> P-Mode - S-Mode + Offset.
+ <li><b>Intensity P-Mode:</b> P-Mode - Reference Level.
+ <li><b>Intensity S-Mode:</b> S-Mode - Reference Level.
+ </ul>
+<p>
+<li><b>Heater Drive readout and HD LED (Yellow):</b> display the amplitude of
+ heater drive signal.  The units are percent and is linear
+ with power.  The LED has a logarithmic response to stretch low values
+ to be more readily visible. The displayed values at ~61 Hz are the average
+ of the previous 16 values at the firmware sample rate of ~977 Hz.
+<p>
+<li><b>REF Frequency:</b> displays the frequency of the reference (or other
+ TTL) input signal for use with Zeeman HeNe lasers.  The range is from 1 kHz
+ to around 6.5 MHz with an accuracy better than a fraction of 1 percent.
+ (The accuracy is determined by how close the Atmega I/O Clock is to
+ 16 MHz.)  The REF frequency
+ readout will appear under the LED strip if a signal is detected on the
+ REF input pin.  The title at the top of the Main Window will also
+ become: "Micro Stabilized Two-Frequency Zeeman Laser Controller GUI".
+ These changes will remain in effect until exiting the GUI even if the
+ REF signal disappears.  More below.
+<p>
+<li><b>State:</b> identifies exactly what the firmware is doing at any
+ time once the USB Port is open.  The following assume default values
+ for locking parameters.  (More on this below.)
+<p>
+ <ul>
+ <li><b>State 0 - Startup:</b> The firmware is checking that the laser is
+  lit as determined by at least approximately 10 percent of maximum possible
+  amplitude on either the P-Mode or S-Mode signals.  Go to State 1
+  It will wait in State 0 up to 120 seconds for a slow-start tube,
+  else go to State 7.
+ <p>
+ <li><b>State 1 - Warmup:</b> The firmware turns on the heater at full
+  power and measures the period of the P-Mode sweep.  It will remain here
+  until it exceeds the parameter "Mode Period", which has a default
+  value of around 16 seconds.  At this point, the tube should be warm enough
+  to be locked near an optimal temperature.  Go to State 3.
+ <p>
+ <li><b>State 2 - Heating:</b> The firmware turns on the heater at full
+  power for a fixed length of time, then goes to State 3.
+ <p>
+ <li><b>State 3 - Locking:</b> The firmware runs a proportional-only locking
+  algorithm to stabilize the laser.  Once the absolute value of the Loop
+  Difference (based on P-Mode - S-Mode amplitudes) has not changed more than
+  the Lock Tolerance threshold for Lock Valid seconds, check the heater
+  power.  If within a few percent of 50%, go to State 3; if less than
+  45-48%, go to   State 2 (heating), if more than 52-55%, go to State 4
+  (cooling).  The default durations for heating and cooling differ by
+  4:1 so that getting into an infinite loop is unlikely. :)
+ <p>
+ <li><b>State 4 - Cooling:</b> The firmware turns on the heater at zero
+  power for a fixed length of time, then goes to State 3.
+ <p>
+ <li><b>State 5 - Locked:</b> The firmware runs a PID algorithm and
+  is now stable.  It will remain here forever, more or less. :)
+ <p>
+ <li><b>State 6 - Hangout:</b> This is a testing state that can be used
+  to set the heater to a constant value for an unlimited time.
+ <p>
+ <li><b>State 7 - Error:</b> Stick here if error occurs.  Definition of
+  lock type "error" remains under review but currently includes:
+<p>
+ <ul>
+ <li>Taking too long for the laser to come on in State 0.
+ <li>Loop Difference never going negative in State 1.
+ <li>S-Mode or P-Mode dropping below 5 percent or going above 95 percent
+  in State 5 (which means it's really not locked).
+ <li>Taking too long to lock in State 3.
+ </ul>
+<p>
+  Exit from State 7 to State 0 if no laser light after a long time, or to
+  State 1 if the laser beam reappears.  The firmware is persistent though -
+  it will keep trying for a long time. :-)  There is no error checking
+  in States 2, 4, or 6.
+ </ul>
+<p>
+ Before a USB port is selected, State will display "No Laser".
+<p>
+<li><b>Sir HeNe:</b> provides visual feedback on the laser's physical
+ and emotional well being. ;-)
+<p>
+<li><b>Locked LED (LK, Blue):</b> will be on when the laser is in the
+ Locked state.  This does not necessarily mean the laser is stable, just
+ that it thinks it should be. ;)
+<p>
+<li><b>Error LED (ER, Red):</b> will be on if there is a problem
+ with the laser.  Typically this would mean there is no laser output or
+ for some reason it is not possible to lock.  The LE LED may cycle on
+ and off as the controller attempts to remedy the situation (or is just
+ overly optimistic).
+<p>
+<li><b>Lock Type:</b> Identifies whether the laser is locking the
+ Frequency (dual mode stabilization) or Intensity using only the
+ S-Mode or P-Mode (single mode stabilization).
+<p>
+<li><b>Lock Side:</b> Which side of the neon gain curve to use for locking.
+ The default is "Red", though what actually happens for
+ staiblization will depend on the choice of S-Mode and P-Mode polarization
+ that exits the laser.  Figuring out how to determine this is which is
+ above my pay grade :)
+<p>
+<li><b>Mode Offset or Reference Level:</b> Which label is shown depends on
+ the Lock Type.  Normally, the ideal lock point
+ for a Lock Type of Frequency will be where the P-Mode and S-Mode amplitudes
+ are exactly equal.  However, it is possible to shift the lock point
+ either way by specifying an Offset (see below) or via the External
+ Modulation input (future.  For a Lock Type of intensity, the Reference
+ Level represents the selected output amplitude.
+<p>
+<li><b>Total On Time:</b> Run time (hh:mm:ss) since power on (or firmware
+ reset or reload).
+<p>
+<li><b>Locked at:</b> The last time at which the laser entered State 5.
+ The typical lock time for first lock from a cold start is typically
+ under 15 minutes. :)  However, if the Relock Counter is greater than 0,
+ it may retune the lock point at Relock Count times the Relock Delay after
+ this (and the "Locked at" time will be updated accordingly).
+<p>
+<li><b>Log File</b> displays the name of the current open file for data
+ capture.  The Capture button will only have an effect if a log file
+ is open.
+</ul>
+<p>
+When the firmware is started (power on to the board, reset, or just after
+the firmware is uploaded), the controller enters State 0,  Startup.
+When it detects laser output, it goes to State 1 which drives the heater
+at full power while monitoring the length of the mode sweep cycle.
+<p>
+The graphic below shows a snapshot of the Main Window about halfway
+through warmup.  The mode sweep cycle at this point is around 8 seconds.
+<p>
+<center>
+<img src="Main_Window_Warmup6.gif">
+<h4>Typical &micro;SLC1 Main Window about Halfway through Warmup</h4>
+</center>
+<p>
+Once the mode sweep cycle time exceeds the "Mode Period" value, the
+controller goes to State 3, Locking.  There it checks for the Loop Difference
+to settle down below the "Locking Tolerance" value.  It then goes to
+State 5, Locked.
+<p>
+The graphic below shows a snapshot of the Main Window just after the laser
+has locked.  On the left portion of the graph is the laser mode sweep of the
+P-Mode and S-Modes prior to locking.
+<p>
+<center>
+<img src="Main_Window_Locked14.gif">
+<h4>Typical &micro;SLC1 Main Window shortly after Locking</h4>
+</center>
+<p>
+The laser will remain locked forever unless the P-Mode or S-Mode go bonkers
+(technical term!).  If it does go bonkers, the controller will go to State 7,
+Error and try again.
+<p>
+Data from the Atmega board is sent at a rate of just over 60 pps.  At a
+compression of 5, the time between horizontal divisions is close to 10
+seconds.  However time compression of the plot may be set up to 1,000
+so that more than 2 hours of data may be visible.  Although the data
+is only subsampled, not averaged, graph averaging can do something similar.
+
+<h4><A NAME="uSLC1guizl">Use with Two-Frequency Zeeman Laser</a></h3>
+
+As noted, &micro;SLC1 will also work with axial or transverse Zeeman HeNe
+lasers.  Where there is an optical receiver that generates a TTL output
+at the split or difference frequency of the two output components,
+the Main Screen of the GUI will change slightly.  Specifically,
+a readout of the REF Frequency will appear under the "LEDs" and the name of
+the Main Window will change to: "Micro-Stabilized Two-Freqency Zeeman
+Laser Controller".  These will appear as sson as activity is
+detected on the REF input (and remain present
+even if it disappears).  Thus, the readout will track
+the variation in REF frequency during warmup and locking.
+This screen-shot is typical of the axial Zeeman
+laser shown in the photo above just after locking.  Locking was preceeded by
+a heating cycle and cooling cycle to optimize the lock point.  The jagged
+nature of mode sweep is typical of any axial Zeeman laser due to mode
+competition where both right and left circular polarized components are
+present.  (The color of the S-Mode changed from red to orange only because
+this is a later version of the GUI and I'm not going to go back and replace
+the previous GUI screen-shots!)
+<p>
+<center>
+<img src="Main_Window_ZLocked1.gif">
+<h4>Typical &micro;SLC1 Main Window shortly after Locking Zeeman Laser</h4>
+</center>
+<p>
+
+<h4><A NAME="uSLC1guih">Laser Firmware Hacking (Command) Window</a></h4>
+
+The Command windows provides access to most of the parameters that affect
+locking behavior.  While the basic locking algorithm and its state
+machine cannot be changed, it can be directed to go to any state and
+values to adjust the P-Mode and S-Mode gain/offset, PID gain coefficients,
+locking error bounds and timing, etc. can be entered.  Changes may then
+be saved to non-volatile memory in the Atmega chip.
+<p>
+The way these affect the firmware operation differ based on whether it
+is a state change or parameter change:
+<p>
+<ul>
+<li>State changes are at the top of the window.  A specific state can be
+ selected (e.g., Warmup) which will reveal up to 2 state-specific
+ parameters.  In the case of warmup, these are "Duration" and "Mode Period",
+ which will be described below.  State changes (along with their
+ parameters) do not take effect until the "Send State Change" button
+ is clicked.  But the laser will start using the parameters for the given
+ state (if and when it gets to it) as soon as the "Send State Parameterss"
+ button is clicked.
+<p>
+<li>Changes to the parameters in the lower part of the window will take
+ effect immediately when a widget is clicked (up or down, but not by simply
+ changing its value directly).  Thus, for example, it will be easy to see what
+ effect the Proportional Gain factor has on the stability of the laser
+ if perturbed when in the locking or locked state.
+</ul>
+<p>
+<center>
+<img src="Command_Window7.gif">
+<h4>Typical &micro;SLC1 Command "Laser Firmware Hacking Window"</h4>
+</center>
+<p>
+CAUTION: Messing with many of the following will result in a laser that
+never stabilizes (at least until the firmware is restarted or reset to
+default values).  However, permanent damage to anything but your
+ego is unlikely.
+<p>
+<b>State Commands (and their parameters)</b>
+<p>
+<ul>
+<li><b>Startup (State 0):</b> The controller waits for the laser to come on
+ and then goes to State 1..
+<p>
+ <ul>
+ <li><b>Duration0 (Timeout):</b>  This is The length of time to wait for
+  the laser tube to come on before considering it an error and going
+  to State 7.
+</ul>
+<p>
+ State 0 will remain in effect for a minimum of 2 seconds simply to enable
+ it to appear in the State LEDs or GUI. :)
+<p>
+<li><b>Warmup (State 1):</b> The tube heater is driven at maximum power
+ until the period of a mode sweep cycle exceeds the Mode Period value.
+<p>
+ <ul>
+ <li><b>Duration1:</b>  The length of time to remain in State 1
+  before giving up and going to State 7).
+<p>
+ <li><b>Mode Period:</b> The minimum length of time for the period of
+  the Mode Error signal to reach before considering the laser to be
+  warm enough to lock at close to an optimal temperature and going to
+  State 3.
+ </ul>
+<p>
+<li><b>Heating (State 2):</b> The tube heater is driven at a fixed power
+ for a specified time and then goes to State 3.
+<p>
+ <ul>
+ <li><b>Duration2:</b> The length of time to remain in State 2.
+<p>
+ <li><b>HeaterDrive2:</b> The value to use for the heater power.  The default
+  is 100 percent.
+ </ul>
+<p>
+<li><b>Locking (State 3):</b> The difference between P-Mode and S-Mode
+ (Mode Error) is used as the control variable in a proportional feedback
+ loop.  If the lock point results in heater drive more than a few percent
+ above 50 percent, go to State 4 (Cooling). If the lock point resuilts in
+ a heater drive of more than a few percent below 50 percent, go to State 2
+ (Heating).  If within the Locking Tolerance after Lock Valid Duration
+ seconds, go to State 5 (Locked).  Locking Tolerance serves a dual
+ role: It is the maximum change in the lock point permitted before
+ the lock point is checked against it.
+<p>
+ <ul>
+ <li><b>Duration3 (Lock Valid Duration):</b> How long the Mode Error must be
+  within +/- of the same Lock Tolerance.
+<p>
+ <li><b>Locking Tolerance:</b> The maximum change in lock point permitted
+  before the lock point is compared with the 50 percent heater
+  drive and then considered close enough to lock if the difference is
+  less then Lock Tolerance.
+</ul>
+<p>
+<li><b>Cooling (State 4):</b> The tube heater is driven at a fixed power
+ for a specified time and then goes to State 3.
+<p>
+ <ul>
+ <li><b>Duration4:</b> The length of time to remain in State 4.
+<p>
+ <li><b>HeaterDrive4:</b> The value to use for the heater power.  The default 
+  is 0 percent.
+ </ul>
+<p>
+<li><b>Locked (State 5):</b> The laser is considered stable.  There is an
+ option to check for optimal heater power (50 percent) periodically by
+ going back to State 3.  The default is 1 relock 5 minutes after initial
+ locking, but the count can be increased or set to 0.  One or more Relocks
+ may be beneficial when the laser stabilizes from a cold start as the tube and
+ enclosure come to thermal equilibrium.
+<p>
+ <ul>
+ <li><b>Duration5 (Relock Delay):</b> The number of seconds to wait before checking
+  lock quality by going back to State 3.
+<p>
+ <li><b>Relock Count:</b> The number of times to attempt relock.
+ </ul>
+<p>
+<li><b>Hangout (State 6):</b> Drives the heater at a fixed power level
+ for up to a very long time.
+<p>
+ <ul>
+ <li><b>Duration6:</b> Currently ignored. ;-)
+<p>
+ <li><b>Heater Drive:</b> Power level for heater.
+ </ul>
+<p>
+<li><b>Error (State 7):</b> This is where the controller goes when something
+ screws up. :)  It is currently similar to State 0 in that it will check
+ for laser light and go to State 1 if it finds any.
+<p>
+ <ul>
+ <li><b>Duration7 (Retry Delay):</b> How long to wait for the laser to come on
+  before going to State 0.
+ </ul>
+</ul>
+<p>
+Note that for States 2, 4, and 6, if the heater drive is selected to be
+other than 0% or 100%, the value displayed in the Heater Drive readout(s)
+may differ by a fraction of 1 percent from the requested power due to
+roundoff error in conversion from the range of 0 to 100% that
+us humans understand to the PWM range of 0 to 255 and back again.
+Live with it. :)
+<p>
+If none of the state or locking parameters (below) have been changed,
+restarting (going to State 0 or resetting or reloading the firmware
+and GUI) will generally restore your laser to supreme happiness (assuming
+it ever was supremely happy). ;-)
+<p>
+<b>Firmware locking parameters</b>
+<p>
+These take effect as soon as a widget is "clicked" (up or down), but not by
+simply changing its value.
+<p>
+<ul>
+<li><b>Lock Type:</b> Selects Frequency (dual mode), Intensity P-Mode, or
+ Intensity S-Mode.  The intensities are referenced to the adjusted P-Mode
+ or S-Mode amplitude (see below).  The Mode Offset or Intensity Level
+ controls will have an effect as appropriate.  If Lock Type is changed while
+ the laser is in the Locking or Locked state, it will attempt to relock
+ based on the new selection.
+<p>
+<li><b>Lock Side:</b> Which side of the neon gain curve to use for locking.
+ The default is "Red", though what actually happens for
+ staiblization will depend on the choice of S-Mode and P-Mode polarization
+ that exits the laser.  Figuring out how to determine this is which is
+ above my pay grade :) so if it doesn't do what you think it should,
+ try the other choice. ;-)  Note that if Lock Side is switched while the laser
+ is in the Locking or Locked state, it will relock on the opposite side of
+ the gain curve.
+<p>
+<li><b>Mode Offset:</b>  When the Lock Type is set to Frequency,
+ Mode Offset adds a fixed value into the mode difference
+ so that the lock point may be moved around on the gain curve.
+ The laser will remain in the Locked state for small changes in Mode Offset.
+<p>
+<li><b>Reference Level:</b> Wheh Lock Type is either Intensity P-Mode
+ or Intensity S-Mode, Intensity Level sets the intensity
+ lock point.  The level is refernced to the adjusted P-Mode or S-Mode
+ amplitude (see below).
+<p>
+<li><b>P-Mode Minimum and Maximum</b> may be used to fine tune the
+ P-Mode signal to the input range of 0 to 5 V.
+<p>
+<li><b>S-Mode Minimum and Maximum</b> may be used to fine tune the
+ S-Mode signal to the input range of 0 to 5 V.
+<p>
+<li><b>Proportional Gain</b> is the "P" coefficent of "PID".  A higher value
+ will speed up loop response but increase the tendancy to be underdamped,
+ and at too high a value, to oscillate.
+<p>
+<li><b>Integral Gain</b> is the "I" coefficent of "PID".  A higher value
+ will speed up loop response but increase the tendancy to be underdamped,
+ and at too high a value, to oscillate.  The integral term removes any
+ offset forcing the Mode Error to be 0.
+<p>
+<li><b>Differential Gain</b> is the "D" coefficent of "PID".  A higher value
+ will speed up loop response to changes may result in instability.
+ (Not currently implemented at all.)
+</ul>
+<p>
+<b>Load/Save</b>
+<p>
+The parameters that control locking are stored in the Atmega.
+There are three 32 word data structures:
+<p>
+<ul>
+<li><b>Locking Control Block (LCB):</b> This set of parameters is
+ used for locking.  These can be changed by the GUI and any chnages
+ may take effect immediately depending on what the firmware is
+ actually doing at the time.
+<p>
+<li><b>User Control Block (UCB):</b> This set of parameters may be saved to the
+ non-volatile memory (EEPROM) of the Atmega.  Reloading firmware does NOT
+ change these values.
+<p>
+<li><b>Default Control Block (DCB):</b> This set of parameters is what's
+ coded into the firmware and cannot be changed by the &micro;SLC1 GUI.
+ When a new NANO board is run for the first after being loaded with firmware,
+ the DCB is copied to the LCB and saved as the UCB in EEPROM.
+</ul>
+<p>
+For reference, the LCB, DCB, and UCB format is as follows:
+<p>
+<pre>
+ Location   Parameter           Range/Value
+-------------------------------------------------------------------
+     0      EEPROMFormat        Firmware compatibility value
+     1      PmodeMin            0 to 818 for 0 to 4 V (0 V)
+     2      SmodeMin               "              "   (0 V)
+     3      PmodeMax            205 to 1023 for 1 to 5 V (5 V)   
+     4      SmodeMax               "              "      (5 V)
+
+     5      ModePeriod          10 to 1800 for 1 to 180 s (14 s)
+
+     6      ControlRegister     Lock Side:
+                                  Bit 0 = 0: Red
+                                  Bit 0 = 1: Blue
+
+                                Lock Type:
+                                  Bits 2:1 = 00: Frequency
+                                  Bits 2:1 = 01: Intensity P-Mode
+                                  Bits 2:1 = 10: Intensity S-Mode
+
+     7      LockingTolerance    1 to 511 (8)
+     8      ReLockCount         0 to 9999 (1)
+
+     9      ProportionalGain    0 to 32 (10)
+    10      IntegralGain        0 to 32 (10)
+    11      DifferentialGain    0 to 32 (0, presently ignored)
+
+    12      Duration0            10 to 6000  for  1 to  600 s (120 V)
+    13      Duration1           100 to 18000 for 10 to 1800 s (180 V)
+    14      Duration2            10 to 6000  for  1 to  600 s (30 V)
+    15      Duration3            10 to 3000  for  1 to  300 s (20 V)
+    16      Duration4            10 to 18000 for  1 to 1800 s (15 V)
+    17      Duration5           300 to 18000 for 30 to 1800 s (300 V)
+    18      Duration6            10 to 18000 for  1 to 1800 s (360 V)
+    19      Duration7            10 to 18000 for  1 to 1800 s (120 V)
+
+    20      HeaterValue0        0 to 100 percent (0 %)
+    21      HeaterValue1           "        "    (100 %)
+    22      HeaterValue2           "        "    (100 %)
+    23      HeaterValue3           "        "    (50 %)
+    24      HeaterValue4           "        "    (0 %)
+    25      HeaterValue5           "        "    (50 %)
+    26      HeaterValue6           "        "    (0 %)
+    27      HeaterValue7           "        "    (0 %)
+
+    28      Spare1 
+
+    29      Offset              0 to 1023 for 0 to 5 V (0 V)
+    30      Intensity              "              "    (2.5 V)
+
+    31      CheckSum            Not implemented
+</pre>
+<p>
+Ranges and default values subject to change without notice. ;-)
+<p>
+When the firmware starts, the DCB is copied to the LCB unless a valid UCB
+has been saved, in which case it is copied to the LCB.  The LCB is then
+read out of the Atmega over USB into the GUI Command Window widgets.
+When a NANO board is loaded with firmware the first time ONLY, the DCB
+is copied to the LCD and saved as the UCB.
+<p>
+<ul>
+<li><b>Load Default Parameters:</b> This button will load the
+ original parameters.  The Default Parameters are hard-coded into
+ the firmware and can be changed only before compiling and
+ uploading the firmware.  The "Save Parameters" command
+ must be issued to then store these in non-volatile memory and replace any
+ User Parameters that were previously saved.
+<p>
+<li><b>Load User Parameters:</b> This button will load previously saved
+ (and possibly changed) parameters.  If no User Parameters were ever
+ saved, the Default Parameters will be loaded.
+<p>
+<li><b>Save User Parameters:</b> The locking parameters currently in
+ use (including any that were sent) are saved to non-volatile
+ memory.  These will be retained if power is removed and if new firmware
+ is uploaded that has the same EEPROM format.  (Frequent changes to
+ the EEPROM format are not likely.)  Note that any changes made
+ to parameters associated with States that may have been changed but NOT
+ sent will NOT be saved.
+</ul>
+<p>
+Note that while there is no way to save the locking parameters to a
+file explicitly (and there never will be!), a record can be made of
+them by starting the GUI, opening a log file, enabling capture, and then
+opening the USB Port.  The first thing the GUI does is to upload
+the LCB in use from the firmware which will show up in the log file as a
+consecuative 32 sample block near the start with Low Speed Codes from
+130 to 161.  Reformatting as desired is left as an exercise for the
+determined student. ;-)
+<p>
+The next set of widgets are for diagnostic purposes.  If they don't seem
+to make any sense, that's by design and it shouldn't keep you up
+at night. ;-)
+<p>
+<ul>
+<li><b>Firmware Directive Sent</b> is the actual ASCII string sent to the
+ firmware for a state change, parameter click, etc.
+<p>
+<li><b>Command, Param 1, Param 2, Param 3</b> are what the firmware received
+ and returned to the GUI.
+<p>
+<li><b>Value 0, Value 1, Value 2, and Value 3</b> are integers which may be
+ assigned to arbitrary variables in the firmware.  Value 0 is always
+ the total time in 10ths of a second that the firmware is in the current
+ state.  The others are unique for each state.  Check the firmware source
+ code for what they may mean, if anything. :)
+<p>
+<li><b>Main Window Diagnostic Readouts Checkbox</b> determines whether
+ the four values - Diag 0, Diag 1, Diag 2, and Diag 3 - at
+ the top of the Main Window show up.  If they are
+ visible, they will probably make even less sense than the above. :)
+<p>
+ The state of this Checkbox is saved when the GUI is terminates.
+</ul>
+<p>
+And finally, the quickest way out of the hacker's window:
+<p>
+<ul>
+<li><b>Close:</b> closes the Command window without performing any additional
+ actions.  Any changes will be retained as long as the GUI is running.
+ But NOTHING IS SAVED to non-volatile memory.  Any changes made to locking
+ parameters that were not previously saved (or sent at all) will be lost
+ when the GUI is terminated (though the GUI should ask you to save
+ them before exiting).
+<p>
+ However, the Command Window does NOT need to be closed to do things in
+ the Main Window.
+</ul>
+<p>
+If any of the parameters have been modified in the GUI and sent to the
+firmware but not saved, exiting the GUI (X or Finish) will ask if they
+should be saved before actually relegating them to the bit bucket.
+However, as noted, even if not saved, they are still in Atmega memory as long
+as the board hasn't been reset or power cycled.  So, if the GUI is restarted,
+they will be retrieved automagically and can still be saved via the Command
+window. :)
+<p>
+Note that any changes made in the Command window <b>before opening the
+USB Port</b> will be lost when it is opened and the LCB is uploaded
+automatically from the firmware.
+<p>
+<hr>
+
+<h3><A NAME="uSLC1trb">Troubleshooting</a></h3>
+
+Naturally, all is expected to go smoothly.  But if it doesn't, here are
+some common problems.  Some of these may be bugs in the firmware or GUI
+as hard as that is to believe.  So, if you find something that cannot
+be solved based on what's below, contact us for a timely response:
+<p>
+Note: The following assumes the use of the Atmega Nano 3.0 board.
+If you've somehow figured out how to get the Pro Micro, change any
+references below to pins as appropriate.  If you're using the ATtiny,
+there is no GUI support, period.  So any failure of the GUI to do
+anything is a feature, not a bug. ;-) 
+<p>
+The first set of problems deal with the board independent of the GUI
+and assumes that all the LEDs are present.  However, some also
+apply to the readouts of the GUI.  "LEDs" below refer to either
+physical LEDs or the fake ones of the GUI, as appropriate. ;-)
+<p>
+<ul>
+<li><b>Firmware will not load - "No suitable device":</b> This
+ usually means the incorrect USB port has been selected or the Atmega
+ board does not have a bootloader installed.  Sometimes, it could be due
+ to a bad USB cable, or attempting to upload through an incompatible USB
+ port replicator or hub.
+<p>
+ If there are problems uploading firmware and/or opening the
+ COM port in the GUI AND your Nano board has the CH340 USB chip (which includes
+ anything I provide), especially if it
+ has no label, it may be incompatible with the CH340 driver currently
+ installed on your system.  The typical error when uploading is:
+<p>
+<pre>
+ avrdude: ser_open(): can't set com-state for "\\.\COM3"
+ An error occurred while uploading the sketch
+</pre>
+<p>
+ If already loaded, attempting to open a COM port in the &micro;SLC1
+ GUI, will generate a block of errors similar to
+ <A HREF="CH340-23e.gif">uSLC1 Errors when Opening COM Port
+ with New CH340 and 2023 Driver</A> and do nothing useful.  So even
+ if you have no interest in modifying the firmware, this issue may
+ still exist.
+<p>
+ With the Nano board plugged in, determine what version
+ of the device driver is installed by going to the Windows Control Panel,
+ "Device Manager", "Ports (COM & LPT).  Then double click on "USB
+ Serial CH340....".  Go to "Driver".  If it is a version later
+ than 2019 (probably 2023 or 2024), it may not work depending on the CH340 chip.
+ (I know this issue exists with the 2023 driver but haven't tested a
+ known quirky Nano with the 2024 driver yet.)
+</pre>
+<p>
+ DO NOT UNINSTALL THE DRIVER
+ as that may delete it entirely and make it unavailable should there
+ be a need to get it back.
+ Go to "Update Driver", "Browse my computer for
+ drivers", "Let me pick from a list of available drivers".  Hopefully an
+ older version is still there.  Both the 2014 and 2019 versions are known
+ to work with these Nanos.  Else
+ install the 2019 version which may be found under <A HREF="#uSLC1ref">References</a>: CH340 Windows USB Driver Installer (2019)(Local).
+ Even with the older driver, there may still be some flakyness in uploading.
+ Note that a subsequent Windows Update will likely resintall the 2023 driver (or
+ whatever the latest version is).  Without doing that,
+ even just using a different USB port may result in the later driver
+ reappearing.  More info and fixes at:
+ <A HREF="https://github.com/SHWotever/SimHub/wiki/Arduino---Counterfeit-Fake-CH340G-chips-driver-issues">Arduino Counterfeit Fake CH340G chips driver
+issues</A>.
+<p>
+ Even with the 2019 driver, the upload may hang.  Press the Reset button on
+ the Nano and it should then go through the normal upload sequence and terminate
+ without errors.  Go figure. :( ;-)
+<p>
+ I will attempt to avoid Nanos using these bogus parts, but there may be
+ no choice after a while.  It is really too bad that the original Nanos
+ are so expensive - Almost 10X the cost and even available.
+<p>
+<li><b>P-Mode and/or S-Mode or Loop Difference LEDs are not changing:</b>
+ The firmware monitors the S-Mode and P-Mode inputs in all States.
+ Check the voltage to Arduino pins A0 and A1.  They should be varying
+ within the range of 0 to 5 V.  Adjust the respective Gain trim-pots so
+ that the peak after the laser has been on for awhile is 4.5 to 4.75 V.
+<p>
+ Check the polarity of the physical LEDs.  The cathode (flat) should point away
+ from the output pin.  Confirm the value of the resistors to be 330 ohms,
+ or in the vicinity.  The resistors should go to GND.  Check the output
+ voltage from the Arduino pins D10 and D11.
+<p>
+<li><b>Controller never leaves State 0 (Startup):</b> Check P-Modee and S-Mode
+ inputs.  They must achieve values greater than around 0.5 V.  See above.
+<p>
+<li><b>Heater has no effect:</b> Confirm voltage across the heater winding
+ when driven at 100 percent.  It should be close to the input voltage to
+ the heater (e.g., +12 VDC).  Check the output from Arduino pin D9.  It
+ should be close to 5 V.  Check continuity from the heater transistor
+ through the heater winding to heater Power.
+<p>
+<li><b>Controller never leaves State 1 (Warmup):</b> If the mode sweep period
+ is significantly greater than the Mode Period value, it means the firmware
+ is not seeing this.  The firmware actually looks at the negative portion
+ of (P-Mode - S-Mode + Offset).  Confirm that this value goes negative
+ for more than 1/2 Mode Period.  Also confirm that the actual (not adjusted)
+ values of P-Mode and S-Mode are between 0.25 and 4.74 V.  If the firmware
+ enters State 3 (Locking) but either P-Mode or S-Mode is out of bounds, it
+ will go to State 7 (Error) and then immediately back to State 1.
+<p>
+<li><b>Controller enters State 5 (Locked):</b> but then goes back to State 3
+ (Locking) after about 5 minutes.  This is a feature, not a problem.
+ The default ReLock Time is set to 5 minutes with a ReLock Count of 1 to
+ permit the laser to achieve a more optimal lock point when powered
+ from a cold start.  The ReLock Count can be changed to 0 if desired.
+</ul>
+<p>
+The following problems are GUI-related:
+<p>
+<ul>
+<li><b>GUI won't start and generates error about value out of range:</b>
+ Ignore the error by hitting "continue" as there is no configuration file.  The
+ GUI should come up.  Close it using "Finish" and it will save a valid
+ configuration file and the error will not appear again except possibly
+ if a new GUI Build is run since each one has a unique configuration
+ file.  (I've never seen this error with &micro;SLC1 but at least be
+ prepared!)
+<p>
+<li><b>GUI finds no valid USB Port:</b> The firmware is not running
+ or has crashed.  (Hard to believe!)  Exit the GUI and assuming the firmware
+ has been loaded, press the RESET button.  After a few seconds, it should
+ settle down.  The on-board LED ("L") should be flashing at a 5 Hz
+ rate with activity on the TX LED.
+<p>
+<li><b>GUI generates error when the USB Port is selected:</b> This means
+ either the firmware is not producing the proper communications sequence
+ or more likely, the board has simply gotten out of sync.  Selecting the
+ USB Port a second time will usually clear it.
+<p>
+<li><b>Graph is not scrolling after USB Port is selected:</b> Similar to
+ above.  First try selecting the USB Port again, but may require exiting
+ the GUI, pressing RESET, and reatsrting the GUI.
+</ul>
+<p>
+More coming soon.
+<p>
+<hr>
+
+<h3><A NAME="uSLC1tny">Controller-Only Version of uSLC1 for ATtiny85</a></h3>
+
+The &micro;SLC1 firmware has been ported to the Digispark ATtiny85 development
+board but has not been fully tested with a laser.  That would be your job
+should you decide to accept the challenge. :)  The core locking routines are
+virtually identical, but all GUI and EEPROM code has been stripped out.  Thus,
+any custom settings would need to be made as changes to the firmware parameters
+before compiling.  Even then it's a tight fit in program memory.
+
+<h4>ATtiny wiring</h4>
+
+Only 3 connections (and power) are required for the board.  What could be
+simpler?
+<p>
+<center>
+<img src="uSLC1_Wiring3.gif">
+<h4>&micro;SLC1 Schematic/Wiring Diagram using ATtiny85 Digispark</h4>
+</center>
+<p>
+There is also a version of this board labeled "ATtiny85" which should be
+functionally similar but with a slightly different layout and a proper
+USB connector. :)
+<p>
+The single on-board LED serves as a multi-mode status display (documented in
+the firmware).  To further simplify the circuit,
+eliminate the Heater LED, but then it would be boring. :)
+<p>
+VIN goes directly to a 78L05 regulator so the +12 VDC for
+the heater could be used to power the board when not connected to USB.
+DO NOT use them both at the same time.  CAUTION: There is no protection
+on +5V power.  So when connected to USB, any wiring mistakes or failures
+that result in excessive current from +5 VDC to GND will pull it
+from the USB port.  Depending on the computer's USB subsystem, this
+could be bad.  It has been suggested that connecting the ATtiny board
+through a USB port replicator or hub might provide better protection.  USB is
+supposed to handle overloads gracefully but not all implementations do.
+
+<h4>ATtiny firmware</h4>
+
+<A HREF="uSLC1_ATTiny_fw_v02.ino">&micro;SLC1 ATTiny85 Firmware Version 02</a>
+is believed to be functional.  At least it compiles without errors and the
+Status LED behaves as advertised. ;-)  Programming and upload
+support uses the Arduino IDE.  The board must be disconnected from
+USB for use with a laser since a USB pin is used for both programming
+and signal input.  (Or a DPDT switch can be used to disconnect it.)
+Information on installing the ATTiny drivers and compiling and uploading the
+firmware may be found under <A HREF="#uSLC1ref">References</a>.
+<p>
+<hr>
+
+<h3><A NAME="uSLC1promic">Version of uSLC1 for Pro Micro Atmega32U4</a></h3>
+
+The &micro;SLC1 firmware has been ported to the Pro Micro Atmega32U4
+development board but has not been tested.  It is not known yet
+whether this board will work with the GUI either, but it does support all
+the LEDs. :)  Almost everything is identical
+to that of the Atmega Nano 3.0 wiring and firmware
+except for pin locations.  Support is via the Arduino IDE.
+<p>
+Note that there are two versions of this board: 5 V/16 MHz and 3.3 V/8 MHz.
+There is no point in using the latter unless you have a specific need for
+lower power (like this matters with a power gobbling HeNe laser!) or to
+be 3.3 V compatible.  Confirm the version before buying.
+<p>
+However, I have more or less given up on going any further with the
+Pro Micro.  There were just too many issues that didn't have obvious
+solutions.  These relate to the Arduino IDE, windows driver, Pro Micro
+hardware, and probably the firmware.  I do not know whether they are
+independent, or if a single mater issue is at work here.
+<p>
+<ol>
+<li><b>Driver compatibility:</b> While it was possible to compile
+ and upload code to the board, the RX (yellow) LED was constantly
+ flashing at a 1 Hz or so rate, even with a NOP sketch loaded.
+ In fact this persisted with the Nano as well preventing code from
+ running properly unless just uploaded.  It was only present if the
+ Arduino IDE was running.  To remedy this, the Arduino IDE had to
+ be dinstalled and reinstalled.  Even with the Pro Micro support
+ enabled, there is still no flashing RX.  Go figure.
+ However, the quirk seems to also
+ be present if another IDE, UECIDE, is running, probably due
+ to autodiscovery of USB devices (which is enabled by default).
+<p>
+<li><b>Inconsistent assignment of USB COM port numbers:</b> Due to the
+ way the boot loader and communications is implemented, 2 ports are
+ actually used and their numbering sometimes changed at random.  Duplicate
+ port numbers even appeared at times and there was no way to know which
+ was the real one.  This may eventually settle down so that the same
+ assignment is used for consecutive uploads.
+<p>
+<li><b>USB dropout:</b> After a random length of time, the USB port would
+ simply disappear until the board was power cycled.
+<p>
+<li><b>Limited number of packets sent:</b> Using the Arduino IDE serial
+ monitor, data could be seen being sent from the Pro Micro (for use by the
+ GUI).  But after approximately 7360 packets (consisting of the 6 numbers),
+ the serial monitor would freeze and the Pro Micro interrupt might stop
+ working then or at some random time later.
+<p>
+<li><b>No response using GUI:</b> While the data format was correct
+ coming from the Pro Micro (as verified by the serial monitor), the
+ &micro;SLC1 GUI <i>never</i> recognized it - the graph never scrolled
+ and the TX LED which would be on at a high repetition rate using the
+ serial monitor was never lit.
+<p>
+<li><b>USB port not recognized:</b> Finally, the last straw, was that when
+ attempting to reload firmware, Windows refused to recognize the Pro Micro USB
+ port with the error: "Unknown USB Device (Device Descriptor Request Failed)".
+ The board now doesn't come up on multiple PCs.  Now, only the power LED
+ did anything.
+</ol>
+<p>
+After (6) occurred, it wasn't clear whether the  microprocessor got fried, a
+USB pin became disconnected on the board, or
+the bootloader firmware became corrupted.
+But I figured I would attempt to reload the bootloader just in case based on
+<A HREF="http://www.instructables.com/id/How-to-upload-sketches-to-Pro-MicroLeonardo-via-se/step6/Burning-Bootloader-on-the-Pro-Micro/">Burning Bootloader
+on Pro Micro</A>.  The plan was to use an Atmega 328 Nano 3.0 as the
+Arduino ISP.  After wiring it as in the description and plugging it in,
+both boards appeared to be receiving power but then
+my PC belched up the "Blue Screen of Death" and rebooted.  The error
+had something to do with closing the USB driver improperly.  Exactly how
+that could have been caused by the wiring between the two boards
+is not at all clear.  I'd never seen any manner of screwup on a USB
+device crash Windows before.
+<p>
+Not to give up just yet and still hHoping that the problem was a
+corrupted bootloader, I loaded Arduino 1.6.9
+with the Pro Micro add-in and Nano driver on a non-critical XP laptop
+(just in case bad things happened) and tried again.
+This time nothing bad happened and the bootloader was burnt sucessfully,
+so the Pro Micro is back in shape.
+(See the detailed procedure below adapted specifically
+for use with the Atmega 328 Nano 3.0 as the ISP.)
+However, issues (3), (4), and (5) persist.  To keep the board
+preoccupied and happy for now, I loaded an alternating RX/TX LED
+blinkie sketch. ;-)
+<p>
+If anyone is interested in pursuing the Pro Micro-based &micro;SLC1, the
+firmware may be downloaded at <A HREF="uSLC1_Pro_Micro_fw_03.ino">&micro;SLC1
+Pro Micro Firmware Version 03</a>.  It compiles, but has
+not been tested with a laser and it may have coding bugs not related
+to anything else even though most everything was copied from the
+Nano version.  Change the pin locations in the Atmega 328 Nano
+3.0 wiring/schematic based on the comments in
+the firmware.  However, given that the primary
+advantage of the Pro Micro is a very slightly smaller form-factor, the
+hassle of working through all the above issues may not be justifiable
+unless you're already fluent in the use of the Pro Micro.
+<p>
+<hr>
+
+<h3><A NAME="uSLC1ard">Specific Arduino Issues</a></h3>
+
+The following sections deal with various things that may need to be done if
+everything doesn't go smoothly with respect to installing or running the
+Arduino IDE. :( :)
+
+<h4><A NAME="uSLC1brn">Burning Booloaders into the Nano or Pro Micro</a></h4>
+
+These procedures are only required where an Arduino board arrives without
+a bootloader preinstalled, or where the boot loader has gotten corrupted.
+The one for the Pro Micro is documented at <A HREF="http://www.instructables.com/id/How-to-upload-sketches-to-Pro-MicroLeonardo-via-se/step6/Burning-Bootloader-on-the-Pro-Micro/">Burning Bootloader on the Pro Micro</a>.  But they
+are similar for many others.
+<p>
+<b>Burning a Bootloader into Nano using another Nano as the ISP</b>
+<p>
+The instructions below apply
+specifically to the use of a Nano 3.0 as the Arduino ISP.  This assumes a
+recent version of the Arduino IDE has been installed (I used 1.6.9) along
+with the Nano driver.  "Go to" refers to the menus of the Arduino IDE.
+<p>
+<ol>
+<li>Plug the Nano into a USB port.  Go to "Tools", "Port", and select the
+ port that the Nano is on.
+<p>
+<li>Go to "Tools", "Board", and select "Arduino Nano".  Go to "Tools",
+ "Processor", and confirm that it is "ATmega328".
+<p>
+<li>Go to "File", "Examples", and select "Arduino ISP".
+<p>
+<li>In the Arduino ISP sketch:
+<p>
+ <ul>
+ <li>Make sure RESET is defined as a "10", not "SS".  The line should be:
+<pre>
+ #define RESET 10.
+</pre>
+ <li>Uncomment the line:
+<pre>
+ // #define USE_OLD_STYLE_WIRING
+</pre>
+  (remove the "/ /") so that
+  MOSI, MISO, and SDK of the target Pro Micro will be defined as
+  pins 11, 12, and 13 on the Nano.
+<p>
+ <li>Upload the sketch to the Nano using Ctrl-U or go to: "Sketch", "Upload".
+ </ul>
+<p>
+<li>If desired, save the sketch as something like: "ArduinoISP_Nano" should
+ this need to be done again.  Ctrl-Shift-S or go to: "File", "Save as".
+<p>
+<li>Unplug the Nano from the USB port.
+</ol>
+<p>
+Follow the instructions in the following sections as appropriate:
+
+<h4>Instructions for burning a bootloader into the Atmega328 Nano 3.0</h4>
+
+<p>
+<ol start = 7>
+<li>Wire up the Nano (ISP) to the Nano (target) as follows.  ("Pin" refers
+ to the Arduino numbering NOT physical pins!)
+<p>
+ <ul>
+ <li>+5V on ISP Nano to +5V on target Nano
+ <li>GND on ISP Nano to GND on target Nano
+ <li>Pin 10 on ISP Nano on target Nano
+ <li>Pin 11 on ISP Nano to Pin 11 on target Nano (MOSI)
+ <li>Pin 12 on ISP Nano to Pin 12 on target Nano (MISO)
+ <li>Pin 13 on ISP Nano to Pin 13 on target Nano (SDK)
+<p>
+ <li>Install a 10 &micro;F capacitor between ISP Nano RST and GND to disable
+ reset on serial connection.  Plus goes to RST.
+<p>
+ <li>Check for incorrect wiring and shorts!
+ </ul>
+<p>
+<li>Plug the Nano into a USB port.  Go to "Toole", "Port", and select the
+ port that the Nano is on.  (It should be the same as above unless it is
+ plugged into a different USB slot.)
+<p>
+<li>Go to: "Tools" and select "Burn Bootloader".
+</ol>
+<p>
+If this step completes without errors, it probably worked. ;-)
+If there are errors, double check the wiring and board/processor
+selections.  Confirm that the bootloader was burnt successfully
+by unplugging the ISP Nano from the USB port, disconnecting the
+VCC and RST lines (at a minimum) between the two boards, and
+plugging the target Nano into a USB port.  For a Far East clone,
+it should now come up something along the lines of "USB Serial CH340" with
+an associated COM Port - and voila! no errors. :)  For a geniune
+Nano, it may say something about FTDI but should come up without errors.
+<p>
+Change the Programmer back to "ArduinoISP" for normal use and select
+the Nano's COM port.
+<p>
+Then upload the blink sketch or anything else that will provide a definitive
+indication of success.
+<p>
+
+<h4>Instructions for burning a bootloader into a Pro Micro</h4>
+
+In addition to the Nano, the Pro Micro must be installed in the Boards
+Manager.  The Pro Micro driver is not needed to burn the bootloaded, but
+will be to upload any sketches to the Pro Micro.
+<p>
+<ol start = 7>
+<p>
+<li>Wire up the Nano (ISP) to the Pro Micro (target) as follows.  ("Pin" refers
+ to the Arduino numbering NOT physical pins!)
+<p>
+ <ul>
+ <li>+5V on ISP Nano to VCC on target Pro Micro
+ <li>GND on ISP Nano to GND on target Pro Micro
+ <li>Pin 10 on ISP Nano to RST on target Pro Micro
+ <li>Pin 11 on ISP Nano to Pin 16 on target Pro Micro (MOSI)
+ <li>Pin 12 on ISP Nano to Pin 14 on target Pro Micro (MISO)
+ <li>Pin 13 on ISP Nano to Pin 15 on target Pro Micro (SDK)
+<p>
+ <li>Install a 10 &micro;F capacitor between Nano RST and GND to disable reset
+  on serial connection.  Plus goes to RST.
+<p>
+ <li>Check for incorrect wiring and shorts!
+ </ul>
+<p>
+<li>Plug the Nano into a USB port.  Go to "Toole", "Port", and select the
+ port that the Nano is on.  (It should be the same as above unless it is
+ plugged into a different USB slot.)
+<p>
+<li>Go to: "Tools", "Boards" and select "Sparkfun Pro Micro".
+<p>
+<li>Go to: "Tools", "Processor", and select "Atmega32U4 (5V/ 16 MHz)".
+<p>
+<li>Go to: "Tools", "Programmer", and select: "Arduino as ISP".
+<p>
+<li>Go to: "Tools", and select "Burn Bootloader".
+</ol>
+<p>
+If this step completes without errors, it probably worked. ;-)
+If there are errors, double check the wiring and board/processor
+selections.  Forgetting to select 5V, 16 MHz processor will result
+in an error.  (The default is 3.3V, 8 MHz.)
+Confirm that the bootloader was burnt successfully
+by unplugging the Nano from the USB port, disconnecting the
+VCC and RST lines (at a minimum) between the two boards, and
+plugging the Pro Micro into a USB port.  It should now come
+up as "USB Serial Device" with an associated COM Port - and voila!
+no errors. :)
+<p>
+Change the Programmer back to "ArduinoISP" for normal use and select
+the Pro Micro's COM port.
+<p>
+Then upload a sketch that will provide a definitive indication of success.
+(The normal Blink sketch will not work on the Pro Micro without modification
+since there is no LED on Pin 13.)
+<p>
+<hr>
+
+<h4>Instructions for loading Firmware or Burning the Bootloader using a
+ USBasp ISP</h4>
+
+Normally, the Atmega 328 NANO 3.0 has a bootloader pre-installed.
+However, some may not, and the bootloader can get wiped in various ways.
+So, an alternative is to use an In-System Programmer (ISP) or
+another Arduino board as an ISP.  There are many tutorials on the
+Internet on this but they may be confusing or incorrect.
+And trying to get useful basic information from the Arduino forums
+can be challenging as (1) there are often
+assumptions about the user's level of expertise that are misplaced
+and (2) some of it is wrong.  So here is simple method using a $2 USBasp
+USBasp ISP board that can load firmware without a bootloader being present,
+and/or can restore a bootloader that is corrupted or missing and/or load
+a sketch directly regardless of any bootloader being present.
+<p>
+However, there is still no guarantee as these Far-East import USBasp
+boards are not all created equal.
+<p>
+The following is written for the Atmega 328 Nano 3.0 board ("NANO"), but should
+work with others using Atmega CPUs.
+<p>
+<ol>
+<li><b>Purchase a USBasp ISP:</b>  Search on eBay or Amazon
+ for "USBasp", select and
+ sort by "Price + shipping lowest first".  The board can be found for under
+ $10.  Get the version with the cable to save the hassle of wiring
+ it yourself even if you have one from another USBasp as the
+ pinouts are not all quite identical.
+<p>
+<li><b>5V or 3.3V</b> If there is a jumper for voltage select, it should be
+ set to 5V for the Atmega328P Nano 3.0.
+<p>
+<li><b>Plug the USBasp board into any available USB slot:</b>
+ Windows should recognize it and may
+ attempt to install a driver if there is none already present,
+ which may or may not succeed.  But that
+ doesn't matter as it will be replaced in the next step.  While I have had
+ no problems using a USB slot on a hub or repeater, if strange behavior
+ is observed, try it direct.
+<p>
+<li><b>Install the Windows USBasp driver:</b> There are many of these floating
+ around and not all work.  There is an added complication in that they
+ are usually not "signed", so the normal Window install may fail.
+ Go to <A target="mLMA" HREF="https://rayshobby.net/dead-simple-driver-installation-for-usbasp-and-usbtiny-on-windows/">Dead-Simple Driver Installation for USBasp and USBtiny on Windows</a> and follow the instructions <b>even if there is
+ already a USBasp driver on your machine</b>.  I know this one works.
+<p>
+<li><b>UNPLUG the USBasp board:</b> NEVER change connections with it
+ plugged into USB and powered!!!
+<p>
+<li><b>Connect the NANO to the USBasp board:</b> This can be done using the
+ 6 pin header if present with the cable adapter, or a set of jumper wires to
+ the 6 pins using a solderless breadboard or the pins on the NANO board if
+ present.  DOUBLE CHECK the wiring, especially VCC and GND!!!!!  If using
+ the cable adapter, make sure it's plugged in facing the proper direction
+ if not keyed (and even if it is keyed - it could be wired incorrectly
+ or if the adapter cable didn't come with the USBasp you are using, may
+ simply be wired differently).  I would recommend checking all signals
+ with a multimeter on ohms, but especially Vcc and GND.
+ They should be close to 0 ohms.  For reference (from <A target="mLMA" HREF="https://components101.com/sites/default/files/component_pin/Arduino-Nano-Pinout.png">Atmega 328P NANO 3.0 Pinout</A>):
+<p>
+<PRE>
+ USPasp    NANO   NANO
+ Signal   Signal   Pin   Comments
+------------------------------------------------------------------------
+  GND      GND    4,29
+  RST      RST    3,28
+  MOSI     MOSI    14    MOSI and MISO do NOT get swapped
+  MISO     MISO    15
+  SCLK     SCLK    16
+  Vcc       5V     27    The USBasp may support both 5V and 3.3V, check
+</PRE>
+<p>
+These are usually labeled on the USBasp.  I've also found one instance of
+a NANO PCB that had the connection between RESET on pin 3 and RESET on pin
+28 open resulting in an inability for the USBasp to do anything because
+the RESET on the 6 pin header didn't go to the one actually connected
+to RESET on the chip.  Strange.
+<p>
+<li><b>Open the Arduino IDE:</b> The version I've been using is 1.8.10, which
+ was the latest at the time.  Others probably also work but 1.6.5 did
+ not.  Plug the USBasp board into any USB slot.  The IDE WILL NOT see
+ it as a COM port but Windows should recognize it with its distinctive
+ bloop sound. :)  That's normal.
+<p>
+<li><b>Select the hardware:</b>
+<p>
+ <ul>
+ <li>"Tools", "Board", "Arduino Nano".
+ <li>"Tools", "Processor", "Atmega 328P" or "Atmega 328P (Old Bootloader)".
+  (which of these two is selected probably doesn't matter for uploading
+  the sketch but see below.)
+ <li>"Tools". "Programmer", "USBasp".
+ </ul>
+<p>
+<li><b>Upload a sketch:</b> Blink is as good as any for the initial test:
+ "File", "Examples", "Blink".  It doesn't matter if there is a bootloader
+ installed on the NANO.  Uploading using USBasp
+ MUST be done using "Sketch", "Upload Using
+ Programmer" or Ctrl-Shift-U.  Normal "Upload" or Ctrl-U will fail because
+ it attempts to use the COM port even though USBasp is selected as
+ the programmer.  Shortly after the green bar goes all
+ the way to the right, the second LED on the USBasp board will flash
+ and the user LED (D13, L) on the Nano should
+ be lit at about half brightness while it's actually
+ loading the sketch.  It will then go out, reset the NANO,
+ and Blink will start running flashing the same LED at about 1/2 Hz.
+<p>
+ NOTE: It's likely that the bootloader, if present, has been wiped out
+ by loading the sketch through the USBasp ISP.  So the following may be
+ required if it's desired to use normal upload via USB.
+<p>
+<li><b>Burn the bootloader (if desired or required):</b> This is trivial
+ but first read the following:
+<p>
+ <b>IMPORTANT:</b> On recent versions of the Arduino IDE, there are two options
+ under "Tools", "Processor" for the bootloader and that affects both normal
+ uploading via USB (COM port) and which bootloader will be burnt.  These are
+ "Atmega 328P" and
+ "Atmega 328P (Old Bootloader)".  Most of the cheap NANO boards appear
+ to have the old bootloader installed which works with older versions of the
+ Arduino IDE (e.g., 1.6.5) and UECIDE (the way it is set up for me at least,
+ I haven't upgraded in a while).
+ However, at least one NANO I purchased on eBay
+ had the New Bootloader (and all those purchased on Amazon in 2020/2021
+ do as well).
+ And until I realized the above, that is what was being burnt when using
+ Aruino IDE 1.8.10.  So it would then not work with V1.6.5 or UECIDE.
+ Thus burning the bootloader may be useful even if it hasn't been zonked. ;-)
+<p>
+ Having said all that, to burn the bootloader,
+ go to "Tools", "Processor" and select the version that is desired.
+ Then "Tools", "Burn Bootloader".  After this is done (which takes
+ only a couple seconds), it should be possible to upload firmware
+ via a USB port direct using Ctrl-U.  The programmer should be set to
+ ArduinoISP ("Tools", "Programmer", "ArduinoISP") and the correct COM
+ port should be selected ("Tools", "Port", "COMx").  And the same
+ version of the bootloader as was burnt.
+</ol>
+<p>
+That's it, really. ;-)
+<p>
+Note that uploading a sketch via USBasp may wipe out the bootloader and
+burning the bootloader may wipe out whatever sketch was previously loaded.
+Live with it. :-)
+
+<h4><A NAME="uSLC1kbr">Kludge to Prevent Build Errors</a></h4>
+
+This isn't necessary in all cases and may only occur with Windows XP,
+or a Pre-Jurassic PC.  It's probably highly dependent on the
+specific PC, version of Windows, specific lines of code in the sketch,
+and the phase of the moon. ;-)  The symptoms are
+that near the end of compilation, an error will be
+generated and it will abort.  The error will be something like:
+"collect2.exe: error: ld returned 5 exit status".  No one appears to
+fully understand what this means. ;-)  However, there is a workaround
+that appears to solve it.  Even if you aren't experiencing the error,
+the remedy is so simple and shouldn't create any problems of its
+own.  Consider it innoculation.  (This fix is from
+<A HREF="https://github.com/arduino/Arduino/issues/2989">"ld
+returned 5 exit status" on Win XP #2989"</a>):
+<p>
+<ol>
+<li>Make a short name directory without spaces on the C drive, for
+ example C:\TEMP.  It probably doesn't need to be on the C drive or called
+ TEMP but these work.  And what ends up there won't take up that much space.
+ If there is already a TEMP or other suitably named directory, just let it
+ use that.
+<p>
+<li>From the Arduino (this works in versions 1.6.6 and beyond) open
+ "File", "Prefernces" and click on the link to the file "preferences.txt".
+<p>
+<li>Close the Preferences window  and all open sketch windows so the Arduino
+ IDE is no longer running, else it will just overwrite what you're about
+ to do.
+<p>
+<li>Now edit the Preferences.txt file and add at the very start:
+<pre>
+  build.path=C:\TEMP
+</pre>
+ (Replace TEMP with the name you chose if not the same.)
+<p>
+<li>Save the Preferences.txt file and restart Arduino.
+</ol>
+<p>
+Now the error should not appear, hopefully, maybe. ;-)  This worked for
+me on 3 PCs.  Don't try to explain it, if it works, use it. :)
+
+<h3><A NAME="uSLC1frm">Firmware Technical Description</a></h3>
+
+The firmware has three primary functions:
+<p>
+<ol>
+<li>Execute the warmup algorithm to get the laser tube to operating
+ temperature and then run the digital control loop to lock the laser.
+<p>
+<li>Send P-Mode, S-Mode, and housekeeping data back to the GUI.
+<p>
+<li>Accept commands from the GUI to change locking parameters and/or state,
+ or load or save locking parameters.
+</ol>
+<p>
+The code for (1) is in an Interrupt Service Routine (ISR) which is run
+approximately 977 times per second as determined by the match-compare
+interrupt for Timer0B whose PWM is set at 50 percent and used for nothing
+else.  Within this ISR, the analog values for P-Mode and S-Mode are acquired,
+offset, and limited, and used as the input to the 8 State routines.  Every
+16th pair of P-Mode and S-Mode values, along with the heater drive value,
+are loaded into a First In First Out (FIFO) buffer to be sent to the GUI
+at around 61 Hz.
+<p>
+(2) is performed in the main loop which runs continuously looking for the
+FIFO to be non-empty, at which point it sends one set of P-Mode, S-Mode,
+Heater Drive, and one Low Speed Data value to the USB serial port.
+<p>
+(3) is also done in the main loop which looks for data sent from the
+GUI, decodes it, and performs the specified operation.
+<p>
+<b>Setup</b>
+<p>
+When the firmware starts, it first sets up the pin I/O direction
+and does a "lamp test" by turning all the LEDs on for 2 seconds. :-)
+<p>
+Next it sets up Timer0 for the 977 Hz interrupt and Timer1 to be used with
+an external input on Pin 5 for counting the REF frequency (if present).
+<p>
+It then checks to see if EEPROM location 0 matches EEPROMFormatValid, and
+loads the LCB from the UCB stored in EEPROM if it does; else it loads the LCD
+from the hard-coded DCB.
+<p>
+Finally, the USB serial port is opened at 57,600 baud.  This low value is
+needed to minimize the chance of characters sent to the firmware being
+corrupted or missed.  57,600 baud is still over 10 times what's needed.
+<p>
+More to come soon, maybe.
+
+<h3><A NAME="uSLC1ref">References</a></h3>
+
+These links open in a <i>single</i> new window or tab.
+
+<h4>Lasers</h4>
+
+<ol start = 1>
+<li><A target="uSLC1" HREF="../lasersam.htm">Sam's
+ Laser FAQ</A>.  Including but not limited to:
+ <ul>
+  <li><A target="uSLC1"
+   HREF="../laserhen.htm">Helium-Neon Lasers</A>.
+  <li><A target="uSLC1"
+   HREF="../laserhst.htm">Commercial Stabilized
+   HeNe Lasers</A>.
+  <li><A target="uSLC1"
+   HREF="../laserhcl.htm">Commercial Unstabilized
+   HeNe Lasers</A>.  (HeNe laser tube and laser head specifications.)
+  <li><A target="uSLC1"
+   HREF="../laserchn.htm">Home-Built HeNe Lasers</A>.
+   (Sections on stabilized HeNe lasers.)
+ </ul>
+</ol>
+<h4>UECIDE</h4>
+<ol start = 2>
+<li><A target="uSLC1" HREF="https://github.com/SHWotever/SimHub/wiki/Arduino---Counterfeit-Fake-CH340G-chips-driver-issues">Arduino Counterfeit Fake CH340G chips driver issues</a>
+<li><A target="uSLC1" HREF="http://uecide.org/">UECIDE: The Universal Embedded Computing
+ IDE</a>
+<li><A target="uSLC1" HREF="http://uecide.org/beta">UECIDE Beta Programme (Dowload)</a>
+</ol>
+<p>
+<h4>Arduino</h4>
+<ol start = 5>
+<li><A target="uSLC1" HREF="https://www.arduino.cc/en/Main/Software">Arduino IDE, Refernce, Tutorials, more</a>
+</ol>
+
+<h4>Atmega 328 Nano 3.0</h4>
+
+<ol start = 6>
+<li><A target="uSLC1" HREF="https://www.arduino.cc/en/Main/ArduinoBoardNano">Atmega 328 Nano 3.0</a>
+<li><A target="uSLC1" HREF="https://www.repairfaq.org/sam/CH341SER.EXE">CH340 Windows USB Driver Installer (2019)(Local)</a>
+<li><A target="uSLC1" HREF="http://electropit.com/index.php/2015/09/06/arduino-nano-v3-0-clones/">Arduino Nano v3.0 clones (How-to & Review)</a>
+<li><A target="uSLC1" HREF="http://www.instructables.com/id/How-To-Burn-a-Bootloader-to-Clone-Arduino-Nano-30/step2/Test-it-first-/">How to Burn a Bootloader to Clone Adruino Nano 3.0 - 2</a>
+</ol>
+
+<h4>Atmega ATtiny85 Digispark</h4>
+
+<ol start = 10>
+<li><A target="uSLC1" HREF="http://www.electroschematics.com/12102/learn-to-use-attiny85-usb-mini-development-board/">Learn to Use the ATtiny85 USB Mini Development Board</a>
+<li><A target="uSLC1" HREF="https://digistump.com/wiki/digispark/tutorials/connecting">Connecting and Programming the Digispark</a>
+<li><A target="uSLC1" HREF="https://digistump.com/wiki/digispark/tutorials/basics">Digispark Basics</a>
+</ol>
+
+<h4>Pro Micro Atmega32U4</h4>
+
+<ol start = 13>
+<li><A target="uSLC1" HREF="https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/introduction">Pro Micro and Fio V3 Hookup and Programming
+ Guide</a>
+<li><A target="uSLC1" HREF="https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/hardware-overview-pro-micro">Pro Micro Atmega32U4 Hardware Overview</a>
+<li><A target="uSLC1" HREF="https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/installing-windows">Pro Micro Atmega32U4 Windows Installation</a>
+</ol>
+<h4>Jan Beck's Information</h4>
+<p>
+<ol start = 16>
+<li><A target="uSLC1" HREF="https://sites.google.com/site/janbeck/">Interferometer
+ Project Pages</a>
+<li><A target="uSLC1" HREF="https://github.com/janbbeck/InterferometerGUI/">Github
+ &micro;MD1 GUI Source Code Repository</a>
+</ol>
+<p>
+<h4>Sam Goldwasser's Manuals and Information</h4>
+<p>
+<ol start = 18>
+<li><A target="uSLC1" HREF="../manuals/index.html">Sam's Kits and
+ Other Manuals</a>
+<li><A target="uSLC1" HREF="https://github.com/lasersam594/">Sam's Github
+ Firmware and GUI Repository</a>
+</ol>
+<hr>
+<p>
+</html>

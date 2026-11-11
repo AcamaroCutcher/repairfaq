@@ -1,0 +1,3397 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/flamp.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Fluorescent Lamps, Ballasts, and Fixtures</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/flamp.htm">https://www.repairfaq.org/sam/flamp.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<br>
+<h1><b><FONT SIZE = "8">Sam's F-Lamp FAQ</FONT SIZE></b>
+<br>
+Fluorescent Lamps, Ballasts, and Fixtures</h1>
+<h2>Principles of Operation, Circuits, Troubleshooting, Repair
+<br>
+Version 2.47 (1-Apr-21)</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<p>
+<A NAME="fltoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#flpre">Preface</A>
+ <ul>
+  <li><A HREF="#flaac">Author & Copyright</A>
+  <li><A HREF="#fldis">DISCLAIMER</A>
+  <li><A HREF="#flack">Acknowledgments</A>
+ </ul>
+<p>
+<li><A HREF="#int">Introduction</A>
+ <ul>
+ <li><A HREF="#int0">Fluorescent Lamp Basics</A>
+ <li><A HREF="#int1">Fluorescent Lamp Labeling</A>
+ </ul>
+<p>
+<li><A HREF="#flsaf">Safely Working with Fluorescent Lamps and Fixtures</A>
+<p>
+<li><A HREF="#fb">Fluorescent Fixtures and Ballasts</A>
+ <ul>
+ <li><A HREF="#fb0">Fluorescent Fixtures</A>
+ <li><A HREF="#fb1">Fluorescent Lamp Ballasts</A>
+ <li><A HREF="#fb2">Types of Iron Ballasts</A>
+ <li><A HREF="#fb3">Electronic Ballasts</A>
+ <li><A HREF="#fb4">Comments on CFL Ballasts</A>
+ <li><A HREF="#fb5">Notes on Ballast Compatibility</A>
+ </ul>
+<p>
+<li><A HREF="#wd">Fluorescent fixture wiring diagrams</A>
+ <ul>
+ <li><A HREF="#wd0">Wiring for Preheat Fluorescent Fixtures</A>
+ <li><A HREF="#wd1">Fluorescent Starter Operation</A>
+ <li><A HREF="#wd2">Wiring for Rapid Start and Trigger Start Fixtures</A>
+ <li><A HREF="#wd3">Wiring Diagram for Single Tube Rapid or Trigger Start Ballast</A>
+ <li><A HREF="#wd4">Wiring Diagram for Two Tube Rapid Start Ballast</A>
+ <li><A HREF="#wd5">Schematic of Typical Rapid/Trigger Start Single Lamp Ballast</A>
+ <li><A HREF="#wd6">Schematic for Rapid Start Ballast with Isolated Secondary</A>
+ <li><A HREF="#wd7">Schematic of Rapid Start Dual Lamp Ballast</A>
+ <li><A HREF="#wd8">Measurements of Dual Tube Rapid Start Ballasts</A>
+ <li><A HREF="#wd9">Fluorescent Lamps in Series?</A>
+ <li><A HREF="#wd9a">Fluorescent Lamps in Parallel?</A>
+ <li><A HREF="#wd10">Wiring Fluorescent Lamps to Remote Ballasts</A>
+ <li><A HREF="#wd11">Wiring diagram of Low Power 220 VAC Fluorescent Lamp</A>
+ <li><A HREF="#acib">Alternatives to Commercial Iron Ballasts?</A>
+ </ul>
+<p>
+<li><A HREF="#sb">Specialty Fluorescent Lamp Types</A>
+ <ul>
+ <li><A HREF="#sbaslc">All Sorts of Less Conventional Lamps</A>
+ <li><A HREF="#sb0">Blacklight Fluorescent Lamps</A>
+ <li><A HREF="#sb1">Compact Fluorescent Lamps</A>
+  <ul>
+  <li><A HREF="#sb1r">Repairing CFLs</A>
+  <li><A HREF="#cflfail">More on CFL Failure</A>
+  </ul>
+ <li><A HREF="#sb2">Cold Weather Fluorescent Lamps</A>
+ <li><A HREF="#sb3">Fluorescent Lamps which Operate from Low Voltage DC</A>
+ </ul>
+<p>
+<li><A HREF="#ts">Troubleshooting of Fluorescent Lamps and Fixtures</A>
+ <ul>
+ <li><A HREF="#pwf">Problems with Fluorescent Lamps and Fixtures</A>
+ <li><A HREF="#csll">Causes of Short Lamp Life</A>
+ <li><A HREF="#cbb">Comments on Black Bands and Other Fluorescent Failure Issues</A>
+ <li><A HREF="#wgf">Why is a Grounded Fixture Needed for Reliable Starting?</A>
+ <li><A HREF="#wbz">Why Do Fluorescent Lamps Buzz and What to Do About It?</A>
+ <li><A HREF="#wfd">Why Fluorescent Lamps are Sometimes Dimmer than Expected</A>
+ <li><A HREF="#ros">Rings or Swirls of Light in Fluorescent Lamps</A>
+ <li><A HREF="#irc">Comments on Instant Start/Rapid Start Compatibility</A>
+ <li><A HREF="#pmf">Premature Cathode Failure in Dimmed Fluorescent Lamps</A>
+ <li><A HREF="#rph">Replace Preheat Ballasts with Rapid or Trigger Start Type?</A>
+ <li><A HREF="#fwo">Newly Installed Fluorescent Lamp Flashes Every Few Seconds When Off</A>
+ <li><A HREF="#rfi">Radio Frequency Interference from Fluorescent Fixtures</A>
+ </ul>
+<p>
+<li><A HREF="#ioi">Items of Interest</A>
+ <ul>
+ <li><A HREF="#ioi0">All Those Different Wattage 4-Foot and F40 and "Shop Light" Lamps?</A>
+ <li><A HREF="#ioi1">What's with All Those Different Shades of White?</A>
+ <li><A HREF="#ioi2">Why Small Fluorescent lamps Cost More than 4-Foot Ones</A>
+ <li><A HREF="#ioi3">Energy Consumption and Wear-And-Tear due to Starting</A>
+ <li><A HREF="#ioi4">What Happens when Fluorescent Lamps Wear Out</A>
+ <li><A HREF="#ioibe">Blackening at Ends of Fluorescent Tubes</A>
+ <li><A HREF="#ioihcl">Hot Cathode Versus Cold Cathode Operation</A>
+ <li><A HREF="#ioifmc">Failure Mechanisms of Cold Cathode Fluorescent Lamps</A>
+ <li><A HREF="#ioi5">Comments on Small Inverter Powered Fluorescent Lamps</A>
+ <li><A HREF="#ioiflvf">Fluorescent Lamp Voltage and Frequency Considerations</A>
+ <li><A HREF="#ioifldc">Operating a Fluorescent Lamp on DC</A>
+ <li><A HREF="#ioipcbs">Ballasts and PCBs (The Hazmat Type)</A>
+ <li><A HREF="#ioidccf">Driving Cold Cathode Fluorescent Lamps</A>
+ <li><A HREF="#ioi6">What is the E-Lamp?</A>
+ <li><A HREF="#ioidim">Notes on Dimming of Fluorescent Lamps</A>
+ <li><A HREF="#ioiled">LED Tubular F-Lamp Replacements</A>
+ </ul>
+</ul>
+<p>
+<A NAME="flpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Sam's F-Lamp FAQ Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="flaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+<p>
+<h3><A NAME="fldis">DISCLAIMER</A></h3>
+
+We will not be responsible for damage to equipment, your ego, county wide
+power outages, spontaneously generated mini (or larger) black holes, planetary
+disruptions, or personal injury or worse that may result from the use of this
+material.
+
+<h3><A NAME="flack">Acknowledgments</A></h3>
+
+Thanks to Don Klipstein
+(<a href="mailto:don@donklipstein.com">don@donklipstein.com</a>) for
+his comments and additions to this document.  His Web site
+(<a href="http://www.donklipstein.com/">Don Klipstein's Lighting Web Site</a>)
+is a valuable resource for information relating to lighting technology in
+general and also includes additional articles dealing with fluorescent and
+other discharge lamps.
+<p>
+<A NAME="int"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Flamp FAQ Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="int0">Fluorescent Lamp Basics</A></h3>
+
+The fluorescent lamp was the first major advance to be a commercial success
+in small scale lighting since the tungsten incandescent bulb. Its greatly
+increased efficiency resulted in cool (temperature wise) brightly lit
+workplaces (offices and factories) as well as home kitchens and baths.
+The development of the mercury vapor high intensity discharge (HID) lamp
+actually predates the fluorescent (the latter being introduced commercially
+in 1938, four years after the HID). However, HID type lamps have only
+relatively recently become popular in small sizes for task lighting in
+the home and office; yard and security area lighting; and light source
+applications in overhead, computer, and video projectors.
+<P>
+Fluorescent lamps are a type of gas discharge tube similar to neon signs
+and mercury or sodium vapor street or yard lights. A pair of electrodes,
+one at each end - are sealed along with a drop of mercury and some inert
+gases (usually argon) at very low pressure inside a glass tube. The
+inside of the tube is coated with a phosphor which produces visible light
+when excited with ultra-violet (UV) radiation. The electrodes are in the
+form of filaments which for preheat and rapid or warm start fixtures are
+heated during the starting process to decrease the voltage requirements
+and remain hot during normal operation as a result of the gas discharge
+(bombardment by positive ions).
+<P>
+When the lamp is off, the mercury/gas mixture is non-conductive. When power
+is first applied, a high voltage (several hundred volts) is needed to
+initiate the discharge. However, once this takes place, a much lower
+voltage - usually under 100 V for tubes under 30 watts, 100 to 175 volts
+for 30 watts or more - is needed to maintain it.
+<P>
+The electric current passing through the low pressure gases emits quite a
+bit of UV (but not much visible light). The gas discharge's radiation is
+almost entirely mercury radiation, although the gas mixture is mostly
+inert gas and generally around something like 1 percent mercury vapor.
+The internal phosphor coating very efficiently converts most of the UV to
+visible light. The mix of the phosphor(s) is used to tailor the light
+spectrum to the intended application. Thus, there are cool white, warm
+white, colored, and black light fluorescent (long wave UV) lamps.  There
+are also lamps intended for medical or industrial uses with a special
+envelope such as quartz that passes short wave UV radiation. Some
+have an uncoated envelope, and emit short-wave UV mercury radiation.
+Others have phosphors that convert shortwave UV to medium wave UV.
+<P>
+(Caution: Some specialty UV lamps emit shortwave or medium wave UV which
+is harmful and should not be used without appropriate protection or in an
+enclosure which prevents the escape of harmful UV radiation.)
+<P>
+Fluorescent lamps are about 2 to 4 times as efficient as incandescent lamps
+at producing light at the wavelengths that are useful to humans. Thus,
+they run cooler for the same effective light output. The bulbs themselves
+also last a lot longer - 10,000 to 20,000 hours versus 750 to 1,000 hours
+for a typical incandescent. However, for certain types of ballasts, this
+is only achieved if the fluorescent lamp is left on for long periods of
+time without frequent on-off cycles.
+<p>
+Over the years, fluorescent lamps in approximately the shape of incandescent
+lamps with built-in ballasts have been evolving.  These "compact fluorescent
+lamps" or CFLs have all of the advantages of ordinary fluorescent lamps but
+fit into most table lamps and incandescent fixtures.  Phosphors have been
+improved to the point where the color is very similar to that of incandescent
+lamps.  While the initial cost is high (list prices of $5 to $20, but often
+available for less), this is easily recovered
+several times over in the energy savings over the long life of the lamp due to
+the much higher efficiency (typically 4X) since most of the lifecycle cost of
+an incandescent is in the electricity used (typically $10 for power versus
+$0.50 for the lamp) and not the lamp itself.
+
+<h3><A NAME="int1">Fluorescent Lamp Labeling</A></h3>
+
+The actual fluorescent tubes are identified by several letters and numbers
+and will look something like 'F40CW-T12' or 'FC12-T10'.
+<P>
+So, the typical labeling is of the form FSWWCCC-TDD (variations on this
+format are possible):
+<P>
+<li>F  -  Fluorescent lamp.  G means Germicidal shortwave UV lamp.
+<li>S  -  Style - no letter indicates normal straight tube; C for Circline.
+<li>WW -  Nominal power in Watts.  4, 5, 8, 12, 15, 20, 30, 40, etc.
+<li>CCC - Color.  W=White, CW=Cool white, WW=Warm white, BL/BLB=Black light, etc.
+<li>T  -  Tubular bulb.
+<li>DD -  Diameter of tube in of eighths of an inch.  T8 is 1", T12 is 1.5", etc.
+<P>
+For the most common T12 (1.5 inch) tube, the wattage (except for newer
+energy saving types) is usually 5/6 of the length in inches.  Thus, an
+F40-T12 tube is 48 inches long.
+<p>
+<A NAME="flsaf"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Flamp FAQ Table of Contents</A>.
+<h2>Safely Working with Fluorescent Lamps and Fixtures</A></h2>
+
+There aren't many dangers associated with typical fluorescent lamps and
+fixtures:
+<ul>
+<li>Electric shock.  There is usually little need to probe a live fixture.
+  Most problems can be identified by inspection or with an ohmmeter or
+  continuity tester when unplugged.
+<p>
+ <ul>
+ <li>Fluorescent lamps and fixtures using iron ballasts are basically pretty
+  inert when unplugged.  Even if there are small capacitors inside the
+  ballast(s) or for RFI prevention, these are not likely to bite.  However,
+  you do have to remember to unplug the fixture before touching anything!
+<p>
+ <li>However, those using electronic ballasts can have some nasty charged
+  capacitors so avoid going inside the ballast module and it won't hurt to
+  check between its outputs with a voltmeter before touching anything.
+  Troubleshooting the electronic ballast module is similar to that of a
+  switchmode power supply.  See the document:
+  <A HREF="smpsfaq.htm">Notes on the
+  Troubleshooting and Repair of Small Switchmode Power Supplies</A>
+ </ul>
+<p>
+<li>Nasty chemicals: While the phosphors on the inside of fluorescent tubes
+ are not particularly poisonous, there is a small amount of metallic mercury
+ and contact with this substance should be avoided.  If a tube breaks, clean up
+ the mess and dispose of it properly and promptly.  Of course, don't go out
+ of your way to get cut on the broken glass!
+</ul>
+And take care around sharp sheet metal!
+<p>
+<A NAME="fb"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Sam's F-Lamp FAQ Table of Contents</A>.
+<h2>Fluorescent Fixtures and Ballasts</h2>
+<h3><A NAME="fb0">Fluorescent Fixtures</A></h3>
+
+The typical fixture consists of:
+
+<ul>
+<li>Lamp holder - the most common is designed for the straight bipin base bulb.
+  The 12, 15, 24, and 48 inch straight fixtures are common in household and
+  office use.  The 4 foot (48") type is probably the most widely used size.
+  U shaped, circular (Circline(tm).) and other specialty tubes are also
+  available.
+<p>
+<li>Ballast(s) - these are available for either 1 or 2 lamps.  Fixtures with
+  4 lamps usually have two ballasts.  See the sections below on ballasts.
+  The ballast performs two functions: current limiting and providing the
+  starting kick to ionize the gas in the fluorescent tube(s).
+<p>
+<li>Switch - on/off control unless connected directly to building wiring in
+  which case there will be a switch or relay elsewhere.  The power switch
+  may have a momentary 'start' position if there is no starter and the
+  ballast does not provide this function.
+<p>
+<li>Starter (preheat fixtures only) - device to initiate the electrode
+  preheating and high voltage "kick" needed for starting.  In other
+  fixture types, the ballast handles this function. 
+</ul>
+
+<h3><A NAME="fb1">Fluorescent Lamp Ballasts</A></h3>
+
+For a detailed explanation, check your library.  Here is a brief summary.
+<P>
+<ol>
+<li>Provide the starting kick.
+<P>
+<li>Limit the current to the proper value for the tube you are using.
+</ol>
+<P>
+In the old days fluorescent fixtures had a starter or a power switch with
+a 'start' position which is in essence a manual starter.  Some cheap ones
+still do use this technology.
+<P>
+The starter is a time delay switch which when first powered, allows the
+filaments at each end of the tube to warm up and then interrupts this part
+of the circuit.  The inductive kick as a result of interrupting the current
+through the inductive ballast provides enough voltage to ionize the gas
+mixture in the tube and then the current through the tube keeps the
+filaments hot - usually.  You will notice that a few iterations are sometimes
+needed to get the tube to light.  The starter may keep cycling indefinitely
+if either it or one of the tubes is faulty.  While the lamp is on, a
+preheat ballast is just an inductor which at 60 Hz (or 50 Hz) has the
+appropriate impedance to limit the current to the tube(s) to the proper
+value.
+<P>
+Ballasts must generally be fairly closely matched to the lamp in terms
+tube wattage, length, and diameter.
+<P>
+There are two general types of ballast:  Iron ballasts
+consist of a core, windings, and maybe a few other passive components like
+capacitors.  Electronic ballasts are basically switching power supplies.
+
+<h3><A NAME="fb2">Types of Iron Ballasts</A></h3>
+
+Preheat ballasts require starters or manual starting switches.
+Instant start, trigger start, rapid start, etc. ballasts include loosely
+coupled high voltage windings and other stuff which does away with the
+starter:
+<P>
+<ol>
+<li>The ballast for a preheat fixture (combined with a starter or power
+   switch with a 'start' position) is basically a series inductor. 
+   Interrupting current through the inductor provides the starting voltage.
+<p>
+<li>The ballast for a rapid start fixture has in addition small windings for
+   heating the filaments reducing the required starting voltage to 250 to
+   400 V.  There are probably the most common types in use today.  Trigger
+   start fixtures are similar to rapid start fixtures.
+<p>
+<li>The ballast for an instant start fixture has a loosely coupled high
+   voltage transformer winding providing about 500 to 600 V for starting
+   in addition to the series inductor.  The electrodes of "instant start"
+   bulbs are designed for starting without preheating.  In fact, they are
+   shorted out internally and are thus incompatible with preheat and rapid
+   start ballasts (and they have only a single pin at each end!).  The
+   electrodes still emit electrons due to thermal emission but since they are
+   shorted out cannot be pre-heated.  That is why they require a higher
+   starting voltage from the ballast.  They they light instantly, but this
+   slightly reduces lamp life.
+</ol>
+
+Starting voltage is either provided by the inductive kick upon interruption
+of the current bypassed through the starter for (1) or a high voltage winding
+in (2) and (3).
+<P>
+In all cases, the current limiting is provided primarily by the impedance
+of the series inductance at 60 Hz (or 50 Hz depending on where you live).
+<p>
+(From: Vic Roberts (Vic@RobertsResearchInc.com).)
+<P>
+The most basic ballast is nothing more than a current limiting device, such
+as an inductor, resistor or capacitor. For 50 and 60 Hz applications, the
+most common current limiting device is an inductor.
+<P>
+A simple current limiter works best when the line voltage is at least 2 times
+the lamp voltage. So, a simple inductor can be used in Europe, where the line
+voltage is 220 to 240 VAC, to operate a 4 foot lamp, which operates at 85 to
+100 volts, depending upon design.
+<P>
+In the US and other places that use 120 VAC lines the ballast is a
+combination autotransformer (to raise the voltage) and inductor (the
+current limiter).
+<P>
+In addition, a Rapid Start ballast has additional windings to supply about
+3.6 VAC to heat the filaments.
+<P>
+(From: Asimov (Asimov@juxta.mn.pubnix.ten).)
+<P>
+A ballast is a simple transformer with a very high impedance secondary
+winding which makes its current self-limiting. It also has windings for
+each lamp filaments. At startup the filaments get most of the power and
+heat up to facilitate ionization.
+<P>
+Meanwhile the secondary builds up a very high EMF which finally fully
+ionizes the plasma between both filaments. At this point the effective
+resistance of the conducting plasma is quite low and the current flow is
+limited by the secondary's impedance. This also partially saturates the
+core and as consequence reduces power to the filaments.
+<P>
+The usual failure in ballasts is that the secondary's insulation
+deteriorates and it starts leaking to ground. Often because the proper
+wiring polarity was not observed. The secondary can thus no longer
+generate the high EMF required to start the plasma conducting.
+<P>
+The KISS test method is to use a known good lamp. If it lights, the
+ballast is good too. The ballast can also be tested with the power off by
+checking for continuity in the filament windings and a very high
+resistance to ground for each filament. Don't try this with power on!
+<P>
+(From: Craig J. Larson (larson@freenet.msp.mn.us).)
+<P>
+Call Magnetek, a ballast manufacturer on 1-800-BALLAST.  Ask for a copy 
+of their Troubleshooting & Maintenance Guide for Linear Fluorescent 
+Lighting Systems.  Its a nice little guide book for teaching you the basics.
+<p>
+(From: Sam.)
+<p>
+MAGNETEK apparently divested their ballast line to a
+unit of Panasonic.  But never fear, the guide is now available online at
+https://unvlt.com/pdf/literature/troubleshooting/ (along with one for HID
+lighting).
+
+<h3><A NAME="fb3">Electronic Ballasts</A></h3>
+
+These devices are basically switching power supplies that eliminate the
+large, heavy, 'iron' ballast and replace it with an integrated high frequency
+inverter/switcher.  Current limiting is then done by a very small 
+inductor, which has sufficient impedance at the high frequency.  Properly
+designed electronic ballasts should be very reliable.  Whether they actual
+are reliable in practice depends on their location with respect to the heat
+produced by the lamps as well as many other factors.  Since these ballasts
+include rectification, filtering, and operate the tubes at a high frequency,
+they also usually eliminate or greatly reduce the 100/120 Hz flicker
+associated with iron ballasted systems.  However, this is not always the case
+and depending on design (mainly how much filtering there is on the rectified
+line voltage), varying amounts of 100/120 can still be present.
+<P>
+I have heard, however, of problems with these relating to radio frequency
+interference from the ballasts and tubes.  Other complaints have resulted
+due to erratic behavior of electronic equipment using infra red remote
+controls.
+<P>
+There is a small amount of IR emission from the fluorescent tubes themselves
+and this ends up being pulsed at the inverter frequencies which are
+sometimes similar to those used by IR hand held remote controls.
+<P>
+Some electronic ballasts draw odd current waveforms with high peak
+currents.  This is due to the fact that these ballasts (low-power-factor
+type) have a full-wave-bridge rectifier and a filter capacitor.  Current
+can only be drawn during the brief times that the instantaneous line
+voltage exceeds the filter capacitor voltage.
+<P>
+Because of the high peak currents drawn by some electronic ballasts, it is
+often important to size wiring properly for these high peak currents.  For
+wiring heating and fuse/circuit considerations, one should allow for a
+current of 4 to 6 times the ratio of lamp watts to line volts.  For wiring
+voltage drop considerations (drop in voltage the ballast's filter capacitor
+gets charged to), the effective current is even higher, sometimes as high
+as 15 to 20 times the ratio of the lamp watts to RMS line volts.
+<P>
+For less than 50 watts, the current drawn by low-power-factor electronic
+ballasts is usually not a problem.  For multiple ballasts or total
+wattages over 50 watts, it may be important to consider the effective
+current drawn by low-power-factor electronic ballasts.
+<P>
+If you want to get an idea of some typical modern electronic ballast designs,
+see the <A HREF="http://www.irf.com/">International Rectifier</A> web
+site. Search for 'electronic ballasts' or download the following reference
+design notes:
+<ul>
+<li><A HREF="http://www.irf.com/technical-info/designtp/irpllnr1.pdf">Linear Ballast</A>
+<li><A HREF="http://www.irf.com/technical-info/designtp/irplcfl1.pdf">Compact Ballast</A>
+</ul>
+<p>
+Two typical commercial electronic ballasts compact fluorescent lamps are
+shown in:
+<p>
+<ul>
+<li><A HREF="cflamp1.pdf">CFL Electronic Ballast 1 (Techna-Bright EDXR-38-16)</A> (16 W spiral in reflector).
+<li><A HREF="cflamp2.pdf">CFL Electronic Ballast 2 (General Electric FLE26HT3/2/SW)</A> (26 W spiral).
+<li><A HREF="cflamp3.pdf">CFL Electronic Ballast 3 (Conserv-Energy BPCE13T/8)</\A> (13 W spiral).
+</ul>
+<p>
+For CFL ballasts running on 230 VAC, see
+<A HREF="http://www.pavouk.org/hw/lamp/en_index.html">Pavouk.org - Compact
+Fluorescent Lamps</A>.  There are schematics for at least 11 different
+model CFLs!  As can be seen, the circuits are essentially identical except
+for component values.
+<p>
+Additional CFL ballast schematics may be found in the document:
+<A HREF="samschem.htm">Various Schematics and Diagrams</A>.
+<p>
+For additional info on CFLs as well as a variety of simple inverters to operate
+fluorescent lamps on low voltage DC, see the collection in the document:
+<A HREF="samschem.htm">Various Schematics and
+Diagrams</A>.
+
+<h3><A NAME="fb4">Comments on CFL Ballasts</a></h3>
+
+(From: Tony (tonyreo@ameritech.net).)
+<p>
+I work in a R&D lab for a VERY large corporation.  We design CFLs (Compact
+Fluorescent Lamps).
+<p>
+Today, 90 percent of CFLs are electronic ballasted lamps and they come in two
+basic varieties: (1) High power factors (somewhere between 0.9 and very close
+to 1) and (2) Low power factor (usually less than 0.6).
+<p>
+The high power factor lamps require more components (or from the corporations
+point of view, cost) so there are more low power factor lamps on the market
+than high power factor.  From what I understand, using either will not make a
+difference in what your electric meter reads and bills you for.
+<p>
+Our typical electronic ballast has two MOSFETs that switch at anywhere from 75
+kHz to 105 kHz.  And actually we have one product that runs at 2.5 MHz.
+In the power input section we use a full wave bridge followed by a
+electrolytic capacitor with a value of anywhere from 10 uF to 47 uF depending
+on the design of the lamp.  There are also a few other components here that
+reduce EMI (Electro Magnetic Interference) that could be conducted back into
+the AC line.  All of the input components, collectively, will have a part in
+the input characteristics of the lamp.
+<p>
+One more note that you may find interesting relates to the starting time
+of CFLs.  The CFLs that do not start instantly (pre-heat types) will have a
+longer life than the "instant start" type.  The pre-heat systems heat the
+cathodes for 150 milliseconds to 1 second (or more) before the lamp
+is allowed to light.  This increases the cathode life which is one of the
+main factors in lamp life.
+
+<h3><A NAME="fb5">Notes on Ballast Compatibility</A></h3>
+
+Can a 30 W lamp be run on a 27 W ballast?  What about a 22 W ballast?
+<p>
+The answer is an absolutely possibly qualified maybe. :)
+<p>
+Any fluorescent lamp is expected to run at some specific current to produce
+its rated light output and life.  (There is also the issue of preheat, instant,
+and rapid start types but that's for another discussion!)  At the rated
+current, there will be a certain voltage across the lamp.  The voltage drop
+is related to tube diameter, length, filament type, and gas fill.  It goes
+up with length but is not directly proportional to length.  Being gas
+discharge devices, the impedance of a fluorescent lamp is negative - its
+voltage actually goes down with increasing current, thus the need for a
+ballast to limit the current.  Some iron ballasts are rated to handle more
+than one size lamp maintaining a nearly constant current over a range of
+lamp voltages - 12, 15, and 20 W, for example.  What this means is that
+the voltage drop across all these lamps is similar enough that the current
+will be nearly the same and/or the ballast has a magnetic shunt to provide
+a quasi-constant current characteristic over a range of voltages.
+<p>
+The typical ballast will list compatible lamp types and wattages on its
+label.  Wattage, starting type, and lamp diameter are all critical.
+With all the variations in lamps, there's no hard and fast rule that will
+determine whether a non-listed combination will work or even be safe.  A
+higher wattage lamp may run and even be easier on the ballast since with
+its higher voltage drop, it will draw less current.  Of course, there will
+also be less than rated light output.  However, if the incompatibility is
+great enough, it may flicker, cycle on and off, or not start at all.  A
+lower wattage lamp may burn out quickly and/or cause either type of ballast
+to overheat and fail.
+<p>
+Where the rated lamp current is known or where the same lamp could be run
+on a compatible ballast, it might be possible to measure the current with
+the ballast combination being tested to determine if it is acceptable.
+However, this is clearly above and beyond what is normally required when
+changing a light bulb. :)
+<p>
+<A NAME="wd"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Sam's F-Lamp FAQ Table of Contents</A>.
+<h2>Fluorescent Fixture Wiring Diagrams</h2>
+
+The following wiring diagrams are typical of fluorescent fixtures using
+iron ballasts.  These do NOT generally apply directly to fixtures using
+electronic ballasts.
+
+<h3><A NAME="wd0">Wiring for Preheat Fluorescent Fixtures</A></h3>
+
+The following is the circuit diagram for a typical single lamp preheat
+fixture - one that uses a starter or starting switch.
+<p>
+<PRE>
+
+              Power Switch    +-----------+
+ Line 1 (H) o------/ ---------|  Ballast  |-----------+
+                              +-----------+           |
+                                                      |
+                      .--------------------------.    |
+ Line 2 (N) o---------|-       Fluorescent      -|----+
+                      | )         Tube         ( |
+                  +---|-  (bipin or circline)   -|----+
+                  |   '--------------------------'    |
+                  |                                   |
+                  |          +-------------+          |  
+                  |          |   Starter   |          |
+                  +----------| or starting |----------+
+                             |   switch    |
+                             +-------------+
+
+</PRE>
+<p>
+The type of switch that both turns the lamp on and off and also starts it by
+pressing a single button, there will be two pairs of contacts.  One pair
+will show continuity every other time the button is pressed (ON/OFF).  The
+other will show continuity only while the button is pressed (START).  And,
+the two pairs of shouldn't be connected to each other at any time.
+<p>
+Where a three position switch (OFF-ON-START) is used to control the fixture
+(e.g., those circular magnifier lamps), there will be two pairs of contacts:
+One pair (Power) is connected in the ON and START positions, and the other
+(Start) is connected only in the START position.  They are also isolated from
+each-other.
+<p>
+<PRE>
+
+              Power Switch    +-----------+
+ Line 1 (H) o------/ ---------|  Ballast  |-----------+
+              Closed for ON   +-----------+           |
+                and START                             |
+                                                      |
+                      .--------------------------.    |
+ Line 2 (N) o---------|-       Fluorescent      -|----+
+                      | )         Tube         ( |
+                  +---|-  (bipin or circline)   -|----+
+                  |   '--------------------------'    |
+                  |                                   |
+                  +--------------o/ o-----------------+
+                          Starting contacts (Closed for START only)
+
+</PRE>
+<p>
+Here is a variation that some preheat ballasts use.  This type was found on
+a F13-T5 lamp fixture. Similar types are used for 30 and 40 watt preheat
+lamps. This 3-lead preheat ballast is a voltage-boosting "high leakage
+reactance autotransformer" used if the voltage across the tube is much
+over approx. 60 percent of the line voltage. For technical details on why a
+fluorescent lamp will not work with ordinary ballasts if the tube voltage is
+only slightly less than the line voltage, look at Don Klipstein's
+<A HREF="https://www.repairfaq.org/sam/dschtech.html">Discharge Lamp Mechanics document.</A>
+<p>
+<PRE>
+
+              Power Switch   +-------------+
+ Line 1 (H) o------/ --------|A  Ballast   |
+                  +----------|B           C|----------+
+                  |          +-------------+          |
+                  |                                   |
+                  |   .--------------------------.    |
+ Line 2 (N) o-----+---|-       Fluorescent      -|----+
+                      | )         Tube         ( |
+                  +---|-  (bipin or circline)   -|----+
+                  |   '--------------------------'    |
+                  |                                   |
+                  |          +-------------+          |  
+                  |          |   Starter   |          |
+                  +----------| or starting |----------+
+                             |   switch    |
+                             +-------------+
+
+</PRE>
+<p>
+Here is the wiring for a typical fixture with two lamps (based on a twin-lamp
+work-light):
+<p>
+<PRE>
+
+                                    +-----------+
+ Line 1 (H) o-------------------+---| Ballast 1 |--------------+
+                                |   +-----------+              |
+                                |                              |
+                                |   +-----------+              |
+                                +---| Ballast 2 |-----------+  |
+                                    +-----------+           |  |
+                                                            |  |
+             Power Switch  B.--------------------------.R   |  |
+ Line 2 (N) o----/ ---+-----|-       Fluorescent      -|----+  |
+                      |     |     | )        Tube 1        ( |       |
+                      | +---|-  (bipin or circline)   -|----+  |
+                      | |  W'--------------------------'W   |  |
+                      | |                                   |  |
+                      | |   Starting Switch (DPST Mom On)   |  |
+                      | +-----------------/ ----------------+  |
+                      |                   :                    |
+                      | +-----------------/ ----------------+  |
+                      | |                                   |  |
+                      | |  W.--------------------------.W   |  |
+                      | +---|-       Fluorescent      -|----+  |
+                      |     | )        Tube 2        ( |       |
+                      +-----|-  (bipin or circline)   -|-------+
+                           B'--------------------------'R
+
+</PRE>
+<p>
+The two switches were in a single rocker with three
+positions: Off, On, On/Start.
+<p>
+The slightly simpler version below may also work but this has not been
+confirmed:
+<p>
+<PRE>
+
+              Power Switch    +-----------+
+ Line 1 (H) o------/ -----+---| Ballast 1 |--------------+
+                          |   +-----------+              |
+                          |                              |
+                          |   +-----------+              |
+                          +---| Ballast 2 |-----------+  |
+                              +-----------+           |  |
+                                                      |  |
+                      .--------------------------.    |  |
+ Line 2 (N) o---+-----|-       Fluorescent      -|----+  |
+                |     | )        Tube 1        ( |       |
+                | +---|-  (bipin or circline)   -|----+  |
+                | |   '--------------------------'    |  |
+                | |                                   |  |
+                | |          +-------------+          |  |
+                | |          |   Starter   |          |  |
+                | +----------| or starting |----------+  |
+                | |          |   switch    |          |  |
+                | |          +-------------+          |  |
+                | |                                   |  |
+                | |   .--------------------------.    |  |
+                | +---|-       Fluorescent      -|----+  |
+                |     | )        Tube 2        ( |       |
+                +-----|-  (bipin or circline)   -|-------+
+                      '--------------------------'
+
+</PRE>
+<p>
+The wiring where a single switch is used should be intuitively obvious. ;-)
+<p>
+A multimeter can be used to determine the wiring for your switch.
+
+<h3><A NAME="wd1">Fluorescent Starter Operation</A></h3>
+
+Starters may be either automatic or manual:
+<p>
+<ul>
+<li>Automatic - The common type are called a 'glow tube starter' (or just
+ starter) and contains a small gas (neon, etc.) filled tube and an optional
+ RFI suppression capacitor in a cylindrical aluminum can with a 2 pin base.
+ While all starters are physically interchangeable, the wattage rating of the 
+ starter should be matched to the wattage rating of the fluorescent tubes for
+ reliable operation and long life.
+<p>
+ The glow tube incorporates a switch which is normally open.  When power is
+ applied a glow discharge takes place which heats a bimetal contact.  A second
+ or so later, the contacts close providing current to the fluorescent
+ filaments.  Since the glow is extinguished, there is no longer any heating
+ of the bimetal and the contacts open.  The inductive kick generated at the
+ instant of opening triggers the main discharge in the fluorescent tube.
+ If the contacts open at a bad time - current near zero, there isn't enough
+ inductive kick and the process repeats.
+<P>
+ Higher-tech replacements called 'pulse starters' may be available for the
+ simple glow tube type starter.  These devices are pin compatible devices and
+ contain a bit of electronics that detect the appropriate time to interrupt the
+ filament circuit to generate the optimal inductive kick from the ballast.  So,
+ starting should be more reliable with few/no blink cycles even with
+ hard-to-start lamps.  They will also leave used-up tubes off, without letting
+ them blink annoyingly.
+<p>
+ (From: James Sweet.)
+<p>
+ <blockquote>
+ "One example is the <A HREF="eps120.gif">Arlen EFS-120 "Pulsestarter"</A>.
+ It is a British-made solid state retrofit for the once-ubiquitous
+ glowbottle starter used with preheat fluorescent tubes. This particular
+ model is designed for small 4-22W tubes on a 120V line or two tubes in
+ series (each with their own starter) on a 240V line. The diodes are house
+ numbered but I suspect they are something similar to the 1N4007, with the
+ exception of ZD1 which is a 100V zener diode in the same package. Resistors
+ are all standard 1/4W parts and the two capacitors are tiny electrolytics.
+ SCR1 is a purpose made thyristor by ST Microelectronics specifically for
+ fluorescent lamp ignition, I don't know if others will work as well but it
+ is not hard to find. The thermal fuse is a small rectangular component that
+ looks like a capacitor. It is rated 125 Celsius and 1A and is sandwiched
+ between the folded over SCR and the diodes."
+</blockquote>
+<P>
+ A defective or incorrect starter is a common cause of erratic starting and
+ possibly random restarts during operation.
+<P>
+<li>Where a manual starting switch is used instead of an automatic starter,
+ there will be three switch positions - OFF, ON, START:
+ <P>
+ <ul>
+ <li>OFF: Both switches are open.
+ <li>ON: Power switch is closed.
+ <li>START (momentary): Power switch remains closed and starting switch is
+  closed.
+ </ul>
+<P>
+ When released from the start position, the breaking of the filament circuit
+ results in an inductive kick as with the automatic starter which initiates
+ the gas discharge.
+</ul>
+
+<h3><A NAME="wd2">Wiring for Rapid Start and Trigger Start Fixtures</A></h3>
+
+Rapid start and trigger start fixtures do not have a separate starter or
+starting switch but use auxiliary windings on the ballast for this function.
+<P>
+The rapid start is now most common though you may find some labeled
+trigger start as well.
+<P>
+Trigger start ballasts seem to be used for 1 or 2 small (12-20 W) tubes.
+Basic operation is very similar to that of rapid start ballasts and the
+wiring is identical.  "Trigger start" seems to refer to "rapid starting"
+of tubes that were designed for preheat starting.
+<P>
+The ballast includes separate windings for the filaments and a high voltage
+starting winding that is on a branch magnetic circuit that is loosely
+coupled to the main core and thus limits the current once the arc is struck.
+<P>
+A reflector grounded to the ballast (and power wiring) is often required for
+starting.  The capacitance of the reflector aids in initial ionization of the
+gases.  Lack of this connection may result in erratic starting or the need
+to touch or run your hand along the tube to start.
+<P>
+A complete wiring diagram is usually provided on the ballast's case.
+<P>
+Power is often enabled via a socket operated safety interlock (x-x) to
+minimize shock hazard.  However, I have seen normal (straight) fixtures
+which lack this type of socket even where ballast labeling requires it.
+Circline fixtures do not need an interlock since the connectors are fully
+enclosed - it is not likely that there could be accidental contact with
+a pin while changing bulbs.
+<p>
+"Instant start" lamps with a single pin at each end would use similar wiring
+but without any provision for heating of the filament.  The ballast simply
+provides a high enough voltage to initiate and maintain the discharge until
+the normal process has a chance to heat the filaments at each end of the
+lamp (which have their ends shorted together internally).  For more info,
+see the sections: <A HREF="https://www.repairfaq.org/sam/fb2">Types of Iron Ballasts</A> and
+<A HREF="https://www.repairfaq.org/sam/irc">Comments on Instant Start/Rapid Start Compatibility</A>.
+
+<h3><A NAME="wd3">Wiring Diagram for Single Tube Rapid or Trigger Start Ballast</A></h3>
+
+Below is the wiring diagram for a single lamp rapid or trigger start
+ballast including an interlock at one end of the socket (3 wires there).
+The color coding is fairly standard.  The same ballast could
+be used for an F20-T12, F15-T12, F15-T8, or F14-T12 lamp.  A similar
+ballast for a Circline fixture could be used with an FC16-T10 or
+lamp FC12-T10 (no interlock).
+<p>
+<PRE>
+             Power Switch    +---------------------------+
+ Line 1 (H) o----/ ----------|Black   Rapid/Trigger      |
+                      +------|White       Start       Red|------+
+                      |  +---|Blue       Ballast      Red|---+  |
+                      |  |   +-------------+-------------+   |  |
+                      |  |                 |                 |  |
+                      |  |        Grounded | Reflector       |  |
+                      |  |       ----------+----------       |  |
+                      |  |    .-------------------------.    |  |
+                      |  +----|-      Fluorescent      -|----+  |
+                      +------x| )         Tube        ( |       |
+ Line 2 (N) o----------------x|-  (bipin or circline)  -|-------+ 
+                              '-------------------------'
+</PRE>
+<p>
+Or a ballast with two blue wires and no interlock in the socket:
+<p>
+<PRE>
+             Power Switch    +---------------------------+
+ Line 1 (H) o----/ ----------|Black   Rapid/Trigger      |
+ Line 2 (N) o----------------|White       Start          |
+                      +------|Blue       Ballast      Red|------+
+                      |  +---|Blue                    Red|---+  |
+                      |  |   +-------------+-------------+   |  |
+                      |  |                 |                 |  |
+                      |  |        Grounded | Reflector       |  |
+                      |  |       ----------+----------       |  |
+                      |  |    .-------------------------.    |  |
+                      |  +----|-      Fluorescent      -|----+  |
+                      |       | )         Tube        ( |       |
+                      +-------|-  (bipin or circline)  -|-------+ 
+                              '-------------------------'
+</PRE>
+
+<h3><A NAME="wd4">Wiring Diagram for Two Tube Rapid Start Ballast</A></h3>
+
+The following wiring diagram is for one pair (from a 4 tube fixture)
+of a typical rapid start 48 inch fixture.  These ballasts specify the
+bulb type to be F40-T12 RS.  There is no safety interlock on this
+fixture.  (A similar scheme could also be used on a dual tube Circline
+fixture though slightly different ratings may be needed for each tube since
+they would be of different sizes.)
+<PRE>
+
+             Power Switch    +--------------------------+
+ Line 1 (H) o----/ ----------|Black    Dual Tube     Red|-----------+
+ Line 2 (N) o----------------|White      Rapid       Red|--------+  |
+                       +-----|Yellow     Start      Blue|-----+  |  |
+                       |  +--|Yellow    Ballast     Blue|--+  |  |  |
+                       |  |  +-------------+------------+  |  |  |  |
+                       |  |                |               |  |  |  |
+                       |  |       Grounded | Reflector     |  |  |  |
+                       |  |      ----------+----------     |  |  |  |
+                       |  |    .----------------------.    |  |  |  |
+                       |  +----|-     Fluorescent    -|----+  |  |  |
+                       |  |    | )      Tube 1      ( |       |  |  |
+                       +-------|-       bipin        -|-------+  |  |
+                       |  |    '----------------------'          |  |
+                       |  |    .----------------------.          |  |
+                       |  +----|-     Fluorescent    -|----------+  |
+                       |       | )      Tube 2      ( |             |
+                       +-------|-       bipin        -|-------------+ 
+                               '----------------------'
+
+</PRE>
+<h3><A NAME="wd5">Schematic of Typical Rapid/Trigger Start Single Lamp Ballast</A></h3>
+
+This ballast is marked "Trigger Start Ballast for ONE F20WT12, F15WT12,
+F15WT8, or F14WT12 Preheat Start Lamp.  Mount tube within 1/2" of grounded
+metal reflector".  (Note that while labelled "Trigger Start", it does heat
+the filaments so I assume it is similar or identical to a rapid start
+ballast.)
+<P>
+Voltages were measured with no bulb installed with safety interlock bypassed.
+<P>
+Internal wiring has been inferred from resistance and voltage measurements.
+<P>
+The lossy autotransformer boosts line voltage to the value needed for
+reliable starting with the filaments heated.  It is assumed that part of
+the magnetic circuit is loosely coupled so that putting the lamp between
+Red/Red and Blue/White results in safe current limited operation once the
+arc has struck.
+<P>
+A complete fixture wiring diagram like those shown in the section:
+<A HREF="#wd2">Wiring for Rapid Start and Trigger Start Fixtures</A> will
+probably be provided on the label.
+<P>
+Numbers in () are measured DC resistances.
+<PRE>
+
+
+              Red o--------------------------+
+                      8.5 V               (5) )|| Filament 1
+              Red o----------------------+---+ ||
+                                         |     ||
+                                         +     ||
+                                          )||==|| Stepup winding/choke is
+                     82.5 V          (37) )||  || loosely coupled to main
+                                          )||==|| magnetic circuit
+                                         +     ||
+                                         |     ||
+   +--> Black (H) o----------------------+---+ ||
+   |                                          )|| Primary of starting
+                    106.5 V              (31) )|| autotransformer
+ 115 V                                        )||
+             Blue o--------------------------+ ||
+   |                  8.5 V               (3) )|| Filament 2
+   +--> White (N) o-----------o/o------------+  |
+                           Interlock            |
+        Green (G) o-----------------------------+
+
+
+</PRE>
+
+<h3><A NAME="wd6">Schematic for Rapid Start Ballast with Isolated Secondary</A></h3>
+
+As noted, rapid start fixtures do not have a separate starter or starting
+switch but use auxiliary windings on the ballast for this function.  Here
+is the schematic for a typical 1-tube rapid start fixture including the
+internal wiring of the ballast.
+<P>
+This ballast includes separate windings for the filaments and a high voltage
+winding that is on a branch magnetic circuit that is loosely coupled and
+thus limits the current once the arc is struck.  It is not known if this
+design is common.  The isolated secondary and separate high voltage winding
+would make it more expensive to manufacture.
+<P>
+A complete fixture wiring diagram like those shown in the section:
+<A HREF="#wd2">Wiring for Rapid Start and Trigger Start Fixtures</A> will
+probably be provided on the label.
+<PRE>
+
+                                  +-------+
+          Power Switch ||======||(        |
+Line 1 (H) o---/ ----+ ||      ||(   +----+---------o    to both pins
+                      )||      ||(  ( filament winding   on one end
+                      )||      ||(   +--------------o
+                      )||      ||(     HV winding       Grounded reflector
+                      )||      || +-----^^^^^^^-------------------------+
+                      )||      ||(                                     _|_
+                      )||      ||(   +--------------o                   -
+                      )||      ||(  ( filament winding   to both pins
+Line 2 (N) o---------+ ||      ||(   +----+---------o    on other end
+                       ||======||(        |
+                                  +-------+
+
+         Loose magnetic coupling in the ballast core results
+         in leakage inductance for current limiting.
+
+
+</PRE>
+
+<h3><A NAME="wd7">Schematic of Rapid Start Dual Lamp Ballast</A></h3>
+
+This ballast is marked "Rapid Start Ballast for TWO F40WT12 Lamps.  Mount
+tubes within 1/2" of grounded metal reflector".   This circuit was derived
+from the measurements listed in the section:
+<A HREF="#wd8">Measurements of a Dual Tube Rapid Start Ballast</A>.
+<P>
+The autotransformer boosts line voltage to the value needed for reliable
+starting with the filaments heated.  The series capacitor of approximately
+4 uF is used instead of leakage inductance to limit current to the tubes.
+Leakage inductance from loose magnetic coupling is used to smooth the
+waveform of current flowing through the tubes.  The .03 uF capacitor
+provides a return path during starting to the yellow filament winding but
+is not really used during normal operation.
+<P>
+Numbers in () are approximate measured DC resistances.
+<PRE>
+
+
+             Red 1 o--------------------------+
+                       8.5 V              (.5) )|| Tube 1 Filament 1
+             Red 2 o----------------------+---+ ||
+                                         _|_    ||
+                                    4 uF ---    ||
+                                          |     ||
+                                          +---+ ||
+                                               )||
+                                               )||
+                                               )|| HV winding
+                                               )||
+                                               )||  
+                                +---------+---+ ||
+                                |        _|_    ||
+                                | .03 uF ---    ||
+                                |         |     ||
+            Yellow o----------------------+---+ ||
+                       8.5 V    |         (.5) )|| Tubes 1 and 2 filament 2
+            Yellow o--------------------------+ ||
+                                |               ||
+                                |               ||
+            Blue 1 o------------+-------------+ ||
+                       8.5 V              (.5) )|| Tube 2 filament 1
+            Blue 2 o--+-----------------------+ ||
+                      |                         ||
+    +--> Black (H) o--+-----------------------+ ||
+    |                                          )|| Primary of
+  115 V                                   (13) )|| autotransformer
+    |                                          )||
+    +--> White (N) o------------o/o-----------+ ||
+                            Interlock           ||
+                                                 |
+         Green (G) o-----------------------------+
+
+
+</PRE>
+
+<h3><A NAME="wd8">Measurements of Dual Tube Rapid Start Ballasts</A></h3>
+
+One is a Universal, the other is a Valmont.
+<P>
+(Measurements made with Radio Shack multimeter)
+<P>
+Resistance:
+<PRE>
+
+    Measurement                      Universal             Valmont
+------------------------            -----------          -----------
+  White-Black                           13                   13
+  Between blues                         .5                   .55
+  Between reds                          .5                   .55
+  Between yellows                       .5                   .6
+  Black to closer blue                 <.1                  <.1
+
+  Blue-red                             open                 open
+  Blue-yellow                          open                  5 M
+  Red-yellow                           open                 20 M
+
+Capacitance:
+
+  Blue-red                             ~4 uF              ~3.5 uF
+  Blue-yellow                        ~.03 uF
+  Red-yellow                         ~.03 uF
+
+Primary current, (not true RMS), various secondary load conditions:
+
+  Secondary open                      .32 A                .35 A
+  60W 120V incandescent bulb          .75 A                .63 A
+  Short                               .48 A                .53 A
+
+Heater voltage:                   not measured    approx. 8 V, unsteady
+                                                  surprisingly independent
+                                                  of secondary load
+
+</PRE>
+Open circuit output voltage voltage (from one red wire to one blue one,
+highest reading of four combinations):
+<PRE>
+
+  Red-Blue                           270 V                 275 V
+
+</PRE>
+
+<h3><A NAME="wd9">Fluorescent Lamps in Series?</A></h3>
+
+This is not possible where line voltage is 105 to 125 VAC because this is not
+sufficient to sustain the discharge where two lamps are in series.  Special
+dual lamp ballasts are required.
+<P>
+However, where the line voltage is 220 VAC, it is possible:
+<P>
+(From: andrew@cucumber.demon.co.uk (Andrew Gabriel)
+<P>
+Here in UK (and probably all 220 to 250 V areas), this is common:
+<PRE>
+
+                    =======
+        L o---+-----^^^^^^^-------+ +-----+
+              |     Ballast       | |     |
+              |   (Inductor)     +|-|+    |
+              |                  | - |    |
+              |                  |   |   +-+
+              |           Tube 1 |   |   |S| Glow Starter
+              |                  |   |   +-+
+              |                  | - |    |
+              |                  +|-|+    |
+              |                   | |     |
+             _|_ Power Factor     | +-----+
+             ___ Correction       |
+              |  Capacitor        | +-----+
+              |                   | |     |
+              |                  +|-|+    |
+              |                  | - |    |
+              |                  |   |   +-+
+              |           Tube 2 |   |   |S| Glow Starter
+              |                  |   |   +-+
+              |                  | - |    |
+              |                  +|-|+    |
+              |                   | |     |
+        N o---+-------------------+ +-----+
+
+</PRE>
+<p>
+Note that starters for a 230 VAC two tube fixture may NOT be the same as
+those for a 230 VAC single tube fixture.  Installing single tube starters
+in a two tube fixture may result in no action at all since their breakdown
+voltage may be too high.  Doing the reverse may result in damage.
+
+<h3><A NAME="wd9a">Fluorescent Lamps in Parallel?</A></h3>
+
+Like most gas discharge tubes, fluorescent lamps are negative resistance
+devices.  Therefore, it isn't possible to put more than one lamp in parallel
+and get them both to light - additional components are needed. The following
+applies mostly to magnetic ballasted fixtures.  Where electronic ballasts are
+used, all sorts of games can be played to implement wierd configurations!
+<p>
+Multiple lamp fixtures in countries with 110 VAC power usually have special
+ballasts with separate windings for this purpose.  Where 220 to 240 VAC is
+available, it may be possible to put multiple lamps in series with individual
+starters.  See the section: <A HREF="#wd9">Fluorescent Lamps in Series?</A>.
+<P>
+However, there is at least one application where putting two lamps is parallel
+makes sense: light fixtures in hard-to-reach or safety-critical areas where
+redundancy is desirable.  With only minor modifications at most, a conventional
+single lamp ballast can be connected to a pair of lamps in such a way that only
+one will light at any given time.  (Which one actually starts could be random
+without additional circuitry, however.)  If either lamp burns out or is
+removed, the other will take over.  The ballast must provide enough power to
+the filaments for starting but once started, the lamp that is on will operate
+normally and there should be no degradation in performance or expected lamp
+life (except to the extent that the unlit lamp's filaments might be kept hot).
+<p>
+The following is just a suggestion - I have not confirmed if or with which
+model ballasts these schemes will work!
+<p>
+For rapid start ballasts, this could be as simple as wiring all connections to
+the lamps in parallel - if the ballast has enough current available to power
+both sets of filaments for starting.  For trigger start ballasts, the filament
+power is not an issue so it should be even easier:
+<PRE>
+
+             Power Switch   +---------------------------+
+ Line 1 (H) o----/ ---------|Black   Rapid/Trigger      |
+                      +-----|White       Start       Red|--------+
+                      |  +--|Blue       Ballast      Red|-----+  |
+                      |  |  +--------------+------------+     |  |
+                      |  |                 |                  |  |
+                      |  |                 +---------------+  |  |
+                      |  |       Grounded  | Reflector     |  |  |
+                      |  |       ----------+----------     |  |  |
+                      |  |    .-------------------------.  |  |  |
+                      |  +----|-     Fluorescent       -|--|--+  |
+                      |  |    | )       Tube          ( |  |  |  |
+                      +--|----|-  (bipin or circline)  -|--|--|--+ 
+                      |  |    '-------------------------'  |  |  |
+                      |  |                 +---------------+  |  |
+                      |  |        Grounded | Reflector        |  |
+                      |  |       ----------+----------        |  |
+                      |  |    .-------------------------.     |  |
+                      |  +----|-      Fluorescent      -|-----+  |
+                      |       | )        Tube         ( |        |
+ Line 2 (N) o---------+-------|-  (bipin or circline)  -|--------+ 
+                              '------------------------'
+
+</PRE>
+Note: The interlock normally present on most rapid/trigger start fixtures
+have been removed to permit one lamp to operate if other is removed.
+<p>
+For preheat ballasts, wiring the filaments in parallel would probably result
+in insufficient current to either lamp for it to start reliably.  If the
+filaments were wired in series, one lamp would probably start, but if the
+filament of one lamp burned out or the lamp was removed, the fixture would
+cease to function kind of defeating the purpose of these gyrations!
+
+<h3><A NAME="wd10">Wiring Fluorescent Lamps to Remote Ballasts</A></h3>
+
+For reasonable distances, this should work reliably and be safe provided that:
+<ol>
+<li>This is only attempted with iron ballasts.  The fire safety and
+   reliability  of electronic ballasts that are not in close proximity to
+   the lamps is unknown.  The ballast may fail catastrophically either 
+   immediately or a short time later as the circuit may depend on a low
+   impedance (physically short) path for stability.
+<p>
+   In addition, there will almost certainly be substantial Radio Frequency
+   Interference (RFI) created by the high frequency currents in the long
+   wires.  The FCC police (or your neighbors) will come and get you!  This
+   may be a problem with iron ballasts as well - but probably of less
+   severity.
+<p>
+<li>Wire of adequate rating is used.  The starting voltage may exceed 1 kV.
+   Make sure the insulation is rated for at least twice this voltage.  Use
+   18 AWG (or heavier) gauge wire.
+<p>
+<li>There is no possibility of human contact either when operating or if any
+   connectors should accidentally come loose - dangerous line voltage and
+   high starting voltage will be present with tubes disconnected.
+</ol>
+Note: one application that comes up for this type of remote setup is for
+aquarium lighting.  My recommendation would be to think twice about any
+homebrew wiring around water.  A GFCI may not help in terms of shock
+hazard and/or may nuisance trip due to inductive nature of the ballast
+(both depend at least in part on ballast design).
+
+<h3><A NAME="wd11">Wiring diagram of Low Power 220 VAC Fluorescent Lamp</A></h3>
+
+(From: Manuel Kasper (mk@mediaklemm.com).)
+<p>
+The circuit in <A HREF="linefl.gif">Low Power 220 VAC Fluorescent Lamp</A>
+is from an AC line powered 'light stick'.  So there's no fancy inverter
+circuit inside, but a simple ballast without any nasty coils - just capacitors,
+resistors, and diodes.  A few modifications would probably be necessary to
+make it operate from 110 VAC. It runs the tube brighter than a similar lamp
+power from a 12 V inverter.  (See the section:
+"Automotive Light Stick Inverter" in the document:
+<A HREF="samschem.htm">Various Schematics and
+Diagrams</A>.  FWIW, the brand is "Brennenstuhl".
+<p>
+It was damn hard to open up because everything was made out of thick plastic
+with no screws (no wonder; it cost $6) - but thanks to a huge saw I managed
+to get at the guts without destroying the tube or the circuit.
+
+<h3><A NAME="acib">Alternatives to Commercial Iron Ballasts?</A></h3>
+
+While the circuit diagrams of iron ballasts may resemble those of common
+power transformers, I wouldn't recommend attempting to use these as ballasts
+unless you really know how to implement controlled impedance behavior in
+a non-current limited transformer.  Ballasts are rather special and unless
+you are willing to blow a lot of fluorescent lamps, transformers, fuses, and
+circuit breakers, just go with commercial ballasts. :)
+<p>
+Even for small lamps using a glow starter or separate starting switche, while
+it's certainly possible to use an ordinary inductor rather than something
+labeled "ballast", it's still probably not a good idea from fire safety
+and liability considerations.
+<p>
+<A NAME="sb"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Sam's F-Lamp FAQ Table of Contents</A>.
+<h2>Specialty Fluorescent Lamp Types</h2>
+<h3><A NAME="sbaslc">All Sorts of Less Conventional Lamps</A></h3>
+
+In addition to the boring white ones (OK, well 'white' does come in various
+colors!), other interesting types of lamps include all sorts of real colors
+(red, green, blue, yellow), blacklight lamps, germicidal lamps in which there
+is no phosphor coating at all and a quartz tube to transmit short-wave UV
+light (e.g., EPROM erasers and PCB photoresist activation), sunlamps, plant
+lights and special purpose specific wavelength lamps such as reprography and
+copier lamps.
+<p>
+The basic technology is extremely flexible!
+<p>
+(From: Bruce Potter (s602531@aix2.uottawa.ca).)
+<p>
+There are also High Output and Very High Output types of lamps that
+have a discharge current of 0.8 A and 1.5 A instead of the standard
+0.3 A.  HO and VHO lamps are used when high light output is desired
+but are being outmoded by HID lamps like metal halide.
+
+<h3><A NAME="sb0">Blacklight Fluorescent Lamps</A></h3>
+
+(From: Don Klipstein (don@donklipstein.com).)
+<P>
+BL in the tube designation (e.g., F40T12BL) means "blacklight", which
+is a fluorescent lamp with a phosphor that emits the longest largely
+invisible UV wavelengths that are both efficiently and fairly cheaply
+possible. This phosphor seems to emit a band of UV mainly from 350 to
+370 nanometers, in the UV-A range.
+<P>
+BLB means "blacklight-blue", which differs from "blacklight" only in that
+the glass tube of this lamp is darkly tinted with something with a dark
+violet-blue color to absorb most visible light. Most UV gets through
+this, along with much of the dimly visible deep-violet 404.7 nanometer
+line of mercury. Most of the violetish-blue 435.8 nanometer line is
+absorbed, but enough of this wavelength gets through to largely dominate
+the color of the visible light from this lamp. Longer visible light
+wavelengths do not significantly penetrate the BLB's very deep violet-blue
+glass, which is known as 'Wood's glass'. The UV is the same as that of
+the BL lamp, being mostly between 350 and 370 nanometers.
+<P>
+There is a 350BL blacklight lamp, using a different phosphor that emits
+a band of slightly shorter UV wavelengths in the UV-A range. The
+reasoning for this lamp is that it is supposedly optimized for attracting
+insects. These lamps are one variety of UV lamps used in electric bug
+killers.
+<P>
+There are other UV fluorescent lamps. There are at least two different
+UV/deep violet emitting fluorescent lamps used mainly in the graphic arts
+industry, emitting mainly wavelengths between 360 and 420 nanometers.
+Possibly one of these is also used in bug killers. I have noticed one
+kind of UV fluorescent lamp for bug killers with a broadish band phosphor
+with significant output from the 360 nanometer range (maybe also shorter)
+into visible wavelengths around 410 to 420 nanometers or so.
+<P>
+There is an even shorter UV-A lamp used for suntanning purposes. I would
+guess the phosphor emits mainly within the 315 to 345 nanometer range.
+One brand of such lamps is "Uvalux".
+<P>
+There is even a UV-B emitting fluorescent lamp. Its phosphor emits
+mostly at UV-B wavelengths (286 to 315 nanometers). It is used mainly for
+special medicinal purposes. Exposing skin to UV-B causes erythema, which
+is to some extent a burn reaction of the skin to a slightly destructive
+irritant. Use of UV-B largely limits this to outer layers of the skin
+(perhaps mainly the epidermis) and to parts of the body where skin is
+thinner. UV-A wavelengths just over 315 nanometers can also cause
+sunburn, but they are more penetrating and can affect the dermis. Please
+note that the deadliest varieties of skin cancer usually originate in the
+epidermis and are usually most easily caused by UV-B rays.
+<P>
+There are clear UV-emitting lamps made of a special glass that lets
+through the main shortwave UV (UV-C) mercury radiation at 253.7 nanometers.
+These lamps are marketed as germicidal lamps, and ones in standard
+fluorescent lamp sizes have part numbers that start with G instead of F.
+These lamps will work in standard fluorescent lamp fixtures.
+<P>
+Cold-cathode germicidal lamps are also in use; these somewhat resemble
+"neon" tubing.
+<P>
+Be warned that the shortwave UV emitted by germicidal lamps is intended to
+be dangerous to living cells and is hazardous, especially to the
+conjunctiva of eyes. Signs of injury by the UV are often delayed,
+often first becoming apparent several minutes after exposure and peaking
+out a half hour to several hours afterwards.
+<P>
+Please note that non-fluorescent (high pressure mercury vapor discharge)
+sunlamps generally emit more UV-B rays rather than the tanning-range UV-A
+rays. These lamps do have substantial UV-A output, but mainly at a small
+cluster of wavelengths around 365 nanometers. Tanning is most effectively
+accomplished by wavelengths in the 315-345 nanometer range. In addition,
+no UV suntanning is completely safe.
+
+<h3><A NAME="sb1">Compact Fluorescent Lamps</A></h3>
+
+These are miniaturized fluorescent lamps that usually have premium phosphors
+which often come packaged with an integral ballast (either iron or
+electronic). They typically have a standard screw base that can be
+installed into nearly any table lamp or lighting fixture that accepts an
+incandescent lamp.
+<p>
+Compact fluorescent Lamps (CFLs) are being heavily promoted as energy savings 
+alternatives to incandescent lamps.  They also have a much longer life -
+6,000 to 20,000 hours compared to 750 to 1,000 hours for a standard
+incandescent.  While these basic premises are not in dispute, before replacing
+all the incandescent lamps in your house with CFLs, that there are some
+disadvantages and quirks:
+<p>
+<ol>
+<li>CFLs are often physically larger than the incandescent bulbs they replace
+ and simply may not fit the lamp or fixture conveniently or at all.  However,
+ they are getting smaller as the technology matures.
+<p>
+<li>The funny elongated or circular shape may result in a less optimal
+ lighting pattern.
+<p>
+<li>The light is generally cooler - less yellow - than incandescents - this
+ may be undesirable and result in less than pleasing contrast with ordinary
+ lamps and ceiling fixtures.  Newer models have been addressing this issue
+ and color temperature of some are now very close to incandescent lamps.
+<p>
+<li>Some types (usually iron ballasts) may produce an annoying 120 Hz
+ (or 100 Hz) flicker.
+<p>
+<li>Ordinary dimmers cannot be used with compact fluorescents and may result
+ in immediate destruction of the CFL.
+<p>
+ In addition, CFLs should not be used with illuminated switches, electronic
+ timers, or any other means of control that results in a small current in
+ series with the lamp when it is supposed to be off.  With some electronic
+ ballast designs, the small current will slowly charge a filter capacitor
+ inside the CFL until it reaches a critical threshold, at which point the
+ lamp will flash on momentarily - perhaps every 5 seconds.  This may be
+ kind of cool and may not damage the CFL (at least not immediately) but
+ probably isn't the intended effect in your home. :)  For illuminated
+ switches, the switch won't be affected (though it may pulse synchronously
+ with the cycle of the flashing CFL), but for timers and the like, the non
+ constant current is likely to result in erratic behavior if not actual
+ damage to the control device.
+<p>
+<li>Light output may depend somewhat on mounting orientation.
+<p>
+<li>Some CFLs come on instantly while others may have a delay of a up to
+ a second or more where nothing appears to happen.  They generally go off
+ instantly.  There characteristics may be annoying to anyone used to normal
+ incandescent desk lamp behavior where which has a small but noticeable
+ (and expected) delay as the filament heats or cools.
+<p>
+<li>There will usually be a warmup time of a few seconds to a minute or more
+ before full light output is produced even in warm temperatures.
+<p>
+<li>Light output will decline slightly over the course of the life of the CFL.
+<p>
+<li>Like other fluorescents, operation at cold temperatures (under around
+ 50 to 60 &deg;F) may result in reduced light output.  Starting may also be
+ erratic, although most compact fluorescent lamps seem to start OK at
+ temperatures near freezing.  Many types start OK near zero &deg;F.
+ Operation in an enclosed fixture often results in full light output
+ in cool surroundings after the lamp warms up for a few minutes, as long
+ as the initial temperature is high enough to permit a good start.
+ However, enclosing compact fluorescents often impairs their ability to
+ work well at higher temperatures.
+<p>
+<li>CFLs should not be use in an unenclosed fixture outdoors unless the
+ package states that this is acceptable since the  electronics are really
+ not always well protected.  There may be additional specific environmental
+ limitations listed as well.
+<p>
+<li>Similarly, operating in enclosed fixtures or various orientations may
+ result in reduced reliability, despite what the package claims.  The only
+ failures of GE-branded CFLs I've seen were for 2 samples run in a
+ semi-enclosed ceiling fan fixture base-up due to fractured solder
+ joints, and one sample in a sideways position in a ceiling fixture due
+ to a blown resistor.  Two of these three were repairable but one of those
+ with the bad solder joints blew the MOSFETs making repair more trouble
+ than it was worth.  If manufacturers would just use a printed circuit
+ board with plated through holes (vias), these failures would be virtually
+ eliminated.  At most, it might add 25 cents to the cost.
+<p>
+ More below.
+<p>
+<li>There may be an audible buzz from the ballast, especially the iron type.
+<p>
+<li>CFLs may produce Radio Frequency Interference (RFI).
+<p>
+<li>While their rated life may be 6,000 to 20,000 hours, a wayward baseball
+ will break one of these as easily as a 25 cent incandescent as I've found
+ out.  However, that's how I was able to trace the ballast schematics!  I
+ finally did have a CFL fail due to the filament on one end of the spiral
+ tube opening but that was one of the oldest and probably did operate for
+ its rated life with no problems.
+</ol>
+<p>
+The prices of CFLs are dropping and $5 or $6 for one that does a decent
+job of replacing a 100 W incandescent lamp (in terms of color, light output,
+and fit) is now common.  And $3 or less for something suitable for enough
+light to illuminate a path at night (e.g., 40 W equivalent).  They will
+often be much less in bulk packs, during promotions or sales.
+In some places, they are given away free simply to reduce large scale
+energy usage.)  Depending on the cost of electricity in
+your area, these should pay for themselves over the number of hours
+equivalent to the lifetime of 1 to 2 incandescent lamps.
+<p>
+As an example, in 750 hours, a typical 26 W (consumed) CFL with a light
+output of 1,700 lumens (similar to a 100 W soft white incandescent) will
+use 19.5 kWh, compared to 75.0 kWh for the incandescent.  At 10
+cents/kWh, this represents a saving of $5.55.  Add in $0.50 for the cost of
+the incandescent lamp and it's already just about break-even for a $6 CFL.
+And, most of the life of the CFL and continued savings on electricity lies
+ahead.  With special discounts and promotions, CFL prices may be even lower
+resulting in quicker pay-back periods.
+<p>
+Identify locations where lamps or fixtures are left on for a significant
+number of hours on average per day.  Or equivalently, where it seems you are
+always replacing bulbs (but they are actually lasting for their rated life,
+not burning out due to vibration or bad connections).  It doesn't make sense
+to put a CFL in a closet or attic which isn't used much.  Even a bathroom is
+typically a marginal location.  Go for CFLs that will fit physically and
+and where their color and appearance is acceptable.  Home centers may have
+better prices than corner hardware stores but not always.  Shop around before
+buying (or at least before buying a bushel).
+<p>
+For more information, see the separate document on
+<A HREF="http://www.donklipstein.com/cf.html">Compact Fluorescent Lamps.</A>
+<P>
+If you're into recycling electronics to other uses, see Andrew Gabriel's
+<A HREF="http://www.cucumber.demon.co.uk/lights/diy/">D.I.Y. Electronic
+Gear Page</A> for taking the electronic ballasts from compact fluorescents
+that died due to lamp failure and using them to drive normal fluorescent
+lamps as well as remotely connected CF lamps.
+<p>
+However, one thing that is rarely discussed is the net energy usage over
+the life of the CFL <i>including the energy used during manufacture</i>.
+It would seem that the energy used to manufacture a CFL compared to an
+incandescent lamp may be at least somewhat more due to their greater
+complexity and the higher-tech parts inside.  But this isn't a fair
+comparison because it's not <i>one</i> incandescent lamp that much factor
+into the comparison but the five or more that would be needed to match the
+life of the CFL.  So, it's almost certain that the CFL clearly wins.
+If anyone has some hard numbers, please contact me via the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ Email Links Page</A>.
+<p>
+(From: Victor Roberts (Vic@RobertsResearchInc.com).)
+<p>
+One big difference between the low cost electronic ballasts designed for
+integral CFLs and the higher cost ballasts designed to be used with
+plug-in CFLs or linear fluorescent lamps, is that the former are usually
+not designed to survive if the lamp does not light or is not present.
+After all, for an integral system, once the lamp dies there is no reason
+why the ballast cannot also burn out. One reason external electronic
+ballasts are more expensive than the electronic ballasts used in
+integral CFLs is that external ballasts are designed to survive if the
+lamp does not light or is not present. 
+<p>
+If you "harvest" an electronic ballast from an integral CFL, in addition
+to making sure you know what you are doing so you don't kill yourself or
+someone else, make sure that you never operate the ballast without a
+operating lamp attached. If you do, the ballast will most likely burn
+out in less than a few seconds.
+
+<h4><A NAME="sb1r">Repairing CFLs</a></h4>
+
+Repair a light bulb???? :)  Well, yes, in the case of CFLs.  Unlike
+incandescent lamps where failure is generally terminal, the actual lamp
+part of a CFL is often not the problem.  Rather, it is a failure of the
+ballast, which for most consumer CFLs is not considered to be a serviceable
+item by the manufacturer.
+<p>
+For older style CFLs using magnetic ballasts, see the relevant sections
+starting with <A HREF="#ts">Troubleshooting of Fluorescent Lamps and
+Fixtures</A>.
+<p>
+A typical modern CFL consists of the electronic ballast and the fluorescent
+lamp.  Either or both may be at fault when the lamp refuses to light.  An
+electronic ballast failure is not that likely to ruin the lamp.  However, a
+lamp that refuses to start due to a bad connection or open filament may cause
+some electronic ballasts to self destruct.
+<p>
+To get inside the typical CFL will require either prying the plastic shell
+housing the electronic ballast apart where it joins the lamp base, or the
+careful use of a hacksaw.  Once inside, it may be necessary to disconnect
+one end or both ends of the fluorescent tube (note the connections!) to
+access the bottom of the PCB.  If the connections are originally wire-wrapped,
+they can be soldered when reassembled.  But clean corrosion from the wires
+and posts with fine sand paper and take care that the heat of soldering doesn't
+mess up the PCB connection of the post when reattaching them.
+<p>
+Some of the common problems include:
+<p>
+<ul>
+<li><b>Bad solder joints on electronic ballast PCB:</b>.  This is probably
+ the *most* common fault.  Symptoms may be erratic operation, or where
+ touching it or twisting the base results in a lamp that goes on and off,
+ or goes on and stays on.  However, it's also possible for the ballast to
+ blow due to bad connections.  So, the unit may simply be dead.  Therefore,
+ DON'T keep operating the CFL under these conditions where it is flickers
+ or is erratic in some other way if you want to try to  repair it.  Once
+ the transistors or MOSFETs blow, it's not worth it.
+<p>
+<li><b>Bad connections to fluorescent tube:</b> These are often wires that
+ are poorly wrapped around round posts.  Otherwise similar comments to
+ above.  Soldering is better when reinstalled.  Clean both the posts and
+ wires with fine sandpaper to minimize the amount of heat needed to solder
+ them back together so that the PCB solder joint isn't affected by soldering
+ of the post since one pair may not be accessible for inspection.
+<p>
+<li><b>Blown fuse or fusable resistor:</b> This usually indicates that one or
+ both transistors or MOSFETs have failed, possibly due to bad solder
+ connections, a bad lamp, or something else.  A replacement will just blow.
+<p>
+<li><b>Other bad parts:</b> There may be other resistors, capacitors, diodes,
+ an NTC (inrush limiting) thermistor, or something else that had failed.
+ Resistors and diodes can be checked easily enough.  Capacitors can be
+ at least checked for shorts.  But, swapping parts or at least comparing
+ resistances of parts from a known working unit may be easiest.
+<p>
+<li><b>Bad fluorescent tube:</b> Aside from one that's smashed into a
+ million pieces, the filament(s) can open, usually from long hours of
+ use.  This is easily tested with a multimeter without disconnecting
+ anything.  The normal resistance is a few ohms at most.  An open filament
+ may have also damaged the ballast but not always.
+<p>
+ One strange, but seemingly common failure (I've had three of them), is for
+ a hot spot to be generated near the filament at one end of the tube
+ that eventually results in the glass actually melting and being sucked
+ in until a hole develops and then it's all over.
+ See: <A HREF="cflhole1.jpg">Hole Failure Mode of Spiral CFL</A>.  This
+ generally happens on high-mileage CFLs.
+ Depending on the design of the ballast, the chopper transistors may
+ be destroyed as well once this happens.  More below.
+<p>
+ I've seen this on 3 CFLs in 3 different lamps/fixtures.  There are no known
+ problems that could account for such nasty behavior.  They were all high
+ mileage, so perhaps the filament at that end of the lamp opened resulting
+ in the discharge concentrating at one post, near the glass and getting
+ very hot there, or something. :)
+</ul>
+<p>
+Sometimes, the general nature of the ballast problems can be detected by
+their acrid aroma due to multiple fried parts.  The ballast is generally not
+salvageable on these, but the fluorescent tube may be fine.
+<p>
+Above all, when a problem is found and fixed so the lamp works again, make
+sure that any SAFETY related parts are replaced with the PROPER
+part type and value.  The most critical are
+fuses or fusable resistors in series with one side of the AC line since these
+will prevent the unit from catching fire or melting down due to a major
+failure.  The easiest source for these would be an *identical* model CFL that
+failed for some other reason.
+
+<h4><A NAME="cflfail">More on CFL Failure</A></h4>
+
+(From: Curtis Sell.)
+<p>
+I believe holes are caused by a
+loss of emissivity coating (the white powder on the filaments) as described
+in the section <A HREF="#ioi4">What Happens when Fluorescent Lamps Wear
+Out</A>.  Once the coating is lost the filament will overheat and melt
+or crack the glass.
+<p>
+On a related note: Many electronic CFL balasts generate pulsed DC, not AC.
+(They use a simple Buck converter.)  The DC current causes the emissivity
+coating on one end of the tube to wear out more quickly than on the other
+end.  Once the coating is sputtered off the worn tube end will glow purple
+and the tube will blacken and heat up.  I have revived lamps in this
+condition by swapping the tube end for end, allowing the side with the
+'good' emissivity coating to be used.
+<p>
+If not noticed in time the tube will crack or melt (unless the ballast
+quits first). The filament on the cracked end will be worn bare, but not
+necessarily open circuit, while the filament on the opposite end will have
+a large amount of emissivity coating left.
+<p>
+I believe that CFLs that use AC to drive the tube have a significantly
+longer life than ones that use pulsed DC.
+
+<h3><A NAME="sb2">Cold Weather Fluorescent Lamps</A></h3>
+ 
+(From: Bruce Potter (s602531@aix2.uottawa.ca).)
+<p>
+There are special lamps with heavy glass jackets and/or with krypton gas
+filling for cold weather/freezer applications.  They work best at below
+room-temperatures.  It really annoys me when I go to the grocery store or see
+outside installations with dim, flickering tubes!  What a waste of electricity!
+
+<h3><A NAME="sb3">Fluorescent Lamps which Operate from Low Voltage DC</A></h3>
+
+These are now found in all sorts of equipment including laptop computers and
+all many other portable high tech devices to camping lanterns, boats, and RVs,
+All are based on an electronic ballast that converts the low voltage DC
+(anywhere from 3 V to 24 V depending on application) to high frequency high
+voltage AC to operate the fluorescent tube(s).  Laptop computers and similar
+devices use special narrow tubes designed specifically to be run without
+heated filaments (cold cathode operation) and very narrow envelops to fit
+into very thin spaces. :)  Most of the others use conventional fluorescent
+tubes and may or may not drive the filaments during starting or at any other
+time.
+<p>
+The ballasts for these lamps must generate the required voltages to start and
+operate the lamps reliably as well as to assure long life.  See the section:
+<A HREF="#fb3">Electronic Ballasts</A> for more info and some links to sample
+circuits.
+<p>
+<A NAME="ts"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Sam's F-Lamp FAQ Table of Contents</A>.
+<h2>Troubleshooting of Fluorescent Lamps and Fixtures</h2>
+<h3><A NAME="pwf">Problems with Fluorescent Lamps and Fixtures</A></h3>
+
+(For problems with Compact Fluorescent Lamps specifically, see the section:
+<A HREF="https://www.repairfaq.org/sam/sb1r">Repairing CFLs</A>.)
+<p>
+In addition to the usual defective or damaged plugs, broken wires in the
+cord, general bad connections, fluorescent lamps and fixtures have some
+unique problems of their own.  Always try a new set of fluorescent tubes
+and starter (where used) before considering other possible failures.
+<p>
+If two tubes dim or flicker in unison, this means that both are powered
+by the same ballast.  Often this means that one tube has failed, although
+the other tube may also be in poor condition or approaching the end of its
+life.  Both tubes must be replaced with known good tubes in order to rule
+out a defective ballast.
+<p>
+<ol>
+<li>Bad fluorescent tubes.  Unlike incandescent lamps where a visual 
+ examination of the bulb itself will often identify a broken filament, there
+ is often no way of just looking at a fluorescent tube to determine if it is
+ bad. It may look perfectly ok though burned out fluorescents will often
+ have one or both ends blackened.  However, a blackened end is not in itself
+ always an indication of a bad tube.  Blackened ends are a somewhat
+ reliable means of identifying bad tubes in 34 or 40 watt rapid start
+ fixtures.  Blackened ends are not as reliable an indicator in preheat
+ or trigger start fixtures, or for tubes of 20 watts or less.
+<p>
+ Failure of the electrodes/filaments at one or both ends of the the
+ fluorescent tube will usually result in either a low intensity glow or
+ flickering behavior, or sometimes in no light at all.  A broken
+ filament in a fluorescent tube used in a preheat type fixture (with a
+ starter) will almost always result in a totally dead lamp as there will
+ be no power to the starter.  A dim glow is rare in this case and would
+ probably be confined to the region of the broken filament if it occurs.
+ The best approach is to simply try replacing any suspect tubes -
+ preferably both in a pair that are driven from a single ballast.
+<p>
+ One end glowing bright orange means the tube is dead - the filament has
+ lost its electron-emitting coating. A working filament at that temperature
+ will emit enough electrons to cause a discharge around it which will make
+ the phosphor glow at that end (even without any voltage across the tube).
+ The electron-emitting coating is normally to be found at this stage coating
+ the inside of the glass, resulting in black tube ends.
+<p>
+ Before such complete failure, while the coating on one filament is much less
+ effective that the other, this results in asymmetric current flow and 50/60 Hz
+ flicker. This can have a bad psychological effect on people (even if they
+ are not actually aware of the flicker), and is very bad news for anyone
+ susceptible to epilepsy (50 Hz supplies are probably worse in this respect).
+<p>
+ In fixtures where a rapid start ballast runs two tubes, both tubes will
+ go out when one fails.  Sometimes one or both tubes will glow dimly
+ and/or flicker.  If one tube glows dimly and the other is completely
+ dead, this does not indicate which tube has failed.  The brighter tube
+ may be the good one or the bad one.  The bad tube usually has noticeable
+ blackening at one end.  It may pay to replace both tubes, especially if
+ significant labor costs are involved.  Also, prolonged dim-glowing may
+ degrade the tube that did not initially fail.
+<p>
+ In trigger start fixtures that use one ballast to power two 20 watt
+ tubes, sometimes both tubes will blink or intermittently dim.
+ Replacing either tube with a known good tube may fail to fix this.  The
+ tubes may continue blinking or intermittently dimming until both are
+ replaced with brand new tubes.  This sometimes indicates borderline low
+ line voltage ("brownout", etc.), nonideal temperatures, or a borderline
+ (probably cheaply designed) ballast.
+<p>
+ A simple test that will confirm that a tube is bad is to check the
+ continuity between the pair of pins at each end.  If either set are open,
+ the tube is guaranteed bad if used in a preheat or rapid start fixture.
+ It might still work in an instant or trigger start fixture, or one with
+ an electronic ballast, since these do not depend on heating the filament
+ via current through the two pins.  However, if there is continuity, the
+ tube could still be bad as noted above.
+<p>
+<li>Bad or incorrect starter (preheat fixtures only).  The little starter can
+ may go bad or be damaged by faulty fluorescent tubes continuously trying to
+ start unsuccessfully.  It is a good idea to replace the starter whenever tubes
+ are replaced in these types of fixtures.  One way that starters go bad is
+ to "get stuck".  Symptoms of this are the ends of the affected tube
+ glowing, usually with an orange color of some sort or another but
+ sometimes with a color closer to the tube's normal color if arcs form
+ across the filaments.  Occaisionally, only one end arcs and glows 
+ brightly, and the other end glows dimmer with a more orange color.
+ This is hard on both the tube and the ballast.  The defective starter
+ should be immediately removed.
+<p>
+ A starter that is rated for a different wattage lamp can result not only in
+ starting problems, but erratic behavior if the lamp does successfully start.
+ For example, a starter rated for a lower wattage or shorter lamp (lower
+ voltage drop) may be randomly activated resulting in flickering as it
+ attempts (incorrectly) to restart.
+<p>
+ Should one or both ends glow with a bright yellowish orange color with
+ no sign of any arc discharge surrounding each filament, then the emissive
+ material on the filaments is probably depleted or defective. In such a
+ case, the tube should be replaced regardless of what else is wrong.  If
+ both ends glow a dim orange color, then the filaments' emissive coating
+ may or may not be in good shape.  It takes approximately 10 volts to form an
+ arc across a healthy fluorescent lamp filament.
+<p>
+<li>Defective iron ballast.  The ballast may be obviously burned and smelly,
+ overheated, or have a loud hum or buzz.  Eventually, a thermal protector
+ built into many ballasts will open due to the overheating (though this will
+ probably reset when it cools down).  The fixture may appear to be dead.
+ A bad ballast could conceivably damage other parts as well and blow the
+ fluorescent tubes.  If the high voltage windings of rapid start or trigger
+ start ballasts are open or shorted, then the lamp will not start.
+<p>
+ Ballasts for fixtures less than 30 watts usually do not have thermal
+ protection and in rare cases catch fire if they overheat.  Defective
+ fixtures should not be left operating.
+<p>
+<li>Electronic ballasts including those in Compact Fluorescent Lamps (CFLs).
+ These are basically switchmode power supplies and a total failure must be
+ diagnosed with that in mind (including the SAFETY issues!).  However, the
+ most likely problems with mass produced and cheaply made electronic ballasts
+ - especially when heat-stressed in enclosed or semi-enclosed fixtures - are
+ cracked solder joints.  Going over all the solder joints on these at the
+ first sign of any flickering or other erratic behavior may prevent subsequent
+ This is the only type of electronic ballast failure that it probably makes
+ any sense to spend time on if your time is worth anything. :)
+<p>
+<li>Bad sockets.  These can be damaged through forceful installation or
+ removal of a fluorescent tube.  With some ballasts (instant start,
+ for example), a switch contact in the socket prevents generation of the
+ starting voltage if there is no tube in place.  This minimizes the
+ possibility of shock while changing tubes but can also be an additional
+ spot for a faulty connection.
+<p>
+<li>Lack of ground.  For fluorescent fixtures using rapid start or instant
+ start ballasts, it is often necessary for the metal reflector to be
+ connected to the electrical system's safety ground.  If this is not
+ done, starting may be erratic or may require you to run your hand over
+ the tube to get it to light.  In addition, of course, it is an important
+ safety requirement.
+</ol>
+<p>
+WARNING: Electronic ballasts are switching power supplies and need to be
+serviced by someone qualified in their repair both for personal safety as
+well as continued protection from electrical and fire hazards.
+
+<h3><A NAME="csll">Causes of Short Lamp Life</A></h3>
+
+The following directly addresses issues with the common 4 foot 34 to 40 W
+fluorescent lamps and fixtures.  However, most will apply to other wattages.
+<p>
+(From: Don Klipstein (don@donklipstein.com).)  
+<p>
+There are two likely reasons for short lamp life:
+<p>
+<ol>
+<li><b>Bulb-ballast mismatch:</b> There are several different wattages of
+ 4-foot fluorescent bulbs, two of which are called F40.  The "energy saver" F40 is usually 34 watts but sometimes 35 watts but treatable as a 34.  F40 with
+ no mention of "energy saver" or "energy saving" is a true 40 watt.
+<p>
+<li><b>Subtle partial ballast failure:</b> Sometimes, usually in a 2-bulb 
+ magnetic rapid start ballast, a capacitor in series with the transformer's 
+ secondary winding fails.  Excessive current flows through the lamp and the 
+ ballast can overheat.  If you have or can borrow one of those "clamp-on" 
+ AC ammeters, clamp it around the black lead or the white lead (but not 
+ both, for a 120 VAC USA-usual ballast of this sort).  A good ballast will 
+ draw approximately 0.8 A.  A bad one will draw around 1.5 A.
+<p>
+ It may be possible to measure the actual current through the lamp;
+<p>
+(From: James Sweet (jamessweet@hotmail.com).)
+<p>
+<blockquote>
+<ul>
+<li>High output lamps: 800 mA.
+<li>Standard lamps (in North America anyway): T12 lamps are 430 mA and
+ T8 lamps are 230 mA.
+</ul>
+</blockquote>
+</ol>
+<p>
+Some less likely reasons:
+<p>
+<ol start=3>
+<li><b>Excessive cycling:</b> You turn the lamps on and off a lot.
+<p>
+<li><b>The ballasts are cheap junk:</b>  Replace them with "commercial
+ grade" ballasts.
+<p>
+<li><b>Corroded contacts in the sockets:</b> Try twisting the bulbs around.
+ Slight chance you need to clean the socket contacts with sandpaper
+ (WITH POWER OFF - 280 volts is a popular output voltage of a 2-bulb
+ F40 rapid start ballast.)  Slight chance you need a new fixture - and 
+ then replace the cheapo-junko ballast with a proper "commercial grade"
+ one, if the usually 2-inch-longer-length of the proper ballast is
+ something the fixture will accept.
+<p>
+<li><b>Bulbs need to be cleaned:</b> More likely in humid coastal areas - a
+ slightly conductive film of dust/salt/dirt on the bulbs can affect
+ electric field distribution within bulbs that have not yet started
+ and that can impair starting.
+<p>
+<li><b>The fixture may not be grounded:</b> It should be connected to the 
+ grounding conductor of the cable feeding it.  This sometimes affects
+ starting and sometimes unpredictably or in a manner varying with
+ bulb age, temperature and humidity.
+<p>
+ But if the bulbs always start until some time when they act up and
+ never start again, then grounding is probably not the problem.
+</ol>
+
+<h3><A NAME="cbb">Comments on Black Bands and Other Fluorescent Failure Issues</A></h3>
+
+(From: Don Klipstein (don@donklipstein.com).)
+<p>
+Fluorescent tubes failing in this manner normally draw reduced current.  The
+voltage across the tube is higher and the tube will sometimes draw more power,
+but the current flowing through the ballast is less.
+<p>
+Since the ends of the bulb usually burn out unequally, some "net DC" may try
+to flow through the ballast.  My experience is that the feared core saturation
+effects do not occur.  Furthermore, the common rapid start ballasts have a
+capacitor in series with the secondary windings which would block any DC.
+<p>
+There is a different problem that I once knew of causing a fire: Starters
+getting stuck in the "closed" state.  The symptom is the ends of the tube
+glowing brightly, either yellow-orange or a color closer to the normal tube
+color, sometimes even one end glowing yellow-orange and one end glowing a more
+normal color.  Excessive ballast current flows in this case.  This is not a
+problem with "instant start", "rapid start", or "trigger start" fixtures.  It
+is only a problem where there are starters.
+<p>
+A dim orange or red-orange glow more likely indicates dead tubes on a rapid
+start or trigger start ballast.  If the fixture is a preheat type, dim orange
+end glow indicates less current than a brighter yellow-orange, and the ballast
+is less likely to overheat.  Different brands of ballasts are designed a
+little differently.
+<p>
+If a preheat fixture has the tube glowing only in the ends, it is recommended
+to immediately remove the tube to stop the ballast from possibly overheating.
+You should replace both the tube and the starter.  The starter is bad if this
+occurs, and the tube is usually bad also.  Typically, the starter goes bad
+after too much time trying to start a bad tube.  In the unlikely event the
+starter had the initial failure, the tube will be damaged by prolonged
+excessive end glow.
+
+<h3><A NAME="wgf">Why is a Grounded Fixture Needed for Reliable Starting?</A></h3>
+
+Many fluorescent fixtures will not start reliably unless they are connected
+to a solid earth (safety) ground.  This is most likely the case with rapid or
+trigger start magnetic ballasts.  These will usually state on the label:
+"Mount tube within 1/2 inch of grounded metal reflector".  If this is not done
+or if the entire fixture is not grounded, starting will be erratic - possibly
+taking a long or random amount of time to start or waiting until you brush
+your hand along the tube.
+<P>
+The reason is straightforward:
+<P>
+The metal reflector or your hand provides a capacitive path to ground through
+the wall of the fluorescent tube.  This helps to ionize the gases inside the
+tube and initiate conduction in the tube.  However, once current is flowing
+from end-to-end, the impedance in the ballast circuit is much much lower than
+this capacitive path.  Thus, the added capacitance is irrelevant once the tube
+has started.
+<P>
+The reason that this is required is probably partly one of cost: it is cheaper
+to manufacture a ballast with slightly lower starting voltage but require the
+fixture to be grounded - as it should be for safety anyhow.
+<P>
+(From: Don Klipstein (don@donklipstein.com).)
+<P>
+Should one or both tubes glow dimly, then ionization is not the problem and
+poor grounding isn't the cause.  In such a case, the problem is poor contact
+with the pins of the tubes, one or both tubes are bad, insufficient voltage,
+bulb/ballast mismatch (wrong bulbs may fit but not work especially for
+4-footers which come in many wattages), or possibly just a bad case of the
+bulbs being much too cold.  Wire or foil or other attachments to change the
+electric field distribution will not help dim glow make the transition to
+arc - only help with the tubes ionizing and glowing at all.
+<p>
+Other common causes of this
+symptom are incorrect lamps, dirty or dusty lamps (especially in humid
+or coastal areas), and other poor connections, incorrect wiring of the ballast
+(such as interchange of the black and white wires), and incorrect
+building wiring (ground not connected or hot/neutral reverse).  Less
+common causes are failure of a small internal capacitor in the ballast,
+and broken wires or connections in the ballast.  One known issue is use
+of 34 W lamps, which are generally "crankier" than 40W ones, including
+having less ease at starting and less tolerance of cold temperatures
+than T12 lamps rated 35 or 40 watts.
+
+<h3><A NAME="wbz">Why Do Fluorescent Lamps Buzz and What to Do About It?</A></h3>
+
+The buzzing light is probably a mundane problem with a defective or cheap
+ballast.  There's also the possibility of sloppy mechanical construction
+which lets something vibrate from the magnetic field of the ballast until
+thermal expansion eventually stops it.
+<P>
+First check for loose or vibrating sheetmetal parts - the ballast may
+simply be vibrating these and itself not be defective.
+<P>
+Most newer fixtures are of the 'rapid start' or 'warm start' variety and
+do not have starters.  The ballast has a high voltage winding which provides
+the starting voltage.
+<P>
+There will always be a ballast - it is necessary to limit the current to the
+tube(s) and for starting if there is no starter.  In older fixtures, these
+will be big heavy magnetic choke/transformer devices - hard to miss if you
+open the thing.  Cheap and/or defective ones tend to make noise.  They
+are replaceable but you need to get one of the same type and ratings -
+hopefully of higher quality.  A new fixture may be cheaper.
+<P>
+The starter if present is a small cylindrical aluminum can, approximately
+3/4" x 1-1/2" in a socket, usually accessible without disassembly.  It
+twists counterclockwise to remove.  They are inexpensive but probably not
+your problem.  To verify, simply remove the starter after the lamp is on - it
+is not needed then.<P>
+<p>
+The newest fixtures may use totally electronic ballasts which are less
+likely to buzz.  Warning: electronic ballasts are basically switching
+power supplies and are maybe hazardous to service (both in terms of
+your safety and the risk of a fire hazard from improper repair) unless
+you have the appropriate knowledge and experience.
+<p>
+Where the buzzing started after replacing the ballast, assuming the
+replacement is of the same type as the original and it is tightly
+mounted, there is probably nothing really wrong - it is just not as quiet as
+your previous ballast.  Make sure it is the ballast and not its mounting sheet
+metal vibrating.  If the sound is coming from the ballast, there really isn't
+a lot that can be done other than to try another manufacturer or sample.  Also
+see the section: <A HREF="#ts2">Why do Fluorescent Lamps Buzz and What to Do
+About It?</A>.
+<P>
+(From Brian Beck (jrdnut@utah-inter.net).)
+<p>
+There are 2 main types of ballasts; those for 'home' use and those for
+commercial use.  The commercial type will last longer and the lamp life
+is better as well.
+<P>
+There are three sound ratings
+<P>
+<li>A - extremely quiet (e.g., libraries, churches).
+<li>B - somewhat noisy (e.g., work areas, shops).
+<li>C - outdoor noisy (e.g., 60 foot poles in parking lots).
+<P>
+My guess is you got a home rated ballast with a 'B' sound rating.  There
+is nothing wrong with the ballast - it is just noisy.  If the buzz bothers
+you, return it to the store you bought it and go purchase one at an actual
+electrical parts supplier (home centers and hardware stores may not have
+the highest quality components).  For a 2 lamp F40/T12/CW/SS lamp fixture,
+you want an R2S40TP ballast.
+
+<h3><A NAME="wfd">Why Fluorescent Lamps are Sometimes Dimmer than Expected?</A></h3>
+
+<blockquote>
+ "I recently replaced a kitchen overhead fixture with two 75 watt bulbs
+ with a fluorescent one having two 20 W bulbs. Guess what? Not enough
+ light!"
+<p>
+ Somehow I was under the impression that a watt of fluorescent lighting
+ produced many more candles than a watt of incandescent lighting, but
+ obviously, I overestimated the ratio."
+</blockquote>
+<p>
+A 20 watt fluorescent bulb of a higher light output color should make as
+much light as a 75 watt incandescent (1170 to 1210 lumens), BUT:
+<p>
+<ol>
+<li>A few fluorescent lamp colors are dimmer, such as Deluxe versions of
+ cool white and warm white, and a few others.
+<p>
+<li>Fluorescent lamps only make full light output in a somewhat narrow
+ temperature range.  The fluorescents will probably not make full light
+ when they first get started.  They typically make more light after warming
+ up for a few minutes, then may lose a bit of light output if they warm up
+ past optimum temperature.
+<p>
+<li>Some ballasts do not make fluorescent lamps produce full light.  Some
+ 20 watt fixtures use a multi-purpose ballast designed to be usable with a
+ few different wattages of lamps, and which typically sends about 16 watts
+ of power to a 20 watt tube.  A few other ballasts send an inferior current
+ waveform to the tube, impairing efficiency.  I have found some fixtures by
+ "Lights of America" to suffer slightly impaired efficiency from a less
+ smooth current waveform generated by an instant-start ballast system that
+ starts "preheat" tubes instantly without a starter.  Some cheaper rapid
+ start and trigger start ballasts produce slightly inferior current
+ waveforms.
+<p>
+ Some of the slightly popular 2-tube 20 watt "trigger start" ballasts
+ are cheap and "fussy", and only work well if everything is optimum.
+ These ballasts often don't work well with cool temperatures, slightly
+ low line voltages, or slightly weak lamps.  Their best may not be too
+ great anyway.  The same may be true of some cheaper two-tube 40 watt
+ "shop light" ballasts.  Also, some "shop light" fixtures that you may
+ think are dual 40 watt are actually dual 25 watt 4-foot fixtures.
+<p>
+<li>Some fluorescent lamp colors (especially warm white, white, and cool
+ white) have a spectral distribution that dims most reds and most greens.
+ This may make things look dimmer.  For details of this effect, look for
+ the appropriate section in
+ <A HREF="http://www.donklipstein.com/dschtech.html">Some Bits of Discharge
+ Lamp Theory andOther Technical Information!</A>,
+ (a web document related mostly to discharge lamp mechanics).
+</ol>
+<p>
+<blockquote>
+"What will happen if I replace the two T20s with higher powered lamps? (If
+ some will burn out, can I replace it as well?"
+</blockquote>
+<p>
+The ballasts in nearly all 20 watt fixtures will not send much over 20
+watts of power to any size tube.  Sometimes even not much over 16 watts 
+to any size tube.  You need a different fixture, more fixtures/tubes, or
+possibly tubes of the same wattage but better brightness and/or color
+brightening (more modern '3000', 'D830', '3500', 'D835', '4100', or 'D841'
+tubes with higher lumen ratings but of wattage and size for the fixture).
+
+<h3>Replacing fluorescent lamp or fixture components</h3>
+
+Most of these parts are easily replaced and readily available.  However,
+it is usually necessary to match the original and replacement fairly
+closely.  Ballasts in particular are designed for a particular wattage,
+type and size, and tube configuration.  Take the old ballast with you
+when shopping for a replacement.  There may be different types of sockets
+as well depending on the type of ballast you have.
+<P> 
+It is also a possible fire hazard to replace fluorescent tubes with a
+different wattage even if they fit physically.  A specific warning has been
+issued about replacing 40 W tubes with 34 W energy saving tubes, for example.
+The problem is that the ballast must also be correctly sized for the new
+tubes and simply replacing the tubes results in excessive current flow and
+overheating of the ballast(s).
+
+<h3><A NAME="ros">Rings or Swirls of Light in Fluorescent Lamps</A></h3>
+
+Complaints are generally of the following form:
+<p>
+<blockquote>
+"I just replaced my bulbs because they had the black bands at the end and
+ finally went out altogether.  The new bulbs light fine but they have subtle
+ rings of light running down the inside of them."
+</blockquote>
+<p>
+or
+<p>
+<blockquote>
+"My fluorescent tubes look like a they have a writhing snake inside trying
+ to get out."
+</blockquote>
+
+(From: Don Klipstein (don@donklipstein.com).)
+<p>
+The rings sometimes happens.  I forget the name of this, but it is a sometimes
+normal feature of the main discharge column in low pressure lamps.  In
+fluorescent tubes, it is more common if the bulb is cold or not fully warmed
+up, brand new or not-yet broken in, or if the ballast is of poor quality or
+there is a bulb/ballast mismatch.
+<p>
+Double check the label on the ballast and the lamp type to be sure they
+are compatible with each other.
+<p>
+If the bulb is an "energy saver" 34 or 35 watt model (part number usually
+begins with F40, which is the same for a normal 40 watt bulb), be sure the
+ballast is compatible with that bulb.  If it is compatible with both 34's and
+40's, it is compatible with 35's.  Matching bulbs/ballasts is important for
+these models mainly to ensure long bulb life and to avoid overheating the
+ballast.  34 and 35 watt bulbs are prone to rings and flickering and being dim
+and being unusually sensitive to cold because of the nature of these bulbs and
+can do so no matter what ballast you use. They will normally behave properly
+after warming up, especially in ceiling fixtures where heat builds up.
+<p>
+Fluorescent tubes sometimes also "swirl" before being broken in, or if they
+are underpowered by an incorrect or low quality ballast.
+
+<h3><A NAME="irc">Comments on Instant Start/Rapid Start Compatibility</a></h3>
+
+(From: Ken Berg (goken@inreach.com).)
+<p>
+The problem with premature lamp failures using Instant Start ballast lies in
+the fundamental difference in the basic operating principles between Rapid
+Start and Instant Start lamps.  It has really nothing to do with whether the
+ballast is magnetic or electronic.  Instant Start ballasts are really designed
+to be used with the standard T12 single pin Slimline lamps.  Instant Start
+ballasts deliver a higher striking voltage on starting than Rapid Start
+ballasts do.  Slimline (the single pin) lamps have a slightly heavier
+cathode to tolerate the starting cycle.  With Instant Start, the lamps are
+really started "cold cathode" style, and then they of course run as hot
+cathode.
+<p>
+On occasion, even the standard T12 Slimlines refuse to "die like gentlemen"
+and flash and swirl wildly.  Maintenance guys have known for decades that
+they need to replace Slimlines promptly if they start doing this.  They will
+need to keep this in mind when dealing with the F32T8 lamps as well.  Even
+though the lamps are bi-pin, and so look like the old Rapid Start T12's,
+they are more than likely running on an Instant Start circuit, and will
+sometimes go like this.
+<p>
+The cathodes in most bi-pin lamps are made for Rapid Start, which is a
+starting method that is easier on the filaments.  The lamp manufacturers are
+supposed to have already taken the starting characteristics of the new F32T8
+Instant Start ballasts into account, but some might just be going on the
+cheap, and skimping of the lamp filaments.
+
+<h3><A NAME="pmf">Premature Cathode Failure in Dimmed Fluorescent Lamps</A></h3>
+
+<blockquote>
+"I have been experimenting with 15 W T8 lamps running from a dimmable
+ electronic ballast.  I have found that if set to a low light level after a
+ few days of being left on, one of the cathodes in the tube often goes open
+ circuit."
+</blockquote>
+
+(From: Clive Mitchell (clive@emanator.demon.co.uk).)
+<p>
+The only explanation that I can come up with is that there isn't enough
+current flow to keep the cathodes warm and this is causing the discharge
+to be concentrated on a small point.  The discharge will tend to stay on
+that point since it's the only warm bit, and as such is emitting
+electrons, making it the easiest path for current flow.
+<p>
+The voltage drop across this point will be higher than normal since the
+heat being generated is being dissipated by the rest of the cathode and
+this means that more power than normal is being dissipated from that
+point causing sputtering.  This could be causing the early burn-out.
+<p>
+The best way to validate this would be with a clear tube to see the
+cathode discharge activity.
+<p>
+I've seen a phenomenon like this when I've lit a halide lamp at low
+level with a small voltage multiplier circuit.  The glow discharge led
+to a white hot point on the electrode that caused sputtering.
+<p>
+If this is the case, then the cure is to use a ballast that can supply a
+continuous heating current to the cathodes.
+
+
+<h3><A NAME="rph">Replace Preheat Ballasts with Rapid or Trigger Start Type?</A></h3>
+
+When a ballast fails in a preheat fixture, should the bad preheat ballast be
+replaced with a more modern type?
+<p>
+Advantages of a rapid or trigger start ballast are that the starter (a
+high failure part) is eliminated and the fluorescent lamps may last longer
+as a result of less stress during starting.
+<p>
+Disadvantage include cost of the ballast and possibly space limitations inside
+the fixture.  However, since a defective starter may ruin the lamp controlled
+by it, the potential cost of replacement lamps may offset the additional cost
+of the ballast.
+<p>
+All in all, this is probably not a decision affecting the future of the
+Universe but in certain cases, changing ballast types may make sense.
+
+<h3><A NAME="fwo">Newly Installed Fluorescent Lamp Flashes Every Few Seconds When Off</A></h3>
+
+Compact Fluorescent Lamps (CFLs) and many other modern fluorescent lamps
+use an electronic ballast.  (See the sections on ballasts.)  In simple terms,
+this consists of a rectifier and filter capacitor
+following by a switching circuit.  The switching circuit requires a
+certain minimum voltage to function and until it
+gets going, its input may appear as a high impedance, almost an open circuit.
+Any source of AC even a small amount of leakage through a defective switch,
+a switch with a neon lamp night light feature (lighted when off), an
+electronic timer, motion sensor controlled yard light, or
+a light dimmer that isn't fully off, may produce a small amount of
+current to the input of the fluorescent lamp.  Depending on how severe
+the leakage is relative to the actual input impedance of the ballast's
+circuitry, this can cause the voltage to build up on the filter capacitor
+until the "startup circuit" kicks in producing a flash of light.  The startup
+circuit usually has some sort of threshold device like a zener diode or diac
+that won't pass current until the voltage across it exceeds a spec'd value.
+When that happens, the lamp starts up and strikes but just for an instant
+since there isn't enough current available on the input to maintain it.
+Then the cycle repeats.
+<p>
+So, there is nothing wrong with the fluorescent lamp or fixture.  But there
+may be a problem in what's feeding it.
+<p>
+Most fluorescent lamps and fixtures have warnings about avoiding their use
+on any type of circuit that doesn't involve a simple switch.  Not only
+is it possible for this sort of problem to occur, but the electronic ballast
+may be destroyed.
+<p>
+If there are no lighted switches or high tech switched gizmos driving it,
+then there could be a potentially serious wiring problem.  It has also been
+suggested that inductive or capacitive coupling between conductors in long
+runs of cable could produce enough leakage for this effect to occur, though
+I'm somewhat skeptical of this explanation except under unusual circumstances
+such as where the outlet or fixture is controlled from multiple locations
+and there a long "traveller" in the circuit.  This would have 2 parallel
+wires in it, one of which is connected to the source, and the other is
+connected to the lamp when it is *off*.
+
+<h3><A NAME="rfi">Radio Frequency Interference from Fluorescent Fixtures</A></h3>
+
+Unless there are bad/intermittent/marginal connections in the wiring, or
+a bad switch or socket, incandescent lamps cannot generate any electrical
+interference.  However, with fluorescent lamps, there are several ways in
+which they may produce Radio Frequency Interference (RFI) that can affect
+AM (mostly) radios or other electronics:
+<p>
+<ul>
+<li>Electronic ballasts: Modern electronic ballasts are basically switchmode
+ power supplies with switching frequencies of 10s of kHz.  The sharp edges
+ produce harmonics well into the AM band and can result in significant
+ conducted and/or radiated RFI if the ballasts do not include adequate
+ filtering and shielding and/or if the wiring runs from the ballasts
+ to the lamps are long and not shielded.
+<p>
+<li>Plasma discharge: The current flowing in the fluorescent lamps can give
+ rise to some radiated RFI.  This is probably a less likely
+ cause.  But there may be some cases (probably more likely if using the
+ lamps is a less than optimal manner as when dimming) where this has the
+ potential to be more significant.
+<p>
+<li>Bad or improper wiring/grounding: Make sure that all proper electrical
+ practices are following in installation.  If fixtures are not properly
+ grounded or plugged into grounded outlets, any benefit from filtering
+ and shielding may be lost.  Long runs of unshielded wires to the lamps
+ themselves will radiate, so this should be avoided if possible.
+</ul>
+<p>
+To narrow down the source, an AM radio tuned between stations may be useful
+as a signal detector, moving it around in the vicinity of the ballast(s),
+lamp(s), and fixture wiring, and the wiring connecting the fixtures to the
+power source.  For multiple ballast installations, try this with only one
+ballast powered.
+<p>
+The cleanest (RFI-wise) ballasts are old-style iron types with no
+active electronics.  High quality electronic ballasts should also be
+low in RFI, but there are a lot of cheap electronic ballasts and who
+knows what they might do, even with UL and other labels.
+<p>
+If it turns out that there is significant conducted RFI, filters may be
+installed in-line with the power feed to the fixtures.  If it's radiated
+from the ballasts (or lamps), grounded copper or aluminum screening *might*
+help.  But where electronic ballasts are the culprits, replacing them with
+iron ballasts may be best.
+<p>
+(From Don.)
+<p>
+Best I can think of sound to me like usual suspects, with one exception:
+<p>
+Fluorescent lamps themselves are sometimes RFI generators.  This is 
+mainly with rapid start ballasts - with the filaments being heated, 
+occasionally the filaments are hot enough to make their work function 
+negative.  In that cause, there is a region near the filament where the 
+electric field is reversed.  That causes a potential well near the 
+cathode, and free electrons oscillate (though with a damped oscillation) 
+through the potential well.
+<p>
+I have heard of this in one of those books at Drexel's library, maybe by 
+Willem Elenbaas, or maybe "Electric Discharge Lamps" by John Waymouth, 
+with call number probably close to TK4000.
+<p>
+Possibly (authored by or edited by) Willem Elenbaas: "Fluorescent 
+Lamps".  Web searching likes to concentrate towards a 1971 2nd edition,
+in Philips Technical Library.
+<p>
+Possibly "Fluorescent Lamps and Lighting" by W. Elenbaas.
+<p>
+However, I have the impression that this basically does not happen in 
+anything usual.  It seems to me to be something that happens when you heat 
+the filaments and then pass very low current through the tube.
+<p>
+8-footers tend to be instant-start rather than rapid-start, and are 
+definitely instant-start if they have only one pin on each end.  In that 
+case, there is no current being applied through the filaments to heat 
+them.
+<p>
+So, I seem to think that this is caused by the usual suspects:
+<p>
+<ul>
+<li>The ballasts are worse ones for RFI - add filters close to the 
+ fixtures or inside the fixtures, or use different ballasts.  The noise may 
+ be common mode, so filters may need to be common mode ones.
+<p>
+<li>Ballast cases and/or fixtures are not properly grounded.
+<p>
+<li>Dimmed rapid start fluorescents might do that thing that I brought
+ up, due to lack of active filament heating combined with low current
+ through the tube.
+</ul>
+<p>
+<A NAME="ioi"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Sam's F-Lamp FAQ Table of Contents</A>.
+<h2>Items of Interest</h2>
+<h3><A NAME="ioi0">All Those Different Wattage 4-Foot and F40 and "Shop Light" Lamps?</A></h3>
+
+The original 4-foot fluorescent lamp was the F40T12, which is 47.75 inches
+(approx. 121.3 cm) long from pin tip to pin tip and 1.5 inches (approx. 4 cm)
+in diameter and designed to consume 40 watts. Not too many years ago, this
+was the most common and least expensive fluorescent lamp.
+<P>
+There is the "HO" (high output) 4-foot tube and the "SHO" (super high output)
+4-foot tube. These are not common and are only used where there is not
+enough room to fit enough standard F40 tubes to make enough light. These
+lamps are slightly less efficient than standard fluorescent lamps. These
+tubes require more current than standard 4-foot tubes and require special
+ballasts. These tubes should only be used with their respective ballasts, and
+these ballasts should only be used with the tubes they were designed for.
+<P>
+In response to the energy shortages of the 1970's, the 34 watt lamp with
+the same physical dimensions was introduced. It works in most 40 watt
+fixtures and draws 34 watts in these fixtures. However, some 40 watt
+ballasts can overheat with this lamp. The ballast should say that it is
+rated for use with 34 watt lamps.<BR>
+Please note that a 34 watt tube can say F40 and still be a 34 watt tube
+and not be a 40 watt tube. It will in some way say near the F40 designation
+that it is an energy-saving tube. There have also been a few 35 watt
+tubes, which are similar enough to 34 watt tubes to work anywhere both 34
+and 40 watt tubes can work. 34 watt lamps sometimes produce noticeably
+less light than 40 watt lamps, especially in cooler environments.
+<P>
+Nowadays, there is the 25 watt "shop light" lamp. The 25 watt tubes should
+only be used with appropriate 25 watt shop light ballasts, and these
+ballasts should only be used with these tubes. Please do not confuse these
+with other wattage tubes/fixtures of the same physical dimensions which are
+also sometimes called "shop lights".
+<P>
+A more recent development is the 32 watt T8 lamp, which is 4 feet long but
+only one inch (2.5 cm) in diameter. These require ballasts made for them.
+Many of the ballasts made for these lamps are electronic ballasts.
+<P>
+The confusion has increased in recent years now that the USA has an
+energy-conservation law against manufacturing and importing standard 40
+watt white fluorescent lamps. Specialty lamps and white ones with a color
+rendering index of at least 82 (out of a maximum of 100) are exempt and 
+are still available in the USA as true 40 watt lamps.
+<P>
+Again, be sure that you are not mismatching the bulb and the ballast.
+If the ballast is not rated to operate the bulb type being used, the bulb
+life will probably be shortened and the ballast life may be shortened. In
+a few cases, the ballast may catch fire after failing.
+<P>
+<h3><A NAME="ioi1">What's with All Those Different Shades of White?</A></h3>
+
+At one time, most fluorescent lamps were "cool white" which is a plain-old
+white with a color like that of of average sunlight.<BR>
+One bad thing about "cool white" is that the spectrum of "cool white" has
+a surplus of yellow and a shortage of green and red. Since mixing red
+light with green light makes yellow, the white light of a cool white lamp
+still looks white. Since yellow objects usually reflect green through red,
+they look yellow as usual in this light.<BR>
+But red objects reflect mainly red light and green objects reflect mainly
+green light, and look dim and dull due to the shortage of red and green
+wavelengths in "cool white". Impure reds and greens will look less red and
+less green as well as darker - making them look more brown.
+<P>
+Other early whites were "warm white" and "daylight". Warm white is a color
+similar to that of incandescent lamps, although it usually looks slightly
+less yellow and more white-pink. A warm white lamp's spectrum has a surplus
+of yellow and violet-blue, and a shortage of red, green, and green-blue. Like
+cool white, warm white can distort colors in unflattering ways.<BR>
+Both "warm white" and "cool white" are obtained using "halophosphate"
+phosphors. The surplus of yellow and shortage of red and green is a general
+characteristic of halophosphate phosphors.<BR>
+"Daylight" is a bluish white, and does not have as bad a surplus of yellow
+as the other halophosphate whites. But it is also slightly dimmer.
+<P>
+Next were the "deluxe" versions of cool white and warm white. These have
+"improved" halophosphate phosphors and are sometimes known as "broad spectrum"
+lamps. They have a less severe yellow surplus and red/green shortage than
+standard halophosphate lamps. They also produce slightly less light.
+<P>
+Another slightly common halophosphate white is "white", which is between
+"cool white" and "warm white" in color.
+<P>
+Other halophosphate whites, whether of differing spectral quality or
+different shade of "warmth/coolness" include "supermarket white", "sign
+white", "north light", "merchandising white", etc. Please note that some
+of these are not made by all fluorescent lamp manufacturers, and some of
+the less standard color names are trademarks of their respective
+manufacturers.
+<P>
+One earlier fluorescent lamp color with enhanced red spectral content is
+the "natural". This lamp has "cool white" halophosphate phosphor with a
+red-glowing phosphor of a different type added in. These lamps look slightly
+pinkish in color, sometimes purplish when compared to warmer colored light
+such as incandescent light. "Natural" fluorescent lamps make skin tones
+look pinkish, unlike the usual halophosphate types which make skin tones
+look green-yellowish. Some meat displays have "natural" fluorescent lamps
+to make the meat look more red.
+<P>
+Nowadays, there are "triphosphor" fluorescent lamps. These have a spectrum
+very different from that of the halophosphate lamps. Triphosphor lamps
+have their spectral content mostly in distint bands and lines:
+Orangish red, slightly yellowish green, green-blue, and violet-blue. For
+cooler color lamps, there is an additional band in the mid-blue.
+Triphosphor lamps do not distort colors as badly as halophosphate lamps,
+and triphosphor's color distortions are usually not as unpleasant as those
+of halophosphate. Also, triphosphor lamps often make reds and greens look
+slightly brighter than normal, unlike halophosphate lamps which usually
+make these colors look dimmer than normal.
+<P>
+Most compact fluorescent lamps and most 4-foot T8 (1-inch diameter) lamps
+are triphosphor lamps.
+<P>
+Triphosphor lamps come in various warm and cool shades, usually designated
+by "color temperature". This is the temperature that an ideal incandescent
+radiator would be heated to in order to glow with a similar color. Color
+codes on fluorescent lamps may include the color temperature or 1/100 of
+the color temperature. Osram/Sylvania brand lamps often have D8 immediately
+preceding the color code.
+<P>
+2700 or 27 - orangish shade common for compact fluorescent lamps, similar
+to many incandescent lamps.
+<P>
+3000 or 30 - "warm white", similar to whiter shades of incandescent.
+<P>
+3500 or 35 - between warm white and cool white, similar to the whitest
+halogen lamps and projector lamps.
+<P>
+4100 or 41 - "cool white" or the color of average sunlight.
+<P>
+5000 or 50 - an icy cold pure white like that of noontime tropical sunlight.
+<P>
+6500 or 65 - slightly bluish white or "daylight".
+<P>
+There are still other specialty whites, including ones with a mixture of
+"broad spectrum" and "triphosphor" phosphor formulations to get a spectrum
+more like that of daylight. Some others have particularly good "broad
+spectrum" phosphors, sometimes mixed with other phosphors for a tailored
+spectrum. Many of these, like most triphosphor lamps, have color
+temperature designations.
+<P>
+<h3><A NAME="ioi2">Why Small Fluorescent lamps Cost More than 4-Foot Ones</A></h3>
+
+Can you say 'supply and demand' and 'economies of mass production'.  You
+are comparing the price of the common F40CW-T12 lamp manufactured by the
+zillions and sold in home centers for about $1 with specialty bulbs used
+in a relatively few devices like battery powered fluorescent lanterns
+and makeup mirrors.  These little bulbs may indeed cost up to ten times
+as much as the much larger ones.
+<P>
+By any measure of materials and manufacturing cost, the 4 foot bulb is much
+much more expensive to produce.  There is nothing special involved.
+<P>
+<h3><A NAME="ioi3">Energy Consumption and Wear-And-Tear due to Starting</A></h3>
+
+(From: John Gilliver (g6jpg@gmrc.gecm.com).)
+<P>
+The amount of energy used in starting isn't worth worrying about.  However,
+in addition to the turn on/off deterioration, there is also the steady-state
+`on' deterioration (they don't last for ever even if left on), so...
+<P>
+As far as turn-on deterioration:
+<P>
+I can't give it as a percentage, but for ordinary striplights I heard a figure
+of 15 minutes (about 15 years ago), i. e. turning it on stresses it as much as
+leaving it on for that long. Things have perhaps changed by now (and there are
+so many kinds these days as well).
+<P>
+For low-energy use, I'd go for fluorescents any day, unless size is a
+major factor (Bosch [I think] and others have been trying to get some sort
+of discharge lamp for headlights for some time, but I haven't seen any yet).
+You might also look into LEDs, but I doubt they will match the efficiency;
+certainly only the high-effificiency types (all seem to consume about 10, 20,
+or 30 mA, but the output power in light seems to vary widely, from a few
+millicandelas to about three candelas!). They are narrow band (i. e. coloured)
+as well of course.
+<P>
+<h3><A NAME="ioi4">What Happens when Fluorescent Lamps Wear Out?</A></h3>
+
+(From: Charles R. Sullivan (charless@crissy.EECS.Berkeley.EDU).)
+<P>
+The usual failure mode is depletion of the emission mix on the filaments.
+Then they do not emit electrons, and the arc can't be sustained.  Unless
+the ballast supplies a high enough voltage that very high field can be set
+up near the electrode.  Then the ions bombarding the electrode have a high
+enough energy to knock electrons out of the metal even with no emission
+mix, or to heat the metal to the point it emits electrons.  The high field
+is also sufficient to ionize the argon fill gas---normally only mercury is
+ionized.  The argon radiation is of a more purple color.  That is probably
+what you see.
+<p>
+(From: Sam.)
+<p>
+With most "normal" (non-CFL) fluorescent lamps, the result is usually either a
+flickering lamp or one that never is able to fully start, so it glows
+weakly or not at all.  However, CFLs are constructed with narrow glass
+tubing in close proximity to the filaments along with electronic ballasts that
+will maintain a discharge even with increasing voltage drop.  So, the higher
+power dissipation at the filament once the emissivity material is exhausted
+may result in enough of a temperature rise to soften the glass causing sudden
+failure when a hole finally develops.  More on this in the section:
+<A HREF="#cflfail">More on CFL Failure</A>.
+
+<h3><A NAME="ioibe">Blackening at Ends of Fluorescent Tubes</A></h3>
+
+This is a common phenomenon with most common fluorescent tubes as they
+age. However, frequent or repeated starting can accelerate the process. The
+black areas in themselves don't affect operation except to slightly reduce the
+amount of light available since the phosphor in that area is dead. However,
+they do represent a loss of metal from the electrodes (filaments).
+<p>
+The cause is sputtering from the filaments, mostly when cold. Thus. this
+happens mostly when starting or with a defective rapid start ballast which
+doesn't heat the filament(s) or a ballast or starter that continuously
+cycles. When the filament is cold and is the cathode (on the negative half of
+the AC cycle for that end of the tube), the work function is higher and ions
+have a higher velocity when impacting, knocking off metal atoms in the
+process. This is greatly reduced once the filament is up to normal operating
+temperature (though even then, some sputtering is inevitable).
+<p>
+It may also be a symptom of failure of the 4 uF (or similar) capacitor
+in the ballast, although this can also be caused by incorrect lamps (which
+is common) and by uncommon failure modes of the ballast such as partial
+shorts.
+<p>
+(From: Greg Grieves (ggrieves@home.com).)
+<p>
+Lamps with the longest lifetimes typically use the heavier noble gasses as the
+buffer gas, ( Xenon or Krypton instead of Argon) because the sputtering that
+occurs at the cathode is due to fast ion bombardment from the ionized gasses
+in the tube. the heavier atoms have a smaller velocity for a given kinetic
+energy of acceleration. its not the total energy of the ion that sputters but
+its the momentum at impact that knocks other atoms loose. I presume thats why
+Kr and Xe bulbs can run brighter, because they can crank up the power and
+still have about the same lifetime. Some tubes use a "hollow cathode" design
+in which the shape of the cathode is designed to deflect impacting ions rather
+than be sputtered by them. That's my understanding, anyway, theres much more
+to the story...
+<p>
+(From: PBerry1234 (pberry1234@aol.com).)
+<p>
+I recall one brand of lamp that positioned shields around the electrodes to
+prevent the blackening. I suppose this improved the appearance in exposed lamp
+applications, but don't know of any other benefits.
+
+<h3><A NAME="ioihcl">Hot Cathode Versus Cold Cathode Operation</A></h3>
+
+The cathode is the negative electrode of a vacuum tube or gas filled discharge
+tube.  Current flows by way of electrons emitted from the cathode and attracted
+to the positive electrode, the anode.
+<p>
+A hot cathode is one which must be heated to operate properly - to emit
+sufficient electrons to be useful.  Examples: TV and monitor CRTs, most
+vacuum tubes (or valves), vacuum fluorescent displays (like those on your
+VCR).  This is called thermionic emission - the boiling off of electrons
+from the surface of the cathode.  Normal fluorescent lamps are hot cathode
+devices - partially maintained by the discharge current itself.  They all
+have some sort of warmup period (though it can be quite short).
+<p>
+(From: Phil Rimmer (primmer@tunewell.com).)
+<p>
+A cold cathode is one where operation takes place without depending on
+heating of the surface above ambient.  There are all sorts of devices that use
+'cold' cathodes - neon lamps and signs, fluorescent backlight tubes, and
+helium neon laser tubes.  Naturally, cold cathode devices don't have much of a
+warmup requirement.
+
+<p>
+The purpose of a cathode is to feed electrons into the negative end of the
+positive column (the discharge) so they can variously excite and ionise gas
+or vapour atoms.
+<p>
+Electrons are released from cathodes by the action of the positive ions
+being accelerated towards them due to an electric field in the vicinity of
+the cathode.
+<p>
+Electrons are broadly released in two ways: Thermal emission and secondary
+emission.
+
+<ul>
+<li>Thermal emission is the primary process used in "hot cathode" lamps which
+ include standard fluorescent tubes.  The ions are accelerated towards the
+ cathode through a small cathode voltage (less than 10 volts) and gain just
+ enough energy to heat a small part of the very fine wire electrode when they
+ collide with it. They heat it until it glows dully and electrons are "boiled
+ off", liberated by the thermal energy. This process is very efficient in
+ producing lots of electrons and results in efficient lamps.
+<p>
+<li>Secondary emission is a more brutal process for generating electrons. It
+ requires an accelerating voltage drop of 130 to 150 volts. It is used in
+ cold-cathode lamps that have relatively huge cylinders of iron for
+ electrodes. These massive electrodes require much too much energy input to
+ make them into thermal emitters. The energetic ions simply "knock" electrons
+ off the metal surface. In so doing they also knock some of the metal off as
+ well, a process called sputtering. The big electrodes have enough material
+ to last before other effects cause lamp failure.
+</ul>
+
+Hot cathode lamps operate in cold cathode mode if the cathode receives too
+little energy to keep it glowing. The colliding ions are thirty times more
+energetic than usual and soon sputter enough metal off the tiny electrodes
+to destroy them.
+<p>
+Moral: Pre-heat the electrodes before starting the discharge and maintain
+auxiliary current in the electrodes if the discharge current is low (e.g,
+when dimming).
+
+<h3><A NAME="ioifmc">Failure Mechanisms of Cold Cathode Fluorescent Lamps</A></h3>
+
+(Portions from: Victor Roberts (Vic@RobertsResearchInc.com).)
+<p>
+<ul>
+<li>All fluorescent lamps, be they hot cathode, cold cathode or
+ electrodeless will suffer from phosphor degradation. The rate of this
+ degradation is a function of the type and amount of phosphor, the type
+ of glass used for the tube, the temperature of the phosphor & glass and
+ the intensity of the UV flux from the discharge. If these parameters are
+ the same, then the type of electrodes does not make any difference,
+ except perhaps at the ends of the tube.
+<p>
+<li>For heated filament lamps (which means most of those in residential and
+ commercial lighting), the usual failure mode is depletion of the emission
+ mix on the filaments.  Then they do not emit electrons, and the arc can't be
+ sustained.
+<p> 
+<li>Many hollow cold cathodes contain a coating on the inner surface
+ to improve operation. When this coating is degraded the lamp will be
+ harder to start and therefore might not start if the starting voltage is
+ not high enough. 
+<p>
+<li>Due to their high cathode fall voltages, there will often be
+ significant sputtering of cathode material from the surface of a cold
+ cathode. Depending upon the design of the lamp and cathode, this
+ sputtered material can end of up the walls of the lamp where it is
+ unsightly at best, and may absorb significant light at worst.
+<p>
+<li>Cold cathodes tend to "consume" the active gas in a discharge.
+ Due to the reasonably high cathode fall voltages, ionized gas atoms get
+ buried in the surface of the cathode at a slow rate. In fact, this
+ phenomena is used to make a very effective high vacuum pump. Also, in
+ many HeNe lasers that use cold cathodes, a gas reservoir was added so
+ that the loss of Ne, the dominant excited species, would not
+ significantly change the He:Ne balance which is essential for proper
+ laser action. In a modern fluorescent lamp, where the amount of excess
+ mercury is reduced to prevent disposal problems, consumption of mercury
+ by a cold cathode could be another life-limiting factor.
+</ul>
+
+<h3><A NAME="ioi5">Comments on Small Inverter Powered Fluorescent Lamps</A></h3>
+
+(From: Paul Bealing (paul@pmb.co.nz).)
+<P>
+Many small low cost inverters use a 2 transistor (one quite small) self
+oscillating circuit. Simply minimum function, low cost. These circuits can be
+quite efficient at low power levels. I have seen them used up to 50 watts.
+<P>
+Losses are usually in the transformer and the switching transistors. As the
+currents increase, the losses usually increase for a given power output.
+<P>
+The lamp requires a high voltage, usually 300 to 500 V, to strike. The
+voltage depends on the length/wattage of the lamp. Once struck, the current
+through the lamp is limited to achieve the wattage. The voltage across a
+small running lamp will be in the order of 60 to 100 volts AC.
+<P>
+Many simple inverters use a series resonant circuit to generate the high
+strike voltage, which is disabled by the run current.
+<P>
+A couple of years ago I designed an inverter for a PL11 11 Watt lamp based
+on a switchmode power supply controller IC, 2 power mosfets, and a push-pull
+transformer, running at about 200 kHz. The main application was in diesel
+locomotives running from 75 V DC. I've had the circuit operating down to 10V
+DC (different transformer winding). The primary current rises and the
+dissipation increases.
+
+<h3><A NAME="ioiflvf">Fluorescent Lamp Voltage and Frequency Considerations</A></h3>
+
+For those using iron ballasts, both voltage and frequency will be significant.
+Though it may be possible to come up with a formula which incorporates both,
+the best thing to do is to only use the line voltage for which the unit
+was designed.
+<p>
+Where the frequency isn't the same, the current through the lamp may differ,
+most likely too high in going from 60 Hz to 50 Hz, too low the opposite
+way.  If the current is too high, there could be shortened lamp life at the
+very least or even a serious fire hazard.  If the current is too low, the
+lamp may not remain on in a stable manner, flickering, or constantly
+restarting.  Initial starting could also be affected.
+<p>
+If they use electronic ballasts, the frequency probably won't matter.  Some
+"universal" types, can accommodate an input voltage from 90 to 250 VAC up to
+400 Hz or even DC.
+<p>
+In all cases, it is best to consult with the manufacturer if the product
+label doesn't explicitly indicate "50/60 Hz" operation.  When in doubt,
+leave them behind since there is really no way to be sure of the safety
+issues.
+
+<h3><A NAME="ioifldc">Operating a Fluorescent Lamp on DC</A></h3>
+
+<blockquote>
+"I have a application in mind that will use a DC power source around 100
+ volts and fluorescent lighting.  What kinds of voltage do I need to sent
+ the fluorescent?  Are there any good sources of info. for the circuitry
+ I would need?"
+</blockquote>
+<p>
+(From: Don Klipstein (don@donklipstein.com).)
+<p>
+If it is a preheat tube of 22 watts or less, the cheap-and-dirty way to
+do it is to use a normal preheat fixture.  The only change is to add a
+resistor in series with the ballast.  This resistor should be maybe 100
+ohms for 20 and 22 watt lamps, slightly higher for lower wattage ones.  It
+should be able to safely dissipate a wattage comparable to that of the
+lamp.  Of course, you are now wasting significantly more power as heat.
+<p>
+The above includes most simple "PL"/twin-tube compact fluorescent lamps
+with removable bulbs with two pins, as well as most compact fluorescent
+bulbs with "choke" type ballasts running from 120 volts AC.
+<p>
+Should you need anything more energy-efficient than this, then there is
+the world of electronic ballasts.
+<p>
+BTW, most low-power-factor screw-in 120 VAC compact fluorescent lamps
+with electronic ballasts work fine "as-is" with about 160 volts DC or
+squarewave.
+
+<h3><A NAME="ioipcbs">Ballasts and PCBs (The Hazmat Type)</A></h3>
+
+(From: David Morris (allane@ix.netcom.com).)
+<p> 
+Ballasts that were made after the late 70's do not contain PCB's. I spoke 
+with an Advance and GE ballast rep. a few years ago about this and I was 
+told the only sure-fire method to tell that there are no PCB's is if the 
+ballast says no PCB's.  Any ballast that doesn't say that has a better 
+than 80% chance of having it.  The amount in the ballast is VERY minute.  
+Less than a thimble full.  It is used to cool a capacitor in the ballast.  
+Since he said the light is about 12 years old, I am quite certain that 
+the ballast does not contain PCB's.  In our state, it is legal to dispose 
+of these ballasts in a limited quantity in your local landfill or throw 
+them in the trash.  Larger quantities require Hazmat disposal methods.  
+Our company policy is to leave any old ballasts that is not marked 'no 
+PCB's" with the customer for their disposal.  
+<p>
+As a side note, I read in one of the Electrical trade rags that the 
+liquid that replaced PCB's is testing out to be more dangerous than PCB's 
+themselves.  Go figure!! :-)
+<p>
+As for catching fire, ballasts contain a thermal protector that will cut 
+the power if the ballast gets too hot.  Only real old ballasts do not 
+have this feature.  Ballasts marked Class P have this protection.  It is 
+very rare for one of these ballasts to actually catch fire, although it 
+does happen.  More often, they will smoke up the house if they overheat 
+and the thermal protector fails.
+
+<h3><A NAME="ioidccf">Driving Cold Cathode Fluorescent Lamps</A></h3>
+
+(From: David VanHorn (dvanhorn@cedar.net).)
+<p>
+<A HREF="http://www.linear.com//">Linear Technology</A> has several
+extremely detailed app notes written by Jim Williams on this topic. It's more
+complicated than you might imagine to do it right. Just making the tube light
+is perhaps only 10% of the job.  The rest includes keeping it running a long
+time without blackening, providing the ability to set the brightness,  not
+loosing all your energy to wiring capacitance, and not creating an EMI
+nightmare.
+<p>
+Definitely read and understand those app notes, even if you go to another
+vendor!  The good news is that the actual circuit isn't that bad!
+
+<h3><A NAME="ioi6">What is the E-Lamp?</a></h3>
+
+The E-Lamp is one of those inventions that sounds like a really good idea
+but still hasn't (as far as I know) made it into wide scale production.
+In essence, it is an RF excited compact fluorescent lamp.  Some of the
+E-lamp's basic characteristics include.
+
+<ul>
+<li>Fits into standard household light bulb bases.
+<li>Radio frequency radiation was emitted, then converted to light.
+<li>Dimmable using standard phase control dimmer - no special devices needed.
+<li>Very efficient so runs cool and consumes much less power than incandescent
+ lamps (don't know how it compares to compact fluorescents).
+<li>Desirable white spectral characteristics.
+<li>No filament to wear out (and no wires through glass) so potentially
+ very long life.
+</ul>
+
+Aside from cost issues, there could also be concerns with respect to RF
+emissions effects on health and interference with other household appliances
+and electronics.
+<p>
+(Victor Roberts (Vic@RobertsResearchInc.com).)
+<p>
+E-lamps are electrodeless fluorescent lamps. They use a high frequency or RF
+magnetic field to create a time varying electric field which in turn drives a
+discharge which is very similar to the discharge in an ordinary fluorescent
+lamp. Except for the means by which the discharge is created, these E-lamps
+and identical to all other fluorescent lamps. There is no magic other than the
+fact that electrodeless excitation allows for the elimination of the
+electrodes, so electrode failure and wear out are no longer a problem. Also,
+electrodeless excitation removes the requirement that the lamp be long and
+thin to achieve high efficacy. Proof of this is beyond the scope of this
+note. :) Hence, an electrodeless fluorescent lamp can be more easily made in
+the shape of an incandescent lamp.
+<p>
+There are also electrodeless metal halide lamps and, of course, the
+electrodeless sulfur lamp.
+
+<h3><A NAME="ioidim">Notes on Dimming of Fluorescent Lamps</A></h3>
+
+The following provides a variety of dimming methods, some better
+than others.
+<p>
+<b>Sam's dimming experiments:</b>
+<p> 
+OK, I did some experiments using both a dual-lamp Circline fixture and a
+typical dual-40 W bulb shop light - both with magnetic (rapid start
+probably) ballasts.
+<p> 
+The common wisdom is not entirely correct.  You can dim fluorescents.
+I do not know about the long term reliability or stress on the ballasts
+but I could achieve dimming down to around 30 to 50 percent brightness
+(using my standard-issue eye-balls, calibrated annually) with a relatively
+stable light output - no excessive flicker and no tendency to go out (though
+to get down to the low end requires starting high and backing off).
+<p> 
+I tried both a Variac and a cheap light dimmer with similar results.
+<p> 
+(If you want to go below the 30 to 50 percent threshold reliably, however,
+some means must be provided to keep the filaments hot.)
+<p>
+How about long term reliability?
+<p>
+This was a 'quick' experiment.  All I did was observe the light output.
+A cheap light dimmer just means the kind you get at a home center for $4
+or so.  Long term reliability is certainly not known.  The purpose was
+simply to show that just because something is stated to be impossible
+does not always mean that it is - not a suggestion that it is.
+<p>
+<b>Dimming fluorescents 1:</b>
+<p> 
+(From altavoz@azstarnet.com).
+<p>
+48" tubes can glow at microamps if fired with 400 volts and
+require no heater current at all. The mercury is still probably
+99% liquid!! I did this with a 9 V transistor battery and an 
+inverter. As you fire them from lower impedances, still using
+400 volts and no heaters, you'll see that you can turn down the
+current and get a better efficiency (output doesn't drop) but you 
+reach a threshold and it drops light output suddenly.
+When I was working with 12 VDC ballasts, and 24" tubes I had 
+to fire them at 0.65 amps then drop that to 0.4 A.  But
+below 0.4 A they would dim suddenly to a less efficient point. 
+<p>
+Of course this is at warm temperatures.  At cooler temps you must
+have the heaters drawing current to boil the mercury.
+<p>
+I have used the cheap dimmers on many inductive loads and as
+long as you derate them, they will work fine. 
+<p>
+I disassemble standard dual 48" fixtures and put the tubes
+in line to make a 96" fixture that puts out more light!
+you only need to put the ballast close to one end of the 
+"starter" tube (the one that always starts first) or put
+the line Neutral close to the tube (they hook together
+at the ballast).
+<p>
+<b>Dimming fluorescents 2:</b>
+<p>
+(From: John Shotton (J.A.Shotton@bnr.co.uk)).
+<p>
+I have been running four 5 foot (1.5 inch diameter) tubes like this for 15 years.
+<p>
+The circuits (4 off) are resonant start - i.e., there is a second winding on
+the ballast which connects across the tube in series with an 8 uF capacitor
+(remember in the UK the supply is 230 VAC). Thus the heaters are
+energised at all times.
+<p>
+I originally experimented with a moving iron wattmeter (measures true RMS
+power), a photodetector, and a variac.  Allowing for ballast loss (computed
+from current and resistance), the light output was directly proportional to
+power consumption.  The lamps would dim to around 10% but they wouldn't
+start at this level.
+<p>
+The permanent installation used a mains transformer connected as an
+autotransformer with several taps so that I can get around 6 light levels,
+though they will not start on the two lowest settings and is slow at
+starting on the next two settings. I can't remember offhand what light
+output they will self start on, but it must be around 30 to 40%.
+<p>
+As for tube life, the lights are on  most of the time when it is dark - from
+around 5 pm till 1 am. I fitted my third set of tubes about two years ago,
+and this was not because the second set had failed but because we wanted a
+change from daylight color-matching to tri-phosphor 2700 &deg;k - I've still
+got the second set should we decide to revert to the daylight effect. 
+<p>
+When I did my original experiments I also tried it with normal ballast
+circuits, i.e., with a starter across the tubes. I can't remember the
+results, but I didn't pursue it so they can't have been good. I believe it
+would work if the heaters were energised at all times from a separate
+winding.
+<p>
+<b>Dimming fluorescents 3:</b>
+<p>
+(From: David Gibson (dgibson@microconsultants.com)).
+<p>
+My company designed a fluorescent dimmer some years ago. It dims 40 x
+40W tubes fitted with high power factor inductor/capacitor control
+gear as used in Australia and other 220 to 240 VAC countries. Its main claim
+to fame is that it can cope with the highly capacitive nature of power
+factor corrected luminaires, and is hence easily retrofitted. A number
+of large office buildings in Australia are fitted with our/my dimmer.
+<p>
+Unfortunately, the standard ballast used in the U.S.A. (and I presume
+other 120 VAC countries) uses, I believe, a resonant circuit which cannot
+be dimmed with our design.
+<p>
+The luminaires it does work with contain basically a tube/choke series
+combination across the line, plus a power factor correction cap also
+across the line. The lamp filaments are heated only during turn-on by
+a starter switch that completes an additional circuit at startup.
+<p>
+The purpose of these dimmers is energy saving. A photocell measures
+the ambient light, and maintains a reasonable constant light level in
+the office. Energy saving is possible because lighting systems must be
+overdesigned to allow for lumen depreciation due to lamp aging, plus
+the fact that daylight allows lower levels of electric light.
+<p>
+Performance is as follows:
+<p>
+Dimming range: We budget for 40% of light output (60% reduction). In
+the lab we have achieved down to 26%.
+<p>
+Power saving: At 40% light power is about 35% (yup, you win twice)
+<p>
+Lamp savings: In a 26 story building in Sydney, for which good
+figures are available, lamp replacement rate was reduced to about 40%,
+i.e., we more than doubled lamp life.
+<p>
+Overall power savings: Same building, independently audited figures,
+lighting bill was reduced by 45%. This included secondary savings from
+reduced air conditioning and a time switching system integral to our
+design which ensures lights are off at night etc.
+<p>
+Power factor improvement. Undimmed tubes have a power factor of
+typically 0.85 to 0.9. At 40% light this is 0.99. This is true power
+factor (see article on power factor on our Web site, URL below).
+<p>
+Line harmonics: During dimming the percentage of harmonics increases
+as current drops, but the absolute level (total amps) decreases.
+<p>
+(The power companies love it!).
+<p>
+Our design uses a hard-won, patented proprietary dimming method which
+has nothing to do with triacs. It uses high frequency switching and
+some very fast and smart firmware.
+<p>
+The same lamps can be dimmed using triacs, but the power factor
+correction caps must be removed from every fitting. The required triac
+circuit is slightly modified; the patents belong to a competitor. Its
+power factor is lousy.
+<p>
+<b>Dimming fluorescents 4:</b>
+<p>
+(From: Andrew Gabriel (andrew@cucumber.demon.co.uk)).
+<p>
+I have made a dimming fluorescent fitting out of a standard fitting
+(which started out as a switch-start series ballast), and an ordinary
+phase control (triac) dimmer.
+<p>
+My only reservation is that this is all for standard 200-250 V
+switch-start fluorescents - when I've seen American books describing
+fluorescent lamp control gear, it is quite different, presumably
+because of the lower mains voltage being unsuitable without more
+complex control gear.
+<p>
+There are three significant things you have to do:
+<p>
+<ol>
+<li>The lamp extinguishes at around half power because the filaments at
+ each end are no longer heated sufficiently during one half cycle's
+ bombardment with electrons to emit electrons in the following half-
+ cycle. I overcame this by supplying the filaments with a few volts
+ from a miniature mains transformer with a pair of isolated low
+ voltage secondaries, around 4 volts IIRC for a 5 foot 80W fitting
+ (it doesn't need to be anywhere near enough voltage for a visible
+ glow from them). Also, with this transformer fitted (and the switch-
+ starter removed), the tube actually fires up all by itself without
+ flashing, since it is now really rapid start fitting.
+<p>
+ I also have a switch to disable the dimmer, and when disabled, it
+ also switches the filament transformer's primary to be across the
+ tube rather than the mains. Thus initially when the tube is non-
+ conducting and the tube voltage is 240 V, the filaments are heated,
+ but as the tube starts up and its voltage drops to its running
+ value of around 100 V, the additional filament heating provided
+ by the transformer, which is unnecessary when the lamp is running
+ normally, is all but disabled.
+<p>
+<li>The second problem is that all cheap triac dimmers fire the triac
+ with a pulse and expect the triac to continue conducting until the
+ zero crossing point (or more strictly, zero current). However, an
+ inductive load takes time to start conducting, and at the end of the
+ triac firing pulse, the current through the triac will not have
+ reached the minimum holding current when the dimmer is set low,
+ which also results in sudden extinguishing of the tube when dimming
+ down. To overcome this, I added a small incandescent lamp to the
+ output load on the dimmer, in my case it's a 40W spotlight pointing
+ at a painting, so it's a useful additional feature.
+<p>
+ This also allows the lamp to be dimmed completely down to zero.
+ At very dim levels just above zero, some tubes exhibit Faraday rings,
+ rings of alternate light and dark along the tube which might remain
+ still or move along the tube.
+<p>
+ I was expecting the current phase shift due to the inductor to be a
+ problem with a cheap dimmer, but it wasn't.
+<p>
+<li>Ensure the power factor correction capacitor is before the dimmer,
+ or you'll destroy the triac. In a commercial environment, I think
+ I would also include some protection against typical triac failure
+ modes of a one-way open or short, which would result in high levels
+ of DC through the inductor which will overheat it and/or destroy
+ the lamp.
+</ol>
+<p>  
+BTW, I did all this 20 years ago as a teenager. However, the fitting
+in question is still running, and has never required a lamp change
+in that time, nor is there any blackening at the ends of the tube.
+It is normally run at full brightness with the dimmer disabled.
+<p>
+<b>Dimming fluorescents 5:</b>
+<p>
+(From: Peter Miller (p.miller@elec.gla.ac.uk)).
+<p> 
+I've tinkered a bit... the trick is to keep the filaments at the ends of
+the tubes warm. You will NOT be able to dim down to zero - probably about
+25% at best. 
+<p>
+Here is a possible circuit:
+<p>
+<PRE>
+
+                        Dimmer
+                         +--+  Choke
+    AC Live/hot o--------|  |--^^^^^^^^--+--------------+
+                         +--+            |              |
+                                         |              |
+                   +---------------------+              |
+                   |                     |              |
+                   +-+   +---------------+  +-------+   |
+                      )|(                   |       |   |
+        Filament      )|(                   |      -|---|-
+      Transformer     )| +------------------+     |  ^^^  | Tube
+      2 * 6.3V 2A     )|                          |       |
+                      )|                          |       |
+                      )| +------------------+     |  ^^^  |
+                      )|(                   |      -|---|-
+                      )|(                   |       |   |  
+                   +-+   +---------------+  +--------   |
+                   |                     |              |
+AC Neutral/cold o--+---------------------+--------------+
+
+</PRE>
+<p>
+The lamp must be in a earthed / grounded reflector fitting. The metal
+end caps of the tube must be connected to the reflector. The dimmer MUST
+be a 'hard fired' dimmer capable of operating an inductive load. The
+choke is a standard type for the tube in use. Play with an inexpensive
+everyday tube before using expensive aquaria ones. with a 240 VAC supply a
+4 foot 40W tube operates ok. The main difficulty with this circuit is
+in getting the tube to start - starting is greatly helped by a grounded
+reflector fitting and connecting the metal end caps of the tube to the 
+reflector (Don't ask - it works!). The transformer can be a standard 
+valve filament transformer - use a separate transformer for each end
+of the tube if you are unsure of the insulation between the secondaries 
+of any transformer that you buy. As the tube draws less current the 
+voltage across it rises, turning up the heat in the filaments. At start
+up, maximum voltage is across the lamp and so the filaments are fully
+on. All dimming ballasts/chokes use some scheme to add extra heat to
+the filaments at dim running. An undimmed tube draws enough current to
+keep the filaments warm by itself. There is no glow starter or other
+starting device in the circuit, so the lamps tend to come on smoothly
+with no flickering. Shorter tubes are easier to start.  New slimline 
+tubes are a real pain to start.
+<p>
+<b>Dimming fluorescents 6:</b>
+<p>
+(From: Bruce G. Bostwick (llbgb@utxdp.dp.utexas.edu)).
+<p>
+This applies to rapid start fixtures.
+<p>
+If the fixture says "RAPID START" somewhere on it or on the package it came
+in, the internal schematic will be roughly as follows:
+<p>
+<PRE>
+
+                      || +-------+---------o
+AC line H o---------+ ||(   +----+            to both pins on
+                     )||(  (  <-6.3VAC        one end
+                     )||(   +--------------o
+                     )||( 
+                     )|| +=---- 2kVAC* -------------------------+
+                     )||(                                      _|_
+                     )||(   +--------------o                  ///
+                     )||(  (  <-6.3VAC        to both pins on
+AC line N o---------+ ||(   +----+            the other end
+                      || +-------+---------o
+
+</PRE>
+<p>
+*The high voltage winding of the secondary is on a branch magnetic
+circuit that limits the output current to the mercury discharge.
+Most of the 48" 40W "shop light" type of bulbs use this.
+Open circuit voltage will be in the kilovolt range, while the
+voltage across a lighted tube will be somewhat less than that
+and *exceedingly* non-sinusoidal.
+<p>
+If you're using the big bulbs (F96T12's for example) the ballast will only
+have the high voltage winding and the cathodes are heated by ionic
+bombardment from the mercury arc.  These take a bit longer to light up
+when the power is turned on.
+<p>
+If you want instantaneous on/off control, I'd suggest using 4-footers and
+linking up two ballasts in such a way that the cathode heaters are driven
+from one which is always on, and the arc is driven from the other which is
+turned on and off as you desire.  They won't last too long that way, but
+it will work better for show effects.  The cathodes could be driven from
+a pair of low-voltage filament transformers, but be sure to isolate them
+well -- or you could use a ballast with a blown HV secondary ...
+<p>
+Another suggestion: Use solid-state relays to drive the ballast primaries.
+These are fairly cheap and provide clean current-zero-crossing switching
+even with very reactive loads (I've used them for such! ;-) and provide
+a neat and rugged way to connect the lights to logic controls such as your
+computer -- great for light sequencing.
+<p>
+<b>Dimming fluorescents 7:</b>
+<p>
+(From: a-freak@freenet.de.)
+<p>
+The magazine "Elektor" developed a dimming circuit for fluorescent lamps
+running at 230 V which is wired in *parallel* to the lamp at the place where
+usually the glow starter is located.  I tried it and it works well for
+short lamps of the 18W-type but very unstable with the large ones.
+<p>
+In my opinion this circuit is especially nice if you want to dim up a lamp
+from zero brightness (lamp shorted, full preheating and maximum current) to
+full operation (usual values), for example to simulate a sunrise.
+<p>
+<b>Dimming fluorescents 8:</b>
+<p>
+(From: Charles R. Patton (patton@dt.wdc.com)).
+<p>
+Advance (and probably others) made special ballasts for 60 Hz (non-electronic
+such as with a Variac) dimming.  One of the main characteristics was the extra
+wire for the Variac (or symmetrical electronic dimmer) input.  The trick was to
+keep the filaments warm on the tube, therefore the separate filament power
+which doesn't get varied so that a larger dimming range was possible.  This
+also makes for much longer lifetimes for the tube because cold electrodes are
+subject to heavy ion bombardment until they heat up from the normal current
+(which doesn't exist on a dimmed tube.)  As I understand it, some electronic 
+ballasts will power the filament separately for a period of time to get 
+it to temperature, then apply high voltage excitation to light the tube.
+
+<h3><A NAME="ioiled">LED Tubular F-Lamp Replacements</A></h3>
+
+It was inevitable: Fluorescent lamps (including CFLs) are going the way of
+the dinosaur.  There are now LED (Light Emitting Diode) replacements for
+virtually all common shapes and sizes of fluorescent lamps.  As of 2017,
+these tend to be about twice as efficient as those they replace, come in
+all colors, are instant-on, don't have problems at low temperature, last
+longer, are more robust, eliminate buzzing ballasts, and contain no mercury.
+End-of-life is likely to be a slow decline in brightness, not a sudden
+failure.  And lifetime is claimed to be 5 to 10 times that of F-lamps
+meaning that in most applications, they will never need to be replaced.
+Another benefit is that the size no longer dictates the power.  For example,
+4 foot lamps are no longer limited to 34 or 40 W (equivalent).  It just
+depends on how many LEDs are stuffed inside. ;-)  An LED lamp using a similar
+amount of power could be 2 to 3 times as bright.  However, many of these
+originate from the Far East and my not be the latest and greatest (most
+efficient) technology.  And they may have no real specifications other than
+(for example) 4 foot T8.  I purchased some that were supposed to be 36 W
+with luminous flux of 3,600 lumens.  The input current as measured with a
+Fluke 87 was 0.45 A but the power factor is probably wacky so the actual
+current may be lower and accounting for losses in the "ballast", 36 W
+into the LED array is possible.  They do appear somewhat brighter than the
+40 W f-lamps they replaced, so 3,600 lm is also possible but that's harder
+to really quantify.  And at 36 W, the most efficient LEDs should do better.
+<p>
+However, one notable difference in appearance is that since the LEDs are
+generally in a single or dual linear string on one side of a PCB/heatsink,
+the light emission is not uniform
+as with a fluorescent (tube) lamp, but over less than 180 degrees
+in a downward direction relative to the fixture.  (Though some permit
+the lamp to be rotated in the socket.)  Even with a diffused/frosted cover
+(which reduces light output by 5 to 10 percent) the emission is far from
+uniform.  In most instances for ceiling fixtures and/or where there is an
+additional diffusing cover over the fixture, this ends up being an
+advantage, resulting in more useful light without annoying hot spots.
+However, in some cases, especially where the inner white surface of the
+fixture helps to diffuse the light, the change in appearance will prove
+annoying, or at least different and take some getting used to.
+<p>
+Installation usually requires removing and bypassing the original ballast
+since the current regulator for the LED string is built into the lamp
+itself.  The simplest arrangement is where the voltage is fed from each
+end, just requiring that the original wiring be cut and the line connected
+directly to the sockets ("tombstones"), one for Line and the other for Neutral.
+But some feed the input from one end which requires also modifying or
+replacing sockets that short the pins (for safety) when no lamp is installed,
+as with some types of ballasts.  I would also recommend installing a
+fuse since it's unclear how much protection - if any - is present inside the
+LED ballast.  A 1 amp fuse is probably satisfactory for most sizes.
+<p>
+The cost for the LED lamps
+may still be somewhat higher but not outrageously so as the prices of
+tubular F-lamps have been increasing steadily due to reduced demand
+(especially for anything that isn't a standard 4 foot 34/40 W equivalent).
+<p>
+This is the future.
+<p>
+Construction typically uses multiple high brightness white SMT LEDs
+arranged in multiple series strings.
+For example, a replacement for the common 34/40 W 4 foot lamp that I tested
+and repaired had 5 paralleled groups of 24 LEDs in series.  These were SMT
+parts on a flexible PCB bonded to an aluminum heat spreader, which fit into an
+aluminum channel.  The voltage drop across each group was about
+75 V and the current was about 60 mA driven by a compact electronic
+switchmode "ballast".  With the simple arrangement, if a single
+LED goes open, a 20 percent stretch of the lamp will be dark, which is
+exactly what happened.  A dead LED can be bypassed with a jumper resulting in
+an almost undetectable low brightness area.  The slight difference in
+voltage drop across the group with the bad LED of around 4 percent
+will probably make no noticeable difference in brightness or life.  But
+a resistor or string of silicon diodes can be installed to
+make up the voltage difference if a replacement LED isn't installed.
+One effect of a resistor, though, is that at turn-off, the brightness
+of the group with the resistor will decay more slowly than the others,
+which is....interesting.
+<p>
+(From: Don Klipstein (don@donklipstein.com).)
+<p>
+I don't have experience with LED replacements for fluorescent lamps, 
+either ones that require ballasts or ones that are to be powered 
+directly from the line.
+<p>
+One thing I do know is that the ones that require ballasts at least 
+generally draw less current than fluorescent bulbs do, at least in the 
+case of T8.  So I think the LED tube has some impedance or voltage drop 
+beyond what T8 fluorescent bulbs have, so the open circuit voltage of 
+the ballast would matter more and the amount of current supplied by the 
+ballast to fluorescent bulbs would matter less, in comparing T8 
+ballast-requiring LED tubes to fluorescent bulbs.  A T12 ballast has 
+lower output voltage and higher output current than a T8 ballast.  So, I 
+think a T8 ballast-requiring LED tube will be underpowered by a T12 
+ballast due to the lower output voltage.  But I am not sure about this!  
+If the LED tube is overpowered, it may appear to be operating properly 
+at its normal brightness, so this is a concern.
+<p>
+One concern I have is that T8 fluorescent ballasts are usually 
+instant start so they usually do not supply a voltage across the two 
+pins on each end of a fluorescent bulb, and T12 ballasts are generally 
+rapid start so they do supply a voltage across the pins on each end of 
+the bulb.  If one is going to be adventurous and use a T8 LED 
+replacement tube with a T12 ballast, I recommend removing one of the two 
+wires from each lampholder (socket or "tombstone").  (Unless the LED 
+tubes come with a statement that they are compatible with rapid start 
+ballasts.)
+<p>
+But even if this works, there is a liability issue.  If a fire starts 
+at or around a hacked electrical device, the fire insurance company 
+could cause major grief, even if the hack did not increase any 
+electrical or thermal stresses that caused or contributed to the fire.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#fltoc">Sam's F-Lamp FAQ Table of Contents</A>.
+<p>
+-- end V2.47 --
+<p>
+</BODY>
+</HTML>

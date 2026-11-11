@@ -1,0 +1,462 @@
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Notes on the Troubleshooting and Repair of Television Sets</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq.htm">https://www.repairfaq.org/samnew/tvfaq.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>Notes on the Troubleshooting and Repair of Television Sets</h1>
+<h2>Version 3.15a (15-May-06)</h2>
+<h3>
+Copyright &copy 1994-2007
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<hr>
+<br>
+ <form method="post"
+ action="../cgi-bin/United.cgi">You
+ may <input name="ACTION" value="download" type="hidden">
+ <input name="Download" value="[Download]" type="submit">
+ <input name="FAQ" value="tvfaq" type="hidden">
+ the <b>entire</b> TV FAQ as one file 
+ <font color="red">OR</font> leave
+ <input name="REF" value="SER-MiRrOr-TVFAQ" type="hidden">
+ <input name="TO" value="ADMIN" type="hidden">
+ <input name="ACTION" value="feedback" type="hidden">
+ <input name="Feedback" value="[Feedback]" type="submit">
+ </form>
+<p>
+<A NAME="tvtoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><a HREF="tvfaq/tvaac.htm">Preface</a>
+ <ul>
+ <li><A HREF="tvfaq/tvaac.htm">Author and Copyright</A>
+ <li><A HREF="tvfaq/tvndis.htm">DISCLAIMER</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvndis.htm">Introduction</a>
+ <ul>
+ <li><A HREF="tvfaq/tvndis.htm">Television at the crossroads
+ <li><A HREF="tvfaq/tvrfcvf.htm">Television receiver fundamentals</A>
+ <li><A HREF="tvfaq/tvtvrep.htm">TV repair</A>
+ <li><A HREF="tvfaq/tvreprep.htm">Repair or replace</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvsubs.htm">TV Receivers 101</a>
+ <ul>
+ <li><A HREF="tvfaq/tvsubs.htm">Subsystems of a television set</A>
+ <li><A HREF="tvfaq/tvprojtv.htm">Why projection TVs are not just normal TVs in big boxes</A>
+ <li><A HREF="tvfaq/tvfmitvt.htm">For more information on TV technology</A>
+ <li><A HREF="tvfaq/tvonline.htm">On-line tech-tips databases</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvccrtssa.htm">CRT Basics</a>
+ <ul>
+ <li><A HREF="tvfaq/tvccrtssa.htm">Color CRTs - shadow masks and aperture grills</A>
+ <li><A HREF="tvfaq/tvdegacrt.htm">Degaussing (demagnetizing) a CRT</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvgtvpc.htm">TV Placement And Preventive Maintenance</a>
+ <ul>
+ <li><A HREF="tvfaq/tvgtvpc.htm">General TV placement considerations</A>
+ <li><A HREF="tvfaq/tvprevm.htm">Preventive maintenance</A>
+ <li><A HREF="tvfaq/tvwautvc.htm">Warning about using a TV as a computer or video game display</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvsaf.htm">TV Troubleshooting</a>
+ <ul>
+ <li><A HREF="tvfaq/tvsaf.htm">SAFETY</A>
+ <li><A HREF="tvfaq/tvsafg.htm">Safety guidelines</A>
+ <li><A HREF="tvfaq/tvwarndcn.htm">Warning about disconnecting CRT neck board</A>
+ <li><A HREF="tvfaq/tvttips.htm">Troubleshooting tips</A>
+ <li><A HREF="tvfaq/tvprgdiag.htm">Program to aid in diagnosing TV set problems</A>
+ <li><A HREF="tvfaq/tvtsteq.htm">Test equipment</A>
+ <li><A HREF="tvfaq/tvihw.htm">Incredibly Handy widgets</A>
+ <li><A HREF="tvfaq/tvsafdis.htm">Safe discharging of capacitors in TVs and video monitors</A>
+ <li><A HREF="tvfaq/tvaiodc.htm">Additional information on discharging CRTs</A>
+ <li><A HREF="tvfaq/tvrchvc.htm">Removing the CRT HV connector</A>
+ <li><A HREF="tvfaq/tvsttlpt.htm">Safe troubleshooting techniques for line powered TVs</A>
+ <li><A HREF="tvfaq/tvtslbt.htm">The series light bulb trick</A>
+ <li><A HREF="tvfaq/tvgiatv.htm">Getting inside a TV</A>
+ <li><A HREF="tvfaq/tvscbpait.htm">Specific considerations before poking around inside a TV or monitor</A>
+ <li><A HREF="tvfaq/tvdusttv.htm">Dusting out the inside of a TV</A>
+ <li><A HREF="tvfaq/tvtatwtmd.htm">Troubleshooting a TV with the mainboard disconnected</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvupadj.htm">TV Adjustments</a>
+ <ul>
+ <li><A HREF="tvfaq/tvupadj.htm">User picture adjustment</A>
+ <li><A HREF="tvfaq/tvintadjs.htm">Internal adjustments</A>
+ <li><A HREF="tvfaq/tvfocadj.htm">Focus adjustment</A>
+ <li><A HREF="tvfaq/tvadjscc.htm">Adjustment of the internal SCREEN and color controls</A>
+ <li><A HREF="tvfaq/tvoptsbb.htm">Optimal procedure for setting brightness/background and screen adjustments</A>
+ <li><A HREF="tvfaq/tvcbadj.htm">Color balance adjustment</A>
+ <li><A HREF="tvfaq/tvmoctvc.htm">More on 'Calibrating' TV color</A>
+ <li><A HREF="tvfaq/tvhpssla.htm">Horizontal position, size, and linearity adjustment</A>
+ <li><A HREF="tvfaq/tvvpsla.htm">Vertical position, size, and linearity adjustment</A>
+ <li><A HREF="#tvcolltComments on linearity or lack thereof</A>
+ <li><A HREF="tvfaq/tvpinadj.htm">Pincushion adjustments</A>
+ <li><A HREF="tvfaq/tvgeoadj.htm">Geometry adjustment</A>
+ <li><A HREF="tvfaq/tvwcbmmse.htm">Why is the convergence on my set bad near the edges</A>
+ <li><A HREF="tvfaq/tvcrtpca.htm">CRT purity and convergence problems</A>
+ <li><A HREF="tvfaq/tvcrtpura.htm">CRT purity adjustment</A>
+ <li><A HREF="tvfaq/tvcrtcona.htm">CRT convergence adjustment</A>
+ <li><A HREF="tvfaq/tvtiltpic.htm">Tilted picture</A>
+ <li><A HREF="tvfaq/tvbwtspga.htm">B/W TV size, position, and geometry adjustments</A>
+</ul>
+<p>
+<li><A HREF="tvfaq/tvlvpsf.htm">Low Voltage Power Supply Problems</A>
+<ul>
+ <li><A HREF="tvfaq/tvlvpsf.htm">Low voltage power supply fundamentals</A>
+ <li><A HREF="tvfaq/tvstndbyp.htm">Standby power supplies</A>
+ <li><A HREF="tvfaq/tvttvpsfe.htm">Typical TV power supply front end</A>
+ <li><A HREF="tvfaq/tvtotdead.htm">Totally dead set</A>
+ <li><A HREF="tvfaq/tvintdead.htm">Intermittently dead set - bad cordset</A>
+ <li><A HREF="tvfaq/tvpbosif.htm">Power button on set is flakey</A>
+ <li><A HREF="tvfaq/tvtvbfuse.htm">TV blows fuse</A>
+ <li><A HREF="tvfaq/tvfbotbus.htm">Fuse blows or TV blows up when sync is disrupted</A>
+ <li><A HREF="tvfaq/tvifbdls.htm">Internal fuse blew during lightning storm (or elephant hit power pole)</A>
+ <li><A HREF="tvfaq/tvfrbtcpo.htm">Fuse replaced but TV clicks with power-on but no other action</A>
+ <li><A HREF="tvfaq/tvpotttccc.htm">Power-on tick-tick-tick or click-click-click but no other action</A>
+ <li><A HREF="tvfaq/tvnopicorns.htm">No picture or raster and no sound</A>
+ <li><A HREF="tvfaq/tvredwphb.htm">Reduced width picture and/or hum bars in picture and/or hum in sound</A>
+ <li><A HREF="tvfaq/tvexcbpff.htm">Excessive B+ from fixed regulator like STR30123/STR30130/STR30135</A>
+ <li><A HREF="tvfaq/tvpwrcyc.htm">TV power cycling on and off</A>
+ <li><A HREF="tvfaq/tvdttttfff.htm">Dead TV with periodic tweet-tweet, flub-flub, or low-low voltage</A>
+ <li><A HREF="tvfaq/tvbypsuc.htm">Bypassing the Startup Circuit</A>
+ <li><A HREF="tvfaq/tvshortc.htm">Shorted Components</A>
+ <li><A HREF="tvfaq/tvstartupp.htm">Startup problems - nothing happens, click, or tick-tick-tick sound</A>
+ <li><A HREF="tvfaq/tvtvtpawu.htm">TV turns off after warming up</A>
+ <li><A HREF="tvfaq/tvtvdpui.htm">TV doesn't power up immediately</A>
+ <li><A HREF="tvfaq/tvoldtrwp.htm">Old TV requires warmup period</A>
+ <li><A HREF="tvfaq/tvsdbpwb.htm">TV shuts down with bright picture or when brightness is turned up</A>
+ <li><A HREF="tvfaq/tvrelaysp.htm">Relays in the Power Circuitry of TVs</A>
+ <li><A HREF="tvfaq/tvposistor.htm">What is a posistor?</A>
+ <li><A HREF="tvfaq/tvflamepr.htm">Flameproof Resistors</A>
+ <li><A HREF="tvfaq/tvwhcww.htm">Width and height change with warmup</A>
+ <li><A HREF="tvfaq/tvprbscr.htm">Problems with SCR based regulators</A>
+ <li><A HREF="tvfaq/tvsddpwcc.htm">TV shuts down with dark picture or when changing channels</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvdeflf.htm">Deflection Problems</a>
+ <ul>
+ <li><A HREF="tvfaq/tvdeflf.htm">Deflection fundamentals</A>
+ <li><A HREF="tvfaq/tvavsr.htm">About the vertical scan rate</A>
+ <li><A HREF="tvfaq/tvpsitd.htm">Picture squeezed in then died</A>
+ <li><A HREF="tvfaq/tvtvnonl.htm">TV non-linearity</A>
+ <li><A HREF="tvfaq/tvhdeflsd.htm">Horizontal deflection shutting down</A>
+ <li><A HREF="tvfaq/tvtvwns.htm">TV will not sync</A>
+ <li><A HREF="tvfaq/tvhlockl.htm">Horizontal lock lost</A>
+ <li><A HREF="tvfaq/tviwwohb.htm">Insufficient width (without hum bars)</A>
+ <li><A HREF="tvfaq/tvvlockl.htm">Vertical lock lost</A>
+ <li><A HREF="tvfaq/tvvsquish.htm">Vertical squashed</A>
+ <li><A HREF="tvfaq/tvpopco.htm">Part of picture cut off</A>
+ <li><A HREF="tvfaq/tvsingvli.htm">Single Vertical Line</A>
+ <li><A HREF="tvfaq/tvsinghli.htm">Single Horizontal Line</A>
+ <li><A HREF="tvfaq/tvkeyst.htm">Keystone shaped picture</A>
+ <li><A HREF="tvfaq/tvlohsaw.htm">Loss of Horizontal Sync (also applies to vertical) after Warmup</A>
+ <li><A HREF="tvfaq/tvijjporb.htm">Intermittent jumping or jittering of picture or other random behavior</A>
+ <li><A HREF="tvfaq/tvhorkboeh.htm">Horizontal output transistors keep blowing (or excessively hot)</A>
+ <li><A HREF="tvfaq/tvhotbari.htm">Horizontal output transistors blowing at random intervals</A>
+ <li><A HREF="tvfaq/tvvfold.htm">Vertical foldover</A>
+ <li><A HREF="tvfaq/tvcovertp.htm">Comments on vertical problems</A>
+ <li><A HREF="tvfaq/tvjagged.htm">Jagged or uneven vertical sweep</A>
+ <li><A HREF="tvfaq/tvewpp.htm">Excessive width/pincushioning problems</A>
+ <li><A HREF="tvfaq/tvdeflytst.htm">Deflection yoke testing</A>
+ <li><A HREF="tvfaq/tvdeflyrep.htm">Deflection yoke repair</A>
+ <li><A HREF="tvfaq/tvtofly.htm">Testing of flyback (LOPT) transformers</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvhvpsf.htm">High Voltage Power Supply Problems</a>
+ <ul>
+ <li><A HREF="tvfaq/tvhvpsf.htm">HV power supply fundamentals</A>
+ <li><A HREF="tvfaq/tvtripler.htm">What is a tripler?</A>
+ <li><A HREF="tvfaq/tvhvsdtxrp.htm">High voltage shutdown due to X-ray protection circuits</A>
+ <li><A HREF="tvfaq/tvlonhv.htm">Low or no high voltage</A>
+ <li><A HREF="tvfaq/tvexcesshv.htm">Excessive high voltage</A>
+ <li><A HREF="tvfaq/tvscohvb.htm">Snaps, crackles, and other HV breakdown</A>
+ <li><A HREF="tvfaq/tvasocfcrt.htm">Arcing, sparking, or corona from CRT HV anode (red wire/suction cup)</A>
+ <li><A HREF="tvfaq/tvaffpv.htm">Arcing from flyback or vicinity</A>
+ <li><A HREF="tvfaq/tvdcpraf.htm">Dave's complete procedure for repair of an arcing flyback</A>
+ <li><A HREF="tvfaq/tvaasggdt.htm">Arcing at spark gaps and gas discharge tubes on CRT neck board or elsewhere</A>
+ <li><A HREF="tvfaq/tvadbcdcr.htm">Arcing due to bad connections to or disconnected CRT return</A>
+ <li><A HREF="tvfaq/tvflashover.htm">Flashovers inside the CRT</A>
+ <li><A HREF="tvfaq/tvozone.htm">Ozone smell and/or smoke from TV</A>
+ <li><A HREF="tvfaq/tvxrayoem.htm">X-ray and other EM emission from my TV or monitor?</A>
+ <li><A HREF="tvfaq/tvsibwaxray.htm">Should I be worried about X-ray exposure while servicing a TV or monitor?</A>
+ <li><A HREF="tvfaq/tvmoradft.htm">More on radiation from TVs and monitors</A>
+ <li><A HREF="tvfaq/tvflyshot.htm">Flyback shot by 4 year old with water pistol</A>
+ <li><A HREF="tvfaq/tvbloom.htm">Blooming or breathing problems</A>
+ <li><A HREF="tvfaq/tvefosvoc.htm">Erratic focus or screen (G2) voltage and/or controls on flyback</A>
+ <li><A HREF="tvfaq/tvfsdbs.htm">Focus/Screen divider bypass surgery</A>
+ <li><A HREF="tvfaq/tvdoefosv.htm">Decaying or erratic focus or screen (G2) voltages</A>
+ <li><A HREF="tvfaq/tvdfwfcdb.htm">Disconnecting flyback wire(s) from CRT driver board</A>
+ <li><A HREF="tvfaq/tvfpsvdaw.htm">Focus or screen voltage drifts after warmup only when CRT is connected</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvncbwp.htm">Raster, Color, and Video Problems</a>
+ <ul>
+ <li><A HREF="tvfaq/tvncbwp.htm">No color - black and white picture</A>
+ <li><A HREF="tvfaq/tvscbanb.htm">Saturated color but almost no brightness</A>
+ <li><A HREF="tvfaq/tvbchne.htm">Brightness control has no effect</A>
+ <li><A HREF="tvfaq/tvoctwts.htm">One color is too weak or too strong</A>
+ <li><A HREF="tvfaq/tvpsychc.htm">Psychodelic color</A>
+ <li><A HREF="tvfaq/tvnpdpep.htm">No picture/dark picture/erratic picture</A>
+ <li><A HREF="tvfaq/tvtmmqcs.htm">TV and monitor manufacturing quality and cold solder joints</A>
+ <li><A HREF="tvfaq/tvwctmlsp.htm">Why can't TV manufacturers learn to solder properly?</A>
+ <li><A HREF="tvfaq/tvintmisc.htm">Intermittent or missing colors</A>
+ <li><A HREF="tvfaq/tvscomtw.htm">Some commentary on monitor and TV whacking</A>
+ <li><A HREF="tvfaq/tvretlin.htm">Retrace lines in picture</A>
+ <li><A HREF="tvfaq/tvwgrlin.htm">White/gray retrace lines</A>
+ <li><A HREF="tvfaq/tvrgbrlin.htm">Red, green, or blue retrace lines</A>
+ <li><A HREF="tvfaq/tvbcrtcrl.htm">Bad CRT causing retrace lines</A>
+ <li><A HREF="tvfaq/tvrgbfog.htm">Red, green, or blue full on - fog over picture</A>
+ <li><A HREF="tvfaq/tvcrtshorts.htm">Shorts in a CRT</A>
+ <li><A HREF="tvfaq/tvpisofcs.htm">Providing isolation for a CRT H-K short</A>
+ <li><A HREF="tvfaq/tvrescuesc.htm">Rescuing a shorted CRT</A>
+ <li><A HREF="tvfaq/tvptrep.htm">Picture tube replacement</A>
+ <li><A HREF="tvfaq/tvhvtfs.htm">High voltage to focus short</A>
+ <li><A HREF="tvfaq/tvdarkpic.htm">Dark picture</A>
+ <li><A HREF="tvfaq/tvbrightcrt.htm">Brightening an old CRT</A>
+ <li><A HREF="tvfaq/tvptbright.htm">Picture tube brightener</A>
+ <li><A HREF="tvfaq/tvmdmbcrt.htm">More drastic measures to brighten CRT</A>
+ <li><A HREF="tvfaq/tvlpsdof.htm">Left portion of screen is dark or faded</A>
+ <li><A HREF="tvfaq/tvcbcaslr.htm">Color balance changes across screen from left to right</A>
+ <li><A HREF="tvfaq/tvbleedhigh.htm">Bleeding highlights</A>
+ <li><A HREF="tvfaq/tvtrailine.htm">Trailing lines in one or more colors</A>
+ <li><A HREF="tvfaq/tvbccltras.htm">Brightness changes from left-to-right across screen</A>
+ <li><A HREF="tvfaq/tvpicfade.htm">Picture fades in and out</A>
+ <li><A HREF="tvfaq/tvobrightfl.htm">Occasional brightness flashes</A>
+ <li><A HREF="tvfaq/tvebaowop.htm">Excessive brightness and/or washed out picture</A>
+ <li><A HREF="tvfaq/tvbadfocus.htm">Bad focus (fuzzy picture)</A>
+ <li><A HREF="tvfaq/tvfocdrift.htm">Focus drift with warmup</A>
+ <li><A HREF="tvfaq/tvbfocacb.htm">Bad focus and adjustment changes brightness</A>
+ <li><A HREF="tvfaq/tvccofprb.htm">Charlie's comments on focus problems</A>
+ <li><A HREF="tvfaq/tvblankpic.htm">Blank picture, good channel tuning and sound</A>
+ <li><A HREF="tvfaq/tvpblob.htm">Purple blob - or worse</A>
+ <li><A HREF="tvfaq/tvcrings.htm">Color rings - bullseye pattern</A>
+ <li><A HREF="tvfaq/tvmfixfpp.htm">Magnet fix for purity problems - if duct tape works, use it!</A>
+ <li><A HREF="tvfaq/tvctvodoc.htm">Color TV only displays one color</A>
+ <li><A HREF="tvfaq/tvdisred.htm">Disappearing Red (or other color)</A>
+ <li><A HREF="tvfaq/tvwanderbb.htm">The wandering black blob on old Sony</A>
+ <li><A HREF="tvfaq/tvvbocbar.htm">Vertical brightness or color bars</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvmrfaoc.htm">Tuner, AGC, and Sync Problems</a>
+ <ul>
+ <li><A HREF="tvfaq/tvmrfaoc.htm">No reception from antenna or cable</A>
+ <li><A HREF="tvfaq/tvpiowoon.htm">Picture is overloaded, washed out, or noisy</A>
+ <li><A HREF="tvfaq/tvjpows.htm">Jumping picture on white scenes</A>
+ <li><A HREF="tvfaq/tviwuvrc.htm">Interference when using VCR RF connection</A>
+ <li><A HREF="tvfaq/tvrfiotv.htm">RF Interference on TV</A>
+ <li><A HREF="tvfaq/tvpwglvhb.htm">Problems with ground loops and video hum bars</A>
+ <li><A HREF="tvfaq/tvmoncbc.htm">Missing or noisy channel or block of channels</A>
+ <li><A HREF="tvfaq/tvlocaw.htm">Loss of Channel after Warmup</A>
+ <li><A HREF="tvfaq/tvctdaswu.htm">Channel tuning drifts as set warms up</A>
+ <li><A HREF="tvfaq/tvnipasdbs.htm">Noise in picture and sound due to bright scene</A>
+ <li><A HREF="tvfaq/tviispsdc.htm">Internal interference - switchmode power supplies and digital circuitry</A>
+ <li><A HREF="tvfaq/tvtdrabear.htm">Those darn rabbit ears</A>
+ <li><A HREF="tvfaq/tvherring.htm">Herringbone lines in picture</A>
+ <li><A HREF="tvfaq/tvemrfihell.htm">EM or RFI hell?</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvpfnaud.htm">Audio Problems</a>
+ <ul>
+ <li><A HREF="tvfaq/tvpfnaud.htm">Picture fine, no audio</A>
+ <li><A HREF="tvfaq/tvwodaud.htm">Weak or distorted audio</A>
+ <li><A HREF="tvfaq/tvbuzzing.htm">Buzzing TV</A>
+ <li><A HREF="tvfaq/tvchatyoke.htm">Chattering yoke</A>
+ <li><A HREF="tvfaq/tvwhine.htm">High pitched whine or squeal from TV with no other symptoms</A>
+ <li><A HREF="tvfaq/tvreyoken.htm">Reducing/eliminating yoke noise</A>
+ <li><A HREF="tvfaq/tvwhinewo.htm">Whining when off?</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvgerrbeh.htm">Miscellaneous Problems</a>
+ <ul>
+ <li><A HREF="tvfaq/tvgerrbeh.htm">General erratic behavior</A>
+ <li><A HREF="tvfaq/tvwtrint.htm">Wiring transmitted interference</A>
+ <li><A HREF="tvfaq/tvjitflkdpa.htm">Jittering or flickering due to problems with AC power</A>
+ <li><A HREF="tvfaq/tvbftbav.htm">TV blows fuses or trips breakers or worse when A/V connections are made</A>
+ <li><A HREF="tvfaq/tvshakes.htm">My TV has the shakes</A>
+ <li><A HREF="tvfaq/tvblkbox.htm">TV displays black box with normal picture border</A>
+ <li><A HREF="tvfaq/tvadvover.htm">Advertising overload</A>
+ <li><A HREF="tvfaq/tvstrcodes.htm">Strange codes appearing on TV screen</A>
+ <li><A HREF="tvfaq/tvdemomode.htm">Releasing 'demo' mode</A>
+ <li><A HREF="tvfaq/tvrainedon.htm">TV was rained on</A>
+ <li><A HREF="tvfaq/tvdropped.htm">TV was dropped</A>
+ <li><A HREF="tvfaq/tvrcleanio.htm">Really cleaning a TV inside and out</A>
+ <li><A HREF="tvfaq/tvsmenuwnga.htm">Setup menus will not go away or hieroglyphics on screen</A>
+ <li><A HREF="tvfaq/tvadjlost.htm">Setup adjustments lost - TV service codes</A>
+ <li><A HREF="tvfaq/tvsmcaution.htm">Service menu caution</A>
+ <li><A HREF="tvfaq/tvsnumulc.htm">Strange number in upper left corner in Magnavox service mode</A>
+ <li><A HREF="tvfaq/tvdwstorage.htm">TV doesn't work after being in storage</A>
+ <li><A HREF="tvfaq/tvoldertvs.htm">Older TVs with multiple intermittent problems</A>
+ <li><A HREF="#tvburnsml":>TV has burning smell</A>
+ <li><A HREF="tvfaq/tvsdnptq.htm">Static discharge noise and picture tube quality</A>
+ <li><A HREF="tvfaq/tvrpdptrcu.htm">Revival of dead or tired remote control units</A>
+ <li><A HREF="https://www.repairfaq.org/samnew/tvfaq/tvtvpwirrecv.htm">Problems with the IR remote receiver</A>
+ <li><A HREF="tvfaq/tvsylyoem.htm">So you lost your original remote (or it fell in the toilet)</A>
+ <li><A HREF="tvfaq/tvloudspk.htm">Loudspeakers and TVs</A>
+ <li><A HREF="tvfaq/tvsoraecaps.htm">Should I replace all the electrolytic capacitors if I find a bad one?</A>
+ <li><A HREF="tvfaq/tvslolatva.htm">Sweet little old ladies and TVs from attic</A>
+ <li><A HREF="https://www.repairfaq.org/samnew/tvfaq/tvphanspot.htm">Phantom spot or blob on CRT after set is shut off</A>
+ <li><A HREF="tvfaq/tvcbspo.htm">Comments on bright spot at power-off</A>
+ <li><A HREF="tvfaq/tvdispose.htm">Disposing of dead TVs (CRTs and charged HV capacitors)</A>
+ <li><A HREF="tvfaq/tvssconcab.htm">Shock and/or spark when connecting cable or other A/V components</A>
+ <li><A HREF="tvfaq/tvmacrovision.htm">What is the deal with Macrovision copy protection?</A>
+ <li><A HREF="tvfaq/tvagccopypr.htm">AGC and copy protection</A>
+ <li><A HREF="tvfaq/tvoscrsof.htm">On-screen clock runs slow or fast</A>
+ <li><A HREF="tvfaq/tvcpwctv.htm">Cold problems with cold TVs - or - an unhappy Christmas</A>
+ <li><A HREF="tvfaq/tvfconnbor.htm">F-connector broken off rear of TV or VCR</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvepwoge.htm">Some Model Specific Problems</a>
+ <ul>
+ <li><A HREF="tvfaq/tvepwoge.htm">Erratic problems with older GE TVs</A>
+ <li><A HREF="tvfaq/tveplmgrp.htm">Erratic problems on late model GE, RCA, or ProScan TV</A>
+ <li><A HREF="tvfaq/tvsmpns.htm">Sylvania/Magnavox/Philips - no startup</A>
+ <li><A HREF="tvfaq/tvsonyhstat.htm">Sony TVs/monitors and Hstat</A>
+ <li><A HREF="tvfaq/tvmohstat.htm">More on Hstat</A>
+ <li><A HREF="tvfaq/tvnvolmst.htm">No video on late model Sony TVs</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvvidstand.htm">Items of Interest</a>
+ <ul>
+ <li><A HREF="tvfaq/tvvidstand.htm">Various video standards</A>
+ <li><A HREF="tvfaq/tvaihxray.htm">An informal history of X-ray protection</A>
+ <li><A HREF="tvfaq/tvwitgoop.htm">What is this goop around some electrolytic capacitors and other components?</A>
+ <li><A HREF="tvfaq/tvwdflyback.htm">What does the flyback (LOPT) transformer do?</A>
+ <li><A HREF="tvfaq/tvwdflyfail.htm">Why do flyback (LOPT) transformers fail?</A>
+ <li><A HREF="tvfaq/tvbcthot.htm">Brief comments on testing the HOT</A>
+ <li><A HREF="tvfaq/tvcrtrejuv.htm">CRT rejuvenation</A>
+ <li><A HREF="tvfaq/tvmemchip.htm">Memory chips in TVs</A>
+ <li><A HREF="tvfaq/tvhdpipw.htm">How does Picture-In-Picture (PIP) work?</A>
+ <li><A HREF="tvfaq/tvtnscdgc.htm">Tony's notes on setting convergence on delta gun CRTs</A>
+ <li><A HREF="tvfaq/tvsagagslcrt.htm">Saga and general setup for large CRT TVs</A>
+ <li><A HREF="tvfaq/tvliqcfptv.htm">Liquid coupling fluid for projection TVs</A>
+ <li><A HREF="tvfaq/tvobslps.htm">Origin of burn spot/line on projection set</A>
+ <li><A HREF="tvfaq/tvbfdfps.htm">Blue focus different for projection sets?</A>
+ <li><A HREF="tvfaq/tvccpsod.htm">Comments on color purity, set orientation, and doming</A>
+ <li><A HREF="tvfaq/tvainsontv.htm">About instant-on TVs</A>
+ <li><A HREF="tvfaq/tvaguwatva.htm">About gadgets to use house wiring as TV antenna</A>
+ <li><A HREF="tvfaq/tvciasvideo.htm">Can I add an S-Video input to my TV or VCR?</A>
+ <li><A HREF="tvfaq/tvhdiaavio.htm">How do I add A/V inputs or outputs to a TV which does not have them built in?</A>
+ <li><A HREF="tvfaq/tvciadrgbi.htm">Can I add direct RGB inputs to a TV?</A>
+ <li><A HREF="tvfaq/tvavvhtatv.htm">Adding variable volume headphones to a TV</A>
+ <li><A HREF="tvfaq/tvbafranktv.htm">Building a Frankenstein TV</A>
+ <li><A HREF="tvfaq/tvtoscope.htm">Turning a TV (or monitor) into an oscilloscope?</A>
+ <li><A HREF="tvfaq/tvdavspos.htm">Displaying a video signal as a picture on an oscilloscope</A>
+ <li><A HREF="tvfaq/tvsslinefilt.htm">Use of surge suppressors and line filters</A>
+ <li><A HREF="tvfaq/tvlightningd.htm">Comments on lightning damage</A>
+ <li><A HREF="tvfaq/tvgfcitrip.htm">GFCI tripping with TV, monitor, or other high tech equipment</A>
+ <li><A HREF="tvfaq/tvmultisystvs.htm">Multisystem TVs</A>
+ <li><A HREF="tvfaq/tvntsconpal.htm">Playing NTSC videotape on a PAL TV</A>
+ <li><A HREF="tvfaq/tvbatvineur.htm">Buying a TV in Europe</A>
+ <li><A HREF="tvfaq/tvf3dsd.htm">Could a TV be modified for 3D (stereo) display?</A>
+ <li><A HREF="tvfaq/tvtvtomon.htm">Displaying TV on a computer monitor</A>
+ <li><A HREF="tvfaq/tvcvidtotv.htm">Displaying computer video on a TV</A>
+ <li><A HREF="tvfaq/tv4tvstoone.htm">How can I couple 4 TV screens to make them act like only one?</A>
+ <li><A HREF="tvfaq/tvscanvel.htm">What is Scan Velocity Modulation?</A>
+ <li><A HREF="tvfaq/tvablspp.htm">About Automatic Black Level Stabilization and possible problems</A>
+ <li><A HREF="tvfaq/tvkellfact.htm">What is Kell factor with respect to interlaced displays?</A>
+ <li><A HREF="tvfaq/tvhmvchip.htm">Homemade V-chip (or at least viewing limiter)</A>
+ <li><A HREF="tvfaq/tvaquadag.htm">What is Aquadag?</A>
+ <li><A HREF="tvfaq/tvmonandtv.htm">Combined computer monitor and TV</A>
+ <li><A HREF="tvfaq/tvitvsmps.htm">Interesting TV Switch Mode Power Supply</A>
+ <li><A HREF="tvfaq/tvhotsubsj.htm">The horizontal output transistor substitution jig trick</A>
+ <li><A HREF="tvfaq/tvkcotvsmpsr.htm">Ken's comments on (TV) SMPS repair</A>
+ <li><A HREF="tvfaq/tvirdetc.htm">IR detector circuit</A>
+ <li><A HREF="tvfaq/tvukstvi.htm">UK Satellite TV information</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvbdoicts.htm">International Color Television Standards</a>
+ <ul>
+ <li><A HREF="tvfaq/tvbdoicts.htm">Brief description of international color TV standards</A>
+ <li><A HREF="tvfaq/tvsqaaats.htm">Some questions and answers about TV standards</A>
+ <li><A HREF="tvfaq/tvpctvs.htm">Politically Correct TV Standards</A>
+ <li><A HREF="tvfaq/tvvpastps.htm">Variations on a 'standard' - the PAL system</A>
+ <li><A HREF="tvfaq/tvwapswathc.htm">What about PAL sets WITH a tint/hue control?</A>
+ <li><A HREF="tvfaq/tvtvswpw.htm">TV, shortwave, power worldwide</A>
+ <li><A HREF="tvfaq/tvctvsw.htm">Color television standards worldwide</A>
+ <li><A HREF="tvfaq/tvcabchan.htm">Cable channel allocation</A>
+ <li><A HREF="tvfaq/tvnocbfreq.htm">Notes on cable and broadcast frequencies</A>
+ <li><A HREF="tvfaq/tvhdtvfrgc.htm">How did the (vertical) frame rate get chosen</A>
+ <li><A HREF="tvfaq/tvwinsswf.htm">Why is the NTSC color subcarrier such a weird frequency?</A>
+ <li><A HREF="tvfaq/tvwimadohf.htm">What is the maximal allowed deviation of the horizontal frequency?</A>
+ <li><A HREF="tvfaq/tvinfcotvs.htm">Informal comparison of TV standards</A>
+ <li><A HREF="tvfaq/tvpalplus.htm">PAL-plus</A>
+ <li><A HREF="tvfaq/tvntsconpal.htm">More information about watching NTSC video on PAL systems</A>
+</ul>
+<p>
+<li><a HREF="tvfaq/tvadvtrb.htm">Service Information</a>
+ <ul>
+ <li><A HREF="tvfaq/tvadvtrb.htm">Advanced TV troubleshooting</A>
+ <li><A HREF="tvfaq/tvsrvman.htm">Service manuals for really old TVs</A>
+ <li><A HREF="tvfaq/tvhtlsiwa.htm">How to locate service info when all the little stickers have fallen off</A>
+ <li><A HREF="tvfaq/tvtechass.htm">Techical assistance help numbers</A>
+ <li><A HREF="tvfaq/tvwebres.htm">Web resources</A>
+ <li><A HREF="tvfaq/tvpartsinfo.htm">Parts information</A>
+ <li><A HREF="tvfaq/tvsugref.htm">Suggested references</A>
+ <li><A HREF="tvfaq/tvfccid.htm">FCC ID Numbers of TVs</A>
+ <li><A HREF="tvfaq/tvinterch.htm">Interchangeability of components</A>
+ <li><A HREF="tvfaq/tvhottp.htm">Horizontal output transistor pinouts</A>
+ <li><A HREF="tvfaq/tvhdylthot.htm">How do you locate the HOT</A>
+ <li><A HREF="tvfaq/tvrepptwt.htm">Replacement power transistors while testing</A>
+ <li><A HREF="tvfaq/tvtarhot.htm">Testing of replacement HOTs</A>
+ <li><A HREF="tvfaq/tvrryoke.htm">Removing and replacing the deflection yoke</A>
+ <li><A HREF="tvfaq/tvsoyoke.htm">Swapping of deflection yokes</A>
+ <li><A HREF="tvfaq/tvsocrts.htm">Swapping of CRTs</A>
+ <li><A HREF="tvfaq/tvdglue.htm">Decayed glue in electronic equipment</A>
+ <li><A HREF="tvfaq/tvrepparts.htm">Repair parts sources</A>
+</ul>
+</ul>
+<p>
+<hr>
+<form method="post"
+ action="../cgi-bin/United.cgi">You may
+ <input name="FAQ" value="tvfaq" type="hidden">
+ <input name="BF" value="tvfaq" type="hidden"><input name="TO"
+ value="ADMIN" type="hidden"><input name="ACTION" value="download"
+ type="hidden"> <input name="Download" value="[Download]"
+ type="submit"> the <b>entire</b> TV FAQ as one file  <font color="red">OR</font> 
+ leave<input name="REF" value="SER-MiRrOr-TVFAQ" type="hidden"> <input
+ name="TO" value="ADMIN" type="hidden"> <input name="ACTION" value="feedback"
+ type="hidden"> <input name="Feedback" value="[Feedback]"
+ type="submit">
+ </form>
+ <br>
+</BODY></HTML>

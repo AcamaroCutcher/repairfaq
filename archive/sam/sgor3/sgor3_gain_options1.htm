@@ -1,0 +1,94 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/sgor3/sgor3_gain_options1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/sgor3/sgor3_gain_options1.htm">https://www.repairfaq.org/sam/sgor3/sgor3_gain_options1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<title>Optical Receiver 3 (OR3) Gain Options</title>
+<center>
+<h1>Optical Receiver 3 (OR3) Gain Options</h1>
+
+<h3>Version 1.00 (16-Nov-21)
+</h3>
+</h2>
+<h3>
+<A HREF="https://www.repairfaq.org/sam/sgor3/copyright.htm">Copyright &copy</A> 1994-2022
+<br>
+Sam Goldwasser and Jan Beck<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="https://www.repairfaq.org/sam/sgor3/emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<h2>Summary</h2>
+
+Here are three minor variations of OR3 depending on maximum gain (or
+sensitivity).  Generally, the fully populated PCB can be used for any
+optical input power (and it also has a low and high gain setting based
+on the jumper on JP1).  Reducing the gain may be useful in a noisy
+environment or to simplify construction.  However, in most cases,
+everything here can be ignored. ;-)
+<p>
+<ol>
+<li><b>Low Gain Version:</b> Eliminate and bypass Gain Stage 2.  Jumper
+ the lower two pins of JP1:
+<p>
+<center>
+ <a target="SGOR3" href="sgor3lg.gif">
+ <img src="sgor3lg.gif" height=600></a>
+ <h3>OR3: Low Gain Schematic</h3>
+<p>
+ <a target="SGOR3" href="sgor3p2pcb_populated2.gif">
+ <img src="sgor3p2pcb_populated0.gif" height=200></a>
+ <h3>OR3 Low Gain Component Locations</h3>.
+</center>
+<p>
+<li><b>Medium Gain Version:</b> Eliminate and bypass Gain Stage 2.  Jumper
+ the upper two pins of JP1.  <b>This is the one that should work for
+ most applications.</b>
+<p>
+<center>
+ <a target="SGOR3" href="sgor3mg.gif">
+ <img src="sgor3mg.gif" height=600></a>
+ <h3>OR3: Medium Gain Schematic</h3>
+<p>
+ <a target="SGOR3" href="sgor3p2pcb_populated1.gif">
+ <img src="sgor3p2pcb_populated1.gif" height=200></a>
+ <h3>OR3 Medium Gain Component Locations</h3>.
+</center>
+<p>
+<li><b>High Gain Version:</b> Jumper the upper two pins of JP1.  Installation
+ in a shielded case may be required to avoid interference from other sources.
+<p>
+ This is the same as the default schematic except for the
+ jumper.  It can also be set up similar to the medium gain version by
+ jumpering the lower pins of JP1.
+<p>
+<center>
+ <a target="SGOR3" href="sgor3hg.gif">
+ <img src="sgor3hg.gif" height=600></a>
+ <h3>OR3: High Gain Schematic</h3>
+<p>
+ <a target="SGOR3" href="sgor3p2pcb_populated2.gif">
+ <img src="sgor3p2pcb_populated2.gif" height=200></a>
+ <h3>OR3 High Gain Component Locations</h3>.
+</center>
+</ol>

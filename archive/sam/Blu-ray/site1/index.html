@@ -1,0 +1,460 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/Blu-ray/site1/
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<title>Blu-ray Reader Dissection by Leslie Wright and Sam Goldwasser -
+ Main Page</title>
+
+<meta name="keywords" content="blu-ray laser diode, blu ray laser pointer,
+violet laser diode, violet laser pointer, blu ray, blu ray laser">
+
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/Blu-ray/site1/">https://www.repairfaq.org/sam/Blu-ray/site1/</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+<center>
+Copyright &copy; 2007-2011,
+ Leslie Wright <a target="aa" href="http://www.fineartradiography.com/">
+   www.fineartradiography.com</a> and
+ Sam Goldwasser <a target="aa" href="../../../index.html">
+   www.repairfaq.org</a>, All Rights Reserved.
+<p>
+<hr>
+<p>
+<h1>Dissection of a Blu-ray Reader Assembly</h1>
+<h2>Leslie Wright and Samuel Goldwasser</h2>
+<p>
+<h3>(Original version: March 8th, 2007)</h3>
+<h3>(Last Update: October 1st, 2011)</h3>
+<br>
+<form action="http://translate.google.com/translate" target="aa">
+ <nobr><b>Translate this page with Google:</b>
+ <select name="langpair">
+ <option value="en|fr">Fran&ccedil;ais</option>
+ <option value="en|de">Deutsch</option>
+ <option value="en|es">Espanol</option>
+ </select>
+ <input name="hl" value="en" type="hidden">
+ <input name="prev" value="/language_tools" type="hidden">
+ <input name="u" value=
+  "http://www.fineartradiography.com/hobbies/lasers/blu-ray/index.html"
+   type="hidden">
+ <input value="OK" style="font-size: 11px;" type="submit">&nbsp;</nobr>
+</form>
+<br>
+
+<div style="text-align: left;">
+
+<hr>
+<p>
+<center><h2>Introduction</h2></center>
+
+This is an investigation in progress, and is by no means complete,
+especially regarding the functions of the rest of the assembly, any
+updates, warnings or new links, will hereafter be in
+<span style="color: rgb(255, 0, 0);">RED</span> type!
+<p>
+There is always new data being added to the pages, as more people are
+e-mailing me with specs for their particular diode.
+So if you have a PS3 laser on order, visit again before extracting
+or testing the diode, in case there have been any
+developments!
+<p>
+Thanks go to those people, who have mailed.
+<p>
+The original page had become quite large. I never expected to be
+writing an essay on a Disc reader, so it has now been split into
+three parts, and are indexed as follows:
+<p>
+<ul>
+<li><a href="index.html">Main
+ Page</a> (you are here! has now been stripped of technical
+ details, which are on the following two pages.
+ Some of the original text is still here, since other sites have linked
+ to images etc).
+<p>
+<li><a href="diode.html">Diode Page</a>
+ (All of the information currently available on the special PS3 diode
+ can, if you want to build one of these, then this is where you need to
+ be!)
+<p>
+<li><a href="optics.html">Optics Page</a>
+ (Since the optics also turned out to be very special, and useful, they
+ have now got a page to themselves.)
+</ul>
+<p>
+I recently purchased, for the princely sum of &pound;40 UKP / $80
+USD, a SONY PlayStation 3, replacement laser reader
+assembly, with the sole intent of taking it apart, for the Blu-ray
+laser diode.
+<p>
+Here is the drive unit itself, part number KES-400AAA, as I received
+it. The optical carriage is almost twice the size of conventional
+carriages.
+<p>
+<center>
+<img src="ps3diode-images/1-ps3-drive-assy.jpg" alt="PS3 Optical Deck"
+style="border: 3px solid ; color: rgb(255, 255, 255); width: 400px;
+height: 263px;">
+</center>
+<p>
+And here are more detailed top and bottom views:
+<p>
+<center>
+<a target="aa" href="ps3diode-images/kes400ap-t.jpg">
+<img style="border: 3px solid ; width: 295px; height: 427px; color:
+rgb(255, 255, 255);" alt="PS3 Optical Deck Top"
+src="ps3diode-images/kes400ap-ts.jpg"></a>
+<a target="aa" href="ps3diode-images/kes400ap-b.jpg">
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 295px;
+height: 427px;" alt="PS3 Optical Deck Bottom"
+src="ps3diode-images/kes400ap-bs.jpg"></a>
+<p>
+(Click on photo for closeup.)
+<p>
+</center>
+<p>
+This is a view from the underside, with the Laser diode arrowed. The
+laser is attached to a small heatsink, which is screwed to the
+carriage. Although it is hard to see in the picture, the Laser diode can
+has FIVE pins.
+<p>
+<div style="text-align: center;">
+<img src="ps3diode-images/2-ps3-laser-base.jpg" alt="KES-400A Base"
+style="border: 3px solid ; color: rgb(255, 255, 255); width: 300px;
+height: 268px;"><div style="text-align: left;">
+<p>
+The pin-out was determined by eye, at first. I extracted the laser
+diode, and looked through the end window, with the aid of a microscope,
+to determine, where the internal wires went. Then tested my conclusions
+with the multimeter. The case is negative with respect to <span style="color:
+rgb(255, 0, 0);">ALL THREE</span> laser
+diodes. (Yes, there are <i><b>THREE</b></i> individual
+laser diodes in the same can - hence the weird pin out!)
+<p>
+Carefully read all the related material in
+<a target="aa" href="../../lasersam.htm">Sam's
+Laser FAQ</a>, especially in the chapters starting with: "Diode Lasers".
+The information there is invaluable, and extremely important!
+<p>
+<center>
+<img style="width: 300px; height: 214px;" alt="LD Pin Out"
+src="ps3diode-images/pinout.jpg">
+</center>
+<p>
+<ul>
+<li><b>GND:</b> Negative return for LDs and PD cathodes (-ve).
+<li><b>VLD:</b> Violet (~405 nm) diode anode (+ve).
+<li><b>RLD:</b> Red (~650 nm) diode anode (+ve).
+<li><b>IRLD:</b> IR (~780 nm) laser diode anode (+ve).
+<li><b>PD:</b> Photodiode anode.
+</ul>
+<center>
+<img style="border: 3px solid; color: rgb(255, 255, 255);
+width: 300px; height: 223px;" alt="LD Connections"
+src="ps3diode-images/rear-connections-closeup.jpg">
+</center>
+<p>
+This is a close-up of the connections on my unit.
+(Note the remaining section of polymer-PCB).
+<p>
+<ul>
+<li><b>Black:</b> LD and PD cathodes (GND, -ve).
+<li><b>Blue:</b> VLD anode (+ve).
+<li><b>Red:</b> RLD anode (+ve).
+</ul>
+<p>
+I ran a series of tests on my diode this afternoon, and have determined the
+following parameters. (these are a guide only, and are the specs for my
+particular diode, your Ith may vary, and as a consequence, your
+operating current will vary!)
+<p>
+<ul>
+<li>Threshold current = ~28 mA.
+<li>Working voltage = ~4.5 V.
+<li>Operating current = 30 to 40 mA; *** see WARNING at the bottom of the
+  page!
+</ul>
+<p>
+<center>
+
+<img style="width: 600px; height: 569px;" alt="LD Characteristics"
+src="ps3diode-images/diode-plot.jpg">
+</center>
+<p>
+The above graph is a plot of diode current, against optical output, and was measured using a Coherent Lasercheck
+As can be seen on the graph, threshold (Ith) occurs at 28 mA to 30 mA.
+<p>
+<b>Note:</b> On this graph, the final real measurement was made at 45.7 mA
+(13.9 mW). The line from 45.7 mA to 50 mA is extrapolated.
+<p>
+I have tested and run mine at settings of 4.4 V and 40 mA MAX!
+The output is VERY bright.  It works, and it stays cool!
+<p>
+The PSU at the moment is a simple 6 V battery with a current
+limiting resistor in series (47 ohm). There is a better driver, at the
+bottom of the page!  If you intend to build one of these visit the
+<a href="diode.html">Diode Page</a> first! There is new, updated
+and more accurate information there!
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 400px;
+height: 267px;" alt="Red 1" src="ps3diode-images/laser-mount-red.jpg">
+</center>
+<p>
+Laser diode emitting red, with small collimating lens.
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 400px;
+height: 267px;" alt="Red 2" src="ps3diode-images/laser-mount-red2.jpg">
+</center>
+<p>
+This is the Laser diode mounted on a heatsink with the red emitter
+powered.
+<p>
+And now, this is what you have all been waiting for.....
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 300px;
+height: 269px;" alt="Violet 1" src="ps3diode-images/clos-up-run.jpg">
+</center>
+<p>
+Wonderful shade of Violet!
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 400px;
+height: 267px;" alt="Violet 2" src="ps3diode-images/laser-mount-violet2.jpg">
+</center>
+<p>
+Output<p>
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 400px;
+height: 267px;" alt="Violet 3" src="ps3diode-images/juicy-violet-beam.jpg">
+</center>
+<p>
+Smoke in the beam!
+<p>
+In the above picture the Laser and its little mount, were just glued to
+the large heatsink, no heat transfer compound was used,(the heatsink was
+used, because it was convenient) I figured there
+was enough metal in the mount to dissipate any heat. The laser stayed
+cool throughout its operation.
+<p>
+The diode can is standard 5.6 mm dia, and could be easily integrated
+into the collimating assembly of a dead red module.
+<p>
+The optical output is confirmed by
+<a href="http://www.greenlaser.co.uk/">Rob</a> as being
+10 to 20 mW, there will be more info about this, as soon as he completes
+his measurements.
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 300px;
+height: 82px;" alt="VGB Compared" src="ps3diode-images/vgb.jpg">
+</center>
+<p>
+Here is the beam compared with 5 mW red (~650 nm) and 8 mW green (532 nm),
+photographed on NON-fluorescing white surface.
+When I built the above red/violet laser module, I set the
+collimating lens for violet. (red will be uncollimated) maybe I could
+solve this using a triplet lens, and mix the two wavelengths!
+<p>
+** Note: It has been suggested that this may cause heat dissipation
+issues, by running two diodes at the same time!
+<p>
+<center><h2><blink>
+<span style="color: rgb(255, 0, 0);">***** WARNING *****</span>
+</blink></h2></center>
+
+Yesterday (12 March 07) after running some tests (plotting light output against
+drive current) I (Leslie) noticed a diminished brightness of the beam, and
+erratic output. During the tests, the current had been increased to
+52 mA.  Upon examining the beam today it has become apparent that damage has
+been caused.
+<p>
+A picture of the expanded beam is shown below:
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 300px;
+height: 263px;" alt="VLD COD" src="ps3diode-images/CODweb.jpg">
+</center>
+<p>
+You will notice that the portion of the spot on the right hand side,
+has diminished in apparent bightness by as much as 50%. (The little
+black spots, are due to dirty optics and should be ignored.)
+Since no heating of the laser diode was apparent, during the
+tests, I conclude that COD (Catastrophic Optical Damage) is
+the most likely cause.
+<p>
+This shifts the reasonable range of operation for this diode down to
+30 to 40 mA, for a decent diode lifetime.
+Or if your diode has a lower or higher threshold, adjust according to
+the simple equation:
+<p>
+<ul>
+IopM=Ith+10
+</ul>
+<p>
+Where Ith is the threshold current for your particular diode, and IopM
+is the maximum suggested drive current.
+<p>
+As the saying goes "you have to break a few eggs, to make an omelette".
+I have broken mine so you don't have to break yours!
+Fortunately, I already have another unit in the post. Since this one
+still lases, (although at diminished brightness) I have made a Blu-ray
+laser pointer out of it!
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 500px;
+height: 333px;" alt="Pointer" src="ps3diode-images/pointer2.jpg">
+</center>
+<p>
+This pointer runs off of 4 AAA cells, and is current limited by a 47 ohm
+resistor. For a better driver, the one below is based on the LM317 regulator.
+<p>
+<center>
+<img style="width: 600px; height: 186px;" alt="LD Driver Schem"
+src="ps3diode-images/schem.jpg">
+</center>
+<p>
+This is a diagram of a simple adjustable current regulator, designed
+for 9 V battery operation of the Violet Laser diode. The 0.1 uF
+capacitor, is soldered across the actual laser diode, all the
+rest is mounted on the board.
+<p>
+Below are pictures of a module I have designed.  They will occasionally
+be on sale on eBay, as will violet laser pointers, and other laser related
+Items. Please check <a target="aa" style="color: rgb(255, 0, 0);" href=
+"http://search.ebay.co.uk/_W0QQfgtpZ1QQfrppZ25QQsassZplazmatron189">HERE</a>
+to see what is available.
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 400px;
+height: 267px;" alt="LD Driver" src="ps3diode-images/driver.jpg">
+</center>
+<p>
+Note that in this module, I have included a reverse polarity protection diode
+on the right, the 10 &micro;F capacitor is also located here to save
+space on the board!
+<p>
+<center>
+<img style="border: 3px solid ; width: 400px; height: 267px; color:
+rgb(255, 255, 255);" alt="VLD Module 1" src="ps3diode-images/module-open.jpg">
+<img style="border: 3px solid ; color: rgb(255, 255, 255); width: 400px;
+height: 267px;" alt="VLD Module 2" src="ps3diode-images/module-scale.jpg">
+</center>
+<p>
+Here is the fully assembled module. It is roughly 8 cm long and is
+enclosed in a die-cast housing. It requires 9 VDC to operate, and the
+connection is made via a gold-plated phono socket at the rear. The
+module is reverse polarity protected, and should be fairly resiliant to
+ESD and damaging spikes. However, I recommend the use of a conditioned
+power supply,(no not the cheap 99p adaptor you just picked up!!)
+or battery operation (no spikes in a battery!!! ).
+<p>
+CHECK that whatever you connect it to is actually 9 V off load! I have
+lost count of the number of times I have checked 9 V adaptors, to find
+they put out more than 15 V under light load!
+<p>
+<center>
+<img style="border: 3px solid ; width: 400px; height: 267px; color:
+rgb(255, 255, 255);" alt="Lasing 1" src="ps3diode-images/modlasing.jpg">
+<img style="border: 3px solid ; width: 400px; height: 267px; color:
+rgb(255, 255, 255);" alt="Lasing 1" src="ps3diode-images/modlasingtop.jpg">
+</center>
+<p>
+<hr>
+<center>
+<h2>The Rest of the Assembly</h2>
+</center>
+
+<center>
+<img style="border: 3px solid ; width: 600px; height: 400px; color:
+rgb(255, 255, 255);" alt="KES-400A Guts"
+src="ps3diode-images/close-up-annotated.jpg">
+</center>
+<p>
+This is the assembly with the bottom covers removed.
+There is a thorough explanation of the optics and their uses
+on the <a href="optics.html">Optics Page</a>.
+<p>
+<hr>
+<center><h2>Violet Laser Diode Myths Exploded!</h2></center>
+
+I have read in various places on the internet, articles with reference
+to this site, that some of the PS3 diodes are recording or "burning" diodes!
+I have NEVER observed this, in any assemblies that I have taken apart, and
+think it is doubtful that any exist!
+<p>
+While the violet laser diodes, are obviously of a much higher power than one
+would expect to find in a reader, you must consider the losses apparent
+in Sony's optical system, and remember that scattering is much more of a
+problem at short wavelengths.
+<p>
+Some people have commented that "it must be a burner because you
+can see the beam in the dark" and "wow that spot is bright for
+its wavelength so it must be a burner!"
+<p>
+These are the reasons for both of those comments:
+<p>
+<ul>
+<li>You can see the beam in the dark because, at this short wavelength, the
+ light will scatter forward, even off the gas molecules in the air! (the
+ reason the sky is blue - Rayleigh scattering).
+<p>
+<li>As for the spot appearing exceptionally bright for it wavelength, well
+ at say 695 nm (deep red), the eye is fairly insensitive, and you would
+ expect at the other end of the spectrum, that 405 nm would appear just
+ as dim! However, at these short wavelengths, most things (read: almost
+ everything in the universe!) are quite fluorescent! If you actually
+ find a surface that isn't as fluorescent, such as (very clean) Teflon,
+ you will find that the spot is indeed quite dim!
+<p>
+<li>If it truly was a "burner", I would expect the voltage drop to be
+ considerably larger, and Ith to be considerably higher too.
+<p>
+<li>The output of the violet laser diode
+ may vary by as much as 10 mW only because Nichia's processes
+ are far from perfect yet, and whilst the diode is capable of being
+ pushed to at least 20 mW, I advise that you only run at Iop of Ith+10mA
+ max, for reasonable life!
+ The lifetimes are quoted as 5,000-10,000 hours when run at its lowest
+ operating current, so pushing it higher, will result in shortened life!
+</ul>
+<p>
+<hr>
+<center><h2>For More Information</center></h2>
+
+There have been extensive discussions on the USENET newsgroup
+alt.lasers, and the Internet forums
+<A target="aa" HREF="http://www.photonlexicon.com">Photon Lexicon</A> and
+<A target="aa" HREF="http://www.laserpointerforums.com">Laser Pointer
+Forums</A>.
+Checking the archives for those will probably turn up more than you ever
+wanted to know.  You can contact Leslie at: lesliewright8@hotmail.com
+and Sam through the Feedback form at
+<A target="aa" href="../../../index.html">RepairFAQ.org</A>.
+For a wealth of information about Laser related stuff, and plenty
+of diagrams, go to
+<a target="aa" href="../../lasersam.htm">Sam's
+Laser FAQ</a>.
+
+<center><h3><a href="../index.html">Return to Laser Pages</a></h3></center>
+<p>
+<hr>
+<p>
+<center>
+Copyright &copy; 2007-2011,
+ Leslie Wright <a target="aa" href="http://www.fineartradiography.com/">
+   www.fineartradiography.com</a> and
+ Sam Goldwasser <a target="aa" href="../../../index.html">
+   www.repairfaq.org</a>, All Rights Reserved.
+</center>
+<p>
+</body>
+</html>

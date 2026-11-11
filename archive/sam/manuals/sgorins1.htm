@@ -1,0 +1,208 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/manuals/sgorins1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Assembly and Operation of Sam's Optical Receivers for Heterodyne
+ Interferometry</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/manuals/sgorins1.htm">https://www.repairfaq.org/sam/manuals/sgorins1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<center>
+<h2>Assembly and Operation of Sam's Optical Receivers for Heterodyne
+ Interferometry</h2>
+<h3>Version 1.12 (25-Oct-2021)
+<p>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Sam Goldwasser<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+<p>
+<font color=red><h2>UNDER CONSTRUCTION</h2></font>
+
+<hr>
+
+<h3>Introduction</h3>
+
+These optical receivers are intended for use with the heterodyne versions of
+the "DIY Interferometer Displacement Measurement System" kits.
+In the past, they have used genuine HP/Agilent 10780s or Excel 1031s,
+but that has been a bit like cheating since nearly
+everything else in these kits except the HeNe laser tube and power supply
+brick is built from scratch.  But in addition, supply chain issues are
+making genuine 10780s harder to find at anything approaching reasonable
+prices.  Some builds of the Excel 1031s also suffer from exploding
+tantalum capacitors when power is first applied,
+requiring more rework than is worth it.
+And another benefit is that the custom PCB doesn't have the
+strange unobtanium 4 pin BNC connector!  With some rudimentary packaging
+(beyond the bare PCB), these could also be used with the "Hewlett Packard
+(HP) Interferometer Measurement System-Hobbyist's Special 1,2,3" kits,
+but that is not intended at the present time.
+<p>
+A primary goal is for these to be available in kit form and easily
+assembled without a microscope or SMT equipment.  And there will eventually be
+detailed Heathkit&trade;-style step-by-step assembly instructions.
+<p>
+Originally, it was thought that the Teletrac reference receiver could be
+enhanced to be suitable as a general purpose optical receiver as it is
+very simple.  But SG-OR1 turned out to be more trouble than
+it was worth.  The first new design
+was SG-DOR1, a dual receiver on a single PCB using amplifiers with
+with automatic gain control so no adjustments would ever be needed.
+But the goal has been scaled for several
+reasons (though SG-DOR1 is described at the end of this manual).
+One issue has been oscillation of the AGC amp when the input signal is
+too low.  This may be resolved eventually, probably by a better layout on
+a 4 layer PCB.  But another is that having 2 channels on one PCB is less
+than optimal as extending the wiring to either or both PDs does add noise
+and RFI pickup even with shielded cable.  So the most likely one to be released
+initially (or forever), will be SG-OR3.
+<p>
+<hr>
+<h3>SG-OR3</h3>
+
+SG-OR3 consists of a 3.2 x 1.0 inch PCB with a 2 pin header for a silicon
+photodiode at one end and a 3 pin connector for RS422 at the other.  Power
+comes in via a separate 2 pin connector and would normally be between 12 and
+15 VDC.  However, bypassing the on-board regulators and running it on 5 VDC
+should be possible with a slight reduction in bandwidth and sensitivity.
+It is a very simple but flexible design consisting of 4 transistors
+worth of PD signal conditioning and gain, and an SN75179 RS422/RS485
+receiver/driver chip to convert to RS422.  The front-end buffer is based
+loosely on the design of the 10780 but replaces the JFET (used in all
+HP/Agilent as well a Excel optical receivers) with a biased
+bipolar transistor, which seems to work at least as well at over the
+relevant bandwidth.  (It is not clear that the JFET which is nearly
+extinct at this point ever provided any real benefits.)  There is a
+single trimpot for overall gain, and a Signal LED.  The trimpot setting
+should not be at all critical and may never need to be touched once set
+up for the first time.  This version has no external signal level
+test-point or signal enable as with the commercial units.  Only
+the Signal LED.  So be it for now.
+<p>
+<center>
+<a href="sgor3pcb.gif"><img src="sgor3pcb.gif" height=200></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.repairfaq.org/sam/manuals/sgor3pcb1.jpg"><img src="https://www.repairfaq.org/sam/manuals/sgor3pcb1z.jpg" height=200></a>
+<h3>SG-OR3 Version 1.00 PCB: Layout (Left) and Partially Assembled (Right)</h3>
+</center>
+<p>
+It's called "SG-OR3" because the dual channel version (velow) was actually
+originally OR2.
+SG-OR1 was an aborted attempt to adapt the Teletrac reference receiver design
+for general purpose use but that was less than totally successful as its
+sensitivity was too low.  Got that? ;-)
+All components are through-hole except for the 78M09 and 78M05 voltage
+regulators, but they are trivial to solder.  On later versions, the conversion
+to RS422 which currently uses a SN75179B receiver/transmitter pair in an 8 pin
+DIP may become an SOIC8 due to availability and cost considerations.
+Soldering a single SOIC8 SMT package isn't terrible.  (You will never have
+to solder a zillion itty-bitty chip resistors and capacitors!)  The
+sensitivity is below 10 &micro;W out of the laser at 2 MHz (which is
+the typical maximum MEAS frequency for the DIY kits) with two of the
+transistors set up as a buffer and the other two as an amplifier with a gain
+of around 100.  Where the beam power is above 100 &micro;W, the third
+transistor stage may be bypassed.  And it may be configured with another
+factor of ~10 of gain with minor changes to the first stage, but it's not
+clear how stable that would be.  The only need for higher sensitivity
+may be to monitor REF via the waste beam from the laser tube, which could
+be below 10 &micro;W.
+<p>
+The current status is that the PCB (above) works with a sensitivity below
+2 &micro;W at 2 MHz, but oscillates with no signal. :( ;-)  Actually, it
+doesn't appear to be an oscillation but rather pickup of a stray ~1 MHz
+signal out of the air.
+<p>
+With only the first two stages, it has a sensitivity of under 5 &micro;W
+at 2 MHz and under 10 &micro;W at 3 MHz with no oscillation.  These values
+should be quite acceptable for any of the DIY kits.  With 3 stages popilated,
+the performance is just about the same before the noise pickup kicks in.
+<p>
+So the plan is for the first released version to have 3 stages though 2 should
+suffice.
+<p>
+Here is the revised PCB layout:
+<p>
+<center>
+<a href="../sgor3/sgor3np2pcb.gif">
+<img src="../sgor3/sgor3np2pcb.gif" height=200></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<h3>SG-OR3 Version 1.01 PCB Layout</h3>
+</center>
+<p>
+It's a bit smaller - 1x2.75" compared to 1x3.2" - and easier to assemble.
+And the pattern for the SMT version of the RS422 transmitter/receiver pair
+has been added.  So either type can be installed.
+<p>
+Stay tuned.
+<p>
+<hr>
+
+<h3>SG-DOR1</h3>
+
+SG-DOR1 has up to two channels and consists of a 4.0x1.5 inch PCB which
+runs on 12 to 15 VDC with a pair of connectors or screw terminal
+headers for the RS422 output signals.  For
+a single channel, a portion of the PCB can remain unpopulated.
+<p>
+<center>
+<a href="sgor2pcb1.gif"><img src="sgor2pcb1.gif" height=300></a>
+<h3>SG-OR2 Version 1.00 PCB</h3>
+</center>
+<p>
+The PhotoDiodes (PDs) may be mounted on the PCB, or remoted using coax
+up to at least 1 foot away.  Any small area silicon PD should be
+satisfactory, though the default are the ones included in the various kits.
+The required Linear Polarizer (LP) can be a piece of self adhesive LP or CP
+sheet stuck directly on PD.  Or if used with a fiber, the LP should be at the
+fiber input and the LP on the PD would be omitted.
+<p>
+The design is based on a simplified version of the 10780 with a discrete
+front-end but then uses a high bandwidth integrated TL026 amplifier
+with AGC or TL592B adjustable gain amplifier, and
+UA9638/UA9837 pair to convert to two channels of RS422.
+Where only a single channel is needed, the front-end parts can be omitted
+for the second channel.  On-board regulators provide 9 VDC for the analog
+circuitry and 5 VDC for the UA9638/UA9837.
+<p>
+The usable sensitivity of the soldered bread-boarded prototype using a random
+JFET found in a junk cabinet is from a laser power of less than 15 &micro;W
+to at least 1 mW.  With the correct part, it the sensetivity should be better.
+So it should be suitable for use with
+the waste beam for the REF signal and the maximum power available from 
+almost any Zeeman HeNe laser.  The upper limit should easily cover
+anything needed for the types of two frequency lasers found in either
+the DIY DMS kit or Hobby Special displacement measuring systems.
+<p>
+All parts are through-hole except for the LM78M09 and LM78M05
+three-terminal regulators, simply because the SMT version is smaller yet still
+easy to solder.  If this ever becomes a kit, Heathkit&trade;-style step-by-step
+instructions will be provided.
+<p>
+SG-DOR1 is on hold pending completion of SG-OR3.
+<p>
+<hr>
+</html>

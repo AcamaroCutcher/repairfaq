@@ -1,0 +1,155 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvstartupp.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Startup problems - nothing happens, clic..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Startup problems - nothing happens, click, or tick-tick-tick sound</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvstartupp.htm">https://www.repairfaq.org/samnew/tvfaq/tvstartupp.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Startup problems - nothing happens, clic..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvshortc.htm">&lt;&lt;&nbsp;Shorted Components</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvtvtpawu.htm">TV turns off after warmin..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvstartupp">Startup problems - nothing happens, click, or tick-tick-tick sound</A></h3>
+
+TVs and monitors usually incorporate some kind of startup circuit to provide
+drive to the horizontal output transistor (HOT) until the flyback power supply
+is running.  Yes, TVs and monitors boot just like computers.
+<p>
+There are two typical kinds of symptoms: power on click but nothing else
+happens or a tick-tick-tick sound indicating cycling of the low voltage
+(line regulator) but lack of startup horizontal drive.
+<p>
+Check the voltage on the horizontal output transistor (HOT).  If no voltage
+is present, there may be a blown fuse or open fusable resistor - and
+probably a shorted HOT.
+<p>
+However, if the voltage is normal (or high) - usually 100-150 V, then
+there is likely a problem with the startup circuit not providing initial
+base drive to the HOT.
+<p>
+The startup circuits may take several forms:
+<p>
+<ol>
+<li>Discrete multivibrator or other simple transistor circuit to provide
+ base drive to the HOT.
+<p>
+<li>IC which is part of deflection chain powered off of a voltage divider
+ or transformer.
+<p>
+<li>Other type of circuit which operates off of the line which provides
+ some kind of drive to the HOT.
+</ol>
+<p>
+The startup circuit may operate off of the standby power supply or
+voltage derived from non-isolated input.  Be careful - of course, use
+an isolation transformer whenever working on TVs and especially for power
+supply problems.
+<p>
+Note that one common way of verifying that this is a startup problem is
+to inject a 15 kHz signal directly into the HOT base or driver circuit
+(just for a second or two).  If the TV then starts up and continues to run,
+you know that it is a startup problem.  However, this is a risky procedure
+for both you and the TV.  See the section: <A HREF="tvbypsuc.htm">Bypassing
+the Startup Circuit</A>.
+<p>
+I have also seen startup circuits that were designed to fail.  Turning
+the TV on and off multiple times would exceed the power ratings of the
+components in the startup circuit.  Some Zenith models have this 'feature'.
+<p>
+When this situation exists, it could be that the circuit is not providing
+the proper drive or that due to some other circuit condition, the drive
+is not always sufficient to get the secondary supplies going to the point
+that the normal circuits take over.
+<p>
+I would still check for bad connections - prod the circuit board with an
+insulated stick when the problem reoccurs.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvshortc.htm">&lt;&lt;Shorted Components</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvtvtpawu.htm">TV turns off after warmin..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

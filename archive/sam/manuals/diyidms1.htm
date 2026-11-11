@@ -1,0 +1,412 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/manuals/diyidms1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Instructions for DIY Interferometer Displacement Measuring System Kits</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/manuals/diyidms1.htm">https://www.repairfaq.org/sam/manuals/diyidms1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<body>
+<A NAME="top">
+<p>
+<center>
+<h1>Instructions for DIY Interferometer Displacement Measuring System Kits</h1>
+<h2>Version 1.11 (18-Jul-2025)</h2>
+<h3>
+<A HREF="../lasersam.htm">
+Sam's Laser FAQ</A>, <A HREF="copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+</center>
+<p>
+<hr>
+<p>
+</center>
+
+<h2>Introduction</h2>
+
+<font color="red"><h1>UNDER CONSTRUCTION</h1></font>
+<p>
+This document contains guidelines and links to other manuals for
+the construction of a homodyne or heterodyne interferometer displacement
+measuring system using a HeNe laser
+and a microcontroller-based measurement readout.  There are
+kits providing various levels of performance from really basic to
+something similar to a commercial system.
+<p>
+The brief summary is that the heterodyne kit (there is only one version)
+has the best performance and would be useful in a serious application.
+The homodyne kits have very limited slew rate unless augmented with high
+speed front-end electronics, which are not provided here at least.
+<p>
+Since the lasers and measurement readouts are also available as separate
+kits, links will be provided to their detailed manuals.  Only information
+not available elsewhere will be elaborated on in this document.
+<p>
+The heterodyne and homodyne kits consist of 4 parts:
+<p>
+<ul>
+<li><b>HeNe laser:</b> The lasers use similar tubes though the ones sent will
+ have been tested to assure they are compatible with single frequency or
+ two-frequency (Zeeman) stabilization, or simply well behaved, mode-wise
+ depending on the specific requirements.  The main difference in the setup is
+ that the Zeeman adds a set of magnets to split the frequency and a Quarter
+ WavePlate (QWP) to convert the circularly polarized Zeeman modes to orthogonal
+ linearly polarized modes.  The power supply, heater, (and for the
+ stabilized lasers) the Arduino controller are identical.
+<p>
+<li><b>Interferometer optics:</b> Basic components are provided which can be
+ configured in various ways to create linear, plane mirror, and other
+ interferometers.
+<p>
+<li><b>Detector:</b> For heterodyne these are kits using the SG-OR3 custom
+ PCB to provide functionality similar to that of the HP/Agilent 10780
+ optical receivers.  For homodyne,
+ parts for a Quad-Sin-Cos decoder and basic interface are provided.  This
+ is sufficient to get started with limited bandwidth.  In the future,
+ parts for a higher performance decoder may be available.
+<p>
+<li><b>Readout:</b> &micro;MD0, &micro;MD1, or &micro;MD2 convert the
+ detector outputs to displacmeent information that is displayed using
+ a Windows GUI.
+</ul>
+<p>
+These parts of the system can be constructed and tested separately.
+<p>
+For a general introduction to this technology, see
+<A target="LIPM" HREF="../lipm/lipm.htm">LIPM: An Inexpensive Laser
+Interferometer-Based Precision Measurement System</a>.  This is highly
+recommended reading prior to construction.
+<p>
+There are several variations on this kit:
+<p>
+<h3>Standard Systems with &micro;MD2:</h3>
+<p>
+<ul>
+<li><b>Heterodyne interferometer using two frequency Zeeman HeNe
+ laser:</b> This is based on the same principles as systems from
+ HP/Agilent/Keysight, Excel, Zygo, and others.
+<p>
+ The typical parts are shown below:
+<p>
+ <center>
+ <A target="diydms" HREF="DIY_Het_Kit2.jpg">
+ <img src="DIY_Het_Kit2.jpg" height="512"></a>
+ </center>
+<p>
+<b>Links:</b>
+<p>
+ <ul>
+ <li><A target="LAS" HREF="zeemins3.htm">Stabilized Zeeman HeNe Laser Kit 1
+  with or without Arduino</a>.  The heterodyne kit uses the Arduino version.
+<p>
+ <li>Detectors for heterodyne known as "optical receivers" for these
+  are SG-OR3 which provide functionality similar to that of the HP/Agilent
+  10780.  SG-OR3 uses a relatively simple PCB so
+  construction is straightforward and Hathkit&trade;-style assembly
+  instructions are provided.  See <A target="OR"
+  HREF="sgorins1.htm">Optical Receivers
+  for Heterodyne Interferometers</a> for more info.  Unlike the commercial
+  optical receivers, these will run on 12 VDC, so no DC-DC boost converter
+  will be required.  (The optical receivers for the "Hewlett Packard (HP)
+  Interferometer Measurement System-Hobbyist's Special 1,2,3" kits
+  will continue to be commercial parts.)
+<p>
+ <li><A target=uMD" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2
+  (&micro;MD2)</a>.
+ </ul>
+<p>
+<li><b>Homodyne interferometer using Single Frequency (SF) /
+ Single Longitudinal Mode (SLM) laser:</b>  This is
+ based on the same principles as systems from Teletrac/Axsys/General
+ Dynamics/MotionX, Renishaw, and others. 
+<p>
+ The typical parts are shown below:
+<p>
+ <center>
+ <A target="diydms" HREF="DIY_Hom_Kit3.jpg">
+ <img src="DIY_Hom_Kit3.jpg" height="512"></A>
+ </center>
+<p>
+<b>Links:</b>
+<p>
+ <ul>
+ <li><A target="LAS" HREF="stabins5.htm">Stabilized HeNe Laser Kit 1 with
+  Arduino</a>
+<p>
+ <li><A target="QD" HREF="quadins1.htm">Construction Guidelines for Basic
+  Quadrature-Sin-Cos Decoder and Quad-A-B Interface Kits</a>.
+<p>
+ <li><A target="uMD" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2
+  (&micro;MD2)</a>
+ </ul>
+<p>
+ The detector in all the homodyne kits is quite primitive consisting of a
+ pair of biased photodiodes with a
+ Quarter WavePlate (QWP) to shift the phase of one of the signals by
+ 90 degrees.  Thus the bandwidth is quite limited.  But a better one could
+ be constructed relatively easily.
+<p>
+ Parts for a simple Quad-Sin-Cos to Quad-A-B converter with RS422 drivers
+ for &micro;MD2 are included.  The schematic is shown in the above graphic.
+ There is no PCB for this but a Perf. board is provided on which it can be
+ constructed.  A solderless breadboard could also be used. available for
+ a couple bucks on eBay.
+ The RS422 drivers at the output can be dispensed with if &micro;MD2 is
+ set up for single-ended inputs as described in its assembly manual.
+<p>
+<li><b>Homodyne interferometer using Multi-Longitudinal Mode (MLM) /
+ laser:</b>  This does away with the stabilization electronics but the
+ path length difference then needs to be less than a few cm.
+<p>
+ The typical parts are shown below:
+<p>
+ <center>
+ <A target="diydms" HREF="DIY_Hom_Kit5.jpg">
+ <img src="DIY_Hom_Kit5.jpg" height="512"></A>
+ </center>
+<p>
+<b>Links:</b>
+<p>
+ <ul>
+ <li><A target="LAS" HREF="stabins5.htm">Stabilized HeNe Laser Kit 1 with
+  Arduino</a>
+<p>
+ <li><A target="QD" HREF="quadins1.htm">Construction Guidelines for Basic
+  Quadrature-Sin-Cos Decoder and Quad-A-B Interface Kits</a>.
+<p>
+ <li><A target="uMD" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2
+  (&micro;MD2)</a>
+ </ul>
+<p>
+ The detector in all the homodyne kits is quite primitive consisting of a
+ pair of biased photodiodes with a
+ Quarter WavePlate (QWP) to shift the phase of one of the signals by
+ 90 degrees.  Thus the bandwidth is quite limited.  But a better one could
+ be constructed relatively easily.
+<p>
+ Parts for a simple Quad-Sin-Cos to Quad-A-B converter with RS422 drivers
+ for &micro;MD2 are included.  The schematic is shown in the above graphic.
+ There is no PCB for this but a Perf. board is provided on which it can be
+ constructed.  A solderless breadboard could also be used. available for
+ a couple bucks on eBay.
+ The RS422 drivers at the output can be dispensed with if &micro;MD2 is
+ set up for single-ended inputs as described in its assembly manual.
+<p>
+
+
+<li><b>Homodyne kit using LP (linear polarized) laser head:</b>  This
+ replaces the glass laser tube with a common unstabilized linear
+ polarized HeNe laser <b>head</b> so issues of shocking experiences due to
+ high voltage are mostly eliminated and it is more robust.
+ It's also simpler to construct than those with bare laser tubes.
+ Being unstabilized, the path length difference between
+ the two arms of the interferometer is limited to a several cm.
+<p>
+ These lasers produce a narrow beam (less thatn 1 mm in diameter), but because
+ the PLD needs to be small, the diameter at the detector should be similar
+ for both the reference and measurement beams.  However, if desired, a beam
+ expander can be added.  Ask.
+<p>
+ Note that while this kit has the &micro;MD2 measurement display, the
+ performance is limited mostly by the frequency response of the Quad-Sin-Cos
+ detector, which is quite limited.  So it may be no better than the
+ minimal version using &micro;MD0.
+<p>
+ The typical parts are shown below:
+<p>
+ <center>
+ <A target="diydms" HREF="DIY_Hom_LP_Head_Kit2.jpg">
+ <img src="DIY_Hom_LP_Head_Kit2.jpg" height="512"></A>
+ </center>
+<p>
+ Plug the high voltage "Alden" connectors of the laser head and power supply
+ together securely if not already attached.   The power supply will probably
+ have a DC connector so it just needs to be plugged into the included wall
+ adapter.
+<p>
+ Orient the laser head so that the polarization
+ axis is at 45 degrees.  It will probably be marked but if not, is
+ easily determined with a linear polarizer.
+<p>
+<b>Links:</b>
+<p>
+ <ul>
+ <li><A target="QD" HREF="quadins1.htm">Construction Guidelines for Basic
+  Quadrature-Sin-Cos Decoder and Quad-A-B Interface Kits</a>.
+<p>
+ <li><A target="uMD" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2 (&micro;MD2)</a>
+ </ul>
+<p>
+<li><b>Combined heterodyne and homodyne system (but not at the same time):</b>
+ This includes the overlap of most of the parts in the kits above but with only
+ &micro;MD2 since that supports both.
+<p>
+ Since switching between Het and Hom requires reconfiguring the laser itself,
+ among other things, the combined kit is not really recommended and currently
+ disabled in the eBay listing.  But if really interested, contact me.
+</ul>
+<p>
+<H3>Minimal Systems with &micro;MD0:</h3>
+<p>
+<ul>
+<li><b>Minimal homodyne kit using SF / SLM laser:</b>
+<p>
+ This is similar to the homodyne system above but but with the &micro;MD0
+ display.
+<p>
+ <center>
+ <A target="diydms" HREF="DIY_Minimal_Hom_Kit2.jpg">
+ <img src="DIY_Minimal_Hom_Kit2.jpg" height="512"></A>
+ </center>
+<p>
+<b>Links:</b>
+<p>
+ <ul>
+ <li><A target="LAS" HREF="stabins5.htm">Stabilized HeNe Laser Kit 1 with
+  Arduino</a>
+<p>
+  Most of the tubes have a high divergence beam - around 8 mR.  Therefore
+  a collimating lens is included, probably in the bag with the optics.  It
+  has a focal lengh of 3-4 inches.  Placing it close to the output bracket of
+  the tube will result a beam that remains parallel enough
+  for a short range interferometer
+  (probably 1 or 2 feet).  For longer distances, HP/Agilent beam
+  expanders are available - ask.  These result in a 3 or 4 mm
+  beam which would remain fairly parallel over several feet.
+<p>
+ <li><A target="QD" HREF="quadins1.htm">Construction Guidelines for Basic
+  Quadrature-Sin-Cos Decoder and Quad-A-B Interface Kits</a>.
+<p>
+ <li><A target="uMD" HREF="../uMD0/uMD0.htm">Micro Measurement Display 0 (&micro;MD0)</a>
+ </ul>
+<p>
+<li><b>Minimal homodyne kit using unstabilized Multi-Longitudinal Mode
+ (MLM) laser:</b>  This uses a common unstabilized random
+ polarized HeNe tube, which limits the change in path length difference between
+ the two arms of the interferometer to a few cm but see more below.
+<p>
+ The typical parts are shown below:
+<p>
+ <center>
+ <A target="diydms" HREF="DIY_Minimal_Hom_MLM_Kit1.jpg">
+ <img src="DIY_Minimal_Hom_MLM_Kit1.jpg" height="512"></A>
+ </center>
+<p>
+<b>Links:</b>
+<p>
+ <ul>
+ <li><A target="LAS" HREF="lsk1ins2.htm">Instructions for Red HeNe Laser Kit 1
+ (Including Zeeman)</a>
+<p>
+  Set up the laser as it would be for stabilization EXCEPT that the polarization
+  axes of the tube should be oriented at &plusmn;45 degrees, NOT 0/90 degrees.
+  More on this below.
+<p>
+ <li><A target="QD" HREF="quadins1.htm">Construction Guidelines for Basic
+  Quadrature-Sin-Cos Decoder and Quad-A-B Interface Kits</a>.
+<p>
+ <li><A target="uMD" HREF="../uMD0/uMD0.htm">Micro Measurement Display 0 (&micro;MD0)</a>
+ </ul>
+<p>
+ The tubes provided in the minimal homodyne kits is well behaved (so it could
+ be used in a stabilized laser as another project!).  These have
+ two axes of polarization at right angles to one-another whose orientation
+ is fixed for the life of the tube.  The amplitude
+ of the power in each axis varies during mode sweep.  A linear polarizer
+ could be installed at 45 degrees to the polarization axes to convert the
+ tube in effect to be very similar to a linearly polarized laser, but at
+ the loss of more than one half the power.  A better option is to orient
+ the tube so that the polarization axes are at 45 degrees.  The PBS cube
+ in the interferometer will than see one half the power in both polarization
+ axes and no power will be lost.  However, interestingly, the Path Length
+ Difference (PLD) for optimum performance will be at one tube cavity length,
+ not at 0.  For the ~6 inch tube and Linear Interferometer (LI), that is
+ around 2.75 inches; for the Plane Mirror Interferometer (PMI) it is around
+ 1.375 inches.  If a PLD of 0 is used, the behavior is, well, very
+ interesting. ;-)
+<p>
+ In case you're curious, the reason there isn't an equivalent "Minimal
+ Heterodyne Kit with Unstabilized Zeeman Laser" is that such a laser
+ would generally not produce a split/beat frequency during part of mode
+ sweep.  For homodyne, as long as there is always at least one
+ longitudinal mode present (with no gaps due to mode hops), the
+ interferometer will work properly subject to the constraint that
+ the path length difference is less than a few cm.
+<p>
+<li><b>Minimal homodyne kit using linear polarized laser head:</b>  This
+ uses a common unstabilized linear
+ polarized HeNe laser <b>head</b> so issues of shocking experiences due to
+ high voltage are mostly eliminated and it is more robust.
+ It's also the simplest of all of these
+ kits to construct.  However, upgrades are not really possible partially
+ due to &micro;MD0's limited performance.
+ Being unstabilized and therefore NOT single frequency, the path length
+ difference between the two arms of the interferometer is limited to a
+ several cm.
+<p>
+ These laser produce a narrow beam (less thatn 1 mm in diameter), but because
+ PLD needs to be small, the diameter at the detector should be similar
+ for both the reference and measurement beams.  However, if desired, a beam
+ expander can be added.  Ask.
+<p>
+ The conversion from Quad-Sin-Cos to &micro;MD0 is all done on the &micro;MD0
+ PCB.
+<p>
+ Some of the photos show &micro;MD0 constructed on a solderless breadboard, but
+ all these kits now come with the SG-&micro;MD0 PCB instead.  If you would
+ still like to use a solderless breadboard (at least initially, or you are
+ not equipped for fine soldering) and one isn't
+ included, they are only a couple bucks on eBay.
+<p>
+ The typical parts are shown below:
+<p>
+ <center>
+ <A target="diydms" HREF="DIY_Minimal_Hom_Kit10.jpg">
+ <img src="DIY_Minimal_Hom_Kit10.jpg" height="512"></A>
+ </center>
+<p>
+ Plug the high voltage "Alden" connectors of the laser head and power supply
+ together securely if not already attached.   The power supply will probably
+ have a DC connector so it just needs to be plugged into the included wall
+ adapter.
+<p>
+ Orient the laser head so that the polarization
+ axis is at 45 degrees.  It will probably be marked but if not, is
+ easily determined with a linear polrizer.
+<p>
+<b>Links:</b>
+<p>
+ <ul>
+ <li><A target="QD" HREF="quadins1.htm">Construction Guidelines for Basic
+  Quadrature-Sin-Cos Decoder and Quad-A-B Interface Kits</a>.
+<p>
+ <li><A target="uMD" HREF="../uMD0/uMD0.htm">Micro Measurement Display 0 (&micro;MD0)</a>
+ </ul>
+</ul>
+<p>
+<hr>
+<b><center>Sam's Laser FAQ, <A HREF="copyright.htm">Copyright &copy<A> 1994-2024,
+ Samuel M. Goldwasser, All Rights Reserved.<br>
+ I may be contacted via the
+ <A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+ Email Links Page</A>.</center></b>
+<hr>
+<p>
+</body>
+</html>

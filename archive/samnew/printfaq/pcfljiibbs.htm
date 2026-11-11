@@ -1,0 +1,177 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcfljiibbs.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="HP LaserJet II bad bearing sounds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: HP LaserJet II bad bearing sounds</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcfljiibbs.htm">https://www.repairfaq.org/samnew/printfaq/pcfljiibbs.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">HP LaserJet II bad bearing sounds&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pcfljiitlps.htm">&lt;&lt;&nbsp;HP LaserJet II - Top of t..</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfljiifuso.htm">HP LaserJet II fuser over..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcfljiibbs">HP LaserJet II bad bearing sounds</A></h3>
+
+This also applies to many other laser printers using the Canon SX or similar
+print engine.
+<p>
+<blockquote>
+"Developed frequency-changing whine of bad bearings.  Not really sure whether
+ a fan motor or main motor."
+</blockquote>
+<p>
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+<p>
+A service manual probably wouldn't be a lot of help. The SX printers (HP LJII,
+Apple Laserwriter 2, etc.) are very modular, and AFAIK, the official way to
+repair them is to replace the defective module. Of course it's possible to
+repair them at a much lower level than that, which is what I do to my pair.
+<p>
+There are 3 motors:
+<p>
+<ol>
+<li>Lower fan. A tangential blower in the lower case next to the DC controller
+ (Engine controller) PCB. This runs all the time that the printer is turned
+ on.  (Maybe the cover needs to be closed - I can't remember which 24 V line
+ it runs from)
+<p>
+<li>Upper fan. This sits on top of the AC block in the rear right corner (near
+ where the mains cable plugs in). It runs when the machine is printing, and
+ drops back to a slower speed when the machine is idle.
+<p>
+<li>Main motor. This is a stepper motor that drives all the mechanics in the
+ printer through a gear train. Needless to say it only turns when the
+ machine is actually printing.
+</ol>
+<p>
+By finding out when the noise occurs, it's possible to figure out what is
+causing it.
+<p>
+Firstly the good news. I have never had a main motor bearing fail. They're ball
+races anyway (Yes, you can strip the motor down and rebuild it). I've never had
+noise from the gear train either.
+<p>
+Now the bad news. Fan failure is common. The bearings are bronze bushes, and
+they fail. Sometimes lubrication helps a lot, sometimes things are just too far
+gone.
+<p>
+Lower fan.  Remove the toner cartridge and paper tray. Turn the printer
+upside-down and remove the screws that hold the base cover on. Remove the
+cover. The fan is obvious, and is held down by 4 screws (there's a bracket at
+one side that comes off as well), and it plugs into the smaller of the PCBs in
+the machine. Remove it. You can then unscrew the motor from the fan and slide
+the motor + blades out. Then pull the blades off the motor, remove the
+circlip, and pull the motor apart. Examine the shafts and bearings. If they're
+not too badly worn, a drop of oil (3-in-1 or similar) will probably cure the
+fault. Otherwise you need a new fan - parts are impossible to obtain.
+<p>
+Upper fan. Remove the paper tray and toner cartridge. Undo the screws and
+remove the outer casing. Remove the 2 screws and lift out the fan duct + ozone
+filter (on top of the AC block). The fan is under it and is held down by 3
+more screws and a 2-pin plug on the upper (fuser protection) PCB in the AC
+block. There are at least 3 different upper fans in use, so I can't give
+directions for dismantling them. But in general, the motor can be unscrewed
+from the side of the fan, and the bearing on the other side pulled out.
+Inspect them as above, and try a drop of oil.
+<p>
+Editor's note: If you buy a replacement for this, it will likely be a 24 VDC
+muffin style fan (like in your PC, except that is 12 VDC).  HP or Apple will
+likely charge you $70 or more for this part!
+<p>
+(From: Frank Reid (reid@indiana.edu).)
+<p>
+If the upper fan fails, the fuser assembly will overheat and do about $200
+damage.  Cleaning the bronze bushing often solves the problem.
+<p>
+An obscure and obnoxious squeak sometimes comes from the anti-static brush
+on the end of the upper fuser roller (end opposite drive gear).  A bit of
+high-temperature grease on the nearby felt pad will fix it.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfljiitlps.htm">&lt;&lt;HP LaserJet II - Top of t..</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfljiifuso.htm">HP LaserJet II fuser over..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

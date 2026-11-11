@@ -1,0 +1,158 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvebaowop.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Excessive brightness and/or washed out p..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Excessive brightness and/or washed out picture</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvebaowop.htm">https://www.repairfaq.org/samnew/tvfaq/tvebaowop.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Excessive brightness and/or washed out p..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;<a href="tvobrightfl.htm">&lt;&lt;&nbsp;Occasional brightness fla..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvbadfocus.htm">Bad focus (fuzzy picture)&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvebaowop">Excessive brightness and/or washed out picture</A></h3>
+
+There are a number of possibilities including incorrect screen (G2) or bias
+(G1) voltages, or a problem in the video or blanking circuitry.  Any of these
+could be the result of bad connections as well.  A short in the CRT can also
+result in these symptoms.
+<p>
+<ul>
+<li>Excessive brightness/washed out picture is often an indication of a
+ problem with the screen (G2) supply to the CRT.  May be a bad capacitor
+ or resistor divider often in the flyback transformer assembly or on 
+ the board on the neck of the CRT.
+<p>
+<li>If the excessive brightness just developed over time, then a simple
+ adjustment of the screen or background brightness controls may keep
+ it (and you) happy for a long time.
+<p>
+ When good, a typical value would be in the 200 to 600 VDC at the CRT.  The
+ screen (it may also be called master brightness, bias, or background) control
+ should vary this voltage.  However, it may be difficult to measure as the
+ resistors in the voltage divider network may be quite large - hundreds of M
+ ohms.  If your unit has an external screen control (less likely these days)
+ and it has no effect, trace out the circuitry in the immediate vicinity and
+ check the resistors and potentiometer for opens, look for bad connections,
+ etc.  If it is built into the flyback transformer and is sealed, the entire
+ flyback will need to be replaced unless the actual problem turns out to be a
+ bad connection or bad component external to the flyback.
+<p>
+<li>Where the brightness control has no effect, suspect a missing bias supply to
+ the G1 (control grid) electrodes of the CRT.  This is usually derived from
+ the flyback with a simple rectifier/filter capacitor power supply.  Parts
+ may have failed (though not likely the flyback itself).  Adjusting the user
+ brightness control should vary this voltage over a typical range of 0 to -50
+ V with respect to signal ground.
+<p>
+<li>It could also be a problem with biasing of the video output transistors.
+ There may individual controls for background brightness on the little board
+ on the neck of the CRT.  However, we are looking for a common problem since
+ all colors are wrong in the same way.  This is likely to be a missing voltage
+ from a secondary supply from the flyback.
+<p>
+<li>A short between electrodes inside the CRT can result in brightness problems.
+ It may be possible to check this with an ohmmeter with the power off and the
+ CRT socket removed.  Test between G1, G2, and F where all colors are
+ affected though a short between F and G2 will result in the focus control
+ changing brightness and vice-versa - a classic symptom.
+<p>
+ However, in some cases, it only shows up when operating and one must deduce
+ the presense and location of the short from its affect on voltages and bias
+ levels.
+<p>
+ See the section: <A HREF="tvrescuesc.htm">Rescuing a shorted CRT</A> and other
+ related topics.
+</ul>
+<p>
+First, check for bad connections/cold solder joints by gently prodding
+with an insulating stick.  Check voltages and bias levels.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvobrightfl.htm">&lt;&lt;Occasional brightness fla..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvbadfocus.htm">Bad focus (fuzzy picture)&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

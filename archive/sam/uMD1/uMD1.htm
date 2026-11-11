@@ -1,0 +1,2967 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uMD1/uMD1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uMD1/uMD1.htm">https://www.repairfaq.org/sam/uMD1/uMD1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<title>Micro Measurement Display 1 (&micro;MD1)</title>
+<center>
+<h1>Micro Measurement Display 1 (&micro;MD1)</h1>
+
+<h2>For Heterodyne Interferometers using Two Frequency Lasers
+<p>
+Installation and Operation Manual</h2>
+
+<h3>Version 2.90c (5-Jan-25)
+</h3>
+</h2>
+<h3>
+<A HREF="../copyright.htm">Copyright &copy;</A> 1994-2022
+<br>
+Sam Goldwasser and Jan Beck<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<link ="icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<link ="shortcut icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<p>
+<A NAME="umd1toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#umd1pre">Preface</a>
+ <ul>
+ <li><A HREF="#umd1aac">Author and Copyright</a>
+ <li><A HREF="#umd1dis">DISCLAIMER</a>
+ <li><A HREF="#umd1ack">Acknowledgment</a>
+ </ul>
+<li><A HREF="#umd1int">Introduction</a>
+<li><A HREF="#umd1spc">Specifications</a>
+<li><A HREF="#umd1cos">Computer and Operating System Requirements</a>
+<li><A HREF="#umd1dcu">Differences between the chipKIT DP32 and SG-&micro;MD1</a>
+<li><A HREF="#umd1ckasb">Assembly using the chipKIT DP32 Board</a>
+<li><A HREF="#umd1suasb">Assembly using the SG-&micro;MD1 Board</a>
+<li><A HREF="#umd1wcbls">Wiring the Cables</a>
+<li><A HREF="#umd1pins">&micro;MD1 Pin Assignments</a>
+<li><A HREF="#umd1frm">The &micro;MD1 Firmware</a>
+ <ul>
+ <li><A HREF="#umd1lvsf">Latest Versions of the Firmware</a>
+ <li><A HREF="#umd1fra">Firmware Hardware Assignments and Communications Format </a>
+ <li><A HREF="#umd1ckdrvr">Installing the USB Device Driver</a>
+ <li><A HREF="#umd1uecide">Loading UECIDE</a>
+ <li><A HREF="#umd1ucf">Uploading the &micro;MD1 Firmware</a>
+ <li><A HREF="#umd1fts">Testing the Board and Firmware</a>
+ </ul>
+<li><A HREF="#umd1irg">The &micro;MD1 GUI</a>
+ <ul>
+ <li><A HREF="#umd1lvsg">Latest Versions of the GUI</a>
+ <li><A HREF="#umd1guimw">Main Window Controls and Readouts</a>
+ <li><A HREF="#umd1guimw">Main Window Controls and Readouts</a>
+ <li><A HREF="#umd1guiic">Interferometer Configuration Window</a>
+ <li><A HREF="#umd1guiec">Environmental Compensation Window</a>
+ <li><A HREF="#umd1guitm">Test Mode Window</a>
+ <li><A HREF="#umd1guima">Multiple Axis Support:</a>
+ </ul>
+<li><A HREF="#umd1hom">Using &micro;MD1 with Homodyne Interferometers</a>
+<li><A HREF="#umd1ligo">Using &micro;MD1 for DIY LIGO?</a>
+<li><A HREF="#umd1fut">The Future</a>
+<li><A HREF="#umd1trb">Troubleshooting</a>
+<li><A HREF="#umd1ricb">Restoring or Installing the chipKIT Bootloader</a>
+<li><A HREF="#umd1ref">References</a>
+</ul>
+<p>
+<A NAME="umd1pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="umd1aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2022
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="umd1dis">DISCLAIMER</a></h4>
+
+&micro;MD1 is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+While every effort has been made to avoid this possibility, &micro;MD1 is an
+on-going development effort.  We will not be responsible for any consequences
+of such bugs including but not limited to damage to the wafer FAB you
+picked up on eBay for $1.98 + shipping, financial loss from the use of
+37 spools of ABS due to the office 3-D printer fabricating a part 25.4x
+too large in all dimensions, or bruising to your pet's ego from any number
+of causes directly or indirectly related to &micro;MD1. ;-)
+
+<h4><A NAME="umd1ack">Acknowledgment</a></h4>
+
+Thanks to Jan Beck for selecting the chipKIT DP32 and writing and testing
+initial versions of the firmware and GUI.  And for getting me interested
+in actually getting involved in this project.  If anyone had told me 
+six months ago that I'd be writing code in C, MIPS assembly language,
+and Visual Basic - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)  Jan maintains the master GUI source code
+as well as slightly different versions of the firmware and a 
+development blog on the overall project.
+And a version of the firmware providing basic readout of displacement
+on any Bluetooth wireless device with a terminal APP, or with a bit
+more polished presentation (though not the complete GUI) on Android devices,
+may be found on Jan's Web site.  See that and more under "References".
+<br>
+<p>
+<A NAME="umd1int"></A>
+<hr>
+<h3>Introduction</h3>
+
+<font color=darkred><b>
+IMPORTANT: To focus on SG-&micro;MD2,
+I am no longer providing complete kits of parts for &micro;MD1.
+The simplest option going forward if you really want
+&micro;MD1 is to order most of the parts directly from ey, and
+the programmed PIC32 chip and SG-&micro;MD1 PCB from me here or on eBay.
+They are both the same price: $50.
+Going direct to DigiKey for most of the parts enables you to customize the
+parts order and will actually be less expensive overall than when buying
+everything from me as in the past.  And everything will come in nice
+labeled baggies. ;-)  To make this as painless as
+possible, the <A target="SG-uMD1"
+HREF="https://www.digikey.com/short/2rpzdrrw">SG-&micro;MD1 V1.2 Digikey
+CART 5-Jun-2022</a> has most of the parts for a 3-axis system.
+The cost of the DigiKey parts is under $50 including shipping in the USA.
+However, due to end-of-life on stocking of the through-hole RS422 receiver,
+it (Digikey part #296-15057-5-ND) gets removed.  If the programmed PIC
+is ordered from me, two (2) UA9637s or UA9639s will be
+included.  The PIC32 can be deleted from the CART unless you want a spare (but
+it will not even have the bootloader installed).  Also, this CART includes both
+through-hole and SMT USB connectors, so one of those can be deleted also.
+And parts like LEDs can be ordered on eBay for about 1/25th of the cost
+from Digikey!  THIS CART HAS NOT BEEN FULLY ORDERED - ERRORS ARE POSSIBLE!
+<p>
+You can also order the DigiKey CART parts directly and build the thing on an
+electronics breadboard.  But as noted, the Digikey CART includes the
+UNPROGRAMMED PIC32 WITHOUT EVEN THE BOOTLOADER.  A PIC programmer
+is required to install the bootloader, which can be done via the Programming
+Header on the SG-&micro;MD1 PCB.  I use a Microchip PICkit 3, which can be
+found on eBay for under $25.  But several others would work.  If I provide
+the PIC32, it will have the bootloader and the latest &micro;MD1 firmware.
+</font></b>
+<p>
+<font color=darkgreen><b>
+However, switching over to <font color=blue>
+<A HREF="../uMD2/index.html">SG-&micro;MD2</a></font>
+is the preferred option.
+SG-&micro;MD2 supports both heterodyne and homodyne interferometers
+with higher performance for both.  And SG-&micro;MD2 is much
+easier to assemble.  Really. ;-) The only current downside is
+that SG-&micro;MD2 does not have firmware interpolation.  The resolution for 
+heterodyne is <i>only</i> 80 nm with a Plane Mirror Interferometer
+(versus ~158 with &micro;MD1 with interpolation disabled) for rapid
+changes in displacement.  For slowly varying displacement, averaging
+in the GUI can be used to increase the effective resolution.
+</font></b><p>
+Note: Links to Web pages external to this document will open in a <i>single</i>
+separate tab or window depending on your browser's settings.
+<p>
+&micro;MD1 is an inexpensive system for precision readout of displacement
+(change in position), angle, straightness, and more
+in metrology applications.  It is designed and optimized for
+two-frequency HeNe laser (heterodyne) interferometry, but also
+provides limited support for single frequency (homodyne) interferometry,
+as well as other measurement applications using optical or mechanical
+encoders with Quad-A/B or up/down pulsed signals.
+<p>
+For a system optimized for these applications, with no practical
+upper limit on slew rate and the same GUI as &micro;MD1, see
+<A HREF="../uMD2/uMD2.htm">Micro Measurement Display 2 (&micro;MD2)</a>.
+&micro;MD2 also has basic support for heterodyne interferometers
+with a higher REF/split frequency limit but currently no interpolation.
+Unless your application involves high-REF lasers like the
+Zygo 7701/2, &micro;MD1 is still recommended for heterodyne.
+<p>
+While targeted for
+experimenters, hobbyists, and researchers, there is no reason why
+&micro;MD1 can't also be of value in science and industry.
+The hardware platform is a readily available inexpensive
+microcontroller development board which communicates via
+USB to a Windows PC, laptop, netbook, or tablet as shown below.
+<p>
+<h3>
+<center>
+<img src="inter2f-uMD1.gif">
+<p>
+Typical Heterodyne Interferometer Setup using &micro;MD1</h3>
+</center>
+<p>
+Note that &micro;MD1 refers specifically to the combination of the
+PIC32-based hardware and firmware.  It's possible there could be &micro;MD2,
+&micro;MD3, .... &micro;MDn - or &micro;MD0 - in the future using
+the same GUI. :)  Oh, guess what?  There is &micro;MD2. ;-)
+<p>
+This document provides installation and operating instructions for the
+&micro;MD1 hardware, firmware, and software.
+<p>
+SG-&micro;MD1 provides most of the features of the standard Digilant
+chipKIT DP32 board that was previously used for &micro;MD1, but
+optimized for &micro;MD1.
+It uses the same PIC32 microprocessor and runs the same
+firmware and GUI and is supported by the same software IDEs, and is the
+same size.  The PCB layout includes the line receivers and associated
+components for up to 3 measurement channels, eliminating hand wiring.
+Once assembled, the boards are totally interchangeable for &micro;MD1.
+<p>
+Complete SG-&micro;MD1 kits as well as just the PCB and PIC may be
+purchased through eBay or direct from me via email.
+<p>
+It is assumed that the reader is
+familiar with two-frequency interferometry in general as well as
+HP/Agilent/Keysight lasers and interferometer optics.  If not,
+back up and start with Sam's Laser FAQ: <A target="uMD1" HREF=
+"../laserlia.htm#liaint2f">Interferometers
+Using Two-Frequency Lasers</A> and <A target="uMD1"
+HREF="../laserhst.htm#hstish3">Hewlett-Packard/Agilent/Keysight Stabilized
+HeNe Lasers</A>.
+<p>
+Mote: Throughout this document, "&micro;MD1 board" or simply "board" refers
+to the chipKIT DP32 or the SG-&micro;MD1 replacement where there is no
+need to distinguish between them.
+<br>
+<p>
+<A NAME="umd1spc"></A>
+<hr>
+<h3>Specifications</h3>
+
+<ul>
+<li><b>Laser compatibility:</b> HP/Agilent/Keysight 5501A/B, 5517A/B/C/D,
+ 5518A, 5519A/B, Excel 1001A/B/F, Zygo 7705, as well as clones or home-built
+ axial Zeeman HeNe lasers with a REF frequency of approximately 1.2 to 4 MHz
+ for full functionality.  Lasers with REF down to 100 kHz or below
+ and somewhat higher than 4 MHz will work but without sub-wavelength
+ interpolation, and the upper limit has not been tested at maximum stage
+ velocity.  If the laser does not have a built-in optical receiver, a
+ 10780A/B/C or equivalent will be needed.  Suitable DC power supplies
+ will be required for the laser and/or optical receiver.  The &micro;MD1
+ board is powered from USB.  While all the common metrology lasers operate
+ at 633 nm, the wavelength is a settable parameter in the software, so
+ devices with other wavelengths can be accomodated.
+<p>
+<li><b>Interferometer optics support:</b> Linear Interferometer (LI, 10702A),
+ Plane Mirror Interferometer (PMI, 10706A/B), Single Beam Interferometer
+ (SBI, 10705A), High Resolution Plane Mirror
+ Interferometer (HR-PMI, 10716A), Angular Interferometer (10770A),
+ Long Range Straightness Interferometer (LRSI, 10775A),
+ Short Range Straightness Interferometer (SRSI, 10774A), including
+ older versions as well Excel, Zygo, and other clone optics, as well as oOther
+ configurations like differential interferometers.  Relevant
+ measurement parameters may be set for older, non-standard, and/or
+ for home-built
+ angle and straightness interferometers, and to accomodate other
+ interferometer configurations which have a different multiplier
+ coeficient with respect to displacement or angle including
+ squareness and flatness.
+<p>
+<li><b>Display:</b> Graphical User Interface (GUI) runs on Windows PC
+ (not included).  Click for a sneak peek at the <A target="uMD1"
+ HREF="uMD1.gif">&micro;MD1
+ Main Window</A>.  Note that there is no requirement that the GUI must
+ be used.  The raw data from the firmware can be input to another
+ application of the user's choice via the USB port as it is simply
+ a space-delimited text stream.  There is no communication in the
+ other direction (to the firmware).  Details are left as an exercise
+ for the user but the format is included later in this document. ;-)
+<p>
+<li><b>Number of axes:</b> Up to three independant axes are supported by
+ the firmware.   The GUI can display their values with a "primary" axis
+ selected among them for the main readout and graphing.  The displacement of
+ the other axes will also be displayed (but not shown in the graph).
+ There are no current plans for anything beyond this.
+<p>
+<li><b>Measurement modes:</b> Displacement, Velocity, Angle, Straightness
+ Long, Straightness Short, and Frequency (Discrete Fourier Transform or
+ DFT of the displacement data up to about 100 Hz).  Flatness, squareness,
+ and other measurements that can be framed in terms of the modes, above,
+ should be possible. 
+<p>
+<li><b>Units:</b> nm, &micro;m, mm, cm, m, in, ft for displacement,
+ Straightness Long, and Straightness Short, with /s for Velocity;
+ arcsec, arcmin, degree for Angle measurements.
+<p>
+<li><b>Plotting/graphing</b>:</b> A real-time graph with automatic
+ vertical scaling and selectable horizontal compression
+ displays the trend of the selected parameter (e.g., displacement).  The
+ DFT is able to display a rough analysis of the velocity data in
+ the frequency domain.  The plot may be turned off (freeing up
+ desktop space and reducing CPU load if desired.
+<p>
+<li><b>Environmental compensation:</b> Manual entry of temperature, pressure,
+ and humidity.  Digital sensor inputs are supported but due to bugs in the
+ wire.h library resulting in an interrupt race condition or something,
+ only once when the board is reset.  These require additional hardware
+ (the sensors) and are disabled by default in the firmware.
+<p>
+<li><b>Resolution:</b> Basic resolution is 1/2, 1/4 or 1/8 wavelength for
+ Displacement at 633 nm depending on the interferometer optics.  An adjustable
+ weighted average to smooth data may be applied to the readout and graph.
+ Interpolation to provide higher effective resolution is available
+ and achieves an accuracy of 25 nm or better, and resolution under 1 nm
+ with averaging. :-)  Note that 1 nm is about the width of 8 hydrogen
+ atoms sitting side-by-side. :)
+<p>
+<li><b>Maximum range:</b> Displacement data is stored as 64 bit
+ signed integer where the basic increment is the resolution (1/2, 1/4, or 1/8
+ wavelength depending on the interferometer).  These will not overflow during
+ the life of a multiplicity of multiple universes. ;-)
+<p>
+<li><b>Slew rate:</b> For heterodyne interferometry, the laser's split or
+ "REF" frequency determines the maximum velocity in the direction that
+ decreases the difference frequency between REF and MEAS.  &micro;MD1
+ can accomodate lasers with a REF frequency of greater than 4 MHz.  With
+ a linear interferometer, this translates to velocities of greater than
+ 1 meter/second.
+<p>
+<li><b>Data logging:</b> Capture allows displacement data to be saved to a
+ file.  (All other modes are a function of this data.)
+<p>
+<li><b>Error detection:</b> REF dropout (REF or Head Error), beam dropout (MEAS
+ or Path Error), LOS (Loss Of Signal Error, both REF and MEAS disappear),
+ The detection duration sensitivity is about 1/300th of a second or more.
+ Also Slew (Rate+) Error (stage speed too fast in the direction that increases
+ MEAS frequency,  Slew (Rate-) Error (stage speed too fast in the direction
+ that decreases MEAS frequency.
+<p>
+<li><b>Test capability:</b> Software-based displacement function
+ generator can be used to simulate the behavior with no laser or
+ interferometer or even the data acquisition hardware hooked up.
+ Includes constant, ramp, triangle, and sinusoid functions with
+ adjustable frequency/slope, amplitude, and offset.  For testing,
+ the error detection may be turned off.
+<p>
+<li><b>Hardware platform:</b> microchip&trade; chipKIT DP32 Prototyping
+ Platform or the equivalent SG-&micro;MD1 PCB, which are both
+ based on the microchip&trade; PIC32MX250F128B PIC32 
+ microcontroller.  The board is powered from USB, which is also used for
+ firmware download and communications
+ with the PC-based GUI.  The chipKIT DP32 used to be available from Digilent or
+ direct from microchip&trade; as part number TDGL019
+ but is now out of production.  A few may be found on eBay at inflated
+ prices or from various hard-to-find parts distributors at even more
+ inflated prices.  The SG-&micro;MD1 PCB is now available either as
+ a kit of parts or completely assembled.  The
+ complete &micro;MD1 Interferometer Measurement Display
+ package is available from me direct or on eBay, and
+ includes lifetime tech support. ;-)
+<p>
+<li><b>Firmware development environment:</b> There are several options
+ including Arduino, MPIDE, and UECIDE.  The best of these I've found is
+ <A target="uMD1" HREF="http://uecide.org/">UECIDE</a>, which may also be
+ required for environmental sensor support since it has the required libraries.
+ However, the only version of UECIDE I've had
+ success getting to run is Version 0.8.8alpha17 (which I can provide
+ fully configured upon request via Dropbox).  I presume that
+ some more recent versions like 0.8.8alpha22 would also be satisfactory,
+ though they may no longer be configurable.
+ The most recent versions are not compatible due to changes
+ in the libraries.  Since my motto is "if it ain't broke, don't fix it",
+ I have no intention of updating the code, sorry.  The
+ firmware is written in C and MIPS assembly language.  But as a user, these are
+ only required to compile and upload the firmware to the &micro;MD1 board.
+ Where I provide the board as part of &micro;MD1, a version of the
+ firmware will be preloaded.  But updates in case of bug fixes (Arrrrgggg!)
+ will require being able to compile and upload.
+<p>
+<li><b>GUI development environment:</b> Microsoft Visual Studio.  The original
+ development was done under VS 2013, abut later
+ versions work.  This isn't of any consequence for the user
+ since the Windows executable is provided.  The &micro;MD1 GUI
+ may be test driven in "Test Mode" with simulated data
+ by downloading <A HREF="https://www.repairfaq.org/sam/uMD1/uMD1.exe">&micro;MD1.exe</A>.
+ (However, this version is not guaranteed to be the most up-to-date.)
+<p>
+<li><b>PC requirements:</b> PC/laptop/netbook running Windows XP/Vista/7/10
+ higher with MS Net Framework 4.0 or higher.
+ This will run on almost any PC with a free USB port that isn't totally
+ ancient.  The firmware uploader can even be run from a USB thumb drive
+ if there isn't enough free disk space to load UECIDE.  The GUI requires
+ minimal disk space or memory.  For a full development environment using
+ Microsoft Visual Studio, 0.5 GB of free main memory (after Windows hogs
+ the rest of it) and 2 GB free disk space is recommended.  But again, as
+ a user, this is not needed.
+<p>
+<li><b>Firmware and GUI cost:</b> These will be free for hobbyist,
+ experimenter, research, and other non-commercial users.  The cost
+ for commercial users has not been determined but should be very modest
+ at most.
+<p>
+<li><b>Support:</b> Lifetime Tech support will be provided via email and
+ the &micro;MD1 Web site (this manual).  "Lifetime" is defined to be the
+ life of the user or the duration of the user's interest in interferometer
+ technology.  This definition is subject to change without notice. ;-)
+ However, while the source code may be provided and bug reports are welcome,
+ we will NOT support unauthorized changes to either the firmware or GUI unless
+ they are deemed by our experts to be critical to the future of the
+ Universe! ;-)  And as multiple words of advice, all but the most trivial
+ modification of the firmware is guaranteed
+ to create multiple gray hairs regardless of your age even though
+ a number of the lines of code have comments, which may or may
+ not mean anything intelligible. :)  Furthermore, since I've long since
+ purged my brain of detailed knowledge of the firmware's finer details
+ due to its limited memory capacity, so don't expect assistance in
+ implementing anything beyond changes to comments as the backups
+ are not accessible. ;-)
+</ul>
+<p>
+Specifications are subject to change without notice. :-)
+<p>
+<A NAME="umd1cos"></A>
+<hr>
+<h3>Computer and Operating System Requirements</h3>
+
+Everything that follows assumes the use of Windows.  If you're
+really smart and run Linux instead, sorry. ;-)  (However, the GUI
+may run on Linux under something called "wine" so there may be hope.)
+MPIDE, UECIDE, and the
+&micro;MD1 GUI are known to work under Win XP, Vista, 7, and 10,
+and should be fine on
+Win 8 as well.  Microsoft Net Framework 4.0 or higher is required
+to run &micro;MD1.  Net 4.0 or a more recent version is probably on
+your computer already but is available free from the Microsoft Web site.
+<p>
+<A NAME="umd1dcu"></A>
+<hr>
+<h3>Differences between the chipKIT DP32 and SG-&micro;MD1</h3>
+
+As noted above, both versions are identical with respect to &micro;MD1
+functionality including the firmware and GUI.  The locations of most major
+components are similar and the board size and mounting holes should
+be identical or very close.  The following are the notable differences:
+<p>
+<ul>
+<li>Layouts for up to 3 measurement channels as well as environmental sensors
+ replaces the prototyping area on the chipKIT board.
+<p>
+<li>The layout pattern for the external EEPROM is not present, though there
+ is space for it with plated holes (which could be used for other purposes).
+ A daughter board could be designed to plug into the Arduino headers
+ for adding other circuitry.
+<p>
+<li>The LED functions and locations have changed.  Details are provided in
+ the SG-&microMD1 assembly manuals.
+<p>
+<li>The power/USB jumper configuration differs slightly and external VIN
+ (5 VDC) is via a 2 pin header instead of a screw terminal block.
+<p>
+<li>There is a jumper to isolate RB0 if using the programming header (bridged
+ with a solder-side trace by default).
+<p>
+<li>Most parts on SG-&micro;MD1 are through-hole as opposed to SMT for the
+ chipKIT DP32.  The only exception is the USB Micro B connector, which can be
+ either type.  A through-hole connector will probably be shipped since it
+ is easier to solder without a super fine-tip soldering iron, thin solder,
+ and a most excellent magnifier or microscope (or exceptional vision).
+<p>
+<li>Part labeling/numbering has changed, sorry.
+</ul>
+<p>
+Finally, except as noted above, most features of the chipKIT DP32 have been
+retained.  So SG-&micro;MD1 can be used as a chipKIT DP32 replacement for
+other purposes if a "prototyping shield" was created that plugged into the
+Ardiuno headers.
+<p>
+<A NAME="umd1ckasb"></A>
+<hr>
+<h3>Assembly using the chipKIT DP32 Board</h3>
+
+If you dug up a dusty chipKit DP32 in the back of one of your electronics
+junk drawers (or I unloaded the last one I have on you), go to the
+<A target="uMD1" HREF="chipKit-uMD1-am.htm">Assembly Instructions
+for the &micro;MD1 using the Digilent chipKit DP32</a>.  Otherwise,
+continue on to the next section.
+<p>
+<A NAME="umd1suasb"></A>
+<hr>
+<h3>Assembly using the SG-&micro;MD1 Board</h3>
+
+The SG-&micro;MD1 Boards are now available and have replaced the chipKit
+boards.  They will be supplied unpopulated with a kit of parts for
+up to a 3 channel &micro;MD1 system with the PIC32 preprogrammed with the
+boot loader and &micro;MD1 firmware.  Although
+assembling them from a pile of parts may appear to be
+more work than using the chipKit board, no hand-wiring or decisions on
+parts placement will be required.  So it is actually simpler in some ways
+as parts need only to be inserted and soldered.  All parts are through-hole so
+it should be quite straightforward with a total time from start to
+finish of under 2 hours for anyone reasonably proficient in fine soldering.
+<p>
+The first SG-&micro;MD1 PCBs to be available were Version 1.0.
+No more of those are being shipped.  But if you purchased an SG-&micro;MD1 kit
+awhile ago, it may have a V1.0 PCB.  Version 1.2 will be in all future kits.
+They differ primarily in the LEDs and are equally good at
+doing their &micro;MD1 thing. ;-)  V1.2 has all the chipKit LEDs as well
+as one additional one so that REF and MEAS1-3 are illuminated. ;-)
+However, parts numbering has also changed slightly between V1.0
+and V1.2 and thus it's essential to use the correct assembly manual.
+The version is labeled on the PCB silkscreen and
+bottom copper layers.  Please refer to
+<A target="uMD1" HREF="SG-uMD1-V1.2-am.htm">SG-&micro;MD1-V1.2
+Assembly Manual</A>.  There are links to the the SG-uMD1-V1.0 assembly
+manual and the MPLAB version (which is bare-bones for programming
+PIC32s directly or restoring the bootloader) under "References".
+More details are available in the V1.2 assembly manual.
+<p>
+The interferometer cable locations are unchanged so either layout can be
+referenced for wiring those.
+<p>
+<A NAME="umd1wcbls"></A>
+<hr>
+<h3>Wiring the Cables</a></h3>
+<p>
+The specific wiring for REF and MEAS will depend on the setup.  If using
+HP/Agilent/Keysight lasers:
+<p>
+<ul>
+<li><b>5517 or 5501 laser with separate 10780 optical receiver:</b> Cables
+ will be required for REF on the round 18 pin laser head connector or
+ cable, and MEAS from the 10780 optical receiver.
+<p>
+<li><b>5518A laser:</b> REF and MEAS are both on the round 18 pin connector on
+ the back of the laser head or cable.
+<p>
+<li><b>5519A/B laser:</b> REF and MEAS are both on the 7 pin connector on the
+ back of the laser head or cable.
+</ul>
+<p>
+On the chipKit or SG-&micro;MD1 PCB, the pin assignments on the connectors
+are:
+<p>
+<pre>
+  Pin    Function
+ ------------------
+   1      Signal
+   2      GND / RET
+   3      GND / RET
+   4      ~Signal
+</pre>
+<p>
+Where "Signal" is REF, MEAS1, MEAS2, or MEAS3.  And if Signal and ~Signal are
+swapped, it makes no difference.
+<p>
+It's usually not necessary to run the REF and MEAS Return (RET) signals to
+the board even if there is no common ground connection between the
+board, and laser and interferometer optical receiver(s).  As long as there
+are terminating resistors, they
+will provide the ground reference.  In fact, under some conditions
+where everything is tied together with a common ground, the RET connections
+could add noise due to a ground loop.  The line receivers only care about
+the difference between the REF and ~REF or MEAS
+and ~MEAS voltage levels as long as the absolute voltage levels are
+within their common mode and absolute voltage specifications.
+For cables of a few feet or less, it's almost certain that no
+connections are required for the Returns.  But for long runs,
+shielded cable or twisted pairs may be desirable.  This won't
+apply to most hobbyist/experimenter applications. :)  There has to be
+a common Ground somewhere though, usually via the power supply.
+<p>
+Refer to the various connection diagrams in
+<A target="uMD1" HREF="../laserhst.htm#hstish3">Hewlett
+Packard/Agilent/Keysight Stabilied HeNe Lasers</a>.
+<p>
+<A NAME="umd1pins"></A>
+<hr>
+<h3>Arduino Pin Assignments</a></h3>
+
+Pins on the chipKIT and SG-&micro;MD1 board are labeled on the silkscreen
+but there are at least two different revisions for the chipKit and the
+numbering isn't the same!  The table below should agree with the
+SG-&micro;MD1:
+<p>
+<PRE>
+   Pin   Arduino Labeling   Signal Labeling   Signal Name
+ ------------------------------------------------------------
+  J3-1           9               RA0             RPA0
+  J3-2          10               RA1             RPA1
+  J3-3          11               RB0             RPB0
+  J3-4          12               PGC (RB1)       RPGC (RPB1)
+  J3-5          13               RB2             RPB2
+  J3-6          14               RB3             RPB3
+  J3-7          15               RA2             RPA2
+  J3-8          16               RA3             RPA3
+  J3-9          17               RB4             RPB4
+  J3-10         18               RA4             RPA4
+  J3-11         3.3V             3.3V            3.3V
+  J3-12       VIN (5V)         VIN (5V)        VIN (5V)
+  J3-13         GND              GND             GND
+
+  J4-1           0*              RB5             RPB5
+  J4-2           1*              RB7             RPB7
+  J4-3           2*              RB8             RPB8
+  J4-4           3*              RB9             RPB9
+  J4-5           4               RB10            RPB10
+  J4-6           5               RB11            RPB11
+  J4-7           6               RB13            RPB13
+  J4-8           7               RB14            RPB14
+  J4-9           8               RB15            RPB15
+  J4-10          -                -                -
+  J4-11         3.3V             3.3V            3.3V
+  J4-12       VIN (5V)         VIN (5V)        VIN (5V)
+  J4-13         GND              GND             GND
+</PRE>
+<p>
+* 5 V tolerant.
+<p>
+The numbers refer to standard Arduino signal "pin" designations while the RPBs
+refer to DP32 PORT A or B bits.  The photo of the chipKIT board,
+below, has the Arduino designations.  This is revision C and is what Digkey has
+been shipping.  It also has the power LED, so perhaps that's an addition. :)
+The relevant board wiring is the same for the two versions, it's just the
+silkscreens that differ.  But there are apparently older versions that may not
+be the same.
+<p>
+Note 1: The jumpers on JP7 are NOT in the correct position for our needs
+in the photo below.
+<p>
+Note 2: VIN MUST be +5 VDC to use the chipKit DP32 with &micro;MD1 parts.
+<p>
+The chipKit and SG-&micro;MD1 pin locations are similar:
+<br>
+<center>
+<img src="chipKIT_DP32_PCB3.gif" height=500>
+&nbsp; &nbsp;<img src="SG-uMD1-1.2-3Axis.jpg" height=500>
+<br>
+<h3>Arduino Pin Labeling of Original chipKIT DP32 PCB (Left) and Three-Channel SG-&micro;MD1 PCB (Right)</h3> 
+</center>
+<p>
+<b><font color="red">
+CAUTION: Most PIC pins are NOT 5V tolerant - they will be unhappy if
+a 5 V signal is connected to them directly.  Thus VIN (5V) or any signal
+that may go higher than 3.3V should NEVER
+be connected to them, even for an instant.  Bad things may happen.  3.3V
+is acceptable through a current limiting resistor (just to be doubly safe,
+for the micro that is).  Hooking raw power to what may be a logic output
+(accidentally or otherwise) is never a good thing!  P.S. "Unhappy" and
+"Bad things may happen" could mean that you'll ruin the PIC chip.
+</font></b>
+<p>
+<A NAME="umd1frm"></A>
+<hr>
+<h3>The &micro;MD1 Firmware</h3>
+
+<h4><A NAME="umd1lvsf">Latest Versions of the Firmware</a></h4>
+
+(These files are also available at <A target="uMD1" HREF=
+"https://github.com/lasersam594/Micro-Measurement-Display-uMD1">GitHub:
+Micro Measurement Display 1: uMD1</A>.)
+<p>
+The (non-Alpha) versions of the firmware are absolutely guaranteed to be new
+and improved in terms of features, capabilities, and performance.  This
+probably means there will be some new and improved bugs as well.  The Alpha
+versions are even more likely to have some juicy bugs.  Please contact us via
+the link at the top of this page should any dare to appear (or for any
+other legitimate reason). ;-)
+<p>
+<ul>
+<li><b>Firmware:</b> <A target="uMD1"
+ HREF="uMD1_fw_v57.04/uMD1_fw_v57.04.ino">&micro;MD1
+ Firmware Version 57.04</a> (30-May-2022).
+<p>
+ Added "#define REF_Sync 1" statement to enable synchronization of MEAS
+ capture to REF edges for interpolation.  Comment this line out if it is
+ desired to use &micro;MD1 WITHOUT interpolation.  Interpolation MUST also
+ be disabled in the GUI.  This will then
+ randomize sampling and allow GUI averaging to increase effective resolution
+ for slowly varying displacement.  UNTESTED.
+<p>
+<li><b>Firmware:</b> <A target="uMD1"
+ HREF="uMD1_fw_v57.03/uMD1_fw_v57.03.ino">&micro;MD1
+ Firmware Version 57.03</a> (18-Feb-2020).
+<p>
+ <b>Modification:</b> Changed LED3 to be 50 percent duty cycle heartbeat for
+  compatibility with chipKit 32 and SG-&micro;MD1.
+<p>
+<li><b>Firmware:</b> <A target="uMD1"
+ HREF="uMD1_fw_v57.01/uMD1_fw_v57.01.ino">&micro;MD1
+ Firmware Version 57.01</a> (10-Apr-2017).
+<p>
+ <b>Bug fixes:</b> v57.01 (hopefully) eliminates the firmware crashing
+  with multiple axis systems.  It has no effect on a single axis system.
+<p>
+ <b>Sensors:</b> The sensor code to read values ONLY when the board is
+  reset or power cycled is present but disabled.  Sensors may be enabled
+  by uncommenting the second line of code.
+<p>
+<li><b>Firmware (Alpha):</b> <A target="uMD1"
+ HREF="uMD1_fw_v60.00/uMD1_fw_v60.00.ino">&micro;MD1 Firmware
+ Version 60.00</a> (18-Jun-2018).
+<p>
+ <b>Low REF Support:</b> Extends usable range for interpolation down to a REF
+  frequency of around 0.7 MHz if #define LowCPUClockEnable = 1.  This is
+  useful for DIY axial Zeeman lasers that run at lower REF.
+<p>
+ <b>Modification:</b> Changed LED3 to be 50 percent duty cycle heartbeat for
+  compatibility with chipKit 32 and SG-&micro;MD1.
+<p>
+  V60.00 should otherwise be basically similar but some of the switch
+  points for clock speed optimization have changed so behavior may differ
+  in subtle (or not so subtle) ways.
+  For use with commercial lasers, V57.03 is fine and is currently
+  installed on any boards I provide.
+<p>
+  Note that none of these support homodyne mode.
+  For more info and a version that might, see the section:
+  <A HREF="#umd1hom">Using &micro;MD1 with Homodyne Interferometers</a>.
+</ul>
+
+<h4><A NAME="umd1fra">Firmware Hardware Assignments and Communications Format</a></h4>
+
+Here are the PIC32 Timer designations, select bits, bus addresses, and pin
+assignments for the interferometer input signals and LEDs:
+<p>
+<pre>
+   Input   Counter   TxCKR    Bus Address    Pin    Signal   Notes
+ -------------------------------------------------------------------
+    REF    Timer3    0b0001   0xbf800A10    0/RB5    RPB5
+   MEAS1   Timer5    0b0010   0xbf800E10   11/RB0    RPB0    LED4
+   MEAS2   Timer4    0b0100   0xbf800C10   13/RB2    RPB2    LED2
+   MEAS3   Timer2    0b0001   0xbf080810   14/RB3    RPB3    LED1
+    --       --        --        ----      12/RB1    RPB1    LED3 
+</pre>
+<p>
+LED3 is the heartbeat/status indicator depending on firmware version.
+Other signals that are currently used are RPB7 (AM2302), and RPB8 and RPB9
+(I2C bus for BMP180 and SHT20).
+<p>
+Most of these details are really only relevant if there is a desire to
+modify the firmware, which is not advised since no support will be provided
+if even 1 character in a comment field is changed without prior approval
+from &micro;MD1 Central. :)  This approval process normally requires a minimum
+of 3 years, 7 months, 24 days, 11 hours, 35 minutes, and 22 seconds, but
+often takes a lot longer. :-)  For wiring using the firmware provided,
+only the pin assignments matter.
+<p>
+Depending on how the line receivers decide to behave in combination with
+the laser or optical receiver when there is no signal, the LEDs may provide
+an indication of MEAS signal status, though they do not appear to respond
+to MHz frequencies.  The reason the LEDs on the chipKIT board are on the
+clock inputs at all is that there are only a very limited of pin/Timer
+combinations that are available and using those with the LEDs results
+in the fewest conflicts.  For SG-&micro;MD1, there are seprate (optional)
+LEDs on the all of the line receiver outputs (which also are probably not
+useful and don't need to be installed).
+<p>
+Note that if updating firmware, the GUI may also need to be updated
+and vice-versa.
+<p>
+Here is the communications format between the firmware and GUI.  This
+information is of little relevance if using the GUI, but will be
+useful if writing your own application software or for data analysis.
+Each of the values is sent as an ASCII string representing a signed (if
+needed) decimal number separated by spaces at the sampling rate.
+The firmware maintains a FIFO buffer so that if the USB
+data is delayed for some reason, no data should be lost (hopefully):
+<p>
+The same format is used for both homodyne and Heterodyne modes but
+not all fields will be filled in or relevant for homodyne.
+<p>
+<PRE>
+ Standard (Single Axis) Data (8 values):
+
+   0: REF Frequency Count* = REF frequency/Sample Frequency
+   1: MEAS Frequency Count 1* = MEAS 1 frequency/Sample Frequency
+   2: Displacement 1 (in 1/2, 1/4, or 1/8 wavelength)
+   3: Velocity Count 1 = (Displacement 1 - Previous Displacement 1)/Sample Frequency
+   4: Phase 1 = Signed fractional offset between Displacement increments.  The
+      typical range is -128 to +127 (8 bit 2's complement).
+
+      If Phase is not valid, then an error code is sent instead:
+
+        0x200 = no counter 1st REF
+        0x400 = no counter 2nd REF
+        0x800 = no counter MEAS 1
+        0x1000 = no PORTB 1st REF
+        0x2000 = no PORTB 2nd REF
+        0x4000 = no PORTB MEAS 1
+
+   5: Sequence Number (Unique serial number for each sample)
+   6: LowSpeedCode (See below)
+   7: LowSpeedData (see below)
+ 
+   The following 8 values will also be sent when Multiple Axis Mode is active:
+
+   8: MEAS Frequency Count 2*
+   9: Displacement 2
+  10: Velocity Count 2
+  11: Phase 2
+  12: MEAS Frequency Count 3
+  13: Displacement 3
+  14: Velocity Count 3
+  15: Phase 3
+
+  LowSpeedCode (specifies contents of LowSpeedData):
+
+     0-99: GUI Data/Control:
+
+      0: No Data
+      1: Laser Power
+      2: Signal Strength
+      3: Temperature 1 (XXX.YY, &deg;C, 0 to 70.00)
+      4: Temperature 2 (XXX.YY, &deg;C, 0 to 70.00)
+      5: Pressure (XXX.YY mBar, 500.00 to 2000.00)
+      6: Humidity (XXX.Y percent, 0 to 100.0)
+
+      8: Sample Frequency (XXX.YY Hz)
+
+     10: Firmware Version (XXX.YY)
+
+     20: Homodyne Interferometer (if non-zero)
+          Low byte: # homodyne axes
+          Next byte: counts/cycle (4 for quadpulse)
+
+     (Not all of these are currently implemented.)
+
+   100-199: Diagnostics
+
+   200-255: Reserved
+</PRE>
+<p>
+* The REF and MEAS Counts are the incremental change since the last sample,
+NOT the total value.
+<p>
+<hr>
+
+<h4><A NAME="umd1ckdrvr">Installing the USB Device Driver</a></h4>
+
+Before &micro;MD1 can be used, a Windows device driver must be
+installed.  The <A target="uMD1"
+HREF="http://chipkit.net/started/">Digilent chipKIT Quick
+Start Guide</A> recommends MPIDE for the firmware development environment,
+which includes the device driver.  Unfortunately, while its device driver is
+fine, versions of MPIDE we've seen so far have serious bugs in the
+libraries and C compiler, and it is thus NOT recommended for anything. :( :)
+The MPIDE references at the end of the manual are for, uh, reference only.
+<p>
+Installation of the device driver, which should be performed before the board
+is plugged in, can be done in several ways without using MPIDE.  (1) is the
+simplest:
+<p>
+<ol>
+ <li>Download and run the chipKITDriverInstaller_v10.exe file from
+ <A target="uMD1"
+ HREF="http://chipkit.net/forum/viewtopic.php?t=2289">chipKIT.net New
+ Signed USB Drivers</A>.
+ chipKITDriverInstaller_v10.exe is a self
+ extracting executable, which will extract the actual driver files and
+ an installer application (USBDriverInstaller.exe) into the same directory as
+ itself, and then launch the installer application.
+<p>
+<li>chipKITDriverInstaller_v10.zip can be downloaded from the same
+ Web site, unzipped, and run manually if you feel more comfortable
+ doing it that way.
+<p>
+<li>Search for, download, and save Stk500v2.inf, which is really the only
+ file that Windows needs.  You can point Windows to that inf file if you
+ want to manually install the drivers at any time.  Stk500v2.inf is available
+ from several Web sites.
+</ol>
+<p>
+Once the driver has been successfully installed,
+plug the board into any available USB port.  The red power LED (if
+present) should come on.  (Not all versions of the chipKIT DP32 have one;
+apparently someone decided to save 1/10th of a cent on an earlier or later
+revision!) If I (Sam) sent you the chipKIT DP32 board, it will have been
+loaded with a version of the &micro;MD1 firmware and at least one of the
+green LEDs will be lit.  But by the time you've received it, the firmware will
+probably be out of date, so reloading will be required in any case. :)
+For SG-&micro;MD1, the power LED at the very least should be on.
+<p>
+Windows should recognize the board and ask to install a driver.
+Point it to the location of Stk500v2.inf.
+<p>
+Once the driver is successfully installed, the board should come
+up as a serial port.  Go to the Windows Device Manager to locate and select it.
+<br>
+<hr>
+
+<h4><A NAME="umd1uecide">Loading UECIDE</a></h4>
+
+(If you purchased the from me directly, or via eBay, the latest released
+version of the firmware has been preloaded, so the following step should not
+be necessary unless a later release is available or you would like to hack
+the firmware - which is not really recommended.)
+<p>
+UECIDE will work with all versions of the firmware.
+But the only version of UECIDE I've had success compiling
+firmware without errors is Version 0.8.8alpha17 though I assume that
+more recent versions like 0.8.8alpha22 will also be satisfactory.
+All versions as far back as 0.8.8alpha22 and beyond are available at
+<A target="uMD1" HREF="https://github.com/UECIDE/UECIDE/releases">UECIDE on
+GITHUB</a>.  However not, apparently uecide-0.8.8alpha17. :(  But never fear,
+I have archived it and will provide a link upon request,
+but it's not clear whether it will install correctly now (see below).
+So I can also provide a &micro;MD1-ready preconfigured version via Dropbox.
+This is a 391 MB ZIP archive which includes installation instructions in a
+short README file (most which is also below).
+Contact me via email if interested.
+<p>
+Other more recent versions probably work, they just hate me. :( :)
+And I'm not going to check: "If it ain't broke, don't fix it". ;-)
+I do know that the latest as of Winter 2019, uecided-0.10.5, runs
+but will not compile &micro;MD1 due to changes in the compliler and
+#include files.
+<p>
+<A HREF="http://41j.com/blog/2017/04/umd1-build-notes/">41J Blog &micro;MD1
+Build Notes</A> has instructions for using uecide-0.8.8alpha22 (linux, but
+that shouldn't matter).  I could not get this to work in 2019 under Windows
+though.  In fact, there may be problems getting any of the older versions
+to install now.  Even my working uecide-0.8.8alpha17 does not display properly
+in "Plugins Manager" anymore. so it cannot be configured from scratch or have
+anything added.  However, these older versions may work properly if only the
+executable is replaced.
+<p>
+The UECIDE files should be unzipped to any convenient location on your
+computer.  That folder can be moved wherever desired without any side
+effects.  The executable is UECIDE.exe - add a shortcut on the Desktop.
+UECIDE requires around 160 MB where the excutable is located, and
+another 600+ MB for support
+files typically at C:\users\YourUserID\AppData\Local\UECIDE.  The
+location of the data can be changed in File->Preferences or by editing
+the text file "preferences.txt" in this directory.  If doing this after
+having configured UECIDE, copy all the files to the desired destination
+FIRST, then change the data directory in File->Preferences and exit
+UECIDE exit first and edit "preferences.txt".  DO NOT delete
+the original UECIDE directory or the preferences file! :)  Otherwise,
+the configuration information will all be lost.  But once the data
+directory has been moved, everything else in the original
+UECIDE directory can be deleted.  The required directory
+trees and typical disk space requirements are:
+<p>
+(The following has been amended thanks to James Rodriguez de Castro.)
+<p>
+<ol>
+<li>Copy or move "Program-UECIDE-0.8.8alpha17" to any convenient location and
+ rename it if desired.  This includes the UECIDE executble and would typically
+ be under "Program Files (x86)". Put a shortcut to UECIDE.exe on the Desktop.
+ If you are planning on using other versions of UECIDE on the same computer,
+ you may want to give the shortcut a distinctive name like "UECIDEalpha".
+<p>
+<li>Copy or move "Sketchbook-UECIDE" to your Documents folder and rename it to
+ UECIDE.  This is where the "sketches" (firmware source files) will be located
+ and includes some of the versions of uMD1 linked from the manual, as well as
+ some sensor libraries.
+<p>
+<li>Copy or move "User-AppData-Local-UECIDE" to your
+ C:\Users\USERNAME\AppData\Local folder and rename it to UECIDE. (Adjust the
+ C:\ to a different drive letter if appropriate for your system, and replace
+ USERNAME with your username in the system). This folder contains the
+ preferences.txt file telling the system where everything is, and it also
+ contains all the board data and included standard libraries, header files,
+ and many other things needed for compilation. It is LARGE. It needs to be in
+ C:\Users\USERNAME\AppData\Local\ - DO NOT CHANGE THIS LOCATION other than
+ drive letter if needed except as noted below.
+<p>
+<li>Modify the
+ "preferences.txt" file in C:\Users\USERNAME\AppData\Local\UECIDE so that the
+ Data and Sketch links are correct.  Some examples are shown (modify
+ according to your installation):
+<p>
+ <ul>
+ <li>location.data=C:\Users\$USER\AppData\Local\UECIDE
+ <li>sketch.mru.0=C:\Users\$USER\Documents\UECIDE\uMD1_fw_v57.01
+ <li>sketch.mru.1=C:\Users\$USER\Documents\UECIDE\uMD1_fw_v58.10
+ <li>sketch.mru.2=C:\Users\$USER\Documents\UECIDE\uMD1_fw_v60.00
+ <li>sketchbook.path=C:\Users\$USER\Documents\UECIDE
+ </ul>
+<p>
+ If you would like to minimize the space on the drive with
+ "AppData\Local", the "location.data" entry in preferences.txt can be
+ changed to point somewhere else.  The data must then be moved
+ there BEFORE STARTING UECIDE.
+<p>
+<li>That's it - hopefully. :)  When UECIDE is then run, it should already have
+ the board, compiler, and libraries set up. Run UECIDE alpha using the
+ shortcut on the desktop (UECIDEaplha or whatever you called it in step
+ (1).  When it runs, follow the procedure below to use the Plugin Manager to
+ install support for the Chipkit dp32 family. It should already be in
+ place but sometimes it is necessary to run Plugin Manager once to make
+ sure the system picks it up.
+<p>
+<li>To test that all is working, open one of the recent sketches in UECIDE
+ (e.g. 57.01), go to Hardware, set the Board to ChipKIt DP32, and hit
+ "compile" (the button with 3 gears). It should compile OK without errors.
+<p>
+<li>Shut down UECIDE alpha.
+</ol>
+<p>
+<b>NEWER VERSIONS OF UECIDE???</b>
+<p>
+The vast majority of users should be OK with the above. However, if
+you are feeling adventurous, we have found an experimetal procedure
+that allows the firmare files to compile using newer versions of
+UECIDE even though the old libraries upon which the firmware is based
+are not supposed to be supported in recent versions of UECIDE.
+<p> 
+We stress that this is experimental and entirely unsupported. We have
+tested it on a grand total of 2 computers running Windows 10, where we
+installed UECIDE version 0.11.10, and we have no way of knowing if
+this will work in earlier or later versions of UECIDE or on different
+computers or Windows versions, or if it may suddenly stop working
+after a sharp sideways glance at previously working system. Use at
+your own risk.
+<p>
+If yo still want to go ahead and install a new vesrion of UECIDE on the same
+machine, follow the steps below:
+<p>
+<ol start=8>
+<li>Follow all the steps 1-7 above and get a working installation of
+ UECIDE0.8.8alpha17 in your system. Make sure it is working before
+ proceeding further.
+<p>
+<li>Download the latest UECIDE (version 0.11.10 at the time this was written)
+ full installation executable package from the UECIDE website and install it
+ using the defaults. The main program file will likely end up in
+ C:\Program Files (x86)\Majenko Technologies\UECIDE, but the libraries, etc.
+ will be installed into C:\Users\$USER\AppData\Local\UECIDE, same as where the
+ alpha version installed its libraries. Don’t worry. They will both still
+ work. 
+<p>
+<li>Run the "new" UECIDE from the shortcut it created on the desktop (probably
+ called UECIDE). When it runs, follow the procedure
+ below to use the Plugin Manager to also install support for the Chipkit dp32
+ family. It should already be in place from teh alpha installation but
+ sometimes it is necessary to run Plugin Manager once to make sure the
+ system picks it up.
+<p>
+<li>Open one of the recent sketches in UECIDE (e.g. 57.01), go to Hardware,
+ set the Board to ChipKIt DP32, and hit "compile" (the button with 3 gears).
+ It should compile OK without errors, but ONLY if you had the alpha version
+ correctly installed and compiling as per steps 1-7 above. If you try without
+ doing this first, compilation will abort with many errors relating to missing
+ files.
+<p>
+<li>In summary, with one preferences.txt file, both alpha and latest UECIDE
+ should now produce error free compilations of the same source code. This is
+ a bit of a kludge, and we hypothesize that this accidental discovery (it
+ really was accidental!) appears to work because the installation of the "new"
+ UECIDE over an old "alpha-UECIDE" seems to keep in place the old "alpha"
+ stuff in C:\Users\USERNAME\AppData\Local\UECIDE, merely overwriting any new
+ files of the same name over the old ones, and also adds any missing "new"
+ files. But it does not seem to delete the deprecated old ones such as some
+ old header files and libraries needed by uMD1 etc. The same preferences.txt
+ file seems to work for both, although after you install "new" UECIDE
+ preferences.txt grows in size because it picks up a bunch of extra lines.
+ However, "alpha UECIDE" doesn’t seem to mind the extra lines and still works.
+ We have no idea if this will continue to be the case with subsequent versions
+ of UECIDE. For example, newer versions of old files may end up being
+ incompatible with the older sketch files. But so far it seems to work.
+</ol>
+<p>
+Here is another way to install a newer version of UECIDE but I suspect this
+may be risky:
+<p>
+(From: Wim Huyghe.)
+<p>
+<blockquote>
+(Edited to reflect updated archive. --- Sam.)
+<p>
+This is how I installed a recent version of UECIDE with the above files:
+<p>
+<ol>
+<li>Copy or move "Sketchbook-UECIDE" to your $USER\Documents folder and rename
+ it to UECIDE. Several versions of &micro;MD1 linked from the manual are there,
+ as well as some sensor libraries.
+<p>
+<li>Copy or move "Data-UECIDE" to your "$USER\AppData\Local" folder and
+ rename it to UECIDE.  (This will require 600 MB or more.)
+<p>
+<li>Edit the "preferences.txt" file in  "$USER\AppData\Local\UECIDE" so the
+ links are correct.
+<p>
+<li>Install latest version from UECIDE from here:
+ <A HREF="https://uecide.org/download">https://uecide.org/download</A>.
+</ol>
+<p>
+When UECIDE was then run, it already had the board, compiler, and libraries
+set up and I could compile all versions of the &micro;MD1
+</blockquote>
+<p>
+For my own reference: I could not get this to work in a way that permitted
+the same version of UECIDE to be used for both &micro;MD1 and Arduino.  So my
+fallback was to maintain two instances of the preferences file called
+preferences.uMD1 and preferences.Arduino, and copy the appropriate one
+to preferences.txt; then run UECIDE 0.8.8alpha17 for &micro;MD1 and
+UECIDE 10.6 for everything else.   Only the preferences files are
+in C:\users\sam\AppData\Local\UECIDE.
+This is a royal kludge but it guarantees that one can't mess
+up the other.  And as they say: "If it works, use it.". ;-)
+<p>
+UECIDE does not actually install in Windows; there are no files stored
+in the Windows directory and no changes to the Registry.  So uninstalling
+it is simply a matter of deleting the first three directories.
+<p>
+Compared to most applications, UECIDE takes forever to start up even on a
+fast PC.  So be patient.  That's the bad news.  The good news is that
+compiling and uploading is about 5 to 10 times faster than with the
+Arduino IDE.  Go figure. :)  So putting up with UECIDE's
+quirks (see below) may be worth it.
+<p>
+The first thing UECIDE will likely do is to tell you that no boards are
+installed and then open the Plugin Manager.  If it does not, do it manually
+by going to Tools->Plugin Manager.  At first the pane along the left
+will only show the word "Plugins".  But after a couple minutes, it should
+update with a list: Plugins, Libraries, Boards, Cores, Compilers, System.
+The following are required:
+<p>
+<ul>
+<li><b>Libraries (for sensor support):</b>
+ <ul>
+ <li>Adafruit->Sensors->Adafruit BMP085 library
+ <li>Sensors->dht library
+ </ul>
+<li><b>Boards:</b> chipKIT->chipKIT DP32
+<li><b>Cores:</b> PIC32->chipKIT
+<li><b>Compilers:</b> Native->PIC32 Compiler for MX and MZ
+</ul>
+<p>
+For each of these click on "Install".  Installing the chipKIT board will
+probably automagically install the other chipKIT-related files and may
+take several minutes.  Confirm that each entry has a green check mark
+next to it.
+<p>
+Close the Plugin Manager and go to "Hardware" and confirm that the
+proper Board (chipKIT DP32), core (chipKIT), and Compiler (pic32-tools)
+has been selected.  Click on it if not.
+<p>
+Some other quirks of UECIDE that I've found:
+<p>
+<ul>
+<li>Doing any File operations within UECIDE also take much longer than
+ directly in Windows.  Be more patient.
+<p>
+<li>UECIDE will crash instantly and then will crash if restarted should the
+ selected data directory (in File->Preferences) be changed to one that is
+ read-only (as it might be on a remote host).  There is no warning.  Fix the
+ relevant entry in the configuration file, typically at
+ c:\users\YourUserID\AppData\Local\UECIDE\preferences.txt (unless you moved it)
+ using Notepad or any other convenient text editor.
+ Or delete the file (but that will require redoing all the plugin stuff.
+<p>
+<li>UECIDE (at least version 0.8.8alpha17)
+ may pop up a windows saying it's crashed even if it's sitting
+ in the background not doing anything.  Usually, just clicking
+ "Ignore" will get through it without obvious problems.  But eventually, it
+ will crash hard and need to be restarted.
+<p>
+<li>On one PC, the USB mouse began freezing for a couple seconds preiodically
+ whenever UECIDE was running making it almost impossible to do anything, and
+ it continued even if UECIDE was minimized.  This appears to be related
+ to the "Automatic USB Device Discovery" option being enabled (the default)
+ and some peculiarity of the PC's USB subsystem.  To remedy it, stop USB Device
+ Discovery by going to Tools->Service Manager and clicking on its entry,
+ click on the stop icon, and disable Autostart by right-clicking on the
+ "yes" to change it to "no".  Then close and restart UECIDE.  Despite what it
+ says, the discovery process does not stop even though it says it's stopped
+ until the next time UECIDE is run.   Got that? :)  Or drag out and dust off
+ a PS2 mouse. :-)
+</ul>
+<p>
+Plug the board into any available USB port.  The red power LED (if
+present) should come on.  (Not all versions of the chipKIT DP32 have one;
+apparently someone decided to save 1/10th of a cent on an earlier or later
+revision!) If I (Sam) sent you the board, it will have been
+loaded with a version of the &micro;MD1 firmware and at least one of the green
+LEDs will be lit.  But by the time you've received it, the firmware will
+probably be out of date, so reloading will be required in any case. :)
+<p>
+Assuming the driver has already been installed, go to Hardware->Serial
+Terminal and select its COM port.  Typically, this will be the highest
+number COM port, or perhaps the only one, since no one uses these for
+much of anything anymore.
+<p>
+UECIDE should remember the configuration settings automatically upon exiting.
+<br>
+<hr>
+
+<h4><A NAME="umd1ucf">Uploading the &micro;MD1 Firmware</a></h4>
+
+If you purchased the from me directly, or via eBay, the latest released
+version of the firmware has been preloaded, so the following step should not
+be necessary unless a later release is available or you would like to hack
+the firmware - which is not really recommended.
+<p>
+The firmware (via the links, above)
+is provided as a source file which probably has an extension
+of ".pde" or ".ino" (though the specific name doesn't matter - it's just a
+text file).  However, the name may NOT contain any dashes "-" due to the
+peculiar restrictions of Java or something.  Make a directory with the name of
+the firmware (without the extension) and put the firmware file there.
+For example, if the file is named uMD1_FW_v123.ino, make a directory
+called uMD1_fw_v123. and put uMD1_FW_v123.ino in it.  Note that case matters so
+the name of the directory and name of the firmware file (without the
+extension) must match case character-by-character exactly.  Thus
+Interferometer.pde is not the same as interferometer.pde
+<p>
+<ol>
+<li>Plug the board into a USB port.  I've occasionally seen problems
+ using a USB port replicator though these generally are acceptable.  But if
+ the board doesn't come up, go to a direct USB port.
+<p>
+<li>There are 3 pushbuttons on the board.  BTN1 (next to the PIC and JP6)
+ is RESET while BTN2 is PROGRAM.  (BTN3 is called USER and is unassigned.)
+ Press RESET and hold it while also pressing PROGRAM.  Release RESET
+ and then release PROGRAM.  LED1 should be flashing rapidly
+ indicating that the board is salivating in anticipation of having
+ new and improved firmware uploaded to it. :)
+<p>
+<li>Use Ctrl-O to open the firmware file.
+ Select the directory.  The source code should
+ appear in the same window unless a file is already open, in which
+ case a new window will appear.  (If UECIDE thinks it's a firmware
+ directory, it won't even allow you enter it to select the file but
+ will immediately open the file.  If the name of the directory and
+ file don't match - including case - it will produce an error like
+ "file not found".
+<p>
+<li>Use Ctrl-U to compile and upload the firmware to the board.  This
+ typically takes only a few seconds with UECIDE and will display each
+ step along the way.  When it starts uploading the firmware, the LEDs on the
+ board will flash in several different patterns in anticipation of
+ getting new and improved instructions to munch on, finally ending
+ with 8 rapid flashes. ;-)  The board will be automatically reset
+ and start running the firmware.  During this time, confirmation
+ messages similar to the following will appear:
+<p>
+<pre>
+   <b>Compiling...</b>
+     * Compiling sketch...
+     * Compiling core...
+       > api
+     * Compiling libraries...
+     * Linking sketch...
+   <b>Compiling done.</b>
+   <b>Memory usage</b>
+     * Program size: 55532 bytes
+     * Memory size: 3452 bytes
+     * Compilation took 5.634 seconds
+   <b>Uploading firmware...</b>
+     * Resetting board...
+     * Uploading...
+     * Resetting board...
+     * Upload Complete
+</pre>
+<p>
+ Windows should recognize that the COM port dropped out momentarily and
+ reappeared.  The firmware will be spitting out sequences of numbers
+ at the sampling rate.  These may be viewed by going to:
+ Tools->Serial Terminal.  With no interferometer hardware, they will
+ be rather boring with only the sixth value incrementing sequentially
+ (Sequence Number) and the 7th and 8th values
+ cycling among some obscure numbers (Low Speed Code and Low Speed Data).
+ To Windows, the board appears as a COM port.  Thus any application
+ that processes COM port data can be used in place of the &micro;MD1 GUI,
+ should this be desired.
+<p>
+ If the firmware crashed somehow, Windows may display a
+ message saying something about the USB port not working.  But that
+ shouldn't happen with any firmware downloaded from <i>here</i>. :)
+ And on rare occasions a cosmic ray or hardware glitch may result in
+ the upload failing with a checksum or other error.  Just put the board
+ in program mode and try again.  If the selected COM port is incorrect,
+ cancel and retry.
+</ol>
+<p>
+Once loaded, the firmware is retained in non-volatile memory so this only
+needs to be done at most once - or until a firmware update is available!
+<p>
+The firmware may also be compiled without uploading by using Ctrl-R.  Since
+you haven't messed with the code, it should compile without errors.
+This is slightly faster for testing and doesn't use the board at all so it
+can be off doing whatever it pleases. :)
+<p>
+Important: Terminate any instances of the &micro;MD1 GUI before uploading
+the firmware and put the board into program mode (again if necessary)
+AFTER doing this even if LED1 is flashing.
+
+<h4><A NAME="umd1fts">Testing the Board and Firmware</a></h4>
+
+With &micro;MD1 firmware loaded, the simplest way to test that the board
+is working without running the GUI is to use the "Serial Terminal" (under
+"Tools" in UECIDE.) With the board reset, then open the Serial Terminal.
+The terminal window should begin spewing forth data similar to the following:
+<p>
+<pre>
+  0 0 0 0 31232 16927 0 0
+  0 0 0 0 31232 16928 0 0
+  0 0 0 0 31232 16929 10 5610
+  0 0 0 0 31232 16930 8 45776
+  0 0 0 0 31232 16931 3 -1
+  0 0 0 0 31232 16932 4 -1
+</pre>
+<p>
+If there is a display like this with the 6th number incrementing by 1, then
+the board is probably working.
+<br>
+<p>
+<A NAME="umd1irg"></A>
+<hr>
+<h3>The &micro;MD1 GUI</h3>
+<h4><A NAME="umd1lvsg">Latest Version of the GUI</a></h3>
+
+(These files are also available at
+<A target="uMD1" HREF="https://github.com/lasersam594/Micro-Measurement-Display-uMD-Graphical-User-Interface">GitHub: Micro Measurement Display uMD Graphical User Interface</a>.)
+<p>
+The GUI has been stable for several years, with only a few updates
+mostly relating to environmental compensation.  It is compatible
+with all versions of the firmware.
+<p>
+<ul>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD_GUI/uMD_GUI-v1.0.8878.20860.exe">&micro;MD
+  GUI Version 1.0.8878.20860 (22-Apr-2024)</a>
+<p>
+ Changed copyright from 1994-2020 to 1994-2024. ;-)
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD_GUI/uMD_GUI-v1.0.7670.24304.exe">&micro;MD
+  GUI Version 1.0.7670.24304 (31-Dec-2020</a>
+<p>
+ <b>Bug fixes:</b> Extended range of wavelengths from 0.001 nm to 10 mm;
+  fixed diagnostic readouts for homodyne mode, more or less.
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD_GUI/uMD_GUI-v1.0.7283.30117.exe">&micro;MD
+ GUI Version v1.0.7283.30117 (11-Dec-2020)</a>
+<p>
+ <b>Bug fixes:</b> Forces number conversion to use USA format to prevent
+  the GUI from crashing if the PC was set up in a different country.
+  Eliminates the gross scale error in Frequency plots (but still may
+  be off by 20 percent depending on sample rate, and more if using the
+  ultra-low sample rate for hobbyist laser support).
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD_GUI/uMD_GUI-v1.0.7227.21258.exe">&micro;MD
+ GUI Version v1.0.7227.21258 (15-Oct-2020)</a>
+<p>
+ <b>Additions:</b> Adds homodyne support for selectable number of
+  counts/cycle defined in the firmware.  Updates copyright date. ;-)
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD_GUI/uMD_GUI-v1.0.7183.34798.exe">&micro;MD
+ GUI Version v1.0.7183.34798 (1-Sep-2020)</a>
+<p>
+<b>Bug fixes:</b> Environmental Compensation defaults to ON using the
+ standard values of 20 &deg;C, 760 mm/Hg, and 50% RH.  (For most applications,
+ it would not make sense to use the vacuum wavelength!)  Turning Environmental
+ Compensation on or off also resets the display so only future changes
+ are affected.
+<p>
+<li><b>GUI:</b> <A HREF="https://www.repairfaq.org/sam/uMD_GUI/uMD_GUI-v1.0.6738.37545.exe">&micro;MD
+ GUI Version 1.0.6738.37545 (13-June-2018)</a>
+<p>
+ <b>Bug fixes:</b> Corrects (hopefully) inaccurate calculation in Environmental
+  Compensation by using
+  <A target="uMD1" HREF="https://emtoolbox.nist.gov/wavelength/Documentation.asp#AppendixB">NIST: Simple Shop-floor Formula for Refractive Index of Air</A>.
+  <b>The Environmental Correction should be accurate but text boxes on right
+   may not agree with it.</b>
+</ul>
+<p>
+Save the &micro;MD1 GUI .exe file into any convenient directory.  (There's
+a small chance that the first time it's run, an error is produced since
+there is no configuration file associated with it.  Simply continue and the
+GUI will come up.  When it is closed using "Finish", valid settings will be
+saved so that the error should ot appear again.)
+<p>
+Even if there is no interferometer hardware attached to the board, it is
+possible to confirm that the PIC is talking to the GUI.  Go to "USB Port" and
+select the same COM as used to upload the firmware.  The graph should
+immediately start scrolling to the left indicating that it is accepting
+valid data, even if it is all 0s.  The display will show "No Signal" (assuming
+error detection is enanbled) since there are no REF or MEAS clocks.  But the
+fact that it's scrolling means the communications link is working.
+<p>
+When started, the &micro;MD1 GUI (henceforth simply called the "GUI")
+comes up in Displacement mode with graphing enabled.  The only action
+required by the user is to select the USB COM port.  Once selected,
+the readout and graph will begin displaying the interferometer data.
+<p>
+<b>Important:</b>
+<p>
+<ul>
+<li>DO NOT reset the board while the &micro;MD1 GUI is running.
+ The GUI will need to be aborted, the board may need to be reset again,
+ and only then can the GUI be restarted.
+<p>
+<li>The GUI can be started at any time but the firmware must
+ be running <i>before</i> the USB COM port is selected or else the Universe
+ may implode. :)  Confirmation of this issue is left as an exercise for
+ the user. ;-)  There is usually no need to reset the firmware when
+ restarting the GUI.  However, if the GUI behaves strangely, exitting the GUI
+ and resetting the firmware may be required.  On rare occasions,
+ it may be necessary to cycle power to the hardware by
+ unplugging the USB cable for a few seconds to clear some weird
+ errors that reset alone doesn't take care of.  The &micro;MD1 Technical
+ Department is aware of these issues and is working around the clock to
+ resolve them so there is no need for a bug report.
+<p>
+<li>For the type fonts in the GUI to be correctly sized,
+ the display scaling may need to be set to 100% in Windows.
+ If it works OK, don't worry, be happy. :-)  But if some characters appear a
+ bit too large in Windows 10: right click on the Desktop, "Display
+ Settings", "Scale and Layout".  There is a similar option in Window 7.
+ For XP, you're on your own. :) This is not a bug in the GUI, it appears to
+ be an issue in Visual Studio.
+<p>
+<li>When installed on slow pre-Jurassic computers :), avoid running other
+ applications at the same time and disable the screen saver as well as the
+ dim or turn off screen power saving options to avoid random errors due to
+ excessive latency.
+</ul>
+<p>
+Data from the board is normally sent at a rate of 457.76, 610.35, or 732.42 Hz
+depending on the measured REF frequency of the laser.
+(If you're curious, the precise
+sampling rate is the PIC CPU clock frequency divided by 65,536 - the
+number of counts between the 16 bit Timer1's overflows, used as the sample
+rate interrupt clock.)  The CPU clock frequency is automatically
+changed based on the laser's REF frequency to optimize sub-count
+interpolation.)  The data includes
+counts for REF, MEAS, displacement, velocity; a unique sequence number
+to identify samples; as well as other low speed data such as environmental
+sensors and diagnostics.  (More info can be found a few paragraphs above.)
+The GUI displays are updated at approximately 60 Hz.
+<p>
+All the screenshots below <i>except for interpolation</i>
+use simulated data, which was more convenient for developing
+this manual!  However, it also means you can play around and recreate
+these displays before building your interferometer.  The screen shots
+showing the effects of interpolation are of actual data.
+
+<h4><A NAME="umd1guimw">Main Window Controls and Readouts</a></h4>
+
+This graphic below shows the typical GUI main window at startup.
+<p>
+<center>
+<img src="Main_Window_D0.gif">
+<h4>&micro;MD1 Main Window in Displacement Mode with Graphing Enabled (Startup Settings)</h4>
+</center>
+<p>
+<h4>Main Window Controls</h4>
+<p>
+The first set are the selection buttons at the top of the window.  Note that
+except for USB Port, these require only a single click to activate:
+<p>
+<ul>
+<li><b>Finish</b> is the same as close or exit. :)
+<p>
+<li><b>Open Log File</b> is used to select the (optional) file for data
+ capture.  This is a text file that will accumulate raw data from the
+ USB COM Port when capture is enabled.  The button's label will change
+ to "Close Log File".
+<p>
+ The log file is closed and its name and path are saved upon exiting the GUI.
+<p>
+<li><b>Inteferometer Configuration</b> opens a window to allow
+ settings for the type of
+ interferometer, units for display, paremeters for straightness and
+ angular optics to be entered, and whether sub-count interpolation
+ of displacement data is to be performed.
+<p>
+<li><b>Environmental Compensation</b> opens a window to enable
+ the temperature, pressure, and humidity to be entered manually,
+ or automatically acquired using digital sensors.
+<p>
+ Due to timing issues with the digital sensors, values for temperature,
+ pressure, and humidity are currently only acquired when
+ the board is reset.  Thus should there be a sudden ice age
+ after this, the GUI will not know about. :( :)  The solution to
+ this (including the ice age) is not currently known.
+<p>
+<li><b>Test Mode</b> opens a window which
+ provides a means of exercising the GUI with a
+ software function generator, and also determines whether error detection
+ and diagnostic readouts are enabled.
+<p>
+<li><b>Help</b> is a menu that may select "Information" which presently
+ tells the user to read this manual ;-) or "About" which lists the
+ GUI and firmware versions, and has links to the authors.
+<p>
+<li><b>USB Port</b> provides selection of the USB COM port for the
+ interferometer and monitor.
+<p>
+ <ul>
+ <li>The first COM port to be opened is assumed to be for the interferometer
+  board.
+<p>
+ <li>If a second COM port is opened, the current averaged displacement values
+  will be sent to it as a line of text at a rate of once every
+  (Graph Schollrate * 16 samples).  For example, if the Scrollrate is 10, then
+  a line will be sent every 160 samples.
+  One use would be for another device to detect motion limits.
+  The format depends on the number of active axes:
+<p>
+  <ul>
+  <li><b>Single axis:</b> Displacement:*
+  <li><b>Multiple axes:</b> Displacement1: Displacement2: Displacement3:*
+  </ul>
+<p>
+  The values are signed long integers of the designated displacement(s)
+  in nanometers including averaging and axis flip.  (Same as the readouts.)
+  The "*" can be used by the parser at the receiving end to
+  detect the end of line.
+<p>
+  To indicate that the Monitor COM port is active, a "+" will appear
+  to the left of the "Graph Averaging On" label, flashing at the rate
+  of the data lines being sent.  Its color is subject to change without
+  notice. :)  Note that the graph does NOT need to be visible for the
+  data to be transmitted.
+ </ul>
+<p>
+ Note: Once a USB port has been opened, the selection
+ cannot be changed or closed.  Code to close an open USB port is purported to
+ do bad things and has been disabled.  If an incorrect USB port was selected
+ by accident, exit the GUI and restart.  Any open USB port will be closed
+ upon exiting.
+</ul>
+<p>
+<center>
+  <img src="Main_Window_D5.gif">
+<h4>&micro;MD1 Main Window with Test Mode Function Generator Triangle Displacement Waveform</h4>
+</center>
+<p>
+These may all be accessed via Alt-first letter.
+<p>
+The next set are the buttons, checkboxes, and other widgets on the
+main window:
+<p>
+<ul>
+<li><b>Displacement</b> selects basic measurement of position or distance.
+ It is probably the mode that will be used most often.  The displacement
+ data is also what all other measurements are based on.
+<p>
+<li><b>Velocity</b> selects measurement of linear velocity defined as
+ rate of change of displacement.
+<p>
+<li><b>Angle</b> selects angle mode and assumes the use of special
+ angular interferometer optics, either commercial from HP or similar,
+ or home-built.
+<p>
+ When the "Encoder" checkbox in Interferometer Configuration is checked
+ &micro;MD1 will use the constant small angle increment WTIHOUT the Trig
+ calculation and the text will change to "Encoder Angle".
+ This is useful with rotary encoders and ring laser gyros.
+<p>
+<li><b>Straightness Long</b> selects straightness mode using long range
+ straightness optics.
+<p>
+<li><b>Straightness Short</b> selects straightness mode using short range
+ straightness optics.
+<p>
+<li><b>Flatness</b> measurements using the angular interferometer optics with
+ the 55282A Flatness Accessory Kit (10773A Flatness Mirrors and 10759A
+ Foot Spacing Kit) should be possible in &micro;MD1
+ but I have been unable to determine
+ how exactly it's supposed to work.  There is no explicit Flatness
+ button.  Flatness seems to be a linear
+ deviation based on the combination of the measured angle and foot spacing
+ dimensions (2, 4, or 6 inches).  For small deviations, it may be as
+ simple as using the Encoder Angle option with a specific Angle Reflector
+ Spacing value.  However, the result would still be in angular units.
+ Alternatively, using "Straightness Short" with a custom value for
+ "Straightness Short Coefficient" set to the
+ ratio of the foot spacing to the angle reflector spacing 
+ may be better.  For example,
+ using the 2 inch (50.8 mm) foot Spacing plate and standard 32.61 mm
+ 10771A Anguler Reflector, the Straightness Short Coefficient would
+ be set to 1.558, and 3.116 for  the 4 inch and 4.673 for the 6 inch.
+ But for maximum precision, the calculation may need to
+ be done using an external application like Excel or Matlab operating
+ on the raw data.  However, it would appear that the error for a 1 degree
+ angle (which would be HUGE) is less than 1 part in 10<sup>6</sup>.
+ If anyone understands the Flatness measurement, or
+ has used &micro;MD1 for Flatness, or doesn't agree with these
+ conclusions - or does, please contact me via email.
+<p>
+<li><b>Disable Graph</b> toggles whether to show the graph or not and will
+ change to "Enable Graph" when the graph is off.  The data for
+ the graph is still saved when disabled but certain functions like the
+ DFT (Frequency) computation are not performed.  Disabling the graph
+ both saves space on the computer screen and reduces computational load.
+<p>
+<li><b>Enable Capture</b> toggles the acquisition of raw data from the
+ USB COM port.  The log file must first be opened for this button to have
+ any effect.  Then, the label will change to "Disable Capture" and the
+ button will turn green signifying that capture is enabled and running.
+ Once the log file is open, capture may be turned on and off at will
+ with data appended to the open log file.  Prior to each segment, the
+ line "Sample Frequency = XXX.XX Hz" is stored.  The Sample Frequency
+ can be one of several values depending on the laser's REF frequency
+ and may thus be useful for data analysis (though it is very unlikely
+ to switch values while using any given laser).  Currently the ranges are:
+<p>
+<ul>
+<li>REF less than 1.45 MHz: 457.76 Hz.
+<li>REF 1.500 to 1.725 MHz: 610.35 Hz.
+<li>REF greater than 1.775 MHz: 732.42 Hz.
+</ul>
+<p>
+ The gaps in the REF frequencies are for hysteresis to prevent rapid switching
+ back and forth if at the border.  And if you must know, the reason for
+ different sample frequencies is to optimize sub-count interpolation.
+ (If Firmware V60.00 is installed with LowCPUClockEnable set to 1, there
+ is an additional sample frequency of 305.17 Hz below a REF of 1.075 MHz.)
+ The ranges are subject to change without notice, but probably not
+ by much and no one should really care. :)
+<p>
+ There are three options to select what data is saved:
+<p>
+ <ol>
+ <li>For all conditions using interferometer data EXCEPT where the Test Mode
+  function generator is set to Constant and is OFF, only
+  Displacement and Sequence Number are saved.
+<p>
+  The format is: "D: Displacement N: Sequence Number" where
+  Displacement and Sequence Number are values in decimal.  The Displacement
+  an integer multiple of wavelength times the multiplier depending on the
+  type of interferometer.  It does NOT include the phase or sub-wavelength
+  interpolation value.  Example:
+<p>
+     D: 51643 N: 15345
+<p>
+  Assuming the use of a Plane Mirror Interferometer (10706A, basic increment
+  of 1/4 wavelength), the Displacement would be 51643 * 158.25 nm or
+  approximately 8.172 mm.
+<p>
+ <li>When the Test Mode function generator is set to Constant and OFF,
+  ALL interferometer data is captured without any annotation.
+<p>
+  The format in Single Axis Mode (8 values) is: "REFFrequencyCount
+  MEASFrequencyCount Displacement VelocityCount Phase SequenceNumber
+  LowSpeedCode LowSpeedData".  Example:
+<p>
+  1534 1532 51643 2 144 15345 0 0
+<p>
+  The format in Mulitiple Axis Mode (16 Values) is: "REFFrequencyCount
+  MEAS1FrequencyCount Displacement1 Velocity1Count Phase1 SequenceNumber
+  LowSpeedCode LowSpeedData MEAS2FrequencyCount Displacement2 Velocity2Count
+  Phase2 MEAS3FrequencyCount Displacement3 Velocity3Count Phase3".
+<p>
+ <li>Where the Test Mode function generator is ON and thus it is desired
+  to capture the simulated Test Mode data, Axis 1 data is stored.
+<p>
+  The format regardless of mode is: "R: REFFreqeuncyCount M: MEASFrequencyCount
+  D: Displacement V: VelocityCount P: Phase N: SequenceNumber T" where the
+  "T" signifies that this is Test Mode data.  Example:
+<p>
+  R: 1534 M: 1532 D: 51643 V: 2 P: 144 N: 15345 T
+</ol>
+<p>
+ Caution: The log file can grow rapidly - especially where all the data is
+ stored - so it's probably not the sort of thing to do for hours on end
+ unless you have stock in a disk drive manufacturer! :)
+<p>
+ All these formats have a fixed number of fields that are space-delimited.
+ Thus importing the log file into programs like Excel or  Matlab should be
+ straightforward.
+<p>
+<li><b>Averaging</b> adjust the "strength" of a moving average from 0 (no
+ averaging) to 999 (1000 samples of averaging).  It is a logarithmic
+ scale so each third of movement represents approximately a factor of 10.
+ The color also changes from black to violet to remind you that averaging
+ is taking place. :)
+<p>
+ When interpolation is enabled (the default), as averaging coefficient of
+ around 900 is recommended to minimize sample-sample noise in the graph.
+<p>
+ The Averaging coeeficient is saved upon exiting the GUI.
+<p>
+<li><b>Reset Display</b> zeros the displacement and clears any errors
+ that may have occurred.
+<p>
+<li><b>Suspend</b> freezes the readout and graph and the button label
+ changes to "Resume" and its color changes to yellow.  Pressing the
+ button then restarts the readout and
+ graph at exactly the point they left off.  Thus, any change in position
+ or other parameter of the interferometer is not detected while suspended.
+<p>
+ Suspend is useful when making adjustments to the inteferometer beam path
+ and/or laser.
+<p>
+<li><b>Graph Averaging On checkbox</b> determines whether averaging is
+ also applied the graph.  Thus the graph can show raw data even if the
+ readout is averaged.  (Does not apply to Frequency mode.)
+<p>
+<li><b>Time Compression</b> applies a sub-sampling factor to change the
+ rate of the graph scrolling.  It does NOT average intermediate samples -
+ they are lost.  (Applies to all except Frequency mode.)
+<p>
+ The Time Compression factor is saved upon exiting the GUI.
+<p>
+<li><b>Displacement, Velocity, Straightness Long, and Straightness Short
+ Range</b> select the vertical axis scaling for their respective modes
+ including Auto (which is the default).
+</ul>
+<p>
+The format is slightly modified when Frequency mode is selected.  This
+graphic shows the actual DFT of the triangle waveform in the one above.
+Note that the DFT coefficients go as 1/N rather than 1/N-squared because
+it's actually using the velocity data, which is a squarewave.
+<p>
+<center>
+<img src="Main_Window_F3.gif">
+<h4>&micro;MD1 Main Window in Frequency Mode with Graphing Enabled</h4>
+</center>
+<p>
+<ul>
+<li><b>Frequency</b> selects frequency mode which displays the frequency
+ content of the <i>velocity</i> data up to about 100 Hz on the graph.
+ (The 0 to 30 Hz range is shown.)
+ It uses a Discrete Fourier Transform algorithm operating on the
+ velocity data <i>from the graph</i>.  Thus, the Velocity button
+ is also highlighted when
+ Frequency is selected to indicate this.  The actual algorithm computes
+ the power spectral density and takes its square root.
+<p>
+ The horizontal scale is approximately accurate for real data.  The vertical
+ scale is somewhat arbitrary.  The Main Readout shows Displacement
+ data when in frequency mode.
+<p>
+ There is still an error of up to 25 percent is the actual values since they
+ depend on the sample rate being used, which varies depending on the REF
+ frequency of the laser.  The uMD technical department has not gotten
+ around to provided corrected labels, can you believe that? :)
+ And the error could be more than 2X too high if using
+ the special low sample rate hobby setting in the firmware.  We know about
+ this and it may get fixed someday later.
+<p>
+ Selecting Frequency sets Time Compression to 1 since the graph data is
+ used for the DFT calculation.  There will also be a delay in the Frequency
+ plot accuracy depending on the DFT Frequency Range and input
+ signal as data is accumalated.
+<p>
+<li><b>DFT Frequency Range</b> determines the span for Frequency mode.
+ (Does not apply to other modes.)
+<p>
+ The DFT Frequency Range is saved upon exiting the GUI.
+<p>
+<li><b>DFT Amplitude Range</b> selects the vertical axis scaling for
+ Frequency mode, including Auto (which is the default).
+</ul>
+
+<h4>Main Window Indicators</h4>
+
+Next are the various fields for displaying information in the Main Window:
+<p>
+<center>
+<img src="Main_Window_D9.gif">
+<h4>&micro;MD1 Main Window Showing Most Indicator Fields</h4>
+</center>
+<p>
+<p>
+<ul>
+<li><b>Main Readout</b> always shows the value of the measurement for the
+ mode that is selected <i>except</i> when in Frequency mode, in which case
+ it shows Displacement.
+<p>
+ The units for the Main Readout, as well as for the graph vertical axis
+ (all except Frequency mode) are selected in the Interferometer
+ Configuration window.  The options are nm, &micro;m, mm, m, in, and ft for
+ all but angle, which has arcsec, arcmin, and degree.  For velocity,
+ "/s" is added.  The same units also apply to the graph
+ "Range" selection and vertical axis of the graph.
+<p>
+<li><b>WL</b> is the wavelength <i>after</i> environmental compensation
+ (if enabled).
+<p>
+<li><b>REF</b> is the actual REF frequency of the laser.  REF is accurate
+ to better than 0.5 percent.  It will only be present if there is a REF
+ signal after the laser is READY.
+<p>
+ Loss of the REF signal will result in a "REF (Head) Error" if error
+ detection is enabled.  This error may also be forced by clicking on
+ the REF frequency value.
+<p>
+<li><b>MEAS</b> is the frequency return signal from the measurement path
+ of the interferometer.  MEAS is accurate
+ to better than 0.5 percent.  It will only be present if a MEAS
+ signal is present.
+<p>
+ Loss of the MEAS signal will result in a "MEAS (Path) Error" if error
+ detection is enabled.  This error may also be forced by clicking on
+ the MEAS frequency value.
+<p>
+<li><b>DIFF</b> is the computed difference frequency between REF and MEAS.
+ DIFF is accurate to better than 0.5 percent.  It will only displayed if
+ both REF and MEAS signals are present. 
+<p>
+ If the DIFF frequency exceeds valid limits, a "Slew (Rate-) Error" or
+ "Slew (Rate+) Error" will be generated if error detection is enabled.
+ These errors may also be forced by clicking on the DIFF frequency value.
+ Which one will depend on the direction of change of the displacement
+ at the instant of the click.
+<p>
+<li><b>Simulated Data</b> will be present whenever the Test Mode function
+ generator is ON to remind you that it's too pretty (or ugly) to be
+ interferometer data. :)
+<p>
+<li><b>Error Detection Off</b> will be present when the Error Detection
+ checkbox is not checked in the Test Mode window.
+<p>
+<li><b>Log File</b> displays the name of the current open file for data
+ capture.  The Capture button will only have an effect if a log file
+ is open.
+<p>
+<li><b>Phase, PBA RM RP, RMA RM RP, PE, SF Hz, and DP32 %</b> are diagnostic
+ information for testing purposes.  These will only be visible if the
+ "Diagnostic Readouts" checkbox is checked in the Test Mode window.  These
+ are subject to change without even a femtosecond's notice.
+</ul>
+
+<h4><A NAME="umd1guiic">Interferometer Configuration Window</a></h4>
+
+These entries provide for selection of the type of interferometer used for
+displacement/velocity measurements, the measurement units to be used
+for the Main Readout and graph, parameters for the strightness and
+angular optics, and whether to enable use sub-count interpolation.
+All interferometer configuration parameters are saved when exiting the GUI.
+<p><p>
+<center>
+<img src="IC_Window-2.gif">
+<h4>&micro;MD1 Interferometer Configuration Window</h4>
+</center>
+<p>
+<b>Linear coefficienets:</b>
+<p>
+These settings only affect linear measurements.
+<p>
+<ul>
+<li><b>LI / Other (1X)</b> is used for the 10702A Linear Interferometer
+ or other interferometers with a resolution of 1/2 wavelength like the
+ Single Beam Interferometer (10705A).
+<p>
+<li><b>PMI (2X)</b> is used for the 10706A Plane Mirror Interferometer,
+ 10706B High Stability Plane Mirror Interferometer, or other interferometer
+ with a resolution of 1/4 wavelength.
+<p>
+<li><b>HR PMI (4X)</b> is used with the 10716A High Resolution
+ Plane Mirror Interferometer or other interferometer with a resolution
+ of 1/8 wavelength.
+</ul>
+<p>
+<b>Units (as appropriate)</b>
+<p>
+<ul>
+<li><b>nm, &micro;m, mm, cm, m</b> select Metric units which apply to
+ displacement, velocity, and straightness measurements in the readouts
+ and graph.
+<p>
+<li><b>in, ft</b> select English units which apply to displacement,   
+ velocity, and straightness measurements in the readouts and graph.
+<p>
+<li><b>arcsec, arcmin, degree</b> select the units to be used for angle
+ measurements in the readouts and graph.
+</ul>
+<p>
+Known quirk: If neither the COM Port or Test Mode is active, switching
+among the Units buttons will only change the Units lable and/move the
+decimal point/precision without affecting the readings.  Just thought
+you should know. ;-)
+<p>
+<b>Parameters (as appropriate)</b>:
+<p>
+<ul>
+<li><b>Angle Reflector Spacing</b> enables the precise spacing parameter of
+ the angular optics to entered.  The default of 36.610 mm is for the 10770A
+ Angular Interferometer with 10771A Angular Reflector.    This
+ may also be set to some other value to accomodate an angle interferometer
+ with a different coefficient.  (Range 1 to 100 mm in steps of 0.001 mm.)
+<p>
+<li><b>Straightness Long Coefficient</b> enables the precise multiplier for
+ the straigntness long interferometer to be selected.  The default of 360 is
+ for the 10775A Long Range Straightness Interferometer with Cal 1.00.  This
+ may also be set to some other value to accomodate an interferometer
+ configuration with a different multiplier coefficient relative to
+ displacement.  (Range 100 to 1000 in steps of 0.01.)
+<p>
+<li><b>Straightness Short Coefficient</b> enables the precise multiplier for
+ the straigntness short interferometer to be selected.  The default of 36
+ is for the 10774A Short Range Straightness Interferometer with Cal 1.00.
+ This may also be set to some other value to accomodate an
+ interferometer confirguration with a different multiplier coefficient
+ relative to displacement.  (Range: 1 to 100 in steps of 0.001.)  May
+ also be used for Flatness.
+</ul>
+<p>
+<b>Miscellaneous</b>:
+<p>
+<ul>
+<li><b>Reverse Polarity</b> flips the sign of the checked
+ axes.  The measured direction of motion depends on the type
+ of laser (5501A/B versus 5517) and type and orientation
+ of the interferometer.  Applies to all modes and graph.  Frequency
+ will not change in the steady state, but since it uses the velocity graph
+ data, there will be a transient if the polarity of the primary axis
+ is changed on the fly.
+<p>
+<li><b>Encoder Checkbox</b> enables linear angle calculation with respect
+ to half wavelengths / Angle Reflector Spacing if checked.  Useful
+ for devices like rotary encoders and ring laser gyros.
+ The combination of the Angle Reflector Spacing and Wavelength then
+ define the encoder's resolution.  The text for angle mode will
+ change to "Encoder Angle" if the Encoder Checkbox is checked.
+ This is also equivalent to using the small angle approximation
+ for angle, but all the time. :)
+<p>
+<li><b>Interpolation Checkbox</b> enables sub-count interpolation if checked.
+ Interpolation is implemented in the firmware by computing an estimate of
+ the relative phase of REF and MEAS.  It provides both an increase in
+ absolute accuracy and in resolution but is only really valid for slowly
+ changing data.  Both are inversely proportional to the laser's REF
+ frequency.  Thus the benefit is less for a 5517D (REF 3.4 to 4.0 MHz)
+ compared to a 5517A (REF of to 1.5 to 2.0 MHz).  As currently implemented,
+ interpolation should work for lasers with REF frequencies from around
+ 1.1 MHz to 4.8 MHz.  Under some unspecified
+ condition, interpolation may work for higher REF lasers but this is not
+ guaranteed and errors are not considered bugs. :)  It is limited at the
+ low end by the available CPU registers to store phase samples and at the
+ high end by the granularity of the CPU clock with respect to the REF
+ and MEAS counts.  If there is a special requirement for interpolation
+ with a low REF laser like the Optralite (250 kHz), special firmware might be
+ available.
+<p>
+ <ul>
+ <li>The accuracy is improved compared to the basic measurement by
+  approximately a factor of 20 MHz/(the lasers's REF frequency).  Thus
+  a 5517B at 2 MHz with a PMI (basic resolution of 158 nm) would have
+  an effective accuracy of around 16 nm.
+<p>
+ <li>The resolution (defined as a detectable change) may be below
+  1 nm but there is a slowly varying drift due to the way the
+  laser's REF and MEAS synchronize with the CPU clock.  In fact,
+  movement below 1 nm is easily visible.  For reference, 1 nm is about the
+  width of 8 hydrogen atoms sitting patiently side-by-side. ;-)  We are
+  working to minimize or eliminate this drift but it may not be easy.
+ </ul>
+<p>
+ The following graphs are of data from an <b>actual</b> interferometer
+ with a mirror mounted on a custom built high stability PZT so that small
+ movement could be programmed from an electronic function generator (e.g.,
+ Wavetek).  Before installing this assembly directly on the Plane
+ Mirror Interferometer, small programmed movement was totally swamped
+ by vibrations from the fan of the laptop on which the GUI was running.
+ And gentle tapping on a table <i>two floors up</i> was easily detectable
+ in the &micro;MD1 readout and graph (via Remote Desktop).
+ Note the vertical scale of the graphs.  This is unretouched <i>real</i>
+ data.  The PZT is driven by triangle waveforms with p-p amplitudes of 60
+ and 10 nm for the left and right graphs, respectively.  Note that GUI
+ averaging is also turned on with settings of 900 to
+ 950 (10 to 20 samples) so part of the improvement occurs because of that.
+ But without interpolation, no movement at all might show up regardless
+ of GUI averaging setting, since 60 nm and 10 nm are much less than the
+ basic resolution of 1/4 wavelength using a Plane Mirror Interferometer.
+<p>
+<center>
+<img src="Graph_60nm-3a.gif"> &nbsp; <img src="Graph_10nm-2a.gif">
+<h4>Examples of <i>Actual</i> Displacement Data with Amplitudes of 60 nm p-p (left) and 10 nm p-p (right)</h4>
+</center>
+</ul>
+
+<h4><A NAME="umd1guiec">Environmental Compensation Window</a></h4>
+
+This provides for entry of temperature, pressure, and humidity, or to
+select the use of environmental sensor data if available.  All environmental
+compensation parameters are saved when exiting the GUI.
+<p>
+<center>
+<img src="EC_Window-1.gif">
+<h4>&micro;MD1 Environmental Compensation window</h4>
+</center>
+<p>
+Note: Temperature, pressure, and humidity values from installed sensors
+are currently only acquired when the board is reset, but are sent
+periodically to the GUI.
+<p>
+<ul>
+<li><b>Temperature Value</b> may be entered in degrees C, F, or K as
+ specified by the Temperature Units Select.  Any change results in
+ the compensation factor being recalculated.
+<p>
+<li><b>Temperature Units Select</b> may be used to specify degrees C, F, or K.
+ When selected, the temperature value is reset to 20, 68, or 293
+ degrees, for C, F, and K, respectively.
+<p>
+<li><b>Temperature Auto Checkbox</b> enables the use of a temperature sensor
+ if available.  If the Auto checkbox is checked but no sensor is available,
+ the value will not change. 
+<p>
+ If the Temperature Auto checkbox is checked, the value sent by the firmware
+ overwrites the value in the Temperature Value box using units selected by
+ the Temperature Units Select box.  The correction is then recalculated.
+<p>
+ Test Mode sends 34 &deg;C.
+<p>
+<li><b>Pressure Value</b> may be entered in mm/Hg or mBar (hPa) as
+ specified by the Pressure Units Select.  Any change results in
+ the compensation factor being recalculated.
+<p>
+<li><b>Pressure Units Select</b> may be used to specify mm/Hg or mBar.  When
+ selected, the pressure value is reset to 760 or 1,000 for mm/Hg and mBar,
+ respectively.
+<p>
+<li><b>Pressure Auto Checkbox</b> enables the use of a pressure sensor
+ if available.  If the Auto checkbox is checked but no sensor is available,
+ the value will not change. 
+<p>
+ If the Pressure Auto checkbox is checked, the value sent by the firmware
+ overwrites the value in the Pressure Value box using units selected by the
+ Pressure Units Select box.  The correction is then recalculated.
+<p>
+ Test Mode sends 567 mm/Hg.
+<p>
+<li><b>Humidity Value</b> may be entered in increments of 1%.  Any change
+ results in the compensation factor being recalculated.
+<p>
+<li><b>Humidity Units Select</b> Only relative humidity is supported.
+ Sorry, live with it. :)  When selected, the humidity value reverts back
+ to 50 percent.
+<p>
+<li><b>Humidity Auto Checkbox</b> enables the use of a humidity sensor
+ if available.  If the Auto checkbox is checked but no sensor is available,
+ the value will not change.
+<p>
+ If the Humidity Auto checkbox is checked, the value sent by the firmware
+ overwrites the value in the Humidity Value box.  The correction is then
+ recalculated.
+<p>
+ Test Mode sends 89%.
+<p>
+<li><b>Wavelength Correction Buttons:</b> turn Environmental Correction on
+  and off.  Changing their state also resets the display.  The default is ON
+  (using 20 &deg;C, 760 mm/Hg, and 50% RH).
+<p>    
+<li><b>Vacuum Wavelength</b> is the nominal wavelength which may be found
+ in the spec sheet for the specific laser.  For reference, the default value
+ is 632.991372 nm (should it get changed accidentally or otherwise).
+<p>
+<li><b>Wavelength Correction On and Off</b> determine if environmental
+ compensation is enabled.  The corrected wavelength will be displayed
+ as WL in the Main Window.
+</ul>
+<p>
+Note 1: With the current GUI, the Factors for Temperature, Pressure, and
+Humidity will change either based on the entered values or via the hardware
+sensors (if implemented).  HOWEVER, their exact value is not guaranteed to
+be meningful and should only be considered for trends.  This was supposed
+to be fixed when the environmental calculations were corrected using the
+NIST formulas, but the staff assigned to do the work took a couple years
+off, sorry.
+<p>
+Note 2: With Environmental Compensation turned OFF, the vacuum wavelength
+is used in calculations.  Therefore, Environmental Compensation should
+be turned ON even if using standard values.
+
+<h4><A NAME="umd1guitm">Test Mode Window</a></h4>
+
+The primary use of Test Mode is to exercise the GUI without the need for
+a laser or actual interferometer hardware. :)  The only other user function
+that is useful would to disable error detection suring setup and alignment
+of the laser and optics.
+<p>
+<center>
+<img src="TM_Window-2.gif">
+<h4>&micro;MD1 Test Mode Window</h4>
+</center>
+<p>
+<ul>
+<li><b>Simulated Data On/Off</b> controls the software function generator.
+ When enabled, its data overrides the data from the USB port.  The waveform
+ is not affected by the Interferometer Configuration.
+<p>
+<li><b>Waveform - Constant, Ramp, Triangle, Sine</b> select the function.
+<p>
+ The Waveform is saved upon exiting the GUI.
+<p>
+<li><b>Frequency</b> selects the function generator frequency with range
+ from 0.1 to 1 kHz.  The slider increment is 1 percent of the selected range.
+ The entered frequency for the triangle and sine waveforms roughly
+ corresponds to real-time but this is not guaranteed.
+<p>
+<li><b>Amplitude</b> selects the function generator amplitude with ranges
+ from 0.01 to 1.  The slider increment is 1 percent of the selected range.
+<p>
+<li><b>Offset</b> selects the function generator offset with a range
+ of +/-1 to +/-100.  The slider increment is +/-1 percent of the selected
+ range.
+<p>
+<li><b>REF</b> is used as the REF frequency for the function generator
+ to compute MEAS and DIFF.
+<p>
+ The REF value is saved upon exiting the GUI.
+<p>
+<li><B>Units</b> apply to amplitude with the same options as for the
+ interferometer - nm, &micro;m, mm, cm, m, in, ft.  These apply <i>only</i>
+ to the output of the function generator and do NOT affect the Main Window
+ units settings.  There are no angle units.
+<p>
+ Note that while Test Mode will operate in Angle mode, the values it sends
+ are linear displacements.  Thus, what this really means may be too difficult
+ for the average human brain to evaluate and may result in an overload
+ and unintentional brain reboot. :)
+<p>
+ The Units selection is saved upon exiting the GUI.
+<p>
+<li><b>Multiple Axis Mode Checkbox</b> enables the function generator to
+ send data to any combination of up to 3 axes.  When checked, axis select
+ checkboxes appear below it to enable the selected axes.  More on multiple
+ axis options below.
+<p>
+<li><b>Axis 1, Axis 2, and Axis 3 checkboxes</b> select the desired
+ axes for use with the Test Mode function generator.
+<p>
+<li><b>Error Detection Checkbox</b> enables error detection when checked.
+ It may be desirable to disable error detection during interferometer
+ setup or laser testing.
+<p>
+ The Error Detection state is saved upon exiting the GUI.
+<p>
+<li><b>Diagnostic Readout Check box</b> enables the display of up to
+ four diagnostic values in the Main Window.  Not really useful unless
+ you're doing GUI or firmware development.
+<p>
+ The Diagnostic Readout state is saved upon exiting the GUI.
+<p>
+<li><b>Reset Display</b> replicates the function of the reset button in the
+ Main Window.
+</ul>
+
+<h4><A NAME="umd1guima">Multiple Axis Support:</a></h4>
+
+While the firmware handles up to three measurement axes, only limited
+support is provided in the GUI due to the software complexity and lack of
+demand at the present time.  What is present should be enough to get
+started.  It's possible this could chenge in the future but don't hold
+your breath in anticipation.  It may never happen.
+<p>
+If the GUI detects data (MEAS clocks) on axes 2 or 3, the firmware and GUI
+enter Multiple Axis Mode utilizing an expanded communications format, and
+the appropriate readouts will appear as shown below.
+<p>
+<center>
+  <img src="Main_Window_X2.gif">
+<h4>&micro;MD1 Main Window with Multiple Axes Active</h4>
+</center>
+<p>
+All GUI functions apply to the primary axis, which defaults on startup
+to Axis 1.  The primary axis is what the Main Readout, REF/MEAS/DIFF
+frequency displays, frequency analysis, averaging, and graph
+apply to.  Clicking on the Axis 1, Axis 2, or Axis 3 labels will
+select it to be the primary axis and change the color of the selected
+axis label to identify it as the primary axis.  The units of the primary
+axis are also used for the others.  Error detection (if enabled)
+only applies to the primary axis.  Averaging is NOT applied to the
+Axis 1, Axis 2, or Axis 3 readouts, <i>even the one that is the same as
+the primary axis</i>.
+<p>
+Note that in Multiple Axis Mode, the communications format sends somewhat
+more data over the USB COM port and the GUI must perform more computation.
+Thus this may cause problems for a wimpy pre-Jurassic PC operating on
+the hairy edge of what's possible.  Once Multiple Axis Mode is entered
+using the interferometer hardware, the only way to return to Single Axis
+Mode is to restart both the firmware and GUI.  This is because neither has
+any way to know whether dropouts of measurement clock signals are due to
+a beam path being momentarily interruprted or an axis actually being shut
+off (whatever that might mean).
+<p>
+Test Mode is also capable of exercising all three axes singly or in combination
+but the function generator data will be the same for all.  This is controlled
+by the Multiple Axis Mode checkbox.  When enabled, Axis 1, Axis 2, and
+Axis 3 checkboxes will appear below it with Axis 1 being the default
+on startup.  Turning Multiple Axis Mode off will put the GUI back in
+Single Axis Mode.  But this will be overidden when Test Mode is turned
+off if the USB port is enabled and the firmware is running with multiple axes.
+<p>
+Multiple Axis GUI support is currently under development.  Specifications and
+behavior are subject to numerous changes without notice. ;-)  However, no
+major features beyond what are described above are anticipated to be
+implemented in the GUI.
+
+<h4>Help Menu</h4>
+
+<ul>
+<li><b>Information</b> has only one purpose at present: To direct you to
+ this &micro;MD1 Installation and Operation Manual! ;-)
+<p>
+<center>
+<img src="Information_Window-1.gif">        
+<h4>&micro;MD1 Information Window</h4>                            
+</center>
+<p>
+<li><b>About</b> lists the GUI build and firmware versions, and provides links
+ our (Jan and Sam) Web sites.
+</ul>
+<p>
+<center>
+<img src="About_Window-1.gif">        
+<h4>&micro;MD1 About Window</h4>                            
+</center>
+<p>
+<A NAME="umd1hom"></A>
+<hr>
+<h3>Using &micro;MD1 GUI with Homodyne Interferometers</h3>
+
+Now that &micro;MD2 is available, it seems silly to use &micro;MD1 for
+homodyne applications as additional hardware is required and the performance
+is limited.  See <A HREF="../uMD2/uMD2.htm">>Micro Measurement Display 2
+(&micro;MD2)</a>.  But where you already have a &micro;MD1 board,
+the following may be useful.
+<p>
+While originally designed and optimized for heterodyne interferometers using
+two frequency HP/Agilent/Keysight and similar lasers, the &micro;MD1 GUI can
+also be used with homodyne (single frequency)
+interferometers.  The interferometer optics used with these systems are
+identical to those for two-frequency lasers, but the detector electronics
+typically provide baseband SIN/COS "quadrature" outputs rather
+than REF and MEAS frequencies.  For use with &micro;MD1, the analog
+signals must be converted to digital pulses to increment or decrement
+the displacement counters.  In fact, other measurement instruments
+providing quadrature signals like those using high resolution optical
+encoders can also be used with &micro;MD1.
+Firmware may use either the chipKit DP32/SG-&micro;MD1 board
+or an even less expensive platform like the Atmega 328 Nano 3.0.  (Under
+$3 on eBay.)  However, without some minimal additional quadrature decoding
+hardware, performance will be severely limited with either.
+And the standard &micro;MD1 firmware does NOT support homodyne operation
+well or at all.  A special version using the chipKit DP32 or SG-&micro;MD1
+is available but it has no warranty whatsoever. :)  See below.
+<p>
+However, there is an alternative from Jan Beck compatible with
+the &micro;MD GUI.  It uses a Teensy 4.0 microcomputer board in place
+of the chipKit DP32/SG-&micro;MD1 PCB.  The
+only required additional hardware is a UA9637 or UA9639
+dual line receiver for each of up to three channels.  And they can run
+at very high speed.  So if you're willing to swap out the hardware, this
+is a straightforward solution.  See:
+<A target="uMD1" HREF="https://www.janbeck.com/Interferometer1/hp5508a-interferometer-replacement-hardware-2-0_1">HP5508A interferometer replacement
+hardware 2.0! - Homodyne...</A>.
+Also see <A HREF="https://www.janbeck.com/encoder-tester---sin-cos-and-incremental-quadrature">Encoder Tester - Sin/Cos and Incremental Quadrature</A>
+for some background info.
+<p>
+It is possible to use the PIC32 on the chipKit DP32/SG-&micro;MD1 PCB
+but to achieve any sort of performance requires some additional hardware.
+<p>
+As long as the communications format is adhered to, the &micro;MD
+GUI will interpret
+displacement correctly.  So, rudimentary firmware would accept SIN/COS
+quadrature signals thresholded to TTL levels
+to increment or decrement displacement, resulting in
+up to 4 counts per cycle or a resolution of around 79 nm with a
+Linear Interferometer (LI).  (but with the Interferometer
+Configuration set to 4X.)  There is no sub-wavelength interpolation
+option.  However, a quad-pulse converter (4 counts/cycle)
+multiplies the resolution by a factor of 4 compared to the same optics
+with a two-frequency laser.  So using a Plane Mirror Interferometer (PMI)
+would result in a native resolution (no interpolation)
+of just under 40 nm.  These values come about from (1) 2X from
+the optical path up and back, (2) 2X from the PMI, and (3) 4X from the 4 counts
+per cycle of the quadrature decoder.  With a
+High Resolution PMI, the resolution becomes ~20 nm.  And some commercial
+metrology laser systems provide increased resolution via interpolation
+internally.  But even the basic resolution of ~40 nm is not too shaby. ;-)
+<p>
+However, since the counting
+must be done in real-time, the uninterruptable portions of the USB
+serial data handler are a serious limitation for implementations not
+using a hardware pulse converter and counter.  By minimizing the size of
+the unused values to reduce the time spent in the serial communications,
+this can be somewhat improved but it's still not pretty.  Using the Atmega 328
+Nano 3.0 with a PMI, the speed is currently limited to less than 1 mm per
+second, and some GUI functions like Velocity and Frequency won't do anything
+useful.  Inquire for a copy of this Atmega firmware if interested in hacking
+it. ;-)
+<p>
+With minimal external logic to convert the SIN/COS quadrature to digital
+quadrature and then to TTL pulses, this speed
+limitation would virtually disappear using the PIC32MX250F128B
+on the chipKit or SG-&micro;MD1 board with its
+internal counters.  A PLD, discrete logic, commercial chip like the LS7083
+"Encoder to Counter Interface", or even another microprocessor like the
+Atmega, would generate UP and DOWN pulses based on the SIN/COS signals.
+More modern versions of SIN/COS interpolator chips are available with
+multiplications factors of up to <i>thousands</i> (though at limited
+speed), though output edge rates of many Mhz are possible depending
+on the interpolation factor.  The LS7083 and clones are available
+at not terribly inflated prices, though you may have to buy 100
+of them. :( :)
+<p>
+UP would increment the REF counter and DOWN would increment
+the MEAS counter.  Their difference would then be the Displacement just
+as in the standard &micro;MD1 firmware.  Data would be sent at a fixed sample
+rate of 732.42 Hz and all GUI functions would be supported.  A second
+measurement channel would use the other two counters.  The internal counters
+can run at over 20 MHz, so perfomance would be limited mostly by the speed
+of the optical receiver and quad-to-pulse converter.
+<p>
+A hardware implementation for the converter would provide the highest
+performance.  However, depending on the actual requirements,
+there may be no need to dust off those old TTL chips or PLD programmer.
+When using a $2 Atmega 328 Nano 3.0, the maximum speed was
+measured to be order of 40 kHz for each of 2 channels using quick-and-dirty
+polling using the pathetically slow Arduino digitalread and digitalwrite
+instructions.  With a few minutes of optimization invoking direct PORT
+calls instead, the aggragate throughput went up to order
+of a million (X4) counts/second.  That's about 4 cm/sec with a PMI.
+Substituting a second PIC32MX250F128B board
+(chipKIT or SG-&micro;MD1) to be used only for the converter should result in
+a several fold improvement over that.
+<p>
+There is a version of the &micro;MD1 firmware
+that supports homodyne mode with 1 or 2 channels each using pairs of internal
+counters (&gt;20M counts/second max but requiring an external pulse
+converter to generate the up/down pulses), along with a third
+channel via direct polling of Quad-A-B digital inputs.
+The maximum speed of the third
+channel is under 350 counts/second but this could still be useful for 
+some applications like the Z axis in a high resolution 3-D
+printer. ;)  To accomodate non-interferometer measurements using
+optical or mechanical encoders, the entry for "Vacuum Wavelength" in
+the "Environmental Compensation" window (632.991372 nm for HP/Agilent
+lasers) has a range of 1 nm to 1,000,000 nm (1 mm) so it can be set
+to the appropriate resolution required for anything from
+an atomic force microscope to a construction crane. ;-)  If a value
+outside this range is required, contact me. ;-)
+<p>
+To display rotation angles from optical encoders (or ring laser gyros)
+properly, there is now an option in the GUI to bypass the non-linear
+calculation required by the Angular Interferometer.  With the "Encoder"
+checkbox in the Interferometer Configuration screen checked, the
+the angle will read correctly based on the Angular Reflector Spacing
+being the radius of the encoder and the wavelength being (X4) count
+spacing around the periphery.
+<p>
+The graphic below shows &micro;MD1 being used to test a home-built
+ring laser gyro.  It is being rotated by hand on a Lazy Susan turntable.
+<p>
+<center>
+<img src="../sgrlg1ar.gif"><br>
+<h4>Screen Shot of Sam's RLG Angle Readout using &micro;MD1</h4>
+</center>
+<p>
+Interpolation for higher resolution is possible using the raw SIN/COS
+analog signals and often done in commercial systems.
+However, I have absolutely positively no intention of
+even thinking about any implementation using the existing &micro;MD1 hardware.
+And as noted, the basic resolution using a single frequency HeNe laser and
+PMI with quad-A-B digitally thresholded signals is under 40 nm.  With a
+HiRes PMI, it would be under 20 nm.  If you need something better then
+that, you probably have a budget to go with it. ;-)
+<p>
+<b>Summary of homodyne inputs for &micro;MD1 (chipKit DP32 or SG-&micro;MD1</b>
+<p>
+<pre>
+    Pin    Signal   Counter   Function         Maximum Speed
+ -----------------------------------------------------------------
+   0/RB5    RPB5    Timer3    Axis 1 Up    &gt;20M counts/second
+  11/RB0    RPB0    Timer5    Axis 1 Down       "          "
+  13/RB2    RPB2    Timer4    Axis 2 Up         "          "
+  14/RB3    RPB3    Timer2    Axis 2 Down       "          "
+  10/RA1    RPA1      --      Axis 3 A     350 transitions/second
+  18/RA4    RPA4      --      Axis 3 B          "          "
+</pre>
+<p>
+To achieve higher performance from a less expensive platform like the
+Atmega, an external up/down counter could also be added, which would
+be read by the firmware via the digital inputs.
+<p>
+Support for homodyne interferometers is currently a "works-in-progress"
+so nothing is currently polished in the same way as &micro;MD1 for
+heterodyne interferometers. :)
+<p>
+<b>Quad-A/B to up/down converters</b>
+<p>
+For most of these schemes, the quadrature-A/B (digital) inputs must be
+converted to up/down pulses to increment or decrement the counters that
+represent displacement.  Here are several possibilities:
+<p>
+The first one is a discrete TTL implementations.
+<A HREF="../sgpc2sch.pdf">Aynchronous Quadrature to Pulse Converter</A>
+should run at 5 MHz or more.  But there are a pair of discrete delays and the
+relative propogation delays of the 74LS04s and 74F153 are critical
+which may be just as bad as using monostables (which would earn you
+an "F" in my logic design course).
+<p>
+With some tweaks, the maximum speed can be greatly increased and this
+would fit into a small PLD or FPGA.
+<p>
+The next one uses an inexpensive Atmega 328 Nano 3.0:
+<p>
+<ul>
+<li><b>Atmega sketch:</b> <A target="uMD1" HREF=
+ "Single_Channel_Quad-Pulse_fw_v06.ino">Single_Channel_Quad-Pulse_fw_v06</A>.
+ This uses direct port calls and provides single-ended output.
+<p>
+<li><b>Atmega sketch:</b> <A target="uMD1" HREF=
+ "Single_Channel_Quad-Pulse_fw_v07.ino">Single_Channel_Quad-Pulse_fw_v07</A>.
+ This uses direct port calls and provides differential output so it will
+ drive the &micro;MD1 line receivers without a threshold voltage reference.
+<p>
+<center>
+<img src="Quad_AB-UD1_Wiring.gif"><br>
+</center>
+<p>
+ These provide up to a three channel Quad-A/B to pulse converter using
+ the Atmega 328 Nano 3.0.  (One channel shown and in the firmware.)
+ Two channels could be used
+ with the &micro;MD1 chipkit DP32 counters and firmware below.
+ These should work on other similar
+ Arduino-compatible platforms like the UNO.  They also provide a cool demo of
+ quad-to-pulse conversion if LEDs (with resistors) are put on the
+ input and output pins (below). :)  Aggragate throughput 0.5 to 1 mpps
+ (all channels) using polling (no interrupts) with direct PORT access
+ (bypassing the sluggish Arduino libraries).  Using something like
+ a Teensy in place of the Atmega would result in orders of magnitude
+ higher speed.  That is left as an exercise for the student. ;-)
+</ul>
+<p>
+<b>Quad A/B signal test and demos</b>
+<p>
+<ul>
+<li><b>Atmega sketch:</b> <A target="uMD1" HREF=
+"Quad-Pulse-Demo_fw_v03.ino">Quad-Pulse-Demo_fw_v03</A>.  Put LEDs (with
+ resistors) on the output pins and display operation of TTL Quad A/B
+ signal sources like rotary or linear encoders in addition to interferometers.
+<p>
+<li><b>Atmega sketch:</b> <A target="uMD1" HREF=
+"PWM_Demo_fw_v04.ino">PWM_Demo_fw_v03</A>.  This adds up/down
+ accumulators driving two additional LEDs with proportional brightness.
+</ul>
+<p>
+Having said all that, here is the good stuff. :)  It has been tested with
+a Renishaw RLE10 Fibre Optic Encoder with an RLD PMI head.  In "Coarse"
+mode, it has the basic homodyne resolution of ~40 nm (1/16th wavelength).
+RLE10 "Fine" mode provides an additional 4X interpolation internally
+so the native resolution (with no interpolation in &micro;MD1) is ~10 nm
+(1/64th wavelength).  Pathetic. ;-)
+<p>
+<b>Homodyne firmware and GUI</b>
+<p>
+The following Beta version chipKit DP32/SG-&micro;MD1 firmware
+and GUI supports homodyne operation with two high speed axes (pulse
+up/down) and one low speed axis (quad A-B) using the above pin assignments.
+<p>
+<ul>
+<li><b>Firmware:</b> <A target="uMD1" HREF="uMD1_fw_v59.01/uMD1_fw_v59.01.ino">&micro;MD1 Firmware Version 59.01</a>
+<p>
+ <ul>
+ <li>The "#define Homodyne" statement near the top of the firmware should be
+  set to the desired number of homodyne axes
+  - which really should not be greater than 1 at least at first - I don't
+  know if 2 or 3 axes work correctly. :( :)
+<p>
+ <li>The "#define HomodyneMultiplier" statement near the top of the firmware
+  should be set to the integer number of counts/cycle for
+  the encoder hardware - most commonly 4 using a quad pulse converter.
+  However some commercial systems provide various modes with higher
+  resolution.  For example. the Renishaw RLE "Fibre-Optic Encoders" have
+  Coarse and Fine modes.  Coarse is 4X while Fine is 16X for a displacement
+  resolution of around 10 nm with a PMI.  The latest GUI automagically knows
+  about the homodyne resolution so the type of interferometer will be all
+  that needs to be specified.  This does not affect Test Mode behavior.
+<p>
+ <li>The "define V10_PCB" near the top of the firmware should be set to
+  1 ONLY if using the SG-&micro;MD1 V1.0 PCB LED6 (chipKit LED3).
+  All it affects is the LED.  Maybe.
+ </ul>
+<p>
+<b>Although V59.01 also includes the heterodyne code, IT IS NOT GUARANTEED
+ to work correctly and any bug fixes since the homodyne branch
+ may not have been included, so unless you are a total masochist and
+ want to reconcile differences between v59.01 and the latest heterodyne
+ firmware, it should only be used for experimenting with
+ homodyne interferometers.</b>  But if running it results in
+ the Universe imploding, I do not want to know about it. ;-)
+<p>
+ For this version of the firmware, LED3 indicates
+ the percentage of time spent in the processing and communications
+ routines in a ~3.2 second cycle as follows:
+<p>
+ <ul>
+ <li>Processing (PRC): ~0.8 s.
+ <li>Short gap, off: ~0.4 s.
+ <li>Communications (COM): ~1.2 s.
+ <li>Long gap, off: ~0.8 s.
+ </ul>
+<p>
+ The brightness of LED3 on chipKit (LD6 on SG-&microMD1) is
+ proportional to the time spent in PRC or COM.
+ If it is full on or full off continuously, something bad probably happened.
+<p>
+<li><b>GUI:</b> The latest version of the GUI (in the section:
+ <A HREF="#umd1lvsg">Latest Versions of the GUI</a>, above) should work
+ with a single homodyne channel but may need some "minor"
+ tweaks to deal with 2 or 3 channels.  Inquire if interested.  If you
+ ask nicely, I may be inclined to provide the GUI source code. ;-)
+ Else the minor tweaks that &micro;MD Tech Support doesn't consider
+ fundamental errors may not be completed until well beyond the end
+ of time.
+<p>
+ When the COM port is selected with homodyne firmware, the GUI will
+ display "Homodyne Mode" followed by "X" and the Multiplier (counts/cycled
+ specified in the firmware "#define HomodyneMultiplier" statement) on the
+ main screen.  The frequency counters are blanked and most errors
+ are disabled.
+</ul>
+<p>
+This has been tested with a Renishaw RLE10 Fibre Optic Encoder and RLD
+PMI head using the Atmega-based quad to pulse converter.  In RLE10
+"Coarse" mode, it has the basic homodyne resolution
+of ~40 nm (1/16th wavelength). Using its "Fine" mode provides an additional
+4X interpolation internally so the native resolution (with no interpolation
+in µMD1) is ~10 nm (1/64th wavelength). Pathetic. ;-)  The graphic below shows
+an approximately &plusmn;400 nm change in displacement at 10 nm resolution
+from just gently pushing down on the optical breadboard with the PMI head
+and planar mirror mounted on a micrometer stage.
+But the micrometer is way too crude for nm-scale movement.
+<p>
+<center>
+<img src="../rle10ss1.gif"><br>
+<h4>Screen Shot of Test of Renishaw RLE10 Fibre Optic Encoder using &micro;MD1</h4>
+</center>
+<p>
+There may be a high performance version of the homodyne hardware and firmware
+in the future.  Stay tuned but don't hold your breath. :)
+<p>
+Where performance is a total non-concern, here is a low speed
+Quad-A/B USB interface for the &micro;MD GUI using the Atmega 328P Nano
+3.0 ONLY (no chipKit or SG-&micro;MD1 at all).  Three channels should
+be possible with performance of up to around 350 pps on each one:
+<p>
+<ul>
+<li><b>Atmega firmware:</b> <A target="uMD1" HREF="https://www.repairfaq.org/sam/uMD1/uMD0_fw_v06.ino">Atmega
+ &micro;MD0 Firmware v06</A>.  This is a single channel version that
+ does work for displacement at least on the Atmega 328P Nano 3.0
+ (and probably with minimal or no changes on the UNO and other similar
+ Atmega-based boards as well).  But I have no
+ intention of putting &micro;MD0 on an ATTiny (though I bet it would
+ port without issues). ;-)  It uses interrupts for the
+ A and B inputs so it's not going to be super fast.  Its performance limits
+ are not known but it should be adequate for applications
+ like 3-D printers.  It is also suitable for experimentation using the
+ &micro;MD GUI and is so simple that hacking is encouraged. :)  It would be
+ straightforward to provide support for 2 or 3 axes.
+<p>
+ Te hardware required to interface to an interferometer with a Quad-Sin-Cos
+ output is simply a pair of voltage comparators like the LM393 which along with
+ the required red and green LEDs for the A and B signals ;) and Nano easily
+ fits on a small solderless breadboard.  In fact, the original prototype
+ simply used 2N3904 transistors with trim-pots to adjust the amplitude
+ of the Sin/Cos outputs of a Quad decoder.  But this was too fiddly, so
+ using a LM393 dual voltage comparator is much better at little additional
+ complexity or cost.
+</ul>
+<p>
+<A NAME="umd1ligo"></A>
+<hr>
+<h3>Using &micro;MD1 for DIY LIGO?</h3>
+
+The Laser Interferometer Gravitational wave Observatory (LIGO) uses what
+is basically a very special (and expensive) Michelson interferometer
+to detect gravitational waves emanating from colossal cosmic events
+millions of lightyears distant.  A Web search will find many publicly
+aavailable references.  Its sensitivity to changes in the position
+of its mirrors is order of 1/1,000th the diameter of a <i>proton</i> or
+about 1 attometer, 1x10<sup>-18</sup> meters.  That's about 1,000,000,000
+times more sensitive than &micro;MD1 with a Plane Mirror Interferometer.
+So perhaps not. ;-)  (But the cost was much greater also!)
+<p>
+However, it would be possible to demonstrate the principles of LIGO as well
+as to add some of the enhancements to boost sensitivity like extending
+the reference arm and adding multi-pass cavities on both arms.  A
+Single Beam Interferometer (PBS cube and 2 QWPs) might be used along with
+a pair of high quality mirrors in each arm to multiply the effective path
+length and sensitivity.
+<p>
+At the very least, such a setup would be a very sensitive earthquake detector,
+though detecting black hole or neutron star collisions is out, unless they
+occur in our Solar system (which would probably be bad). ;-)
+<p>
+<A NAME="umd1fut"></A>
+<hr>
+<h3>The Future</h3>
+
+As of Fall 2017, the chipKIT DP32 is no longer available from Digilent,
+though until Winter of 2019, it was still available direct from microchip
+as part number TDGL019.  But now it appears to be certifiably gone and
+although Digkey sent me a "laser time buy" email on it,  I rather doubt
+that's meaningful.  And I've exhausted availability from all other
+distributers.
+<p>
+If you already have the chipKIT board or ordered &micro;MD1, this
+isn't a real concern unless you are planning to duplicate your setup at a
+later date or would like a spare just in case something bad happens.
+In that case, getting another chipKIT DP32 board would make sense.
+I have purchased enough of these to handle anticipated
+demand for the next year or so, but a longer term solution is now
+called for.  But the number is going down fast.
+<p>
+There are several options for the &micro;MD project going forward:
+<p>
+<ol>
+<li>Design a custom PCB that would provide the functions of the chipKIT
+ DP32 along with the line receivers, connectors, and environmental
+ sensors.  The PIC, or an equivalent, should continue to be available
+ for the foreseeable future, though it may eventually need to be an SMT
+ version.  I have a monitor placed on microchip's "end-of-life" watch
+ should the PIC32MX250F128B-I/SP (the 28 pin DIP version) be scheduled to go
+ out of production.  Then I could just buy up a lifetime supply. :)
+ Laying out a PCB is no problem, but this approach would
+ also require having the boards assembled (stuffed with parts and soldered),
+ programmed, and tested.
+<p>
+<li>Switch over to another PIC-based Arduino compatible board.
+ The recommended replacement for the chipKIT DP32 is the
+ <A target="uMD1"
+ HREF="https://reference.digilentinc.com/reference/microprocessor/uc32/reference-manual">Digilent &micro;C32</a>.  However, the &micro;C32 appears to NOT
+ have some of the essential features required for &micro;MD1 - notably
+ external clock inputs to the the Timers.  And a separate widget board
+ "Shield" would need to be added for the "peripherals" and both the cost
+ and complexity is therefore somewhat greater.
+<p>
+ For this to be viable, the PIC must have a minimum of 4 high speed counters
+ (microchip calls them "Timers") whose clock inputs can be configured to
+ connect to external pins.  Surprisinigly, most PIC32 parts even in packages
+ with many more pins do not have this capability.
+<p>
+<li>Redo &micro;MD1 using a different microprocessor or FPGA.  (&micro;MD2!)
+ A possible solution is the
+ <A HREF="http://www.cypress.com/documentation/development-kitsboards/cy8ckit-059-psoc-5lp-prototyping-kit-onboard-programmer-and">Cypress CY8CKIT-059 PSoC®
+ 5LP Prototyping Kit With Onboard Programmer and Debugger</A>.  This
+ has a microprocessor with FPGA so it
+ could be an opportunity to greatly boost performance including support
+ for lasers like the Zygo 7701/2 which have a 20 MHz REF frequency, along
+ with better sub-wavelength interpolation and potentially even support
+ for closed-loop control.
+<p>
+ Needless to say, this would be a very complex undertaking and the
+ justification may simply not be there.  Only a small number of
+ hobbyist/experimenter types even care about the sub-wavelength
+ interpolation, let alone Zygo support.  And I have no intention of
+ developing &micro;MD1 for serious commercial release.
+</ol> 
+<p>
+I have already begun (1) and prototypes are now available.  Parts have also
+been ordered.  This PCB includes the layout for the
+line receivers and environmental sensors as well as most other chipKIT
+features except for the EEPROM (though there is space for it).  It's all
+through-hole except for the USB Micro B connector, which can be either
+through-hole or SMT.  This project will proceed, but with enough chipKIT
+DP32 boards in stock for awhile, there should be a smooth transition.
+<p>
+The only downside to this approach for the user is that I do NOT intend
+to populate the PCBs, even for basic PIC32 functions (or at least you would
+have to pay 2 arms and 3 legs for it). ;-)  So a bit more soldering
+is involved.  See the specific info in the section:
+<A NAME="umd1suasb">Assembly using the SG-&micro;MD1 Board</A>.
+<p>
+If someone were interested in working with Jan and myself on (2) or (3)
+(or some other option not listed),
+please contact me via the link at the top of this page.  However, I have
+no current plans to do (2) or (3) on my own.
+<p>
+<A NAME="umd1trb"></A>
+<hr>
+<h3>Troubleshooting</h3>
+
+Naturally, all is expected to go smoothly.  But if it doesn't, here are
+some common problems.  Some of these may be bugs in the firmware or GUI
+as hard as that is to believe.  So, if you find something that cannot
+be solved based on what's below, contact us for a timely response:
+<p>
+<ul>
+<li><b>GUI won't start and generates error about value out of range:</b>
+ Ignore the error by hitting "continue" as there is no configuration file.  The
+ GUI should come up.  Close it using "Finish" and it will save a valid
+ configuration file and the error will not appear again except possibly
+ if a new GUI Build is run since each one has a unique configuration
+ file.  (This error should not occur but at least be prepared!)
+<p>
+<li><b>GUI starts but then generates error about value out of range:</b>
+ If you are in a location where the interpretation of "." and "," differs
+ (e.g., Brazil), numbers with decimal points may get screwd up.  One specific
+ instance is that for the wavelength in the Environmental Compensation window,
+ the decimal point gets ignored so that 632.993172 is interpreted
+ as 632991372, which is obviously out of range.  Sorry, you'll just
+ have to move your entire operation to the USA (or at least set the
+ environment that way for now). ;-)
+<p>
+<li><b>There is no valid USB Port available:</b> The firmware is not running
+ or has crashed.  (Hard to believe!)  Exit the GUI and assuming the firmware
+ has been loaded, press the RESET button.  With the present firmware, after
+ about 1 second, LED3 should be on at reduced brightness when the firmware
+ has started.  It's actually flashing at the sample frequency but this may
+ not be obvious except by waving your eyeballs.
+<p>
+<li><b>GUI generates error when the USB Port is selected:</b> This means
+ either the firmware is not producing the proper communications sequence
+ or more likely, the board has simply gotten out of sync.  Selecting the
+ USB Port a second time will usually clear it.
+<p>
+<li><b>Graph is not scrolling after USB Port is selected:</b> Similar to
+ above.  First try selecting the USB Port again, but may require exiting
+ the GUI, pressing RESET, and reatsrting the GUI.  Attempting to run
+ with an incompatible version of the firmware or firmware not properly loaded
+ or in a peculiar state can also produce this error.
+<p>
+<li><b>There is no change in displacement even when there should be:</b>
+ Assuming the REF and MEAS are coming from the correct sources (laser and
+ optical receiver, respectively), this usually means the interferometer
+ is installed or assembled incorrectly (e.g., backwards), is misaligned,
+ or the laser is not producing the proper F1/F2 optical signals.
+<p>
+<li><b>Displacement takes off up or down out of control:</b> In most cases,
+ MEAS (down) or REF (up) is simply missing.  If the laser isn't READY, the
+ there will be no REF signal.  If the interferometer isn't set up or the
+ measurement path is blocked or misaligned, there will be no MEAS signal
+ sporadically or all the time.  Either the REF or MEAS frequency readout
+ will be blank.  Unless errors are disabled, usually this should result
+ in a "Hd Error" (no REF) or "PA Error" (no MEAS).  The first thing to do
+ if the problem isn't obvious is to swap the REF and MEAS connectors.
+ If the error also swaps, then there is a problem with the signal from the
+ laser or optical receiver; if the error stays the same, the problem is
+ in the wiring or line receiver on the chipKit board.
+<p>
+ In rare cases, such behavior can be due to a noisy REF or MEAS signal as a
+ result of crosstalk or improper termination.  The REF or MEAS frequency
+ readouts will differ significantly even with no movement and will not be
+ accurate for the noisy signals(s).  If a 50 MHz or higher bandwidth
+ oscilloscope is available, check the quality of the REF and MEAS signals.
+ REF and MEAS(s) should not be run together for long distances without separate
+ shielding.  And while the default value of 150 ohms for the terminating
+ resistors is generally satisfactory, depending on your wiring run length
+ and other factors, using a different (probably lower value) may be necessary.
+ Substituting a UA9639 for the UA9637 (if used) may also help.
+ It is a slower part and will tend to filter out any glitches.  This
+ wouldn't be a preferred solution though and might earn you an "F" in
+ my CSE371 Intro to Computer Design course. :( :)
+ Due to the way the PIC synchronizes the Timer inputs (which includes REF
+ and MEAS) with the CPU clock, a glitch can manifest itself in peculiar
+ ways, possibly only causing problems at specific sample frequencies (which
+ are based on the CPU clock frequency).
+<p>
+<li><b>Displacement or velocity values are off by an integer factor:</b> The
+ Interferometer Configuration does not match you interferometer hardware.
+<p>
+<li><b>Angle or Straightness values are not accurate:</b> The parameters of
+ your interferometers are non-standard.  They may be adjusted over a wide
+ range in Interferometer Configuration.
+<p>
+<li><b>Displacement wonders by a few nanometers over seconds:</b> Due to the
+ way sub-count interpolation is implemented, there is an unavoidable (for now)
+ artifact due to the relative sampling of the REF and MEAS signals and the
+ CPU clock.  Sorry, &micro;MD1 Research is spending sleepless nights on
+ this problem.  (Also applies to other measurements.)  You have a really
+ stable physical setup if you can even detect this issue! ;-)  &micro;MD1
+ Research had to attach a mirror on PZT directly to a 10706A Plane Mirror
+ Interferometer for it to appear.
+<p>
+<li><b>Update of GUI readouts and other indicators is sporadic or slow:</b>
+ While &micro;MD1 should run on just about any computer that still runs,
+ this cannot be guaranteed for a 20 year old machine.  Time to Upgrade.
+ However, CPU intensive applications like antivirus scans can hog resources.
+ The USB subsystems on some computers are more efficient than others and
+ there's no way to predict performance based on make or model.
+<p>
+<li><b>Sensor values are not updating in real-time:</b> Even if installed and
+ enabled, presently, they are only acquired just after the firmware is reset
+ and are NOT sent continuously.  So, this is feature, not a bug. :)
+</ul>
+
+<h4><A NAME="umd1ricb">Restoring or Installing the chipKIT Bootloader</a></h4>
+
+This should never be necessary with either the chipKIT DP32 or
+SG-&micro;MD1 PCB I provide since the
+bootloader is pre-installed in the NVRAM of the PIC32.
+and it's almost impossible to accidentally
+erase it.  But it would be required if you were to
+purchase the PIC32MX250F128B part direct from microchip or
+an electronics distributor.
+<p>
+So this section is more for my own reference. ;-)
+<p>
+For the following, on the chipKIT DP32, it may be necessary to
+disconnect the MEAS1 circuit from the PIC32 and on SG-&micro;MD1, the
+jumper/trace JP0 may need to  be removed to assure that the MEAS1
+line receiver does not load the P32_PGD signal.  There are no
+interfering signals on the MPLAB version of SG-&micro;MD1.
+<p>
+A PIC programmer like the microchip PICkit 3 will be required along with
+an in-line cable that mates with the programming connector on the
+board.  The microchip PICkit 3 is around $50 from an electronics
+distributor.  Used ones can be found on eBay at reduced cost,
+as well as Far East knockoffs but they may or may not work properly
+and their documentation (or lack thereof) usually stinks.
+<p>
+Temporarily disconnect any user
+circuitry with a load of less than a few k ohms from P32_PGD/RB0 (MEAS1) and
+P32_PGC/RB1 so the PICkit 3 can toggle those lines.  For
+the procedure, see <A HREF="https://chipkit.net/wp-content/uploads/2016/02/Restore-your-chipKIT-Bootloader-Guide.pdf">Restore Your chipKIT
+Bootloader Guide</A>.  DON'T bother with MPLAB-X though as it may hang
+when attempting to communicate with the microprocessor.  Download
+and install MPLAB V8.92, which works perfectly well.  But power the board
+from USB, NOT the Pickit 3 - other parts load down 3.3 V power
+if it's provided from the programming connector,
+possibly the 3.3 V regulator IC.  The term "PIC32 board" denotes
+either one like the
+chipKit DP32 or the SG-&micro;MD1 PCB.  The following assumes the use of the
+PICkit3 programmer:
+<p>
+<ol>
+<li>Download <A HREF=
+"https://ww1.microchip.com/downloads/en/DeviceDoc/MPLAB_IDE_8_92.zip">MPLab V8.92"</a>.  ONLY V8.92 is known to work!  Install it and the associated drivers it
+ requests.
+<li>Start MPLAB V8.92.
+<li>Plug in the PICkit3.
+<li>Go to "Programmer", "Select Device", "PICket3".
+<li>Go to "Programmer", "Settings", "Power", Make sure "Power target circuit
+ from PICkit3" is NOT checked.
+<li>Go to "Configure".
+ <ul>
+ <li>Device: "PIC32MX250F128B".
+ <li>Programmers: "PICkit3".
+ </ul>
+<li>Go to "File", "Import" to load the
+ <A HREF="chipKIT-DP32-v01000303.hex">chipKIT-DP32-v01000303.hex</A>.
+ Do NOT use "Open".  This will be acknowledged in the Output window.
+<li>Power up the PIC32 board.  MPLAB should recognize the PIC32 with a status
+ word and no errors in the Output window.
+<li>Go to "Programmer", "Program" (or Alt-g,Alt-g).  Almost immediately, there
+ should be an audible acknowledgment that the programming was successful
+ with confirmation in the Output window and the board
+ will then reset into boot mode with the LED flashing.
+<li>Disconnect the PICkit3 (optional).
+<li>If connected to USB, the PC should recognize that it is a valid COM port.
+ UECIDE can then be used to compile and download the firmware.
+<li>Power down the PIC32 board and disconnect from USB if it is desired to
+ unplug the PIC32 chip.
+</ol>
+<p>
+<A NAME="umd1ref"></A>
+<hr>
+<h3>References</h3>
+
+These links open in a <i>single</i> new window or tab.
+
+<h4>SG-&micro;MD1</h4>
+<ol start = 1>
+<li><A target="uMD1" HREF="SG-uMD1-V1.0-am.htm">Assembly Instructions for
+ SG-&micro;MD1 Version 1.0 PCB</A> (Obsolete.)
+<li><A target="uMD1" HREF="SG-uMD1-V1.2-am.htm">Assembly Instructions for
+ SG-&micro;MD1 Version 1.2 PCB</A>.
+<li><A target="uMD1" HREF="SG-uMD1-V1.2-MPLAB.htm">Assembly Instructions for
+ SG-&micro;MD1 for MPLAB Version 1.2 PCB</A>.
+</ol>
+<p>
+<h4>chipKIT DP32</h4>
+<ol start=4>
+<li><A target="uMD1" HREF="https://reference.digilentinc.com/_media/chipkit_dp32:chipkit_dp32_rm.pdf">chipKIT DP32 Overview (PDF)</A>.
+<li><A target="uMD1" HREF="https://reference.digilentinc.com/_media/chipkit_dp32:chipkit_dp32_sch.pdf">chipKIT DP32 Schematics (PDF)</A>.
+<li><A target="uMD1" HREF="https://reference.digilentinc.com/chipkit_dp32/refmanual">chipKIT DP32 Reference Manual (PDF)</A>.
+<li><A target="uMD1" HREF="https://reference.digilentinc.com/chipkit_dp32:refmanual">chipKIT DP32 Reference Manual (Web page)</A>.  This one appears to be much more complete.
+</ol>
+<p>
+<h4>MPIDE</h4>
+<ol start = 8>
+<li><A target="uMD1" HREF="http://chipkit.net/started/install-chipkit-software/">Install chipKIT Software</A>
+<li><A target="uMD1"
+ HREF="http://chipkit.net/started/learn-basics/mpide-quick-start-guide/">MPIDE
+ Quick Start Guide</a>
+</ol>
+<p>
+<h4>UECIDE</h4>
+<ol start = 10>
+<li><A target="uMD1" HREF="http://uecide.org/">UECIDE: The Universal Embedded Computing IDE</a>
+<li><A target="uMD1" HREF=""https://github.com/UECIDE/UECIDE/releases">UECIDE on GITHUB (Download most versions)</a>
+</ol>
+<p>
+<h4>Arduino</h4>
+<ol start = 12>
+ <li><A target="uMD1" HREF="https://www.arduino.cc/en/Main/Software">Arduino IDE, Refernce, Tutorials, more</a>
+ <li><A target="uMD1" HREF="https://www.arduino.cc/en/Main/ArduinoBoardNano">Atmega 328 Nano 3.0</a>
+ <li><A target="uMD1" HREF="http://www.instructables.com/id/How-To-Burn-a-Bootloader-to-Clone-Arduino-Nano-30/step2/Test-it-first-/">How to Burn a Bootloader to Clone Adruino Nano 3.0</a>
+ <li><A target="uMD1" HREF="http://playground.arduino.cc/Main/RotaryEncoders">Arduino Playground: Rotary Encoders</a>
+ <li><A target="uMD1" HREF="https://www.pjrc.com/teensy/td_libs_Encoder.html">Encoder Library, for Measuring Quadrature Encoded Position or Rotation Signals</a>
+</ol>
+<p>
+<h4>Sensors</h4>
+<p>
+<ol start = 17>
+<li><A target="uMD1" HREF="https://www.adafruit.com/datasheets/Digital%20humidity%20and%20temperature%20sensor%20AM2302.pdf">AM2302 Digital Humidity and Temperature Sensor  Datasheet</A>
+ <li><A target="uMD1" HREF=
+ "https://www.adafruit.com/datasheets/BST-BMP180-DS000-09.pdf">BMP180
+ Temperature and Pressure Sensor Datasheet</A>
+ <li><A target="uMD1" HREF="https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/Humidity_Sensors/Sensirion_Humidity_Sensors_SHT20_Datasheet_V4.pdf">Sensirion - Humidity & Temperature Sensor SHT2x Datasheet</a>
+ <li><A target="uMD1" HREF="http://cache.freescale.com/files/sensors/doc/data_sheet/MPL115A2.pdf">MPL115A2 Humidity/Temperature Sensor Datasheet</a>
+</ol>
+<p>
+<h4>&micro;MD1 User's Web Sites and Videos</h4>
+<p>
+<ol start = 21>
+<li><A target="uMD1" HREF="https://www.youtube.com/watch?v=vPu6lN9yJOY&feature=youtu.be">Sam Zeloof's Nanometer Precision Laser Ruler (16:34).</a>  Nice
+video will worth the time. :-)
+<li><A target="uMD1" HREF="https://www.youtube.com/watch?v=H3jgUAyHb3c">New99's Test Deflections.</A> Trials and tribulations of interferometer alignment
+ (20:12).  He has 2 or 3 other videos as well.
+</ol>
+<p>
+<h4>Other Laser and Interferometer Web Pages and Videos</h4>
+<p>
+<ol start = 23>
+<li><A target="uMD1" HREF="https://www.youtube.com/watch?v=vYz2Z9Hc3pk">Tesla500's HP 5518A Interferometery Laser Head.</A> Video with detailed description
+ of the HP 5518A laser including how it works.  Also applies to other
+ HP/Agilent/Keysight lasers (25:38).
+</ol>
+<p>
+<h4>Research Papers using &micro;MD1</h4>
+<p>
+<ol start = 24>
+<li><A target="uMD1" HREF="https://aip.scitation.org/doi/full/10.1063/1.5100137">Review of Scientific Instruments: A customized instrument with laser interferometry for measuring electrospun mat thickness</a> 
+</ol> 
+<p>
+<h4>Jan Beck's Information</h4>
+<p>
+<ol start = 25>
+<li><A target="uMD1" HREF="https://sites.google.com/site/janbeck/">Interferometer Project Pages</a>
+<li><A target="uMD1" HREF="https://github.com/janbbeck/InterferometerGUI/">Github &micro;MD GUI Source Code Repository</a>
+<li><A target="uMD1" HREF="https://www.youtube.com/watch?v=-YGJwq2y-uk">Short Video Describing Jan's and Sam's Boards</a>
+</ol>
+<p>
+<h4>Sam Goldwasser's Manuals and Information</h4>
+<p>
+<ol start = 28>
+<li><A target="uMD1" HREF="../manuals/index.html">Sam's Kits and
+ Other Manuals</a>
+<li><A target="uMD1" HREF="https://github.com/lasersam594/">Sam's Firmware and
+ GUI Github Repository</a>
+</ol>
+<hr>
+<p>
+</html>

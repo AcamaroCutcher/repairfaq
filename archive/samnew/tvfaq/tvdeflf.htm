@@ -1,0 +1,148 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvdeflf.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Deflection fundamentals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Deflection fundamentals</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvdeflf.htm">https://www.repairfaq.org/samnew/tvfaq/tvdeflf.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Deflection fundamentals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvsddpwcc.htm">&lt;&lt;&nbsp;TV shuts down with dark p..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvavsr.htm">About the vertical scan r..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<A NAME="tvdef"></A><H2>Deflection Problems</H2>
+<h3><A NAME="tvdeflf">Deflection fundamentals</A></h3>
+
+Note: the following is just a brief introduction.  For more detailed deflection
+system theory of operation and sample circuits, see the document:
+<A HREF="../../sam/deflfaq.htm">TV and Monitor Deflection Systems</A>.
+<p>
+The electron beams in the CRT need to be scanned horizontally and vertically
+in a very precise manner to produce a raster - and a picture.
+<p>
+For NTSC and PAL, the horizontal scan rates are 15,734 and 15,625 Hz
+respectively.
+<p>
+For NTSC and PAL, the vertical scan rates are 60 and 50 Hz (approximately)
+respectively.
+<p>
+The deflection yoke includes sets of coils for horizontal and vertical
+scanning oriented at 90 degrees with respect to each other.  Additional
+coils are needed to correct for pincushion and other geometric defects.
+<p>
+The deflection circuits must be synchronized and phase locked to the
+incoming video signal.
+<p>
+Therefore, we have the following functions:
+<p>
+<ol>
+<li>Sync separator to obtain horizontal and vertical synchronization pulses.
+<p>
+<li>Horizontal oscillator which locks to horizontal sync pulses.
+<p>
+<li>Horizontal drive followed by horizontal output which feeds deflection
+ yoke (and flyback for HV and other voltages),  Yoke requires a sawtooth
+ current waveform for linear horizontal deflection.  Horizontal output
+ in all but the smaller TVs is a large discrete power transistor, most
+ often an NPN bipolar type.
+<p>
+<li>Vertical oscillator which locks to vertical sync pulses.  Yoke requires
+ sawtooth waveform for linear vertical deflection.
+<p>
+<li>Vertical drive/output which feeds vertical deflection yoke.  Newer TVs
+ use ICs for vertical drive and output.
+<p>
+<li>Various additional deflection signals to correct for the imperfections
+ in the geometry of large angle deflection CRTs.  These may be fed into
+ the normal deflection coils and/or there may be separate coils mounted
+ on the neck of the CRT.
+</ol>
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvsddpwcc.htm">&lt;&lt;TV shuts down with dark p..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvavsr.htm">About the vertical scan r..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

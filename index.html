@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-root="./">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RepairFAQ: Sam&#x27;s Repair &amp; Laser FAQs, preserved</title>
+<meta name="description" content="An unaltered mirror of repairfaq.org (the Sci.Electronics.Repair FAQ and Sam&#x27;s Laser FAQ by Samuel M. Goldwasser and Filip M. Gieszczykiewicz) with a modern companion: search, and every ASCII circuit diagram redrawn in animated 2D and 3D.">
+<meta property="og:title" content="RepairFAQ: Sam&#x27;s Repair &amp; Laser FAQs, preserved">
+<meta property="og:description" content="An unaltered mirror of repairfaq.org (the Sci.Electronics.Repair FAQ and Sam&#x27;s Laser FAQ by Samuel M. Goldwasser and Filip M. Gieszczykiewicz) with a modern companion: search, and every ASCII circuit diagram redrawn in animated 2D and 3D.">
+<meta property="og:type" content="website">
+<link rel="icon" href="./companion/assets/favicon.svg" type="image/svg+xml">
+<script>(function(){var r=document.documentElement,s=null;try{s=localStorage.getItem('quake-viz-theme')}catch(e){}
+r.classList.toggle('dark-mode',s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches);r.classList.add('js')})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./companion/assets/companion.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true"></span>RepairFAQ<small>mirror &amp; companion</small></a>
+  <nav class="nav" id="nav" aria-label="Main"><a href="./index.html" aria-current="page">Home</a><a href="./archive/index.html">Read the FAQs</a><a href="./companion/diagrams.html">Diagrams</a><a href="./companion/credits.html">Credits</a></nav>
+  <button class="icon-btn" type="button" data-search-open aria-label="Search all FAQs (press /)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+  <button class="icon-btn" type="button" id="themeToggle" aria-label="Switch theme"></button>
+  <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<dialog class="search-dialog" id="searchDialog" aria-label="Search the FAQs">
+  <form method="dialog"><input class="search-input" type="search" placeholder="Search 4,405 pages: try “flyback”, “HeNe”, “microwave”…" aria-label="Search" autocomplete="off"></form>
+  <ul class="search-results"></ul>
+</dialog>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow"><span class="pulse"></span>Unaltered mirror · modern companion</span>
+      <h1>Three decades of repair wisdom, <span class="glow">preserved.</span></h1>
+      <p class="lede">The Sci.Electronics.Repair FAQ and Sam's Laser FAQ are among the largest free collections of practical
+      electronics knowledge ever written: how to troubleshoot TVs, microwave ovens, power supplies, CD players and lasers,
+      with thousands of hand-drawn ASCII schematics. This site keeps a faithful copy online and adds a companion for exploring it.</p>
+      <div class="byline">Written by <strong>Samuel M. Goldwasser</strong> and <strong>Filip M. Gieszczykiewicz</strong>,
+      with contributions from <strong>1,498</strong> people credited by name in the text.
+      The original lives at <a href="https://www.repairfaq.org/">repairfaq.org</a>.</div>
+      <div class="cta">
+        <a class="btn primary" href="archive/index.html">Read the FAQs</a>
+        <a class="btn" href="companion/diagrams.html">Explore 667 diagrams</a>
+        <button class="btn" type="button" data-search-open>Search</button>
+      </div>
+    </div>
+    <div class="hero-3d reveal" id="hero3d" aria-label="Animated 3D model of a helium-neon laser tube; hover over the parts to see their names">
+      <div class="part-label" id="partLabel"></div>
+      <span class="hint">drag to rotate · hover the parts</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">What is here</span>
+      <h2>The whole site, page for page.</h2>
+      <p>Every page is a byte-for-byte copy of the original. The only additions are a line naming the source and
+      a stylesheet that adjusts fonts and colors, which the authors' terms allow. Everything in the companion is new and clearly separate.</p></div>
+    <div class="stats reveal-stagger">
+      <div class="stat"><b data-count="4405">4,405</b><span>pages mirrored</span></div>
+      <div class="stat"><b data-count="667">667</b><span>ASCII circuit diagrams, redrawn</span></div>
+      <div class="stat"><b data-count="12257">12,257</b><span>photos and schematics</span></div>
+      <div class="stat"><b data-count="1498">1,498</b><span>contributors credited</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Start reading</span><h2>The collections</h2></div>
+    <div class="cards three reveal-stagger">
+      <a class="card" href="archive/sam/laserfaq.htm"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="9" width="12" height="6" rx="2"/><path d="M14 12h8M18 8l2-2M18 16l2 2"/></svg></span><h3>Sam's Laser FAQ</h3><p>A practical guide to lasers for experimenters and hobbyists: safety, helium-neon, diode, argon/krypton ion and CO2 lasers, power supplies, and home-built lasers.</p><span class="meta">archive/sam/laserfaq.htm</span><span class="go">Open</span></a>
+      <a class="card" href="archive/REPAIR/F_Repair.html"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-5-5 8-8-1.3-1.7z"/><path d="M3 21l5-5"/></svg></span><h3>Sci.Electronics.Repair FAQ</h3><p>The main table of contents of the S.E.R FAQ: the “Notes on the Troubleshooting and Repair of…” series and material from many other contributors.</p><span class="meta">archive/REPAIR/F_Repair.html</span><span class="go">Open</span></a>
+      <a class="card" href="archive/sam/sammenu.htm"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></span><h3>Silicon Sam's Technology Resource</h3><p>Sam Goldwasser's repair guides, component testing, schematics, and the rest of his technology notes in one menu.</p><span class="meta">archive/sam/sammenu.htm</span><span class="go">Open</span></a>
+      <a class="card" href="archive/sam/laserpic.htm"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><circle cx="12" cy="13" r="4"/></svg></span><h3>Laser Equipment Gallery</h3><p>Photographs of laser tubes, heads, power supplies and optics, plus dissections of lenses and equipment.</p><span class="meta">archive/sam/laserpic.htm</span><span class="go">Open</span></a>
+      <a class="card" href="archive/index.html"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 11 12 3l9 8v10H3z"/><path d="M9 21v-6h6v6"/></svg></span><h3>The original home page</h3><p>The S.E.R FAQ “Galactic Homepage”, exactly as it appears on repairfaq.org.</p><span class="meta">archive/index.html</span><span class="go">Open</span></a>
+      <a class="card" href="archive/sam/copyright.htm"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 21h14M6 7h12M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg></span><h3>Copyright and fair use</h3><p>The authors' terms for using this material. This mirror follows them: see the credits page for how.</p><span class="meta">archive/sam/copyright.htm</span><span class="go">Open</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Companion</span>
+      <h2>Every ASCII schematic, redrawn.</h2>
+      <p>Sam drew his circuits with nothing but keyboard characters, so they would survive any newsgroup, mail client or screen.
+      The companion reads each one and draws it again as a vector schematic with animated current, and as a 3D circuit board you can orbit.
+      Hover a wire to light up everything connected to it. The original ASCII is always one click away.</p></div>
+    <div class="reveal" id="featured"></div>
+    <p class="reveal" style="margin-top:14px;color:var(--muted);font-size:.92rem">“Basic HeNe Laser Power Supply Organization”, from <a href="archive/sam/laserhps.htm#hpscao1">Sam&#x27;s Laser FAQ - HeNe Laser Power Supplies</a>,
+    by Samuel M. Goldwasser. <a href="companion/diagram.html#4ba5c0ae2933">Diagram page with the full copyright notice</a>.</p>
+    <div class="cta reveal" style="margin-top:22px"><a class="btn primary" href="companion/diagrams.html">Browse all 667 diagrams</a></div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">With respect</span><h2>How this mirror honors the authors' wishes</h2>
+      <p>The site's <a href="archive/sam/copyright.htm">Copyright and Fair Use</a> page sets out how the FAQs may be reproduced. This mirror follows it:</p></div>
+    <div class="cards reveal-stagger">
+      <div class="card"><h3>Unaltered</h3><p>Pages are copied byte for byte. Only fonts and colors are restyled, “to be consistent with other pages on the Web site,” as the terms allow.</p></div>
+      <div class="card"><h3>Credited and linked</h3><p>Every page starts with an HTML comment naming where it came from, and a visible line linking the original on repairfaq.org.</p></div>
+      <div class="card"><h3>Notices kept</h3><p>Each document's “Author and Copyright” section stays at the top. Each diagram page in the companion repeats it in full.</p></div>
+      <div class="card"><h3>Free, no ads</h3><p>Nothing is sold, and there are no ads or sponsored links: non-commercial use only, as the authors require.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="wrap">
+  <div>
+    <h4>Credit where it is due</h4>
+    <p>All FAQ content is the work of <strong>Samuel M. Goldwasser</strong> and <strong>Filip M. Gieszczykiewicz</strong>,
+    and of the many contributors quoted by name throughout, © the original authors, all rights reserved.
+    The original and authoritative site is <a href="https://www.repairfaq.org/">https://www.repairfaq.org/</a>.
+    This is a free, non-commercial mirror, kept so the information lasts. It carries no ads and charges nothing.</p>
+    <p>Mirror and companion maintained by <a href="https://acamaro.com/">Acamaro Cutcher</a>.</p>
+  </div>
+  <div><h4>The FAQs</h4><ul>
+    <li><a href="./archive/sam/laserfaq.htm">Sam's Laser FAQ</a></li>
+    <li><a href="./archive/REPAIR/F_Repair.html">S.E.R FAQ table of contents</a></li>
+    <li><a href="./archive/sam/sammenu.htm">Silicon Sam's Technology Resource</a></li>
+    <li><a href="./archive/sam/copyright.htm">Copyright and fair use</a></li>
+  </ul></div>
+  <div><h4>Companion</h4><ul>
+    <li><a href="./companion/diagrams.html">Diagram explorer</a></li>
+    <li><a href="./companion/credits.html">Credits and terms</a></li>
+    <li><a href="./AI_DIAGRAM_GUIDE.md">Guide for AI diagram tools</a></li>
+    <li><a href="https://acamaro.com/projects/">acamaro.com projects</a></li>
+  </ul></div>
+</div></footer>
+<script src="./companion/assets/companion.js"></script>
+
+<script type="module">
+import { mountViewer } from './companion/assets/viewer.js';
+mountViewer(document.getElementById('featured'), "         +----------+     +------------------+ HV+   Ballast Resistance\n  o------|          |-----| Starting Circuit |--------------/\\/\\----+\nInput,   |  Main    |     +------------------+               Rb     |\nAC line  |  Power   |                                               |\nor DC    |  Supply  |     +-----------+   Tube- +-----------+ Tube+ |\n  o------|          |-----| Regulator |----+----|-[        -|-------+\n         +----------+ HV- +-----------+   _|_   +-----------+\n                                           -      HeNe tube", { title: "Basic HeNe Laser Power Supply Organization", source: "https://www.repairfaq.org/sam/laserhps.htm#hpscao1" });
+const hero = document.getElementById('hero3d');
+let started = false;
+const go = () => { if (started) return; started = true; import('./companion/assets/hero3d.js').then(m => m.mountHero(hero, document.getElementById('partLabel'))).catch(e => { console.error(e); hero.remove(); }); };
+'requestIdleCallback' in window ? requestIdleCallback(go, { timeout: 1200 }) : setTimeout(go, 300);
+</script>
+</body></html>

@@ -1,0 +1,151 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/lmfaq/lmtstmgto.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Testing the magneto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lmfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of small Gasoline Engines and  Rotary Lawn Mowers  ">
+  <title>SER FAQ: LMFAQ: Testing the magneto</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/lmfaq/lmtstmgto.htm">https://www.repairfaq.org/samnew/lmfaq/lmtstmgto.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="lmfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-lmfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of small Gasoline Engines and  Rotary Lawn Mowers  </strong>: <font color="red">Testing the magneto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="lmchksprk.htm">&lt;&lt;&nbsp;Checking the spark plug</a> |
+		
+	
+&nbsp;<a href="../lmfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="lmtiming.htm">Timing&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="lmtstmgto">Testing the magneto</a></h3>
+
+The magneto, like the ignition coil on an automobile, contains two windings:
+<p>
+<li>A primary with a few turns of heavy wire.
+<p>
+<li>A high voltage secondary with thousands of turns of super fine wire.
+<p>
+In an automobile, the battery supplies the primary current; in a magneto, the
+magnet on the flywheel moving past the core at high speed acts as a generator
+and induces current in the primary.
+<p>
+As the magnets spin past the pole pieces of the magneto core, the points are
+closed and current builds up in the low voltage winding (and flux builds up in
+the core).  At or slightly before Top Dead Center (TDC), the current (and flux)
+should be maximum and at this instant the points open.  The flux then collapses
+(and the condenser (capacitor) across the points acts as a snubber allowing the
+current to bypass the open points and preventing arcing at the point contacts).
+This rapid decrease in flux results in coupling of the stored energy to the
+turn high voltage winding and results in up to 10,000 V or more at the spark
+plug.
+<p>
+(For EE types, this is somewhat similar in basic operation to the flyback
+converter in a switchmode power supply except that the moving magnet supplies
+the input power instead of the rectified AC line and the points act as the
+switch instead of a power transistor.)
+<p>
+The secondary will always be accessible for testing but the primary of an
+electronic ignition may be not be due to the electronic components:
+<p>
+<ul>
+<li>Secondary: 3 K ohms (maybe a little higher but not open).  Much lower would
+ indicate a shorted winding.
+<p>
+<li>Primary (if non-electronic and accessible): very low - guessing less than
+ an ohm.
+</ul>
+<p>
+
+Wires can break due to corrosion or vibration.  This would result in an open
+winding - infinite resistance.  Shorts can develop between adjacent windings
+or to the core.  This may be detectable as reduced resistance but without
+knowing exactly what it should be, there is no way of knowing if a slight
+discrepancy represents a problem or just slight variations in design or
+manufacturing.
+<p>
+A more complete test would involve checking the 'Q' or doing what is called
+a 'ring' test and even more for an electronic ignition.  This requires special
+equipment.  Therefore, it is best to swap in a known good unit.  They are not
+that expensive.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="lmchksprk.htm">&lt;&lt;Checking the spark plug</a> |
+		
+	
+<a href="../lmfaq.htm">ToC</a>
+	
+		
+| <a href="lmtiming.htm">Timing&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

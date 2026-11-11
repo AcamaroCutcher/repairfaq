@@ -1,0 +1,142 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvhvpsf.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="HV power supply fundamentals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: HV power supply fundamentals</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvhvpsf.htm">https://www.repairfaq.org/samnew/tvfaq/tvhvpsf.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">HV power supply fundamentals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvtofly.htm">&lt;&lt;&nbsp;Testing of flyback (LOPT)..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvtripler.htm">What is a tripler?&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<A NAME="tvhvp"></A><H2>High Voltage Power Supply Problems</H2>
+<h3><A NAME="tvhvpsf">HV power supply fundamentals</A></h3>
+
+Most, if not all, TVs derive the high voltage for the CRT second anode,
+focus, and (sometimes) screen (G2) from the horizontal deflection system.
+This technique was developed quite early in the history of commercial TV
+and has stuck for a very simple reason - it is very cost effective.  A
+side effect is that if the horizontal deflection fails and threatens to
+burn a (vertical) line into the CRT phosphors, the high voltage dies as well.
+<p>
+Most TV high voltage supplies operate as follows:
+<p>
+<ol>
+<li>Horizontal output transistor (HOT) turns on during scan.  Current increases
+ linearly in primary of flyback transformer since it appears as an
+ inductor.  Magnetic field also increases linearly.  Note: flyback is
+ constructed with air gap in core.  This makes it behave more like an
+ inductor as far as the primary drive is concerned.
+<p>
+<li>HOT shuts off at end of scan.  Current decreases rapidly.  Magnetic field
+ collapses inductively coupling to secondary and generates HV pulse.
+ Inductance and capacitance of flyback, snubber capacitors, and parasitic
+ capacitance of circuitry and yoke form a resonant circuit.  Ideally,
+ voltage waveform across HOT during flyback (retrace) period will be a
+ single half cycle and is clamped by damper diode across HOT to prevent
+ undershoot.
+<p>
+<li>Secondary of flyback is either a single large HV winding with HV rectifiers
+ built in (most often) or an intermediate voltage winding and a voltage
+ multiplier built in or a separate unit (see the section:
+ <A HREF="tvtripler.htm">What is a tripler?</A>.  The output will be DC HV pulses.  
+<p>
+<li>The capacitance of the CRT envelope provides the needed filtering to
+ adequately smooth the HV pulses into a DC voltage.
+<p>
+<li>A high resistance voltage divider provides the several kV focus voltage
+ and sometimes the several hundred volt screen (G2) voltage as well.
+ Often, the adjustments for these voltages are built into the flyback.
+ Sometimes they are mounted separately.  The focus and screen are
+ generally the top and bottom knobs, respectively.
+</ol>
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvtofly.htm">&lt;&lt;Testing of flyback (LOPT)..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvtripler.htm">What is a tripler?&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

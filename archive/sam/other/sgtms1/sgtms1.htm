@@ -1,0 +1,1643 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/other/sgtms1/sgtms1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+<title>Sam's Trans-Cranial Magnetic Stimulator (SG TMS)</title>
+
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/other/sgtms1/sgtms1.htm">https://www.repairfaq.org/sam/other/sgtms1/sgtms1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<br>
+<br>
+<img src="sgtms4.gif"><img src="Shock.gif">
+<img src="sgtms4.gif"><img src="Shock.gif">
+<img src="sgtms4.gif"><img src="Shock.gif">
+<img src="sgtms4.gif"><img src="Shock.gif">
+<img src="sgtms4.gif">
+<br>
+<br>
+<h1>Sam's Trans-Cranial Magnetic Stimulator</h1>
+<h2>Flexomatic Magnetic Pulser 1</h2>
+<p>
+<h3>Version 1.17a (17-May-23)<br>
+<br>
+<A HREF="copyright.htm">Copyright &copy;</A> 1994-2023
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+</h3>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<hr>
+<br>
+<li>Escape to <A HREF="../../sammenu.htm">Silicon Sam's Technology Resource</A>
+  or <A HREF="../../madsci.htm">Sam's Mad Scientist Corner</A> or unwind and
+  calm your nerves interactively without TMS at
+  <A HREF="http://weavesilk.com/">Weavesilk</A> <img src="Smiley16-2.gif"><br>
+
+<A NAME="sgtmstoc"></A>
+
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#sgtmsaac">Author and Copyright</A>
+<li><A HREF="#sgtmsdis">DISCLAIMER</A>
+<li><A HREF="#sgtmssaf">SAFETY</A>
+<p>
+<li><A HREF="#sgtmsabs">Abstract</A>
+<li><A HREF="#sgtmsint">Introduction</A>
+<li><A HREF="#sgtmsbak">Background</A>
+<p>
+<li><A HREF="#sgtmhrdr">Flexomatic Hardware</A>
+ <ul>
+ <li><A HREF="#sgtmsspc">Specifications</A>
+ <li><A HREF="#sgtmsfpc">Front Panel Controls and Indicators</A>
+ <li><A HREF="#sgtmspty">Pulse Types</A>
+ <li><A HREF="#sgtmscdf">Coil Design and Fabrication</A>
+ <li><A HREF="#sgtmsimp">Electronics Implementation</A>
+ <li><A HREF="#sgtmsver2">Ver. 2 Modifications</A>
+ <li><A HREF="#sgtmsver3">Ver. 3 (Under consideration)</A>
+ <li><A HREF="#sgtmsver4">Ver. 4 (Future fantasy)</A>
+ <li><A HREF="#sgtmsver5">Ver. 5 (Future future fantasy)</A>
+</ul>
+<p>
+<li><A HREF="#sgtmsctst">Initial Cerebral Tests</A>
+<p>
+<li><A HREF="#sgtmsscon">Summary and Conclusions</A>
+<p>
+<li><A HREF="#sgtmsref">References and Technical Documents</A>
+</ul>
+<p>
+<A NAME="sgtmsaac"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>Author and Copyright</h2>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy;</A> 1994-2019
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+<p>
+<A NAME="sgtmsdis"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>DISCLAIMER</h2>
+
+This TMS device uses voltages and energies that may be instantly lethal if
+live parts of the circuitry are contacted while in operation or after shutdown
+due to residual charge on the energy storage capacitors.  The energy stored in
+the capacitors of the upgraded version (Ver. 2) is enough to electrocute
+three (3) or more healthy adults dead dead simultaneously even after the line
+power has been removed!  Respect it!  Read and follow ALL of
+the safety guidelines found in <A HREF="../../safety.htm">Safety Guidelines
+for High Voltage and/or Line Powered Equipment</A> and the section:
+<A HREF="#sgtmssaf">SAFETY</A>, below.  If in any doubt about your abilities
+or experience with respect to such equipment DON'T attempt to
+replicate a machine like this or service or modify a commercial TMS device!
+<p>
+Should you succeed in constructing and testing this TMS or something
+similar without killing yourself in the process, the short or long term
+effects from a device that has not been clinically tested
+and qualified are not known and cannot be known a-priori.
+There could be damage to the brain, other internal organs, peripheral nerves,
+and additional anatomical structures resulting in immediate injury and/or
+permanent detrimental changes that may only be apparent long after
+the actual stimulation.
+<p>
+The author makes no claims as to any therapeutic or neurological effects
+for this device.  Use at your own risk.  It is presented for information
+purposes only.  Thus the "Shock" graphics don't only relate to electrical
+shock, but to other effects on brain or other bodily functions from the
+TMS pulses.  Take this seriously.
+<p>
+We will not be responsible for personal injury or worse as well as damage
+to your ego, destruction of equipment or other property, county-wide power
+outages, spontaneously generated mini (or larger) black holes, or planetary
+and stellar disruptions that may result from the use or misuse of this
+material.  Also excluded are effects like premature hair loss or the
+development of backside pimples twenty years in the future, as
+well as unanticipated catastrophic consequences of any kind due
+to errors or omissions in the descriptions or schematics.
+<p>
+<A NAME="sgtmssaf"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>SAFETY</h2>
+
+For anyone considering the construction (or servicing!) of a device like
+this, there are at least two major considerations:
+<p>
+<ul>
+<li><b>High voltages and stored energy:</b> The system described below may
+ have up to almost +/-1,500 V on various parts of the circuitry INCLUDING
+ the TMS coil and its wiring.  And to achieve a stronger effect, going to
+ 2,000 or even 2,500 V is not out of the question without major changes.
+ While everything is supposed to be totally isolated from Earth Ground,
+ this cannot be taken for granted.  Insulation can be damaged or fail.
+ A Ground Fault Circuit Interrupter (GFCI) may provide some level of
+ protection for the AC line input, but will either not respond at all
+ to secondary faults in the high voltage circuitry, or will be too slow
+ to shut off power.  The major danger there is from the energy storage
+ capacitors and that lethal charge will go wherever it wants regardless
+ of any GFCI.
+<p>
+ ALL high voltage wiring must be double or triple insulated for several
+ thousand volts.  This is especially critical for the TMS coil assembly
+ and the high voltage cable to it which has the full capacitor voltage.
+ Multiple indications that the capacitors hold any charge
+ above a few volts should be provided.  Interlocks to shut off input
+ power if the cover is removed along with an automatic bleeder to quickly
+ discharge the capacitors are highly desirable.  These can be implemented
+ with a normally closed vacuum relay with its coil powered from one of
+ the low DC voltages and its contacts between the input to the current
+ limiting charging resistor and the common (Ground) terminals of the
+ energy storage capacitors.  (The schematic below shows the bleeder relay
+ wiring but not the cover interlock switches.)
+<p>
+ Read and understand all the precautions in <A HREF="../../safety.htm">Safety
+ Guidelines for High Voltage and/or Line Powered Equipment</A>.  Especially
+ with regard to general work habits around this type of equipment.
+ Don't work alone and make sure the person or persons present know CPR!
+ It has been estimated that the maximum charge on the energy storage
+ capacitor of Ver. 2 (~176 J) is sufficient to electrocute three (3) adult
+ humans even after input power is removed.  This may be conservative
+ depending on their original health any number of other factors.
+<p>
+<li><b>Danger to the brain or other internal organs:</b> Since there are so
+ many variables (both engineering and neurological) involved, effects of TMS
+ on <i>your</i> brain may be unpredictable.  That's assuming you still have one
+ if you're even considering this stunt.  TMS is presently considered safe in
+ clinical settings (though there have been rare reports of induced seizures),
+ but that's based on guidelines for the use of commercial devices under the
+ guidance and supervision of trained personnel.  There's no way to
+ know how the unconventional parameters of a home-built stimulator may
+ change this equation.  Should you be successful in constructing the
+ device, proceed with extreme caution in any actual tests on yourself
+ or others.  In fact, I will never agree to test this device
+ on anyone but myself regardless of any legal release forms that an attorney
+ might provide.  Limit areas of stimulation to the brain and peripheral
+ nerves.  And stop immediately if any sensations persist beyond the
+ instant of the actual stimulation.  Do NOT go near the heart.  (It may be
+ too deep to be affected but why take chances?)  And DO NOT try this
+ out on your pets!  EVER!
+</ul>
+<p>
+<A NAME="sgtmsabs"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>Abstract</h2>
+
+A Trans-Cranial Magnetic Stimulator (TMS) device with an air-core
+coil is described that may be built using parts readily available
+new or surplus.  Relevant parameters are: Maximum voltage of
+1,450 V, energy storage capacitance of 166.7 &micro;F (almost 176 Joules at
+maximum voltage), air-core "figure-8" stimulus coil with dual
+8+ turn windings overlapped, inductance of 10.8 &micro;H, biphasic pulse type
+with a period of 267 &micro;s with better than 50 percent energy recovery, and
+repetition rate at near full energy of 1 pps, up to 10 pps at reduced energy.
+Polyphasic and monophasic pulse types are also supported in the overall
+design.
+<p>
+Based on publicly available information (both research literature and
+manufacturers' specifications), this device is operating at
+greater than 70 percent of the energy with a similar <i>dB/dt</i> of
+found in typical commercial TMS systems using air-core figure-8 coils.
+Tests with one subject (me) show that the motor and sensory thresholds
+are reached at at less than 40 percent of maximum energy using an
+optimized coil design modeled loosely on the Magventure/Medtronic
+B70 butterfly coil.  Areas that have been
+stimulated with an unequivocal response have included the sensory/motor
+tract and occipital regions of the brain, as well as various peripheral
+nerves.
+<p>
+<A NAME="sgtmsing"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>Introduction</h2>
+
+Trans-Cranial Magnetic Stimulation (TMS) is technique for exciting neurons
+in the human brain through the use of short intense magnetic pulses delivered
+via a coil placed on various locations of the head.  TMS has been used to
+treat or diagnose various neurological problems including depression,
+migraines, neuropathic pain, negative symptoms of schizophrenia and
+loss of function caused by stroke, and others.  What follows is
+in no way promoting its use for any purpose other than curiosity.
+I simply considered it a challenge to see if it was possible to build a
+functioning TMS devices using readily available parts.  There was something
+fascinating about a pulsed magnetic field being able to cause effects inside
+the brain.
+<p>
+Any home-built TMS devices I've found on the Web do NOT appear to have been
+based on serious science.  Their output was either too weak or of
+an inappropriate pulse shape or duration to have any effect.  And the
+electronics, if more than half-baked, appeared most likely to short out,
+blow up, or catch fire after one or two shots.
+However, I have been contacted by someone who has built a working system.
+He has provided a PDF with the schematics and some photos of
+the machine and coils.  See <A HREF="#sgtmsref">References and
+Technical Documents</A> for "Other Credible Home-Built TMS Devices".
+Only the one so far.
+<p>
+This document describes the implementation of a Trans-Cranial Magnetic
+Stimulator (TMS) developed based on publicly available scientific
+literature and TMS manufacturers' technical specifications.  Electrical
+and magnetic performance was simulated using models developed or modified
+by the author.  The prototype was constructed mostly from parts found in
+the author's junk cabinets and available surplus (mostly eBay).
+The intent of this effort was never to build a device to treat the
+various neurological disorders for which TMS is often promoted.  It was
+mostly to prove that it could be done.
+<p>
+And it does work.  The pulse energy of Ver. 2 is estimated to be
+at least 70 percent of that of typical commercial TMS systems from companies
+like Magventure, though possibly at a slower maximum repetition rate.
+(That would be remedied in Ver. 4.)  The maximum <i>di/dt</i>
+(rate of change of coil current) and <i>dB/dt</i> (rate of change of
+magnetic field) are comparable to that of several commercial systems.
+And it is believed to actually be more capable than some in
+terms of performance, though perhaps not in spit and finish. :)
+<p>
+If you're not a MAD SCIENTIST type, please just click your browser's
+"back" button now or take the off-site calming links at the top and bottom of
+this page, get out of here, and save yourself a lot of potential risk
+and possible frustration.
+<p>
+But if the idea of a home-built TMS device souunds intriguing, understand
+that this will likely be a lengthy and challenging project, especially if
+your parts cabinets are not well stocked.  Only consider it if you have
+had prior experience with high voltage high power electronics.  This is
+not the type of project to be used as an electronics learning experience.
+Construction must be well thought out and executed with attention to detail.
+Something that is haphazardly thrown together - even if simply for testing -
+will probably result in a catastrophe and extreme risk of electrocution.
+Oversize wire must be used in all the high current areas and their
+connections are best done with crimp terminals using the proper tool secured
+with screws or bolts.  Insulation for the high voltage section must be overly
+conservative and there must be warning indicators whenever enough voltage or
+stored energy is present to be a shock hazard.  The coil(s) must be carefully
+wound, potted to prevent internal  movement from the magnetic pulse,
+and triple insulated.  There
+should be no possibility of contact with the live circuitry even if the
+operator or user are knocked out of their socks from a TMS pulse.
+If much of this sounds scary and redundant, it is for your survival.
+<p>
+Note that Ver. 2 was required to evoke a consistent and dramatic cerebral
+neural response.  Ver. 1 produced no confirmed TMS effects, though there could
+have been something below a conscious level.  This is believed to have
+been primarily due to its low maximum energy despite the other pulse
+parameters appearing to be adequate.  But Ver. 1 was useful for
+initial construction and testing, and a device with even lower stored
+energy could be built to further reduce risks during development.
+Around 40 percent of the maximum energy
+of Ver. 2 was required to achieve detectable brain stimulation
+in multiple areas including the sensory-motor cortex and occipital lobes.
+However, in addition to facilitating the testing of the electronics at
+slightly less lethal energy, Ver. 1 did provide a rather fabulous massage
+when used to stimulate various peripheral nerves and could project
+aluminum rings across the room. :)  In fact, Ver. 1 was actually more
+effective at all of these than the much higher energy of Ver. 2, partly
+due to the higher pulse rate but possibly also a result of the
+shorter pulse duration with some coils.  So for those applications,
+Ver. 1 is quite excellent, less stressful (no pun...) on high power
+electronic components, and slightly less dangerous for testing
+and troubleshooting.
+<p>
+But the question arises as to why such lethal voltages are required?  For
+example, couldn't something lower like 100 V work just as well?
+The answers will become clear with the discussion of the tradeoffs involved
+in the design of the TMS coil to achieve the necessary parameters for
+effective stimulation including <i>dB/dt</i>, energy, and pulse duration.
+<p>
+And as a side comment, it is exceedingly strange to be able to refer to
+a homunculus of motor/sensory regions of the brain (see the
+references), place the coil's sweet spot over that area of the head,
+and evoke a response that matches the labeling on the diagram.  Sort of
+like the centerfold of a service manual for human beings. :-)  And since
+right and left are swapped between the hemispheres of the brain and the
+motor/sensory areas it communicates with, pulsing an area on one side the
+head results in a response on the opposite side of the body.  (This also
+serves as a sort of proof that there is no placebo effect involved.)
+<p>
+Oh, and while some people in the industry have suggested the use of TMS
+devices for sexual stimulation, a $5 vibrator turns out to be far
+superior all around.  Trust me. ;-)
+<p>
+The following is not intended to be a research paper on TMS but simply a
+general article for the casually interested or die-hard mad scientist hobbyist
+experimenter type who would like to construct a TMS device. ;-)
+Nor is it any more than the barest introduction to TMS.  Most of the remainder
+of this document applies to the specific pulser and coils constructed
+by the author.  The references and/or a search engine may be used to probe
+further.  In addition to scholarly literature, product brochures, manuals,
+specifications, and more for commercial systems may be found on-line,
+including general information and tutorials (likely oriented at least
+partially toward their machines, but still of value).
+Most can be viewed or downloaded without additional hassle, though
+some may require registration, which is typically free.
+<p>
+Note: All off-page hyperlinks (except for the escape links)
+open in a <i>single</i> new tab or
+window depending on your browser's settings.  Most images may be clicked
+on to view a higher resolution version.
+<p>
+<A NAME="sgtmsbak"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>Background</h2>
+
+TMS functions by inducing a minute current inside the brain (most often
+the cerebral cortex) as a result of
+a magnetic pulse applied outside the head.  To evoke a detectable response,
+the rate-of-change of the magnetic field must exceed a threshold value.
+But that's not all.  To do this optimally, the stimulating pulse must be of
+short duration (but not too short as it turns out since the neural response
+has a finite time constant), have sufficient energy, and be of a
+specific shape.  The biphasic pulse shape (essentially one cycle of a
+sinusoid) is generally considered the most effective.
+The optimal biphasic duration is supposedly somewhat under 200 &micro;s though
+there isn't a strong variation somewhat above or below this value.
+Other stimulating pulse
+shapes and sequences are usually supported by commercial TMS devices.  Being
+able to claim "multiple scientifically proven stimulation protocols" sounds
+impressive in Marketing blurbs and to justify the rather stratospheric
+cost of commercial systems regardless of their actual value being proven
+for who-knows-what. :)  The monophasic (where the entire charge is dumped
+in one long pulse), halfsine (only the top half of a biphasic), and
+multi-pulse sequences of pulses, as well as others, are often supported.
+My device also provides the polyphasic pulse which is a damped sinusoid
+(primarily because it could be easily implemented).  Ver. 1 had the monophasic
+as well (dumping the entire charge in a single long pulse) but this
+was removed in Rev. 2.  (More on that below.)  Commercial TMS devices
+have typical pulse durations of 180 to 300 &micro;s with a maximum stored
+energy of more than 100 Joules (J).  The TMS coil must be designed to maximize
+coupling for peak <i>dB/dt</i> in a localized region two or more cm from its
+surface.
+<p>
+The greatly simplified organization of a typical TMS device is shown below.
+<p>
+<center>
+<A target="tms" HREF="tmsfbd2.gif"><img src="tmsfbd2.gif"></A>
+<br>
+<b><font size="4">Basic TMS Functional Block Diagram</font>
+</center></b>
+<p>
+There are two separate sub-systems that need to be optimized to work together:
+<p>
+<ul>
+<li><b>Electrical pulse discharge apparatus:</b> The TMS electronics must
+ charge a high voltage energy storage capacitor and discharge it in a
+ controllable way into the stimulation (TMS) coil.
+<p>
+ <ul>
+ <li>The requirements of the <b>Variable High Voltage Power Supply</b>
+  are similar to those of a capacitor charger for a solid state laser.  It
+  must be capable of quickly charging or recharging the energy storage
+  capacitor(s) to a specified voltage (V) and must withstand extreme
+  conditions when the pulse is initiated.  For TMS, the requirements
+  are even more severe as the voltage on the output may go to nearly
+  -V for the biphasic and polyphasic pulse types.
+<p>
+ <li>The <b>Energy Storage Capacitor(s)</b> must be capable of a very rapid
+  discharge with low ESR (Effective Series Resistance).  These are also similar
+  to the requirements of pulsed solid state lasers.  Electrolytic capacitors
+  are generally NOT satisfactory.  Defibrillator capacitors come closer but
+  may not have a rapid enough discharge or longevity to be acceptable.
+<p>
+ <li>The <b>Pulse Discharge Network</b> consists of the components to
+  drive current through the TMS coil for the selected pulse type.  These
+  consist of various high voltage high current switches (typically SCRs but
+  could also be Triacs, GTO thyristors, or IGBTs) and high current diodes.
+<p>
+ <li>The <b>Pulse Sequence Control</b> provides the required trigger signals
+  for operating the switches to generate the selected pulse type.
+<p>
+ <li>The <b>Operator Interface:</b> may be rudimentary with just switches,
+  knobs, meters, and indicators as in this device.  But commercial machines are
+  typically based on microprocessors with color LCD touch-screens. ;-)
+ </ul>
+<p>
+<li><b>TMS coil:</b> For a given voltage (V) and capacitance (C), the design
+ of the TMS coil fully determines
+ both the electrical pulse characteristics and the effective coupling of the
+ magnetic pulse through the skull to brain.
+<p>
+ <ul>
+ <li>TMS coils are typically designed as <b>single multi-turn loops</b> or
+  <b>"figure-8" double multi-turn loops</b>, though more complex configurations
+  are possible.  While simpler to construct, single multi-turn
+  coils do not generally provide as localized or intense a field at
+  the required depth as figure-8 coils.
+<p>
+ <li>Most TMS coils have an <b>air-core</b> with no ferrous metal at all.
+  They are relatively simple to construct and their electrical characteristics
+  are totally linear.  A magnetically permeable <b>laminated steel core</b>
+  may be used to shape and concentrate the field.  However, the design and
+  fabrication of these is much more complex.  The pulse drive must contend with
+  potentially non-linear behavior due to eddy currents and core saturation,
+  and construction requires more than a hacksaw and file to machine the
+  desired 3-D shape. :)  They are also much more massive.
+<p>
+ <li>For continuous operation with hundreds or thousands of pulses,
+  some means of <b>cooling</b> must be provided as significant power
+  is dissipated in the coil windings due to the finite resistance of copper.
+  At <b>thousands of amps</b>, even a few milli-ohms results
+  in rapid heating, as well as a reduction in the Q factor and thus
+  lower energy recovery for the biphasic.  I'm hoping that flexible
+  low-cost room-temperature superconducting wire with suitable
+  magnetic properties will be available on eBay in the very near
+  future. ;-)
+ </ul>
+</ul>
+<p>
+The electrical parameters of the energy storage capacitor (C) and TMS coil
+(L) interact so that, for example, increasing C
+also increases the pulse duration while increasing the number of turns
+of the TMS coil (to boost the magnetic field) increases L at approximately
+the square of the number of turns (N) and thus also increases the pulse
+duration (T0).  The relationships of some of the key quatities are shown
+below:
+<p>
+<ul>
+<li><b>Coil inductance (L):</b></b> N<sup>2</sup>, D<sup>2</sup>, 1/thickness.
+<li><b>Peak coil current (I):</b> Sqrt(C), 1/Sqrt(L), V.
+<li><b>Peak rate of change of coil current (<i>di/dt</i>):</b> 1/L, V.
+<li><b>Peak magnetic field (B):</b> Sqrt(C), 1/Sqrt(L), N, V.
+<li><b>Peak rate of change of magnetic field (<i>dB/dt</i>):</b> 1/L, N, V.
+<li><b>Natural frequency (f0):</b> 1/Sqrt(L), 1/Sqrt(C).
+<li><b>Period (T0):</b> Sqrt(L), Sqrt(C).
+<li><b>Quality factor (Q):</b> Sqrt(1/C), Sqrt(L).
+<li><b>Damping factor (&zeta;):</b> Sqrt(C), Sqrt(1/L).
+</ul>
+<p>
+These are NOT equations for the specific quantity, but rather how it changes
+as a function of each, variable with all the others held constant regardless
+of how impossible that might be.  So, for example, doubling N quadruples L.
+<p>
+Without an underlying understanding of these requirements, one might be
+tempted to dump as much charge as possible into an arbitrarily
+constructed coil and expect a useful result.  This will not work.  The
+power supply voltage, energy storage capacitor &micro;F value, and coil
+inductance and configuration must be traded off in the design to optimize
+performance in terms of pulse shape and duration, and magnetic field profile.
+For example, intuitively it may seem that simply doubling the number of turns
+of wire in the coil will double the peak magnetic field.  In reality, at
+best (ignoring increased resistance) there will be no change in peak
+magnetic field because the inductance will quadruple and the
+peak current will be cut in half.  In addition, pulse duration (1/f0) will
+double with the net result that the peak <i>dB/dt</i> will be cut
+in half as well.  Together, the net result will be that the effectiveness
+of the stimulation will be reduced or eliminated.
+<p>
+Furthermore, the most often used and arguably optimal
+stimulation waveform is not a simple blip like
+an impulse function, but something called a "biphasic pulse" - a complete
+single sinusoid cycle with both positive and negative polarity.
+<p>
+When construction of the author's device was started, these requirements were
+<i>not</i> understood except in generalities. :( :)  The electronic design
+was based on the availability of a specific large SCR!  Only when the circuit
+worked perfectly but did absolutely nothing beyond giving a quite decent
+massage via peripheral nerve stimulation, and tossing aluminum rings across
+the room, was a serious investigation of the literature undertaken.  What
+followed were multiple attempts with various coil designs finally homing
+in on one (Sam #13) that is similar to a commercial TMS coil.  This still
+did not work even though the pulse duration was optimal and its peak value
+appeared to be sufficient.  At that point the BIG capacitors were
+called in to boost energy, first by a factor of 3 to 4 (which
+finally produced an unequivocal neural response), and then for
+good measure, to the present value of nearly 167 &micro;F (176 J).
+The final result (up to this point) has pulse parameters similar to
+those of commercial systems.  A third similar capacitor may be
+available to increase the energy by another 50 percent, which would
+then put it more than on par with commercial systems. ;-)
+<p>
+For the most part, the electronics turned out to be less challenging than the
+coil.  Aside from difficulties in adding the monophasic pulse type,
+only very minor changes needed to be made to the electrical design over
+the course of tests, and then in converting to the higher pulse energy
+in Ver. 2.
+<p>
+Many coil configurations were constructed in an attempt to optimize
+the coupling, pulse duration, peak field, and others.  In the end, a coil
+similar to a commercial design won out.  And at the higher
+pulse energy of Ver. 2, it is the only one (so far) that would not experience
+excessive heating after only a few pulses.  It is not known how many, if any,
+of the earlier designs would even evoke a neural response at the higher
+energy of Ver. 2.  The general saying: "If it ain't broke, don't fix it"
+applies here, so going back and testing any of the previous coils was not
+attempted.  Even if there was a neural response, they would not be usable
+due to the power dissipation issues.
+<p>
+The remainder of this article deals mostly with the specifics of the
+device that was constructed and possible future improvements.
+<p>
+<A NAME="sgtmhrdr"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>Flexomatic Hardware</h2>
+<h3><A NAME="sgtmsspc">Specifications</A></h3>
+
+These specifications apply to the two versions of the pulser
+constructed to date (2015).
+Ver. 1 proved out the basic principles but at lower (and somewhat safer)
+energy.  In fact, Ver. 1 was fully functional with biphasic and polyphasic
+pulse types when first switched on - including the satifying (if annoying)
+"woodpecker" sound that TMS coils make due to the rapidy changing magnetic
+field.  But even after many iterations of coil designs, it
+proved useless for TMS (due to its low energy).  Modifications for
+Ver. 2 boosted maximum energy, first to around 88 J, which resulted
+in an immediate trans-cranial neural response.  The energy was then doubled
+to almost 176 J resulting in its final form (for now).
+<p>
+<b>Common to both Ver. 1 and Ver. 2</b>
+<p>
+<ul>
+<li><b>Maximum energy storage capacitor voltage:</b> 1,450 V.
+<li><b>Maximum <i>di/dt</i> (10 &micro;H coil):</b> 145 A/&micro;s.
+<li><b>Q-factor: </b> 10-20 depending on coil.
+<li><b>Coil resistance:</b> 0-0.05 ohms.
+<li><b>Coil termination:</b> 1/4-20 brass studs.
+<li><b>Power controls:</b> AC main toggle and Armed keylock switch.
+<li><b>Power indicators:</b> Line Power (neon), High Voltage Power (neon),
+ High Voltage Level (meter and proportional red LED).
+<li><b>Voltage adjust:</b> 0 to 1,450 V.
+<li><b>Pulse modes:</b> Single, Off, Continuous.
+<li><b>Pulse repetition rate:</b> 0.5 to 10 pps.
+<li><b>Pulse types:</b> Biphasic, polyphasic, monophasic.
+<li><b>Pulse indicators:</b> Green LED flashes with each pulse.
+<li><b>Line voltage:</b> 115 VAC, fused 3 A.
+<li><b>Input power:</b> 0-100 W continuous, up to 250 W intermittently.
+<li><b>Form factor:</b> 5-1/4 inch high rack mount.
+</ul>
+<p>
+<b>Ver. 1 specifications</b>
+<p>
+The initial version worked as designed but the energy was insufficient to evoke
+any response cerebral response through the skull.  (It would probably have
+worked in closer contact with the brain but I wasn't THAT determined to
+test it....)  However, with it's high repetition rate at full energy,
+it did provide a truly fabulous neck massage and quite decent abdominal
+workout as well. ;-)  Thus Ver. 1 would be perfectly acceptable and
+recommended for peripheral nerve stimulation using a variety of the
+air-core coils.
+<p>
+<ul>
+<li><b>Energy storage capacitors:</b> ~25 &micro;F, 1,500 V.
+<li><b>Maximum energy:</b> 26.7 J.
+<li><b>Pulse types:</b> Biphasic, polyphasic, and monophasic.
+<li><b>Coil inductance:</b> Air-core, 5-100 &micro;H.
+<li><b>Biphasic period:</b> 100 &micro;s (10 &micro;H coil).
+<li><b>Peak current:</b> 2304 A (10 &micro;H coil).
+<li><b>Maximum pulse repetition rate versus energy (biphasic):</b>
+ 10 pps at >90%.
+<li><b>Maximum pulse repetition rate versus <i>dB/dt</i> (biphasic):</b> 10 pps
+ at &gt;95%.
+<li><b>Weight:</b> ~25 pounds.
+</ul>
+<p>
+<b>Ver. 2 specifications</b>
+<p>
+Increasing the energy from 26.7 first to around 88 J resulted in an immediate
+cerebral sensory and motor response, which was further enhanced when the
+energy was then doubled to almost 176 J.  However, due to the
+longer recharge time of the larger capacitors, the pulse rate near full
+energy was greatly reduced.  While running at a higher repetition rate
+and lower energy was possible, that never appeared to be as effective
+for peripheral nerve stimulation as Ver. 1.  However, only the
+Sam #13 coil was used with Ver. 2 so perhaps a different coil
+would have proven superior for that use.  There is more on Ver. 2 below.
+<p>
+<ul>
+<li><b>Energy storage capacitors:</b> ~167 &micro;F, 2,500 V.
+<li><b>Maximum energy:</b> 175.8 J.
+<li><b>Pulse types:</b> Biphasic and polyphasic.
+<li><b>Coil inductance:</b> Air-core, 10-25 &micro;H.
+<li><b>Biphasic period:</b> 253 &micro;s (10 &micro;H coil).
+<li><b>Peak current:</b> 5,839 A (&micro;H coil).
+<li><b>Maximum pulse repetition rate versus energy (biphasic):</b> 0.75 pps
+ at &gt;90%, 1 pps at ~75%, 2 pps at ~40%, 5 pps at ~10%, 10 pps at ~5%.
+<li><b>Maximum pulse repetition rate versus <i>dB/dt</i> (biphasic):</b>
+ 0.75 pps at &gt;95%, 1 pps at ~87%, 2 pps at ~63%, 5 pps at ~33%, 10 pps at ~22%.
+<li><b>Weight:</b> ~30 pounds.
+</ul>
+<p>
+The only reason the capacitor voltage rating is so much higher for Ver. 2 is
+that was what was available. :)  Both are a pair of laser pulse discharge
+capacitors in parallel with an ESR that is so low as to measure 0.00 ohms
+using my ESR tester.
+
+<h3><A NAME="sgtmsfpc">Front Panel Controls and Indicators</A></h3>
+
+This is a certifiably low-tech device with no embedded computers, no
+touch-screen, no nested menus, and no Internet connection, sorry. ;-)
+The "operator interface" :) is very simple and 1950s-ish. :)
+While there's no guarantee the thing won't blow up, it doesn't require
+5 minutes to boot, will not crash, never requires firmware updates,
+and cannot be hacked remotely. :-)  
+<p>
+<center>
+<A target="tms" HREF="mp1-f.jpg"><img WIDTH=800 src="mp1-f.jpg"></A><p>
+<b><font size="4">Front View of Complete Unit (Ver. 1)</font>
+</center></b>
+<p>
+On the top left is the main power switch and indicator and below that
+the high voltage keylock switch.  The timing circuits are enabled with
+main power so that the repetition rate can be set.  Running without high
+voltage enabled but with charged capacitors is possible.
+<p>
+The Variac controls the high voltage from 0 to approximately 1450 V on the
+capacitors.  The meter and red LED below it show the charge on the capacitors.
+<p>
+The knob to the right of the analog meter (!!) sets the pulse rate from
+approximately 1 pulse every 2 seconds to 10 pulses per second.  The meter
+monitors the high voltage and is optimized for transient response.  The switch
+below it selects free run (up), off (middle), single shot fire (down,
+momentary).  When used in this mode, the pulse repeat rate is still
+limited by the setting of the pulse rate control.  The green LED
+flashes with each pulse.
+<p>
+The knob on the far right selects the pulse type: biphasic (CCW), polyphasic
+(middle), monophasic (CW, if implemented).
+
+<h3><A NAME="sgtmspty">Pulse Types</A></h3>
+
+The biphasic and polyphasic pulse types were designed in from the start,
+with monophasic being added later (Ver. 1 only).  The selector switch
+had three positions. ;-)  The decision to include polyphasic and
+monophasic was based primarily on
+implementation considerations. :)  Polyphasic is a trivial extension of
+biphasic.  Monophasic was <i>supposed</i> to be straightforward, but that
+turned out not to be the case.  Typical actual current waveforms are shown
+below for Ver. 1, derived from a sense coil and integrator.
+<p>
+<center>
+<A target="tms" HREF="bp1.jpg"> <img height="256"src="bp1s.jpg"></A>
+<A target="tms" HREF="ds1.jpg"> <img height="256" src="ds1s.jpg"></A>
+<A target="tms" HREF="sp1.jpg"> <img height="256" src="sp1s.jpg"></A>
+<p>
+<b><font size="4">Typical Waveform of Pulse Types: Biphasic, Polyphasic,
+ Monophasic</font>
+</center></b>
+<p>
+<ol>
+<li><b>Biphasic:</b> This is close to the shape of a single cycle of
+ current determined by the RLC parameters of the energy storage capacitor,
+ coil inductance, and total effective circuit resistance.  Because of
+ the natural decay of the oscillations, the second half is slightly smaller
+ than the first half and they are both distorted.  The biphasic pulse is
+ the only waveform that does not totally drain the capacitor(s) but retains
+ up to 60 percent or more of the original energy depending on the coil
+ inductance.  Thus, the repetition rate for (nearly) full energy can
+ be over twice as high for the biphasic pulse compared to the others.
+<p>
+<li><b>Polyphasic:</b> Rather than being cut off after one cycle,
+ the natural damped oscillation is allowed to continue essentially until
+ it decays to nothing.
+<p>
+<li><b>Monophasic:</b> The current is allowed to "free-wheel" around
+ the coil inductance so that the current peaks based on the LCR parameters
+ and then decays slowly until the capacitor is almost entirely discharged.
+ Due to (1) the lack of utility of the monophasic for TMS and (2) serious
+ implementation issues (including an excessive number of dead SCRs), the
+ monophasic pulse has not yet been implemented in the Ver. 2 and probably
+ never will be.
+</ol>
+<p>
+These waveforms in the photos used a coil with an inductance of
+approximately 34 &micro;H (Sam #2) with the
+original (Ver. 1) energy storage capacitors (25.4 &micro;F total) resulting in
+a frequency of ~6.1 kHz or period of ~164 &micro;s.  With Ver. 2 having
+a capacitance totaling 166.7 &micro;F and a 10.8 &micro;H coil, the resulting
+frequency is ~3.75 kHz or a period of ~267 &micro;s.  But their appearance is
+similar except that the monophasic has not been implemented in Ver. 2.
+<p>
+The positive half-cycle
+is through the primary SCR.  The negative half-cycle is through its
+associated parallel diode.  The little blip at the end is believed to
+be due to the reverse recovery time of the primary SCR.  (More below.)
+With another coil of only 10 &micro;H, the damping factor ended up being
+slightly <i>lower</i> resulting in a more extended decay of its ~10 kHz
+oscillation.
+<p>
+An Excel spreadsheet for modeling the behavior of the RLC discharge circuit
+using coil parameters and calculating peak current, peak B-field, B-field a
+fixed distance from the coil, <i>dB/dt</i>, and more has been developed.
+If there is serious interest, I can probably be persuaded to email a copy.
+But there will be no explicit or implicit warranties, and basing the future
+of the Universe on its calculations might be unwise. ;-)
+<p>
+The behavior of a simplified discharge circuit may be found at <A target="tms"
+ HREF="http://www.partsim.com/simulator/#31798">PartSim: Pulsar1-2</A>.
+All the parameters can be easily varied to examine how they change behavior.
+The default values are close to those for Ver. 2 with Coil #13.
+<p>
+A Javascript program for estimating the magnetic field produced by 1 or 2
+coils can be found at <A target="tms" HREF="../Field/fcoafotc.htm">Calculator
+ for Off-Axis Fields due to One or Two Coils</A>.
+<p>
+Matlab was also used to model the pulse discharge in more detail.
+
+<h3><A NAME="sgtmscdf">Coil Design and Fabrication</A></h3>
+
+TMS coil design has been described as a sort of art by some, and this
+is certainly not a bad way of putting it.  Many tradeoffs have to be made
+in terms of dimensions, wire size, # turns, configuration (single or figure
+8 or other), cooling, and others.  For a given initial voltage, the total
+capacitance, inductance, and resistance, determine the discharge behavior
+for a damped RLC circuit. (This assumes that the thyristor and other
+losses are small and that the circuit behaves linearly, as is the case
+with an air-core coil.  All bets are off if using an iron or other ferrous
+core that can saturate!)
+<p>
+Here is a summary of the key physical parameters for several commercial
+figure-8 coils as well as for Sam #13 and #14:
+<p>
+<pre>
+    Mfr/Model      #Turns  ID     Mean     OD    Overlap  Wire Size    Angle
+-------------------------------------------------------------------------------
+ Magstim 70 mm       9x2 5.2 cm  7.0 cm   8.8 cm  0.0 cm 1x7 mm          0 deg
+ Medtronic MC-B70   10x2 2.4 cm  6.6 cm  10.8 cm  4.2 cm 3.5 mm (#8)  34.5 deg
+ MagVenture CoolB70 11x2 2.3 cm  5.95 cm  9.6 cm ?3.6 cm 3x12 mm?     30.0 deg
+ MagVenture MC-B70  10x2 2.7 cm  6.2 cm   9.7 cm ?3.5 cm 3x6 mm?      30.0 deg
+ Sam #13             8+9 3.13 cm 5.72 cm  8.26 cm 2.5 cm 2.6 mm (#10) 30.0 deg
+ Sam #14            10x2 2.9 cm  6.8 cm  10.5 cm  3.4 cm 3.18 mm Tube 30.0 deg
+</pre>
+<p>
+Calculations show that the overlapped configuration to have better
+localization and a slightly higher peak field and <i>dB/dt</i> for
+the same inductance with thin "pancake" coils.
+<p>
+See <A target="tms" HREF="tmscoils.htm">Commercial TMS Figure-8 Coils</A> for
+detailed specifications of several models based on publicly available data,
+current as of mid-2016, but the basics haven't changed much since then.
+<p>
+With the value of the energy storage capacitor(s) fixed and resistance
+minimized (which is generally assumed), this leaves the inductance of the coil
+as the principle variable used to determine discharge behavior.  The total
+inductance can be calculated fairly accurately based on the physical
+winding parameters.  To maximize the peak field requires a larger number
+turns but to minimize pulse duration requires a smaller inductance and
+thus smaller number of turns.  So again these are conflicting requirements
+that need to be reconciled in a successful coil implementation.
+<p>
+As noted above, several programs were used to model discharge behavior for a
+large number of coil options, as well as at various levels of stored energy
+and voltage.  The Excel spreadsheet was used to compute (among other values):
+peak discharge current, peak on-axis magnetic field for a single circular
+coil, field at specified axial distance, <i>dB/dt</i>
+and induced electric field for this field.  Inputs are coil winding parameters,
+energy storage capacitance, capacitor voltage, and estimates for parasitic
+inductance and resistance due to circuitry other than the capacitor and coil.
+The separate Javascript program was developed to compute the off-axis field
+of two coils with arbitrary separation in 3 dimensions using the coil winding
+parameters and current as inputs.  This is primarily
+used for the radial field calculation of single and figure-8 coils.
+Combining these into a single Excel spreadsheet would be possible
+but was deemed more involved than worthwhile given the need for
+elliptic integrals for the off-axis field calculation.  In fact, simply
+using the values for the axial field at a specific distance ends up being
+fairly close for estimating the relevant values at the "sweet spot" of single
+or figure-8 coils.
+<p>
+Descriptions and photos of all of the author's coil attempts to date may be
+found at <A target="tms" HREF="sgcoils.htm">Sam's TMS Coils</A>.  Most of
+them are somewhere between unsuitable and quite laughable for TMS. :( :)
+However, most of the air-core coils would be useful for peripheral nerve
+stimulation and probably have other applications.  Some of the smaller coils
+are capable of an impressive <i>dB/dt</i> and have better localization than
+the large ones.
+<p>
+The final coil constructed to date (called "Sam #13") is a slightly smaller
+version of a design based on the Medtronics/Magventure B70, which uses a pair
+of overlapping pancake coils rather than thicker coils sitting side-by-side.
+Coil winding parameters and biphasic pulse duration were found from the
+literature and the Magventure Web site.  From these, an estimate of the
+value of the energy storage capacitor(s) in their system could be made.
+The next coil planned called Sam #14 would be similar, but to be
+constructed from thick-wall 3.2 mm (0.125") OD copper tubing with an oil-to-air
+heat exchanger to permit continuous operation at maximum energy and
+repetition rate.  Its completion date is unknown and possibly unknowable. :)
+<p>
+<b>Sam #13 coil specifications</b>
+<p>
+<ul>
+<li><b>Type:</b> Air-core, overlapped figure-8, 30 degree wing angle.
+<li><b>Inductance:</b> 10.8 &micro;H.
+<li><b>Biphasic period:</b> 104 &micro;s with Rev. 1; 267 &micro;s with Rev. 2.
+<li><b>Peak <i>di/dt</i>:</b> 134 A/&micro;s (1,450 V).
+<li><b>Peak <i>dB/dt</i>:</b> 14 kT/s 2 cm (0.8") from inside surface,
+ &gt;45 kT/s at surface.
+<li><b>Maximum number of consecutive biphasic pulses:</b> 2,000 full energy
+ at 10 Hz with Rev. 1; 300 full energy at 0.75 Hz with Rev. 2.
+<li><b>Construction:</b> Copper magnet wire, 0.5 mm (0.02") Fiberglas
+ Epoxy PCB panels, Epoxy filler, and black electrical tape.
+<li><b>Winding dimensions:</b> Two pancakes with ID of 3.13 cm (1.25")
+ and OD of 8.26 cm (3.25") of 8+9 turns #10 AWG copper magnet wire.
+<li><b>Overall finished dimensions:</b> 9x14 cm (3.5x5.5") with
+ a thickness of ~1.2 cm (0.4") in the central area and ~0.64 cm (0.25") for
+ the wings.
+<li><b>Cable:</b> 4x#14 AWG stranded wire (up and back)
+ each double insulated, outer covering of soft rubber hose with
+ a wall thickness of 2.5 mm (0.1"), length of 1.52 m (5 ft).
+<li><b>Electrical termination:</b> Soldered connections at coil; Crimp
+ ring lug with 0.64 cm (0.25") hole for each pair of #14 wires at pulser.
+<li><b>Weight excluding cable:</b> ~360 g (0.8 lbs).
+</ul>
+<p>
+<center>
+<A target="tms" HREF="coil13_2.1x8-2.25_diagram.gif"> <img src="coil13_2.1x8-2.25_diagrams.gif"></A>
+<A target="tms" HREF="coil13_2.1x8-2.25_constr2.jpg"> <img src="coil13_2.1x8-2.25_constr2s.jpg"></A>
+<A target="tms" HREF="coil13_2.1x8-2.25_complete2.jpg"> <img src="coil13_2.1x8-2.25_complete2s.jpg"></A><p>
+<b><font size="4">Sam #13 Coil: Design, Before Final Insulation, and
+ Ready for Use</font></b>
+</center>
+<p>
+It's not as scary as it looks.  Sam #13 was fabricated by first hand-forming
+the #8 AWG high temperature magnet wire of the two sections of the figure-8
+to approximate dimensions.  They were then clamped together in a wooden
+jig via only the center portion along with a 0.02" Fiberglas-Epoxy insulating
+panel (thin PCB board material) sandwiched between the wire in the overlapped
+region (visible in the center photo, below) and thin plastic sheets
+top and bottom to prevent sticking to the wood of the jig.
+(The photos for Sam #9 at <A target="tms" HREF="sgcoils.htm">Sam's TMS
+Coils</A> show a jig similar to the one used in the fabrication of Sam #13.)
+The wire position and symmetry in each winding could then be fine
+tuned before filling with two-part Epoxy.  After setting, it was removed
+from the jig, the wings were formed. and the cable wiring was attached.
+Then a similar 0.02" thick Fiberglas-Epoxy insulating panel cut to
+be slightly oversize was added underneath and non-acidic RTV Silicone
+was added for additional insulation, after
+which another matching Fiberglas-Epoxy insulating panel was placed on top
+with both formed to hug the coils.  The edges were then filled with yet
+more RTV and Epoxy, covered with 0.001" Kapton tape, and finally the
+entire assembly was wrapped in multiple layers of black electrical tape.
+<p>
+No, I don't own stock in a company that makes adhesive products. ;-)
+The extensive filling with Epoxy and RTV is not only for electrical
+insulation but to make the entire structure essentially monolithic to
+suppress intra-winding movement which would eventually destroy the
+wire insulation, as well as to minimize the "woodpecker" sound and
+vibration resulting from the rapidly changing magnetic field from
+each TMS pulse.
+<p>
+More on coil-related electronics issues below.
+
+<h3><A NAME="sgtmsimp">Electronics Implementation:</A></h3>
+
+The pulser implementation is what one might call dirt simple and brute
+force. ;-)  It consists of the high voltage power supply and energy
+storage capacitor(s), voltage monitoring network, pulse discharge
+switching network, and low voltage power supply and logic controller.
+Here is Ver. 1:
+<p>
+<center>
+<A target="tms" HREF="mp1-ic.jpg"> <img WIDTH=800 src="mp1-ic.jpg"></A><p>
+<b><font size="4">Interior view with Plexiglas Safety Cover in Place
+ (Ver. 1)</font></b>
+</center>
+<p>
+The high voltage power supply uses the power transformer from a large 1950s
+vintage black and white tube-type TV and is controlled by a Variac. :)
+The transformer has multiple line voltage taps and is set to produce
+the highest output voltage.  The otherwise not very useful 5 V and 6.3 V
+filament windings are also connected in series with the primary with
+reverse polarity to further boost the output voltage.  The transformer
+hums a bit at maximum input with the Variac producing 110 percent of
+line voltage, but doesn't get even detectably warm after a few minutes
+so it can't be too unhappy with little or no core saturation.  Its
+HV main output goes up to approximately 1,050 VRMS.  A bridge rectifier
+consisting of 4 series pairs of 1N4007 diodes feeds the main energy
+storage capacitor via a 1.05K ohm 150 W series resistor bank resulting
+in a maximum voltage on the capacitors of around 1,450 VDC. The resistor bank
+both limits the current from the transformer and provides
+isolation during the discharge to maintain a low damping factor.
+<p>
+<center>
+<A target="tms" HREF="mp1-pwr.jpg"> <img src="mp1-pwrt.jpg"></A>
+<A target="tms" HREF="mp1-ds1.jpg"> <img src="mp1-ds1t.jpg"></A>
+<A target="tms" HREF="mp1-ds2.jpg"> <img src="mp1-ds2t.jpg"></A>
+<A target="tms" HREF="mp1-trg.jpg"> <img src="mp1-trgt.jpg"></A><p>
+<b><font size="4">Closeups of: Power Supplies, Energy Storage Capacitors, Pulse Discharge
+ Network, High Side SCR Trigger (Ver. 1)</font></b>
+</center>
+<p>
+A voltage divider feeds the meter with a peaking circuit to improve response
+time.  The red HV LED is driven from an emitter follower with an identical
+LED serving as a voltage regulator to linearize the response.  The voltage
+divider is mounted along with the high voltage bridge inside a plastic box
+for insulation.  The monitor circuits are attached to the back of the meter.
+<p>
+A separate 12 V transformer powers the logic and SCR drivers.
+<p>
+The controller and its power supply are housed in a shielded Minibox.
+Whether the shielding is really needed is not known, but there was no
+point in taking chances with multi-kA pulses floating around. :)
+(Even so, there is often a spurious pulse generated when switching the
+HV off.)  The power supply provides regulated 12 VDC using AC from the small
+transformer mounted on the chassis.  The "logic" consists of a pair of 555
+timers. :)  The first generates the clock for continuous (approximately 0.5 to
+10 pps), or single shot.  It's output drives the Pulse LED and the 555 for
+the SCR trigger with a pulse width determined by Pulse Type: around 50
+&micro;s for the biphasic pulse type; 2 ms for the polyphasic and monophasic.
+These values should work over a wide range of coil inductances.
+<p>
+The main energy storage capacitors (Ver. 1) consisted
+of a pair of 10 &micro;F (labeled),
+1,500 V pulse discharge capacitors in parallel.  Their actual capacitance
+was measured to be 25.4 &micro;F.
+<p>
+Two high current SCRs and a high current diode are used to create the
+three pulse types.  The "hockey puck" style devices visible in the second
+photo from the left were way over the top for Ver. 1 in terms of what
+was required with the relatively small energy. :)  These are for the main
+pulse discharge.  The ratings of the SCR are not known.  It was acquired
+on eBay for $22 delivered described as an 800 A at 1,800 V unit, but these
+ratings are suspect, not because it doesn't work based on them, but because
+the closest datasheet Google has been able to locate shows a dramatically
+lower voltage rating, and by all rights, it should have blown up at well
+below the 1,450 V used here.  (Happily, I had not seen that datasheet
+when first building this, basing my decisions on the eBay listing!  More
+below.)  The diode is spec'd at 1,500 A and 1,800 V.  An SCR in the
+smaller IXYS unit on top implements the free-wheeling discharge path for the
+monophasic pulse (Ver. 1 only, removed for Ver. 2.).
+It is only rated at around 100 A and 1,600 V but for
+low repetition rate pulses, it should be able to handle 30 times
+this or more.  The same IXYS unit would work for the main discharge except
+that its turnoff time was found to be way too long to be able to select out
+only the single cycle for the biphasic.  The eBay SCR turned out to be
+a high speed (inverter) type, so the puck had to be retained.
+<p>
+<center>
+<A target="tms" HREF="tmspls2.gif"> <img src="tmspls2.gif"></A>
+<p>
+<b><font size="4">TMS Pulse Generation Timing</font></b>
+</center>
+<p>
+The T1 and T2 timing diagrams show drive to the gates of the two
+SCRs.  The high level represents the gate drive being fully on, typically
+several times the spec'd I<sub>GT</sub> for the respective SCR.
+The gray areas denote "don't care" for the pulse level.  (Note that to
+simplify understanding of these diagrams, the labeling of the components does
+<i><b>NOT</b></i> match what's on the full schematic below.)
+<p>
+All three pulse shapes start with the same 1/4 sinewave as shown in the
+expanded biphasic pulse below.  The peak current is thus similar for all.
+T1 initiates the discharge and must be high long enough to reliably
+fully turn on SCR1.  What happens after that changes for the three
+pulse types.  For the biphasic pulse, T1 must go low at least t<sub>q</sub>
+(SCR1) prior to when the voltage across SCR1 (and the current through it and
+the coil) would go positive again.  For the polyphasic, T1 remains high for the
+entire duration of the decaying sinusoid since SCR1 must be driven into
+conduction multiple times.  But T1 must eventually go low to allow the energy
+storage capacitors to recharge.  For the monophasic, T1 only initiates the
+discharge and its state doesn't matter after that.  T2 must be high
+at least t<sub>gd</sub> (SCR2) prior to peak of the sinusoid.  And T1 can
+remain high during the remainder of the monophasic because any current
+through SCR1 after the peak would increase the voltage on C1.  So except
+perhaps for a couple volts, this simply won't happen because the
+the easier path is through SCR2.  The state
+of T2 doesn't matter elsewhere during the monophasic, but it must be
+low for the other pulse types.  (In the actual implementation of the
+monophasic, T1 and T2 are the same as T1 for the polyphasic.)
+<p>
+For SCRs to turn off, either the current through them must go below their
+holding current (I<sub>H</sub>) or the voltage across them must go negative.
+For the biphasic, the voltage reversal assures reliable
+shutoff of SCR1.  This is also true for the polyphasic as long as
+T1 terminates before the oscillation has died out entirely.
+For the monophasic, the current being diverted through
+SCR2 accomplishes this.  SCR2 shuts off once the current
+through it has decayed to below its I<sub>H</sub>.
+At that point, the voltage across C1 will be very slightly
+negative assuring that SCR1 will also shut off as long a T1 is
+low.  (In principle, there could be a peculiar sequence
+of events whereby SCR1 doesn't shut off properly and there is
+enough current from the capacitor charger to hold it in conduction
+since it is not actively isolated discharge network.  But
+this does not appear to have ever occurred during the lifetime of
+the monophasic's existence in this system.)
+<p>
+<center>
+<A target="tms" HREF="bp2.jpg"> <img src="bp2s.jpg"></A><p>
+<b><font size="4">Biphasic Pulse Expanded on Scope Display</font></b>
+</center>
+<p>
+That free-wheeling SCR switch for the monophasic pulse
+turned out to be the most difficult to
+implement due to the requirement that its gate and cathode swing up to almost
++/-1500 V with respect to the circuit common during the discharge.
+My first attempt using a home-built ferrite pulse transformer lasted
+about 3 shots due to insulation breakdown.  Ferrite is supposed to be
+an insulator, correct?  Nope, at least not this batch of cores at high
+voltage.  A Westcode N490CH20 Hockey Puck SCR
+rated 2,000 V, 1,200 A average and over 18,000 A pulsed, that is almost
+3 inches in diameter weighing in at around 1 pound
+was originally installed for the free wheeling circuit.  It failed shorted
+when its gate circuit arced through the trigger
+transformer core.  Remarkably, nothing on the low voltage side was damaged.
+And the primary hockey puck SCR and diode, which were then discharging into
+basically a dead short. also didn't seem to care.  The first replacement
+switch was a combined SCR/diode block, a IXYS MCD95-16IO1B.
+While its current rating is about 1/10th
+that of the unlucky hockey puck, the low repetition pulse rating should
+easily be enough, hopefully.  The companion high current diode was in series
+with the SCR (mainly because it was available), with a low current diode (a
+pair of 1N4948s in series) across the SCR so that the full reverse voltage
+would be taken by the large diode, hopefully reducing the turn-on time of
+the SCR.  The core of the replacement trigger transformer has 2-3 layers
+of Kapton tape covered with Epoxy for insulation. :)
+<center>
+<A target="tms" HREF="wcn490.jpg"> <img src="wcn490s.jpg"></A>
+<A target="tms" HREF="ixys95.jpg"> <img src="ixys95s.jpg"></A><p>
+<b><font size="4">Westcode N490CH20 Hockey Puck SCR and
+ IXYS MCD95-16IO1B</font></b>
+</center>
+<p>
+As noted, the IXYS devices was removed from Ver. 2 since (1) because
+there is little evidence that a monophasic pulse has significant general
+utility for TMS, and (2) because there would almost certainly be more
+difficulties associated with it at the much higher peak current.
+<p>
+Other pulse types could be implemented but would require modifications to the
+pulse discharge network and its control.  For example, the "halfsin" (the
+positive portion of the biphasic) is supported in some commercial systems.
+This would require replacing D1 with a switch (e.g. SCR) so that it could
+be disabled.  But at the end of the halfsin, the energy storage capacitors
+would be charged with nearly full reverse polarity.  So some fancy footwork
+might be required before the next pulse.  Given that the halfsin is another
+pulse type that's mostly beneficial to Marketing, there are absolutely no
+plans to add it. ;-)
+<p>
+<b>Electronics and Coil Interaction</b>
+<p>
+As noted above, various coils have been tested with this machine, most of which
+proved useless for their intended purpose.  See <A target="tms"
+ HREF="sgcoils.htm">Sam's TMS Coils</A>.
+<p>
+Air-core coils having an inductance from below 8 &micro;H
+to over 33 &micro;H were found to work with all 3 pulse types.  This is
+rather surprising at the low-end given
+that the primary SCR needs to recover within 1/2 cycle, which at 8 &micro;H
+is under 50 &micro;s.  Most thyristor specifications don't include a
+maximum recovery time, and the typical values given are usually 2 or 3
+times longer than this.  In fact, the IXYS-MCD95-16IO1B was too slow to
+replace the primary hockey puck SCR and diode, resulting in the biphasic
+and polyphasic waveforms both being polyphasic.  (The mounting and reduced
+space would have been much more convenient!)
+<p>
+(Coils with an iron core have so far proven to be a disaster either due to
+core saturation or eddy-current losses resulting in poor damping and/or
+excessive current.  The best case is that the waveforms are terrible or
+don't change depending on type; worst is that parts blow up. :( :)  More
+below.)
+<p>
+For an air-core coil with an inductance of only 2.5 &micro;H (Ver. 1, 4 or 5
+&micro;H total), the biphasic and polyphasic waveforms still worked correctly.
+This is rather remarkable since a full cycle (biphasic pulse) is under
+65 &micro;s or less and most thyristors cannot switch that fast.
+Detailed specifications of the primary SCR (a GE 387NX198 found on eBay)
+have not been located, but it must be unusually fast. :)  The closest
+datasheet I can find is for the GE C387 series - which is a high speed 500 A
+(5,500 A peak) SCR with a typical turnoff time under conditions
+more extreme than what it's experiencing here of 40 &micro;s.
+So less than 32.5 &micro;s (required for the 65 &micro;s
+cycle) seems plausible.  But the highest voltage rating listed
+was only 1,200 V and the "N" version was only 800 V (assuming that's what
+the "N" in "NX" designates).  I find it hard to
+believe that this thing is working happily at nearly twice that voltage!
+It's not impossible though - sometimes better devices will be relabeled
+to satisfy an order for crappier ones. :)
+Or, perhaps the part numbers have changed since the 1977 (!!) datasheet
+where the C387 was found.  Sorry, I neglected to take a photo of the
+magic GE SCR before installation. :)
+<p>
+However, although the primary SCR performed perfectly at the low inductance,
+the free-wheeling SCR self-triggered with a capacitor
+voltage above about 700 V.  (It's only supposed to trigger during the
+second part of the monophasic pulse.)  So, then all three
+waveforms looked like the monophasic pulse. :( :)  (The same thing
+happened above around 1,400 V with the 10 &micro;H coil.)
+The cause was an EM transient picked up either in the wiring to the gate of
+SCR or the driver.  Disconnecting the gate drive cable eliminated
+this spurious triggering, so it wasn't a problem with the SCR itself.
+Adding a 1 &micro;F capacitor across the SCR gate delayed the onset of the
+self triggering to a somewhat higher capacitor voltage.  Adding a 5 &micro;F
+capacitor caused the free-wheeling SCR in the IXYS block to make a
+plit'ting sound and fail shorted, which I assumed at the time to be
+due to too slow a rise in gate drive current. :(  However, one of
+the screws on the IXYS block was found to be loose when I removed it,
+so that could have been the cause as well.
+Lucky these are inexpensive on eBay. ;-)  I bought a couple dual
+SCR units (IXYS MCC95-16) as spares.  Since the diodes in the MCD95-16s
+were still good, there will be 4 spare SCRs and 3 spare diodes just in
+case. :)  (One of the 3 MCDs I bought already had a blown SCR.)  In the
+end, adding a 10 ohm resistor in series with the gate
+drive seems to have eliminated the false triggering for bare coils.
+However, it reappeared when driving a
+coil in a steel yoke, which resulted in a damping factor of almost unity
+due to induced current in the center piece.  That configuration
+performed poorly in just about every way, as should have been expected,
+and it has been retired.  The bare coil had an inductance of 8 &micro;H
+and works fine.  Perhaps, the peak current was much higher due to the losses,
+and pickup from that is what was triggering the free-wheeling SCR.
+When the SCR in a second IXYS MCD95-16 blew while attempting to drive
+an iron-core coil (either due to core saturation or excessive eddy current
+losses), I installed a IXYS MCC95-16 using only one of its SCRs
+without the extra diodes (leaving the other SCR as a spare!), and that
+works fine.  The problem would arise if the SCR shorted resulting in
+a dead short across the the coil.  But since this thing survived that
+in the past, it shouldn't really matter.
+<p>
+One mystery remains though: The measured time constant of the biphasic pulse
+and decaying sinusoid is consistent with a damping factor about double
+what the calculations predict based on the capacitance, coil/cable/wiring
+resistance, and coil inductance.  While there are some losses in the
+primary SCR and its high current diode, as well as the ballast resistor
+bank, these shouldn't result in even 10 percent of the observed effect.
+And yet the decay time for the monophasic pulse is close to the theoretical
+value.  The most likely candidate is the real part of the capacitor ESR.
+The required resistance of about 0.03 ohms seems high for capacitors of
+this type but isn't totally out of the question.  This would make sense
+though since the characteristics of the capacitors do not impact the time
+constant of the monophasic pulse.  The specs other than &micro;F and working
+voltage for the capacitors are unknown.  The skin effect of the coil and
+cable conductors might also contribute a tiny amount.  At
+a frequency of 10 kHz, the skin depth is around 0.66 mm,
+which is less than one half the diameter of the #14 conductors
+typically used for the coil (1.63 mm).  But this will only
+increase the effective resistance by a few percent at most.
+<p>
+The complete schematic for both versions is shown below.  Specific differences 
+between Ver. 1 and Ver. 2 are noted (specifically relating to the energy
+storage capacitor and SCRs).  Case interlock switches to shut off all power
+and quickly discharge the energy storage capacitors are NOT shown but are
+essential for safety during servicing.
+<p>
+<center>
+<A HREF="sgmp1sch.pdf">  <img src="sgmp1sch.gif"> </A><p>
+<b><font size="4">Complete Schematic - Click to View or Download PDF
+ Version</font></b>
+</center>
+
+<h3><A NAME="sgtmsver2">Ver. 2 Modifications</A></h3>
+
+As noted, the Ver. 1 device provided a truly excellent massage of various
+body parts, but had absolutely detectable effect in the brain despite
+measured pulse waveforms that were textbook matches to those in the
+literature.  After 13 attempts at coil design and fabrication using
+up a massive amount of two-part Epoxy and electrical tape, it was
+finally decided to bring in the BIG guys and boost the maximum energy. :)
+Given the expectation as to the actual specifications of the magic SCR,
+this was thought to be quite risky with its much higher peak current.
+<p>
+Converting Ver. 1 to Ver. 2 entailed two principle changes:
+<p>
+<ol>
+<li>The original energy storage capacitors
+ were replaced with a pair of capacitors totally 166.7 &micro;F, boosting
+ energy to almost 176 Joules at maximum voltage (1,450 V).  These have a rated
+ voltage of 2,250 V so there is room for enhancement. :)  (And a third
+ similar capacitor may be available!)  The replacement caps are each around
+ 7 inches tall and 3.5 x 4.5 inches wide - more than twice the size of the
+ original ones.  So both would not fit and thus one had to be mounted outside
+ bolted to the rear of the case protected by the decorative fake imitation
+ plywood panel. :)  But aside from a bit of rewiring, nothing else changed.
+<p>
+<center>
+ <A target="tms" HREF="tmscaps2.jpg">  <img src="tmscaps2s.jpg"> </A><p>
+<b><font size="4">Ver. 2 Energy Storage Capacitors</font></b>
+</center>
+<li>The freewheeling SCR for the monophasic pulse was removed anticipating
+ a change to a Westcode N075WN160 to handle the higher current.
+ Peak current is still under 6,000 A for a coil inductance of
+ 10 &micro;H, which should be well within the repetitive peak current spec
+ for the primary 500 A SCR and 1,000 A diode.  The SCR swap to support
+ the monophasic pulse may be completed someday once an optimal coil design
+ has been settled upon.  However, since the monophasic pulse makes more
+ noise and a lower repetition rate at any given power - and seems to have
+ less effect in TMS (even if some companies support it) - this is
+ becoming increasingly unlikely.
+</ol>
+<p>
+Interestingly, the damping factor with the larger capacitors is nearly
+as low as it was before the swap, so the original ones must have had a
+higher ESR.  The ESR of the ~83.5 &micro;F capacitors is almost
+unmeasurable using my meter - less than 0.01 ohm and much of that
+may be due to the capacitive reactance at the meter's test frequency, not
+resistance.  The total effective system resistance
+now appears to be between 30 and 40 milliohms including the coil and cable
+(about 20 mohm total).  And around 50 percent of the energy is recovered
+with the biphasic pulse.
+<p>
+Of course charge time is longer but so be it - for now.  It's still near
+full energy at 1 pps.  Coil heating is becoming more of a problem though.
+The latest coil (Sam #13) uses #10 wire but at 10 mohms dissipates 20-30 W
+at 1 pps.  So the duration with continuous operation is limited to a few
+minutes.
+<p>
+The photo below show the modifications.  One of the two energy storage
+capacitors is visible.  The other one is under the genuine imitation
+wood grain plywood cover at the rear. ;-)  The higher current SCR for
+the monophasic has not been installed.
+<p>
+<center>
+<A target="tms" HREF="mp1-i2.jpg"> <img WIDTH=800 src="mp1-i2.jpg"></A><p>
+<b><font size="4">Interior view (Ver. 2)</font></b>
+</center>
+
+<h3><A NAME="sgtmsver3">Ver. 3 (Under consideration)</A></h3>
+
+This upgrade would have two primary objectives, both driven by the coil
+design, but impacting the electronics:
+<p>
+<ul>
+<li>Construct a new coil to provide higher peak current and <i>dB/dt</i>.
+<li>Incorporate cooling to be able to run continuously at the maximum
+ pulse rate for &gt;90% of Ver. 2 energy.
+</ul>
+<p>
+The next coil (Sam #14) is planned to use 0.125" (3.2 mm) thick-wall
+copper tubing in place of magnet wire with the two pancakes
+wired in parallel to reduce inductance and boost <i>dB/dt</i>.
+A closed-loop cooling system will force transformer oil (to maintain
+electrical insulation) through the copper tubing and then through an
+oil-to-air heat exchanger (radiator with cooling fan).  Here are the
+tentative specifications for Ver. 3 assuming other parameters for Ver. 2
+are unchanged:
+<p>
+<ul>
+<li><b>Coil type (Sam #14):</b> Air-core, overlapped figure-8, 30 degree wing
+ angle, with oil cooling.
+<li><b>Coil inductance (parallel):</b> 4 &micro;H.
+<li><b>Biphasic period:</b> 160 &micro;s.
+<li><b>Peak current:</b> &gt;9,000 A.
+<li><b>Peak <i>di/dt</i>:</b> ~363 A/&micro;s (1,450 V).
+<li><b>Peak <i>dB/dt</i>:</b> ~19 kT/s 2 cm (0.8") from inside surface,
+ &gt;61 kT/s at surface.
+<li><b>Maximum number of consecutive biphasic pulses at maximum energy:</b>
+ Unlimited.
+</ul>
+<p>
+Ver. 2 has been running reliably at up to somewhat over 5,000 A but going
+higher is something I'd rather not risk with the poor "little" 387NX198
+primary SCR assumed to be rated at around 500 A.  Repetitive pulsed
+current ratings of SCRs are rarely given.  And while when they are,
+they tend to be around 30x of the average maximum current (It<sub>avg</sub>),
+there is no data on the 387NX198.  SO, I found a couple of these at
+a bargain price on eBay:
+<p>
+<center>
+<A target="tms" HREF="CKE-T77P3000F28-2.jpg">
+  <img height=320 src="CKE-T77P3000F28-2.jpg"></A><p>
+<b><font size="4">CKE T77P3000F28 Monster High Speed SCR: 2,800 V, 3,000 A, t<sub>q</sub>=75 &micro;s</font></b>
+</center>
+<p>
+The CKE T77P3000F28 is over 4 inches in diameter and weighs around 3-1/2
+pounds! :)  That's just a wee bit more massive than I had expected.
+<p>
+The target current is around 9,000 A to achieve a full biphasic cycle of
+150-160 &micro;s at 1,450 V and ~176 J into an inductance of 3-4 &micro;H.
+<p>
+Perhaps the new SCR should handle anything even I can throw at it, space
+permitting! :)  However, size is not everything.  SCRs are at least as likely
+to die from issues with insufficient gate drive current or too short a drive
+pulse duration as excessive low duty cycle peak current.  If something
+more reasonable can be found - closer to 1,500 A and 1,500 V with a
+t<sub>q</sub> of 75 &micro;s or less - that will be used instead. :)
+If not, the 387NX198 may be asked to take the risk in the interest of
+science. :)   Based on specifications of the assumed to be similar C387,
+it may just handle 9,000 A in a short pulse!  At least the C387 datasheet
+does have some data for moderately short pulses, though not quite short enough.
+<p>
+Another less extreme option is to use the Westcode (IXYS) N0465WN160.
+These are only about 1.5 inches across with a t<sub>q</sub> of 125 &micro;s,
+maximum rated voltage of 1,600 V, average current of 465 A, and non-repetitive
+peak current of 5,000 A.
+<p>
+<center>
+<A target="tms" HREF="wcn465.jpg"><img src="wcn465s.jpg"></A><p>
+<b><font size="4">Westcode N0465WN160 Small Hockey Puck SCRs: 1,600 V,
+ 500 A, t<sub>q</sub>=125 &micro;s</font></b>
+</center>
+A pair of these should do nicely as long as the
+current can be more or less equally divided.  Simply running separate equal
+length wires to the anode would probably be sufficient.  And better yet
+I have a dozen or so of these beasties. :)  They are for/from a
+three-phase elevator motor controller.
+<p>
+An upgrade to Ver. 3 is probably the only one that has any
+chance of being implemented, but that is still vanishingly small.
+All the parts have been procured but the completion date for this
+project is uncertain but believed to be in the middle of the
+314,159th Century.  So stay tuned but please be patient. :-)
+
+<h3><A NAME="sgtmsver4">Ver. 4 (Future fantasy)</A></h3>
+
+<ul>
+<li>Replace linear power supply with 2 kV, 1 kW capacitor charger.
+<li>Install larger primary SCR to handle up to 2 kV, 15,000 A, and 360 J.
+<li>Add 3rd capacitor to boost maximum energy to over 500 J (optional).
+<li>Add additional cooling behind Sam #14 coil to permit extended
+ operation at maximum energy and repetition rate.
+</ul>
+<p>
+The existing Ver. 2 capacitors are rated at 2,250 V continuous, so
+they would be retained, though the third optional one could be added.
+The wiring in the discharge path might be beefed up for the
+higher current to maintain a low damping factor and maximize energy
+recovery for the biphasic.
+<p>
+The expected completion date for Ver. 4 is approaching approximately when
+the Sun turns into a red giant, and that may be optimistic. ;-)
+
+<h3><A NAME="sgtmsver5">Ver. 5 (Future future fantasy)</A></h3>
+
+<ul>
+<li>Implement microprocessor-based controller with touch-screen and
+ non-Windows GUI.
+<li>Implement fully programmable pulse sequences using IGBT-based H-bridges
+ in place of SCRs and diodes.
+</ul>
+<p>
+Adding a micrprocessor would be straightforward, but since both of these
+objectives really don't add anything to the basic TMS implementation,
+they are considered low priority.  Thus the expected completion date
+for Ver. 5 is some indeterminant time after glowing purple winged flying pigs
+have been spotted near here. ;-)
+<p>
+<A NAME="sgtmsctst"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>Initial Cerebral Tests</h2>
+
+As noted above, Ver. 1 could provide a rather fabulous neck massage and
+very satisfying abdominal workout, among other peripheral nerve effects.
+With Ver. 2, the following were among the areas successfully stimulated
+in my brain (or what's left of it):
+<p>
+<ul>
+<li><b>Occipital region:</b> See, for example: <A target="tms" HREF="https://www.mybraintest.org/brain-function-areas-structure-map/">Brain Functions and Brain Areas (mybraintest.org)</A>
+ Placing the center of the coil on the back of the head would result in visual
+ effects on the contra-lateral side, best described as "splotches" or
+ "spludges".  They could be somewhat moved around but there
+ was no obvious structured pattern, just a region of disruption.
+ These were in fact the first areas successfully stimulated with
+ the intermediate (88 J) Ver. 2 device.
+<p>
+<li><b>Sensory-motor regions:</b> The sensory-motor tract runs transversely
+ across the skull roughly centered front to back as shown in the typical
+ <A target="tms" HREF="https://garyborjesson.files.wordpress.com/2014/03/homunculus-of-primary-somatosensory-cortex-in-blue.jpg">Sensory and Motor Homunculus</A>.  It was possible to position the coil with its sweet spot roughly
+ in the indicated areas and evoke either a
+ sensation or twitch (or stronger) movement on the contra-lateral
+ side of the body.  It was difficult to retain control of the coil if the area
+ of stimulation coincided with the muscles of the same arm.  And
+ for the leg, standing was almost impossible.  With careful coil positioning,
+ a fairly decent place-kick might be possible. :)  The one area that
+ proved inaccessible was anything to do with the toes because it's
+ rather deep in the central fissure.  Darn. :( :)  Need an upgrade.....
+</ul>
+<p>
+The above are among the "low hanging fruit" in a sense (no pun....) for
+testing since there should be a detectable effect with even a single pulse.
+It was never my intent, nor would it have been realistic, to use this device
+to treat depression or other similar neurological ailments.  That would require
+both training and expertise, as well as a suitable and willing subject, and
+extended operation at a higher repetition than Ver 2. can provide.
+<p>
+It's definitely spooky to be able to refer to published documentation
+that precisely matches the internal architecture of <i>my</i> brain that
+cannot even be seen.  Many other cerebral areas remain to be explored that
+are close enough to the surface of the skull to have a good chance
+of effective stimulation.  Other sensory areas like taste and smell
+may be possibilities, but effects in many regions of the cerebral cortex
+will be more subtle requiring specific mental exercises and the like
+to detect.  For example, to disrupt the pronunciation of a word by
+stimulating the speech area.
+<p>
+<A NAME="sgtmsscon"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>Summary and Conclusions</h2>
+
+This article has described the implementation, construction, and testing
+of a trans-cranial magnetic stimulator built from readily available
+inexpensive components.  A complete detailed schematic was provided.
+In the key areas of stored energy and <i>di/dt</i>, and the resulting
+<i>dB/dt</i> using the Sam #13 coil, the performance of the Ver. 2
+device is comparable to that of several commercial systems except in
+the areas of pulse repetition rate at full energy, coil cooling, and
+lack of a fluffy user interface.  Ver. 3, 4, and 5 would remedy
+of these remaining shortcomings.
+<p>
+Based on this experience, the construction of a functional TMS device from
+readily available parts is a very achievable project for a determined amateur
+with general electronics skills and experience with and proper respect for
+high voltage high energy equipment.  One must be mindful of the very real
+dangers that are present while troubleshooting as well as use, especially
+if corners have been cut in terms of component ratings, insulation, and
+assembly technique.  In addition, there may be neurological risks during
+the application of TMS should the effort prove successful.
+<p>
+<A NAME="sgtmsref"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A>.
+<h2>References and Technical Documents</h2>
+
+These are not necessarily in any particular order of significance, mostly
+alphabetical by topic or first author. :)  Even if there is no
+link, papers and reports should be available for free download by entering the
+name and/or authors into a search engine.  Manufacturer's literature is readily
+available on-line.  TMS manufacturers Web sites often have specifications
+for system performance and sometimes even coil design parameters.  User
+and accessories manuals may be available from other sources.
+
+<h3>Local Documents</h3>
+
+<ol>
+<li><A target="tms" HREF="../Field/fcoafotc.htm">Calculator for Off-Axis Fields due to One or Two Coils</A>.
+<li><A target="tms" HREF="tmscoils.htm">Commercial TMS Figure-8 Coils</A>.
+<li><A target="tms" HREF="sgcoils.htm">Sam's TMS Coils</A>.
+<li><A target="tme" HREF="sgmp1sch.pdf">Complete Schematic of Flexomatic Magnetic Pulser 1</A>.
+</ol>
+
+<h3>TMS-Related Papers and Reports</h3>
+
+<ol>
+<li>Anthony T. Barker and Ian Freeston, "Transcranial Magnetic Stimulation",
+ (2007), Scholarpedia, 2(10):2936. doi:10.4249/scholarpedia.2936.
+<p>
+<li>Eric Basham, Zhi Yang, and Wentai Liu, "Circuit and Coil Design for In
+ Vitro Magnetic Neural Stimulation Systems", TBCAS-2008-Jul-0054.
+<p>
+<li>Anne Beuter, Isabelle Lagroye, Bernard Veyret,
+ "Design and Construction of a Portable Transcranial Magnetic Stimulation
+ (TMS) Apparatus for Migraine Treatment", University of Bordeaux 1,IMS,
+ Site ENSCPB,UMR CNRS 5218,16, Avenue Pey Berland, 33607, Pessac Cedex, France.
+<p>
+<li>Kent Davey and Charles M. Epstein, "Magnetic Stimulation Coil and
+ Circuit Design", IEEE Trans on Biomedical Enginssering, vol. 47, no. 11,
+ Nov 2000.
+<p>
+<li>Kent Davey and Mark Riehl,
+ "Designing Transcranial Magnetic Stimulation Systems",
+ IEEE Trans. on Magnetics, vol. 41, no. 3, March 2005
+<p>
+<li>Lukas Heinzle, "A Theoretical Model for Mutual Interaction between
+ Coaxial Cylindrical Coils". omicron-lab.com, 2012, v0.11
+<p>
+<li>Risto J. llmonieni, Jarmo Ruohonen, and Jari Karhu,
+ "Transcranial Magnetic Stimulation - A New Tool for Functional Imaging of
+ the Brain", BioMag Laboratory, Helsinki University Central Hospital, P.O. Box
+ 508, FIN-00029.
+<p>
+<li>Angel V Peterchev, David L Murphy, and Sarah H Lisanby, "Repetitive
+ Transcranial Magnetic Stimulator with Controllable Pulse Parameters",
+ J Neural Eng. Jun 2011; 8(3): 036016.
+<p>
+<li>Axel Thielschera and Thomas Kammerb, "Electric field properties of
+ two commercial figure-8 coils in TMS: calculation of focality and efficiency",
+ Clin Neurophysiol 2004 Jul;115(7):1697-708.
+<p>
+</ol>
+
+<h3>Other Credible Home-Built TMS Devices</h3>
+
+<ol>
+<li><A target="tms" HREF="Heinz_Friedli_TMS.pdf">Heinz Friedli's Home-Built
+ TMS</A>.
+</ol>
+
+<h3>TMS/Neural information</h3>
+
+<ol>
+<li><A target="tms" HREF="https://en.wikipedia.org/wiki/Transcranial_magnetic_stimulation">Wikipedia: Transcranial Magnetic Stimulation</A>.
+
+<li><A target="tms" HREF="http://www.sciencedirect.com/science/article/pii/S0896627307004606">ScienceDirect: Transcranial Magnetic Stimulation: A Primer</A>.
+
+<li><A target="tms" HREF="http://accessphysiotherapy.mhmedical.com/data/Multimedia/grandRounds/motorpathways/media/motorpathways_print.html">Motor Pathways (accessphysiotherapy.com)</A>
+
+<li><A target="tms" HREF="http://accessphysiotherapy.mhmedical.com/data/Multimedia/grandRounds/motorpathways/media/slideImages/Burke-Doe03_slide04.jpg">Sensory and Motor Homunculus (accessphsiotherapy.mhmmedical.com)</A>
+
+<li><A target="tms" HREF="https://garyborjesson.files.wordpress.com/2014/03/homunculus-of-primary-somatosensory-cortex-in-blue.jpg">Sensory and Motor Homunculus (garyborjesson.files.wordpress.com)</A>
+
+<li><A target="tms" HREF="http://www.movementislife.be/wp-content/uploads/2013/07/I10-13-homunculus.jpg">Sensory and Motor Homunculus (movementislife.be)</A>
+
+<li><A target="tms" HREF="https://www.mybraintest.org/brain-function-areas-structure-map/">Brain Functions and Brain Areas (mybraintest.org)</A>
+
+<li><A target="tms" HREF="https://en.wikipedia.org/wiki/Cerebral_cortex">Cerbral Cortex (en.wikipedia.org)</A>
+</ol>
+
+<h3>Electronics Information</h3>
+
+<ol>
+<li><A target="tms" HREF="http://daycounter.com/Calculators/">Electronics Calculators (daycounter.com)</a>
+
+<li><A target="tms" HREF="http://chemandy.com/calculators/round-wire-ac-resistance-calculator.htm">Calculator for AC Resistance of a Round Straight wire (chemandy.com)</a>
+
+<li><A target="tms" HREF="http://www.daycounter.com/Calculators/Air-Core-Inductor-Calculator.phtml">Air Core Inductance Calculator (daycounter.com)</a>
+
+<li><A target="tms" HREF="http://www.eeweb.com/toolbox/coil-inductance">Coil Inductance Calculator (EE Web)</a>
+
+<li><A target="tms" HREF="http://hyperphysics.phy-astr.gsu.edu/hbase/oscda.html#c2">Damped Harmonic Oscillator (Hyperphysics.com)<a>
+
+<li><A target="tms" HREF="http://nbviewer.jupyter.org/github/tiggerntatie/emagnet-py/blob/master/index.ipynb">Magnet Formulas (Eric Dennison)</a>
+
+<li><A target="tms" HREF="http://nbviewer.jupyter.org/github/tiggerntatie/emagnet-py/blob/master/offaxis/off_axis_loop.ipynb">Field Calculator for Off-Axis Fields Due to a Current Loop (Eric Dennison)</a>
+
+<li><A target="tms" HREF="http://www.deepfriedneon.com/tesla_f_calcspiral.html">Flat Spiral Coil Calculator (deepfriedneon.com)</a>
+
+<li><A target="tms" HREF="http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/curloo.html#c2">Magnetic Field of a Current Loop (hyperphysics.com)</a>
+
+<li><A target="tms" HREF="http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/magcur.html">Magnetic Fields of Currents (hyperphysics.com)</a>
+
+<li><A target="tms" HREF="http://www.rfcafe.com/references/calculators/skin-depth-calculator.htm">Skin Depth Calculator (rfcafe.com)</a>
+
+<li><A target="tms" HREF="http://hyperphysics.phy-astr.gsu.edu/hbase/electric/skineffect.html">Skin Effect in AC Conduction (hyperphisics.com)</a>
+
+<li><A target="tms" HREF="http://hyperphysics.phy-astr.gsu.edu/hbase/magnetic/solenoid.html">Solenoids Magnetic Field Calculator (hyperphisics.com)</a>
+
+<li><A target="tms" HREF="http://www.allaboutcircuits.com/vol_5/chpt_1/7.html">Time Constant Equations (allaboutcircuits.com)</a>
+
+<li><A target="tms" HREF="http://www.ohmslawcalculator.com/555_astable.php">555 Astable Circuit Calculator (ohmslawcalculator.com)</a>
+
+<li><A target="tms" HREF="http://www.completepowerelectronics.com/scr-thyristor-switching-characteristics/">Thyristor Switching Characteristics (completepowerleectronics.com)</a>
+
+<li>Diode/Thyristor manuals and applications notes from GE, Westcode, IXYS,
+ Powerex, Dynex, etc.
+</ol>
+
+<h3>Some TMS Manufacturers Web sites</h3>
+
+<ol>
+<li><A target="tms" HREF="http://www.magstim.com/">Magstim</a>
+<li><A target="tms" HREF="http://www.magventure.com/">Magventure</a>
+<li><A target="tms" HREF="http://www.medtronic.com/">Medtronic</a> (No
+ longer supports TMS but Magpro information is available by searching on-line).
+<li><A target="tms" HREF="http://www.nextim.com/">Nexstim</a>
+<li><A target="tms" HREF="http://www.neuronetics.com/">Neronetics</a>
+</ol>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#sgtmstoc">Sam's TMS Table of Contents</A> or
+  escape to <A HREF="../../sammenu.htm">Silicon Sam's Technology Resource</A>
+  or <A HREF="../../madsci.htm">Sam's Mad Scientist Corner</A> or unwind and
+  calm your nerves interactively without TMS at
+  <A HREF="http://weavesilk.com/">Weavesilk</A> <img src="Smiley16-2.gif"><br>
+<p>
+-- end V1.17a --
+<p>
+</body>
+</html>

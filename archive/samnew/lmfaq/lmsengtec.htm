@@ -1,0 +1,768 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/lmfaq/lmsengtec.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Small engine technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lmfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of small Gasoline Engines and  Rotary Lawn Mowers  ">
+  <title>SER FAQ: LMFAQ: Small engine technology</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/lmfaq/lmsengtec.htm">https://www.repairfaq.org/samnew/lmfaq/lmsengtec.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="lmfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-lmfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of small Gasoline Engines and  Rotary Lawn Mowers  </strong>: <font color="red">Small engine technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="lmiohcvcl.htm">&lt;&lt;&nbsp;Importance of having the ..</a> |
+		
+	
+&nbsp;<a href="../lmfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="lmcranka.htm">Crankshaft anatomy&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<A NAME="lmice"></A><H2>Internal Combustion Engines</H2>
+<h3><A NAME="lmsengtec">Small engine technology</a></h3>
+
+If you have some idea of how your automobile engine operates - or a Model T
+Ford for that matter - then you know the basic operating principles of your
+small engine as well.  In fact, your Craftsman Eager 1 has a lot more in common
+with a Model T than a Honda Accord.  However, strip off, the electronics,
+pollution control devices, and engine powered accessories, and the basic
+mechanical construction is very similar, though the lawn mower engine is
+not manufactured to quite the same tolerances and with the same quality
+materials as an automobile engine.
+<p>
+Nearly all small engines up to 20 HP or so are single cylinder affairs - one
+piston, one spark plug, no distributor, forced air cooled - about as simple
+and straightforward as it gets.
+<p>
+If you have never been under the hood of your automobile, then the description
+in the following sections may be of some help.
+<p>
+The next chapter: "Engine Diagrams" provides an explanation of each of the
+4 strokes of a 4 stroke engine.  However, if you cannot get the hang of my
+fabulous ASCII graphics, check out the following site:
+<p>
+The <A HREF="http://www.HowStuffWorks.com/">How Stuff Works</A> Web
+site has some really nice introductory material (with graphics) on a variety
+of topics relating to technology in the modern world.  Of relevance to this
+document is an article on "How Car Engines Work" which is really mostly
+about the basic principles but WITH some real animated graphics!
+
+<h4><A NAME="lmtypes">Types of engines</a></h4>
+
+Unless otherwise noted, most of the descriptions and procedures in this
+document apply to both 4 stroke and 2 stroke engines.  However, there are
+fundamental differences in the proper fuel and oil that is used with each
+type.
+<p>
+The small 4 stroke engine has a separate oil sump just like the engine in
+an automobile.  Therefore, gasoline and oil are separate.  Oil changes are
+also required.
+<p>
+<b>WARNING</b>: a new lawn mower or other piece of yard equipment will very likely
+be shipped without oil or just a minimal oil fill.  Check it first and add
+oil if necessary.  Running an engine without oil for a few minutes can cause
+serious - or terminal - damage.  Even if your mower was assembled by the
+store where you bought it, don't assume they filled it with oil and tried
+it out!
+<p>
+The 2 stroke engine requires that the gas and special oil be mixed prior to
+use in specific proportions.  Leave out the oil - or get your gas cans mixed
+up - and you will quickly ruin a 2 stroke engine due to lack of lubrication if
+plain gas is used by mistake.  Clearly label the gas cans for each type and
+instruct anyone using them in the proper fueling technique.
+<p>
+Portable tools like chain saws, weed whackers, and backpack type leaf blowers
+use 2 stroke engines as these need to operate in a variety of positions.
+<p>
+Stationary or wheel-about equipment including most lawn mowers, rototillers,
+shredders, backup electric generators, and large blower/vacs, use 4 stroke
+engines.
+<p>
+Another distinction is that engines smaller than about 2 horsepower are
+generally 2 stroke while those larger than 2 horsepower are generally 4
+stroke but there are exceptions.  Lawnboy lawn mowers tend to have 2 stroke
+engines and there are some types of equipment with very small 4 stroke
+engines.  Of course, if your engine has a cap marked 'oil' then it is a
+4 stroke.
+<p>
+Larger pieces of yard equipment like riding mowers and lawn tractors use
+4 stroke engines that are really very similar in most respects to their
+smaller cousins - much more so than to the engine in your automobile, for
+example.  Similar servicing procedures apply.  In fact, if you read the
+respective chapters in any of the engine repair books for engines (listed
+in the section: <A HREF="lmrefer.htm">References</a>) under 5 horsepower and
+those between 5 and about 20 horsepower, the only significant differences
+will be in the size of the various engine parts!
+
+<h4><A NAME="lmpoafse">Parts of a 4 stroke engine</a></h4>
+
+You may be surprised at the large number of individual parts which comprise
+the engine even on a $100 mower.  The following description is for a typical
+single cylinder 4 stroke engine as would be found on most rotary mowers,
+rototillers, shredders, backup electric generators, larger snow throwers and
+leaf blowers, and even modest size riding mowers and lawn tractors:
+
+<p>
+<ul>
+<li>Fuel tank and fuel line.  This may be on the side, above, or below the
+ engine intake.  A fuel pump may be present - either as part of the
+ carburetor or a separate unit if it is not gravity fed.  There may
+ be a fuel cutoff valve and fuel filter and/or filter screen) as well.
+<p>
+<li>Shroud or blower housing.  Since these engines are all forced air cooled,
+ (no radiator, water jacket, or thermostat) the proper air flow is extremely
+ important as air is much less efficient than water at removing the
+ substantial heat energy generated by a running engine.  This piece of
+ sheet metal precisely guides the airflow.  The engine should not be run
+ for any length of time with the shroud or blower housing removed.
+<p>
+<li>Oil filler pipe.  On many engines, this is just a hole near the base fitted
+ with a screw-in plug.  On fancier models, there is an actual extension tube
+ with a dipstick usually fitting into that hole in the base and sealed with
+ an O-ring.
+<p>
+<li>Starter.  Like an automobile engine, some means must be provided to
+ supply an initial rotation.
+<p>
+ <ul>
+ <li>Pull or recoil starter.  This is by far the most common on small pieces of
+  yard equipment.  A self retracting cord wrapped around a one-way clutch
+  acts on the crankshaft directly.  Less common variations include wind-up
+  starters and a simple rope wrapped around a drum.
+<p>
+ <li>Electric starter.  A small motor - usually powered from a wall socket -
+  drives the edge of the flywheel via a self releasing gear.  On larger
+  equipment, as in an automobile, an on-board battery provides the
+  electricity.  The battery is recharged by an alternator while the engine
+  is running.
+ </ul>
+<p>
+<li>Air filter.  The air used by the engine should be free of dust and larger
+ particles.  Most yard equipment will include one of several kinds of air
+ filters - paper, foam, or oil bath.  However, engines used exclusively in
+ equipment used in low dust environments like snow throwers and outboards
+ may lack an air filter.  Types of air filters include:
+<p>
+ <ul>
+ <li>Paper air filter.  This is similar to the filter in a vacuum cleaner.
+    The pleated paper element must be replaced when clogged.
+<p>
+ <li>Foam air filter.  This uses a piece of foam rubber lightly coated with
+  engine oil and can be washed in detergent or soap and water when dirty
+  and recoated though replacement will be required if it is badly
+  deteriorated.
+<p>
+ <li>Oil bath filter.  This contains an oil reservoir and filter element.
+  These can be drained and cleaned.  Refill to the 'full' mark with the same
+  type of oil as used in the engine crankcase.  The oil bath air filter is much
+  less common than the paper or foam type.
+ </ul>
+<p>
+<li>Carburetor.  The function of the carburetor is to provide a precise
+ air-fuel mixture to the engine under a variety of operating conditions
+ including:
+<p>
+ <ul>
+ <li>Starting.  A higher ratio of fuel to air is needed when starting and/or
+  the engine is cold.
+<p>
+ <li>Idle.  Just enough flow is maintained to keep the engine from stalling.
+<p>
+ <li>High.  Full flow is provided with engine speed limited by feedback from
+  the governor.
+<p>
+ <li>Load pickup/acceleration.  The proper air-fuel ratio and amount of fuel
+  must be maintained when the equipment is placed under load or encounters
+  an increased load and when switching from IDLE to HIGH, for example.
+<p>
+  Several functions are incorporated in a carburetor:
+<p>
+ <li>Fuel control - float, diaphragm, suction.  A variety of means are provided
+  to maintain a nearly constant supply of fuel despite varying levels of
+  gas in the fuel tank.
+<p>
+  Craftsman and Lawnboy carburetors use a float similar to the system used
+  in automobile engine carburetors (when they still used this technology).
+  A hollow float maintains a constant level of fuel in a reservoir called a
+  float bowl by acting against an inlet needle valve.  The fuel tank will
+  usually be above the level of a float carburetor though a fuel pump could
+  also be used.  See the section: <A HREF="lmboftc.htm">Basic operation of a
+  float type carburetor</a> for a more detailed description and diagram.
+<p>
+  Where equipment may be operated in any position, a diaphragm carburetor
+  is used.  A flexible disk (diaphragm) with atmospheric pressure on one
+  side and intake pressure on the other is used to maintain the proper
+  air-fuel ratio (this is a gross simplification!).
+<p>
+  Briggs & Stratton engines usually have a suction lift carburetor with
+  a built-in fuel pump.  Some simple ones don't even have a fuel pump but
+  depend on suction alone to pull gas from the tank.  In both cases, the
+  fuel tank is usually below the carburetor.  If there is no fuel pump, the
+  fuel tank should generally not be less than 1/3 full for proper operation.
+<p>
+ <li>Venturi.  If you look into the air intake of a carburetor, you will see
+  a narrowing of the passageway.  This is called a venturi and results in
+  higher velocity air flow and lower pressure at the center of the narrow
+  section.  Just as when you blow across a soda straw submerged in a liquid,
+  or use a bug or lawn sprayer, this lower pressure will suck up the liquid
+  and inject it into the moving air stream.  In the care of gasoline,
+  evaporation is almost immediate.
+<p>
+ <li>Throttle.  A plate that can rotate to close or open the outlet from the
+  carburetor to the engine intake pipe controls the flow of the air-fuel
+  mixture to the engine.  When fully closed, the engine will stop.  When
+  slightly open, the engine will idle.  When fully open, maximum power
+  is developed.  To limit rotation speed with little or no load and to
+  maintain proper speed under load, a governor acts on the throttle plate
+  to keep it at the proper setting under all normal operating conditions.
+<p>
+ <li>Choke.  A plate that can rotate to partially close off the air supply
+  is placed in the air intake side of the carburetor.  This is usually
+  set manually when starting, particularly in cold weather, to make the
+  mixture richer - more fuel with respect to air - as needed.  The
+  carburetors most newer equipment have automatic chokes or other methods
+  of accomplishing the same objective.
+ </ul>
+<p>
+<li>Flywheel.  The flywheel in a small engine serves several functions:
+<p>
+ <ul>Provides some or all of the inertia so the engine can coast through the
+  3 non-power strokes of the full cycle (4 stroke).  However, with rotary
+  mowers in particular, the blade provides some of the inertia due to the
+  use of a lower mass (lighter, so this is not all bad!) flywheel.
+<p>
+ <li>Provides the electrical energy for the most common magneto based ignition
+  system.  A powerful magnet mounted on the edge of the flywheel passes by
+  a coil (and possibly other stuff) once per rotation.  This is part of the
+  ignition system and either provides the high voltage for the spark
+  directly or charges a capacitor which is then discharged (by a solid
+  state switch triggered by the flywheel magnet rotating past a sensor)
+  into an ignition coil at the proper time to generate the spark.
+<p>
+ <li>Includes the fan blades which provide most of the essential cooling
+  airflow.
+<p>
+ <li>Links to the starting mechanism.  For recoil or other manual starters,
+  the starting device attaches to the center of the flywheel.  For electric
+  start, the flywheel will have a large gear along the outside that is
+  engaged by the starter motor gear (with an overrunning clutch).
+<p>
+ <li>Engine/blade brake.  Releasing the dead-man bar engages a brake pad
+  that is usually applied to the outside of the flywheel.
+<p>
+  A soft metal key locks the flywheel to the crankshaft.  This is designed
+  to shear (break) to protect expensive engine parts should the engine stop
+  abruptly (due to blade of a rotary mower striking an obstruction, for
+  example).  In this case, the flywheel inertia will attempt to keep it
+  moving and it is better to shear the key than to fracture the flywheel
+  or crankshaft.
+ </ul>
+<p>
+<li>Blade adapter.  This fastens the two ended cutting blade to the crankshaft.
+ A key part (no pun intended, well almost) is the locking key.  This may
+ be a half circle (called a Woodruff key), rectangle, or part of the blade
+ mount bracket itself.  Its purpose, like the flywheel key, is to break
+ cleanly should the blade strike an obstruction thus protecting - hopefully -
+ the expensive engine parts from damage.  However, see the section: 
+ <A HREF="lmwyrdwt.htm">Why you really don't want to attempt to move an immovable
+ object</a> for the reasons this isn't always successful and using your mower
+ to trim rocks and curbs really should be avoided.  Therefore, it is essential
+ that the key be made of the proper material - a soft metal.  Never replace a
+ broken key with one made of steel 'because it is stronger'.
+<p>
+ For other types of equipment, various adapters are used to couple the
+ driven device to the engine crankshaft.  These may include gear reducers or
+ multispeed transmissions, belt or chain drives, or a direct connection to
+ a blower, vacuum, or pump impeller, or electric generator or alternator.
+ As with the blade adapter, a soft metal key or shear pin will likely be
+ used for protection.
+<p>
+<li>Spark Plug.  The ignition source for all small gasoline engines is a high
+ voltage spark.  There is nothing magical about a spark plug - it is just
+ an insulated electrode with a specific size gap poking into the combustion
+ chamber.  However, damage or fouling (gumming up with carbon or other
+ combustion residue) is one of the most common causes of a hard or impossible
+ to start engine.  Not all spark plugs are created equal despite their simple
+ function so the recommended replacement type should always be used.  In
+ addition, most automotive spark plugs have a longer reach - more threads -
+ and will likely bash the piston at TDC.
+<p>
+<li>Magneto ignition.  These used to use mechanical contact points - controlled
+ by a cam on the crankshaft to determine the timing.  Nowadays, most are
+ fully electronic and require no maintenance.
+<p>
+ <ul>
+ <li>Point type.  The magnet mounted on the flywheel induces a current in
+  a coil with pole pieces mounted in close proximity to the flywheel.
+  When this current is near its peak, a set of contacts operated by a
+  cam on the crankshaft - the breaker points - open interrupting the current
+  and diverting it to a condenser (capacitor).  The current drops abruptly
+  and induces a high voltage in another coil wound on the same core.  This
+  coil is connected to the spark plug terminal.  It will be 10 kilovolts
+  or more to jump the spark plug gap even under the more difficult conditions
+  during maximum compression.  The exact time - angle of the crankshaft - at
+  which the points open is the critical setting.  This is usually adjusted
+  by moving the piston to a specific dimension below Top Dead Center (TDC)
+  or aligning timing marks on the flywheel and crankcase and setting the
+  points to just open at this location.
+<p>
+ <li>Electronic type.  These can be designed in several different ways but all
+  must emulate the behavior of the point type ignition replacing just the
+  magneto coil/pole piece assembly and without requiring alterations to the
+  flywheel.  See the section: <A HREF="lmwiseeim.htm">What is inside a small
+  engine electronic ignition module?</a>.
+ </ul>
+<p>
+<li>Engine block.  The casting which includes the cylinder, crankcase, intake
+ and exhaust ports and valve guides and seats.  The other major part of
+ the engine structure is the crankcase cover/oil sump.
+<p>
+<li>Cylinder.  This is the, well, cylindrical component in which the piston
+ moves.  Most small engines are made of either aluminum (most common these
+ days) or cast iron.  In most cases, the aluminum type will have a cast
+ iron liner for long life where the piston actually slides.  With regular
+ oil changes, there will be virtually no wear.
+<p>
+<li>Cylinder head (or just head).  The cap which encloses one end of the
+ cylinder.  On most small engines, the only component mounted in the head
+ is the spark plug which screws into a threaded hole.  However, on the most
+ modern (and expensive) small engines (as well as all automobile engines),
+ the valves will also be mounted above the piston in the cylinder head.
+ Fins on the head increase its surface area - absolutely necessary for
+ these air cooled engines to keep their cool
+<p>
+<li>Crankcase.  This encloses the lower working parts of the engine and
+ also contains the oil supply.  The flywheel/magneto end main bearing is
+ mounted in one end of the crankcase.  The crankcase cover/oil sump
+ seals the crankcase and also includes the PTO/blade end main bearing.
+ Also see the section: <A HREF="https://www.repairfaq.org/samnew/lmfaq/lmbearing.htm">Bearings and bushings</a>.
+<p>
+<li>Valves.  These look like metal mushrooms and seat against metal rings
+ mounted in the engine block casting.  They are spring loaded in the closed
+ position, slide in valve guides (bored holes), and operated by valve lifters
+ from cams on the camshaft.
+<p>
+ <ul>
+ <li>Intake valve.  This valve is opened only during the intake stroke.  It
+  is subjected to less stress than the exhaust valve as it is cooled by the
+  fresh air-fuel mixture.  The intake valve may be stamped with an I.
+<p>
+ <li>Exhaust valve.  This valve is opened only during the exhaust stroke.  It
+  is subjected to more stress than the intake valve since the hot exhaust
+  gases pass out through its opening.  The exhaust valve may be marked
+  with an E.
+ </ul>
+<p>
+ Note that in most small engines, the valves are not mounted above the
+ cylinder (in the head) as they are in automobile engines.  Rather, they
+ are mounted on the side of the cylinder in the engine block.  This is
+ done for reasons of cost requiring fewer parts and simpler construction.
+ The cylinder head is then just a casting with cooling fins and a threaded
+ hole for the spark plug.  The disadvantage of the side valve engine is
+ lower efficiency and higher pollution.  The newest (and currently most
+ expensive) lawn mowers and other yard equipment are incorporating the
+ better overhead valve technology.  Eventually, environmental protection
+ laws may force this on all small engine operated devices.  However, both
+ types can apparently be made to meet the emissions standards mandated
+ for all new mowers sold after September 1996.
+<p>
+<li>Valve lifters (tappets).  These also look like metal mushrooms with the
+ wide part riding on the cams of the camshaft.  Their ends press on the
+ ends of the valve stems to open them during the appropriate part of the
+ cycle.
+<p>
+<li>Compression release.  This mechanism reduces the compression somewhat at
+ low rpms (to make starting easier) by opening the exhaust valve slightly
+ early.  A weight disengages the compression release once the engine
+ starts.
+<p>
+<li>Piston.  The piston is a cylindrical close ended plug that slides in
+ the cylinder and is acted upon by the hot gases during combustion.
+ In small engines, it is usually made from an aluminum alloy.  Power
+ is obtained by the piston driving the off center crank pin journal on
+ the crankshaft via the connecting rod.
+<p>
+<li>Piston rings.  Springy split rings of cast iron (usually) which fit in
+ grooves or slots around the piston.  When the piston with rings is installed
+ in the cylinder, the rings expand and tightly contact the cylinder wall
+ forming a remarkably good seal.
+<p>
+<li>Piston pin (or wrist pin).  The piston is attached to the connecting
+ rod via a polished steel pin (actually a tube) which fits closely in
+ a bearing in the connecting rod.
+<p>
+<li>Connecting rod (or just rod).  A rod with bearings at both ends.  Small
+ 4 stroke engine rods are usually made of an aluminum alloy and have no
+ special bearing inserts at either end.  2 stroke rods will have needle
+ bearings due to the type of lubrication available.
+<p>
+<li>Crankshaft.  The main rotating part of the engine.  See the diagram in
+ the section: <A HREF="lmcranka.htm">Crankshaft anatomy</a>.
+<p>
+ <ul>
+ <li>Main bearings.  The crankshaft is supported at each end by the main
+  bearings.  Most inexpensive 4 stroke engines use plain bearings without
+  inserts - just the finely polished steel crankshaft surface rotating
+  in equally finely finished surfaces of the engine block casting.  2 stroke
+  engines may use needle bearings in these positions.  Some engines use
+  ball bearings.
+<p>
+ <li>Crank pin journal.  The offset surface where the connecting rod bearing
+  rotates.  The is the bearing with the most stress as the full force of
+  each power stroke is applied here.  It is the location where damage will
+  likely show up first due to contaminated oil or lack of oil.
+<p>
+ <li>Counterbalance weights.  These two massive weights are part of the
+  crankshaft casting opposite the crank pin journal.  They help to
+  reduce the vibration of the engine by partially counteracting the forces
+  of the piston and connecting rod as they move back and forth.  Larger
+  engines may have additional rotating balancer shafts which can be
+  designed to do a better job of minimizing vibration than just the
+  counterbalance weights on the crankshaft.
+<p>
+ <li>Crank gear or timing gear.  A small gear mounted on the crankshaft which
+  rotate the camshaft at half the crankshaft speed to control valve timing.
+  The crank gear has half as many teeth as the camgear.
+<p>
+ <li>A precision taper is located at the magneto/flywheel end for mounting
+  the flywheel and starter components.
+<p>
+ <li>A cam (possibly removable) may be present under the flywheel location
+    for operating the breaker points on a point type ignition system.
+<p>
+ <li>An auxiliary PTO gear may be present.  This is a worm gear or other
+    mechanism for providing a secondary, usually lower speed, higher torque,
+    power output.  A typical speed reduction ratio is 8:1.  This may be used
+    to power a front wheel drive sprocket, for example.
+ </ul>
+<p>
+<li>Camshaft.  This includes the two cams which operate the valves and runs at
+ 1/2 the speed of the crankshaft.  In addition, it may have a compression
+ release mechanism to reduce starting effort and in the case of many Tecumseh
+ vertical crankshaft engines, is part of the oil pump as well.
+<p>
+<li>Oil/lubrication device.  Several types of mechanisms are used to distribute
+ engine oil to all the critical parts in a small engine:
+<p>
+ <ul>
+ <li>The piston rings (oil ring mainly) scrape oil off of the cylinder walls
+  which passes through holes in the oil ring grooves of the piston to
+  lubricate the piston pin at the top of connecting rod.
+ </ul>
+<p>
+  All other important parts are lubricated typically by one of the following
+  devices:
+<p>
+ <ul>
+ <li>Oil dipper.  An extension to the connecting rod dips into the oil sump on
+  each rotation of the crankshaft and provides lubrication by literally
+  just splashing oil onto where it is needed.  (Horizontal crankshaft
+  engines only.)
+<p>
+ <li>Oil slinger.  A pinwheel like affair rotated off of the crankshaft or
+  camshaft flings oil onto where it is needed.  (Horizontal or vertical
+  crankshaft engines.)
+<p>
+ <li>Oil pump.  A camshaft driven pump distributes oil to the important parts
+  via various passages in the camshaft, engine block, and possibly the
+  crankshaft and connecting rod as well.  (Horizontal or vertical crankshaft
+  engines.)
+ </ul>
+<p>
+<li>Governor.  This provides the feedback to the carburetor throttle plate to
+ regulate the engine speed (usually for anything but idle speed).  Thus,
+ the speed is maintained relatively constant despite changes in load and
+ a engine temperature
+<p>
+ <ul>
+ <li>Air vane governor.  The air flow provided by the flywheel/blower passes
+  by a plate which is coupled to the carburetor throttle plate acting
+  against a spring force.
+<p>
+ <li>Flyweight governor.  A spinning gear assembly with a pair of weights
+  is driven by the camshaft.  As the centrifugal force of the weights
+  increases, they move a sleeve which presses against a lever whose shaft
+  passes through the crankcase.  This lever then operates the carburetor
+  throttle plate against a spring force.
+ </ul>
+<p>
+ With both types, increasing the spring force will increase the engine speed.
+<p>
+<li>Breather.  Since the crankcase is otherwise sealed with the piston moving
+ up and down or in and out, some means is required to maintain a negative
+ pressure or else oil might be forced out various places like the bearings
+ an oil seals.  The breather is a leaky one way valve which easily passes
+ air out but is mostly blocked in the other direction.
+<p>
+<li>Muffler.  The muffler mounts on the exhaust port and serves two important
+ functions:
+<p>
+ <ul>
+ <li>Noise reduction.   As its name implies, the muffler muffles or reduces
+  the loud noise resulting from the explosions of the air-fuel mixture.
+<p>
+ <li>Spark/flame arresting.  The internal baffles of the muffler prevent most
+  sparks or flame from existing the engine even if it backfires.
+ </ul>
+<p>
+<li>Oil seals.  These are spring loaded rubber rings which prevent the escape
+  of oil through the main bearings to the outside.
+</ul>
+
+<h4><A NAME="lmengop">Engine operating principles</a></h4>
+
+These are internal combustion engines which means that the burning of the
+fuel-air mixture itself powers the engine.  External combustion engines use
+the heat from combustion to expand or boil a working fluid as in a steam
+engine.  Other examples of internal combustion engines are the rotary
+Wankel engine and gas turbines (jet engines).
+<p>
+The type of engine in your lawn mower or automobile operates on what is
+called the 'Otto' cycle (if you care).  A complete 'cycle' is needed to
+supply one power impulse to the output shaft.  All engines must provide
+the following regardless of whether they are 2 stroke or 4 stroke, rotary,
+or turbines (though turbines or jet engines operate in a continuous rather
+than pulsed manner):
+<p>
+For the following, refer to the section: <A HREF="lmtfsofse.htm">The four strokes
+of a four stroke engine in living ASCII art</a>.
+
+<p>
+<ol>
+<li>Intake stroke.  Air is mixed with fuel (gasoline for piston engines) and
+ drawn into the combustion engine.
+<p>
+ 4 stroke:  The air-fuel mixture is sucked into the cylinder through the
+ open intake valve as the piston moves downward on the intake stroke.
+<p>
+<li>Compression stroke.  The air-fuel mixture is squeezed into a smaller space.
+ This heats it to some extent and prepares it to be burnt.  (Note: in a
+ diesel engine, this heating alone causes the mixture to ignite and there
+ is no spark needed).  Compression ratios for small engines are typically
+ low compared to automobile engines.
+<p>
+ 4 stroke: Both valves are closed.  The piston moves upwards thus reducing
+ the space above it and compressing the air-fuel mixture.
+<p>
+<li>Power stroke.  The compressed air-fuel mixture is ignited at a precise
+ time by the ignition system (spark).
+<p>
+ 4 stroke:  Both valves are closed.  The heat produced by the rapidly
+ burning gases to expand and drive the piston downward and because it
+ is connected to the crankshaft, drives the load as well.
+<p>
+<li>Exhaust exhaust.  The burnt combustion products are driven out of the
+ cylinder.  These consist of carbon dioxide, carbon monoxide, water vapor,
+ oxides of nitrogen, some unburnt hydrocarbons, and numerous other mostly
+ harmful compounds.
+<p>
+ 4 stroke:  The exhaust valve is open.  The piston moves upward and pushes
+ the exhaust gasses out through the muffler.
+</ul>
+A relatively massive flywheel attached to the crankshaft provides the inertia
+to allow the engine to coast through the non-power strokes (1-3).  However,
+this is not always enough by itself - the blade on a rotary lawn mower is often
+required as well and a rotary mower may not start easily if at all without the
+blade in place and tightened securely.
+<p>
+Note that the terms '2 cycle' or '4 cycle' are often used incorrectly when
+what is meant is 2 stroke or 4 stroke.  The cycle is the entire sequence of
+events including intake, compression, power, and exhaust.  The complete cycle
+for a 4 stroke engine is two complete revolutions of the crankshaft.  The
+complete cycle for a 2 stroke engine is one rotation of the crankshaft.  This
+means that a 2 stroke engine produces a power stroke on every rotation
+of the crankshaft while a 4 stroke engine does this only on every other one.
+Thus, a 2 stroke engine will be more powerful than a similar size 4 stroke
+engine.  However, on the down side, 2 stroke engines tend to be less efficient
+in fuel utilization and pollute much more than 4 stroke engines.
+
+<h4><A NAME="lmbearing">Bearings and bushings</a></h4>
+
+The shafts of rotating parts normally are mounted in such a way that friction
+is minimized - to the extent needed for the application.  A bearing is any such
+joint with more specific terms used to describe the typical types found in
+lawn mowers - or small motors, automobile engines, or 100 MW turbines.
+<p>
+The bearings to be concerned with in a lawn mower or small engine are:
+<p>
+<ul>
+<li>Main bearings - supports the crankshaft at the blade/PTO end and at the
+ magneto/flywheel end.
+<p>
+<li>Crank pin journal - links the bottom of the connecting rod to the rotating
+ crankshaft.  This single location is most critical as it is subject to
+ the largest forces from the piston.
+<p>
+<li>Piston pin journal - links the piston to the connecting rod and is subject
+ to the full pounding of the piston but only rotates back and forth through
+ a small angle.
+<p>
+<li>Gear reduction - additional bearings may be used inside a gearbox.  For
+ example, a snow thrower or rototiller require lower speed high torque
+ outputs to drive the auger and tines respectively.
+<p>
+<li>Auxiliary power takeoff - a lower speed output for front wheel drive or
+ other secondary purpose.
+<p>
+<li>Wheels - although this is a must less critical application, higher quality
+ bearings will make for easier and smoother operation and longer life.
+</ul>
+<p>
+A variety of bearing types are available.  For most inexpensive rotary lawn
+mowers, plain bearings are most popular due to their simplicity and low cost.
+<p>
+<ul>
+<li>Plain bearings consist of an outer sleeve called a bushing in which a
+ polished shaft rotates.  The bushing may be made of a metal like brass
+ or bronze or a plastic material like teflon.  In the case of many small
+ engines, the aluminum alloy casting of the crankcase and cover are simply
+ then bored and reamed to a fine finish to accept the ground and polished
+ shaft.  There is no actual bushing.  However, if these bearings ever need
+ repair, the hole(s) in the casting would need to be enlarged and a bushing
+ would then be pressed into place and finish reamed.
+<p>
+ The shaft of a small engine is made of steel though other materials may be
+ found depending on the particular needs.  Where a metal bushing is used,
+ there must be a means provided for lubrication.  In a small engine, this is
+ provided by the engine oil via a variety of means.  For example, a typical
+ Tecumseh lawn mower engine lubricates the blade end/PTO main bearing by
+ direct immersion in the oil sump, the magneto/flywheel main bearing via
+ machined passage fed from the camgear driven oil pump, and the crank pin
+ journal by oil sprayed or dripped from above.
+<p>
+ Under normal conditions, a plain bearing wears only during start and stop
+ cycles.  While the shaft is rotating at any reasonable speed, there is 
+ absolutely no metal to metal contact and thus no wear.  With a properly
+ designed and maintained bearing of this type, a very thin oil film entirely
+ supports the shaft - thus the importance of regular oil changes to assure
+ clean oil with effective lubricating properties.
+<p>
+ To put this into perspective, the clearance between the connecting rod and
+ crank pin journal of a typical small engine crank pin journal may be
+ 0.0005 inches or less - one half of one thousandth of an inch.  This is
+ roughly 1/10th the thickness of a sheet of computer paper!   The same engine
+ may be considered worn to its limit when this clearance increases to .0015
+ inches.  Your automobile engine's crankshaft is entirely supported by these
+ types of bearings as well - and the tolerances are even finer.
+<p>
+ If oil is lost even for a short time, serious metal-to-metal sliding contact
+ results in significant wear and possible destruction of one or both bearing
+ surfaces.  Particles in dirty oil can get trapped and embedded, usually in
+ the softer outer bushing resulting in scoring and additional wear.  It is
+ your responsibility to assure that your engine oil is maintained at the
+ proper level and changed regularly.  Any warranty is not likely to cover
+ failure due to negligence.
+<p>
+<li>Frictionless bearings are usually of the ball, roller, or needle variety.
+ An inner ring called a race rotates supported by a series of balls, rollers,
+ or elongated rollers called needles inside an outer race.  An optional
+ 'cage' positions the rotating objects uniformly around the periphery.
+ There is  virtually no friction even at stand-still with these bearings.
+ However, rolling metal to metal contact is maintained at all speeds so
+ they are not quite as wear free as a properly maintained and constantly
+ rotating plain bearing.  Loss of lubrication, while not as immediately
+ destructive as with a plain bearing, will still result in accelerated
+ wear and premature failure.
+<p>
+ <ul>
+ <li>Ball bearings may be found in the main bearings of yard equipment where
+  significant sideways loads are encountered.  Lubrication is provided by
+  engine oil, gear oil in a separate gearbox, or by being packed with
+  grease either as a maintenance item or for the life of the bearing at
+  the factory.
+<p>
+ <li>Roller bearings may be used on larger engines where significant loads
+  of all types are encountered.  Since the contact between rollers is
+  a line rather than a point as it is with balls, they can support much
+  greater loads.  Lubrication needs are similar to those of ball bearings.
+<p>
+ <li>Needle bearings are found in 2 stroke engines and may be used for the
+  main bearings as well as the crank pin journal.  The 'needles' are really
+  just long rollers - a ratio of 5:1 to 10:1 is typical of length to width -
+  and there is no cage to position the needles, they are packed in around
+  the shaft as many as will fit.  Due to the type of lubrication - oil mixed
+  with the gasoline - plain bearings are generally not suitable for this
+  application.
+</ul>
+</ul>
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="lmiohcvcl.htm">&lt;&lt;Importance of having the ..</a> |
+		
+	
+<a href="../lmfaq.htm">ToC</a>
+	
+		
+| <a href="lmcranka.htm">Crankshaft anatomy&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

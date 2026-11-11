@@ -1,0 +1,549 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/manuals/sfpiins4.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Construction Guidelines for Planar Scanning Fabry-Perot Interferometer Kit</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/manuals/sfpiins4.htm">https://www.repairfaq.org/sam/manuals/sfpiins4.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<center>
+<h2>Construction Guidelines for Planar Scanning Fabry-Perot Interferometer Kit</h2>
+<h3>Version 1.03 (31-Jul-2023)
+<p>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2023
+<br>
+Sam Goldwasser<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+
+<h3>Introduction</h3>
+
+These are quidelines for the construction of Scanning Fabry-Perot
+Interferometer (SFPI) kits using planar mirrors.  There are separate
+manuals for the spherical mirror SFPI kits.
+<p>
+Planar SFPIs have the advantage that the mirror spacing is not critical and
+only determines the FSR, so it can be set over a wide range.  And for very
+large FSRs (many GHz), there is no choice as spherical mirror SFPIs cannot be
+built with an FSR much over 30 GHz.  (And none of the spherical SFPI
+kits comes even close.)   This is because it's difficult (or at least
+very expensive) to grind and polish mirrors with a very small Radius of
+Curvature (RoC).  Planar SFPIs are easily capable of being set for
+FSRs higher than 150 GHz (1 mm mirror spacing) for use with multi-longitudinal
+mode diode and DPSS lasers.
+<p>
+However, alignment for plane-plane cavities is much more
+critical than for spherical mirror cavities (of similar length)
+and optimal alignment results in a strong reflection directly
+back into the laser, which may destabilize or in extreme cases, even
+damage it.  Therefore, it may be necessary to add some type of optical
+isolator to minimize the effects of the back-reflections.  But simply
+using a low reflectance beam sampler with high power lasers will help
+greatly as the reflected beam will be further reduced in intensity.
+<p>
+Alignment precision beyond what a typical adjustable mirror mount can
+provide may be required, so all the Planar kits include additional
+parts to construct a simple micro-aligner with 2 additional PZTs.
+Using it is optional, as a precision adjustable mount may be sufficient,
+but the parts will be present if needed.  More below.
+<p>
+The benefit of the deluxe kits is that in addition
+to what's in the basic kit, they include commercial parts (mostly from
+Thorlabs) for the major mechanical assembly so that much of the scavanging
+for scrap sheet metal and other tid-bits is eliminated.  The Thorlabs
+"Cage System" provides a rigid frame allowing for initial adjustment
+which can then be locked in place.  The completed frame and other
+parts similar to what's in the planar SFPI kits are shown below.
+<p>
+<center>
+<img src="../eBay/Deluxe_Mid_SFPI_1024.jpg">
+<h3>Completed Frame and other Parts for Typical Deluxe Planar SFPI</h3>
+</center>
+<p>
+The standard planar SFPI kits include:
+<p>
+<ul>
+<li><b>Cavity mirrors</b> - Two high quality planar mirrors:
+ The size and wavelength range will depend on which kit was ordered.
+<p>
+ CAUTION: The mirror coating is extremely
+ delicate.  DO NOT TOUCH with ANYTHING.  The mirrors should be clean,
+ requiring at most to
+ have dust blown off with a air bulb.  If cleaning is needed, ONLY use laser
+ mirror cleaning techniques!  The warranty does not cover damage to mirror
+ surface!  I suggest NOT removing the mirrors from the lens tissue until ready
+ to install.  They are just mirrors!  You can purchase similar mirrors
+ separately for use as decorative aquarium stones, but those tropical fish had
+ better be really special. :-)
+<p>
+<li><b>PZT disk with center hole</b> - Requires 10-20 V to move through
+ more than 1 FSR.  A standard electronic function generator (e.g., an old
+ Wavetek) can be used as a driver if its  p-p voltage is adequate.  Or,
+ construct <A HREF="https://www.repairfaq.org/sam/manuals/sfpidrv1.gif">Scanning Fabry-Perot Interferometer Driver
+ 1</A>.  Or, add an amplifier to boost its output.  (A dual op-amp with a
+ &plusmn;15 V swing will produce up to 60 V p-p with the PZT floating, which
+ is way more than enough.
+ The PZT for all but the Violet, VIS, and NIR kits (whose mirrors are
+ larger) is 27 mm in diameter and the
+ standard hole is 4-6 mm in diameter.  For the Violet, VIS, and NIR kits, it is
+ around 35 mm in diameter with a 10-12 mm hole.
+ Other sizes are available upon request.  With care, the hole can be
+ enlarged using a tapered reamer or needle file, but larger holes reduce
+ the voltage sensitivity.
+<p>
+ The attachment of the leads to the PZT disk is rather fragile, especially
+ the one soldered to the metallic coated area which is only loosely bonded
+ to the PZT material itself.  So it would
+ be a good idea to coat the area with some 5 minute Epoxy to minimize stress,
+ and then to add a strain relief when installed in the SFPI assembly.  But
+ don't overdo it as that would restrict the motion of the PZTs.
+<p>
+ Note that these are what are known as "Drumhead PZTs" which means that
+ rather than expanding and contracting in thickness, they flex like, well,
+ the head of a drum. ;-)  Therefore the PZT should be secured ONLY around
+ its perimeter near the edge.
+<p>
+<li><b>Two additional 20 mm or 27 mm diameter PZTs without center hole:</b>
+ These can be used to construct a simple micro aligners that will take up the
+ slack so-to-speak where the adjustable mount leaves off.  They typically
+ haev a range of at least 100 &micro;R in angle adjustment.  The same
+ recommendation with respect to protecting the lead attachments apply
+ to these PZTs.  For the Deluxe kits with Thorlabs parts, tThe 27 mm
+ PZTs will need to be trimmed by 2-3 mm off the sides to fit between
+ the cage rods.  But the benefit is they will have a wider range.
+<p>
+<li><b>Silicon or germanium photodiode (PD) depending on wavelength
+ range</b> - This has a minimum active area of around
+ 2x2mm.  (The specific PD sent may be larger.)  For mounting, the leads can
+ be put through the holes in a Perf. board and secured with adhesive.  Take
+ care if soldering the silicon PD as the plastic melts very easily and that may
+ ruin it by breaking the internal wires.
+<p>
+ CAUTION: While the silicon photodiodes are inexpensive, the germanium diode
+ used in some NIR SFPIs costs $100-200.  So treat it with respect!  Keep in
+ antistatic bag until ready for installation and use proper ESD precautions
+ while handling.
+<p>
+ The PD can be connected via shielded cable directly
+ to the vertical input of your scope with a 10K ohm load resistor.
+ However, it is better to connect the PD in series with the load resistor
+ and back-bias it with a few volts (e.g., a 9 V battery).  With back bias,
+ the response (across the load resistor) will be linear up to several mW.
+ Something along the lines of:
+<p>
+<PRE>
+                            Shielded Cable
+       R Protect    PD1         Center
+   +-----/\/\-------|<|-----------------------+----o Scope input (direct)
+   |    1K ohms            +--------------+   |
+   |  (Optional)           |    Shield    |   /
+   |                       |              |   \ R Load
+   |                       |              |   / 10K ohms
+   |                       |              |   \
+   |     +| | -            |              |   |
+   +------||||-------------+              +---+----o Scope Gnd
+       B1 | |
+</PRE>
+<p>
+ Confirm that the PD is responding to light.  Room light will suffice, but
+ a better test source is a dimmable LED flashlight.  These use Pulse Width
+ Modulation (PWM) to chop the light output and a pulsed waveform should be
+ clearly visible on the scope.
+<p>
+ For initial setup, leave the entire photodiode uncovered.  Once there
+ is a signal, installing an aperture to block all but the central 1 mm or so
+ may improve resolution.  For low power lasers, a preamp would be beneficial.
+</ul>
+<p>
+<b>Deluxe kits additional parts:</b>
+<p>
+<ul>
+<li><b>Adjustable mount for PZT/rear mirror and PD:</b> Thorlabs KC1.
+<p>
+<li><b>Mount for front mirror:</b> Thorlabs CP02T or CP33T cage plate
+ with adapter for specific diameter mirror, or cage plate that the mirror
+ fits directly. 
+<li><b>Structural rods:</b> Thorlabs ER8-P4 (Cage Assembly Rod, 8" Long,
+ 6 mm, 4 Pack).  Other lengths available.  Shorter rods would make sense
+ if FSR is known ahead of time.
+<lu><b>Front  plate (option):</b> Additional cage plates for added
+ stability if the front mirror is not near the ends of the cage rods.
+</ul>
+<p>
+<ul>
+<li><b>PZT spacer/adapter ring (may not be included as these were in short
+ supply):</b> Attach the PZT to this ring
+ with adhesive if desired.  The PZT can be attached directly to the cage plate
+ but the adapter ring may make centering easier.  If not present,
+ you can be creative and come up with something similar. ;-)
+<p>
+<li><b>Piece of Perf. board:</b> Use for mounting photodiode and optinal
+ connectors.  Cut to fit.
+<p>
+<li><b>Additional parts:</b> Depending on availability, there may
+ be other odds and ends to make your life easier. :)
+</ul>
+<p>
+<b>Dual polarization option:</b>
+<p>
+For simulataneously monitoring the orthogonally polarized longitudinal modes
+of a random polarized HeNe or other similar laser, this adds an additional
+photodiode and a small polarizing beam-splitter cube (PBSC).
+The PBSC splits the beam to the two photodiodes.  The simplest mechanical
+arrangement is to attach the PDs to the PBSC directly with adhesive such
+as 5 Minute Epoxy.  This leads of this assembly can then be slipped through
+the Perf. board.  The PDs should be wired independently and sent to
+separate channels of your scope, preferably via twisted pairs.  The
+polarization axes of your laser will then need to be aligned with the
+SFPI "head".  Dual polarization parts are only availabe for 400-420 nm
+and 590-650 nm, though the required polarizing beam-splitters
+for other wavelengths can easily be
+purchased from companies like Thorlabs.
+<p>
+<b>What you must provide:</b>
+<p>
+The following are NOT included:
+<p>
+<ul>
+<li><b>Three-screw baseplate or adjustable mount for the SFPI head:</b> A
+ suitable baseplate can be fashioned from a piece of aluminum, plastic,
+ or even wood scrap and 3 4-40 machine screws with their tips rounded
+ or sharpened to a point.  Or a LARGE kinematic mount.
+<p>
+<li><b>Light and dust blocking cover:</b> Once complete, some means must
+ be provided to both prevent ambient light from affecting the photodiode
+ as well as to keep dust off the mirrors.
+<p>
+<li><b>Miscellaneous hardware:</b> Small screws, washers, etc.
+<p>
+<li><b>Adhesive:</b> 5-Minute Epoxy is recommended.  DO NOT use
+ SuperGlue&trade; (Cyanoacrylate)!!!  It can damage optics (and internal
+ bodily organs) aside from glueing fingers in embarassing locations.
+<p>
+<li><b>Wire, solder, etc.:</b> A functioning brain is also recommended,
+ though some famous people have gotten where they are without one so
+ perhaps it not really essential. ;-)
+</ul>
+<p>
+<h3>KC1 Adjustable Mirror Mount Preparation</h3>
+
+The KC1 is used to mount the PZT/rear mirror assembly on its front side
+and the photodiode and its wires, as well as the PZT wires on its rear side.
+The best way to do this is to drill and tap three 2-56 holes on the front
+side for screws to secure the PZT/rear mirror assembly on its adapter ring
+and two 2-56 holes on the back side for the PD/wiring board.
+Take care with the photodiode as it's real easy to break off the leads.
+I recommend poking it through the Perf. board and immediately securing it
+with 5 Minute Epoxy.  Then solder fine wires to the leads way from the
+body of the PD.
+<p>
+<ul>
+<li>For directly mounting the PZT without the micro-aligner,
+ use the PZT spacer/adapter/lock ring as a template to locate and drill and tap
+ three 2-56 holes on the front of the plate approximately equally spaced
+ around the outside just barely outside the periphery of the ring.
+ If building the micro-aligner, see the info below.
+<p>
+<li>Locate a pair of suitable holes in the Perf. board and use them as
+ a template to drill and tap 2-56 holes on the rear of the plate to hold it
+ in place.
+</ul>
+<p>
+If you don't have a
+drill-press and are not familiar with using small drill bits and taps, it's
+probably best to consider some alternative.  It's really easy to put holes in
+the wrong place at strange angles and to break drill bits and taps, which
+ends up making a mess because at the very least, it often impossible to
+extract the broken pieces.  (Don't ask how I know.)  Hot-melt glue or
+5 minute Epoxy are also satisfactory.
+<p>
+The PZT/rear mirror assembly and Perf. board can be attached to the cage plate
+with 5 minute Epoxy, which is soft enough that it can be removed
+and replaced if the need should arise.
+
+<h3>Kinematic PZT micro-aligner (optional)</h3>
+
+Generally, a good quality XY mount like the KC1 will provide satisfactory
+precision with no additional aids.  But a PZT micro-aligner can be added
+to make the last bit of fine tuning less traumatic. ;-)  Fancy expensive
+commercial general purpose SFPIs typically use a triple PZT stack for both
+the cavity length control and micro-alignment.  The PZTs are at 120 degrees
+around the perimeter of the mirror mount so the micro-alignment is also
+at 120 degrees.  Since the cavity length control PZT is independent here,
+the micro-aligner can be kinematic, which means it works in a similar way
+as the mirror mount with the the two axes at right angles, which is less
+confusing.  However, due to space constraints of the cage system, the
+two axes are at 45 degrees to those of the KC1.  But since there is
+no real need to go back and forth between them, this should not be an issue.
+<p>
+The diagram below shows most parts (except for the Mounting Plate)
+on the left, the successive stages of basic assembly in the center,
+and the installation on either a 30 mm cage plate or KC1 on the right.
+20 mm micro-align PZTs are shown; 27 mm PZTs will need to be trimmed
+to fit between the cage rods.
+<p>
+<center>
+<A HREF="../fp2pzt2.gif"><img src="../fp2pzt2.gif" height=800></A>
+</center>
+<p>
+The Mounting Plate can be fabricated from 1/16 inch aluminum using a
+drill press, nibbler tool, and metal files.
+There's no need for the large holes but the
+20 mm PZTs must be raised slightly and attached only around their
+perimeter to allow them to flex, but along the entire perimeter, not
+just at a few spots.  5 minute Epoxy may be used there.
+<p>
+The "bumps" are simply narrow spacers secured with a compliant adhesive
+like RTV Silicone, though a <i>small</i> dab of 5 minute Epoxy would also
+be satisfactory.  The bumps on the 20 mm PZTs are equivalent to the
+X and Y adjusters on kinematic mounts (though acting in the diagram
+at +X+Y and -X+Y), and the bump on the mounting plate is equivalent
+to the fixed pivot (which should be 0.5 mm or so taller
+to account for the thickness of the PZTs).  Bumps can be tiny washers,
+ball bearings, or just dabs of adhesive that have been allowed to harden
+before placing the PZTs on top of them.
+<p>
+The complated assembly may be attached using either screws into tapped holes
+added to any of the cage plates or adjustable mounts, or a one inch Mounting
+Ring bonded to the back of the mounting plate (not
+included) into a 1 inch bore where present (e.g., KC1, CP35).
+
+<h3>PZT and back mirror</h3>
+
+The following assume that the micro-aligner will not be used, though
+the assembly of the PZT, ring, and mirror is similar.
+<p>
+Prepare the aluminum spacer ring and attach the PZT disk to it.
+(Using the ring isn't essential but will make mounting to the Thorlabs plate
+slightly easier and provide a path for the PZT leads inside the plate
+to exit out back.)
+<p>
+Using a narrow file, create a notch wide and deep enough on one surface of
+the mounting ring for the PZT leads to pass through between the ring and
+mounting plate.
+<p>
+Use 5 Minute Epoxy to attach the PZT disk to the aluminum spacer ring
+around its perimeter.  The active (coated) side of the PZT disk should
+be facing up.
+<p>
+The back cavity mirror must be glued to the PZT.
+<p>
+The following applies to the standard 42 mm RoC mirrors in the Basic and Deluxe
+kits.  Other types may not have significant wedge and thus may not require
+this extra step.  In addition, for the longer SFPIs, both mirrors
+will be on adjustable mounts so it's easy to compensate for any wedge.
+So the following can probably be ignore:
+<p>
+<blockquote>
+The 42 mm RoC mirror substrates are ground with significant "wedge" - the
+front and back are not parallel.  Small wedge is often built in to mirrors
+like this to avoid reflections from the non-mirror surface re-entering
+the laser, but the amount of wedge here is large enough that the mirror
+itself would be set at a steep enough angle to matter.  So correcting for
+it is desireable, especially if an adjustable mount is not used for the
+PZT/rear mirror.  Therefore, it should be attached to the PZT at a slight
+angle to compensate.  (This can be avoided by attaching the mirror to the back
+of the PZT but I prefer the other way since being recessed, it would be almost
+impossible to clean if that should ever be required.)
+<p>
+Clean the active (top surface) of the PZT disk with alcohol before attaching
+anything to it.
+<p>
+Carefully remove
+the mirror from its protective lens tissue.  Locate the thinnest part and
+put a mark on the side with a pencil.  The currect angle can usually be
+obtained by placing a tiny piece of standard Avery sticky label under it on the
+thin side. :)  (Very scientific, huh?)  A 1x5 mm piece of label will suffice.
+</blockquote>
+<p>
+Center the mirror on the PZT disk taking care to orient it so the mark
+you added lines up with the Avery spacer (if applicable).
+Hold the mirror in position in
+some manner that avoids ANY contact with the coated surface.
+This is more of challenge for a planar mirror because even a flat
+object like a toothpick will contact the coating.  Larger mirrors can
+be held between fingers in surgical gloves, but for smaller ones, it
+may be time to get creative.  Don't just wing - the mirror will slip
+and adhesive get on everything. :( :)
+Apply the tiniest amount 5 minute Epoxy in 3 locations
+around its perimeter.  Just enough to secure it.  Once the Epoxy sets up,
+additional adhesive can be added to increase the strength, but there really
+isn't much stress on this thing and too much adhesive may restrict the
+motion of the PZT.
+<p>
+Set this assembly aside covered so the mirror doesn't collect dust or
+fingerprints.
+
+<h3>Front mirror</h3>
+
+The front cavity mirror is installed in the matching adapter or directly
+in the matching cage plate depending on size.  If the cage plate has a
+1 inch bore, there will be a matching adapter.  For 1/2 inch mirrors,
+the cage plate will have a smooth 1/2 inch with a set-screw to secure
+the mirror.  Some other size mirrors will also install directly without
+an adapter using either a set-screw or retaining rings.
+<p>
+The following assumes the use of an SM1ADn, where "n" is determined by the
+diameter of the mirror, threaded adapter and CP02T/CP33T cage plate.
+But a smooth bore 1 inch CP35 and ADnT may be substituted.  As a practical
+matter, there is little difference in installation and it should be
+intuitively obvious.  Remove one of the retaining rings of the adapter andd
+slip one of the cavity mirrors in, coated face first.
+Something compliant between the back of the mirror and second ring is
+required to (1) prevent crunching of the mirror (which is bad form) and
+(2) to assure that the front face seats square.  A rubber O-ring is
+ideal, but a piece of thin wire insulation (without the wire) can be curled
+up to fit.  Screw the second retaining ring in so it is just snug.  Don't
+overtighten.  Be particularly careful not to touch the coated surface and
+not to ding either surface while tightening the ring.  (Tighten from the
+AR-coated side - damage to it is less of a disaster!)  Note: Some mirrors
+may be too thick for the second ring to seat.  In that case, use three
+<i>tiny</i> dabs of 5 minute Epoxy to secure the mirror.
+<p>
+Leave one retaining ring in the CP02T/CP33T cage plate and adjust it to
+be flush with the front.  Screw the adapter
+with mirror in fully so it seats against the retaining ring with the mirror
+coating facing the front of the SFPI.  Snug is fine, do NOT over tighten.
+
+<h3>Focusing lens (if used)</h3>
+
+A focusing lens with a focal point roughly in the center of the cavity
+may improve performance under some conditions but is not essential, expecially
+if the beam is narrow (1 to 2 mm).
+<p>
+<center>
+<A HREF="SFPI_Frame1.jpg"><img HEIGHT=400 src="SFPI_Frame1.jpg" border=0></A>
+&nbsp; &nbsp;
+<p>
+<h2>Completed SFPI on Three-Screw Adjustable Base (not included)</h2>
+</center>
+<p>
+This shows an SFPI using a home-built adjustable front mirror mount (rather
+than the cage plate with adapter) as well as the optional iris diaphragm
+aperture.  The rear mirror on PZT is
+glued to a piece of pill bottle which is then secured in the KC1 using its
+set-screw, though a short piece of 1" diameter metal cylinder woult be more
+rigid.
+
+<h3>Initial Adjustments</h3>
+
+The planar cavity SFPI does not require a specific mirror spacing but
+the spacing will determine the FSR, so setting it appropriately before
+doing any of the alignment is recommended - alignment will be lost if
+the distance is changed.  FSR equals c/2L where c is the speed of light
+and L is the cavity length/mirror spacing.  So, for example, to view the
+modes of a red 633 nm HeNe laser, a spacing of 7.5 cm (~3 inches) would
+provide an FSR of around 2 GHz.  To actually view the modes of a DPSS
+or diode laser (as opposed to simply confirming single longitudinal
+mode / single frequency operation), a very large FSR may be desired -
+more than 100 GHz.
+<p>
+Note that the spacing for a given FSR
+using the plane-plane SFPI is twice that of the confocal SFPI.
+So a 2 GHz FSR is a mirror spacing of 7.5 cm (~3 inches).
+<p>
+<ol>
+<li>Attach the PZT to your ramp generator.  Connect the photodiode to your
+ scope's vertical input with a resistor of a few kohms across it.  Reverse
+ biasing it with a few V (e.g., an old 9 V battery) will improve response.
+ If a proper photodiode preamp is available, that's even better!
+<p>
+<li>Trigger the scope externally using a sync signal from the ramp generator,
+ or the ramp itself if none is available.
+<p>
+<li>Set up the test laser so it is aimed precisely into the center of the input
+ mirror.  Any lens should probably not be used at this time as it
+ may make things more confusing.  Where there is more than a mW or so of
+ laser power, a beam sampler should be used.  Not only to protect the mirrors
+ from excessive intra-cavity power in resonanace, but to reduce the amount
+ of back-reflected light into the laser aperture, which may destabilize it or
+ in extreme cases, even damage it.
+<p>
+ Unlike the confocal SFPI, a single longitudinal mode (single frequency)
+ laser does not provide any real benefit during setup of a planar SFPI
+ as long as the laser being used is reasonably stable.
+<p>
+ Ideally, an optical isolator should be used to block back-reflections
+ but they are pricey, even on
+ eBay.  For polarized lasers, a "poor man's isolator" would be beneficial
+ This consists of a Polarizing Beam-Splitter (PBS) and Quarter WavePlate (QWP).
+ The beam from the laser is aligned to pass through the PBS with the QWP
+ oriented at 45 degrees rotates the return beam by 90 degrees so it is
+ reflected by the PBS.  However, some lasers are particularly sensitive to
+ back-reflections and even a single real optical isolator won't be enough.
+ Also of benefit would be sampling the beam using a microscope slide or
+ other uncoated or AR-coated planar window will reduce the amplitude of
+ the back-reflections by the square of the sampling ratio.  For example,
+ using a 5 percent beam sampler will result in only around 0.25 percent of the
+ input power being returned to the laser aperture.  Unfortunately, for some
+ lasers, that still may be orders of magnitude more than they can tolerate
+ and remain stable.
+<p>
+<li>Drive the PZT with a 10 to 20 V p-p ramp (or triangle) at 50 to 100 Hz.
+<p>
+<li>Observe where the intra-cavity beam is located on each mirror and
+ adjust alignment so it is more or less centered and tight.  Then check
+ the position of the photodiode and adjust it if necessary so the trasmitted
+ beam is centered on it.  The room lights should probably be out for all this
+ as the ambient lighting will be picked up by the photodiode
+ and the spots will be really faint.
+<p>
+<li>With the scope's vertical sensitivity turned up, watch for any signal from
+ the photodiode that is synchronized to the ramp.  If the blips go negative,
+ reverse the PD polarity.  If your cavity distance
+ and mirror alignment were perfect, the result scanning through two
+ FSRs for a laser with 3 longitudinal modes would look similar to the
+ photo below with the SFPI set to an FSR of around 1.78 GHz (8.4 cm
+ mirror spacing).
+</ol>
+<p>
+<center>
+<A HREF="../sfpihds.jpg"><img  HEIGHT=400  src="../sfpihds.jpg" border=0></A>
+<br>
+<h2>SFPI Display of Melles Griot 05-LHR-151 5 mW HeNe Laser</h2>
+</center>
+<p>
+With a planar SFPI, there cannot be any higher order spatial modes, so
+for the most part, mirror alignment adjusts the effective finesse or
+resolution - the amplitude and thinness of the peaks.  So what is
+likely is that there will be some indication of
+lumps but nothing well defined like the photo, above.  That will require
+fine tuning the alignment first using the KC1, and then the micro-aligner
+if that has been constructed.  If not dialed in precisely, a series of
+spots will appear on the inner surfaces of the mirrors.  When the normals
+to the mirrors share a common origin, they will be in a straight line.
+If not, it will be curved.  The objective of the adjustments will be to
+compress the spots into a line and then toward the center until they
+collapse into a single spot at which point the displayed peaks should become
+tall and thin. ;-)
+
+<h3>Additional information on SFPIs</h3>
+
+For more on SFPIs, see the sections in "Sam's Lsaer FAQ" starting with:
+<A HREF="../laserlia.htm#liasfpi">Scanning Fabry-Perot Interferometers</A>.
+<br>
+<hr>
+</body>
+</html>

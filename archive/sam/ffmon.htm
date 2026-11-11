@@ -1,0 +1,1861 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/ffmon.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Approaches to Using Fixed Frequency or Non-Standard Monitors on
+ PCs</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/ffmon.htm">https://www.repairfaq.org/sam/ffmon.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Approaches to Using Fixed Frequency or Non-Standard Monitors on PCs
+</h1>
+<h2>
+Version 1.69 (01-Dec-06)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="ffmtoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#ffmpre">Preface</A>
+ <ul>
+ <li><A HREF="#ffmaac">Author and Copyright</A>
+ <li><A HREF="#ffmnot">Important Notice</a>
+ <li><A HREF="#ffmwar">WARNING and DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#ffmint">Introduction</a>
+ <ul>
+ <li><A HREF="#ffmtbm">That Bargain Monitor</a>
+ <li><A HREF="#ffmffb">Fixed Frequency Monitor Basics</A>
+ </ul>
+<p>
+<li><A HREF="#ffmpro">Problems with Fixed Frequency Monitors on PCs</a>
+ <ul>
+ <li><A HREF="#ffmsri">Scan Rate Issues</a>
+ <li><A HREF="#ffmsyn">Sync Options - Separate, Composite, Sync-On-Green, Sync
+  Polarity</a>
+ <li><A HREF="#ffmcon">Video Connectors</a>
+ <li><A HREF="#ffmpap">Plug-and-Play</a>
+</ul>
+<p>
+<li><A HREF="#ffmalt">Alternatives to the Dumpster</a>
+ <ul>
+ <li><A HREF="#ffmhev">High-End Video Cards</a>
+ <li><A HREF="#ffmffm">Special Video Cards for Fixed Frequency Monitors</a>
+ <li><A HREF="#ffmtam">Then Again, Maybe it Will Work</a>
+ </ul>
+<p>
+<li><A HREF="#ffminf">General Fixed Frequency Monitor Related Information
+ Sources on the Web</a>
+ <ul>
+ <li><A HREF="#ffminf0">General Video Card and Monitor Information</a>
+ <li><A HREF="#ffminf1">Web Sites with Monitor Specifications</a>
+ <li><A HREF="#ffminf2">Additional Fixed Frequency Monitor Information
+   Links</a>
+ </ul>
+<p>
+<li><A HREF="#ffmmmi">Miscellaneous Monitor Information</A>
+ <ul>
+ <li><A HREF="#ffmtdr">Tweaking the Deflection Rates of a Fixed Frequency
+ Monitor</A>
+ <li><A HREF="#ffmmi0">IBM 6091 Monitor Information</A>
+ <li><A HREF="#ffmmi0a">Using the IBM 6091 with Standard Video Cards</A></A>
+ <li><A HREF="#ffmmi1">Comments on IBM 9515 Monitor</A>
+ </ul>
+<p>
+<li><A HREF="#ffmbhsga">Complete Plans for Sync-on-Green Adapter</a>
+ <ul>
+ <li><A HREF="#ffmbhsgad">Sync-on-Green Adapter Description</A>
+ <li><A HREF="#ffmbhsgas">Sync-on-Green Adapter Schematic</A>
+ <li><A HREF="#ffmbhsgap">Sync-on-Green Adapter GAL PALASM File</A>
+ <li><A HREF="#ffmbhsgaj">Sync-on-Green Adapter GAL JEDEC Fuse Map</A>
+ </ul>
+<p>
+<li><A HREF="#ffmcas">Case Studies - Using, Modifying, Adapting Fixed
+ Frequency Monitors</a>
+<ul>
+<li><A HREF="#ffmstx">Steve's Experience With a Special Video Card</A>
+ <li><A HREF="#ffmqad">Check and Dirty Way to Display Lower Resolutions on
+  Fixed Frequency Monitor</A>
+ <li><A HREF="#ffm6091">Using IBM 6091 Monitor on PC</A>
+ <li><A HREF="#ffm9517">Modifying an IBM 9517 XGA Monitor for SVGA
+  Operation</A>
+ <li><A HREF="#ffmsts">SVGA to Sun Fixed frequency Monitor - Complete
+  Solution</A>
+ <li><A HREF="#ffm1950">Using a Sony GDM-1950 Monitor on a PC</A>
+ <li><A HREF="#ffm1960">SVGA to Sun/Sony GDM-1960</A>
+ <li><A HREF="#ffm2020">Sun 365-1335 or Sony GDM-20E20 Monitor on PC</A>
+ <li><A HREF="#ffm20mac">Converting Sun Workstation Monitors for use on
+  MACs</A>
+ <li><A HREF="#ffm7965">Mitsubishi HL7965 Workstation Monitor on PC</A>
+ </ul>
+</ul>
+<A NAME="ffmpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="ffmaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="ffmnot">Important Notice</A></h3>
+
+The author of this document has absolutely no affiliation of any kind with any
+hardware, software, or service company which has a vested interest in
+advocating one solution over another.
+<p>
+The purpose of the FF Mon FAQ is to provide unbiased information to aid
+in making an informed decision when considering the acquisition of a fixed
+frequency monitor for use on a PC.
+<p>
+Contributions of a non-commercial nature to enhance this document are welcome.
+
+<h3><A NAME="ffmwar">WARNING and DISCLAIMER</A></h3>
+
+Attaching an incompatible video source to a monitor (i.e. the signals do not
+have the proper voltages as with digital or analog levels) or using the wrong
+scan rate are both potentially risky to the monitor.
+<ul>
+<li>Incorrect signal levels or connections can damage the monitor's input
+ circuitry and/or the output drivers of the video (or other interface card
+ if you happen to accidentally plug it into an Ethernet or serial card by
+ mistake!).
+<p>
+ Don't arbitrarily attach the monitor cable to a socket just because they
+ physically mate or have the same number of pins!
+<p>
+<li>Setting the scan rate of a monitor outside its specified range may
+ overstress components and can result in expensive damage to power supply
+ and deflection components.  Whether or not this happens with a given model
+ depends on its design and there is no way to know beforehand which monitors
+ are susceptible.  Some monitors will be perfectly happy working beyond their
+ pusblished specs; others will politely shut down with a warning; but all too
+ many will go up in smoke!
+<p>
+ The designers of fixed frequency monitors originally designed for specific
+ workstation applications may very likely have taken even less care in dealing
+ with unexpected scan rates as their environment is closed and such treatment
+ isn't expected.  Spectacular and expensive failure is quite possible.
+<p>
+ It can be very risky to experiment with scan rate settings either because you
+ have no idea of what is valid or to 'explore the envelope'.  Either of these
+ could result in expensive repairs.  The only hint you may get just before the
+ smoke comes out are unusually poor geometry or instability but it would be
+ foolish to depend on these possible warnings.
+</ul>
+Some of the procedures described in this document may require going inside the
+monitor to make adjustments or add circuitry.  There are both high voltages
+(25 kV OR MORE for the typical 19 inch workstation monitor) and AC line voltage
+all too easily accessible once the case is removed.  Don't even think about
+doing anything inside a monitor unlil you have read and understood everything
+in the document: <A HREF="safety.htm">Safety Guidelines for High Voltage
+and/or Line Powered Equipment</A>.  Something that looks innocent can really
+ruin your whole day!
+<p>
+We will not be responsible for any damage to your monitor or ego that may
+result from such experiments!
+<p>
+<A NAME="ffmint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="ffmtbm">That Bargain Monitor</A></h3>
+
+So, you have got the deal of a lifetime - a brand spanking new (or at least
+low mileage) high resolution 21" computer monitor that came from a DEC Alpha
+Workstation - or a Sun or HP - or Macintosh.  Or, perhaps an IBM 9517 which
+you were told has a super sharp bright picture. The cost to you: $1 or you
+haul it away.  Is this really and truly a good deal if you use a PC?
+<p>
+Questions like this come up all the time on comp.sys.ibm.pc.hardware.video.
+<p>
+These are either fixed frequency monitors or are incompatible with the common
+VGA/SVGA 'standards' in some other ways.
+<p>
+This document provides unbiased information on the problems and possible
+solutions to dealing with these monitors on PCs (where the term 'PC' mostly
+refers to DOS/Windows based x86 and Pentium boxes but may include Macs and
+Linux based systems as well).
+<p>
+Note that some/many/most newer workstation monitors may indeed NOT be fixed
+Therefore, before spending a lot of time, effort, and money to adapt a fixed
+frequency monitor that isn't, attempt to determine its specifications from the
+manufacturer - all you may need is a cable!  That workstation monitor may be
+identical internally to a one sold for PCs but with a different model number
+and video caonnector.  Why is this now the case?  Simple: Because it is
+cheaper for a monitor manufacturer to produce a single standard model rather
+than a one for the large PC market and another for the much smaller workstation
+market - even if it is somewhat simpler with a lower parts cost.
+
+<h3><A NAME="ffmffb">Fixed Frequency Monitor Basics</A></h3>
+
+A fixed frequency monitor is designed to operate at a single scan rate which
+usually means a single resolution such as 1280x1024.  (Strictly speaking,
+the horizontal resolution is determined by the number of pixels sent on
+each scan line by the video card but this is a detail.)  PCs running DOS,
+Windows 3.1, WFWG3.11, and Win95 generally require the monitor to run at
+multiple scan rates - one for each corresponding resolution.  For example,
+boot at 640x400, VGA at 640x480, Windows at 1024x768 - and each one may
+have a correspondingly different horizontal and vertical scan rate.  (Some
+workstation monitors are actually dual frequency but this does not really
+help since neither of the supported scan rates are what a PC wants.)
+<p>
+Monitors like the IBM 9517 are not fixed frequency but are XGA compatible.
+This was an IBM abortion and not compatible with VGA/SVGA even for booting
+your PC.
+<p>
+These types of monitors are generally manufactured by the best names in
+the industry such as Hitachi, Mitsubishi, Philips, Sony, etc. - and are
+thus often of very high quality.  The specifications of these monitors may
+exceed those of any but the very top-of-the-line monitors used on PCs.
+The origianl cost of these monitors was probably much higher than an
+equivalently sized PC monitor as well.  They become available as high
+performance workstations (whose technology advances nearly as quickly
+as that of PCs) are decommissioned or upgraded.  The cost to you now is
+usually very low since they just take up space and you know how bean
+counters at big companies like to have all their beans lined up in a nice
+neat row :-)
+<p>
+Some fixed freqeuncy monitors may be from Apple Macintosh computers as well.
+<p>
+It would be nice if all you needed was a cable to use one of these beauties
+on a PC.  Unfortunately, there is often much more involved in making these
+freebie monitors conveniently usable on a PC under DOS, Windows, or Win95.
+<p>
+Some of these comments - a la scan rates - may not apply to PCs running
+oprating systems like Linux where scan rate switching isn't required (at least
+after boot).
+<p>
+And, just because a monitor has BNC connectors (or does not have a VGA/SVGA
+connector or cable) does not necessarily mean that is is a fixed frequency
+monitor and therefore a problem.  Many top quality monitors only have BNC
+connectors and might be fully compatible with most video cards running
+PC/DOS/Winddows.  The only way to be sure is to obtain the detailed video,
+sync, and scan rate specifications.
+<p>
+Are you totally confused yet? :-)  The purpose of the FF Monitor FAQ is to try
+to sort through all the confusing compatibility issues and alternative
+solutions to enable you to use that fabulous monitor.
+<p>
+<A NAME="ffmpro"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Problems with Fixed Frequency Monitors on PCs</h2>
+
+While workstation monitors look like PC monitors - they have a CRT and
+a power cord, after all - there are generally significant differences
+that prevent these from being a 'drop in' solution.
+<p>
+The following are the principle difficulties in using a fixed frequency
+monitor on a PC:
+<ul>
+<li>Scan rates.  PCs particularly with DOS/Windows/Win95 may require a number
+  of different resolutions and scan rates during any work or play session.
+  Workstations use one scan rate and resolution at all times including
+  during boot.  That is why the monitors are called fixed frequency.  The
+  video source must match the parameters of the monitor withing a few percent,
+  not enough variance for typical PC applications.
+<p>
+<li>Sync.  PC VGA and SVGA video cards generate separate horizontal and
+  vertical sync signals.  Some may be programmable to generate what is
+  known as composite sync.  Workstation monitors may require composite
+  sync or sync-on-green (this will be explained later).  They rarely use
+  separate H and V sync like a PC.  Many PC video cards can only provide
+  separate syncs.  Some workstation monitors are already set up for various
+  sync schemes but not all.
+<p>
+<li>Video connectors.  PCs nearly always have a miniature DB15 VGA/SVGA type
+  connector.  Workstation monitors may use separate BNC connectors (3, 4,
+  or 5 depending on sync options), a 13W3 Sun style connector, or something
+  totally non-standard.
+<p>
+<li>Plug-and-play.  The newest PCs and video cards expect to determine the
+  capabilities of your monitor (to a greater or lesser extent) by either
+  reading the monitor sense lines on the VGA connector or interrogating
+  the ACCESS.bus.  Neither of these will be present by default with a
+  workstation monitor.  The PC may come up in glorious black and white
+  or refuse to operate in all modes.
+</ul>
+
+<h3><A NAME="ffmsri">Scan Rate Issues</A></h3>
+
+A workstation runs at a fixed resolution and scan rate.  All software is
+written to interface to the screen via a windowing system like X-Windows.
+PCs, on the other hand, must be able to drive a monitor at several quite
+different resolutions and scan rates:
+<ul>
+<li>DOS - 640 x 400 default boot screen.
+<p>
+<li>DOS programs - 640 x 400 (EGA compatible), 640 x 480 (basic VGA), etc.
+  (Note: CGA resolutions like 320x200 are emulated by modern video cards
+  by running at 640x400 (for this example) and replicating pixels and lines.)
+<p>
+<li>Windows/Win95 - 640x480, 800x600, 1024x768, 1280x1024, 00x1200 etc.
+  depending on your hardware and software.  Normally, the highest resolution
+  that the video card/monitor combination supports with good quality will be
+  used most often.  Some options like a larger desktop than the physical
+  display with dynamic resolution switching require multiple scan rates,
+  however.
+</ul>
+Therefore, a fixed frequency monitor driven from a typical video card (e.g.,
+ATI GPT) running under DOS/Windows has a problem.  For a typical workstation
+monitor with a resolution of 1280x1024 operating at 78 kHz horizontal scan
+rate and 72 Hz vertical scan rate (fixed frequency), you only have one
+option - and that precludes the display of the DOS boot messages or running
+DOS applications or games.
+<p>
+Note: for the remainder of this document, I use the term 'Windows' to refer to
+MS Windows 3.1, WFWG 3.11, and Win95/98 interchangeably.
+<p>
+If all you run is Windows - never any DOS games or other applications that
+require you to suspend to a full screen DOS shell or run in native DOS mode -
+then you can always use a second VGA monitor for booting and then just switch
+over to the high resolution monitor once Windows comes up.  Or, just assume
+your system **will** come up and forgo a display until the Windows desktop
+appears.
+<p>
+Unfortunately, there are a lot of DOS applications still used so this not
+a solution for everyone.
+<p>
+However, if you mostly use your PC for Autocad or Lotus, then this is a
+perfectly reasonable option if you have a suitable video card.  (However,
+read on).
+
+<h3><A NAME="ffmsyn">Sync Options - Separate, Composite, Sync-On-Green, Sync
+ Polarity</h3>
+
+In order for the monitor to display a picture, it must know where the lines
+and frames begin.  The synchronization signals - sync for short - are pulses
+sent for each line (horizontal sync) and each frame (vertical sync).  There
+are 3 common schemes for doing this:
+<ul>
+<li>Separate horizontal and vertical sync signals.  Individual wires are
+   used for the H and V sync.  This is the scheme that has been used for
+   most PC video cards including MGA, EGA, VGA, and SVGA.  It makes for
+   easier hardware - particularly in the monitor.
+<p>
+<li>Composite sync signal.  The H and V syncs are logically combined (usually
+   either OR or XOR) and sent on a single wire.  This is used by Macintosh
+   computers and Sun workstations, for example.  Basically, it saves a wire.
+<p>
+<li>Sync-on-green.  The composite sync signal from (2) is combined with the
+   green video signal (it actually goes on the bottom, from 0 to .3 V or so).
+   The Red and Blue video signals usually do not have sync added to them but
+   this is not always the case.  Note that theoretically, (1) or (2) are best
+   as there is no interaction between the digital sync signals and analog
+   video signals but in practice, the difference is usually undetectable.
+</ul>
+The users manual for your monitor will identify which options the monitor
+supports.  OK, so you don't have a users manual:
+<p>
+For monitors with BNC connectors, it may be possible to determine capabilities
+by counting them:
+<ul>
+<li>3 BNCs - Sync-on-green only (Red, Green+Sync, Blue).
+<p>
+<li>4 BNCs - Composite sync (R,G,B,CS) and possibly sync-on-green.
+<p>
+<li>5 BNCs - Separate syncs (R,G,B,HS,VS) and possibly composite or
+           sync-on-green as well.
+</ul>
+Where: HS=Horizontal Sync, VS=Vertical Sync, and CS=Composite Sync.
+<p>
+Monitors with a 13W3 connector will generally accept composite sync though
+the other options may be possibilities as well.
+<p>
+Some video cards (like the ATI GUP, GPT, and others) can be programmed
+in their SETUP or INSTALL program (or possibly from a command line option)
+to generate composite sync on the H or V sync wire.  These will then work
+(at least with respect to sync) with a monitor requiring either separate
+or composite syncs.  A few high-end cards can generate sync-on-green as well.
+<p>
+Sync polarity (whether the pulses are negative or positive going) may
+be an issue depending on the design of the monitor.  However, most
+suitable video cards can be programmed for either polarity.
+<p>
+Therefore, depending on your video card, the sync issue may be a non-issue.
+<p>
+Otherwise, an adapter will be needed.  Unfortunately, this is not just
+a cable as circuitry is required to combine the signals.  If you are
+electronically handy, it is a simple matter to construct a suitable
+circuit but if you are not, this may be a show-stopper unless you can
+locate a commercial product.  Note that the term 'electronically handy' means
+a bit more than knowing how to read the resistor color code.  The circuits
+are very simple.  However, for the adapter to work well at the very high
+video bandwidths of the typical (1280x1024) display, you must use the proper
+75 ohm coax and connectors, and assemble the circuitry itself in a shielded
+metal box, if possible.  Otherwise, there could be degredation of the
+displayed video - ghosting, ringing, and less than optimal image sharpness.
+If you will be making a cable from scratch, there will be some  precision
+(very tiny pins) crimping or soldering needed to construct the VGA and/or
+13W3 (typically) connectors as well.
+
+<h3><A NAME="ffmcon">Video Connectors</h3>
+
+Most common are BNCs - individual coax connectors for each signal - and
+13W3 which combines 3 coax and 10 normal signal pins in a single shell.
+Except for some really strange custom connectors, adapters are available:
+<ul>
+<li>VGA to 3, 4, or 5 BNC (might as well get the 5 BNC as the increased cost
+  may not be that great and it is the most flexible should you come across
+  another 'bargain'.
+<p>
+<li>VGA to 13W3. (e.g., Sun monitor).
+<p>
+<li>VGA to MAC (regular DB15).  (e.g., Macinstosh monitor).
+</ul>
+
+<h3><A NAME="ffmpap">Plug-and-Play</h3>
+
+When your PC boots, it may interrogate the monitor to determine what its
+capabilities are.  With BNC or 13W3 connectors, the needed signals are
+generally not present.  Some manufacturers are addressing this by providing
+little widget boxes that plug in as part of an adapter cable to provide
+these signals but these are not common at the present time.  Therefore,
+you may need to take steps in hardware or software to get around this
+deficiency.
+<p>
+<A NAME="ffmalt"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Alternatives to the Dumpster</h2>
+
+Perhaps that deal-of-the-century doesn't sound so great at this point.  Don't
+give up yet.  There are several possibilities.
+<ul>
+<li>High-end video cards with compatible scan rates.  As noted above, for
+  use with applications that run entirely in windows and/or at a single
+  resolution and scan rate.  A separate monitor (or no monitor in case you
+  trust your setup) is used for booting.
+<p>
+<li>Special fixed frequency monitor video cards.  These emulate VGA and SVGA
+  video cards as far as the PC's software is concerned but drive the monitor
+  at a fixed (high) resolution and scan rate even when booting (in most
+  cases).
+</ul>
+And who knows?  Sometimes you can get lucky with your $20 bargain basement
+video card!
+
+<h3><A NAME="ffmhev">High-End Video Cards</A></h3>
+
+If you already have an investment in a good video card (not a $29 K-Mart
+special), then this may be a possibility.
+<ul>
+<li>Advantages: you may already have one and it will be good for a PC
+  compatible multiscan monitor in the future.
+<p>
+<li>Disadvantages: Not usable for booting and DOS applications.  It may not
+  be capable of generating composite sync or sync-on-green (if needed)
+  without an adapter.
+</ul>
+<p>
+(From: Royce Liao (liaor@uci.edu).)
+<p>
+ALL modern video adapters (PCI/AGP) incorporate programmable dot clock
+generators.  So *any* decent video card should be able to output the
+necessary scan-rate video signal.  Unfortunately, unless you have access
+to a special refresh-rate utility, and you *know* the precise frequency,
+this info still won't help your situation.
+<p>
+<A HREF="http://www.scitechsoft.com/">Scitech</A> Display Doctor has a Windows
+based display utility which works with majority of contemporary video cards.
+The control center lets you tweak video refresh rates down to 0.1Hz, and
+adjust H/V sync polarity.
+
+<h3><A NAME="ffmffm">Special Video Cards for Fixed Frequency Monitors</A></h3>
+
+These are special video cards. You remove and mothball your current video card
+(if you already have one) and replace it with one of these.  You then install
+the special video drivers (where required) supplied with the card.
+<p>
+Some models appear to be quite competitive in terms of graphics performance
+(Windows accelerated, etc.) so these may represent an attractive alternative
+even for high performance applications like Autocad.
+<p>
+After specifying the monitor type and/or scan rate parameters for your
+monitor, the behavior of the card should be essentially transparent to your
+software.  That is, programs think they are talking to a VGA/SVGA card but
+the output of the card drives your fixed frequency workstation monitor
+properly at all times - including booting, DOS games, Windows, etc.
+<ul>
+<li>Advantages: full DOS/Windows, possibly high performance (some models claim
+  Windows accelerated video performance), drop-in solution (no adapters,
+  circuits, cables, etc.).
+<p>
+<li>Disadvantages: cost if you already have an expensive video card, possible
+  lack of wide or long term support (these are not exactly Fortune-500
+  companies).
+</ul>
+Mirage and Photon appear to be the most well known of the companies providing
+fixed frequency video cards.  However, there are others.
+The listing below is in alphabetical order and may change without
+prior notice :-).  In other words, the position of any given company doesn't
+represent any sort of recommendation.
+<ol>
+ <li>MaxVision<br>
+     Phone: 1-800-533-5805 ext. 202
+<p>
+ <li><A HREF="http://www.mirage-mmc.com/index.php?cPath=358">Mirage
+     Video Cards</A><br>
+     3457 A W. El Segundo Blvd.<br>
+     Hawthorne, CA 90250<br>
+     Phone: 1-800-228-3349, fax: 1-888-816-8324<br>
+     Email: info@mirage-mmc.com<br>
+     Web: http://www.mirage-mmc.com/index.php?cPath=358
+<p>
+ <li><A HREF="http://www.si87.com/">Software Integrators Inc.</A><br>
+     851 Bridger Drive<br>
+     Suite 4<br>
+     Bozeman, MT 59715<br>
+     Phone: 1-800-547-2349 or 1-406-585-8866<br>
+     Fax: 1-406-586-9145<br>
+     Contact: Joe McCarthy<br>
+     Email: mccarthy@si87.com or sales@si87.com<br>
+     Web: http://www.si87.com/
+<p>
+ <li><A HREF="http://www.ultraspec.com/">UltraSpec Cables, Inc.</A><br>
+     Phone: 1-800-622-2537<br>
+     Web: http://www.ultraspec.com/
+<p>
+     Cables and adapters in addition to a PCI card for using a fixed frequency
+     monitors on a PC.
+</ol>
+
+<h3><A NAME="ffmtam">Then Again, Maybe it Will Work</A></h3>
+
+Having been told by all the experts that his monitor was fixed frequency and
+a pain to use:
+<p>
+(From: Malik (psxpic@malik.eng.net).)
+<p>
+Against all odds i thought what the hell and tried it anyway...  And hey,
+presto! it works perfectly, no problems.
+<p>
+I had to feed a vertical sync into the monitor which would not have been
+possible because the feed for this was not present on the plug.  However it
+was possible to remove one of the unwanted wires in the RGB lead and reconnect
+it to the unused Vsync input.
+<p>
+It appears Sony just fit the appropriate lead/connectors to the monitor
+depending on its purpose then badge it for Sun, etc.
+<p>
+The model number is GDM-17E20 its absolutely a superb monitor...  If you can
+get one I suggest you do.
+<p>
+I know there is a 17E10 and 17E11 that are older.... the situation maybe the
+same with these.
+<p>
+<A NAME="ffminf"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Web Information</h2>
+<h3><A NAME="ffminf0">General Video Card and Monitor Information</h3>
+
+Here are some on-line sources of information relating to monitors, video cards,
+and fixed frequecy monitors issues.  Unfortunately, many other useful Web
+sites have vanished.
+<p>
+<ul>
+<li>The Fixed frequency monitor FAQ and Sync-on-green FAQ are available at:
+<p>
+<ul>
+<li>The <A HREF="../index.html">Sci.Electronics.Repair FAQ</A>
+</ul>
+<p>
+<li>Some other sites with information and links relating to fixed frequency
+  monitors (in no particular order):
+<p>
+<ul>
+<li><A HREF="http://www.devo.com/video/">
+ http://www.devo.com/video/</A>
+ (Fixed Frequency Video FAQ).
+<p>
+<li><A HREF="http://www.sunhelp.org/">
+ http://www.sunhelp.org/</A>
+ (SunHELP)
+<p>
+<li><A HREF="
+ http://grafi.ii.pw.edu.pl/gbm/matrox/nonvgamon.html">
+ http://grafi.ii.pw.edu.pl/gbm/matrox/nonvgamon.html</A>
+ (Using Matrox cards with non-VGA monitors)
+</ul>
+<p>
+<li>The Comp.sys.ibm.pc.hardware.video FAQ includes a lot of general
+  information as well as some directly related to fixed frequency monitors:
+<p>
+   The FAQ has received news.answers approval, so it should be archived
+   at rtfm.mit.edu and all mirrors, as well as in news.answers and
+   comp.answers.  There used to be a Web site with the FAQ but it appears to
+   have vanished.
+</ul>
+
+<h3><A NAME="ffminf1">Web Sites with Monitor Specifications</h3>
+
+Check out the following when you have an SVGA, MAC, or workstation (possible
+fixed frequency) monitor and need to know its specifications:
+<p>
+<ul>
+<li><A HREF="http://www.monitorworld.com/">Monitor World</a>
+</ul>
+<p>
+This company sells various video products that may be
+useful.  However, I am only recommending it for information on
+monitor specifications as I have not evaluated its products.
+Note that since this data comes from undetermined
+sources, it isn't always to be accurate - check with more than one site to see
+if they agree.  And, these Web sites come and go - I apologize for the likely
+broken links but believe it or not, I am not usually informed when any
+particular company goes belly-up or their Marketing department decides that
+fluff is more important than substance and they pull the plug on the pages
+with useful information. :(
+
+<h3><A NAME="ffminf2">Additional Fixed Frequency Monitor Information
+ Links</A></h3>
+
+(Some of these may be listed elsewhere in this document as well.)
+<p>
+(From: Tony Chau (tonychau@netcore.ca).)
+<ul>
+<li><A HREF="http://www.devo.com/video/">http://www.devo.com/video/</A>
+<li><A HREF="http://www.mirage-mmc.com/leader.htm">http://www.mirage-mmc.com/leader.htm</A>
+<li><A HREF="http://www.si87.com/">http://www.si87.com/</A>
+<p>
+</ul>
+<A NAME="ffmmmi"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Miscellaneous Monitor Information</h2>
+<h3><A NAME="ffmtdr">Tweaking the Deflection Rates of a Fixed Frequency
+ Monitor</a></h3>
+
+Pulling a fixed frequency monitor by more than a few percent will likely
+be a problem.  I know this is not the answer you were looking for but
+getting a new inexpensive video card, video card designed for fixed frequency
+monitors, or new monitor, may be a better solution.
+<p>
+If you insist, the adjustment would be called something like horizontal
+oscillator, horizontal frequency, or horizontal hold.  If you do tweak, mark
+everything beforehand just in case you need to get back to the original
+settings.
+<p>
+WARNING: Make sure you understand the issues involved in working inside a
+monitor!  See the document: <A HREF="safety.htm">Safety Guidelines for High
+Voltage and/or Line Powered Equipment</A>.  Something that looks innocent can
+really ruin your whole day!
+<p>
+There is also some risk to the monitor - changing it too far may result in
+damage either immediately (the horizontal output transistor or power supply
+may blow) or increase component stress reducing reliability and shortening
+its life.  There is no way to know without looking at the design.
+
+<h3><A NAME="ffmmi0">IBM 6091 Monitor Information</A></h3>
+
+(From: Richard Shima (RShima@att.net).)
+<p>
+The IBM (Sony?) display 6091-19 is a 5-BNC type, and is, indeed, a fixed
+frequency type.  Therefore, you'll need certain special modes available in a
+display adapter to accommodate it, beside the correct cable, of course.
+<p>
+I'm pretty certain that IBM 6091 was actually made by Sony, and, in their
+better displays, they still use the 5-BNC (separate signal) video cable, i.e.,
+on their current SE series, etc.  I'm certain you could buy a Sony (or other)
+replacement cable that would do the job, tying your display to a PC-type
+15-pin VGA/SVGA "D" video connector, once you know you have a video card that
+will support it.
+<p>
+(From: Justin Thiessen (thiessen@physics.arizona.edu).)
+<p>
+I *know* the officially sanctioned video modes for my version (the
+6091-19 (_not_ the 6091-19i)) limit the refresh rate to 67 Hz, but the one
+I have happily syncs to quite a few non-standard modes:
+
+<PRE>
+#
+# Following modelines are for linux and work under XFree86 3.3.6
+#
+# H - 69.84 kHz; V - 61.37 Hz; Pixel Clock 138 Mhz
+# Generated by Colas XFree Modeline Generator
+Modeline "1464x1098" 138 1464 1524 1844 1976 1098 1100 1112 1138 -hsync -vsync 
+
+# H - 71.15 kHz; V - 79.58 Hz; Pixel Clock 108 Mhz
+# Borrowed from somewhere
+Modeline "1152x864" 108.00 1152 1156 1300 1518 864 865 868 894 -hsync
+-vsync
+
+# H - 72.76 kHz; V - 59.84 Hz; Pixel Clock 78 Mhz
+# Thrashed out on my own - small black space at sides of screen
+Modeline "768x576" 78.00 768 792 888 1072 576 579 585 608 -hsync -vsync
+DoubleScan
+
+# H - 66.67 kHz; V - 66.14 Hz; Pixel Clock 64 Mhz
+# Thrashed out on my own - almost fills screen
+Modeline "640x480" 64.00 640 728 856 960 480 482 484 504 -hsync -vsync
+DoubleScan
+</PRE>
+
+Note the use of the DoubleScan parameter on the last couple of modes,
+which just (as I understand) draws each scan line twice, allowing the use
+of (much) lower apparent modes than the 6091-19 is technically capable of
+displaying.  Also, if I'm clear on what's happening here, then the
+"real" pixel clocks for the last two modes are twice the number listed in
+the modeline.  (Each line is drawn twice, therefore there are twice as
+many pixels actually being plotted as the modeline indicates, yielding
+double the clock.)  Please correct me if I'm wrong on this.  This
+indicates, however that the monitor is capable of handling signals with
+bandwidth up to 156 Mhz, quite a bit higher than its official rating.
+<p>
+And, truthfully, as much as I relish the real estate of the higher
+resolution modes, the actual dpi of the monitor combines with the
+relatively low refresh rates to make them a bit harder on the eyes than
+I'd prefer.  The 1152x864 mode is (by my guess) probably the one
+best-suited to the actual physical limits of the monitor.  If I manage to
+get 2nd monitor hooked up and running under X I'll probably drop both of
+them down to this relatively eye-friendly mode.
+<p>
+I still don't get a boot-up screen, nor do I ever expect to without some
+hardware hacking.  The low-end modes are just fun for trying out
+games.  Since my video card (ATI Xpert98) has an apparent text-mode dot
+clock limit of 60 Mhz (according to the SVGATextMode documentation), I
+haven't been able to get a text screen yet, although exploring the
+DoubleScan parameter in that context may eventually yield results.
+<p>
+Now I take no responsibility for just how strangely I have all the pots
+inside the monitor tweaked.  I never use anything that doesn't function in
+"Mode 3", and if I do happen to flip the switch to Mode 1/Mode 2, any
+signal that actually resolves is, at best, displaced and suffers severe
+fish-eye effects, but in mode 3, my monitor looks pretty good for being 10
+years old.  I also have no idea how much I'm shortening the life of the
+monitor by running it at these scan rates, nor do I have any clue as to
+just how far over actual spec I'm pushing it.  (Who knows what the 
+internal Sony/IBM engineering specs were for this beast?)  I'd give a lot
+for a manual, but such seem to be scarce for most of the old workstation
+monitors available.
+<p>
+As a side note, a great deal of info is available on the 6091-19 on a
+few web sites:
+
+<ul>
+<li><A HREF="http://www.lysator.liu.se/~wallman/ibm6091.html">Joakim Wallman's
+ IBM 6091 19" Color Monitor Page</A>
+<li><A HREF="http://www.stud.uni-siegen.de/sven.koelsch/ibm6091.html">Sven
+ Koelsch's IBM 6091/19 Fixed-Frequency Monitor Page</A>
+</ul>
+<p>
+Well, I can't stop tinkering.
+<p>
+I still have a IBM 6091-19, though now it's the 2nd head of a dual-head
+setup, and in an effort to match up the capabilities of my two
+monitors, (gdm20e20 rebadged by sun + the 6091-19) I've scraped out a
+few more modelines to fit the VESA-standard resolutions.
+<p>
+Here are some more:
+<p>
+<PRE>
+# V - 64 Hz
+ModeLine "ibm1400x1050" 133.38 1400 1480 1800 1912 1050 1052 1064 1090
+ -hsync -vsync
+
+# V - 71.21 Hz
+ModeLine "ibm1280x960" 122 1280 1324 1716 1720 960 963 974 996 -hsync -vsync
+
+# V - 79.58 Hz
+ModeLine "ibm1152x864" 108.00 1152 1172 1316 1518 864 865 868 894 -hsync -vsync
+
+# V - 86.26 Hz
+ModeLine "ibm1024x768" 103 1024 1124 1364 1500 768 770 782 796 -hsync -vsync
+
+# V - 59.90 Hz
+ModeLine "ibm800x600" 81 800 804 908 1080 600 604 622 626 -hsync -vsync
+ DoubleScan
+</PRE>
+<p>
+Including the modeline above for 640x480, these cover the VESA standard
+resolutions (though not at the suggested refresh rates) from 640x480 to
+1152x864.  Also included are a nice 1280x960 mode (with a desirable 4:3
+pixel ratio) and a large but very readable 1400x1050 mode.
+<p>
+Note that all these modes fill the screen, with the exception of 1024x768,
+which has some (quite small) black space on the left and right, and
+800x600, which has a slight bit more black space on the left and right,
+but is still quite usable.
+<p>
+I am now using a Matrox Millenium II to drive the monitor, if it is of any
+concern.
+
+<h3><A NAME="ffmmi0a">Using the IBM 6091 with Standard Video Cards</A></h3>
+
+<b>Using the IBM 6091 with the Cornerstone ImageAccel</b>
+<p>
+(From: Helmut P. Einfalt (hp.einfalt@t-online.de).)
+<p>
+The IBM 6091-xx series can be driven by Cornerstone ImageAccel cards, at
+least by various ImageAccel 1 cards, including the MCA version MC1608C/11.
+And, above all, there are drivers for DOS, WfW, Win9x, NT3.51, *and* NT 4.0.
+A detailed account on how to install the MC1608C/11 and a 6091-19 (the
+procedure being the same for all other 6091s) can be found at
+<p>
+<ul>
+<li><A HREF="http://www.rzuser.uni-heidelberg.de/~utrunk/IA_6091.HTM">Helmut's
+ Cornerstone ImageAccel MC1608C/11 and the IBM 6091-19 Monitor Page</A>.
+</ul>
+<p>
+<b>Cirrus BIOS Modifications to use the IBM 6091-19i Monitor</A></b>
+<p>
+(From: u1061771156@csi.com)
+<p>
+I've gone through the more interesting task of adjusting the BIOS ROM on my
+video card so the boot screen and DOS work nicely as well. (It's a Cirrus 5429
+based card).  I still have the Vesa modes to fix, next weekend maybe. ;-)
+<p>
+The IBM 6091-19i has 4 modes of operation (1-4). The first three are based
+around 1024 lines of vertical resolution and are good for "desktop"
+use (I'm using the 1024x1024 mode under X as you can't get much more
+that 1024 Pels across with a 5429 since it's limited to 85MHz clock.
+As I currently only have 1M ram that fits neatly with 8bpp too.)
+<p>
+Mode 4 (the mode that was introduced new with the 6091-19i and was not
+supported in the old 6091-19) is more interesting for VGA use.  It runs 63 kHz
+horizontal rate, and 120 Hz vertical rate, with a vertical total of 528. This
+is a similar geometry to the VGA modes, except about twice the rates. In
+practice I find the monitor will sync quite happily with vertical frequencies
+of 120 to 140 Hz and a bit beyond. (Incidentally this mode was originally
+intended for 3-D viewing with LCD shutter glasses synced to the vertical, and
+left/right images displayed on alternate frames by software.)
+<p>
+So the first step was to double the Pel clock (and hence all timings).  After
+some serious disassembly, I found the first three PLL multiplier/divisor
+values for the Pel clocks are in a little table.  The table contains the six
+values: 4A 2B  5B 2F  42 1F.  For the particular BIOS version I have
+(CL-GD5429 Bios Version 1.00a) this is at BIOS address 0812, on an older BIOS,
+I found the same table with the same values at a slightly different address.
+If you do a search in any Cirrus 542X rom it's probably there somewhere.
+Paraphrasing a little (see the .pdf on the Cirrus Website) the Pel clock is
+generated by taking a 14.318 MHz crystal, and multiplying it by the first
+value and dividing by the second (ignoring the bottom bit) e.g. the first is
+14.318*74/42 = 25.22 MHz and the second is 14.318*91/46=28.32 MHz. The bottom
+bit of the denominator byte is a "divide by 2" bit, if cleared the frequency
+is doubled. That's so convenient!! Hence step one is to clear these bottom
+bits, making the table into  4A 2A  5B 2E  42 1E  and magically the monitor
+syncs up in all VGA modes!
+<p>
+(There are a few peculiarities to note when actually editing the
+EPROM. Firstly, like all Bios extension ROMs, there is a checksum at the end
+so the sum of all bytes in the rom is zero. Hence you have to add 3 to this to
+make the checksum correct. Secondly, the EPROM is a 27C512-150 which is 64Kx8
+when the Bios is only 32K. There are two identical copies in it, only the
+later one is used as the A15 pin is wired high on the adapter card. Thirdly,
+and most annoyingly, the PC address line A0 is connected to eprom pin A14, and
+all the others shift down one. So Bios location 0812 (hex) is in the eprom at
+address 8409 when it's on the programmer. Why on earth did they do that?!)
+<p>
+If all you want is to be able to see your boot messages, this could be
+enough. However the image is a few columns too wide for the screen so you
+can't see both sides at the same time (the front panel control lets you move
+it side to side a bit.) So I've increased the frequencies a little more to
+make the Pels closer together. The table I'm currently running with contains
+51 2A 62 2E 47 1E To maintain the correct scan rates and centering one has to
+increase the vertical total (CRTC register 0) as well as these frequency
+tweaks. This meant finding the VGA CRTC mode tables, a search for 2D 27 28 90
+2B A0 finds the first one (mode 0 40x25 text). Each mode table (there are 1D
+of them) follows in steps of 40 hex bytes. Some experimentation showed that
+there are 3 different timings to change:
+
+<pre>
+Modes starting 2D xx xx xx xx A0   I changed to 31 xx xx xx xx B1
+Modes starting 2D xx xx xx xx 80   I changed to 32 xx xx xx xx B1
+Modes starting 5F                  I changed to 66
+</pre>
+
+With these changes, all VGA modes produce a nicely centered image that is close
+to filling the screen (about 1cm black top and bottom).
+<p>
+There are a few mode tables that didn't start 2D or 5F which I have left alone
+for now, and affect Vesa modes, and there are other vesa tables elsewhere in
+the eprom that ought to be changed one day.
+<p>
+Note: I've been working on a Cirrus 5429 chip. Doing the same with a 5428 gave
+somewhat erratic results (shimmering characters) sometimes.  I think this is
+due to the Sequencer(0x1F) register which sets the memory clock rate being
+initialized slower on the 5428 (1E versus 22 hex) so it's failing to get enough
+bytes out of ram in time to display.  22 is out of spec range for the 5428 but
+putting it up to that as an experiment seemed to fix it. ;-) I didn't find
+where that register is loaded in the EPROM though, but that fix is fine for a
+little DOS program to fiddle the modes. As I intend using the 5429 I haven't
+pursued it any further.
+<p>
+The only obvious side effect I'm left with is that the cursor flashes too
+fast. I can live with that! ;-) Maybe there's a register somewhere to fix that
+too?
+<p>
+Of course any noxious game that meddle with the registers direct may well
+screw up (but note that the Pel divisor registers are not part of regular VGA
+so may survive.)
+<p>
+I note that sync polarity doesn't affect the monitor at all. I guess its
+circuits accept either polarity and invert if necessary. Also, sync rates out
+of range don't appear to damage the monitor, it just loses sync quietly and
+the picture goes haywire. ;-)
+<p>
+I have the original "User Guide" and "Maintenance Guide" books which makes
+life a lot easier.
+<p>
+P.S. I see that the IBM 9517 can do 1024x768 if you can get to 85Hz vertical
+interlaced, maybe starting with a 1240x768 interlaced mode and fiddling the
+frequency up in a similar way that I did would work for the original question?
+Of course interlaced modes are yucky unless you're viewing images...
+
+<h3><A NAME="ffmmmi1">Comments on IBM 9515 Monitor</A></h3>
+
+(From: Peter Duck (pduck@zetnet.co.uk).)
+<p>
+This monitor is not VGA/SVGA but XGA2, as used in IBM PCs with the short-lived
+MCA bus.
+<p>
+There are said to be ISA (PCI?) cards that drive them, but a friend
+(ironically, ex-IBM, but not the 'toy computer' end) who bought a stack of the
+monitors cheap never found any.
+<p>
+It is near-enough to impossible to convert 'properly' and can't be made to run
+at  the 31.5 start-up scan-rate without the HOT (Horizontal Output Transistor)
+dropping dead.
+
+<p>
+<A NAME="ffmbhsga"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Complete Plans for Sync-on-Green Adapter</h2>
+<h3><A NAME="ffmbhsgad">Sync-on-Green Adapter Description</A></h3>
+
+Here, courtesy of Berg Hawkins, are complete plans for
+a cable adapter to convert separate H and V sync to the requirements of
+many common fixed frequency monitors.  This approach uses a programmable
+logic device (GAL) to implement the function.  For an alternative using
+discrete logic, see the document:
+<A HREF="vidconv.htm">Notes on Video
+Conversion</A> in the section "Notes on VGA to RGB Conversion".
+<p>
+Note that he also sells both the cable as well as just the required
+GAL (CMOS programmable logic device) already programmed so providing this
+information is truly in the spirit of these FAQs and the "open source
+movement".  Thanks.  However, purchasing the completed unit may indeed be
+the best use of your resources.
+<p>
+(From: Berg Hawkins.)
+<p>
+I sell a sync-on-green cable for single frequency monitors.  It is $75 and
+will run any of a half dozen monitors from most standard video cards on the
+PC and Macintosh G3/G4. The cable contains a chip, a CMOS GAL programmed
+with the appropriate equations. It fits in a plastic housing that goes
+over/around a 15 pin VGA connector which plugs into the video card.  A source
+of +5 VDC from a Molex connector tied to one of the power supply outputs on
+the PC drive it.
+<p>
+I have been selling it for about 7 years and have done hundreds of monitors.
+The equations are free, so is the schematic. I will even mail the programmed
+chips to anyone who does not have a GAL programmer for a small fee.
+The best is to buy the whole cable since it takes me about 45 minutes to
+make one and involves some close-in soldering work.
+<p>
+I have done Sony GDM1950s, Hitachi 4119s and CM2086s, IBM 6091s and other
+monitors.
+<p>
+<b>Important note:</b> This setup WILL NOT allow DOS full screen or most
+video games or DVDs to be played, all other Windows applications will work
+with most any video card.
+<p>
+The equations are included in the .PDS file, they go right into the AMD
+PALASM compiler and have been tested. The output of the compiler is in the
+.JED file, this is what is fed to the PAL programmer. It has
+also been tested. Note that ONLY CMOS GALs such as
+16V8s are to be used since the circuit needs to SOURCE a few milliamps into
+the GREEN color output. This is done by means of an approximately 330-360
+Ohm resistor (1/4 Watt) connected between pin 12 of the GAL and the GREEN
+video signal. One weakness of this circuit is that power from a 4 pin Molex
+connector on the PC's power supply output needs to be applied to pin 20 of
+the GAL. Also note that power to the chip MUST be applied BEFORE a signal is
+input, otherwise the chip can latchup and be damaged. This is accomplished
+by connecting the power Molex connector while the PC is powered off, then
+plugging in the VGA connector at any time.
+<p>
+Any speed 16V8 can be used, down to -25 parts, speed is not critical.
+<p>
+A crude diagram showing the chip, the VGA connector and the BNCs is included
+in the file diagram.txt.
+<p>
+It is best if all unused GAL inputs are connected to ground. I can program
+and mail the 16V8 chip and the 330 Ohm resistor for $5. I sell the complete
+cable for $75 (recommended since it takes me about 45 minutes to make one -
+I have been making these for 7 years and have some experience in this. It
+involves some close-in soldering work.
+<p>
+I also sell 20" single-frequency monitors, refurbished and tested for $200
+to $250 with 6 month warranty.
+<p>
+The chip can be used without the resistor if composite sync is needed (a
+small minority of monitors will not sync-on-green, in this case connect pin
+12 directly to the horizontal sync input of the monitor. Some monitors need
+POSITIVE composite sync, in this case pin 13 can be output to the composite
+sync of the monitor. In either of the 2 above cases, 4 BNCs will be needed
+instead of 3.
+<p>
+I have also successfully used this circuit to connect to monitors under
+Linux.  Macintosh PCs also work, including PowerMacs, G3s and G4s. Over 8
+types of 17" and 20" single-frequency monitors have been successfully driven
+by this circuit.
+<p>
+Send me email if you have problems syncing up a
+monitor.  My phone number is 1-310-839-6430 in Los Angeles. 
+
+<h3><A NAME="ffmbhsgas">Sync-on-Green Adapter Schematic</A></h3>
+
+<pre>
+
+VGA Connector							Coaxes
+from PC video card						to Monitor
+Pin
+
+ 1 -------------------------------------------------------------> RED
+ 2 -------------------------------------------------+-----------> GREEN
+ 3 -------------------------------------------------|-----------> BLUE
+ 4 NC                                               |
+ 5 ---------+                                       |
+ 6 ---------|---------------------------------------|-----------> RED RETURN
+ 7 ---------|---------------------------------------|-----------> GREEN RETURN
+ 8 ---------|---------------------------------------|-----------> BLUE RETURN
+ 9 NC       |                                       |
+10 NC       |                                       / 330 Ohm to
+11 NC       |                                       \ 360 Ohm
+12 NC       |                                       / 1/4 Watt
+            |               To +5V from PC >----+   |
+            |               4 pin Molex conn.   |   |
+            |                       +----U----+ |   |	Top of chip
+13 ---------------------------------|1      20|-+   |	has notch
+14 ---------------------------------|2      19|- NC |	indicated by U
+ To Pin10 (+sync) OR Pin20 (-sync) -|3   1  18|- NC |
+ To Pin10 (+sync) OR Pin20 (-sync) -|4   6  17|- NC |
+15 NC       |                  GND -|5   V  16|- NC |
+            |                  GND -|6   8  15|- NC |
+            |                  GND -|7      14|- NC |
+            |                  GND -|8      13|-    | Use pin 13 for +Csync
+            |                  GND -|9      12|-----+ Use pin 12 for -Csync
+            +-----------------------|10     11|- GND
+                                    +---------+
+
+</pre>
+
+<h3><A NAME="ffmbhsgap">Sync-on-Green Adapter GAL PALASM File</A></h3>
+
+<pre>
+;PALASM Design Description
+
+TITLE    HVB2G2.PDS
+PATTERN  A
+REVISION 3.0
+AUTHOR   Berg Hawkins, 1-310-839-6430, Los Angeles.
+COMPANY
+DATE     8/21/96
+
+CHIP VIDEO_SYNC PAL16V8
+
+; POS/NEG SEPARATE INPUT(selected with POL).
+; SYNC ON GREEN OUTPUT, connect to the GREEN video output
+; (pin 2 on VGA connector) through a 330-360 Ohm 1/4 watt resistor.
+; Pin 12 can also drive separate/composite sync input directly, i.e. 
+; Hitachi 4119
+;
+; Histor
+; HVB2G0.pds:   Initial design
+; HVB2G1.pds:   removed extra 3 outputs, added LED output to pull down LED
+; HVB2G2.pds:   Added separate sync polarity control for H/V sync this takes
+                care of NEW Cirrus Logic CLMODE (i.e., H- V+)
+
+PIN  1    HSYNC     COMBINATORIAL  ; Horizontal sync input from VGA pin 13
+PIN  2    VSYNC     COMBINATORIAL  ; Vertical sync input from VGA pin 14
+PIN  3    POLH      COMBINATORIAL  ; Polarity control for horizontal sync
+PIN  4    POLV      COMBINATORIAL  ; Polarity control for vertical sync
+PIN  10   GND                      ; Connect to pin 5 of the VGA connector
+
+PIN  12	  SYNC_ON_GREEN1 COMBINATORIAL  ; composite sync or sync-on-green out,
+                       ; OUTPUT can also drive a composite sync input on the
+                       ; monitor directly
+
+PIN  13	  LED       COMBINATORIAL  ; drives LED, active low when OK, can also
+                       ; be used to sync monitors that need POSITIVE composite
+                       ; sync input
+
+PIN  20   VCC   ; Connect +5 VDC from the PC's power output (red cable) INPUT
+
+;------------------------- Boolean Equation Segment ------------------
+
+EQUATIONS
+
+SYNC_ON_GREEN1 = /HSYNC*/POLH*/VSYNC*/POLV + /HSYNC*/POLH* VSYNC* POLV +
+		 HSYNC* POLH*/VSYNC*/POLV +  HSYNC* POLH* VSYNC* POLV
+
+LED            = /SYNC_ON_GREEN1
+
+;----------------------------------- Simulation Segment ------------
+SIMULATION
+TRACE_ON SYNC_ON_GREEN1 HSYNC VSYNC LED POLV POLH
+
+SETF   /HSYNC /VSYNC POLH POLV
+CHECK  /SYNC_ON_GREEN1 LED
+
+SETF    HSYNC /VSYNC POLH
+CHECK  /SYNC_ON_GREEN1 LED
+
+SETF   /HSYNC VSYNC=20
+CHECK  /SYNC_ON_GREEN1 LED
+
+SETF    HSYNC VSYNC POLH POLV
+CHECK   SYNC_ON_GREEN1 /LED
+
+SETF   /HSYNC /VSYNC /POLH /POLV
+CHECK  SYNC_ON_GREEN1 /LED
+
+SETF    HSYNC /VSYNC
+CHECK  /SYNC_ON_GREEN1 LED
+
+SETF   /HSYNC  VSYNC
+CHECK  /SYNC_ON_GREEN1 LED
+
+SETF    HSYNC  VSYNC
+CHECK   /SYNC_ON_GREEN1 LED
+
+TRACE_OFF
+</pre>
+
+<h3><A NAME="ffmbhsgaj">Sync-on-Green Adapter GAL JEDEC Fuse Map</A></h3>
+
+<pre>
+PALASM4  PAL ASSEMBLER   - MARKET RELEASE 1.5a (8-20-92)
+ (C) - COPYRIGHT ADVANCED MICRO DEVICES INC., 1992
+
+
+TITLE   :HVB2G2.PDS               AUTHOR : Berg Hawkins, 1-310-839-6430
+PATTERN :A                        COMPANY:
+REVISION:3.0                      DATE   :8/21/96
+
+PAL16V8
+VIDEO_SYNC*
+QP20*
+QF2194*
+G0*F0*
+L0000 00000000000000000000000000000000*
+L0032 00000000000000000000000000000000*
+L0064 00000000000000000000000000000000*
+L0096 00000000000000000000000000000000*
+L0128 00000000000000000000000000000000*
+L0160 00000000000000000000000000000000*
+L0192 00000000000000000000000000000000*
+L0224 00000000000000000000000000000000*
+L0256 00000000000000000000000000000000*
+L0288 00000000000000000000000000000000*
+L0320 00000000000000000000000000000000*
+L0352 00000000000000000000000000000000*
+L0384 00000000000000000000000000000000*
+L0416 00000000000000000000000000000000*
+L0448 00000000000000000000000000000000*
+L0480 00000000000000000000000000000000*
+L0512 00000000000000000000000000000000*
+L0544 00000000000000000000000000000000*
+L0576 00000000000000000000000000000000*
+L0608 00000000000000000000000000000000*
+L0640 00000000000000000000000000000000*
+L0672 00000000000000000000000000000000*
+L0704 00000000000000000000000000000000*
+L0736 00000000000000000000000000000000*
+L0768 00000000000000000000000000000000*
+L0800 00000000000000000000000000000000*
+L0832 00000000000000000000000000000000*
+L0864 00000000000000000000000000000000*
+L0896 00000000000000000000000000000000*
+L0928 00000000000000000000000000000000*
+L0960 00000000000000000000000000000000*
+L0992 00000000000000000000000000000000*
+L1024 00000000000000000000000000000000*
+L1056 00000000000000000000000000000000*
+L1088 00000000000000000000000000000000*
+L1120 00000000000000000000000000000000*
+L1152 00000000000000000000000000000000*
+L1184 00000000000000000000000000000000*
+L1216 00000000000000000000000000000000*
+L1248 00000000000000000000000000000000*
+L1280 00000000000000000000000000000000*
+L1312 00000000000000000000000000000000*
+L1344 00000000000000000000000000000000*
+L1376 00000000000000000000000000000000*
+L1408 00000000000000000000000000000000*
+L1440 00000000000000000000000000000000*
+L1472 00000000000000000000000000000000*
+L1504 00000000000000000000000000000000*
+L1536 11111111111111111111111111101111*
+L1568 00000000000000000000000000000000*
+L1600 00000000000000000000000000000000*
+L1632 00000000000000000000000000000000*
+L1664 00000000000000000000000000000000*
+L1696 00000000000000000000000000000000*
+L1728 00000000000000000000000000000000*
+L1760 00000000000000000000000000000000*
+L1792 01010111011111111111111111111111*
+L1824 01101011011111111111111111111111*
+L1856 10010111101111111111111111111111*
+L1888 10101011101111111111111111111111*
+L1920 00000000000000000000000000000000*
+L1952 00000000000000000000000000000000*
+L1984 00000000000000000000000000000000*
+L2016 00000000000000000000000000000000*
+L2048 11111111000000000000000000000000*
+L2080 00000000000000000000000000000000*
+L2112 00000000111111001111111111111111*
+L2144 11111111111111111111111111111111*
+L2176 111111111111111110*
+C1C97*
+0D34
+</pre>
+(Checksum may be incorrect - a character was included that doesn't display
+properly.)
+<p>
+<A NAME="ffmcas"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<h2>Case Studies - Using, Modifying, Adapting Fixed Frequency Monitors</h2>
+<h3><A NAME="ffmstx">Steve's Experience With a Special Video Card</A></h3>
+
+As noted below, this is an experience with one particular video card - I don't
+even know which one or how old it was.  Thus, these comments should only be
+used as an indication of what kinds of questions to ask when selecting a card
+and the possible problems you may encounter.
+<p>
+(From: Steven Leinwand (steve_leinwand@hp.com).)
+<p>
+It is true that the most expensive solution (a special video card) is usually
+the best solution. I bought one a while back, and in the interest of 'truth in
+advertising' let me describe some of the drawbacks you will experience. In all
+fairness, I will mention that I haven't tried all the video boards out there,
+and am basing my comments entirely on my experience. Your mileage may vary.
+<p>
+Fixed frequency monitors like those commonly supplied with Sun workstations
+cannot change video modes like multiscan monitors. In order to get them to
+work in DOS modes, video card vendors like Mirage and Photon modify the VGA
+bios on their cards to 'emulate' *some* DOS modes at a fixed scan frequency.
+This works well in  *some* modes, works poorly in others, and doesn't work at
+all in some.
+<p>
+These BIOS mods interfered with motherboard timing on two VLB motherboards.
+I tested it with four video cards, the problem was the VGA BIOS). Video
+wouldn't sync after warm-booting.  I had to shut the machine off, and wait
+about 10 minutes.  In all fairness, I have not heard of similar problems on
+ISA and/or PCI cards, so that problem may be on that vendor's VLB boards only.
+<p>
+It usually works best in Windows, where the display is always in the same
+graphics mode, and mode switching isn't an issue. It works for *some* DOS 
+programs, depending on what video mode they try to put the display in. It
+works poorest on games, which seem to insist on using weird and/or
+undocumented VGA video modes. At least half my games either wouldn't work,
+or their image was so small, as to negate any benefit of having a large
+monitor.
+<p>
+** Modes less than the monitor resolution will usually be displayed at 1/2 the
+screen size of the monitor ** 
+<p>
+This was a surprise to me, and was never mentioned in any of the ads for video 
+boards. I've been told this is a fact of physics, and cannot be overcome in 
+fixed frequency monitors.  (Editor's note: it can be overcome using a scan
+converter but this is much more complex than a BIOS change!  See the "Notes
+on Video Conversion" document for further information on scan converters.)
+<p>
+I finally sold both monitor and video card, bit the bullet, and bought a 17"
+SVGA monitor and card. If I didn't have the VGA BIOS timing problems with
+the VLB version, I might have been able to re-use the video card, but
+was tired of the hassle. Since I got the monitor for free (obsolete product
+destined for the dumpster), it wasn't that bad. My advice is ask detailed 
+questions before you buy, get a money-back guarantee, and test with all your
+applications. If you can't live with the results, exercise your guarantee.
+<p>
+Also check out support capabilities. One of those vendors I mentioned was very 
+responsive and helpful. The other one started out awful, but made some 
+progress in responsiveness over time.
+
+<h3><A NAME="ffmqad">Check and Dirty Way to Display Lower Resolutions on Fixed
+ Frequency Monitor</A></h3>
+
+(From: Karl Ivar Dahl (karl_ivar.dahl@capgemini.no).)
+<p>
+I have a SONY GDM-1961 (a.k.a. VRT 19-HA) fixed frequency (sync-on-green)
+monitor.  This monitor displays 1280x1024, but I have recently been able to
+tweak it to display 1024x768, 800x600, and 640x480!
+<p>
+So now I can play Quake full screen under NT and Linux :-)
+<p>
+The clue is to reduce the visible resolution and add the missing pixels to the
+front and back porch. The image of course doesn't fill the entire screen, but
+it's a *lot* better than having none at all.
+<p>
+I have made a page with my experiences with making a fixed-sync monitor work
+on linux, NT and win95 to help others with access to these extraordinarily
+cheap and large workstation monitors:
+<ul>
+<li><A HREF="http://vmlinux.org/jocke/mirror/www.geocities.com/SiliconValley/Foothills/4467/fixedsync.html">Connecting the SONY GDM-1961 to a PC</A>
+</ul>
+
+<h3><A NAME="ffm6091">Using IBM 6091 Monitor on PC</A></h3>
+
+(From: Wayne Rothermich (wayne@utilicom.com))
+<p>
+I had to learn what signals my IBM 6091 monitor wanted versus what signals my
+video card provided by experimenting with a scope and a pulse generator for a
+day or so.  In my case, the monitor wanted inverted polarity on the horizontal
+sync line.  I found that I could provide this by triggering a lab pulse
+generator from the video card's horizontal sync output, and using the
+resulting (inverted) pulse to sync the monitor.  Fortunately, the timing
+jitter in the pulse generator was low enough that no horizontal jitter was
+noticeable on the display.
+<p>
+I used the monitor this (rather nerdy) way for a while, and then I noticed a
+small ad in Nuts and Volts magazine for a moderate cost ($200) translating
+video card made by a company called Ming.  I ordered one, and it turned out to
+be a modified (new video BIOS chip, a few wire jumpers) Jaton 58P card, which
+uses the Tseng Labs ET6000 chip.
+<p>
+This has proven to be a good solution to my fixed frequency monitor problem.
+I ran comparative benchmarks using the Landmark PCPRO test program, and the
+speed of this card - when writing to video RAM - is similar to other high
+performance (Matrox Millenium 2, Diamond Stealth 3D 2000), cards I have tested
+recently.  Ming makes cards for several different fixed frequency monitors, so
+they could be a viable choice for many of your readers.  (Not sure if Ming
+still exists. - Sam)
+
+(From: Fabio Quenel (info@tesitalia.it).)
+
+I've managed to get this monitor to work in Windows98 at 1152x864, 76 Hz, in
+true color (24 bit) with a 4 MB Matrox Mistique card (170 Mhz RAMDAC). I had
+tried with the 1280X1024 resolution but the refresh was 67 Hz and it really
+was straining for my eyes (also the definition lacked a bit). In DOS mode the
+monitor doesn't work and I don't know if thare is a way (if you know
+please tell me).
+<p>
+(From: Sam).
+<blockquote>
+Since the 6091's lowest horizontal scan rate is 63 kHz, you would need over a
+120 Hz vertical scan rate for the 640x400 boot screen.  Even if you could
+set up your video card for 120 Hz or more refresh, the 6091 almost certainly
+won't work at too much beyond its 67 Hz vertical scan rate specification.
+</blockquote>
+Here is what my mga.mon file of the Matrox seems like:
+<PRE>
+[User-Defined.Customized IBM 6091 Mode 3 new]
+1280X1024 = NI, *User-Defined_Customized_IBM_6091_Mode_3_new_,(1280X1024)
+1152X864 = NI, *User-Defined_Customized_IBM_6091_Mode_3_new_,(1152X864)
+1024X768 = NI, *User-Defined_Customized_IBM_6091_Mode_3_new_,(1024X768)
+
+[*User-Defined_Customized_IBM_6091_Mode_3_new_,(1280X1024)]
+PIXEL_CLK = 119089
+H_DISP = 1280
+H_FPORCH = 16
+H_SYNC = 160
+H_BPORCH = 240
+H_SYNC_POL = 0
+V_DISP = 1024
+V_FPORCH = 3
+V_SYNC = 3
+V_BPORCH = 18
+V_SYNC_POL = 0
+INTERLACE_ENABLE = 0
+
+[*User-Defined_Customized_IBM_6091_Mode_3_new_,(1152X864)]
+PIXEL_CLK = 112064
+H_DISP = 1152
+H_FPORCH = 72
+H_SYNC = 96
+H_BPORCH = 288
+H_SYNC_POL = 0
+V_DISP = 864
+V_FPORCH = 2
+V_SYNC = 15
+V_BPORCH = 36
+V_SYNC_POL = 0
+INTERLACE_ENABLE = 0
+
+[*User-Defined_Customized_IBM_6091_Mode_3_new_,(1024X768)]
+PIXEL_CLK = 94252
+H_DISP = 1024
+H_FPORCH = 32
+H_SYNC = 192
+H_BPORCH = 128
+H_SYNC_POL = 0
+V_DISP = 768
+V_FPORCH = 11
+V_SYNC = 15
+V_BPORCH = 33
+V_SYNC_POL = 0
+INTERLACE_ENABLE = 0
+</PRE>
+
+<h3><A NAME="ffmm9517">Modifying an IBM 9517 XGA Monitor for SVGA
+ Operation</A></h3>
+
+(From Arnoud van der Wel (a.p.vanderwel@student.utwente.nl).)
+<p>
+Well, I did this to two of them about a year ago. Of course I wrote down what
+I did, so I'll try to reconstruct for you what I did.
+<p>
+There are two modifications, one is the H-FREQ control, the other is the
+H SHIFT VGA control.
+<p>
+To boot, you need it to display the standard 31.5 kHz VGA text mode.
+<p>
+Turning the H FREQ pot (on the rear edge of the PCB) will eventually give you
+a display, but it is off-screen to the right.  You then adjust the H SHIFT VGA
+pot (on the right of the PCB) and find that this pot has insufficient range to
+center the display.  The H FREQ pot is 4.7K from the factory.  It is in series
+with an 18K SMD resistor on the solder side of the PCB. I found that I had to
+turn the 4.7K pot to max resistance to move the display to the left, so I
+removed the 18K resistor and the 4.7K pot, and replaced them with a 22K
+resistor and a 10K pot.
+<p>
+I was then able to center the display for text mode.  The only problem is that
+the horizontal linearity in text mode is now off.  The letters near the right
+of the screen are narrower than elsewhere.  The problem is not serious (a
+casual observer does not see it) so I can live with that.  Moreover, I never
+use text mode anyway (except during booting and for BIOS setup, etc.)  The
+320*200 mode (games) also works correctly after this modification.
+<p>
+Now, we want it to sync to highter refresh rates, specifically, 1024*768.
+That is the mode I adjusted it for.  All the 1024*768 parameters are separately
+adjustable from the ones for the other modes, except the H FREQ. The pots that
+govern this mode are all labeled "4,5", meaning, I presume, that they govern
+the operation of what the monitor manufacturer calls mode 4 and mode 5.  I
+found these to coincide with H frequencies of over approximately 50 kHz.
+<p>
+I found that by tweaking the H freq, I could get the text mode to be all right,
+*or* the 1024 mode, but not both at the same time.  (BTW, I run 1024 with a
+pixel clock of 77 MHz, H freq. of 57.63, and V freq. of 68.13 Hz.  I don't
+know what the specs for this monitor are, so I thought it was prudent to stay
+on the low side.)
+<p>
+So I needed two instead of one H FREQ pots.  I also found that there is a
+relay click if you throw something over 50 kHz at this monitor.  Hence, I
+tapped the relay coil to give me the 0/12 volt signal to tell me what mode the
+monitor is displaying.  This signal I take to a little PCB that holds my two
+H FREQ pots, an inverter, and two NPN transistors that switch in one or the
+other pot instead of the original one.
+<p>
+The schematic is shown in ASCII below.  Or, see the
+<A HREF="vga9517.gif">Gif</A> version provided by: Puiu Chiselita
+(puiu@microinfo.logicnet.ro).
+<PRE>
+
+                                           TO H-FREQ
+                                               o
+                                               |
+                              +12 VDC   +------+-----+
+                                 o      |            |
+                                 |      /            /
+                                 |      \ 680    680 \
+                                 |      /            /
+               100K  1N4148    |/ E     |            |
+  RELAY o---+--/\/\--|<|--|<|--|    PNP +--+      +--+
+            |          1N4148  |\ C     |  |      |  |
+            |                    |      /  |      |  /
+            |                    / 2.5K \<-+      +->\ 2.5K
+            |               100K \      /            /
+            |                    /      |            |
+            |                    |    |/ C          C \|    1N4148 100K
+            |                    +----|    NPN   NPN   |---+--|<|--/\/\--+
+            |                    |    |\ E          E /|   |             |
+            |                    /      |            |     /             |
+            |               100K \      |            |     \ 100K        |
+            |                    /      |            |     /             |
+            |                    |      |            |     |             |
+            |                    +------+------+-----+-----+             |
+            |                                 _|_ Gnd                    |
+            |                                  -                         |
+            +------------------------------------------------------------+
+</PRE>
+Transistors can be any general purpose type:
+<ul>
+<li>Typical NPN: 2N2222, 2N3904, BC547.
+<li>Typical PNP: 2N2907, 2N3906, BC557.
+</ul>
+I added the diodes to make sure we have a real OR circuit here, not a bit of
+AND left in it, since that would (albeit momentarily) drive the H FREQ up way
+too high and send the monitor into its OV protection.
+<p>
+Now I can tweak the H FREQ pot for both modes separately.  To sum up, my 9517
+now displays VGA text modes, 320*200, and 1024*768 in approx 70 Hz.  When it
+is warm, I can also get it to display 640*480.  I could probably do a fix for
+that too, but haven't bothered since I don't need that mode.  Moreover, I
+don'thave schematics, so I'm a bit hesitant to continue modifying it, when it
+already works adequately for my use right now.  The H linearity in the 320 and
+1024 modes, by the way, exhibits no problems.
+<p>
+This solved monitor number one, and oddly enough, when I did monitor number
+two.  I was able to get it working after installing only mod number one.  A
+little help from the VGA card (Diamond Speedstar if I remember correctly) did
+the rest.  So maybe you are in luck and need only one mod.  A flexible VGA card
+definitely helps.  (Or good setup-software for the VGA card.)
+<p>
+When you are turning all the little presets, be careful not to short the wipers
+to the chassis... use a plastic tool!  The wipers are not insulated from the
+screwdriver slots.  You can easily destroy some of the SMD transistors by doing
+that.  That's what I did, and I had some VERY lucky guesswork in unsoldering
+them and replacing them by normal transistors (that is what I tend to do when
+I find a dead SMD transistor...)
+<p>
+These are beautiful monitors and well worth modifying.  Fortunately, not a lot
+of people are able to do this, and this means that they are available rather
+cheaply.  :)
+
+<h3><A NAME="ffmsts">SVGA to Sun Fixed frequency Monitor - Complete
+ Solution</A></h3>
+
+Here is a success story for the Sun 21" fixed frequency color monitor.
+The only active part in the circuit is a 74HCT86 quad XOR chip.  Only one
+XOR gate is used - to combine H and V sync.  All the other signals are wired
+through to the monitor (using RG59, 75 ohm coax for each of the RGB videos.)
+<p>
+(From: Ken Jones (k.jones@coastlight.com).)
+<p>
+Disclaimer: I will not be responsible for any damage to your monitor or ego
+that might be caused by the use of this circuit.
+<p>
+I don't know if this works with all VGA Cards. I've tested this with my Matrox
+Millenium and Mystique VGA Card, and it worked well. But there is a tricky
+part!!! For all those, who are trying this circuit with their Matrox Card, be
+sure to accomplish the following steps:
+<ol>
+<li>Buy all the needed hardware parts - 74HCT86 (TTL-XOR), 0.1uF Capacitor,
+   Print, HF-Box - and assemble it. I use a small HF-Box, to eliminate
+   interference problems. Be sure to make all wires as short as possible!
+<p>
+<li>In Win95, go to the Display Properties:
+<p>
+ <ul>
+ <li>Select MGA-Monitor Panel.
+<p>
+ <li>Choose a Monitor which can Display 1152x864. (Hitachi CM2111 for example)
+<p>
+ <li>Select this Monitor, and press 'Properties'.
+<p>
+ <li>Now select 1152x864x256 or 1152x864x65535 (as you like) and press 'Apply'.
+<p>
+ <li>Select the MGA-Settings Panel and increase the Display-Area to 1152x864
+     too. Press 'Apply' and reboot Win95.
+</ul>
+<p>Now, your Monitor could work. If not, (as it happened to me...) do the
+following:
+<p>
+<li>Go to the Display-Properties again:
+<p>
+ <ul>
+ <li>Select MGA-Monitor Panel.
+<p>
+ <li>There is a Button named 'TEST!'. (First it was grayed out).  Press it.
+     (What for?.. Well, read on)
+<p>
+ <li>A Monitor Test-Pattern should appear, nothing special, but there is a
+     small Button, called 'DETAILS'. This is the key for all...
+<p>
+ <li>Press 'DETAILS' and a new form appears.  Now you can choose
+     Sync-Negotiation, Vertical, and Horizontal, Refresh-Rates, etc., etc...
+     (AHA!)
+<p>
+ <li>Set all you need to get your Monitor running. (In my case I changed the
+     horizontal refresh rate to 71 kHz)
+</ul>
+</ol>
+<h3><A NAME="ffm1950">Using a Sony GDM-1950 Monitor on a PC</A></h3>
+<p>
+(From: Ross (rross@hotkey.net.au).)
+<p>
+I've had one of these working on a PC.  From memory, the refresh rate is
+1280x1024 at 60 Hz (therefore pretty crappy).  You can either use a fixed
+frequency video card (expensive) or as I did, a Matrox Millenium which
+allows custom refresh rates in 1 Hz increments.  Simply set up the computer
+on another monitor, and plug in the GDM-1950.  The cable should not be a
+problem, easy to get here in Australia, so no problems in the states.
+<p>
+(From: Bill (bill_h@azstarnet.com).)
+<p>
+I have one - seems to me it was around 72 kHz/75 Hz refresh, but I'd have to
+check to be sure. I use a Quantum128 (costs around $150) but comes with a $30
+adapter (Griffin Technologies) that makes the sync_on_green (this would be for
+3 BNC type monitors) AND Composite sync (for the 4 BNC type monitors). You
+don't need this adapter if you're planning to use only the GDM-1950. If you
+buy the board, I'd be sure to get this adapter anyway. It comes in handy for
+checking the 'other' types of fixed frequency monitors.
+<p>
+The cable you need is pretty simple - just 'normal' VGA to the 5 BNC's.
+<p>
+This same cable is/was used on some sort of MAC's, and I found one in the
+close-out pile of a retailer dropping MAC's (for ten bucks).
+<p>
+(From: Joe McCarthy (mccarthy@si87.com).)
+<p>
+The GDM-1950 was sold by Sony to many different OEMs. The standard GDM-1950 is
+a 64 kHz, 60 Hz monitor designed to run 1280x1024 resolution. Radius bought a
+lot of these monitors and tweaked them to the MAC frequency of 63 kHz, 75 Hz,
+at 1024x768.
+
+<h3><A NAME="ffm1960">SVGA to Sun/Sony GDM-1960</A></h3>
+
+(From: Flupke ut Warns (P.O.Langemeijer@student.utwente.nl).)
+<p>
+The most important thing is to get the sync pin(s) connected and the
+horizontal scan rate as close to the required value.
+<p>
+(From Paul Langemeijer).
+<p>
+If you have a GDM-1960, you can make an even easier modification to the
+monitor.  A thing I might add to the problem of the sync-on-green, is the
+'modifying' of your monitor.  Well actually it isn't that hard. If you remove
+some of the panels (the one near the connectors with the monitor turned off!),
+I found holes for two more BNC connectors.  You can put them in, attach a
+bridge and put in two resistors (the holes for these are obvious, the numbers
+are above them).  And you've got a 5-BNC monitor (and it works).  You should
+use 75 Ohm resistors and the monitor syncs perfectly at 1024*768 at 85 Hz
+(Standard VESA videomode).
+<p>
+(From: Pascal Specht (specht@roguewave.fr).)
+<p>
+I'm now running the GDM-1960 from my DECstation 5000 on my PC.
+<p>
+I found an even easier way (if you can live without the three VIDEO OUT
+BNC's).  Simply reuse two of them for H and V-sync - No resistors, no holes to
+bore.  This applies to my Digital GDM-1960 D3.  Simply follow up the cables
+going from these 'video out' BNC's and take them off at the other end.  Put
+these ends now into the obvious holes for the two predesigned places intended
+to take in the missing BNC connectors.  Add the bridge to make the HSync
+connected. That's it. It perfectly works on my nVidia RIVA 128 with
+1024x768 at 85 Hz, but also 1280x1024 at 60 Hz.
+
+<h3><A NAME="ffm2020">Sun 365-1335 or Sony GDM-20E20 monitor on PC</A></h3>
+
+(From: Anders Stenkvist (Anders.Stenkvist@uab.ericsson.se).)
+<p>
+I just wanted to share some info about a Sun monitor I recently acquired. It's
+one of the new 20" multisync monitors you get together with Ultras with part
+number 365-1335 or GDM-20E20 made by Sony. Searching the net told me it should
+be possible to connect it to my PC but gave no info on how. So, armed with a
+screwdriver, an soldering iron and a lot of curiosity a started to investigate
+my new monitor, and after some iterations I got the following "new" pinout of
+the 13W3 connector.
+<PRE>
+
+    Analog:  13W3 connector:
+
+          +----------------- 
+          |   +------------- 
+          |   |   +---------   
+          |   |   |   +-----   
+          |   |   |   |   +-   horizontal sync (new multisync only)
+          |   |   |   |   |
+          |   |   |   |   |  grey
+    red   |   |   |   |   |  green blue
+     |   1o  2o  3o  4o  5o    |     |
+    (O)                       (O)   (O)
+       6o  7o  8o  9o 10o
+       |   |   |   |   |
+       |   |   |   |   +---   sync common (gnd)
+       |   |   |   +-------   
+       |   |   +-----------   
+       |   +---------------   vertical sync (new multisync only)
+       +------------------- 
+</PRE>
+<p>
+The monitor works with a PC driver from Sony named "SONY Multiscan 20SE" and
+is able to do at least 1280x1024 @ 75Hz, that's at least what my video card is
+capable of.
+<p>
+Looking inside it I also found markings for one of the PC-monitor buses used
+for autoconfig but I have not bothered to get that to work.  Any info on that
+would be appreciated but it does work nicely without it.
+
+Converting Sun Workstation Monitors for use on MACs</A></h3>
+
+(From: Phil Lee (plee@orbis.net).)
+<p>
+Here is a cheap, less than $300 total, solution for converting legacy
+Sun 20" workstation monitors for Macintosh use. Over the summer, there were
+large batches of Sun OEM Sony monitors, model GDM-20D10 being auctioned by
+ubid.com for about $225. They were being bundled with a
+<A HREF="http://www.mirage-mmc.com/index.php?cPath=358">Mirage</A> Diablo 3D
+AGP board and the package was advertised as compatible with PCs only.
+<p>
+The Sony 20D10 is a "limited multi-sync" monitor which is still satisfactory
+for the standard Mac two page display resolution 1152 x 870 @ 75 Hz
+(horiz=68.7KHz) for desktop publishing. Two cable related add-ons was
+required to convert it for Mac use.
+<p>
+<ol>
+<li>DB13W3 female coupler, <A HREF="http://www.pimfg.com/">PI Manufacturing</A>
+ P/N 000-530, $14. 1-909-598-3718.
+<li>DB13W3 to DB15 cable with Mac sense switches, PI P/N 530-BNC-Mac, $28.
+</ol>
+The 4 sense switches was set to all on, similar to using a Griffin MacSync
+griffintechnology.com , for legacy monitors. Was attached to a Mac IIfx
+using a SuperMac Thunder 24bit large screen Nubus card. Using the monitor
+controls, was able to center the image nicely. The Trinitron display was
+nice, sharp, and bright for light DTP and CAD use.
+<p>
+Not bad for repurposing legacy equipment.
+<p>
+There were other Sun (Sony OEM GDM-1962b) monitors also being auctioned.
+Other WS mfgrs such as HP, DEC, and IBM have similar monitors. They may work
+as well. I chose the 20D10 as they seemed to be newer.
+<p>
+Also see the section: <A HREF="#ffm2020">Sun 365-1335 or Sony GDM-20E20
+monitor on PC</A> and the following for more technical info:
+<p>
+<ul>
+<li><a href=
+ "http://www.monitorworld.com/Monitors/sony/sony49.html">Monitorworld</A>
+</ul>
+
+<h3><A NAME="ffm20mac">Converting Sun Workstation Monitors for use on
+ MACs</A></h3>
+
+(From: Phil Lee (plee@orbis.net).)
+<p>
+Here is a cheap, less than $300 total, solution for converting legacy
+Sun 20" workstation monitors for Macintosh use. Over the summer, there were
+large batches of Sun OEM Sony monitors, model GDM-20D10 being auctioned by
+ubid.com for about $225. They were being bundled with a
+<A HREF="http://www.mirage-mmc.com/index.php?cPath=358">Mirage</A> Diablo 3D
+AGP board and the package was advertised as compatible with PCs only.
+<p>
+The Sony 20D10 is a "limited multi-sync" monitor which is still satisfactory
+for the standard Mac two page display resolution 1152 x 870 @ 75 Hz
+(horiz=68.7KHz) for desktop publishing. Two cable related add-ons was
+required to convert it for Mac use.
+<p>
+<ol>
+<li>DB13W3 female coupler, <A HREF="http://www.pimfg.com/">PI Manufacturing</A>
+ P/N 000-530, $14. 1-909-598-3718.
+<li>DB13W3 to DB15 cable with Mac sense switches, PI P/N 530-BNC-Mac, $28.
+</ol>
+The 4 sense switches was set to all on, similar to using a Griffin MacSync
+griffintechnology.com , for legacy monitors. Was attached to a Mac IIfx
+using a SuperMac Thunder 24bit large screen Nubus card. Using the monitor
+controls, was able to center the image nicely. The Trinitron display was
+nice, sharp, and bright for light DTP and CAD use.
+<p>
+Not bad for repurposing legacy equipment.
+<p>
+There were other Sun (Sony OEM GDM-1962b) monitors also being auctioned.
+Other WS mfgrs such as HP, DEC, and IBM have similar monitors. They may work
+as well. I chose the 20D10 as they seemed to be newer.
+<p>
+Also see the section: <A HREF="#ffm2020">Sun 365-1335 or Sony GDM-20E20
+monitor on PC</A> and the following for more technical info:
+<ul>
+<li><a href=
+ "http://www.monitorworld.com/Monitors/sony/sony49.html">Monitorworld</A>
+</ul>
+
+<h3><A NAME="ffm7965">Mitsubishi HL7965 Workstation Monitor on PC</A></h3>
+
+(From: Wong Sy Ming (simingx@yahoo.com).)
+<p>
+The SGI (Mitsubishi) HL7965KW-SG monitor is widely advertised as a
+Fixed-Sync, Sync on Green monitor in the workstation world. Well, most
+people know that this is actually a multisync monitor but not many people
+may know that it actually has <separate sync> inputs as well!
+<p>
+I don't know if they appear on the video input board, but if you remove the
+board where the 13W3 connectors are on you can actually see, beautifully
+silk-screened on the main PCB, near the connectors that once went to the
+input board, pins labeled:
+R G B and HSYNC, VSYNC!
+<p>
+So this is actually NOT a sync-on-green monitor as everyone says. It's a
+separate sync monitor! (Yes I have this and it works beautifully in Windows
+up to 1600x1200x60hz. At 1280x1024 it does 75Hz.
+<p>
+However, the pincushioning will need adjustment (I don't know how) but if
+you are willing to live with a little distortion at the sides it's perfectly
+OK. You'll also need to solder in some 75 ohm resistors where the RGB goes
+in (conveniently, there are SMT pads there!) otherwise you'll get extremely
+severe ghosting. You might also want to replace a new 13W3 plug to cover up
+the rather unsightly holes left from removing the input board, although
+these can get *very* expensive and *almost impossible* to get.
+<p>
+And this is a monster of a monitor, weighing more than a 21" Sony CPD-G500!
+There's actually a warning label at the back saying "Caution: 23kg" with a
+picture of those "10 ton weights" that you see so much in cartoons :)
+All that said, the video amps look like miniature tanks, they're fully
+encased in shiny aluminum blocks and there are a ton of ferrite blocks and
+shielding screens inside.
+<p>
+Although mine was manufactured in 1993, it still gives a better picture than
+a slightly-less-than-new Philips monitor.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#ffmtoc">FF Mon FAQ Table of Contents</A>.
+<p>
+-- end V1.69 --
+<p>
+</BODY>
+</HTML>

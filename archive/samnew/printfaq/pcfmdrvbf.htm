@@ -1,0 +1,119 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcfmdrvbf.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Motor driver blows fuses&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: Motor driver blows fuses</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcfmdrvbf.htm">https://www.repairfaq.org/samnew/printfaq/pcfmdrvbf.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">Motor driver blows fuses&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pcfprhstp.htm">&lt;&lt;&nbsp;Print head stepper</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfretdna.htm">Ribbon on electronic type..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcfmdrvbf">Motor driver blows fuses</A></h3>
+
+The following was in response to a dot matrix printer blowing the power
+fuse whenever the paper advance motor was driven.  A 74LS273 was getting
+hot as well:
+<p>
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+<p>
+I'm going to guess (based on what I've seen in other printers) that 
+there's a set of power transistors (either H-bridge drivers or 1 per 
+coil, depending on the motor) that drive the stepper. These transistors 
+are driven from the printer's microcontroller via an output port - in 
+this case the '273.
+<p>
+Now, if a TTL chips is getting very hot, then either something is drawing 
+too much current from it, or something is overvoltaging one of the pins. 
+A particularly unpleasant failure mode is when a PNP power transistor, 
+with the emitter tied to the V++ rail (the 20V + rail that supplies the 
+motors) decides to short and apply said voltage to the output of whatever 
+device is driving it. If you're unlucky, the next stage is that the 
+output port device breaks down as well, and the CPU data bus gets 20V or 
+more on it. The result is blown chips all over the printer. Please don't 
+ask how I found that out ;-)
+<p>
+My guess is that there's at least one shorted transistor in the stepper 
+motor drive circuit. If the system uses an H-bridge driver (an equal 
+number of NPN and PNP transistors) then if one transistor shorts, its 
+companion is connected across the power rails. When it turns on, the 
+supply is effectively shorted.
+<p>
+I think you'll have to trace out the driver circuit for the stepper 
+motor. Figure out what drives what. Test the transistors, and then 
+replace the defective ones _and_ that '273, which is probably now blown. 
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+</body>
+</html>

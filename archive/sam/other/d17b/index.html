@@ -1,0 +1,455 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/other/d17b/
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<TITLE>Autonetics D17B Minuteman I Missile Guidance Computer at Drexel University</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/other/d17b/">https://www.repairfaq.org/sam/other/d17b/</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<br>
+<br>
+<h1>
+The Autonetics D17B Minuteman I Missile Guidance Computer:<br>
+A Brief Description of Efforts at Drexel University</h1>
+<h2>
+Version 1.30a (9-May-25)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 2012-2015
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<link rel="icon" href="https://www.repairfaq.org/sam/other/d17b/d17b%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/other/d17b/d17b%40v%3D2.ico" type="image/x-icon">
+
+<A NAME="d17btoc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#d17bint">Introduction</a>
+<p>
+<li><A HREF="#d17bhsd">Hardware and software development</a>
+ <ul>
+ <li><A HREF="#d17bgca">Getting the D17B to come alive</a>
+ <li><A HREF="#d17bhpr">Hardware problems</a>
+ <li><A HREF="#d17bdio">Data input/output</a>
+ <li><A HREF="#d17bsdv">Software development</a>
+ <li><A HREF="#d17bapp">Application software</a>
+ </ul>
+<p>
+<li><A HREF="#d17bpho">Photographs</a>
+<p>
+<li><A HREF="#d17blnk">External links</a>
+</ul>
+<A NAME="d17bint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#d17btoc">D17B Table of Contents</A>.
+<h2>Introduction</h2>
+<p>
+The Minuteman I Intercontinental Ballistic Missile (ICBM) was the
+first of the USA's long range deterrents and was deployed in 1962.  When they
+were decommissioned between 1966 and 1973 to be replaced with something
+more deadly, the advanced
+(for its time) Autonetics D17B guidance computers were made available free to
+educational institutions.  Drexel University (Philadelphia, PA)
+acquired three of these beasts.
+Having been accepted to Drexel and while still in high school in 1969,
+I "volunteered" to attempt to get the D17B working
+before officially starting the undergraduate program
+in the Fall.  I seem to recall that the
+professor who ran the lab did pay my bus fare. ;-)
+<p>
+The D17B was a stored program computer whose main memory consisted of
+a fixed head disk drive with a single one-sided platter with
+approximately 50 tracks storing a grand <i>total</i> of 2,727
+24 bit words each of which could be organized as a single double-precision
+word or two single precision words of 11 bits each.  There were 3
+timing bits between the 24 bit words on the disk.
+In fact, nearly all the working registers were also implemented as serial
+recirculating loops of 1, 4, 8, or 16 words on the disk with multiple
+read/write heads per track to read the data, change it if called for by the
+computations, and write it back.  The clock rate was a whopping 345.6
+<i>kHz</i> with a basic word time and double precision (24 bit)
+instruction requiring 78.125 &micro;s or each bit being 2.894 &micro;s.
+This thing really smoked (hopefully not literally).
+Modern vanilla-flavored commodity PCs run a million times faster not
+counting the parallelism present in advanced integrated circuit
+implementations.
+<p>
+The CPU had only a very few actual hardware
+registers.  All the processing was done with discrete logic where each
+part had a serial number, even resistors and capacitors, with everything being
+polyurethane conformal coated.  The PCBs were rather ethetically pleasing
+to behold, even if they didn't do much. :)  A 24 bit flip-flip
+register occupied an entire roughly 4x8 inch PCB.  There were no
+integrated circuits or core, and solid state memory was unheard of
+(or way to expensive even for the Military) when the D17B was designed.
+Now think about this: What bad things could happen
+with a rotating disk spinning at 6,000 rpm flying on a <i>missile</i>. :)
+<p>
+Before you laugh at the D17B because of its pathetic performance,
+one should realize that the use by mere mortals of <i>any</i> digital
+computer in 1969 was a big deal.  Most computers back then occupied entire
+rooms accessible only to the privilaged few, with air-conditioning and a
+raised floor.  One "interacted"
+with the computer via punch cards and printouts.  The first hobbyist computers
+like the Altair 8800 would not appear under 1975 and the Apple 1 would not
+be introduced until 1976.  Minicomputers like the PDP-8 were available
+earlier but had starting prices similar to the sum of several luxury cars and
+useful configurations could cost more than an up-scale suburban house, so they
+were not any more accessible to ordinary people.
+Thus while the D17B had less processing power than a smart light bulb or
+key fob today, it did have the fundamental capabilities that are currently
+associated with the term "stored program digital computer".
+<p>
+Physically, the D17B was a toroid about 3 feet in diameter with all the
+backplane wiring soldered point-point on the inner cylindrical surface.
+It sort of resembled a mini-version of a (much later) CRAY supercomputer.
+One half of the toroid contained the disk and logic PCBs while the other
+half had the internal DC power supplies and torque and (probably) gyro spin
+motor drivers for the inertial navigation system.  Regrettably, the "good
+stuff" like the nuke and gyros were removed (the latter being considered
+something like "strategic controlled
+technology").  And all the data on the disk was wiped by
+"being overwritten a minimum of 3 (three) times with random numbers" (as
+stated on the paperwork that came with each D17B. :( :)  Obviously,
+it wouldn't be good for anyone to be able to copy the
+code to be used for their own private missile. ;-)   But
+everything else of importance was present
+as well as a few interesting remnants of the inertial
+platform including precision angle sensors and torque motors.
+<p>
+For more details on the D17B architecture and implementation, please
+refer to the links below.  The most concise is probably the one for
+Wikipedia.  The following is my brief hazy recollection from
+almost 50 years ago of the saga of getting it running, designing and
+constructing I/O interfaces, and developing support and applications
+software (sort of).  For in-depth information, the links or a Web search
+will be far more useful.  Unfortunately, this was way before the Internet
+as we know it, so no YouTube videos.  And few if any documents
+or photographs detailing this effort were ever created and none
+survive that I'm aware of.  Too bad we can't go back in
+time and make some nice videos of the register displays flashing,
+the paper tape reader spinning, and the typewriter clunking away. ;-)
+Furthermore, at this point I'm not certain
+of the names of the other students who worked with me or previously.
+If anyone reading this can provide more details not already covered from
+sources, or corrections or additions for which I will
+credit you appropriately, please contact me via the email link, above.
+<p>
+Note: The links and photos open in a <i>single</i> new window or tab depending
+on your browser's settings.
+<p>
+Acknowledgement: The "favicon" for this page was crunched from the D17B
+photo at: <A target="d17b"
+ HREF="https://minutemanmissile.com/missileguidancesystem.html">Minutemanmissile Guidance System: A Tribute to the ICBM Program</A>.
+<p>
+<A NAME="d17bhsd"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#d17btoc">D17B Table of Contents</A>.
+<h2>Hardware and software development</h2>
+<h3><A NAME="d17bgca">Getting the D17B to come alive</a></h3>
+
+As noted, Drexel acquired three D17Bs.  D17B Machine #1 - the only one
+that was actually ever powered at Drexel - was located in the research
+laboratory of Professor Peter Herczfeld, who has been on the faculty of Drexel
+University since 1967.  Currently, he is the Lester Kraus Professor of
+Electrical and Computer Engineering.  What's interesting is that
+Professor Herczfeld was not really an engineer and
+his area of specialization relates mostly to electromagnetic fields,
+at that time in microwaves, and now microwave-photonics.  So, exactly how
+he ended up with the D17B project was never really clear.  Applications of
+the D17B in microwaves would seem unlikely.  However, Professor Herczfeld
+was also may faculty adviser while at Drexel so perhaps hosting the D17B
+project was done as a service to the University - or there was an empty
+corner of his lab where it could be plunked down. ;-)
+With the grad students doing microwave research (i.e., waveguides and plumbing
+and stuff) there was little in the way of technical assistance directly
+available.  Anything below 1 GHz was considered to be DC, boring,
+and had no future. ;-)
+<p>
+Some previous students had built a
+nice platform out of steel angle stock and particle board
+for the D17B to sit at a comfortable height with the
+power supply below it.  Given the extent to which it had been set up,
+I'd guess these were obtained shortly after the first Minuteman Is were
+decommissioned, perhaps 1967 or 1968.
+<p>
+A 28 VDC power supply had already been cobbled together
+but not much else had been done.
+I seem to recall that the original DC power supply involved car batteries in
+some way, shape, or form.  Two 12 V batteries in series would be around 24 VDC,
+which was probably close enough for Government work, but the first thing I
+did was to replace those with a brute force unregulated 28 VDC power supply
+so as not to be concerned with available run time as we are now with
+our mobile devices - transformer, rectifier, lots of filter capacitors. ;-)
+<p>
+There was just enough documentation to have a chance of being able to
+develop the needed interfaces and programming the thing.  I do not know how
+much of this was provided by the Government and how much was determined
+by groups at other educational institutions.  However, there was a D17B
+Users Group and information was exchanged on the finer aspects of
+D17B hardware and software.  There were even several meetings, though
+I did not attend any.  Check out the links below.
+<p>
+However regardless of the flavor of the DC input, the D17B pretty much just
+sat there doing nothing.  There was little to no activity on any of the
+logic test-points.  And no audible sign of the disk spinning up, though
+a whine could be heard from the motor driver choppers.  That lack of
+activity was in fact was the first problem since it seems that even the
+master logic clock is derived from the disk so it can be synced to the
+data on the disk.  With the disk not spinning, no clock, nothing else
+happens.  So why was the disk not turning?  Drive voltages were present
+at the disk connector.  Some
+exploration was in order.  With the disk drive removed
+from its mount someone noticed a warranty seal in the center concealing
+a bolt.  Now what could one do with a bolt?  Turn it of course!  And,
+loosening it ever so slightly along with a bit of rotary persuasion to
+unstick the platter, voila!  Suddenly disk spinning sounds could be heard
+and pulses appeared on those dead test-points!  Now, the need to
+loosen a bolt underneath a warranty seal was probably not a good thing but
+we were so overjoyed that something was happening.  So it did not
+occur to us that this might have been a sign of impending doom. :( :)
+It's possible that bolt had to be set to a very precise torque
+or based on some measure of performance.  Or it may simply have secured
+the bottom to the top and for unknown reasons, the clearances
+were too close.  All we had was a socket wrench
+and no documentation about <i>that</i>.  Lucky there were
+2 spare machines just in case.  It would be our luck (or lack thereof)
+that the disk in the first one must have been damaged.  My guess would be
+due to moisture, though it seemed to be well sealed.  Thankfully, this one
+never needed to actually be used in the missile (for more than one reason).
+Then again perhaps none of these missiles would have actually worked
+correctly, which was probably just as well.....
+<p>
+In fact, it was usually necessary to jiggle the bolt to
+convince the disk to spin up on subsequent power cycles.
+Eventually signals began to become erratic.  But initially, all appeared
+well based on monitoring various test-points and applying selected
+logic signals to inputs like RESET.  It was doing infinitely more
+than it had been previously.
+
+<h3><A NAME="d17bhpr">Hardware problems</a></h3>
+
+Given that the D17B was designed and manufactured to military standards,
+most of the hardware was reliable and gave us no problems.  However, that
+pesky disk - at least the disk in machine #1 - started failing almost as
+soon as it was revived.  So strange things would happen whereby the
+serial output streams from various registers or memory locations would simply
+go dead never to be seen again.  And it became increasingly necessary to
+fiddle with the magic bolt to get the disk to start.  Eventually, enough
+was enough, and the disk from machine #2 was transplanted into machine #1.
+That one performed flawlessly and remained in place for the duration.
+So we were just really unlucky in happening to select the wrong D17B
+to start with.  I doubt it was caused by anything the previous group did.
+I don't recall if the replacement preceeded the software development
+or was forced on us when reliability declined to the level of uselessness.
+A post mortum on the first disk - which required quite a bit or pursuasion
+to get apart including the use of large hammer in leu of an 8 inch spanner
+wrench - determined that there was almost no magnetic coating remaining on
+the disk platter.  So one final head crash and there was nothing left.
+That's the disk drive in the photos below.  However, the heads did't
+appear to be particularly abused or clogged and I don't think any
+particular effort was made to clean it up.  The platter itself was
+furthre abused by standing in for a hockey puck, and vanished long ago.
+<p>
+At least two of the disk drives as well as most of the PCBs that had been
+scavanged have since either been sold off privately or on eBay.
+
+<h3><A NAME="d17bdio">Data input/output</a></h3>
+
+Two forms of input were implemented: Keyboard input from a CDC paper tape
+reader and a modified electric typewriter, sort of a like a clunky TTY,
+probably also CDC).  Printed output was to the CDC typewriter thing.  There was
+also a companion paper tape punch, though I don't recall actually doing
+anything with that.  All of these peripherals were present when I arrived
+so I don't know if they also came along with the D17Bs or were acquired
+based on recommendations from or via the D17B Users Group.
+<p>
+Since the D17B did not have any sort of display console, it was absolutely
+<i>essential</i> to provide something with lights and switches for it to
+qualify as a digital system. ;-)  So a dual register display was constructed
+(see the photo below) which consisted of two banks of 28 V incandescent lamps
+so that a pair of 24 bit registers could be displayed in real time.  As I
+recall, there was some built-in way in the D17B of selecting which CPU
+registers or disk
+words would appear in the display.  I believe the interface from the D17B
+was parallel as the only active devices in the display were germanium
+transistor drivers for each lamp.  A banana jack was provided for each
+bit so that it be monitored or used to trigger other devices, though I
+don't believe anything was ever done with them.  The colors of the jacks
+were based on what was available. ;-)  There was a similar smaller 8 bit
+display and monitor panel built which served the paper tape reader (and
+possibly the typewriter).  Unfortunately, the lenses on that one were
+salvaged a long time ago for other projects since they were deemed to
+be the only useful parts, thus no photos. :)  The only switches on
+either of these were red pushbuttons for reset or something, but no switches
+for individual bits.  So, to manually enter data, the typewriter was
+the only option.  Both displays have been sold recently on eBay
+to D17B aficionados. :)
+
+<h3><A NAME="d17bsdv">Software development</a></h3>
+
+While it was possible in principle to enter programs in binary via the
+typewriter, something more sophisticated was required to make this thing
+at all useful.  So a software assembler was written in the style of the PDP-8
+assembler in PDP-8 assembly language on a PDP-12 (got that?).  All software
+development for the D17B was done on the PDP-12 (a version of the PDP-8
+mated with a LINC computer for interfacing to lab experiments) in
+Drexel's Bioengineering Department.  Those in charge there probably weren't
+real happy about us using it for this stuff but tolerated it, probably
+holding out hope that a (1) the D17B might end up being useful and (2) one
+might be made available for their experiments - or something.
+I do recall that it was best to use the PDP-12 during off-hours to minimize
+disruption of funded research activities.
+<p>
+The D17B assembler had most of the basic features of the PDP-8 assembler but
+with the addition of optimization based on the location of the data on the
+disk.  While the D17B hardware would perform correctly regardless of
+how memory was organized, that could result in totally pathetic performance
+due to disk latency.  That is, even more pathetic performance than imaginable
+for a serial computer running off a disk!
+For example, if a program attempted to access two numerically
+adjacent words (on the disk) in successive instructions, an
+entire revolution of the disk would be required to fetch the second one
+because it would have passed over the read head by the time it was needed.
+The numeric results would still be correct - if one waited long enough.
+The assembler would auto-magically space out memory addresses to (more
+or less) minimize such issues.  Or at least that was the objective
+<p>
+Code was entered into the PDP-12 via an ASR-33 TTY and stored on DECtape
+(those funny runt-size reels with a short length of directly accessible
+magnetic tape).  Binaries were output on paper tape for input to the D17B.
+The entire process required a trip to a different building to modify the
+program using the PDP-12, print out the updated program,
+punch a paper tape, then return to see if what was done resulting in
+anything useful.  Not exactly interactive computing.  But we had control
+over the entire process and didn't have to depend on the Burroughs
+mainframe at Drexel.
+
+<h3><A NAME="d17bapp">Application software</a></h3>
+
+The only "App" that I recall actually being developed was a calculator
+modeled along the lines of the HP-35 (which was new and cool at the
+time).  However, I doubt it had more than the basic 4 functions.
+And possibly not even divide as that was not a D17B hardware instruction.
+It used reverse polish entry like the HP-35 with a 4 number stack,
+using the typewriter for I/O.  It may have even been on in HEX, not even
+decimal. ;-)  But it proved out the functionality of the hardware and the
+assembler.  And I was definitely not a software type back then (nor am
+I now though there have been transgressions into modern Arduino and MIPS
+coding and such).
+<p>
+<A NAME="d17bpho"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#d17btoc">D17B Table of Contents</A>.
+<h2>Photographs</h2>
+
+I took these photos many years later and posted those of the PCBs and disk
+drive to Wikipedia, but they were removed for unknown reasons.  Then I put
+them back as as of 2025, they are still there. ;-)
+<p>
+<ul>
+<li><A target="d17b" HREF="d17bpcbs/index.html">Various Autonetics D17B Logic PCBs</a>
+ with mostly Diode Resistor Logic (DRL).  Every component has a serial number,
+ even resistors and diodes!
+<p>
+<li><A target="d17b" HREF="d17bhdd/index.html">Autonetics D17B Disk Drive</a> showing
+ its exterior and interior with the approximately 50 fixed magnetic heads.
+ The actual rotating platter has been lost on the opened sample.  It was a
+ sight to behold as the  magnetic coating had been nearly totally destroyed
+ due to multiple head crashes.  It looked more like a very abused disk brake
+ rotor. :( :)
+<p>
+<li><A target="d17b" HREF="d17bitfc/index.html">Drexel Autonetics D17B Interfaces</A>.
+ The first three (top) are the dual register display.
+ This is simply a panel with germanium (!!) transistor light bulb drivers
+ for soldered-in 28 V lamps salvaged from countless illuminated
+ switches.  The registers themselves  must have been in the D17B
+ itself because I do not recall needing to build
+ shift registers for the thing.  The banana jacks could be used to monitor
+ individual bits.
+<p>
+ The forth (left bottom) photo is of the CDC paper tape reader
+ modified for D17B.  The photodetectors were wired directly to a DB25 at
+ the rear, along with connections to enable the toothed wheel that
+ advanced the tape to move on command.  I don't recall if anything
+ was done with the switch or indicators on the paper tape reader itself.
+ The last photo is of the remains of the companion external
+ interface board with buffers for the photodector signals, as well
+ as lights, test-points similar to the register display to monitor
+ the paper tape data.  There are also a couple of empty holes that
+ used to house pushbutton switches.  However, the lenses over the lights,
+ switches, and some of the hardware  were stripped off for other projects
+ a few decades later.
+</ul>
+<p>
+<A NAME="d17blnk"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#d17btoc">D17B Table of Contents</A>.
+<h2>Links</h2>
+
+<ul>
+<li><A target="d17b" HREF="http://en.wikipedia.org/wiki/D-17B">Wikipedia Entry
+ for Autonetics D17B</A>.  I had put the above photos there
+ but they were removed by some Bot for reasons unknown.
+<p>
+<li><A target="d17b" HREF="http://bitsavers.org/pdf/autonetics/">Huge amount of Autonetics D17B (and other) Information</A> (Bitsavers.org, includes very
+ detailed technical information as well as photos, etc.)
+<p>
+<li><A target="d17b" HREF="http://www.insinga.com/aron/antique/d17b2/index.html">Proceedings of the Second Meeting of the Mintueman Computer Users Group</A>
+ (C. H. Beck, Tulane University, page courtesy of Aron K. Insinga.)
+<p>
+<li><A target="d17b" HREF=
+ "http://www.insinga.com/aron/antique/d17b2/d17b2_applications.html">Autonetics
+ D17B Applications</A> (C. H. Beck, Tulane University, page courtesy of Aron
+ K. Insinga.)
+<p>
+<li><A target="d17b" HREF=
+ "https://doc.lagout.org/science/0_Computer%20Science/0_Computer%20History/old-hardware/autonetics/d17/d17b2/d17b2_checkout.html">Recommended Checkout and Trouble-Shooting Procedures for the D17B Computer</A> (C. H. Beck, Tulane University, page courtesy of Aron K. Insinga.)
+<p>
+<li><A target="d17b" HREF=
+ "https://www.youtube.com/watch?v=K19kQhOqHSk">Minuteman 1 ICBM guidance D17-B computer David Larsen's 1960 computer experience</A> (David Larsen.)
+<p>
+<li><A target="d17b" HREF="https://archive.org/details/bitsavers_autoneticsSimulationoftheMinutemanD17BComputerMar7_9463568">autonetics :: d17 :: AD-742 965 Software Simulation of the Minuteman D17B Computer Mar72</A> (Bitsavers.org.)
+<p>
+<li><A target="d17b" HREF="https://minutemanmissile.com/missileguidancesystem.html">Minutemanmissile Guidance System: A Tribute to the ICBM Program</A> (Minuteman Missile.com, nice photograph of D17B logic section.)
+<p>
+<li><A target="d17b" HREF="http://www.dtic.mil/dtic/tr/fulltext/u2/722476.pdf">Investigation of Minuteman D17B Computer Reutilization - DTIC</A> (C. Beck.)
+</ul>
+<p>
+<hr>
+<br>
+-- end V1.30a -- 
+<p>
+</BODY>
+</HTML>

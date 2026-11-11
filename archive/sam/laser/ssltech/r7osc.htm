@@ -1,0 +1,427 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/laser/ssltech/r7osc.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="https://www.repairfaq.org/sam/laser/ssltech/r7osc_files/filelist.xml">
+<link rel=Edit-Time-Data href="https://www.repairfaq.org/sam/laser/ssltech/r7osc_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>RWMOPA 7 OSCILLATOR APPLICATION NOTES</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Ron</o:Author>
+  <o:LastAuthor>Ron</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-03-24T20:49:00Z</o:Created>
+  <o:LastSaved>2007-03-24T20:49:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2087</o:Words>
+  <o:Characters>11896</o:Characters>
+  <o:Company>Bmc Software</o:Company>
+  <o:Lines>99</o:Lines>
+  <o:Paragraphs>27</o:Paragraphs>
+  <o:CharactersWithSpaces>13956</o:CharactersWithSpaces>
+  <o:Version>11.8107</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+<meta name=Template content="C:\Program Files\Microsoft Office\Office\html.dot">
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+
+<body bgcolor=white background="Image14.gif" lang=EN-US link=blue vlink=blue
+style='tab-interval:.5in'>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/laser/ssltech/r7osc.htm">https://www.repairfaq.org/sam/laser/ssltech/r7osc.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+
+<div class=Section1>
+
+<p><a href="index.html">Home</a><span style='color:blue'> Return to Main Page<o:p></o:p></span></p>
+
+<p><span style='color:blue'>&nbsp;<o:p></o:p></span></p>
+
+<p><b><span style='font-size:13.5pt;color:blue'>RWMOPA 7 OSCILLATOR APPLICATION
+NOTES<o:p></o:p></span></b></p>
+
+<p><span style='color:blue'><img border=0 width=500 height=6 id="_x0000_i1025"
+src="Image19.gif"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>The goal in any holographic laser
+is to achieve the best in coherence length to get the maximum depth of field in
+the hologram. A common technique is to use etalons for filtering. Some lasers
+use one for the output coupler etc. In RWMOPA 7 like all previous versions,
+this technique is used with at least a two plate resonant etalon for the OC and
+with dye q switch to help act as a mode selector. In Version 7 the oscillator
+of RWMOPA 6 was upgraded by installing an additional etalon: the CVI Etalon
+ET-25.4-3-UV, an uncoated clear 3mm etalon. This was mounted in a Thorlabs
+KS-1T (treaded mount for 1&quot; optics). A SM1RR retaining ring and a SM1LTRR
+which has an oring was installed to hold the the elaton in the mount. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Oscillator diagram <a
+href="rwmopa7a.gif">rwmopa7a.gif</a> </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><a href="resalign.htm">RW-MOPA 7
+alignment issues.</a> procedure and related issues regarding alignment. This is
+an important step to realize good spatial quality in the beam due to use of
+multiple Output Coupler Mirrors.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>This study was done with a 1/4
+inch by 3 inch ruby rod. So specific information on laser output values and
+electrical information applied to the testing circuit at the time: &nbsp;&nbsp;
+36uh EG&amp;G TS-1952 trigger transformer with a 29uh inline inductor and 1300
+ufd capacitance. Pump time period was 500 to 600 usecs.&nbsp; Pumping was
+generally around the&nbsp; 275 joules/cm3 of rod material. After these tests
+were completed and reported here then the Oscillator was upgraded to a 7mm x
+115mm ruby rod. This new oscillator performed similarly as the resonator design
+was the more critical factor in single mode operation.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Since the resonator is 30.5 inches
+long for RW-MOPA 7, the total axial modes (longitudinal modes) is 165 under the
+gain curve of ruby (0.48) angstroms. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Installing just the 3mm etalon
+would cut the number of modes down to approximate 60 to 80 modes. The 2plate
+resonant etalon would reduce to 23 instead. With both it would be 11 modes. And
+finally using a saturable absorber dye q switch (DOTCI in Ethanol). The number
+of modes should be around 3 to 4 and the coherence length then would improve
+from millimeters to about 0.44 meters. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>As it turns out its not quite that
+simple either.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>The Dye q switch performance is
+dependant on the oscillators pump rate (power supply voltage level) and the
+spatial mode controlling aperture for TEM00 mode control and the concentration
+of dye used. The smaller the aperture the more pump is need to get to the same
+millijoule output. As it turns out the best configurations was found out
+experimentally. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>&nbsp;</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>In the past a DSO was used to get
+basic pulse width measurements etc. And at 100Ms/s real time rate the
+Linkinstrument DSO2102 scope did a fine job. The DSO-2102 just didn't have the
+bandwidth (limited by the Nyquist) to resolve any oscillation below 10nanosecs.
+Instead an analog scope was used to help confirm what the axial modes
+intensities were relative to the main mode.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>If the oscillator was not actually
+in single frequency mode then the other axial modes will modulate the main mode
+based on their strengths. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>The test setup used was a
+Tektronix 2465B a 400 MHz analog scope 0.875 nsec rise time set at 50ohm
+impedance with Thorlabs DET210 detector with a 1ns rise time. Inorder to get a
+general idea of what the total composite rise time of the measuring equipment,
+it was calculated as follows: 0.875nsec for the scope, 0.011nsec for each bnc
+connector, 0.15nsec for the RG58 10ft cable, and 1nsec for the detector for a
+total system rise time = 1.337nsec = sqrt(0.875^2+0.011^2+0.011^2+0.15^2+1^2)
+or in this case 4 nanosec pulses would look like 4.2nsec pulses. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>&nbsp;</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>. <img border=0 width=720
+height=480 id="_x0000_i1026" src="mbb.jpg"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Oscilloscope video image with
+illustration insert showing the laser's typical performance of 2 or more modes
+with strong modulation. But the single trace of an analog scope leaves little
+to be desired in brightness. You can nearly make out the scope traces due to
+the fast modulations (This was taken from a CCD video MiniDV camera).</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>. <img border=0 width=911
+height=623 id="_x0000_i1027" src="mp.gif"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Numerical solution illustration to
+mode beating in the q switch output. The above solution has another axial mode
+at 60% of the primary. Most lasers that operate in the multimode generally
+produce large amplitude axial modes and these cause the pulse output to
+modulate at shown with progressively more spiking as modes increase.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Ideally by reducing the intensity
+of the other longitudinal modes this mode beating or modulation would be
+reduced and therefore bring the laser closer to being a single mode laser and
+this is the design goal.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=958
+height=547 id="_x0000_i1028" src="sf.jpg"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Predominately single mode with
+minor mode beating. These other modes are below 10% with modulations every 4
+nsecs as shown in this oscilloscope photograph (35mm film ASA3200 pushed 2
+fstops). The laser after adding the 3mm quartz etalon produced this condition
+occasionally.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>.</span></p>
+
+<p><b><span style='font-size:13.5pt;color:blue'>The first design attempt at
+reduction of axial modes and therefore the mode beating was the following 3
+steps. </span></b></p>
+
+<p><b><span style='font-size:13.5pt;color:blue'>1: </span></b><span
+style='font-size:13.5pt;color:blue'>Add a 3mm tilted etalon to help reduce
+modes.</span></p>
+
+<p><b><span style='font-size:13.5pt;color:blue'>2: </span></b><span
+style='font-size:13.5pt;color:blue'>Lowering the oscillator voltage to 800
+volts instead of 1000 or more volts. This lower pump rate would require more
+time for the laser to increase gain and therefore would delay the onset of the
+pulse along the pumping curve. Since this pulse is delayed along the pump curve
+the pumping rate is also lower at this point and takes more round trips to
+build a pulse. Giving the dye q switch more time to discriminate the axial
+modes. The pulse was delayed 685 usecs on a 800usec pump pulse. Below is the
+oscillator flashlamp pulse with the qswitch output pulse located at 685usecs
+later from the onset of the flashlamp trigger.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>. <img border=0 width=994
+height=723 id="_x0000_i1029" src="r7osc.gif"></span></p>
+
+<p><b><span style='font-size:13.5pt;color:blue'>3: </span></b><span
+style='font-size:13.5pt;color:blue'>Using Fresh dye and increasing the dye
+concentration. By increasing the dye concentration, the dye could exert more
+control. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>&nbsp;</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>As you can see above you can get
+single longitudinal mode. The laser oscillator in this case had to be ran also
+at a much reduced output . At 1000 volt the laser oscillator easily produced
+TEM00 spatial mode output of 15 millijoule pulse (700 electrical joule input -
+1300ufd and 289joules/cm3 of rod material) but suffered from heavy mode
+beating. At 800volts (450 joule input and 186joules/cm3 of rod material or just
+above lasing threshold) the output was 5 millijoules and most axial modes
+became greatly reduced by the etalons and the dye qswitch. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>In later trials it was confirmed
+that if the dye concentration was adjusted for single pulse mode at any voltage
+then when the voltage is reduced, the percent of axial mode modulations will be
+also reduced. Typical modulations were 50% before voltage reduction and with
+reduced voltage would be less than 10% and therefore be considered running in
+single axial mode. For example: For a given fresh dye concentration that
+yielded a single pulse at .046inch aperture, power supply voltage at 1110v,
+produced a 20nanosec 16.75 millijoules single pulse which would show other
+axial modes every 4 nanoseconds modulating the main q switch pulse by 60%.
+Reducing the power supply to 910v would produce a single pulse 30nsec 9.12
+millijoule delayed by 610usec from trigger point and have less than 10%
+modulation amplitudes as compared to the main pulse. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Basically this shows that an
+oscillator in this configuration would not be limited to just operating at a
+fix millijoule value but single mode operation depends on the given
+relationships. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Lastly even with these efforts if
+the etalon and resonant reflector are not temperature controlled as well as the
+laser rod then a shot to shot variation will occur and many shots will have
+varying degrees of axial modes and mode beating and including upto 50%
+modulations due to temperature shifting the transmission peaks of the etalons and
+the rod. It turned out that without temperature control the laser spend about
+80 percent of it's time firing shots that had medium to larger modulations and
+single mode was more the exception. In fact as the temperature rose, the laser
+went through a predictable cycle of single mode to eventually large mode
+modulation and then back again. The number of modes seem limited to just a few
+and the laser mainly was operating in various amounts of two to four mode
+operation.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>An experiment was carried out to
+try and resolve this problem. Since the laser was air cooled instead of water
+cooled, then the chance of good temperature control even with etalon ovens
+would make for a difficult if not impossible setup. Instead the idea was to
+again increase the etalon filtering. So a single 3mm sapphire etalon with 26%
+reflectivity was used instead of the 3mm quartz etalon. Again the etalon was
+tilted to tune the peak maxima. Unfortunately this proved no better than the
+3mm quartz etalon.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Instead of the etalon tilted, it
+was aligned with the HR and OC forming a wide separation for the resonant OC
+and thereby producing very narrow peaks caused by the reflectance of the OC and
+3mm etalon. Because the sapphire etalon and the OC have higher reflectance,
+this created a higher finesse and even more selectivity (narrower peaks). The
+higher reflectivity of this composite OC/etalon reflector also caused the laser
+to emit pulse in the 12 to 20 nanosec duration due to the higher gain within
+the resonator. Instead now the resonator has a composite OC with approx. 75
+percent reflection. This has a side benefit also of reducing the linewidth of
+the laser by increasing photon lifetime. </span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=720
+height=480 id="_x0000_i1030" src="sf7.jpg"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=383
+height=313 id="_x0000_i1031" src="r7p14a.jpg"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=454
+height=270 id="_x0000_i1032" src="r7p14b.jpg"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Finally Single Axial mode all the
+time! Now the setup is temperature insensitive. Temperature changes in the ruby
+rod and etalons does not effect the setup due to the use of the composite
+etalon of the OC and the 3mm sapphire. After experiments the laser remained in
+single axial mode at all power levels. The laser remained in single
+longitudinal mode with very minor hints of any other modes on the pulse
+envelope (generally a very smooth envelope) for all power levels due to the
+composite etalon reflector setup. Of course with any resonator setup, there is
+always a tradeoff. In this case the Spatial degradation can be severe if the
+two etalons are not aligned accurately.Typical TEM00 mode may be present but
+angular differences between the two OCs can cause various overlapping or
+separated beam profiles.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=911
+height=623 id="_x0000_i1033" src="sto.gif"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>APPROXIMATION ONLY USED FOR
+ILLUSTRATION PURPOSES. Typical 3 plate resonant reflector used for output
+coupler on many holographic lasers. Note for a 75cm resonator that 165 axial
+modes exist under the ruby gain curve and depending on the location of the
+reflective maxima there is still dozen of modes that are within these maximas.
+Inorder for a laser to operate in single mode with this etalon the maximum peak
+would have to be temperature tuned to the ruby gain peak. Additionally, the
+ruby rod would have to be water cooled that kept the temperature constant and
+the laser resonator very stable with invar or other low expansion material.
+Also a Q switching setup in a slow switching configuration to give the higher
+mode more time to grow beyond the other modes within that maximal peak
+reflection of the etalon.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>&nbsp;</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=911
+height=623 id="_x0000_i1034" src="to.gif"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>APPROXIMATION ONLY USED FOR
+ILLUSTRATION PURPOSES. Typical surplus tank laser resonant reflectors. This two
+plate reflector work better on shorter resonators like the tank laser where the
+axial modes are spaced further out. On RW-MOPA lasers where the resonator is
+twice as long, the resonator has axial modes that are much closer together. The
+desired ideal etalon would have much sharper reflection maxima and fewer of
+these reflection peaks to help achieve single mode operation.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=911
+height=623 id="_x0000_i1035" src="ce.gif"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>APPROXIMATION ONLY USED FOR
+ILLUSTRATION PURPOSES. The reflection maximas are much sharper and more varied
+in their respective reflection amount due mainly by the larger separation of
+the sapphire etalon OC and the other etalon OC. The sharper selectivity is
+enhanced by the overall higher finesse of the higher reflectivity of the two
+OCs. As temperature changes do occur which shift the etalon reflection peaks to
+the right or left including when the laser rod itself changes temperature which
+shifts it's gain curve, there is at least one peak higher than the rest giving
+that mode more gain than others. This combined with the slow turn on switching
+of the dye cell q switch allows the laser to operate in single axial mode.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=911
+height=623 id="_x0000_i1036" src="tw.gif"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>This illustration of the coherence
+length shows what it would look like when two waves mix where the two are not
+exactly at the same output power and so there is not a total extinction of
+brightness at the null. The maximum brightness is every two times the resonator
+length or 80cm x 2 or 160cms in RW MOPA 7.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>.</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>&nbsp;</span></p>
+
+<p><span style='font-size:13.5pt;color:blue'><img border=0 width=911
+height=623 id="_x0000_i1037" src="fw.gif"></span></p>
+
+<p><span style='font-size:13.5pt;color:blue'>Another illustration showing 4
+waves of various amplitudes mixing and therefore the brightness patterns are
+smaller and subsequently the coherence length of the end nodes are shorter. ie
+the distance from the end of the graph to the first null where you have the
+maximum brightness illustrated. A hologram made with higher modes would show
+these nulls or dimness as depth of field darkness and stripes across objects of
+depth.</span></p>
+
+<p><span style='font-family:Arial'>.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

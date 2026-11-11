@@ -1,0 +1,817 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/mLMA1/mLMA1-V1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/mLMA1/mLMA1-V1.htm">https://www.repairfaq.org/sam/mLMA1/mLMA1-V1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<title>Mini Laser Mode Analyzer 1 (mLMA1) Version 1</title>
+<center>
+<h1>Mini Laser Mode Analyzer 1 (mLMA1) Version 1</h1>
+<p>
+<h2>Description and Testing</h2>
+<h3>Version 1.03 (23-Oct-2022)
+</h3>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2022
+<br>
+Sam Goldwasser<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<link rel="icon" href="https://www.repairfaq.org/sam/mLMA1/mLMA1%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/mLMA1/mLMA1%40v%3D2.ico" type="image/x-icon">
+<p>
+<A NAME="mLMA11toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#mLMA1pre">Preface</a>
+ <ul>
+ <li><A HREF="#mLMA1aac">Author and Copyright</a>
+ <li><A HREF="#mLMA1dis">DISCLAIMER</a>
+ <li><A HREF="#mLMA1ack">Acknowledgement</a>
+ </ul>
+<li><A HREF="#mLMA1int">Introduction</a>
+<li><A HREF="#mLMA1spc">Specifications</a>
+<li><A HREF="#mLMA1wdp">Wiring Diagram and Parts List</a>
+<li><A HREF="#mLMA1pcb">Printed Circuit Board</a>
+<li><A HREF="#mLMA1pin">Arduino/Atmega Pin Assignments</a>
+<li><A HREF="#mLMA1lvs">Latest Versions of the Firmware</a>
+<li><A HREF="#mLMA1ucf">Uploading the mLMA1 Firmware</a>
+<li><A HREF="#mLMA1trb">Troubleshooting</a>
+<li><A HREF="#mLMA1frm">Firmware Technical Description</a>
+<li><A HREF="#mLMA1nxt">Next Version of the SFPI Head</a>
+<li><A HREF="#mLMA1ref">References</a>
+</ul>
+<p>
+<A NAME="mLMA1pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="mLMA1aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2016
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="mLMA1dis">DISCLAIMER</a></h4>
+
+mLMA1 is not currently intended to replace a stand-along SFPI
+controller with oscilloscope display.  That may come in the future.
+
+<h4><A NAME="mLMA1ack">Acknowledgement</a></h4>
+
+Thanks to Jan Beck for getting me interested
+in microcomputer development.  If anyone had told me 
+six months ago that I'd be writing code for an Arduino-compatible
+board - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)
+Links to his Web information may be found under
+<A HREF="#mLMA1ref">References</a>.
+<br>
+<p>
+<A NAME="mLMA1int"></A>
+<hr>
+<h3>Introduction</h3>
+
+This is the original prototype mLMA1 design and it may be all that's needed.
+But for the greatly enhanced version, see
+<A HREF="mLMA1-V2.htm">Mini Laser Mode Analyzer 1 (mLMA1) Version 2</A>.
+<p>
+Mini Laser Mode Analyzer 1 (mLMA1) was originally
+intended as a proof of concept for implementing a
+Scanning Fabry Perot Interferometer (SFPI,
+also known as a laser spectrum analyzer)
+using any SFPI head that uses low voltage PZT drive.  But mLMA1
+turned out so well that it could have practical value, especially where
+a portable low cost instrument is desired for basic checking of the mode
+behavior of lasers intended for applications like holography. ;-)
+And several other functions were added.
+<p>
+For use as an SFPI, mLMA1 replaces the normal ramp driver and oscilloscope
+with a compact Arduino-based system with OLED display.  A home-built
+SFPI head could be constructed that is the size of a small pill bottle,
+so the entire setup could be fit in a pocket - really. :)  Its entire
+parts cost - excluding that of the low voltage SFPI head :) - is under $10.
+<p>
+<center>
+<img src="uSFPI1-p1.jpg" height=350>
+&nbsp;
+<img src="uSFPI1-h1.jpg" height=350>
+<h3>Photo of mLMA1 Prototype running SFPI (left) and Home-Built Hemispherical
+ Confocal SFPI Head (right)
+</h3>
+</center>
+<p>
+But is soon became clear that other functions could be added using
+the same platform.  The present functions are:
+<ul>
+<li>Scanning Fabry-Perot Interferometer (SFPI).
+<li>Longitudinal mode plotter (MODE).
+<li>Laser power meter (POWER).
+<li>Hold previous display (flashing "*").
+</ul>
+<p>
+The Longitudinal mode plotter provides a moving graph like a chart
+recorder with a full screen (end-to-end) update of about 1 minute.
+<p>
+<center>
+<img src="mLMA1_Mode1.jpg" height=350>
+<h3>Photo of mLMA1 Mode Sweep Display of one Polarization Orientation of
+Melles Griot 05-LHR-911 HeNe Laser</h3>
+</center>
+<p>
+The Laser power meter (POWER) displays the level at an update rate of
+around 4 samples (which can be averaged) per second.
+<p>
+<center>
+<img src="mLMA1_Power1.jpg" height=350>
+<h3>Photo of mLMA1 Mode Sweep Display of one Polarization Orientation of
+Melles Griot 05-LHR-911 HeNe Laser</h3>
+</center>
+<p>
+The Hold function locks the display and flashes a "*" in the upper
+right corner of the screen to indicate that the function isn't updating.
+<p>
+The system described below implements all of these using the Atmega
+328 Nano 3.0 PCB and a hand-full of discrete parts but has limited flexibility
+in terms of scan rate, offset, and magnification.  As in none except
+for trim-pots for input sensitivity. :)  The default settings for the
+SFPI would be acceptable for a laser with an output power of 1 mW or
+more to display its longitudinal modes in real time.  Some minimal
+controls may be added, though nothing fancy.  But a
+version using the previously implemented ramp driver and photodiode
+preamp PCB described in the section:
+<li><A HREF="https://www.repairfaq.org/sam/mLMA1/laserlia.htm#liasfpd">Sam's Scanning Fabry-Perot Interferometer
+Driver 1 (SG-SF1)</A> would have more flexibility.
+It generates a ramp of up to 60 V p-p along with
+a sync signal for the Arduino, as well as including a variable gain
+photodiode preamp.
+<p>
+While this won't replace a $5,000 instrument,
+it is more than adequate as-is for determining the basic health of
+a laser such as whether it is Single Longitudinal Mode (SLM).
+The display above shows the <i>actual scan</i> of the lognitudinal
+modes of a 5 mW red HeNe laser.  The benefits of mLMA1-V1 include its extreme
+simplicity: it could be put together in an hour to go with any SFPI head with a
+low voltage PZT.  And with only limited creaping featurism :), it is
+quite fast.  There are no plans to make mLMA1-V1 available as a complete
+kit with PCB, but if there is any interest, a kit including
+the Atmega, OLED, all discrete components, and solderless breadboard
+may be available for around $25.
+<p>
+mLMA1 consists of 3 parts:
+<p>
+<ol>
+<li><b>SFPI head using low voltage PZT:</b> Anything that will scan 2 to 3
+ FSRs with less than 60 V p-p should quality.  The one to be used for testing
+ is home-built with a hemispherical-confocal cavity with an effective FSR of
+ approximately 1.75 GHz.  For these tests, only a single polarization mode
+ will be supported, but the extension to full dual polarization support
+ is straightforward.
+<p>
+<li><b>Atmega 328 Nano 3.0 with 0.96" OLED 128x64 pixel display:</b> Firmware
+ written in C generates the ramp driver signal and implements a rudimentery
+ DSO.
+<p>
+<li><b>Source of 5 VDC power and optional boost converter:</b> The Nano
+ runs on 5 VDC.  This can come from a USB port on PC, laptop, or USB backup
+ battery pack, or a 5 VDC power or regulated DC wall adapter.  The boost
+ converter, if used, runs from the 5 VDC and provides 30 to 50 VDC for
+ PZT ramp driver transistor.
+</ol>
+<p>
+The Arduino-compatible Atmega 328 Nano 3.0 for mLMA1 provides the
+functions of both the ramp driver with an external high voltage transistor
+powered by a DC-DC boost converter if needed, and Digital Storage Oscilloscope
+(DSO) using a small OLED graphics display.
+It should work with home-built SFPI heads using PZT beeper
+elements as well as commercial ones like the SA-200 and others from Thorlabs.
+For these, a 5 V ramp may be sufficient eliminating the need for the
+boost converter and its components.
+<p>
+The current implementation runs at about 15 scans per second using the 64x128
+pixel OLED.  Since the display works like a DSO, this is way more than
+adequate since there is no flicker.  Thus, even when scaled up to a large
+display in the future, the refresh rate should be acceptable.  And of course,
+the $2 Nano is not exactly a stellar performer, so a higher performance
+microprocessor could be substituted if needed.
+<p>
+A complete pocket-size SFPI based on mLMA1 could be built into a
+1x2x4 inch case. :-)
+<p>
+This document provides a general descriptions of the
+the mLMA1 hardware and firmware.
+<p>
+<hr>
+
+<h3><A NAME="mLMA1spc">Specifications</h2>
+
+<ul>
+<li><b>Common to all functions:</b>
+<p>
+<ul>
+<li><b>Display:</b> 0.96" 128 x 64 I2C OLED SSD-1306 compatible.
+<p>
+<li><b>Controller:</b> Atmega 328 Nano 3.0.
+<p>
+<li><b>Power requirements:</b> 5 VDC at less than 30 mA from a
+ USB port on PC or laptop, quality USB charger, USB backup battery pack, or
+ regulated 5 VDC power supply.
+</ul>
+<p>
+<li><b>Scanning Fabry-Perot Interferometer</b>
+<p>
+The following assumes the use of the 43 mm RoC 99.4%R mirrors used in the
+ SFPI kits.
+<p>
+ <ul>
+ <li><b>Wavelength range:</b> &lt;594 nm to &gt; 700 nm based on the
+  use of the 43 mm RoC 99.4%R mirrors used in the SFPI kits.
+<p>
+ <li><b>Free Spectral Range (FSR):</b> Approximate 1.75 GHz for the
+  confocal or hemispherical confocal configurations.
+<p>
+ <li><b>Finesse:</b> &gt;250 at 633 nm for a normal confocal cavity (pair
+  of 43 mm RoC mirrors).  Less than half that for a hemispherical confocal
+  cavity, but still way more than enough for the itty-bitty display. :)
+  Finesse falls off on either side of 633 nm but usable over the full
+  wavelength range, above, and somewhat beyond.
+<p>
+ <li><b>Scan range:</b> Approximately 2 FSRs for the home-built
+  hemispherical confocal 1.75 GHz FSR SFPI head
+  using a PZT beeper element with the 5 V p-p drive directly
+  from the Atmega but this configuration has double the sensitivity
+  compared to the normal confocal cavity (and that particular beeper
+  may be super-sensitive).  It should be similar when driving a commercial
+  low voltage  SFPI head like those from Thorlabs.  And much greater if
+  the boost circuit is added or even more with an additional bipolar output
+  stage.
+<p>
+ <li><b>Dual polarization:</b> With a suitable detector, a pair of overlapping
+  (slightly vertically offset) traces may be displayed.
+<p>
+ <li><b>Scan rate:</b> Approximately 15 per second.
+<p>
+ <li><b>Triggering:</b> For normal operation, the ramp is free-running
+  and requires no triggering.  For use with an external ramp generator,
+  it may be set to trigger based on a 0 to 5 V rising edge input.
+<p>
+ <li><b>Input sensitivity:</b> With the input load set at 0.5M ohms, the
+  display of a 1 mW red HeNe will be near full scale using the mirror
+  set tested.  The useful range would then be from around 0.25 mW to 10 mW,
+  higher with an external attenuator.
+<p>
+ <li><b>Options:</b> Display interpolation to connect points may be selected.
+</ul>
+<p>
+<li><b>Longitudinal mode sweep</b>
+<p>
+ <ul>
+ <li><b>Sample rate:</b> Approximately 2 points per second for a full screen
+  update of around 1 minute.  This may be easily changed.
+<p>
+ <li><b>Input sensitivity:</b> With the input load set at 15K ohms, the
+  display of a 1 mW red HeNe will be near full scale using a typical silicon
+  photodiode (back-biased).  Full scale would then be
+  from &lt; 10 &micro;W to &gt;10 mW, more with an attenuator..
+<p>
+ <li><b>Dual polarization:</b> With a suitable detector, a pair of overlapping
+  (slightly vertically offset) traces may be displayed.
+<p>
+ <li><b>Options:</b> N point average.  N is set to 8 in the
+  firmware but can be easily changed to another power of 2, 2, 4, 8, 16, 32.
+  Also display  interpolation to connect points may be selected.
+ </ul>
+<p>
+<li><b>Laser power meter:</b>
+<p>
+ <ul>
+ <li>Sample rate:</b> Approximately 4 points per second.
+<p>
+<p>
+ <li><b>Dual polarization:</b> With a suitable detector, the laser power
+  in the P and S modes, as well as sum may be display.  Otherwise, a
+  single value based on the Laser_Power input is displayed.
+<p>
+ <li><b>Input sensitivity:</b> With the input load set at 15K ohms, the
+  reading of a 1 mW red HeNe will be near full scale using a typical silicon
+  photodiode (back-biased).  Full scale display would then be
+  from &lt; 10 &micro;W to &gt;10 mW, more with an attenuator.
+<p>
+ <li><b>Options:</b> N sample averaging.  N is set to 8 in the
+  firmware but can be easily changed to another power of 2, 2, 4, 8, or 16
+  recommended.  The samples are taken at approximately equal intervals.
+ </ul>
+<p>
+<li><b>Hold:</b>
+<p>
+ <ul>
+ <li>When in HOLD, the display is frozen based on its last function with a
+  flashing "*" in the upper right corner to indicate that it is locked.
+<p>
+ <li>Leaving HOLD will immediately return to the previous function.  If the
+  previous function was MODE, the plot will continue where it left off,
+  but any interveninig data will be lost.
+ </ul>
+</ul>
+
+<h3><A NAME="mLMA1wdp">Wiring Diagram and Parts List</a></h3>
+
+The diagram below - a sort of a hybrid between an electronic
+schematic and wiring diagram - shows the parts required for an Atmega328
+Nano 3.0 system incorporating all the bells and
+whistles.  Note that bypass capacitors (0.1 uF ceramic in parallel with
+22 &micro;F electrolytic) are recommended across the +3.3, +5, and REF pins
+(not shown).  These will both cut down on noise in the signals and prevent
+erratic behavior like random resetting of the Atmega.
+<p>
+<center>
+<img src="mLMA1-wiring1.gif">
+</center>
+<p>
+Most of the half dozen connections on the breadboard are made with the
+electronic parts themselves or bits of excess wire cut from their leads. But
+there will be a need for a few insulated jumpers which should use
+#22-#24 solid hookup wire stripped to fit in the holes.
+<p>
+<b><font color="red">The pinout for the OLED may differ depending on where
+it was purchased.  Especially important are VCC and GND, which may be swapped.
+Connecting it with reverse polarity even for an instant will likely damage or
+destroy the device.  And while the schematic shows VCC for the OLED being
+5 V, it will run on 3.3 V and that may be safer if the source of 5 V for
+the Atmega isn't USB.
+</font></b>
+<p>
+The following has everything except the boost circuit components, which isn't
+needed to scan more than 1 FSR using the typical PZT beeper element.
+<p>
+<b>Electronic parts list for mLMA1-V1:</b>
+<p>
+<PRE>
+ Qty Description                    Comments
+-------------------------------------------------------------------------------
+  1  Atmega 328P NANO 3.0           Arduino board
+
+  1  96" 128x64 I2C SSD-1306 OLED   OLED Display
+ 
+  1  6x8 cm Prototyping. board      Should fit dual polarization
+
+  1  Super bright LED, 3 mm         Sample indicator, green
+  1  Super bright LED, 3 mm         Ramp indicator, blue
+
+  2  Resistor, 10K ohm, 1/4 W       Current limiting for LEDs
+
+  4  Resistor, 470-510 ohm, 1/4 W   5V-3.3V level conversion
+  4  Resistor, 1K ohm, 1/4 W        5V-3.3V level conversion
+
+  2  Resistor, 15K ohm, 1/4W        Ramp filter
+
+  1  Resistor, 330 ohm, 1/4 W       Photodiode protection
+
+  1  Resistor, 1K ohm, 1/4 W        External Trigger input
+
+ *2  Trim-pot, 1M ohm               SFPI P and S gain
+ *2  Trim-pot, 100K ohm             MODE P and S gain
+
+  1  Trim-pot, 1M ohm               Ramp amplitude
+
+  2  Capacitor, 0.1 &micro;F              Ramp filter
+
+ *2  Capacitor, 100 pF              SFPI P and S PD filter (optional)
+ *2  Capacitor, 1 nF                MODE P and S PD filter (optional)
+
+  2  Capacitor, 22 &micro;F               5V and 3.3V bypass
+  2  Capacitor, 22 &micro;F               REF and PD bypass
+
+  1  DIP switch, 4 position         "Piano key" style feature select
+</PRE>
+<p>
+* Only 1 of each required if dual polarization is not supported.
+<p>
+For info on the dual polarization SFPI head using Thorlabs cage parts,
+see <A HREF="mLMA1-V2.htm">Mini Laser Mode Analyzer 1 (mLMA1) Version 2</A>.
+
+<h3><A NAME="mLMA1pcb">Printed Circuit Board</a></h3>
+
+Not likely any time soon unless I'm really really bored. :)
+
+<h3><A NAME="mLMA1pin">Atmega/Arduino Pin Assignments</a></h3>
+
+Here is a list of the Atmega 328 Nano 3.0 external pins used by mLMA1.
+Not all of these are shown on the wiring diagram since their definitions
+are in flux:
+<p>
+<pre>
+ Arduino Pin   Physical Pin   Function
+------------------------------------------------------------------------------
+     D3             6         Free_Run (no trigger) if high or open
+     D4             7         Interpolate points if high or open
+     D5             8         Sample - High during actual scan or capture
+     D6             9         Ramp - PWM of scan ramp for SFPI only
+     D7            10         Average n (default 8) points if high or open
+     D8            11         Dim_Display if high or open
+     D9            12         Function_Select 0
+    D10            13         Function_Select 1
+    D12            15         Dual_Polarization (future)
+    D13            16         Same as D5 (Nano_LED, Atmega "L")
+
+     A0            20         SFPI_PMode detector input (0 to 5V)
+     A1            21         SFPI_SMode detector S-Mode input (0 to 5V)
+     A2            22         Trigger input - external trigger only (0 to 5V)
+     A3            23         Laser power meter input.
+     A6            26         MSweep_PMode detector input (0 to 5V)
+     A7            26         MSweep_SMode detectoreinput (0 to 5V)
+    +5V            27         +5 VDC input or from on-board regulator
+    VIN            30         Optional DC input (+7 to +12 VDC)
+    GND           4,29        Ground/Common
+</pre>
+<p>
+<b><font color="red">
+CAUTION: The Nano 3.0 can take +12 VDC on VIN since it has an on-board
+5 V regulator.  But apparently there can be problems when connecting to USB
+as I found out.  Inadvertent ground loops (or something) can result in
+erasing its brain or damaging the USB chip.  Exactly why this occurred is
+still not clear.  The NANO was connected to USB and then the 12 V adapter
+was plugged in, at which point the USB dropped out, never to be heard
+from again with this board.  The regulated wall adapter was on the same
+circuit and isolated in any case, so it <i>should not</i> have caused problems.
+The Atmega microprocessor is still running something so it's not totally
+dead, thus the suspicion that the problem is the USB chip.  But I've been
+unable to change it so far, even with a programmer.
+Therefore, it is recommended that only the USB on a PC or laptop, a USB wall
+adapter, USB backup battery, or 5 V power supply be used.
+</font></b>
+
+<h3><A NAME="mLMA1cos">Computer and Operating System Requirements</a></h3>
+
+None.
+
+<h3><A NAME="mLMA1lvs">Latest Versions of the Firmware</a></h3>
+
+<ul>
+<li><b>Firmware:</b> <A HREF="mLMA1_fw_V1.29.ino">mLMA1 Firmware
+ Version 1.29</a>.  (Removed brightness selection as it caused recent
+ versions of the OLED to black if the value is non-zero, cause unknown.)
+</ul>
+<p>
+When the firmware starts up, the initial display will be something like:
+<p>
+<center>
+<img src="mLMA1_Welcome1.jpg" height=350>
+<h3>Initial Display after Boot</h3>
+</center>
+<p>
+Except for the version number. ;-)  In a second or so, it will start scanning.
+
+<h3><A NAME="mLMA1arddrvr">Installing the Arduino Device Driver</a></h3>
+
+Before the Atmega board can be used, a Windows device driver must be
+installed to enable upload of firmware and communications with the
+mLMA1 GUI.
+<p>
+There are many ways of doing this - some which may be overly complex, but
+what I've done for the Atmega 328 Nano 3.0 board is to go to
+<A HREF="https://www.arduino.cc/en/Main/Software">Arduino Software</a> and
+install the current version of the Arduino IDE (V1.6.9 as of May 2016).
+(I'm not sure if the board needs to be plugged in to a USB port during
+this process, but mine was.  During the install process, it will ask to
+install the drivers.  Reply "Yes" to all its requests.  When the Arduino
+IDE is started for the first time, go to "Tools", "Board", and select
+"Arduino Nano".  If the Nano is plugged in, its COM port should appear
+under "Tools", "Port".
+<p>
+More info on software, drivers, and more
+at <A HREF="https://www.arduino.cc/en/Guide/Windows#toc1">Getting
+Started with Arduino and Genuino on Windows</A>.
+<p>
+The more complex installations may be required if you bought the Nano
+from eBay or off the back of a truck, depending on whether it
+has the genuine FTDI USB communications chip.  And even more complex
+if it doesn't have the bootloader installed.  Links for
+driver installation may be found under
+<A HREF="#mLMA1ref">References</a> under "Arduino".  Instructions
+for burning the bootloader may be found in the section:
+<A HREF="#mLMA1brn">Burning Bootloaders into the Nano or Pro Micro</a>.
+<p>
+The Arduino IDE can be used for compiling and uploading, though I prefer
+UECIDE, below, because compilation and uploading is much faster.
+For use with the Atmega328 Nano 3.0, either is fine.  However the
+ATtiny and Pro Micro may only be supported by the Arduino IDE.
+(The latter may come up as Arduino Leonardo though.)
+<p>
+<hr>
+
+<h3><A NAME="mLMA1uecide">Loading UECIDE</a></h3>
+
+UECIDE will work with all versions of the firmware.
+But the only version of UECIDE I've had success compiling
+firmware without errors is Version 0.8.8alpha17 though I assume that
+more recent versions like 0.8.8alpha22 should also be satisfactory.
+Assuming that, download it from
+<A HREF="http://uecide.org/">UECIDE: The Universal Embedded Computing IDE</a>.
+And other versions probably work, they just hate me. :( :)
+If for some reason 0.8.8alpha22 doesn't work for you, I can provide
+0.8.8alpha17, but it probably won't work for you either. ;-)
+<p>
+The UECIDE files should be unzipped to any convenient location on your
+computer.  UECIDE requires around 160 MB there, and another 600+ MB for
+support files typically somewhere like
+c:\users\YourUserID\AppData\Local\UECIDE.  This location can be changed
+in File->Preferences.  If doing this after having configured UECIDE,
+copy all the files to the desired destination first, then change the
+data directory in File->Preferences.  DO NOT delete the original UECIDE
+directory or the preferences file! :)  Otherwise, the configuration
+information will all be lost.
+<p>
+Compared to most applications, UECIDE takes <i>forever</i> to start up even on
+a fast PC.  So be patient.  That's the bad news.  The good news is that
+compiling and uploading takes literally only a few seconds, much faster
+than with the Arduino IDE or MPIDE (another one you don't need to know
+about).  Go figure. :)
+<p>
+The first thing UECIDE will likely do is to tell you that no boards are
+installed and then open the Plugin Manager.  If it does not, do it manually
+by going to Tools->Plugin Manager.  At first the pane along the left
+will only show the word "Plugins".  But after a couple minutes, it should
+update with a list: Plugins, Libraries, Boards, Cores, Compilers, System.
+The following are required:
+<p>
+<ul>
+<li><b>Libraries:</b>
+ <ul>
+ <li>SPI.h, Wire.h, Adafruit_GFX.h, and Adafruit_SSD1306.h are required.
+ </ul>
+<li><b>Boards:</b> Arduino -> Arduino Nano w/ Atmega 328.
+<li><b>Cores:</b> Arduino 1.6.x.
+<li><b>Compilers:</b> GCC 4.8.1 for AVR
+</ul>
+<p>
+For each of these click on "Install".  Installing the arduino board will
+probably automagically install the other related files and may
+take several minutes.  Confirm that each entry has a green check mark
+next to it.
+<p>
+Close the Plugin Manager and go to "Hardware" or check the status line
+at the bottom of the window to confirm that the
+proper Board (Arduino Nano w/ Atmega 328), core (Arduino 1.6.x)), and Compiler
+(GCC 4.8.1 for AVR) has been selected.  Correct it if not.
+<p>
+Some other quirks of UECIDE that I've found:
+<p>
+<ul>
+<li>Doing any File Open or Save As operations within UECIDE also take much
+ longer than directly in Windows.  Be more patient.
+<p>
+<li>UECIDE will crash instantly and then will crash if restarted should the
+ selected data directory (in File->Preferences) be changed to one that is
+ read-only (as it might be on a remote host).  There is no warning.  Fix the
+ relevant entry in the configuration file, typically at
+ c:\users\YourUserID\AppData\Local\UECIDE\preferences.txt (unless you moved it)
+ using Notepad or any other convenient text editor.
+ Or delete the file (but that will require redoing all the plugin stuff.
+<p>
+<li>On one PC, the USB mouse would freeze for a couple seconds preiodically
+ whenever UECIDE was running making it almost impossible to do anything, and
+ it continued even if UECIDE was minimized.  This appears to be related
+ to the "Automatic USB Device Discovery" option being enabled (the default)
+ and some peculiarity of the PC's USB subsystem and Window.  To remedy it,
+ stop USB Device Discovery by going to Tools->Service Manager and clicking
+ on its entry, click on the stop icon, and disable Autostart by right-clicking
+ on the "yes" to change it to "no".  Then close and restart UECIDE.  Despite
+ what it says, the discovery process does not stop even though it says it's
+ stopped until the next time UECIDE is run.   Got that? :)  Or drag out and
+ dust off a PS2 mouse. :-)  This glitch went away after upgrading to Window 10.
+<p>
+<li>Occasionally out of the blue (even if not using it) UECIDE may put up a
+ message along the lines "I'm afraid UECIDE has
+ Crashed" with several options.  Usually hitting "Ignore" will allow it
+ to continue as though nothing happened.  (However, this has not occurred
+ recently under the latest Win10 on a reasonably modern PC.)
+</ul>
+<p>
+Plug the Atmega board into any available USB port.  The power LED
+should come on.  If I (Sam) sent you the Atmega board, it will have been
+loaded with a version of the mLMA1 firmware and the user LED
+will be flashing at about 5 Hz rate to let you know it is alive.  But
+by the time you've received it, the firmware will probably be out of
+date, so reloading will be required in any case. :)
+<p>
+Assuming the driver has already been installed, go to Hardware->Serial
+Terminal and select its COM port.  Typically, this will be the highest
+number COM port, or perhaps the only one, since no one uses real COM ports
+for much of anything anymore.
+<p>
+UECIDE should remember the configuration settings automatically upon exiting.
+These are tied to each instance of the UECIDE window, so it's possible to
+easily deal with multiple totally different board types.
+<p>
+<hr>
+
+<h3><A NAME="mLMA1ucf">Uploading the mLMA1 Firmware</a></h3>
+
+The firmware is provided as a source file which probably has an extension
+of ".ino" (though the specific name doesn't matter - it's just a
+text file).  However, the name may NOT contain any dashes "-" due to the
+peculiar restrictions of Java or something.  Make a directory with the name of
+the firmware (without the extension) and put the firmware file there.
+For example, if the file is named mLMA1_FW_v123.ino, make a directory
+called mLMA1_fw_v123. and put mLMA1_FW_v123.ino in it.  Note that case
+matters so the name of the directory and name of the firmware file (without the
+extension) must match case character-by-character exactly.  Thus
+mLMA1_fw_v35.ino is not the same as mLMA1_FW_v35.ino.
+<p>
+<ol>
+<li>Plug the Nano 3.0 board into a USB port.  Windows should recognize it
+ with the usual annoying sound of a USB device it recognizes.  I've
+ occasionally seen problems using a USB port replicator though these
+ generally are acceptable.  But if the board doesn't come up, plug it into
+ a direct USB port.
+<p>
+<li>Use Ctrl-O to open the firmware file.
+ Select the directory.  The source code should
+ appear in the same window unless a file is already open, in which
+ case a new window will appear.  (If UECIDE thinks it's a firmware
+ directory, it won't even allow you to select the file but
+ will immediately open it.  If the name of the directory and
+ file don't match - including case - it will produce an error like
+ "file not found".  What a concept? ;-)
+<p>
+<li>Use Ctrl-U to compile and upload the firmware to the board.  This
+ typically takes only a few seconds on a PC that is less then 35 years old. :)
+ Near the end, the green status bar will extend nearly all the
+ way to the right and the LEDs on the board will then begin
+ flashing in several different patterns in anticipation of
+ getting new and (hopefully) improved firmware. ;-)
+ The board will be automatically reset and start running the firmware.
+ During this time, confirmation messages similar to the following will appear:
+<p>
+<pre>
+   <b>Compiling...</b>
+     * Compiling sketch...
+     * Compiling core...
+       > arduino
+     * Compiling libraries...
+     * Linking sketch...
+   <b>Compiling done.</b>
+   <b>Memory usage</b>
+     * Program size: 7532 bytes
+     * Memory size: 1092 bytes
+     * Compilation took 8.634 seconds
+   <b>Uploading firmware...</b>
+     * Resetting board...
+     * Uploading...
+     * Resetting board...
+     * Upload Complete
+</pre>
+</ol>
+<p>
+Once the firmware has started, the on-board LED "L" should be flashing
+at around a 25 Hz rate to let you know it's alive.
+<p>
+The firmware is retained in non-volatile memory so uploading only
+needs to be done once - or until a new version is available!
+<p>
+The firmware may also be compiled without uploading by using Ctrl-R.  Since
+you haven't messed with the code, it should compile without errors.
+This is slightly faster for testing and doesn't use the board at all so it
+can be off doing whatever it pleases. :)
+<p>
+<hr>
+
+<h3><A NAME="mLMA1trb">Troubleshooting</a></h3>
+
+Naturally, all is expected to go smoothly.  But if it doesn't, here are
+some common problems.  Some of these may be bugs in the firmware
+as hard as that is to believe.  So, if you find something that cannot
+be understood or solved based on what's below, contact us for a timely
+response.  "Timely" is defined as no later than when the Sun becomes
+a red giant. :-)
+<p>
+Due to the limited resolution of the OLED display - 128x64 pixels, the
+display is not nice and smooth like that of an analog scope.  And the
+amplitudes of the peaks bounce around quite a bit due to where they
+fall on the OLED pixel matrix.  There
+are several options (controlled by inputs to selected Digital pins
+of the Nano) to add interpolation and/or averaging, but what's really
+needed is an anti-aliasing input filter (either analog or digital)
+to be able to fainthfully display the narrow spikes of well aligned
+high resolvance SFPIs.  The most easily interpreted (if not nicest)
+display occurs presently with none of the options enabled since the
+human eye does a decent job of visualizing what the appearance should be.
+Improvements may or may not be implenented in for mLMA1.
+But there should be a mLMA2 at the very least - eventually.
+<p>
+<hr>
+
+<h3><A NAME="mLMA1frm">Firmware Technical Description</a></h3>
+
+Coming soon, maybe.
+<p>
+<hr>
+
+<h3><A NAME="mLMA1nxt">Next Version of the SFPI Head</a></h3>
+
+In keeping with the small size of the controller, a new SFPI head has been
+constructed including the dual polarization detector.  It uses Thorlabs
+16 mm cage parts with a total length of 2.5 inches.  A pair of the 43 cm RoC
+99.5% mirrors have been installed with a spacing of 1/2 the Roc, resulting
+in a mode degenerate configuration with an FSR of ~2.32 GHz and a finesse in
+the 100-200 range at 633 nm.  A 4 mm PBS cube with photodiodes attached to
+its end and side faces behind the rear mirror serves as the dual
+polarization detector.  A 50 mm focal length positive lens
+helps with the mode matching, though a shorter focal length would
+probably be better.  Eventually a non-polarizing beam-splitter and
+second dual polarization will be installed in the front to sample the
+beam for the MODE display and power meter.
+<p>
+<p>
+<p>
+<center>
+<img src="dpsfpih1.jpg" height=512>
+<h3>Compact Dual Polarization Scanning Fabry Perot Head (Scale in cm)</h3>
+</center>
+<p>
+That's a cm scale. :)
+<p>
+Here is an early trace with no interpolation:
+<p>
+<center>
+<img src="mLMA1_LHR151_SFPI_SP1.jpg" height=320> &nbsp;
+<img src="mLMA1_LHR151_SFPI_DP1.jpg" height=320>
+
+<h3>Single and Dual Polarization Scanning Fabry Perot Displays</h3>
+</center>
+<p>
+Development has been suspended on mLMA1-V1 so all improvements and new
+and improved bugs will be in mLMA1-V2. :)
+
+<h3><A NAME="mLMA1ref">References</a></h3>
+
+These links open in a <i>single</i> new window or tab.
+
+<h4>UECIDE</h4>
+<ol start = 1>
+<li><A target="a" HREF="http://uecide.org/">UECIDE: The Universal Embedded Computing
+ IDE</a>
+<li><A target="a" HREF="http://uecide.org/beta">UECIDE Beta Programme (Dowload)</a>
+</ol>
+<p>
+<h4>Arduino</h4>
+<ol start = 3>
+<li><A target="a" HREF="https://www.arduino.cc/en/Main/Software">Arduino IDE, Refernce, Tutorials, more</a>
+</ol>
+
+<h4>Atmega 328 Nano 3.0</h4>
+
+<ol start = 4>
+<li><A target="a" HREF="https://www.arduino.cc/en/Main/ArduinoBoardNano">Atmega 328 Nano 3.0</a>
+<li><A target="a" HREF="http://blog.rastating.com/installing-drivers-for-an-arduino-nano-in-windows/">Installing Drivers for an Arduino Nano in Windows</a>
+<li><A target="a" HREF="http://www.circuitattic.com/home/5-site-news/2-nanodriverfix.html">Nano Driver - Windows 7 Instructions</a>
+ <li><A target="a" HREF="http://electropit.com/index.php/2015/09/06/arduino-nano-v3-0-clones/">Arduino Nano v3.0 clones (How-to & Review)</a>
+ <li><A target="a" HREF="http://www.instructables.com/id/How-To-Burn-a-Bootloader-to-Clone-Arduino-Nano-30/step2/Test-it-first-/">How to Burn a Bootloader to Clone Adruino Nano 3.0 - 2</a>
+</ol>
+<p>
+<h4>Jan Beck's Information</h4>
+<p>
+<ol start = 9>
+<li><A target="a" HREF="https://sites.google.com/site/janbeck/">Interferometer
+ Project Pages</a>
+<li><A target="a" HREF="https://github.com/janbbeck/InterferometerGUI/">Github
+ &micro;MD1 GUI Source Code Repository</a>
+</ol>
+<hr>
+<p>
+</html>

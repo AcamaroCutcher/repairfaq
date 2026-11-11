@@ -1,0 +1,1703 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/irrfaq.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Notes on the Troubleshooting and Repair of Hand Held Remote Controls
+</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/irrfaq.htm">https://www.repairfaq.org/sam/irrfaq.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Notes on the Troubleshooting and Repair of Hand Held Remote Controls</h1>
+<h2>
+Version 3.20 (17-Oct-08)<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="irrtoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#irrpre">Preface</a> 
+ <ul>
+ <li><A HREF="#irraac">Author and Copyright</A>
+ <li><A HREF="#irrdis">DISCLAIMER</A>
+ </ul>
+<p>
+<li><A HREF="#irrint">Introduction</A>
+ <ul>
+ <li><A HREF="#irrrrm">Remotes, Remotes, and More Remotes</a>
+ </ul>
+<p>
+<li><A HREF="#irrdar">IR Remote Diagnosis and Repair</A>
+ <ul>
+ <li><A HREF="#irrsaf">Safety</A>
+ <li><A HREF="#irrtst">Testing of Remotes</a>
+ <li><A HREF="#irrdia">Diagnosing the Problem</a>
+ <li><A HREF="#irrror">Remote Operating Range</a>
+ <li><A HREF="#irrrep">Remote Repair</a>
+ <li><A HREF="#irrpwr">Problems with Remotes</a>
+  <ul>
+  <li><A HREF="#irrdbt">Dead Batteries or Batteries Inserted Incorrectly</a>
+  <li><A HREF="#irrcor">Corroded Battery Contacts</a>
+  <li><A HREF="#irrbro">Broken or Intermittent Contacts</a>
+  <li><A HREF="#irrbcr">Broken Ceramic Resonator</a>
+  <li><A HREF="#irrdsg">Dirt, Spills, Gunk, Oily Buildup Inside</a>
+  <li><A HREF="#irrwoc">Worn or Corroded Pads on Circuit Board</a>
+  <li><A HREF="#irrwcm">Worn Conductive Material on Rubber Buttons</a>
+  <li><A HREF="#irrccb">Cracked Circuit Board</a>
+  <li><A HREF="#irrbir">Bad IR LED</a>
+  <li><A HREF="#irrbic">Bad IC</a>
+  <li><A HREF="#irrdmc">Dead Memory Capacitor</a>
+  </ul>
+ <li><A HREF="#irratr">Alternatives to Repair</a>
+ <li><A HREF="#irrorr">Original Replacement Remotes</a>
+ </ul>
+<p>
+<li><A HREF="#irrnhu">Problems Not Due to a Defective Hand Unit</A>
+ <ul>
+ <li><A HREF="#irrpwe">Problems with the Equipment</a>
+ <li><A HREF="#irrpdi">Problems Due to Interference</a>
+ <li><A HREF="#irrtwo">Where Multiple Pieces of Equipment Use the Same Codes</a>
+ <li><A HREF="#irrfyu">Forgot Your Universal Remote Setup?</a>
+ <li><A HREF="#irrcsp">Code search Programming of RCA SystemLINK Remote Controls</A>
+ </ul>
+<p>
+<li><A HREF="#irrioi">IR Items of Interest</A>
+ <ul>
+ <li><A HREF="#irritr">Increasing the Range of a Remote Control or IR Data
+ <li><A HREF="#irrrrr">Remote Remotes (Remote Extenders)</a>
+ <li><A HREF="#irrpcc">Controlling TVs, VCRs, CDs, etc., From a PC</a> 
+ <li><A HREF="#irrirs">IR Signal Transmission and Coding</a>
+ <li><A HREF="#irrcap">Capturing Remote Control Codes</a>
+ <li><A HREF="#irrlnk">Links to IR Related Web Sites</a>
+</ul>
+<p>
+<li><A HREF="#irridr">IR Detector and Related Circuits</A>
+ <ul>
+ <li><A HREF="#irrird">IR Detector Circuits</a>
+  <ul>
+  <li><A HREF="#irrdbp">IR Detector Circuit Using Bare Photodiode</a>
+  <li><A HREF="#irrdrm">IR Detector Circuit Using IR Receiver Module</a>
+  </ul>
+ <li><A HREF="#irrsii">Steve's Instant IR Tester</a>
+ <li><A HREF="#irrqad">Some Alternative 'Quick and Dirty' Remote Testers</a>
+ </ul>
+</ul>
+<p>
+<A NAME="irrpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#irrtoc">IR Remote Repair FAQ Table of Contents</A>. 
+<h2>Preface</h2>
+<h3><A NAME="irraac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="irrdis">DISCLAIMER</A></h3>
+
+While it is hard to imagine any catastrophic consequences resulting from
+attempting to repair a remote control, we will not be responsible for such
+consequences or collateral damage should it occur! :)
+<p>
+<A NAME="irrint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#irrtoc">IR Remote Repair FAQ Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="irrrrm">Remotes, Remotes, and More Remotes</a></h3>
+
+Twenty years ago, a wireless remote control was a $50 or $100 option (in 1980
+dollars) to a TV or VCR.  Early remote controls used ultrasound or radio
+frequency analog transmission and could perform only limited functions -
+you were lucky to get anything beyond on/off, volume, and channel up/down.
+Today, a remote control is standard with even the lowest cost basic
+electronic equipment.  Nearly all modern remote controls use Infra Red (IR)
+light for digital data transmission.  Some have more buttons and functions
+than a personal computer!  Unfortunately, many have row upon row of tiny
+identical size buttons with no logical layout of functions.  Others are a
+masterpiece of ergonomic engineering almost operating by themselves.
+<p>
+
+There are two kinds of problems with remotes:
+<p>
+1. They seem to have legs of their own and disappear at the most
+   inconvenient times.
+<p>
+2. They get abused by being dropped, dunked in Coke or beer, chewed on
+   by the pet tiger, or left alone to develop dead leaky batteries.
+<p>
+While there are some remotes that will respond to a whistle and beep back
+to identify their location, most are the ordinary deaf, dumb, and blind
+variety.  I cannot help you locate your missing remotes.  If you have
+disappearing remote syndrome, a well designed universal remote - on a 
+tether - may make a good investment.  However, the following was too good to
+pass up:
+<p>
+(From: Bill Samuel (phantom@isoc.net).)
+<p>
+"In '89, a Customer brings in their VCR for me to fix. (Zenith VRE-200) It
+ won't accept tapes, plus their kids misplaced their remote, so they wanted
+ a price on a new one.
+<p>
+ Well, after taking the unit apart, I called them and said, "Sir, I've found
+ the problem with your VCR. BTW, you don't need a new remote.""
+<p>
+Most actual problems with remotes can be solved relatively easily.  They
+are often of a physical nature.  Since remotes operate on low voltages
+under non-stressful conditions, spontaneous electronic failure is relatively
+uncommon.  The following are not good for remotes: Sitting or stepping on
+them, using them as drink stirrers, door stops, projectiles for target
+practice, substitutes for dog bones, or depositories for your old leaky
+batteries.
+<p>
+<p>
+<A NAME="irrdar"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#irrtoc">IR Remote Repair FAQ Table of Contents</A>.
+<h2>IR Remote Diagnosis and Repair</h2>
+<h3><A NAME="irrsaf">SAFETY</A></h3>
+
+There isn't anything dangerous inside a remote hand unit.  Even staring
+point blank into the IR emitter isn't likely to harm anything.  The worst that
+will happen if you make a mistake is that the circuit will be damaged beyond
+beyond repair and a new remote control will be in your future! :)
+<p>
+However, if you go inside the TV, VCR, or other controlled device, see the
+respective repair guide for that equipment for essential SAFETY information.
+
+<h3><A NAME="irrtst">Testing of Remotes</a></h3>
+
+Unless your remote hand unit has been run over by a bulldozer and is flat as a
+pancake, don't immediately assume it is actually broken.
+<p>
+<ul>
+<li>First, confirm that your problem is not simply due to a selector switch in
+ the wrong position or an accidental press of a key selecting 'VCR' instead of
+ 'TV'.
+<p>
+<li>If your 'problem' unit is a universal type, make sure it has not simply
+ forgotten its programming or codes - reinitialize it.  A common cause of
+ memory loss is the batteries falling out or losing contact for an instant
+ due to a fall or bump.  To be sure it is properly reset, remove the
+ batteries for a minute or so and also press the power button for a few
+ seconds (to discharge any internal capacitors) before doing the
+ reprogramming.  See the section: <A HREF="#irrfyu">Forgot Your Universal
+ Remote Setup?</a>.
+<p>
+<li>Some older TVs in particular may have a 'vacation' or other switch to
+ disable the set (or just the remote functions).  For that matter, if you
+ cannot get the equipment to turn on at all, make sure it is plugged into a
+ live wall socket. :-)
+<p>
+<li>Some TVs may occasionally become confused due to a power surge or for no
+ good reason at all.  Unplug the TV for a few minutes to reset it.  It is
+ also possible (though I don't have any evidence of this) that a remote can
+ become confused.  See the note above on programmable remotes.
+<p>
+<li>Before doing anything else, check and/or replace the batteries with fresh
+ ones.  Who knows how long they have been in there.
+<p>
+<li>Don't ignore the possibility that your spouse (or the local poltergeist)
+ accidentally dropped the remote spilling the batteries - and put some back
+ in backwards!  This could result in either a totally non-functional remote,
+ weak (limited range), or erratic operation.  Permanent damage is not that
+ likely but possible with some designs if the resulting voltage to the
+ circuit board actually had reverse polarity.
+<p>
+<li>Next, try to determine whether the problem is indeed in the remote itself
+ and not the TV, VCR, CD, or other controlled equipment.  The easiest way to
+ do this is to temporarily program a universal remote to match your equipment.
+ If this now operates successfully, then you can be pretty certain that the
+ problem lies in the remote unit.
+<p>
+<li>If you are not able to get a universal remote to operate your equipment,
+ then either you have not found the proper code setting or the remote itself
+ is indeed faulty (or you don't have a universal remote!).
+<p>
+<li>Should you or a friend have an identical or nearly identical piece of
+ equipment, try the (faulty) remote on that (and its remote on your equipment)
+ as a further test.
+<p>
+<li>If you have multiple pieces of equipment, make sure you have not
+ accidentally substituted an apparently identical remote for a slightly
+ different model VCR, for example.  Not all equipment - even of similar
+ type - from the same manufacturer necessarily use the same signal
+ transmission format.
+</ul>
+
+<h3><A NAME="irrdia">Diagnosing the Problem</a></h3>
+
+The following assumes that there is no response to the hand-unit even if up
+close to the TV, VCR, or other controlled equipment.  Where the remote works
+but only over a shorter distance than when new, see the section:
+<A HREF="#irrror">Reduced Operating Range</a>.
+<p>
+To narrow down the problem, use an IR detector to determine if the remote
+is emitting an IR signal when each button is pressed.  While this does not
+guarantee that the signal is correct, it eliminates most common problems from
+consideration.  An IR detector card or an IR detector circuit like one of those
+described in the section: <A HREF="#irridr">IR Detector and Related
+Circuits</A> are very handy for testing remote controls and other IR emitters.
+Some camcorders, video cameras, digital cameras, security cameras,
+Web cams, and even cell phone cams are sensitive to IR as well and will
+show a bright spot of light if aimed at a working source of IR.  However,
+since many of these have an IR-blocking filter, a negative response
+is not definitive unless you confirm that the camera
+responds to a known working remote.  And, PCs and PDAs with IR links and
+suitable software (e.g., OmniRemote for the Palm III) may be useful for
+remote testing.  See the section: <A HREF="#irrqad">Some Alternative
+'Quick and Dirty' Remote Testers</a> for additional options.
+<p>
+MCM Electronics, Centerville, Ohio/1-800-543-4330, list 2 different shaped
+cards for $7.29 each (#72-005/3.5 x 2.5" card & 72-003 /4.75 x 0.75" probe.
+Radio Shack, Edmund Scientific, and others offer similar detectors.
+<p>
+The salvaged IR sensor module from a TV or VCR may also be used as an IR
+detector.  These usually operate from a single supply (12 V typical) and output
+a clean demodulated signal - you will not see the carrier, only the 1s and 0s.
+This will be true of an IR detector circuit as well unless you are careful to
+position the remote and photodiode just so as the circuit acts as somewhat of
+a low pass filter due to the B-E capacitance of the transistor.  Radio Shack
+and Digikey (among other) also sell inexpensive IR receiver modules (under
+$5) which would also provide a demodulated signal for your viewing pleasure.
+However, note that some may be tuned for a particular carrier frequency like
+40 kHz and therefore may not respond to all remotes.  (Note, I have heard of
+spurious pickup issues with some of the Radio Shack units - they are not the
+same as those sold a while ago.)
+<p>
+(From: Brett Walach (bwalach@dpg.devry.edu).)
+<p>
+For anyone needing a great IR receiver at a reasonable price, try Radio Shack's
+MOD1. It's an IR receiver that demodulates the data for 40Khz x-mitters.  The
+output can then be viewed on a scope or used to drive a small transistor which
+would in turn drive a speaker! The output from the MOD1 is the inverse of the
+code sent.  That is, the TTL logic level from the MOD1 is high when no IR is
+present.  If by chance you need an IR receiver that operates on a different
+carrier, try DigiKey (1-800-DIGI-KEY). I know that they have the other two
+types for sure.
+
+<h3><A NAME="irrror">Reduced Operating Range</a></h3>
+
+With proper design, there really shouldn't be anything in a remote control
+(or the receiver) that degrades with reasonable use (at least in terms of
+operating distance).  However, not all remote controls are properly designed
+(or manufactured) and there can be other causes for a remote that used to
+operate reliably from the other end of the house or bounced off the far wall
+but now won't even respond directly from a few feet away:
+<ul>
+<li>Weak batteries - replace them!
+<p>
+<li>Dirt, gunk, tobacco smoke or cooking grease residue, and other coatings
+ on the windows of the hand-unit or receiver.  Clean thoroughly (but gently)
+ with detergent and water, and alcohol, as required.  This may mean INSIDE as
+ well as outside!
+<p>
+<li>Damaged window in hand-unit or receiver.  If someone attempted to clean
+ the window with sandpaper, there could be problems.  Remove, replace, or
+ polish the damaged area.
+<p>
+<li>Weak IR LEDs.  Since these are driven hard, it is possible for them to
+ degrade over time.  Replace with high intensity IR LEDs from Radio Shack
+ or a real electronics distributor and see if that helps.
+<p>
+<li>Dried out reservoir capacitor.  To drive the IR LEDs requires large peak
+ currents.  Sometimes, this depends on the input capacitor fed from the
+ battery and not the battery itself.  If this capacitor goes bad, the peak
+ output will be greatly reduced or will be erratic.  Test and/or just replace
+ all electrolytic capacitors in the hand-unit.
+</ul>
+
+<h3><A NAME="irrrep">Remote Repair</a></h3>
+
+Most problems can be remedied without any special skills.  However, where
+bad connections or component replacement is involved, you will have to be
+able to do just a bit of fine soldering.  In this case, a low power (e.g.,
+25 W) fine tip soldering iron and fine rosin core solder will be needed.
+Fortunately, the circuit boards in remotes are generally constructed using
+features sizes (pads and lines) that are state-of-the-art from the 1950s.
+Therefore, rework isn't nearly as challenging as, say, on your 500 MHz PC!
+<p>
+CAUTION: You can easily turn a simple repair (e.g., bad solder connections)
+into an expensive mess if you use inappropriate soldering equipment and/or
+lack the soldering skills to go along with it.  If in doubt, find someone else
+to do the soldering or at least practice, practice, practice, soldering and
+desoldering on a junk circuit board first!  See the document: "Troubleshooting
+and Repair of Consumer Electronic Equipment" for additional info on soldering
+and rework techniques.
+<p>
+Test equipment beyond a good eye and maybe a multimeter is rarely needed.
+<p>
+The most challenging part of repairing a remote hand unit may be just getting
+inside!  Manufacturers seem to pride themselves on the extent to which this
+is becoming more nearly impossible without dynamite:
+
+<ul>
+<li>Screws - Some well designed (from the point of view of repair) units have
+  a screw or two in obvious places (back cover and/or inside the battery
+  compartment).  Once removed (generally with a proper fine tipped Philips
+  blade screwdriver), the two halves of the case come apart, possibly after
+  sliding one with respect to the other a fraction of an inch.
+<p>
+<li>Hidden snaps - If no screws are visible (and even after removing them in
+  some cases), it will be necessary to carefully examine the seam and possibly
+  inside the batter compartment to determine where the likely locations of
+  plastic snaps.  Running a butter knife or similar thin tool along the seam
+  may persuade the unit to pop in half.
+<p>
+<li>Glue - I don't know if any remote controls use this more-or-less permanent
+  approach but if so, careful use of a hacksaw may be necessary. :-(
+</ul>
+
+Even if the case is slightly damaged after disassembly (e.g., a snap or two
+break off), the sparing use of a semi-permanent adhesive like windshield
+sealer will probably be able to fasten it all back together in such a way that
+little evidence remains of its traumatic experience.
+
+<h3><A NAME="irrpwr">Problems with Remotes</a></h3>
+
+Most problems occur in the hand units due to the abuse inflicted on them by
+kids, pets, and even otherwise well behaved adults.  However, the equipment
+or even outside interference can also be at fault.  Therefore, also see the
+sections: <A HREF="#irrpwe">Problems with the Equipment</a> and
+<A HREF="#irrpdi">Problems Due to Interference</a>.
+<p>
+The following are the most common types of problems and suggested solutions.
+As noted, most are physical in nature: dead batteries, gunk, bad connections.
+<p>
+For all but the first two, disassembly will be required.  Manufacturers
+seem to be using more and more creative (read: obscure and difficult to
+open) methods of fastening the two halves of the remote shell together.
+There may be a screw or two and/or the case may simply 'crack' in half by
+gently prying with a knife or small screwdriver along the seam or sliding
+the two halves a fraction of an inch to unlock some catches.  Look
+for screws on the back (possibly under a not-so-easy to peel off label)
+and inside the battery compartment, as well as hidden snap fasteners.
+
+<h4><A NAME="irrdbt">Dead Batteries or Batteries Inserted Incorrectly</a></h4>
+
+Solution obvious.  If batteries tend to go dead quickly - the batteries
+in a remote typically last years - then you may have a stuck button,
+some conductive grime under one of the buttons, or a defective IC - or
+you may be using cheap batteries.
+<p>
+Make sure that all the batteries point in the correct direction as marked
+inside the battery compartment or under its cover.  If it uses more than
+2 batteries, getting one in backwards could also result in weak or erratic
+operation.
+
+<h4><A NAME="irrcor">Corroded Battery Contacts</a></h4>
+
+Clean off the chemical deposits - first dust out the dried material with
+a soft brush and then remove the remainder with a damp lint free cloth
+or paper towel.  Polish the contacts with a Fiberglass brush and/or pencil
+eraser and/or very fine sandpaper or a nail file.  If there is evidence
+that the battery juice made its way inside the case, you will need to open
+the remote and thoroughly clean the interior.  Additional repairs may be
+needed if damage to wiring, components, or circuit board traces is evident.
+
+<h4><A NAME="irrbro">Broken or Intermittent Contacts</a></h4>
+
+There are most often between the battery connections and the circuit
+board.  Carefully resolder and reinforce them if necessary.  There
+could also be cracked solder joints on various component pins
+(particularly those that get abused like switches) as well.  Reflow
+the solder on any suspect joints.
+<p>
+In addition, check selector, power, or enable) switches for proper
+operation.  Remove the batteries and use an ohmmeter to test across
+the contacts with the switch(es) in all positions.  These switches can
+be easily damaged as a result of dropping or squashing the remote.  The
+contacts may become dirty, gunked up, corrode, or simply wear out as
+well.  Locating a replacement may prove challenging.  Disassembling the
+switch may allow you to clean or restore the contacts in some cases.
+
+<h4><A NAME="irrbcr">Broken Ceramic Resonator</a></h4>
+
+These may fail from shock when remotes are dropped.
+<p>
+The frequency is often 455 kHz (I assume since they are widely used as
+filters in the IF section of AM radios and are thus inexpensive.)
+<p>
+If you have an oscilloscope, check for signals on the IC when buttons
+are pressed - if there is no action on any pin, then you may have a bad
+resonator (or bad IC, etc.).  Monitoring on one lead of the ceramic
+resonator should produce a signal at its resonant frequency when a button
+is pressed.  A typical waveform may have an amplitude of a few tenths of
+a volt.
+<p>
+If you do not have a scope, one possible indication of a bad resonator
+(aside from it being smashed) would be a steady output from the IR LED
+for all button presses - normally the output would be visibly pulsating.
+Of course, this could indicate a bad IC as well.
+<p>
+A ceramic resonator usually is a small blue or orange object that looks
+similar to a plastic (sharp edges) or dipped (smooth edges) capacitor.
+<p>
+The circuit board marking will be X1 or CR1 or something like that.
+Replacements may be available from places like MCM Electronics or
+other electronics distributors.  Or, consider an organ donation from
+a remote for equipment that has long since gone to that entertainment
+center in the sky if the frequency of its resonator is the same.
+<p>
+However, the frequency may be fairly critical for proper operation (within
+5 percent or better may be required for some) and while not a common failure,
+I've heard of the resonator frequency changing (probably from a trauma) by
+enough to cause problems.
+<p>
+(From: Lewin A.R.W. Edwards (sysadm@zws.com).)
+<p>
+If your resonator has 3 pins instead of 2, and you can't find a replacement,
+you can use a 2-pin resonator, but you'll need to add two small caps (perhaps
+33 pF?) between the legs of your resonator and ground.
+
+<h4><A NAME="irrdsg">Dirt, Spills, Gunk, Oily Buildup Inside</a></h4>
+
+This may cause circuit problems preventing keys from operating reliably
+or physical problems resulting in keys being just plain stuck or sticky.
+Unreliable or erratic operation from these causes is probably the most
+common remote control problem after dead batteries.
+<p>
+<ul>
+<li>If you have recently cleaned the outside with a wet or damp cloth (or
+  in your dishwasher!), then this is quite likely as liquid can seep
+  inside and result in all sorts of strange behavior immediately or
+  delayed by some time.
+<p>
+<li>Disassemble completely and wash both sides of the rubber membrane
+  keypad, circuit board, and plastic case with water (and mild detergent
+  if necessary) to remove sugar based grime and then isopropyl alcohol.
+  Dry thoroughly.
+<p>
+<li>For stubborn crud, a pencil eraser and/or Fiberglass brush may be used
+  with care (on the circuit board only).  However, the gold plating (if
+  present) and/or copper trace itself is quite thin! 
+<p>
+<li>Where you find a oily film between the rubber and the circuit board,
+  unless you really do a SUPER job of cleaning, it will come back quickly.
+  It may come back no matter what you do.
+<p>
+  Once you think you got it all, do it again - and with soap and water as
+  well - both the rubber and circuit board.
+<p>
+  This goo may originate from a number of sources (no one seems to know
+  for sure) including: body oils, spills, plasticizers from the flexible
+  keypad, protective grease, etc.  Unless you had dunked the remote in a
+  vat of motor oil to create this problem there may be no sure way to
+  prevent it from returning in the future.  More below.
+</ul>
+
+CAUTION: In some cases, the conductive black material may be soluble in
+alcohol - carefully test first on the pad of a key you don't care much
+about.  If black material comes off on your cloth or swab, use only the
+water and detergent.  Putting the black stuff back on is much more
+difficult than removing it. :-)
+<p>
+I have one (1) data point to suggest that cleaning the rubber pad with a soft
+pencil eraser may be better than washing.  However, this may <i>also</i>
+remove the conductive material in some units.
+<p>
+(From: Steve Lenaghan (tamerica@prairie.ca).)
+<p>
+We do a ton of cordless phones and I have never had to repair a conductive pad
+in my career (35 years).  We soak them in scalding water and dish soap for 30
+minutes.  I clean the PC boards with alcohol and a rough cloth.  Works every
+time.
+<p>
+(From: Michael Shell (mikes1987@yahoo.com).)
+<p>
+People have noticed that the keys (and remotes) that are used more often, tend
+to have more oil problems. This is in agreement with my observations.
+<p>
+One thing I have to make clear is that I  *KNOW*  that whatever is going on
+is NOT due to spillage or other external contamination. If I had not seen it
+with my own eyes, I would not believe it either!  Sometimes the keys that are
+used most often (and have the most oil) are in the center - this is a LONG way
+for an external contaminant to have to travel!
+<p>
+The oil behaves a bit differently from most normal household (and hand) oils.
+<p>
+<ol>
+<li>It is not sticky in the least
+<li>It is VERY clear.
+<li>It is VERY hydrophobic and detergent action is noticeably less than with
+ most petroleum based oils.
+</ol>
+<p>
+I would not have noticed these fine points except for the fact that I have
+worked with Silicone (DOT 5) brake fluid which, except for an added purple
+dye, behaves in the same way.
+<p>
+So, it seems the silicone keypad manufacturers have been keeping a dirty
+little secret all these years!
+<p>
+I guess we all have to look forward to our 3 year cleaning ritual. I suppose a 
+hardcore hardware hacker could do his own keypad baking and post some before
+and after weight measurements to tell us how many grams of oil these things
+hold! (WARNING: you may have to do the baking in an oxygen free atmosphere!)
+
+<h4><A NAME="irrwoc">Worn or Corroded Pads on Circuit Board</a></h4>
+
+These may be interdigitated or semi-circular patterns and suffer from
+both wear and corrosion.  Conductive Epoxy or other similar conductive
+paint (like that used for rear window defogger repair) or ink may be used
+for repair.  A piece of thin copper foil can be glued to the circuit board
+and soldered to the appropriate circuit trace.  (Gold foil would be better
+as it will not corrode but might be just a tad pricey for a $10 remote!)
+<p>
+If the plating has worn off and cleaning the contacts doesn't last for more
+than a few days or weeks, tinning them with a thin coating of solder should
+help.
+
+<h4><A NAME="irrwcm">Worn Conductive Material on Rubber Buttons</a></h4>
+
+Compare the bottoms of frequently used keys with those that are rarely
+pushed.  If you can see the rubber through the conductive material after
+cleaning, the pad is likely worn to the point of being non-functional.
+This may be repaired with conductive Epoxy or other similar conductive
+paint or ink.  A sliver of aluminum foil can sometimes be glued to the
+rubber surface. 3M makes EMI/RFI foil shielding tape, type 1181, that
+should work very well for this.  Another source for small quantities of
+metal tape would be a shop that makes stained glass or sells supplies for
+making it.  Pencil lead (graphite) may also work
+though for how long is unknown (though some have reported good success
+with this readily available material).
+<p>
+MCM Electronics at 1-800-543-4330 lists a Rubber Keypad Repair Kit
+for $24.95.  It is supposed to contain enough material to repair 400
+contacts (2 containers each good for 200 contacts).  Their part number
+is 20-2070.  Not cheap but 400 contacts covers quite a few typical
+remotes.  Note: I do not know whether it is easy to mix only enough
+material for just 1 or 2 contacts - it would be worth confirming that
+this is possible before ordering.  Or else, invite a few dozen friends
+(and their flakey keypads) over for a remote repair party. :-)
+<p>
+For a similar price, <A HREF="http://www.keypadrepair.com/">Remote Control
+Keypad Repair</A> also has a kit for coating the worn out rubber.  It consists
+of a little bottle of some conductive paint which doesn't appear to need
+mixing.
+<p>
+There is also a material called 'resistive coating' or something like
+that that goes on like paint.  It may be available from an electronics
+distributor.  Or, if you are friendly with your local repair shop, they
+may be willing to spare a few drops.
+<p>
+Occasionally, the conductive material is not actually worn off entirely
+only on the surface and there may still be some beneath surface.  Light
+sanding may help.
+<p>
+Unfortunately, there is no single best solution since the material used
+for the conductive rubber pads in remotes is not all the same.
+<p>
+(From: Paul Weber (webpa@aol.com).)
+<p>
+<blockquote>
+"If you're looking for aluminum or copper foil tape with adhesive on it,
+ visit your local hardware store, in the plumbing and/or roof rain gutter
+ sections.  Alternatively, try an auto parts store.  I've found a variety
+ of adhesive foils (including stainless steel) in these kinds of
+ establishments.  
+<p>
+ As for as repairing conductive rubber keypads:  I've not used the metal
+ tape method, but will probably try it.  I've had great success with a
+ thorough cleaning and light buffing of the contact area with very find
+ (1000 grit) wet/dry sandpaper."
+</blockquote>
+<p>
+(From: Rufus (Pink@Floyd.Edu).)
+<p>
+<blockquote>
+"If you can find similar pads on another remote's membrane, trim them
+ off square and use them to replace the defective pads.  You can use
+ silicone glue to attach them.  Be careful to trim off the same amount
+ from each pad so the buttons throw will be the same, and don't trim
+ too deep as to damage the rubber dome."
+</blockquote>
+<p>
+(From: Wes Hilterbrand (replayelectronics@usa.net).)
+<p>
+<blockquote>
+"About the best way I have found is to take an old remote (trash or have
+ absolutely no need for) with the same type of conductive pads.  Look for a
+ little used pad (such as a record button), add some skillful maneuvering
+ with an exacto knife, and some SuperGlue, and you can sometimes replace
+ the bad pad(s) on your remote with better pads.  The way I have done this
+ is to cut the pad about halfway down from the sheet it's connected to
+ (around the pad's circumference, a little ways under the conductive
+ surface).  This should probably be done only as a last resort, and WATCH
+ YOUR FINGERS!
+<p>
+ BTW, this is just my opinion.  I CANNOT be held responsible for any damage
+ incurred due to following this procedure.  Try this AT YOUR OWN RISK! 
+ Remember, if you mess up your working remote, there is no recourse."
+</blockquote>
+<p>
+(From: Keith Craig (kcraig@mlode.com).)
+<p>
+<blockquote>
+"I use a can of 'TV TUBE COAT' (GC Electronics), a conductive paint used
+ for picture-tube aquadag (black paint on outside of picture tube used
+ for ground).  Squirt a tiny amount on a piece of paper and use a Q-tip
+ (cotton swab) to drop on the pad."
+</blockquote>
+<p>
+(From: Mark Saterfield (kc4tzn@webtv.net).)
+<p>
+<blockquote>
+"Pens are available that come preloaded with conductive ink at local
+ electronics stores though apparently not Radio Shack."
+</blockquote>
+<p>
+(From: Mike Harrison (wwl@netcomuk.co.uk).)
+<p>
+<blockquote>
+"It isn't the same as the silver stuff used for car screen heaters, etc.,
+ which I'd guess probably dries too hard and cracks off.  It's made by
+ Circuit Works, who also do conductive epoxies.  Their part number is
+ CW2610 for a repair kit, UK supplier is Farnell, price is UKP 22.33."
+</blockquote>
+<p>
+(From Rodney A Schmidt (rschmidt@iastate.edu).) 
+<p>
+<blockquote>
+"What I used to remedy it was to use the stainless steel tape that is sold
+ to seal ducting insulation, use a paper hole punch, and super glue the
+ punched stainless onto the pad.  I have had extremely good luck using
+ this, and since the stainless is adhesive anyway, it stays in place while
+ the super glue is drying."
+</blockquote>
+<p>
+(From: Anonymous.)
+<p>
+<blockquote>
+"I tried using Permatex Quick Grid Rear Window Defogger Repair Kit (part
+ number: 15067), which is easily available through the Internet and auto
+ parts stores.  My early attempts failed, they worked for a couple of
+ days, and then the conductive paint would crack, peel off and make
+ permanent contacts.  Eventually I found three ways of making it work:
+<p>
+<ol>
+<li>Use a paper match, soaked in the conductive material to "paint" the
+ rubber pad, this resulted in a extremely thin coat.  It does not crack.
+<p>
+<li>Coat the pad with tipex first, allow to dry, then paint with the
+ conductive material.  It hasn't cracked after a couple of months.
+<p>
+<li>My wife use nail paint first then the conductive material.  Again, did
+ not crack.
+</ol>
+<p>
+Different buttons my remote have been repaired using these techniques (for
+the sake of experiment!)."
+</blockquote>
+<p>
+(From: Bruce Curtis.)
+<p>
+<blockquote>
+"I have used graphite for lock lubrication to temporarily restore function
+ to buttons but have found another method that so far seems to work far better
+ since it is a more permanent repair.
+<p>
+ I used some double stick tape and a piece of conductive rubber from a 3M
+ 2209 Disposable Wrist Strap.  The 3M 2209 is often included with electronic
+ equipment cards but is also available for just a couple of dollars.  In
+ addition to several feet of conductive rubber, the 3M 2209 also includes a
+ piece of adhesive copper foil that could potentially be used as well but I tested the
+ conductive rubber first and haven't need to test using the copper foil."
+</blockquote>
+
+<h4><A NAME="irrccb">Cracked Circuit Board</a></h4>
+
+These can be repaired easily as the circuit boards are usually very
+simple, single sided, and have wide traces.  Use Epoxy or an adhesive
+like Duco Cement(tm) or windshield sealer to repair and reinforce the
+circuit board.  Scrape off any insulating coating and jumper breaks with
+fine wire and solder.  Do not just bridge the gaps with solder as cracks
+and future problems are a certainty.
+
+<h4><A NAME="irrbir">Bad IR LED</a></h4>
+
+Test the IR LED(s) with an external power supply (with current limiting
+resistor) and IR detector and/or monitor voltage across them while
+operating.  Substitute a visible LED and see if it lights up when keys
+are pressed.  Use a scope to monitor the drive to the LED.  You should
+see the pulse code modulated carrier.  If faulty, replace with a readily
+available high intensity IR LED.
+<p>
+Note that strictly speaking, these IR emitters should perhaps be called
+Infra Red Emitting Diodes or IREDs since they produce no visible light.
+However, we will use the term IR LED throughout this document since its
+meaning is understood by the vast majority of readers.
+
+<h4><A NAME="irrbic">Bad IC</a></h4>
+
+If the remote uses a custom chip, throw it away!  However, a failed chip
+is usually quite unlikely unless struck by lightening (now how would that
+happen?).  Even accidentally inserting the batteries backwards (though
+definitely not recommended!) - which tends to kill many devices - may not
+cause any harm to a remote.  Check each pin on the IC with a scope to
+determine if it is at least alive.
+<p>
+(From: Duane P Mantick).
+<p>
+<blockquote>
+"An awful lot of IR remotes use IC's from the same or similar series. A
+ common series comes from NEC and is the uPD1986C which, incidentally is
+ called out in the NTE replacements book as an NTE1758. A lot of these
+ chips are cheap and not too difficult to find, and are made in
+ easy-to-work-with 14 or 16 pin DIP packages. Unless you have no soldering
+ or desoldering skills, replacement isn't difficult."
+</blockquote>
+
+<h3><A NAME="irrdmc">Dead Memory Capacitor</a></h3>
+
+Some hand units have some type of device to hold the internal settings during
+the period when the batteries are removed for replacement.  This may be a large
+conventional electrolytic capacitor or "supercap".  The PCB marking will
+probably be a "C" number but who knows?  If this device fails, any sort of
+behavior is possible.  Simply check across it with a multimeter - there
+should be some voltage on it, probably equal or slightly less than that of
+the main battery, though a lower value is possible as long as it's not
+near 0 V.  Replacements should be available.
+<p>
+WARNING: DON'T replace the memory capacitor with a battery as it is charged
+from the main battery when present.  While the remote may appear to work
+this way, attempting to charge non-rechargeable batteries can result in
+unpleasant behavior.  Although the risk of fire or explosion is probably
+low, why take chances?
+
+<h3><A NAME="irratr">Alternatives to Repair</a></h3>
+
+There are a large variety of preprogrammed universal remotes available starting
+at $10.  These are set up by inputting a code number for each type of equipment
+you will be using - TV, VCR, Cable box, etc.  Don't loose the instruction
+manual or you will not know what codes to use if the batteries go dead or
+the remote looses its memory for any reason!  Record the codes in pen on a
+label on the back of the remote and inside the battery compartment.  For
+general TV/VCR/cable use, the $10 variety are fine.  However, many will not
+provide special functions like programming of a TV or VCR or access to other
+model specific menu functions.
+<p>
+However, some of the One-For-All (and probably others as well) remotes do
+have capabilities not listed on the package (or web site).  Check with the
+manufacturer (in the case of Universal, this can be via email) to determine
+whether any of their products have what is needed for your model(s).
+<p>
+Universal 'learning' remotes are available at slightly higher cost (perhaps,
+$25-100).  The better ones are capable of memorizing all of the actual signals
+sent by your original remotes by viewing the IR transmission directly.  Of
+course, your existing remotes must be working properly for teaching purposes.
+Make sure you get a money back guarantee with these as some may not be
+compatible with all equipment.  The advantage of a learning remote is that it
+can be taught to perform setup, adjustment, and programming functions as well
+as those for normal operation. However the teaching process is likely to be
+tedious and time consuming and you will have to keep track of which buttons do
+what - possibly not worth the effort in the end.  If the backup batteries
+should ever go dead, the entire learning process will need to be repeated.
+<p>
+(From: Michael Schuster (schuster@panix.com).)
+<p>
+<blockquote>
+"You can get most of the Zenith OEM remotes from MCM Electronics.  These
+ include some that were sold under the Gemini name as consumer items; their
+ 4-device learning/preprogrammed remote was particularly nice).
+<p>
+ These definitely =behave= as though they have EEPROMS; i.e. learned
+ functions are retained indefinitely without power.
+<p>
+ Also the upgradable one-for-all remotes from Universal Electronics (i.e.
+ the ones with the 'magic' key) almost certainly have EEPROM since they can
+ be customized by moving buttons around and assigning straight binary
+ functions to keys not in the original pre programmed arrangement. Such
+ customizations are also retained if power is lost."
+</blockquote>
+<p>
+(From: Dakuhajda (dakuhajda@aol.com).)
+<p>
+<blockquote>
+"Unfortunately RCA remotes cannot be repaired on any made after 1986. The
+circuit board is molded to the plastic case, only way to get the darn thing
+apart and you break it beyond being able to put it back together. Rca sells a
+universal remote control system link 5 that even has the pip feature. Usually
+$25. If you really want an exact match look inside the battery cover you can
+get the part number for the remote control, six digits, usually 221000 or
+similar. You can call any RCA authorized servicer and they can order it for
+you, or you can contact MCM electronics, Excel electronics, or any other
+authorized Thomson parts distributor.  "
+<p>
+By the way the most expensive RCA universal remote that Wal-Mart sells I use in
+our shop for almost all but the very newest RCA TV sets. Last 2 years models.
+</blockquote>
+<p>
+(From: techman@niobiumfive.co.uk.)
+<p>
+Some universal remotes are better than others. I recently bought
+(here in the UK) one called "Wizard" made by Philex (a big manufacturer
+of replacement remotes). It has several levels of programming:
+<p>
+<ol>
+<li>Manufacturer-based code numbers, which get you a basic level of
+ functionality, similar to simple universal remotes
+<p>
+<li>Key reconfiguration. Once (1) has been set, one can select a button and
+ pressing it repeatedly causes it to issue sequentially all (?) codes with
+ the same manufacturer part but varying the second part of the code. Once
+ you hit the right one, you can save the code for that button (in flash). A
+ bit tedious but good coverage.
+<p>
+<li>It can learn the code from an existing remote, and save on any button.
+</ol>
+<p>
+All this can be setup for 8 different devices.  Settings are saved in FLASH
+memory so you don't lose any programming when the batteries die. :-)
+It does has a few undocumented quirks, like setting a new manufacturer
+code seems to clear all existing "learned" codes. :-(
+<p>
+I bought it from Grandata (UK 0208-900-2329, international +44-208-900-2329)
+for GBP 16.50 + tax and postage.
+<p>
+I have also wired a phototransistor and an IR LED to the serial port
+on an old laptop, and experimented with turning that into a learning
+remote. I must say I was surprised at how many different coding schemes
+seem to be in use, just running through a) above and observing the
+waveforms I documented about 20 variations before I got bored.
+I got it working with my UK satellite "digibox" and with a JVC
+VCR, but haven't taken it much further. I was particularly interested
+that the VCR (HR-S4700EK) responds to two quite different coding
+schemes, presumably it was designed to be backward-compatible with some
+old code of theirs, but the newer code is required to get all the
+functions to work. A few codes do functions for which there is no
+button on the official remote (and are normally only accessible from
+buttons on the front panel!)  One code wipes out all ones timer recording
+settings! :-(
+
+<h3><A NAME="irrorr">Original Replacement Remotes</a></h3>
+
+In some cases, the only realistic option is to obtain an original replacement
+remote control.  This might be the case where special functions need to be
+easily accessible or you have fallen in love with the button layout, style, or
+decorator colors!  If you need to access special functions on your equipment,
+a learning remote might be an alternative if you have access to a working
+remote control so you can teach it.  However, learning remotes are rarely as
+convenient as the original.  As for color, there is always spray paint!
+<ul>
+<li>Consider the original manufacturer of the equipment only as a last resort
+  as they will likely want to charge you an arm and a leg (or more) for a
+  replacement.
+<p>
+  Panasonic has a web site you can enter your model number and get a parts
+  list with list prices and part descriptions:
+<p>
+<ul>
+  <li><A HREF="http://www.pasc.panasonic.com/">Panasonic Parts & Service
+   Online</a>
+</ul>
+<p>
+  This site includes support for Panasonic, Technics, and Quasar consumer
+  electronics.  However, my quick visit only showed accessory type items
+  (e.g., replacement original remote controls, cables, etc.).  Encrypted
+  credit card protection presumably makes it possible to order parts directly.
+<p>
+<li>Electronics distributors like MCM Electronics do stock a variety of
+  original remotes - prices range from $9 - $143 (Wow $143 for just a stupid
+  fairly basic remote! It doesn't even have high definition sound or anything
+  exotic.  You can buy an entire VCR these days for less than $143 including
+  its own remote!),  The average price of these replacements is a still rather
+  inflated $40.
+<p>
+<li>Remote and Manual Service offers factory original remote controls from a
+  large number of companies.  I do not know how their prices compare with the
+  manufacturer direct or with places like MCM Electronics:
+<p>
+ <ul>
+ <li><A HREF="http://www.remotes.com/">Remotes.com</A>, Phone: 1-800-REMOTES
+  (1-800-736-6837).
+ </ul>
+<p>
+<li>Here is one that also appears to specialize in this area:
+<p>
+ <ul>
+ <li><A HREF="http://www.replacementremotes.com/">ReplacementRemotes.com</A>,
+  Remote controls, original remotes, universal remote controls, tv remotes,
+  more, Phone: 1-336-969-1842.
+ </ul>
+<p>
+ They will also attempt to locate hard to find remotes.
+<p>
+<li>And another.  They also claim that most of the remotes they sell are
+ factory original.
+<p>
+ <ul>
+ <li><A HREF="http://remotecontrolwarehouse.com/">Remote Control Warehouse</A>,
+ Phone: 1-888-873-6683.
+ </ul>
+</ul>
+<p>
+<A NAME="irrnhu"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#irrtoc">IR Remote Repair FAQ Table of Contents</A>.
+<h2>Problems Not Due to a Defective Hand Unit</h2>
+<h3><A NAME="irrpwe">Problems with the Equipment</a></h3>
+
+While circuit problems with the hand unit discussed in the section:
+<A HREF="#irrpwr">Problems with Remotes</a> are most likely, the following
+causes should not be overlooked if the remote does not work or has limited
+range:
+<ul>
+<li>Dirty IR window - The plastic sheet which covers the IR detector may be
+  coated with dust, grease, grime, or tobacco smoke, or other wise damaged.
+  If sensitivity has decreased even with a new set of batteries, this is a
+  distinct possibility.  It is not always obvious whether a particular type
+  of dirt or damage will affect response.  Some condensation may be totally 
+  opaque to IR while appearing transparent to visible light.  On the other
+  hand, I have a TV where someone must have cleaned the sensor window with
+  sandpaper or a strong solvent - it is totally clouded over but works just
+  fine with my $10 universal remote.
+<p>
+  Test by removing the front panel if possible and direct the remote at the
+  sensor directly.  Inspect and clean the sensor window thoroughly with mild
+  detergent and water.
+<p>
+<li>Defective IR sensor, receiver electronics, or microcontroller can result
+  in the equipment simply ignoring you and/or doing whatever it pleases.  The
+  first two of these can generally be tested without service information.
+  However,  if they check out, advanced troubleshooting will be required.
+<p>
+  Borrow a replacement or universal remote to determine if the device responds
+  with a known good unit.  Check demodulated waveforms with an oscilloscope
+  to confirm proper signal levels and reliable operation.  See the section:
+  <A HREF="#irrdia">Diagnosing the Problem</a> as well.
+</ul>
+Note that if this is a problem with new equipment (or if it has always been
+this way), don't neglect the obvious: Has the protective plastic film been
+removed?  This is often present to prevent damage during manufacturing and
+shipping.  It is amazing how many people neglect to remove this - I have gotten
+10 year old TVs and VCRs at garage sales with this ugly film still in place!
+<p>
+And, there could be a design or manufacturing problem with your set....
+<p>
+While the IR-receiver module inside that TV may be a mature component and may
+function well on the test bench, it is entirely possible that the TV
+manufacturer has made a (design) fault in applying it. An IR-receiver is a
+very sensitive device, and a television is a very dirty environment.  This
+may be a case of an EMC problem, not an optical problem. Under the right
+conditions, with this type of IR-transmitters and IR-receivers, distances
+of 100 feet or better may be crossed...
+<p>
+But,  this should not be the customer's problem. The service organization of
+the TV manufacturer is the proper place to obtain a fix. The complaint is
+valid and it should be cured.
+
+<h3><A NAME="irrpdi">Problems Due to Interference</a></h3>
+
+Symptoms for the following may range from no, intermittent, or incorrect
+response or greatly reduced range to the equipment being possessed - a TV
+changing channels, volume, or powering itself on and off as though being
+controlled by a poltergeist.  (Where the problem is due to more than one
+piece of equipment interacting, see the next section.)
+<p>
+These are likely possibilities if you have just changed your room layout or
+added something to it:
+<p>
+<ul>
+<li>Interference from another remote in the same room which is defective (or is
+  being squashed by a gorilla).  Make sure there are no other IR transmitters
+  including those like the a VCR+ or remote repeater that might be activated
+  accidentally due to faulty programming or something pressing on the
+  buttons.  Do you know where all your remotes are hiding?
+<p>
+  A neighborhood kid (or adult with the maturity of a kid) may be playing
+  tricks on you from outside your window or even across the street.  It
+  doesn't take much (a lens) to extend the effective distance over which
+  a universal remote will operate reliably.
+<p>
+  Cover the sensor of the misbehaving equipment with a piece of black tape
+  to see if the problem goes away.  Then round up your other remotes (and/or
+  other animate objects) and discipline them!
+<p>
+<li>Fluorescent lamps using electronic ballasts - These may be newer ceiling
+  fixtures or the energy efficient compact fluorescents used as replacements
+  for the regular light bulbs in table lamps.  The electronic ballasts are
+  switching power supplies and these may result in modulation of the light
+  intensity at high frequencies confusing the remote control receiver.
+<p>
+  Turn off all fluorescent lamps to see if the problem goes away.  A cardboard
+  baffle can be taped to the sensor to block the interfering light.  Try a
+  different brand of compact fluorescent as not all cause interference.
+<p>
+<li>Bright lights in general - Enough ambient light, be it from the Sun or a
+  1000 W flood may overload the sensor.  Ceiling fans can sometimes modulate
+  the light with their fan blade rotation or vibration of the filaments of
+  the bulbs which can confuse the remote control receiver and microprocessor.
+<p>
+  Turn off the lamps or move the Sun <g> to see if the problem goes away.  A
+  cardboard baffle can be taped to the sensor to block the interfering light.
+  Simply changing the orientation of a lamp shade or slightly moving one of
+  components may be all that is needed.
+<p>
+<li>Electrical interference from nearby equipment.  Inadequate shielding in the
+  sensor electronics could result in susceptibility to RF emissions from other
+  gear.
+<p>
+  Turn off suspect devices.  If the problem goes away, they will need to be
+  moved to another location.  Shielding is probably not a viable option.
+</ul>
+
+<h3><A NAME="irrtwo">Where Multiple Pieces of Equipment Use the Same
+ Codes</a></h3>
+
+It sometimes happens: A second VCR or TV, even if from a different
+manufacturer, may use exactly the same remote coding.  Where there is no
+unit select switch on the device and hand unit, only careful aiming (possibly
+with a set of blinders!) will allow control of one at a time.
+<p>
+There are three ways to solve this problem: changing the wavelength of
+the light, the modulation frequency, or coding used by the remote.  Only
+the first of these is likely to be realistically possible without major
+effort and would involve replacing the IR LED(s) in the hand unit with
+visible ones (red, yellow, or green) and replacing the IR passing filter
+on the controlled equipment with one selective for the visible wavelength.
+The silicon sensor in the remote receiver probably will work just fine for
+visible light.  A colored piece of cellophane or plastic may be adequate
+for the filter.  Using a green LED may be best since its wavelength is
+furthest away from the IR wavelength making the filtering easier.
+<p>
+I have not actually tried this stunt but there is no fundamental reason why
+it shouldn't work.  However, some experimentation may be required to find a
+suitable high brightness LED and to match it to driver in the hand unit
+since the LED's voltage drop will be different and may require changing a
+resistor.  And yes, with care, it should be possible to extend this approach
+to 3, maybe even 4 devices.  Multicolored remotes might be kind of cool. :)
+
+<h3><A NAME="irrfyu">Forgot Your Universal Remote Setup?</a></h3>
+
+Hopefully, you saved the instruction manual.  No?  Some universal remotes
+like the Zenith Allegro have an 'auto search function' which will sequence
+through all possible codes.  You then push a button to lock in the proper
+settings when the TV or VCR's channel or power status changes.  Of course,
+since you don't have the instruction manual, you likely don't know how to
+use this feature either!
+<p>
+The manufacturer of the remote control is the next likely source (after the
+instruction manual) for the codes and other information.  However, there is
+a good chance that one of the following web sites may be able to help you:
+<ul>
+<li>Memorex has a web site at:
+<p>
+<ul>
+ <li><A HREF="http://www.memorex.com/">Memorex.com</A>
+</ul>
+<p>
+  But they suggest using the technical support line (800-636-8352) for remote
+  control programming and other Memorex consumer electronics questions.
+<p>
+<li>The RCA Web site used to have complete user manuals for their universal
+ remotes.  Maybe they still do but navigating that site is so confusing with
+ multiple 404 errors that I gave up.  However, I was told that you should
+ go to: "Shop RCA", then "Accesories", then "Universal Remote Controls", then
+ the model in question.  The PDF link to the owner's manual is at the
+ bottom of the page listed as "Owner's Manual".  Maybe. :)
+<p>
+ <ul>
+ <li><A HREF="http://www.rca.com/">RCA Electronics</A>
+ </ul>
+<p>
+<li><A HREF="http://www.hifi-remote.com/ofa/">Remotes</A> has extensive info on
+ both Radio Shack and One-For-All brand remotes.  This Web site may be
+ more stable than the ones provided by the manufacturers.
+<p>
+<li>The Sony Web site has detailed programming codes and some troubleshooting
+ info for some of their universal remotes:
+<p>
+<ul>
+ <li><A HREF="http://www.sel.sony.com/SEL/service/remote.shtml">Sony
+  Consumer Electronics Guide - Remote Control Solutions</A>
+</ul>
+<p>
+<li>Universal Electronics, makers of the One-For-All(tm) line of universal
+ remote controls (and other products) has a web site:
+<p>
+<ul>
+  <li><A HREF="http://www.oneforall.com/">Universal Homepage</a>
+</ul>
+<p>
+  There is complete info on programming and special functions for many
+  models.  Since other universal remotes may be rebranded One-For-Alls,
+  this information may be useful for those as well.
+<p>
+<li>US Electronics, makers of a variety of universal remotes (1-in-1 CATV,
+  2-in-1 Universal, 3-in-1 Universal, 4-in-1 Universal, ABC (Promote series),
+  etc.) has a web site:
+<p>
+<ul>
+  <li><A HREF="http://www.uselectronics.com/">US Electronics Homepage</a>
+</ul>
+<p>
+  There are complete specifications and setup instructions for most of their
+  products (with the rest coming soon).
+<p>
+<li>Zenith has an extensive web site with product specifications for many of
+  their audio/video products.  Gemini remotes (e.g., Easy-3) are made by
+  Zenith.  There is nothing there at the present time but indications are
+  there may be remote information in the near future.
+<p>
+ <ul>
+ <li><A HREF="http://www.zenith.com/">Zenith Homepage</A>
+ </ul>
+<p>
+ And here is another one:
+<p>
+ <ul>
+ <li><A HREF="http://www.xdiv.com/remotes/">xDiv's Universal Remote Control
+  Codes</A>
+ </ul>
+</ul>
+<p>
+Next time, make copies of the instruction manual(s) and put them in obvious
+places like taped to the back of the TV or inside the entertainment cabinet.
+<p>
+Better yet, print the specific instructions and/or codes on a slip of paper and
+stuff it into the battery compartment of the remote.  Or tape the info to the
+back and then cover with clear tape to protect it from wear.
+<p>
+One of the primary axioms of life is that you will lose those instruction
+manuals. :-)
+
+<h3><A NAME="irrcsp">Code search Programming of RCA SystemLINK Remote
+ Controls</a></h3>
+
+Perhaps this is your lucky day and this is the type of remote you have that is
+in search of an instruction manual.
+<p>
+I know this procedure works for models 3 and 4+ and assume it to be similar for
+the others.
+<p>
+(From: Larry Sabo (sabo@storm.ca).)
+<ol>
+<li>Make sure the device you are programming is turned off.
+<p>
+<li>Press and hold CODE SEARCH.
+<p>
+<li>Press and release TV, VCR, or CABLE corresponding to the device to be
+   controlled. The indicator light will flash once to indicate the search
+   is enabled.
+<p>
+<li>Release CODESEARCH.
+<p>
+<li>Press OFF/ON repeatedly until the device turns on.
+<p>
+<li>Press CHANNEL V (channel down) for verification.  DO NOT press any other
+   buttons at this time.
+<p>
+<ul>
+<li>If the channel changes on the device, the code is valid. Press ENTER to
+   complete the search.
+<p>
+<li>If the channel does not change, turn off the device (without attempting to
+   use the remote). Then continue search by repeating steps 5-6. When all codes
+   have been searched, the indicator light will flash twice and the remote will
+   return to the normal mode.
+</ul>
+</ol>
+(From: Aldrich TV, Inc. (aldrichtv@centuryinter.net).)
+<p>
+<blockquote>
+"I find it works better if you have the unit on and watch for it to go off.
+It is easy to miss it coming on and then you have already passed the proper
+code and have to start over."
+</blockquote>
+<p>
+<A NAME="irrioi"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#irrtoc">IR Remote Repair FAQ Table of Contents</A>.
+<h2>IR Items of Interest</h2>
+<h3><A NAME="irritr">Increasing the Range of a Remote Control or IR Data
+ Link</a></h3>
+
+For operation between rooms, a repeater is best - an IR receiver that sends
+the data over a cable to an IR transmitter in the other location.  This would
+require an IR receiver module similar to the one found in a TV or VCR, buffer
+to drive the cable, and a IR transmitter modulated at the appropriate carrier
+frequency (around 40 kHz typically).
+<p>
+If extra distance or sensitivity is needed in the same room, it may not be
+too hard to replace the IR LEDs in the hand unit with more and/or higher
+power devices (though the IR LEDs used originally are generally quite powerful)
+but this would require some circuit hacking and possibly some reverse
+engineering of the design to determine what is possible.  A small convex
+lens over the IR window on the receiver will help as well but will reduce the
+angle to the receiver over which response will be reliable.  This would be
+suitable if you always use the equipment from a fixed location like a couch
+at the opposite end of the room.
+<p>
+Where the transmitter and receiver are both in restricted locations, a short
+focal length convex collimating lens can be added to the transmitter as well
+as the receiver.  The angular coverage of both receiver and transmitter will
+be reduced but the range will increase.  Reducing the beam divergence by a
+factor of 2 at the transmitter will increase the range by approximately a
+factor of 2.  Doing this at the receiver as well will add another factor of 2.
+Several hundred feet should be possible with very inexpensive lenses.  I would
+suggest a lens of around 1 inch diameter with a 1 inch focal length.  This is
+not critical but an IR detector circuit or card should be used to help set up
+the proper distance to the transmitter IR LED and receiver photodiode.
+
+<h3><A NAME="irrrrr">Remote Remotes (Remote Extenders)</a></h3>
+
+In some situations, it is desirable to be able to operate a remote controlled
+piece of equipment from another room - where a direct line-of-site path does
+not exist.  One example of this would be to control a stereo receiver in the
+living room (which has speakers wired all over the house) from a bedroom.
+<p>
+There are a number of ways of implementing this:
+<ol>
+<li>RF - An IR receiver in the bedroom retransmits the codes over on a radio
+   frequency carrier to an IR transmitter in the living room.
+<p>
+<li>Hard-wired - An IR receiver in the bedroom converts the IR to TTL (or other
+   electrical) pulses wired to an IR transmitter in the living room.
+<p>
+   Where at least one video cable exists between the two rooms, a variation on
+   this theme uses a combination of the coax shield and earth ground to send
+   the signal between the rooms.
+<p>
+<li>House wiring - An IR receiver in the bedroom modulates a carrier injected
+   into the AC wiring.  An IR transmitter picks off the signal from the AC
+   wiring.
+</ol>
+In all cases, the IR receiver should be a module that includes automatic
+level control and generates a logic level output.  If possible, it should NOT
+demodulate the IR signal so that the frequency of the carrier is maintained.
+The IR transmitter then only needs to convert this logic level to on-off IR
+pulses.  Widgets based on all of these schemes are available commercially.
+<p>
+(From: Robert Scott (Robert.Scott@ncl.ac.uk).)
+<p>
+One of these circuits exists at:
+<p>
+<ul>
+<li><A HREF="ftp://ftp.ee.ualberta.ca/pub/cookbook/optic/irrepeater.tar.Z">
+ ftp://ftp.ee.ualberta.ca/pub/cookbook/optic/irrepeater.tar.Z</a>
+</ul>
+<p>
+(From: Francis VE2FGS (sonytech@videotron.ca).)
+<p>
+I personally have small pyramids called "Powermid" made by X-10 which work
+fine.
+<p>
+Those come by pair, one transmitter and one receptor. You plug them in 120 VAC
+wall outlet and it transmit signals between the two pyramids with FM signals.
+It work very fine and I think it's the most practical, cheap, and fast way to
+transmit IR signals from one room to another.
+<p>
+I paid about $40 (Canadian) for the pair.
+
+<h3><A NAME="irrpcc">Controlling TVs, VCRs, CDs, etc., From a PC</a></h3>
+
+(From: Donald Hoffman (dhoffman@epix.net).)
+<p>
+I know of 1 link to such devices. Try:
+<p>
+<ul>
+ <li>The <A HREF="http://www.smarthome.com/8002.html">B.I.R.D. Computer
+  Controllable Learning IR Remote</A>
+ </ul>
+</ul>
+
+<h3><A NAME="irrirs">IR Signal Transmission and Coding</a></h3>
+
+Modern remotes use a pulse code modulated carrier to send the command.  Typical
+carrier frequencies vary between roughly 36 and 56 kHz (although rumor has it
+that Bang and Olefsun remotes may use 455 kHz for the actual IR carrier - I
+have not been able to confirm this).  Each pulse or bit consists of multiple
+cycles (e.g., 32) of this carrier.  Here are approximate measurements made of
+the general characteristics of some typical remotes:
+<pre>
+           Model           Carrier       Cycles/bit     Repeat rate
+      ------------------------------------------------------------------
+        Emerson VCR        36 kHz            32            10 Hz
+        Mitsubishi VCR     38 kHz            10            20 Hz
+        Panasonic VCR      56 kHz            48            10 Hz
+        RCA TV             56 kHz            28            16 Hz
+        Sony CD            40 kHz          24/48           20 Hz
+        Sylvania TV        36 kHz            32            10 Hz
+        Technics CD        56 kHz            48            10 Hz
+        Toshiba VCR        38 kHz          20/320*          9 Hz
+        Yamaha receiver    38 kHz          20/320*          9 Hz
+</pre>
+For buttons that repeat, typical rates are 10 to 20 Hz and the entire code may
+actually be sent only when the button is first pressed with only a 'repeat'
+code sent while it is held down.  (* This extra length 'bit' was evident in
+the repeat code for the Toshiba VCR and Yamaha receiver - which both seemed
+to use very similar coding schemes.  Repeat for all keys used a 320 cycle bit
+followed by an 80 cycle gap and a 20 cycle bit.)  It would appear that various
+combinations of NRZ, RZ, PWM, and others are used depending on manufacturer
+and model.  Think of the challenges involved in designing a universal remote!
+<p>
+The carrier frequency and coding schemes (these are even more varied than the
+table above would indicate) have apparently not been standardized.  They may
+also vary quite a bit even different models of equipment from the same
+manufacturer.  Therefore, it is beyond the scope of this document to enumerate
+them all.  It is possible to see these types of waveforms with an oscilloscope
+by monitoring internal signals of the remote including certain pins on the
+controller IC as well as the IR LED or its driver or across the transistor of
+the IR detector circuit (see the section: <A HREF="#irridr">IR Detector and
+Related Circuits</A>).
+
+<h3><A NAME="irrcap">Capturing Remote Control Codes</A></h3>
+
+(From: Dez Ellis (dezellis@lineone.net).)
+<p>
+Check out <A HREF="http://www.ziplabel.com/cir/">ZipLabel.com Computerized
+Infrared Remote</A>.  They have a very cheap and cheerful method of obtaining
+IR codes.  DOS software is provided for textual or binary capture of remote
+control codes. Windows software for the device is also linked to the site. The
+Windows software "Monster Clicker" allows you to create any number of virtual
+remote control functions. This software also has full Macro facilities.  It
+is well worth a visit for the small amount of construction required this is an
+excellent option.
+
+<h3><A NAME="irrlnk">Links to IR Related Web Sites</a></h3>
+
+The sites below have quite a bit of information on IR remote data transmission,
+coding schemes, various circuits.  There are even tables of formats for the
+remotes from a number of manufacturers:
+<ul>
+<li><A HREF="http://www.epanorama.net/links/irremote.html">
+ Tomi Engdahl's IR Remotes Links Page</a> 
+<li><A HREF="http://www.fet.uni-hannover.de/~purnhage/dat/dat.html#sircs">
+ SIRCS and other IR Remote Info and Links</a>
+</ul>
+<p>
+Here is an even more extensive list:
+<p>
+(From: Joe Krantz (joed.krantz@symbios.com).)
+<ul>
+<li><A HREF="http://www.celadon.com/Consumer/consumer.html#TOP OF CONSUMER">
+ http://www.celadon.com/Consumer/consumer.html#TOP OF CONSUMER</a>
+<li><A HREF="http://www.asihome.com/">
+ http://www.asihome.com/</a>
+<li><A HREF="http://www.homecontrols.com/">
+ http://www.homecontrols.com/</a>
+<li><A HREF="http://www.irda.org/">
+ http://www.irda.org/</a>
+<li><A HREF="http://www.techmall.com/">
+ http://www.techmall.com/</a>
+</ul>
+(From: Tomi Holger Engdahl.)
+<p>
+Almost all you can find free from the net you can find linked from
+<ul>
+<li><A HREF="http://www.epanorama.net/links/irremote.html">
+ http://www.epanorama.net/links/irremote.html</a>.
+</ul>
+<p>
+Here is a site that appears to have a lot of more or less
+non-commercial info on medium to high end (they say) remote controls from
+various manufacturers including detailed coding and other technical details:
+<p>
+<ul>
+<li><A HREF="http://www.remotecentral.com/">Remote Central</A>
+</ul>
+<p>
+And Web sites with extensive information on remote control codes:
+<p>
+<ul>
+<li><A HREF="http://www.lirc.org/">LIRC - Linux Infrared Remote Control</A>
+<li><A HREF="http://winlirc.sourceforge.net/">WinLIRC - Windows Infrared Remote Control</A>
+<li><A HREF="http://lirc.sourceforge.net/remotes/">Sourceforge.net Index of
+ Remotes with Control Codes</A>
+</ul>
+<p>
+<A NAME="irridr"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#irrtoc">IR Remote Repair FAQ Table of Contents</A>.
+<h2>IR Detector and Related Circuits</h2>
+<h3><A NAME="irrird">IR Detector Circuits</a></h3>
+
+Two approaches are shown below.
+<ol>
+<li>The first uses a bare photodiode as the sensor.  It is simpler, lower
+  power, and shouldn't care what, if any, modulation is used by the IR source.
+<p>
+<li>An IR detector module salvaged from a TV or VCR, or purchased from Radio
+  Shack or elsewhere may be used instead of a photodiode.  This will have a
+  much greater dynamic range (response to both weak and powerful signals)
+  than a simple photodiode.  However, some of these assume a particular
+  modulation frequency and will be blind to anything else.  Power requirements
+  may also be more restrictive - it may insist on regulated 12 V).
+</ol>
+
+<h4><A NAME="irrdbp">IR Detector Circuit Using Bare Photodiode</a></h4>
+
+This IR Detector may be used for testing of IR remote controls, CD player
+laser diodes, and other low level near IR emitters.  It will not have the
+sensitivity or dynamic range of the approach described in the section:
+<A HREF="#irrdrm">IR Detector Circuit Using IR Receiver Module</a> but will
+respond to all sources of IR falling within the wavelength range of the
+photodiode used since there is no demodulation or coupling circuitry to get
+in the way.
+<p>
+IR radiation falling on the photodiode causes current to flow through R1
+to the base of Q1 switching it and LED1 on.
+<p>
+Component values are not critical. Purchase photodiode sensitive to near
+IR - 750-900 um or salvage from optocoupler or photosensor.  Dead computer
+mice, not the furry kind, usually contain IR sensitive photodiodes. For
+convenience, use a 9V battery for power.  Even a weak one will work fine.
+Construct the circuit so that the LED does not illuminate the photodiode!
+<p>
+The detected signal may be monitored across the transistor with an
+oscilloscope.
+<pre>
+
+ Vcc (+9 V) o-------+---------+
+                    |         |
+                    |         \
+                    /         /  R3
+                    \ R1      \  500
+                    / 3.3K    /
+                    \       __|__
+                    |       _\_/_  LED1 Visible LED
+                  __|__       |
+        IR ---->  _/_\_ PD1   +--------o Scope monitor point
+          Sensor    |         |             (low active)
+        Photodiode  |     B |/ C
+                    +-------|    Q1 2N3904
+                    |       |\ E
+                    \         | 
+                    / R2      |
+                    \ 27K     |
+                    /         |
+                    |         |
+       Gnd o--------+---------+--------o Gnd
+                   _|_
+                    -
+
+</pre>
+
+<h4><A NAME="irrdrm">IR Detector Circuit Using IR Receiver Module</a></h4>
+
+This one uses an entire IR receiver module as the IR sensor.  Its sensitivity
+and dynamic range will be much better than the circuit described in the
+section: <A HREF="#irrdbp">IR Detector Circuit Using Bare Photodiode</a> since
+these modules have automatic gain control circuitry built in.  However, some
+modules are tuned to a particular modulation frequency and/or are AC coupled
+and will not respond to all remotes or other pulsed or continuous IR sources.
+<p>
+The IR receiver module from a TV, VCR, or purchased from Radio Shack or
+elsewhere, drives the base of Q1 through R1.  It may even be possible to
+eliminate the transistor circuit entirely and connect the LED directly to the
+module's output (in series with a current limiting resistor to Vcc or Gnd) but
+that depends on the drive capabilities of the module.  You can use whatever
+Vcc is required for the IR receiver module for the LED circuit as well but may
+need to change the value of R2 to limit the current to the LED to less than
+its maximum rating.
+<p>
+The specific case where Vcc is +5 V is shown.
+<pre>
+
+                                 R2 
+    Vcc (+5) o------+-----------/\/\--------+
+                    |           220       __|__
+                    |                     _\_/_  LED1 Visible LED
+                    |                       |
+                    |+                      +--------o Scope monitor point
+               +----------+                 |             (low active)
+              -|    IR    |out    R1    B |/ C
+       IR ---> : Receiver |------/\/\-----|    Q1 2N3904
+              -|  Module  |      10K      |\ E
+               +----------+                 | 
+                    |-                      |
+         Gnd o------+-----------------------+--------o Gnd
+
+</pre>
+
+<h3><A NAME="irrsii">Steve's Instant IR Tester</a></h3>
+
+(From: Steve Rice (punky@efortress.com).)
+<p>
+IR receiver diode (from scrap Penney's unit) attached to 18" single pair
+wires-passed through heavy-gauge straw (from some unknown latte drink in the
+early A.M.). RTV the tip to maintain rigidity.  Positive end to plus end of
+9 V battery. Negative end to 330 ohm 1/4 W resistor, and from there to display
+LED (I chose a pretty red one from the scrap box), and then back to negative
+of battery.
+<p>
+Time consumed: 2 hours. (1 hour to make sure the RTV was cured properly.)
+<p>
+Application to numerous remote control sources and to a couple of CD pickups
+provided nice glow from the indicator LED.
+<p>
+I just received a Fisher 25 disc unit for repair, and the above tester was
+instrumental in determining that over 12 IR emitters were functional. (Some
+of these were in locations otherwise very difficult to access.)
+
+<h3><A NAME="irrqad">Some Alternative 'Quick and Dirty' Remote Testers</a></h3>
+
+In addition to the IR detector circuits, IR detector card, and camcorder,
+video camera, or digital camera here are a few other options:
+<p>
+(From: Raydon Berry (rayberry@pt.lu).)<p>
+<p>
+Measure the current consumption from the batteries.  Put the multimeter
+on a range of about 25 mA and when you press each button, the code being
+sent will show up as a wagging needle on a VOM or an average current for a
+DMM.  If the ceramic filter or the IR diodes have failed, the current
+remains very low, but if OK, you should see pulses of 5 to 10 mA.
+<p>
+(From Malik (M.dad@mmu.ac.uk).)
+<p>
+<blockquote>
+"If you have a IR remote TV in the workshop for testing VCRs and other video
+equipment, you can modify this so that audio can heard from the speaker which
+represents the IR signal.
+<p>
+Simply couple the output of the IR receiver (in the TV) to the input of the
+audio output stage. Use a low value ceramic cap and a high value resistor,
+this should be possible on all remote TV's and will cost you next to nothing."
+</blockquote>
+<p>
+(From: ShyGuy4Yu (shyguy4yu@aol.com).)
+<p>
+<blockquote>
+"Take a known good IR receiver from an old set.  Supply proper DC to it.  Feed
+the output into an audio amplifier.  You can hear intermittent operation
+really well without squinting at test equipment.  Put one on the counter for
+demo to customers.. Great!!"
+</blockquote>
+<p>
+(From: Sam).
+<p>
+What a nice idea!  The only concern I would have is that not all IR
+transmitters use the same modulation frequency so I don't know how
+forgiving the demodulator in the IR receiver would be.  Thus, you might
+think a remote control is bad when in fact it is just incompatible.
+<p>
+You could probably learn to recognize the codes by ear after a while
+as well! :-)
+<p>
+(From: Paul Grohe (grohe@galaxy.nsc.com).)
+<p>
+<blockquote>
+"Here is a another "quick" and "very dirty" test of the IR emitter I have used:
+<p>
+Clip a *glass* encased diode (1N34, 1N914, 1N4148, etc.) between your
+scope probe tip and ground clip.  Crank the scope sensitivity up to about
+20 tp 50mV/div.  Hold the diode by the grounded lead (to reduce noise pickup).
+<p>
+Point the "business" end of the remote directly at the clear part of the
+diode body.  The IR packets will now be visible on the scope.
+<p>
+You may have to move the remote around to find the "hot spot" in the window.
+The more of the diodes junction that is exposed, the better the response.
+<p>
+A Sony remote generates about 50mVpp with a typical 1N4148/1N914 and more
+than 200mVpp with a "wide open" 1N34A point-contact Germanium (at 1 cm).
+<p>
+BTW, the time constant of this setup may mask the actual 40kHz
+carrier pulses.  Place a 100k resistor in parallel with the diode
+to see the individual pulses clearly (sensitivity *is* reduced).
+<p>
+Or just simply hold the remote against an AM radio for a quick test."
+</blockquote>
+<p>
+(From: Sam)
+<p>
+And, Filip also suggested that last one so I will honor him as well. :-)
+Almost any sensitive amplifier may pick up some clicks from a working
+remote.  A guitar or microphone amp may work for this.  However, none of these
+indirect methods actually test the IR output but probably are accurate
+enough in most cases.
+<p>
+(From: Filip M Gieszczykiewicz (filipg@repairfaq.org).)
+<p>
+<blockquote>
+"Simply hold a pocket AM radio or Walkman set on AM and push the buttons.  This
+works for all the remotes I have.... except the ultrasonic one. :-)"
+</blockquote>
+<p>
+(From: Bob Quackenbush (quackenb@heidelberg-emh11.army.mil).)
+<p>
+<blockquote>
+"Tune an AM radio to a quiet area of the band, hold the remote near the
+(normally internal) antenna, press and hold any key on the remote.  The sound
+will be a quiet fluttering, so listen carefully.  Be careful with your
+interpretation of the results.  "No flutter" may NOT mean that the transmitter
+isn't working."
+</blockquote>
+<p>
+(From: David C. Brink (db@mcs.com).)
+<p>
+<blockquote>
+"Just dissect the remote far enough to get access to the IR LED(s) leads (if
+the remote has been through the moving bits of the Lazy-Boy a few times, such
+disassembly might not even be necessary).  Hold a LED in parallel with it and
+see if it lights when you press the remote buttons."
+</blockquote>
+<p>
+(From: Sam)
+<p>
+Note: Since the voltage drop across an IR LED is usually less than that
+across a visible LED, this may not work unless the remote uses two LEDs in
+series.  In that case, substitution may be needed.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#irrtoc">IR Remote Repair FAQ Table of Contents</A>.
+<p>
+-- end V3.20 --
+<p>
+</BODY>
+</HTML>

@@ -1,0 +1,399 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/manuals/lsk1ins2.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Instructions for Red HeNe Laser Kit 1 (Including Zeeman)</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/manuals/lsk1ins2.htm">https://www.repairfaq.org/sam/manuals/lsk1ins2.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<body>
+<A NAME="top">
+<p>
+<center>
+<h1>Instructions for Red HeNe Laser Kit 1 (Including Zeeman)</h1>
+<h2>Version 1.11 (12-Feb-21)</h2>
+<h3>
+<A HREF="../lasersam.htm">
+Sam's Laser FAQ</A>, <A HREF="../copyright.htm">Copyright &copy<A> 1994-2019
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+</center>
+<p>
+<hr>
+<p>
+</center>
+
+<h2>Introduction</h2>
+
+This document contains notes on the assembly and operation of the basic
+red HeNe laser kit as well as deluxe and Zeeman versions.
+<p>
+<center>
+<img src="hld103.jpg"><br>
+</center>
+<p>
+(The style of some parts may vary slightly from what's shown in the photo.)
+<p>
+The following components are included:
+<p>
+<ul>
+<li>Melles Griot, Siemens, or Uniphase ~6 inch 0.8 to 1.2 mW HeNe laser tube
+ that has been tested to assure that it is well behaved for the intended
+ type of laser.  (The deluxe version of this kit guarantees a laser tube
+ of >1.2 mW.)
+<p>
+ WARNING: Most of these tubes have anode-end output.
+ Do not touch anode-end when powered or for awhile after to avoid shocking
+ experience!  More on this below.
+<p>
+<li>Laser Drive HeNe laser power supply brick with ballast resistor and tube
+ mounting brackets.  The input is 21-31 VDC.  Positive is
+ the thin red wire; Negative is the thin black wire.
+ The yellow wire is a TTL logic level enable (low) and is generally
+ permanently tied to the black wire.
+<p>
+<li>Regulated 24 VDC wall adapter for the HeNe laser power supply brick.
+ If there is a DC plug on the adapter, it may be used with a suitable mating
+ socket.  Otherwise, cut the plug off, strip the wires and confirm and label
+ the polarity as styles may vary.  REVERSE POLARITY WILL PROBABLY FRY
+ THE BRICK AND/OR ADAPTER!
+</ul>
+<p>
+To power the laser tube proceed as follows:
+<p>
+Please go to: <A target="LSK1" HREF="LD103-23-Wiring.htm">Wiring Instructions for Laser
+Drive 103-23 HeNe Laser Power Supply</a>.
+<p>
+As noted there are two beams from the tube.  The main beam is the stronger
+one (typically by a factor of 25-100 or more) than the "waste" beam.
+Which end of the tube is which is set at the time of manufacture.  For
+the tube in the kit, it will need to be determined as both types have
+been shipped at times.  The output beam emerges from the end with the
+AR coating, which appears blue-ish in reflection.  However, it may be
+the anode or cathode-end.  Also as noted, the tube MUST be oriented so
+the glass-end is wired to the positive (red wire with ballast) of the
+HeNe laser power supply or else bad things will likely happen.
+<p>
+CAUTION: DO NOT stare into the beam or its specular reflection with your
+remaining good eye.  A 1 mW laser is similar in intensity to that of the
+noonday Sun.  If your original equipment eyeballs are ruined, replacement
+parts are not currently available at affordable prices.
+<p>
+<b>Beam Characteristics</b>
+<p>
+The output of the HeNe laser tube is single spatial mode TEM00 which means
+it has a nearly perfect Gaussian profile - a single round spot whose intensity
+falls off smoothly.  This is better than for many other types of lasers
+without a lot of work.
+<p>
+The tubes provided in this kit may have a wide divergence - 8 milliRadians
+(8 mR) meaning the beam expands at a rate of 8 parts per thousand.  So at
+1 meter, the beam (to 1/e points in intensity) will be just over 8 mm in
+diameter.  The beam can be better collimated to reduce this expansion - or
+focused to a small spot - using one or two lenses.  A single 3-4 inch focal
+length lens can be used to collimate the beam.
+The effective point source of the beam from the high divergence
+tubes is a bit less than
+2 inches behind the output mirror.  Thus, a 2 inch focal length lens
+just beyond the output will collimate the beam with a narrow diameter.
+A 4 inch focal length lens can be positioned to diverge faster,
+collimate, or focus to a point.  A pair of lenses can be used to
+expand the beam by the ratio of their focal lengths.  The larger
+the diameter, the smaller the possible divergence.
+<A target="LSK1" HREF="http://www.surplusshed.com/">Surplus Shed</a>
+has a semi-infinite selection of inexpensive
+lenses including many suitable for beam expanders.
+<p>
+<b>Longitudinal Modes and Polarization</b>
+<p>
+A short tube like this operates with 1 or 2 longitudinal modes which are
+generally orthogonally polarized.  As the tube heats and expands, the
+modes move through the neon gain curve as depicted in
+<A target="LSK1" HREF="https://www.repairfaq.org/sam/henemd1.pps">HeNe Laser Mode Sweep: 140 mm (~5.5
+inch) Cavity Length Animation</a>.  To view these from the real laser requires
+a Scanning
+Fabry-Perot Interferometer (SFPI, also called a "Laser Spectrum Analyzer").
+(I have SFPI kits available for 1/10th to 1/50th of commercial versions.)
+Inserting a polarizing filter in the beam will enable the polarization
+behavior to be observed.  Some tubes will be smooth and continuous as in
+the animation.  Others will be "flippers" where the polarzation
+of the individual modes may switch as some point during the mode sweep
+(though adjacent modes will still be orthogonally polarized).
+The typical mode sweep for a similar length well behaved tube is shown
+below.
+<p>
+<center>
+<img src="../lhr007m2.gif">
+</center>
+<p>
+This is a plot of the longitudinal mode intensity with the red and blue
+being the intensity of the orthogonal polarized components.  A plot like
+this can be produced using a polarizing beam splitter, a pair of photodiodes,
+and an inexpensive (<$60) data acquisition system.  In fact, the least
+expensive way to display the modes on a Windows computer would be to
+via &micro;SLC1 even if stabilization is not desired.  See
+<A target="LSK1"
+HREF="../uSLC1/uSLC1.htm">&micro;SLC1
+Installation and Operation Manual</A>.
+<p>
+The tube in this kit is likely to be a flipper of some sort.
+<p>
+<b>Extension for Zeeman</b>
+<p>
+The following only applies to the Zeeman version of this kit - or where
+you would simply like to try magnets of your own to see what sort of
+changes they produce in behavior that can be easily measured.
+<p>
+In addition to the parts listed above, the Zeeman kit includes:
+<p>
+<ul>
+<li>Set of 50, 6x10 mm N52 rare earth magnets that can be configured in a
+ variety of ways surrounding the laser tube.
+<li>Three silicon photodiodes.
+<li>Linear polarizer which is the simplest way to monitor the
+ beat frequency between the two Zeeman-split components using a photodiode.
+ Various sizes, may be quite small.
+<li>Quarter WavePlate (QWP) to convert circular to linear polarization.
+ Made from optical grade mica and VERY fragile, more below.  0.5 inch diameter.
+<li>Circular Polarizer (CP) which is a combination of a linear polarizer
+ at 45 degrees and QWP.  This is typically ~1x1 inch with protective film
+ on both sides.
+<li>Polarizing Beam Splitter (PBS) cube which can be used to separate the
+ normal or Zeeman modes.  This is 4x4x4 mm.
+</ul>
+<p>
+When a HeNe laser tube is placed in an axial magnetic field, the neon
+gain curve is split into two parts shifted up and down in optical frequency.
+When the tube meets certain criteria including it be random polarized,
+the result is that the output will be right or left circularly polaried
+depending on which of the split gain curves contributes to the lasing.
+As a result of mode pulling, each of the lasing lines is shifted slightly
+in optical frequency.  When the they are near the center between the split
+gain curves they are pulled apart by up to a few MHz depending on factors
+including the length of the laser cavity, cavity losses including mirror
+reflectivity.
+<p>
+As the tube heats and expands, the
+modes move through the neon gain curve, the Zeeman behavior changes.  This
+is shown in <A target="LSK1" HREF="https://www.repairfaq.org/sam/hp5517ms.pps">HP/Agilent 5517
+Zeeman-Split HeNe Laser Mode Sweep Animation</A>.  The 5517 tube is
+similar to the short tube in this kit as far as Zeeman is concerned.
+<p>
+A high speed photodiode behind a linear polarizer can be used to detect the
+difference (or "split") frequency.  And a Quarter WavePlate (QWP) can be
+used to convert the circular polarization into components with
+orthogonal linear polarization that are the two optical frequencies.
+<p>
+The CP can also be used with its linear polarizer side facing the laser.
+The protective film must be removed because it also affects polarization!
+<p>
+Much more (with minimal hairy math) may be found at
+<A target="LSK1" HREF="../laserhst.htm#hstsazlb">Explanation of Axial Zeeman
+HeNe Laser Behavior</A>.
+<p>
+<b>Adding the Magnets</b>
+<p>
+It may be useful to trim the tube mounting brackets or to replace them
+entirely with tube clips to provide better access to the full length
+of the tube.
+<p>
+CAUTION: These magnets are small but powerful, though not in the flesh
+squashing league of larger ones. :)  But they should be kept well away
+from magnetic media, and small children and pets.
+
+The magnets can be configured in a variety of ways - and feel free to
+experiment.  But 7 rows of 7 magnets all with the same N-S polarity
+is probably optimal for achieving the maximum "split" frequency from
+the laser.  They won't stay put on their own so the individual stacks
+of 7 magnets should be wrapped in Kapton or similar tape and then secured
+surrounding the tube with some pieces of bicycle inner tube or something
+similar.  Take care to keep well clear of the anode - HV end.  Add generous
+insulation.  Arcing to the magnets is bad form and may damage the
+power supplies.  The type of thick clear plastic often
+used to package consumer and grocery items makes an excellent
+high voltage insulator as shown below.  Several layers of Kapton tape
+(or even plastic packing tape) can be added surrounding the
+anode-end cap to provide additional insulation.
+<p>
+A single magnet and two "sticks" of 7 magnets would look like:
+<p>
+<PRE>
+ +----+
+ |N  S| Magnet
+ +----+
+
+ +----+----+----+----+----+----+----+
+ |N  S|N  S|N  S|N  S|N  S|N  S|N  S| Stick 1
+ +----+----+----+----+----+----+----+
+
+ +----+----+----+----+----+----+----+
+ |N  S|N  S|N  S|N  S|N  S|N  S|N  S| Stick 2
+ +----+----+----+----+----+----+----+
+</PRE>
+<p>
+The direction NS or SN doesn't make any real difference for these experiments.
+The individual magents will, uh, stick together. :)  But the "sticks" will
+repel each-other and thus need to be constrained as shown below.
+<p>
+<center>
+<img src="zeemasm1.jpg">
+</center>
+<p>
+By using a plastic sleeve, the tube can be slipped
+inside and be close to the magnets without fear of
+short circuits or arcing.  The length of the sleeve will need to be adjusted
+to accommodate the laser mounting brackets.  Alternatively, the tube can
+be installed with insulation inside a non-ferrous cylinder as in the
+complete Zeeman laser shown below.
+<p>
+Rare earth magnets are more sensitive to heat than Alnico magnets, so
+if installing a heater surrounding the tube, keep the array of magnets
+slightly away from it with air or plastic in between.  Here they are
+actually secured to an aluminum cylinder inside which the tube and
+heater (well insulated) is installed.
+<p>
+When powered with the magnets in place, the appearance of the glow of the
+tube and laser beam won't be noticeably different by eye, though power
+variation during mode sweep and actual output power may change enough
+to be easily detected.  The fun will begin when using simple instruments.
+<p>
+<b>Zeeman Mode Sweep</b>
+<p>
+With a sufficiently powerful magnetic field, the entire character of
+the mode sweep changes dramatically.
+Here is a comparison of the mode sweep with and without a magnetic field
+for the same short tube, above:
+<p>
+<center>
+<img src="../007zmb1.gif">
+</center>
+<p>
+To observe this requires converting the circular polarization of the
+Zeeman modes to linear polarization using a Quarter WavePlate (QWP).
+Its optical axis should be oriented at 45 degrees to the baseplate so
+that the linearly polarized modes are at 0 and 90 degrees.  If the QWP's
+optical axis is not labeled, it will be necessary to determine it or simply
+adjust the orientation until the resulting plots for the orthogonal
+axes are most different.
+<p>
+The same data acquisition setup as used above for the non-Zeeman mode
+sweep will result in a plot similar to the one above.
+<p>
+<b>The Beat Signal</b>
+<p>
+To observe the split or beat signal, an oscilloscope and/or frequency
+counter with a bandwidth of at least 1 MHz will be required.
+<p>
+<ol>
+<li>Determine the anode and cathode one of the photodiodes with a
+ multimeter.  (I can never remember which way it goes!)
+<p>
+<li>Wire the PD to a 9 V battery or the 5 VDC power pack and load
+ resistor as shown:
+<p>
+<pre>
+                                  PD
+          +5 to 9 VDC o-----------|<|---------+--------o Output
+                                 C   A        |
+                                              /
+                                           R1 \         Scope or
+                                              /         Counter
+                                              \
+                                              |
+               Return o-----------------------+--------o Ground
+</pre>
+</ol>
+<p>
+Put the linear polarizer or PBS cube in the output
+beam in front of photodiode.  The polarizer is required
+to convert the left and right circular polarized components to a combined
+linearly polarized beam that will result in a signal from the PD.
+Since the two components are circularly polarized, its orientation
+doesn't matter.  Now, as the laser tube warms up and expands instead
+of simply producing variations in the polarized output, during a portion
+of the mode sweep cycle, there should be an oscillation varying slightly
+in frequency.  For this tube and 7x7 magnets positioned close to
+the anode (but well insulated!), it will typically be around 1 MHz.
+There is a threshold magnetic
+field below which there will never be a beat, so start with the 7x7 magnet
+arrangement which should work with the tube in the kit.  However, it is
+possible that 10 sets of 5 magnets will be even better.  The maximum
+beat frequency will occur when the magnets best overlap the active bore
+discharge.
+<p>
+<center>
+<img height=350 src="zeembt1.jpg">&nbsp; &nbsp; &nbsp;
+
+<video width="466" height="350" controls muted>
+ <source src="https://www.repairfaq.org/sam/manuals/zeembtv1.mp4" type="video/mp4">
+</video>
+
+<h4>Tube Installed in Zeeman Magnet for Testing (Left) and Video of Typical
+ Beat Signal (Right)</h4>
+</center>
+<p>
+This shows the bare tube snug with its heater
+inside a plastic sleeve with 7 sets of 7
+rare earth magnets secured to it with slices of bicycle inner tube,
+along with a polarizer and a built up version of the beat detector
+in the schematic, above, with a swing arm and 9 V battery inside.
+The position of the magnets along the tube was selected to maximize
+their overlap with the active bore discharge, resulting in the highest
+peak split frequency.
+As the tube warms up and the cavity length increases, a beat will appear
+periodically during mode sweep at a frequency peaking around 1 MHz
+for the 6 inch tube and the set of 49 rare earth magnets.  The beat will
+probably be present between 50 and 75
+percent of the cycle, and will change frequency somewhat during this time.
+With a greater magnetic field, the percentage of the cycle over which there
+is a beat decreases.  For example, it may be less than 10 percent for
+an HP-5517D laser (shown above) which locks with a ~3.75 MHz split frequency.
+<p>
+<b>Use of a Scanning Fabry-Perot Interferometer</b>
+<p>
+It is also possible to observe the longitudinal modes of the Zeeman laser
+using a Scanning Fabry-Perot Interferometer (SFPI).  However, the two
+components of the split Zeeman mode cannot be resolved by the setup in
+one of the SFPI kits or the most common commercial SFPIs even costing
+thousands of dollars.  They are simply two close together.  It is possible
+to build as SFPI with sufficient resolution, but that is definitely for
+the advanced course. ;-)  Inquire if interested or check my eBay listing
+for "Scanning Fabry-Perot Interferometers".
+<p>
+Viewing the modes with an SFPI would still be instructive though, especially
+if it can display the two polarizations simultaneously to separate channels
+on a color DSO.  That would be almost as good.  Adding dual polarization
+to a standard SFPI (kit or commercial) simply requires a polarizing beam
+splitter and a pair of photodiodes.
+<p>
+<b>Stabilized two-frequency Zeeman HeNe laser</b>
+<p>
+The photo below shows a complete system constructed using a tube, heater,
+and magnets like those in this kit.
+<p>
+<p>
+<center>
+<img width=800 src="../sgazl1p2.jpg"><br>
+<h4>Arduino-Based Stabilized Two-Frequency Zeeman HeNe Laser</h4>
+</center>
+<br>
+This is functionally similar to that of a $$$ HP/Agilent/Keysight metrology
+laser and could be used in a precision interferometer-based measurement system.
+<p>
+<hr>
+</html>

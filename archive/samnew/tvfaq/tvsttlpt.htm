@@ -1,0 +1,231 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvsttlpt.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Safe troubleshooting techniques for line..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Safe troubleshooting techniques for line powered TVs</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvsttlpt.htm">https://www.repairfaq.org/samnew/tvfaq/tvsttlpt.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Safe troubleshooting techniques for line..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvrchvc.htm">&lt;&lt;&nbsp;Removing the CRT HV conne..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvtslbt.htm">The series light bulb tri..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvsttlpt">Safe troubleshooting techniques for line powered TVs</A></h3>
+
+TVs are particularly dangerous with respect to troubleshooting due to the fact
+that a substantial portion of their circuitry - sometimes all of it - is
+directly line connected.  Even if your are working in a totally unrelated
+area like the sound circuits, awareness of the general design and location
+of the line-connected circuits can prove to be a life saver.
+<p>
+These designs may take several forms:
+<p>
+<ol>Separate switchmode power supply (SMPS).  In this case, only the primary
+ side of the power supply is line connected.  The remainder of the TV is
+ usually isolated from the line by the high frequency transformer and
+ feedback device (transformer or optoisolator) of the switchmode power
+ supply.
+<p>
+<li>On-board SMPS - a portion of the circuitry on the mainboard is directly
+ line-connected.  In the best case, this is restricted to the area around
+ the power cord connections and well marked on both top and bottom but don't
+ count on it.  Again, the rest of the TV may be isolated but avoiding
+ hazardous areas is more difficult especially in cramped quarters.
+<p>
+<li>Flyback derived power supply - a non-isolated linear (usually) power supply
+ provides B+ to the horizontal deflection (and startup circuit).  All other
+ system power is derived from secondary windings on the flyback transformer.
+ Similar comments to (2) above apply.
+</ol>
+<p>
+(1) to (3) may be found in TVs with A/V inputs and outputs.
+<p>
+<ol start=4">
+<li>Full hot chassis - a bridge rectifier/filter capacitor/linear regulator
+ provides some voltages including B+.  The flyback secondaries provide the
+ remaining voltages.  All share a common return which is at the intersection
+ of two of the diodes of the bridge rectifier.  There is no isolation.
+<p>
+ This type of design will usually not be found in a TV where there are
+ external connections (other than the RF antenna/cable connector which can
+ be capacitively isolated and you may actually get an AC reading or even
+ sparks between the RF shield and an earth ground due to this capacitance.)
+<p>
+ <b>WARNING</b>: Never attempt to add A/V inputs or outputs to such a TV as the
+ signals and shields will be electrically live.
+<p>
+ However, some TVs with A/V inputs/outputs actually had a live chassis and
+ used an isolated means of coupling the signals from/to the external jacks:
+<p>
+ (From: Bill Coffel (bc@datamix.com).)
+<p>
+ The late 70's and early 80's Sony CVM 1250/1750/2150 (12"/17"/21") monitors
+ (TV) have a HOT chassis.  In fact they are kV-1201/1701/2101 TV sets in
+ larger cabinet With a 3 prong plug!!!!  The inputs and outputs are isolated
+ via opto couplers and transformers on an additional circuit board (about 6"
+ by 8" and powered by a small transformer) the connector panel is the only
+ part grounded via the third prong.
+<p>
+ If someone thinks its not a live chassis they are in for quite a shock.
+</ol>
+<p>
+Always use an isolation transformer, whatever kind of design is used in the
+equipment you are troubleshooting.  There are very few situations in which
+an isolation transformer will hurt.  If you use it automatically, you will
+never have a chance to screw up.
+<p>
+Identify the appropriate ground point (return) for your multimeter or scope.
+These should be marked in the Sams' Photofact or service manual.  There may
+be several such returns such as: non-isolated, signal, and CRT.  Selecting
+the wrong one - even momentarily connecting to it - can ruin your whole day.
+<p>
+If you are not using an isolation transformer (a no-no), connecting your
+scope to the wrong ground point can result in (1) blown fuses and/or blown
+parts, and a very dangerous situation and (2) readings that don't make sense
+generally with distorted power line frequency signals of high amplitude.
+<p>
+<li>Use the non-isolated ground (A) (with your isolation transformer on the TV
+ <b>ONLY</b> for measurements of voltage on the line-connected power supply.
+<p>
+<li>Use the signal ground (B) for all measurements of tuner, IF, video, and
+ sound circuits.
+<p>
+Whenever you get a reading or waveform that is grossly wrong, confirm that
+you are using the proper ground point!  Note that failures of fusable
+resistors in the <b>RETURN</b> of the HOT or power supply chopper or elsewhere
+can also result in points that should be near ground floating at unexpected
+voltage levels.
+<p>
+The general arrangement of components for a typical TV using a linear B+
+supply with isolated auxiliary supplies for the signal circuits is shown
+below including the (linear) line-connected power supply, horizontal
+deflection output (drive, horizontal output transistor, flyback), and
+a typical Aux power supply output.
+<p>
+<PRE>
+
+    Line fuse   Main bridge                            Part of flyback
+          _      rectifier    +----------+  B+           transformer
+    H o--_ --+------|>|---+---|          |-----------------+            Aux 1
+             |            |   | Filter,  |                  ):: +--|>|--+--o
+             |  +---|>|---+   | REG, etc.|                  )::(       _|_
+  115 VAC    |  |             |          |                  )::(       ---
+             +--|---|&lt;|---+   +----------+             +---+ ::(        |
+                |         |         |     H-drive      |        +-------+ B
+ +-> N o---------+---|&lt;|---+---------+   transformer  |/ C             __|__
+ |                                A _|_       || +----|    Horizontal   -_-
+ +-> G - Power line earth ground   ///        ||(     |\ E Output      Signal
+        via building wiring         ^        ||(       |  Transistor  ground
+                                    |        || +------+  (HOT)
+                                    '               A _|_
+                             Non-isolated return --> /// 
+                              (connected points)
+
+</PRE>
+<p>
+For this power supply, what if?:
+<p>
+<ol>
+<li>You connect your scope ground clip to the non-isolated ground (A) and you
+ are <b>NOT</b> using an isolation transformer?
+<p>
+ Answer: you blow the line fuse and/or melt your scope probe ground lead.
+ Other parts may be damaged as well.  In effect, you have just shorted
+ across the bottom diode of the bridge.
+<p>
+<li>You attempt to monitor a video signal with your scope ground connected
+ to the non-isolated ground (A)?
+<p>
+ Answer: you see only a highly distorted power line waveform of roughly
+ 100 V p-p  In effect, you are measuring across one of the diodes of the
+ bridge rectifier, stray capacitance, etc.
+</ol>
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvrchvc.htm">&lt;&lt;Removing the CRT HV conne..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvtslbt.htm">The series light bulb tri..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

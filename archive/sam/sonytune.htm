@@ -1,0 +1,742 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/sonytune.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Sony TV Tuner and IF Solder Connection Problems</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/sonytune.htm">https://www.repairfaq.org/sam/sonytune.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Sony TV Tuner and IF Solder Connection Problems
+</h1>
+<h2>
+Version 1.35 (3-Jan-10)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="sonytoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#sonypre">Preface</A>
+ <ul>
+ <li><A HREF="#sonyaac">Author and Copyright</A>
+ <li><A HREF="#sonydis">DISCLAIMER</A>
+ </ul>
+<p>
+<li><A HREF="#sonyint">Introduction</A>
+ <ul>
+ <li><A HREF="#sonysod">Scope of This Document</A>
+ <li><A HREF="#sonysaf">Safety</A>
+ </ul>
+<p>
+<li><A HREF="#sonyscp">Solder Connection Problems and Solutions</A>
+ <ul>
+ <li><A HREF="#sonysym">Symptoms of Cracked Solder Connections</A>
+ <li><A HREF="#sonygen">General Repair Considerations</A>
+ <li><A HREF="#sonydes">Descriptions of the Solutions</A>
+ <li><A HREF="#sonysuc">Successes from Non-Techs</A>
+ <li><A HREF="#sonyvid">Video of Tuner Replacement</A>
+ </ul>
+<p>
+<li><A HREF="#sonymis">Miscellaneous Problems</A>
+ <ul>
+ <li><A HREF="#sonyerr">Erratic Picture and Sound</A>
+ <li><A HREF="#sonynoi">Noisy Audio</A>
+ <li><A HREF="#sonyina">Intermittent Audio</A>
+ <li><A HREF="#sonyper">Periodic Audio Noise</A>
+ <li><A HREF="#sonyinp">Intermittent Picture</A>
+ </ul>
+<p>
+<li><A HREF="#sonyser">Service Information, Costs, Reliability</A>
+ <ul>
+ <li><A HREF="#sonygow">Getting Out-Of-Warranty Repairs</A>
+ <li><A HREF="#sonywst">Warning About Sony Tuner Repair on Certain
+ <li><A HREF="#sonyssb">Sony Service Bulletins</A>
+ </ul>
+</ul>
+<A NAME="sonypre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sonytoc">Sony Solder FAQ Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="sonyaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="sonydis">DISCLAIMER</A></h3>
+
+The procedures described in this document require access to potentially
+dangerous voltages, proximity to the CRT and its implosion risk, and other
+possible dangers lurking inside a television set.  Furthermore, while your
+symptoms may fit those described below, there is guarantee that resoldering
+the tuner or IF module WILL fix your problem.  The actual cause could be
+elsewhere.
+<p>
+We will not be responsible for personal injury resulting from attempting
+these repairs nor damage to the equipment that may result from lack of
+soldering experience or inadequate desoldering or soldering equipment.
+<p>
+<A NAME="sonyint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sonytoc">Sony Solder FAQ Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="sonysod">Scope of This Document</A></h3>
+
+Problems with bad solder connections, mostly in and around the tuner and IF
+boxes are very common with several series of late model Sony TVs.  The repairs
+are straightforward though perhaps tedious and on some models, removing the
+tuner and IF boxes from the mainboard can be real fun.
+<p>
+Some of the common symptoms include:
+<ul>
+<li>Picture turns to snow or shows other reception problems.
+<li>Inability to tune blocks of channels.
+<li>Channels change randomly as if TV doesn't like what you are watching.
+<li>Loss of picture - just raster and high pitched whine.
+<li>Noisy or muted sound, volume buttons have no effect.
+<li>Controls have no or unexpected affect (console or remote).
+</ul>
+Note that many other manufacturer's TVs are also susceptible to similar
+symptoms with similar causes.
+<p>
+The articles in this document have been compiled over the last few
+months from postings on the USENET newsgroup sci.electronics.repair.
+<p>
+Contributions are welcome to increase the coverage of this set of notes
+as well as those for the very similar set of problems and solutions for
+late model RCA and GE TVs: "RCA/GE TV (CTC175/176/177) Solder Connection and
+EEPROM Problems".
+<p>
+Proper attributions will be made for all providers of solutions.  I apologize
+if I have incorrectly referenced you or left your name off.  I will be happy
+to make any necessary corrections in the next revision.  Please email me
+with any additional sections.  I would very much like to improve the details
+of the repair procedure if possible.
+<p>
+Corrections and additions to any specific symptom or solution are also
+welcome.
+<p>
+I have no connection with Sony Electronics or any other manufacturer of
+consumer electronics.  These articles have been included unedited except
+for some spelling, grammar, and format cleanup.
+
+<h3><A NAME="sonysaf">Safety</A></h3>
+
+Before removing the case on any TV or monitor, make sure you understand
+AND follow the safety guidelines provided in the document:
+<A HREF="safety.htm">Safety Guidelines for
+High Voltage and/or Line Powered Equipment</A>.
+<p>
+<A NAME="sonyscp"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sonytoc">Sony Solder FAQ Table of Contents</A>.
+<h2>Solder Connection Problems and Solutions</h2>
+<h3><A NAME="sonysym">Symptoms of Cracked Solder Connections</A></h3>
+
+Here are some typical sets of symptoms resulting from bad solder connections
+in and around the tuner of this series of late model TVs.  Most of these
+problems are characterized by erratic behavior of one form or another.
+However, total failure of reception is possible:
+<blockquote>
+"I have a two-year old Sony Trinitron TV.  When it is turned on, picture
+ perfect.  But it can only last about 30 mins, then it looks like it has 
+ difficulty to receive signal.  On its hardly seen screen, you can see all
+ channel display only one TV station signal (I am using cable).  After I turn
+ it off for a while and turn it on again, I got good picture again.  The 
+ time it last depends on the time I turn it off.  Occasionally, if it past
+ the first 30 mins, it seems it will be good forever."
+<p>
+"I have a Sony KV-27TS20 tv that upon power up will drift back and forth
+ from a clear picture to a whining static fill mess. This happen for
+ about five minutes then the clear picture stays."
+<p>
+"My Sony 27" (Model KV-2782R) is having a problem with the tuner (I 
+ think). When the TV comes on, I have no control over any of the 
+ functions. The channel changer, display controls, TV/Video selector all 
+ have no effect on the TV. I can, however, see the source (VCR/Laserdisc) 
+ that is plugged in to my Video 1 jack, but the picture is very dark."
+<p>
+"I have these 2 practically identical (at least on the outside)  13" TVs, and
+ they both have the same problem: they act like if someone was messing with
+ the antenna - the picture comes and goes, or just 'jumps' vertically every
+ couple of seconds, the sound sometimes goes away too (turns into just noise).
+ On the KV-1395 the problem sometimes stops - either the picture is already
+ good at power-up or it just acts up for about 20 seconds and tunes in, the
+ other one is totally unwatchable.
+<p>
+ I assume that this is a common problem with these and some other
+ Sony TVs - I remember long time ago someone had posted repair
+ tips on Sony tuners, but I could not find them on the FAQ sites."
+<p>
+ One more detail: At power on both the TVs cycle through channels 2-6,
+ with no picture on screen. You have to select a channel for the picture
+ to come on. Is this normal with these models?"
+<p>
+"I'm having a problem with my KV27XBR55 (mines in the XBR series).  I realize
+ now that the problem started many months ago when I heard the sound degrading
+ (I thought the sub-woofer had blown).  But after moving recently the sound got
+ very bad just before the picture dropped out too.
+<p>
+ If I unplugged the set for a while (minutes to hours) it would work for
+ several minutes to several hours after plugging it back in.  And... (forgive
+ me! :) a well place thump on the cabinet could get either some video/audio
+ static or actually restore the picture and sound.
+<p>
+ I thought the jarring of the move may have loosened some circuit boards or
+ connectors, so I opened the back and reseated every card/connector I could
+ easily reach.  That seemed to work but the next day it died again.
+<p>
+ When it's having its "problem" I can get a picture by selecting a video
+ input (like the VCR) but no sound."
+<p>
+"This TV works fine for a few minutes, but after warming up it demonstrates 
+ a tuner problem. When a channel is switched to, it will take ~5 seconds to
+ lock into the station. Then it will not stay locked in, but instead drift to 
+ an adjacent channel for the audio. 
+<p>
+ I have been reading here for several months, and based on other postings
+ of similar problems, thought I could try to fix this. I read the pertinent
+ parts of Sam's FAQs, and I photocopied parts of the Sams' Photofacts. 
+<p>
+ The photo of the A-Board shows one tuner box, while I have a box  labeled 
+ RF-AGC [IFB-450M 1-464-598-11 AE7C20] and Tuner [1-463-603-13 BTP-201
+ D7011BY].  Adjusting the blue turn knob in the top of the RF-AGC did not
+ improve the problem. I have not adjusted the white turn knob that is in the
+ RF-AGC box.  It is difficult to get to because of the proximity of the
+ adjacent Tuner box.
+<p>
+ My questions are:
+<p>
+ <ul>
+ <li>Should I adjust the knob inside the RF-AGC?
+ <li>Should I solder out the Tuner box and replace it?
+ <li>Should I solder out the RF-AGC and replace it?
+ <li>What will a tuner and/or RF-AGC cost and where can I get one?
+ </ul>
+<p>
+ I admit to being a novice, but I have enjoyed reading the troubleshooting
+ advice that is discussed here. Although I could take this to a shop, I would
+ like to try and fix it myself."
+</ul>
+Do not touch any of the adjustments!  Problems that happen suddenly or have
+significant consequences are rarely due to adjustments drifting!
+<p>
+None of the modules need replacing but if you screw up :-) the IF is about
+$90 and the tuner is about $100.  Resoldering all suspect joints will cure
+your problems.
+<ul>
+"Would like to know if any users have discover why the tuner or TV signal fails
+ to work until the set has been on for about 10 minutes. This problem shows up
+ on the VHF channels - the UHF channels will work. A number of the same vintage
+ sets are starting to show the same problem.   Any suggestions would be most
+ welcome."
+<p>
+"I turn it on, and after 5 minutess, it goes to static.  I can't even play a
+ tape in the VCR (which the signal runs through first)."
+<p>
+"I have a 4 year old SONY TV with a trinitron tube. When the TV is switched
+ on, it does not receive a few station. For some stations it just snows, on
+ others it shows a very distorted view of some other channel.  The problem
+ goes off automatically after 4-5 minutes and then there is no problem as
+ long as the TV is on. The lower frequency channels take the longest time to
+ come back. It is a cable ready TV and when we are viewing cable, the lower
+ channels have the same problem. Most of the time the higher band cable
+ stations are ok from the start.
+<p>
+ We are thinking that it may be a problem with the tuner. It does not look
+ like heating problem as the problem is there only during the startup.
+ Can it be a problem of the tuner PLL? or is it something simpler?"
+</blockquote>
+This may be an actual electronic problem but would still recommend doing
+the resoldering first.
+<blockquote>
+"Does anyone know how I can go about fixing a tuner problem with the Sony TV?
+ The tv signal will come in and out, the signal will come in only for about 30
+ seconds and is gone for about 15 mins.  I have checked all electrical cables,
+ cable TV and antenna cables too.
+<p>
+ I have tried contacting Sony, they seem don't care about their consumer
+ services.  I have emailed them and contacted their Sony Store dealers, and
+ they would only say it would best to buy a new Sony. I personally will not
+ buy another Sony every again.
+<p>
+"I have a Sony 32" console type TV and the model number is KV-32TW75. 
+ The TV set is about three years old. It worked perfect until few month
+ ago. When the set is direct connected to antenna through the UHF/VHF
+ terminal, it worked perfect for about 1 minute then lost all the
+ signals and had no picture. Then I connected the antenna to a VCR 
+ first, and connected both the UHF/VHF and video output from the VCR 
+ to the TV, it worked all the time. I thought maybe the signal was 
+ weak, by turning on the VCR may increase the signal so I didn't pay 
+ that much attention. Yesterday it started getting very poor picture 
+ quality. I disconnected the video input it got no picture at all. 
+ With the video input connected, it doesn't make any difference 
+ with or without the UHF/VHF input connected and the picture quality 
+ is way low. By connecting only the VCR UHF/VHF output to another TV
+ (this one is a 19" sony with no video input terminal), the picture
+ is perfect. Anyone have any idea what cause this problem and how
+ can I fix it? Thanks in advance.
+<p>
+"This small electronically tuned Sony (Sony KV-13TR14) has this problem:
+<p>
+ After about a minute of power on, picture snaps to another (cable) channel
+ for an indeterminate amount of time and then snaps back to the original
+ channel where it operates okay for periods of time (a few seconds to a
+ minute or so).  This goes on for several minutes then usually stops and
+ doesn't happen again until the set is turned off, etc.
+<p>
+ The local cable company told me that this model Sony had "a bad 'board'
+ grounding problem" or some similar 'grounding' flaw.
+<p>
+ I wrote to Sony asking if they were aware of a manufacturing problem with
+ this model and they replied no.
+<p>
+ Of course its out of warranty and there's the judgment of taking to the
+ repair store or just buying new.
+<p>
+ I'd sure like to repair this myself and any help greatly appreciated."
+<p>
+"I have two Sony TVs that seem to have tuner problems.  
+<p>
+ The first one is a 13" TV about 4 years old.  After about 1 hour of use, the
+ VHF channels go away and all I get is a scanning type picture and a high
+ pitched whine.  The UHF and Video input still work.  (I do not have cable.)
+ Turning the set off for a while will fix the problem.  Also, the TV has the
+ problem faster when it is hot out.
+<p>
+ The next one is a 27" TV about 5 years old.  When I first turn it on, it
+ works fine for 1 minute or so.  Then the VHF channels start to dissapper in
+ the same way as the other TV.  This starts at channel 9 (the top VHF station)
+ and works its way down.  The problem only affected channels 9 and 7 but not
+ 4 and 2 go out too.  After 5 or so minutes they are all back.  UHF and Video
+ input still work.
+<p>
+ Would you suggest re-soldering the tuner modules for these TVs?"
+<p>
+"I'm wondering how easy it is to replace a tuner module for my 13" Sony.  
+ Repair shop said that it is a very expensive part and is very difficult to 
+ replace.  I'm skeptical about the expense because the same shop replaced a 
+ tuner module on another tv I had and they listed the part as $5.  If it's
+ easy, any ideas about where I can find a replacement part?
+<p>
+ A replacement tuner for a Sony 13" tv is a little expensive. I would
+ suggest that you check the solder connections in the IF block before
+ investing in a new tuner."
+</blockquote>
+
+<h3><A NAME="sonygen">General Repair Considerations</A></h3>
+<p>
+Caution: See the document:
+<A HREF="tshoot.htm">Troubleshooting and
+Repair of Consumer Electronic Equipment</A> before attempting to repair or
+replace the tuner module.  You *must* have proper soldering equipment and
+desoldering tools.  Attempting to remove, solder, or replace the modules(s)
+without these *will* result in a mess and a very expensive bill when you
+finally take your TV to a professional.
+<p>
+Someone brought me a TV to look at.  After a little prodding, it was learned
+that he had lent it to a friend and it died after six months or so.  The
+'friend' then attempted to replace the tuner module based on the description
+on a refused estimate from a TV service shop.  He did not have proper soldering
+equipment - perhaps only a Weller 100W soldering gun.  Needless to say, the
+TV did not work - nearly every pad on the PC board under the tuner had been
+destroyed.  I had to run wires from the pins on the tuner to the their
+destinations on the mainboard.  It was not fun.  Luckly, no permanent damage
+was done but it could have easily been a lot worse.
+<p>
+You need to remove the two metal boxes (if there are two - one is the tuner and
+the other is the IF).  On some sets like the 13 inch models, these are readily
+accessible once the rear cover is removed.  On some 19" sets, the pins that
+need to be desoldered to remove the modules are partially blocked by the
+plastic bottom frame that holds the mainboard.
+<p>
+Once these are pulled, snap off the *bottom* shield of each and go over all
+solder connections - both through-hole and surface mount.  You may be able to
+pinpoint some hairline cracks.  The pins that go to the mainboard on the tuner
+and a coil on the IF module seems to be popular locations for problems.  Also
+check the solder connections to the metal case shield and the fingers that need
+to make contact when the cover is snapped in place.
+<p>
+Don't touch any of the top-side components.  Take care not to introduce any
+solder bridges or overheat anything.  However, you may need more than a 15
+watt iron to adequately heat some of the (shield) connections.
+
+<h3><A NAME="sonydes">Descriptions of the Solutions</A></h3>
+
+Here are some of the responses - many from experienced techs who fix (too)
+many of these sets:
+<p>
+(From: Davetech (dnesbitt4@ vcom.is.net).)
+<p>
+If that is the one with an IF (VIF?) module beside the tuner, shoot
+some freeze spray into the module while it is playing.  I had a Sony
+last week that turned out to have a bad solder joint in that module,
+and freezing it pinpointed it.  It too, was "searching" through the
+channel.
+<p>
+(From: Gary Klechowitz (klechowi@execpc.com).)
+<p>
+On Sony TV/monitors of the early 90s there were problems with solder 
+connections in the AGC module.  This module was a solder-on board enclosed
+in a metal box very much like the tunner. There were tunable coils inside
+and one or two of the legs from the coils would crack free from the circuit.
+This caused a gray screen effect but also caused the audio to drop out as
+well. This may be a similar problem. Look for any delay line modules. They
+are in small plastic cases sometimes orange colored and solder edgewise onto
+the main board. Inspect the solder connections there as well.  If I remember
+right there was a delay line that had three legs and one of the solder
+connections would crack and you loose things like low level B & W. That would
+cause  your problem.
+<p>
+(From: Jeff Rigby (jeffg2@ix.netcom.com).)
+<p>
+If a sound and picture problem then look for bad connections in the tuner
+and the IF module.  The IF module generally has bad connections at the pin
+connections for the Coils (IF, AFT, Disc).  The tuner has bad grounds on
+the outer edge of the tuner board.  This problem is generally temperature
+related=> it will work when cold or hot but in one condition or another
+will give problems.  
+<p>
+As a check, with the back off and the set operating lightly tap the IF can
+and the tuner and see if the picture or sound changes.
+<p>
+Sound *only* problems are usually due to surface mount caps on the MPX
+decoder board.  
+<p>
+Video only problems are a surface mount capitor problem in the comb filter
+board.
+<p>
+Both of the above are temperature related and usually get better as they
+heat up.
+<p>
+(From: Tom Cat (kanduit@juno.com).)
+<p>
+Remove IF 450, solder connections around AFT coil... and any other 
+connection that looks bad...  (very common problem).
+<p>
+(From: Mr. Caldwell (jcaldwel@iquest.net).)
+<p>
+Open the IF assembly and resolder the coils, tuner should not need resoldering
+but if the problem persists you can resolder the ground connection in it if it
+does.
+<p>
+(From: Brian Leeman (bryboe@mint.net).)
+<p>
+I have run into a few of these...
+<p>
+In every case it has been due to one of the grounding "fan" leads that
+runs from the PCB to the metal case having a cold joint.
+<p>
+It has always been the lead that fastens to the top of the case directly
+to the left of the AGC trimmer (looking at the trace side).
+<p>
+These problems are gravy for techs, but it is a shame how poorly Sony
+executes the manufacture of their consumer electronics. Talk about mass
+produced junk...
+<p>
+Sorry for the rant, but if you work on this stuff, you have to agree!!
+<p>
+(From: Mister M. (mister-m@ix.netcom.com).)
+<p>
+You should start by checking for these symptoms. If the signal goes to
+snow then tap on the tuner to see if the signal returns. If it does then
+proceed to pull the tuner out and pop the shield to solder all grounds around
+the perimeter of the tuner. (being very careful with the solder splashing).
+If your signal seems to drift out and come back not snow but a smeared picture
+or a detuned like symptom then pull out you IF201 if block pop the shield and
+look for a AFT coil. Resolder and your back in business.
+<p>
+(From: Viawest (viawest@azstarnet.com).)
+<p>
+Invariably, the Sony KV-13TR14 and most of the ones near it are famous,
+and plaqued with bad solder joints. be very careful not to cause any solder
+bridges when resoldering the pc board. you must remove the shields from the
+tuner assembly to accomplish this repair.  By the way, check the rest of the
+board *before* tearing your tuner apart.  Sometimes it is a bad spot other
+than in the tuner itself - usaually the power supply.
+<p>
+(From: Raymond Carlsen (rrcc@u.washington.edu).)
+<p>
+It sounds like you're describing the classic "tuner with bad solder
+connections". You'll have to remove the tuner and pop the covers. Resolder
+all the grounds around the outside of the little PC board. Also solder the
+ground tabs where the metal can pokes through and grounds the foil in half
+a dozen spots around the middle of the board. Look at the top side of the
+board to see where the metal goes through the PC. Work carefully! Don't get
+any solder "bridges" in there. Use a large enough (and hot enough) iron
+that will fully heat the connections without having to heat them for too
+long a time, but not so large a tip that will cause bridging. Re-install
+the tuner and pull the little can next to it. The PC connections that run
+from the board to the chassis need to be gone over. Resolder any
+connections that look flaky. Re-install that sub-board and you're done.
+That should take care of it. I've never had to do one twice. 
+
+readily accessible without extensive dissassembly.
+
+<h3><A NAME="sonysuc">Successes from Non-Techs</A></h3>
+
+(From: Bill Somrak (cooncat@ncweb.com).)
+<p>
+Well, thanks to all those that suggested that I look at the I.F.
+assembly for poor grounds and soldering.
+<p>
+I pulled the unit from the main board last night, removed the tin covers on
+both sides.  On the side with the coils and chips in it, there wasn't much to
+be done, so I left that pretty much alone. The other side was mostly surface
+mounted stuff.  I didn't see anything that was grossly under soldered.  Several
+joints looked "cold".  All I did was touch up as many ground connections as I
+could .. re-solder the cold looking ones, re-do the two chips.  I also bent
+out the little tabs that are on the covers of both sides of the unit .. these
+tabs apparently make contact with ground spots on the unit.  After all this
+I resoldered the unit back onto the main board .. crossed my fingers, plugged
+the set back in and powered it up. 
+<p>
+Success!  No matter what channel I tuned to, the set came on (with picture)
+instantly.  I powered it down several times to let it cool down again, and
+tried the experiment over and over ... never a failure. So, this morning,
+before going to work, I put the cover back on the 13" Sony and its working
+as well as the day I got it (1991).  I did note that this is the ONLY Sony
+that I've had problems with.  It was assembled in Mexico (strike 1???), and
+the I.F. tuner was made in Korea (strike 2???).  I wonder if other's have
+found "non-Japanese" made Sonys to have less than the expected reliability?
+
+<h3><A NAME="sonyvid">Video of Tuner Replacement</A></h3>
+
+Here is a short video showing the procedure for replacing the tuner module
+in a Sony TV where no bad solder joints were found.
+See: <A HREF="http://www.youtube.com/watch?v=qfeV8NSiFJk">Bill Tate's Sony
+TV Tuner Replacement Video</A>.  In this case at least, everything was
+readily accessible once the cover was removed.  Unfortunately, with some
+sets, must more extensive disassembly is required.
+<p>
+<A NAME="sonymis"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sonytoc">Sony Solder FAQ Table of Contents</A>.
+<h2>Miscellaneous Problems</h2>
+<h3><A NAME="sonyerr">Erratic Picture and Sound</A></h3>
+<blockquote>
+"At start-up, picture comes on OK, then goes dark - loud Crash-Boom sounds
+ from set. After turning off - letting sit - on -- repeats -- several times,
+ seems to stabilize, stay on, and function Ok.  I'd appreciate any advice so
+ I know if the repairman has a clue."
+</blockquote>
+This may be tuner/IF related but other bad connections could be involved.
+<p>
+(From: Mr. Caldwell (jcaldwel@iquest.net).)
+<p>
+What should be done anyway:
+<ul>
+<li>Resolder all the TO220 package regulators on the main board.
+<li>Resolder the Horizontal Output Transformer.
+<li>Remove open and resolder the IF pack coils.
+<li>Remove the power supply itself and resolder the output diodes.
+</ul>
+There is a capacitor in the power supply that's caused some problems,
+it's the 22V/27V line I think, a 1000uf@25v or 1000@50v. I've just been
+replacing it with a 1000uf@50v.
+<p>
+If you do all of this you should not have much else to worry about
+with this TV.
+
+<h3><A NAME="sonynoi">Noisy Audio</A></h3>
+<blockquote>
+"I bought a Sony TV (model KV-27TS27) in 1992 and had some problem with the
+ tuner right after the warranty expired but fortunately my Visa card's extended
+ warranty covered some of the repair cost.  Now the sound is getting very noisy
+ and I suspect the audio module is not working properly.  The TV is not covered
+ by any warranty and I'd like to take care of it myself. I wonder if any one
+ out there knows where I can order an audio module for my Sony TV."
+</blockquote>
+(From: Mr. Caldwell (jcaldwel@iquest.net).)
+<p>
+The MPX 'IC' is a custom mini ceramic PCB with components masked onto it.  It
+is easy to spot and as it is a DIP but you can see the components on the
+1" x 1" ceramic 'board'.  Capacitors on this board leak and cause a failure
+in the audio.  It will do all sorts of weirdness and then fail.
+<p>
+Call Sony and politely gripe.
+<p>
+(From: John D. Carder (jonetek@aloha.net).)
+<p>
+I buy the Sony SBX1637 MTS module from Matt Electronics for about $7 compared
+to Sony's price of $68!  I have never had a repeat failure yet.
+
+<h3><A NAME="sonyina">Intermittent Audio</A></h3>
+<ul> 
+"My Sony KV-32TS20 television (4 yrs. old) has developed an audio problem.  The
+ stereo LED no longer lights ups and I get intermittent popping/crackling along
+ with the audio.  I have tried switching between mono and stereo and the audio
+ sounds the same in either mode (sounds like mono in both modes to me).  This
+ set had the infamous Sony tuner solder joint problem in the past which was 
+ resolved by resoldering the tuner to main ckt. board connections.  Now I
+ resoldered the audio section solder joints on the main circuit board but the
+ audio problem remains."
+</ul>
+(From: Mr. Caldwell (jcaldwel@iquest.net).)
+<p>
+Defective IC on audio pcb. Little green part with tiny caps on it smack in
+the middle of the board with the a/v jacks on it.  It's a ceramic PCB, about
+1" square and it will have corrosion because the capacitors start leaking.
+
+<h3><A NAME="sonyper">Periodic Audio Noise</A></h3>
+
+<blockquote>
+"I have a SONY KV-A2522U (U.K.) TV.  About every hour or so it gives out,
+ through the R. hand speaker, a very loud thunder like noise. (and just as
+ loud) Even when the volume is set low?  If I tap the set with my hand the
+ noise stops. Telling me it's a loose connection?"
+</blockquote>
+(From: Steven Turner (steven.turner@amigabee.org.uk).)
+<p>
+Very common fault this. Locate the Metal heat sink running front to back
+resolder all the IC pins on the heat sink. That will fix it.
+
+<h3><A NAME="sonyinp">Intermittent Picture</A></h3>
+
+(From: John de Rooy (solaris@dds.nl).)
+<p>
+A few months ago someone gave me a Sony 27" KVE2911d television, which was
+repaired by Sony about 8 months ago.  The set came up ok with sound and
+stereo LEDs but no picture at all.  After warming up about 15 minutes the
+picture returned and stayed until
+switching off.
+<p>
+I talked to a Sony technician about this case and told him the set was already
+repaired by them 8 months ago for a lot of money and asked for help.  While I
+think the Sony service is very poor by luck this time he told me about the bad
+solder connections from the tuner and IF boards.
+<p>
+I was very happy with this information and started taking off the cover for a
+check!  But bad luck!  Sony already had resoldered every connection of the
+tuner and IF boards.  After a long time trying to locate the problem (only 15
+minutes a day to measure!), I found out the problem was on the small CRT board
+located on the neck of the CRT.  I resoldered the entire crt board (10 minutes
+of work) and the set has been OK since then.
+<p>
+<A NAME="sonyser"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sonytoc">Sony Solder FAQ Table of Contents</A>.
+<h2>Service Information, Costs, Reliability</h2>
+<h3><A NAME="sonygow">Getting Out-Of-Warranty Repairs</A></h3>
+
+If you are not inclined to tackle these sorts of repairs for whatever reason,
+you may still have recourse with Sony.  If pressed, they will often cover
+at least part of the cost of the repair.
+<p>
+(From: Mr. Caldwell (jcaldwel@iquest.net).)
+<p>
+Call Sony Customer Service and explain the problem to them and see if they 
+may cover parts. It's more than likely the tuner and while it can
+be resoldered and repaired in most cases you can do nothing wrong by
+asking Sony to cover some of the costs. A 3 year TV isn't that old.
+<p>
+Call Sony and see if they'll pay for the parts and then call a Sony service
+center and get an estimate and THEN tell them you've got authorization for
+the part from Sony. ;-)
+
+<h3><A NAME="sonywst">Warning About Sony Tuner Repair on Certain
+ Models</A></h3>
+
+(From: Gary Warner (warner1@airmail.net).)
+<p>
+Lately I caused myself a lot of grief quite innocently. I thought it might
+stop a problem before it happens to share this:
+<p>
+On a Sony KV-27S15 I needed to replace the tuner. The tuner is on the "A
+Board". Looks easy enough to get out but, one end of the board won't clear a
+metal frame that runs across the center of the main PCB.  It's only a small
+part of the frame and was easily bent out of the way. Unknown to me, bending
+the frame caused the "solder land" that's under the frame where I bent it, to
+twist and cause an open connection all around the land. After replacing the
+tuner and the "A Board" I plugged the unit up, turned it on and POW, the power
+supply and the horizontal output were all bad.
+<p>
+After a day of troubleshooting I found that the crack had opened the only
+ground reference for the "feed back" loop of the transformer in the power
+supply (pin 12 of T603). The power supply lost it's ability to regulate and it
+ran at "full throttle".
+<p>
+What an embarrassment for me as this was an in-home tuner replacement and now
+I "Blew up the set". Anyway, everything is okay and the customer understood
+when I explained all this to them. It was one of those hard lessons that I
+thought some of you could appreciate and might avoid yourselves.
+<p>
+BTW, the tuner was bad like the tuners in the JVC's, where it intermittently
+looses the tuning but it's not a physical (connection) or thermal problem. My
+guess was the PLL IC was checking out. Until now, this model was free of any
+tuner problems for me.
+
+<h3><A NAME="sonyssb">Sony Service Bulletins</A></h3>
+
+(From: Lynn H. Blakely (lynns@arkansas.net).)
+<p>
+I thought you should know about the service bulletin #203R3.  This covers a
+lot of different models.  It shows where to solder the grounds and they have a
+new cover to replace the original one for the tuner.  Also, many of these and
+similar models have sound problems these can be repaired many times by
+replacing the SBX1637-11 module.  The Sony part #8-746-371-20.
+<p>
+Also see the section: <A HREF="#sonynoi">Noisy Audio</A>.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#sonytoc">Sony Solder FAQ Table of Contents</A>.
+<p>
+-- end V1.35 --
+<p>
+</BODY>
+</HTML>

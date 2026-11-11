@@ -1,0 +1,42 @@
+/*
+ * Mirror theme for the repairfaq.org pages hosted in archive/.
+ *
+ * The repairfaq.org fair-use terms (archive/sam/copyright.htm) say the HTML "look and feel" must not
+ * be altered, and that "changes to font and color schemes are permitted to the extent required to be
+ * consistent with other pages on the Web site." So this file changes ONLY fonts and colors.
+ * Do not add layout, spacing, sizing, positioning or animation rules here.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root { color-scheme: light; }
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #0f172a;
+  background-color: #ffffff;
+}
+pre, tt, code, kbd, samp { font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; }
+a:link { color: #1d4ed8; }
+a:visited { color: #6d28d9; }
+a:hover { color: #0f766e; }
+font { color: inherit; }
+h1, h2, h3, h4 { color: #0f172a; }
+hr { color: #cbd5e1; }
+
+/* The line added to every page that names the source (required by the fair-use terms). */
+.rfm-source { font-family: "Inter", sans-serif; color: #475569; }
+.rfm-source a { color: #1d4ed8; }
+
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; }
+  body, table, td, th { color: #e8e6e1; background-color: #121211; }
+  h1, h2, h3, h4 { color: #f5f4f0; }
+  a:link { color: #ffa35c; }
+  a:visited { color: #d9a2ff; }
+  a:hover { color: #7fd992; }
+  hr { color: #3a3a37; }
+  /* Many schematics are black lines on a transparent background: give images a white backing. */
+  img { background-color: #ffffff; }
+  .rfm-source { color: #a8a69e; }
+  .rfm-source a { color: #ffa35c; }
+}

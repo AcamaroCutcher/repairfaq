@@ -1,0 +1,197 @@
+<!--
+  Mirrored from https://www.repairfaq.org/REPAIR/F_MR_Squelch.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+><html>
+<head>
+<title>Improve the Squelch in Your Monitor Receiver</title>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/REPAIR/F_MR_Squelch.html">https://www.repairfaq.org/REPAIR/F_MR_Squelch.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<h1>
+Improve the Squelch in Your Monitor Receiver
+</h1>
+<h2>
+June 11, 1998.
+<br>
+</h2>
+<h3>
+Copyright (C) 1988,1998
+<br>
+Bob Parnass, AJ9S (parnass@bell-labs.com)
+<br>
+--- All Rights Reserved ---
+</h3>
+</center>
+<br>
+<br>
+<b>NOTICE:</b> The first version of this article appeared in the
+ RCMA Newsletter, December 1988.  It may not be reproduced
+ in whole or in part on CDROMS, in bulletin boards,
+ networks, or publications which charge for service without
+ permission of the author.  It is posted twice monthly on
+ the USENET groups rec.radio.scanner, alt.radio.scanner,
+ sci.electronics.repair, and rec.radio.info.  It is also
+ available electronically from the rec.radio.scanner ftp
+ archive on the official USENET FAQ library
+ <A HREF="https://www.repairfaq.org/jump/ftp%3A/rtfm.mit.edu/pub/usenet-by-group/rec.radio.scanner">ftp://rtfm.mit.edu/pub/usenet-by-group/rec.radio.scanner</A>.
+<p>
+<hr>
+
+<h2>Introduction</h2>
+
+ The squelch control in some FM monitor receivers is
+ difficult to use because of too much hysteresis. The
+ American Heritage Dictionary of the English Language
+ defines hysteresis as the:
+<blockquote>
+      &quot;Failure of a property changed by an external agent
+      to return to its original value when the cause of the
+      change is removed.&quot;
+</blockquote>
+ It's like having play in a car's steering wheel, or
+ backlash in a gear set. Too much hysteresis in a squelch
+ circuit forces one to keep the squelch at a tighter
+ setting, missing weaker signals when scanning or searching.
+ The squelch hysteresis problem was first addressed in a
+ 1984 article about the Radio Shack PRO-24 crystal
+ controlled scanner.
+<p>
+ Why do engineers design these circuits with any hysteresis?
+ Basically, hysteresis prevents weak signals from &quot;popping&quot;
+ the squelch open and closed rapidly, which would be very
+ annoying to the listener. A squelch circuit with hysteresis
+ requires a stronger signal to open the squelch than it does
+ to keep it open.
+<p>
+ Models cursed with too much hysteresis include the
+ Uniden/Bearcat 800XLT and 760XLT, Radio Shack PRO-2003,
+ PRO-2004, and others.  Don't despair, the fix is simple for
+ most radios.  I've successfully reduced the squelch
+ hysteresis by replacing a single resistor.
+<p>
+ Hysteresis is usually implemented by providing feedback
+ from the squelch gate input to output, through a resistor.
+ The higher the resistor value, the less feedback there is,
+ and less hysteresis. My modification involves replacing the
+ &quot;stock&quot; resistor with a higher value resistor, as
+ identified in the table below.
+<p>
+ This technique does not apply to some of the newer Uniden
+ models, because the squelch hysteresis is partially
+ determined by firmware inside the processor IC.
+<p>
+ This article cannot provide step-by-step instructions for
+ each radio. I always encourage radio hobbyists to purchase
+ the service manuals for their equipment. The most useful
+ sections of the manual are the schematics and printed
+ circuit diagrams. Good manuals will also describe the
+ theory of operation and alignment procedures, and contain a
+ complete parts list.
+<p>
+ If your radio has too much hysteresis, and is not listed in
+ the table, study the service manual.  Motorola MC3357,
+ MC3359, and MC3361 integrated circuits, which contain IF
+ and squelch circuitry, are popular in scanners. In these
+ receivers, look for the hysteresis resistor to be connected
+ to these ICs.
+<p>
+<h2>Notes</h2>
+
+<ol>
+<li>The author cannot furnish modification information
+       for other radios.
+<p>
+<li>Don't attempt this, or any other internal
+       modification, unless you are skilled in electronic
+       servicing.
+<p>
+<li>Make sure your receiver is disconnected from any
+       power source before opening the cabinet.
+<p>
+<li>If space permits, you can replace the stock resistor
+       with a higher value variable resistor (&quot;trimpot&quot;) and
+       adjust to suit.
+</ol>
+
+<h2>Table 1.  Squelch Hysteresis Resistor In Selected Receivers</h2>
+<pre>
+________________________________________________________________
+|      Squelch Hysteresis Resistor In Selected Receivers       |
+|                                                              |
+|                        Res-                                  |
+|Receiver                istor   Stock                         |
+|Model                   No.     Value   Comments              |
+|_____________________|________________________________________|
+|Radio Shack PRO-24   |  R35       33K   replace with 220K.    |
+|                     |                  Located between       |
+|                     |                  pins 12 and 14        |
+|                     |                  of MC3357 (IC1)       |
+|Radio Shack PRO-2002 |  R197      47K   try 220K.             |
+|Radio Shack PRO-2004 |  R148      47K   remove R148           |
+|                     |                  or replace with 220K. |
+|                     |                  On linear board,      |
+|                     |                  between pins 12 &amp; 14  |
+|                     |                  of TK10420 (IC2)      |
+|Radio Shack PRO-2006 |  R152      33K   try 100K or higher.   |
+|Radio Shack PRO-2022 |  R91       33K   replace 33K           |
+|                     |                  with 220K.            |
+|                     |                  Between pins 12 &amp; 14  |
+|                     |                  on IC-1 MC3361        |
+|Radio Shack PRO-2035 |           100K   replace 100K          |
+|                     |                  with 220K.            |
+|                     |                  Between pins 12 &amp; 14  |
+|                     |                  of TK10420 (IC-2)     |
+|Electra/Bearcat 220  |  R75      2.7M   may be ok as is       |
+|Electra/Bearcat 20/20|  R75      2.7M   may be ok as is       |
+|Electra/Bearcat 250  |  R66      2.2M   may be ok as is       |
+|Uniden/Bearcat 760XLT|  R58       22K   replace with 6.8K     |
+|                     |                  or other value.       |
+|                     |                  (select value for     |
+|                     |                  the particular radio.)|
+|                     |                  Located on pin 14     |
+|                     |                  of MC3359P IC         |
+|Uniden/Bearcat 800XLT|  R91      860K   replace with 2.2M.    |
+|                     |                  Located on pin 14     |
+|                     |                  of MC3359P IC         |
+|Plectron P1          |  R81      180K   may be ok as is       |
+|Plectron 700         |  R96      180K   replace with 560K     |
+|_____________________|________________________________________|
+</pre>
+
+<h2>References</h2>
+<ol>
+<li>&quot;The Radio Shack PRO-24 Scanner,&quot; by Bob Parnass,
+       excerpted in the &quot;Technical Topics&quot; column, RCMA
+       Newsletter, February 1984.
+<p>
+<li>&quot;The Bearcat 800XLT ... an Owner's Report,&quot; by Bob
+       Parnass, in Monitoring Times, March 1986.
+<p>
+<li>&quot;Product Review: The Radio Shack PRO-2004
+       Programmable Scanner,&quot; by Bob Parnass AJ9S, in The
+       Radio Enthusiast, February 1987, and Monitoring
+       Times, March 1987.
+<p>
+<li>US patent 4,947,456, &quot;Scanning Radio Receiver,&quot;
+       granted August 7, 1990 to Noel D. Atkinson, William
+       B. Ahlemeyer, and Ben F. McCormick, inventors.
+       Assigned to Uniden America Corporation.
+<p>
+<li>&quot;Product Review: The Radio Shack PRO-2035 Scanner --
+       How Does It Compare with the PRO-2006?,&quot; by Bob
+       Parnass AJ9S, Monitoring Times, January 1995.
+</ol>
+<hr>
+<p>
+Copyright 1998, Bob Parnass, AJ9S (parnass@bell-labs.com)
+<p>
+</body>
+</html>

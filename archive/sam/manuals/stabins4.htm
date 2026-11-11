@@ -1,0 +1,545 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/manuals/stabins4.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Instructions for Stabilized HeNe Laser Kits (Normal Setup with and without Arduino)</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/manuals/stabins4.htm">https://www.repairfaq.org/sam/manuals/stabins4.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<A NAME="top">
+<p>
+<center>
+<h1>Instructions for Stabilized HeNe Laser Kits (Normal Setup with and without Arduino)</h1>
+<h2>Version 1.4 (20-Mar-24)</h2>
+<h3>
+<A HREF="../lasersam.htm">
+Sam's Laser FAQ</A>, <A HREF="copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+</center>
+<p>
+<hr>
+<p>
+</center>
+
+<h2>Introduction</h2>
+
+This document contains notes on the construction of a frequency or
+intensity stabilized HeNe laser using the set of parts provided.
+These use a tube with a user mounting scheme.  A separate document
+deals with the "Compact" setups, so if that's what you have, back up and
+go there. ;-)
+<p>
+Combining the Arduino and Non-Arduino versions makes sense since the bulk
+of the Arduino description is just a link to the &micro;SLC1 manual. ;-)
+<p>
+The following components are included:
+<p>
+<ul>
+<li>Melles Griot, Siemens, or
+ Uniphase 4.75 to 6 inch HeNe laser tube that has been tested to
+ assure that it is well behaved and not a flipper.
+<p>
+ CAUTION: Do not touch
+ anode-end when powered or shortly after powering down to avoid a shocking
+ experience!  It probably won't be lethal, but tossing the entire rig across
+ the room due to a reflect reaction is bad form and may impact your grade. ;-)
+ A clip lead can be used to short the two ends of the tube AFTER shutting
+ off power.  Touch it to the cathode-end FIRST!
+<p>
+<li>HeNe laser power supply brick with ballast resistor and tube
+ mounts with compatible wall adapter.  On all kits now shipping, it is either
+ a Laser Drive 103-23 black brick with 24 VDC adapter or a Melles Griot
+ 05-LPM-847 black brick with a 12 VDC adapter.  However, if you
+ dug up one of these kits in the attic, it may be a small copper-covered
+ brick that runs on 5 VDC.  Details below.
+<p>
+ Note: where both the HeNe laser power supply and heater run on 12 VDC, a
+ single higher current 12 VDC adapter may be provided.
+<p>
+<li>2x3 inch thin film Kapton heater with adhesive backing.  The cold
+ resistance is about 16 ohms.  It should be run on a maximum of 8 to 12 V.
+ But 5 V will be adequate to provide enough heating headroom for the
+ stabilized laser.
+<p>
+<li>Polarizing Beam Splitter (PBS) Cube and a pair of silicon photodiodes
+ (PDs).  An itty-bitty blank PCB is included in newer kits to mount these parts
+ along with a 4 position screw terminal block for the wire connections.
+ But these parts can be mounted using the scheme of your choice.  More below.
+</ul>
+<p>
+What you will need to provide:
+<p>
+<ul>
+<li>Mounting scheme for the tube:
+ The tube must be free to expand slightly so an entirely rigid mount is not
+ acceptable.  The mounts provided in this kit can be used, or the wires can
+ be transferred to tube clips (included) using the mounting scheme of
+ your choice.  In addition, it should not be totally enclosed as heat
+ transfer to the air is needed to balance the heat provided by the
+ tube discharge current and thin film heater.  A couple turns of tape to
+ secure the heater and a WOW Plexiglas box are OK.  The surface are of
+ the box will allow for sufficient heat flow.
+<p>
+<li>Mounting scheme for the detector used for stabilization feedback.
+ This monitors the laser output.  This may use a portion of the
+ main beam from the tube in which case a suitable optic like an angled plate
+ (included) is used as a beam sampler.  Or it may use the much lower power
+ waste beam out the back of the tube.  Either way, a mount must be provided
+ for the parts.
+<p>
+<li>Electronic components to build the controller.  The controller can be
+ as simple as 2 parts, or as sophisticated as a microprocessor-based
+ digital system with wireless Internet access and data logging. :)
+ I recommend an intermediate approach using a couple of op-amps similar
+ to the one used in the Coherent Model 200 or Spectra-Physics 117/A.
+ It can be the &micro;SLC1 Arduino-based controller available in
+ another kit, or it can be purchased separately.
+<p>
+ Plenty of other possibilities can be found in Sam's Laser FAQ, chapter:
+ <A HREF="../laserchn.htm">Home-Built HeNe Laser</A>, and the
+ schematics in the chapter: <A HREF="../laserhst.htm">Commercial
+ Stabilized HeNe Lasers</A>.
+<p>
+<li>A linear polarizer (in addition to the PBS)
+ will be desirable to monitor the behavior of the modes as the tube warms
+ up, and once it's under feedback control.  The laser power meter can
+ simply be a silicon photodiode and multimeter or microammeter since
+ actual power measurements aren't needed.  But a laser power meter with
+ a graphical display, or a PC with Data Acquisition System (DAS) is best to be
+ able to observe the mode sweep in real time.  A basic 4 channel USB DAS can be
+ purchased for unfrt $50 delivered from
+ <A HREF="http://www.dataq.com/">DATAQ</A>.  Check out their "Low Cost Data
+ Acquisition Start(er) Kits".  These are what I have used for most of my
+ data capture.
+</ul>
+<p>
+<b>Power and wiring:</b>
+<p>
+Follow the link to the type of power supply and adapter that was included
+in the kit:
+<p>
+<ol>
+<li><A HREF="Copper-Brick-Wiring.htm">Small copper-covered brick with 5 VDC adapter</a> (Older version only.)
+<li><A HREF="LD103-23-Wiring.htm">Laser Drive 103-23 black brick with 24 VDC adapter</a>
+<li><A HREF="05-LPM-847-Wiring.htm">Melles Griot 05-LPM-847 black brick with
+ 12 VDC adapter</a>.
+</ol>
+<p>
+None of the kits shipped after mid-January 2020 have copper bricks.
+<p>
+Pay particular attention to the tube to determine the anode and cathode
+ends, and where the output beam comes from.  The high voltage output of the
+power supply - the fat red wire with ballast resistor(s) - MUST go to the
+anode-end.  The anode is the glass-end of the tube; the cathode is the
+aluminum can-end.  The tube may start and appear to run normally with
+reverse polarity but will likely be damaged quickly.
+<p>
+The output (main) beam exits the anode-end of the tube for most of the 6 inch
+tubes, but the cathode-end for the 4-3/4 inch tubes.  So to make these fit the
+tube mounts, a hole may need
+to be drilled in the cathode-end mount so the beam can exit.  I may have
+been nice and already drilled the required hole. ;-)  If not, it may also
+be possible to install the tube with its ends AND the wires swapped.  But
+confirm it will fit this way first - not all will fit due to the tip-off
+(the small metal tube where the air was removed and the gas was
+inserted) getting in the way unless the plastic mount is trimmed.
+<p>
+<b>Install the heater:</b>
+<p>
+For the 7/8 to 1 inch diameter tubes, the 2x3" heater should be wrapped around
+so it covers nearly the entire circumference.  (3 inch dimension goes around
+it.) The Kapton heater has an adhesive backing.  Peel off the backing paper and
+stick it on centered between the two end-caps.  For convenience (this is
+sort of arbitrary) orient it with the wire connection point lined up with the
+the tip-off (metal tube sticking out of the end-bell
+at cathode-end of tube where the air was removed and the HeNe gas was added).
+Press it firmly in place over its entire surface but avoid
+stressing the leads where they are glued to the heater.  A couple strips of
+Kapton tape may be useful to make sure it doesn't come loose.
+<p>
+<b>Determining the polarization axes of the tube:</b>
+<p>
+Note that the laser tube actually produces 2 beams: A strong one out the
+front and a much weaker one out the rear.  For
+the stabilized laser, the detector can be constructed behind the
+rear of the tube and use the weak beam as it usually (but not always)
+has enough power for this purpose.  But if desired or if the waste beam
+power is too low, a portion of the main beam can be split off using a
+glass plate like a microscope slide, and that can be used instead.
+A variable attenuator plate is included for this purpose.
+In principle, using the main beam will have slightly better stability,
+especially for some tubes when using intensity (single mode feedback)
+stabilization.  However, the sampler must be mostly polarization
+independent (though none are perfect).  Otherwise, one of the modes
+will be much stronger than the other.  More below.
+<p>
+With the tube powered, place a continuous reading laser power meter
+in the output beam.  (One of the photodiodes connected to a VOM or DMM set to
+its &micro;A range will suffice.)  Use a polarizer to identify
+the orientations of the polarized modes of the tube.  These will be the angles
+of the polarizer where the variation in power due to mode sweep is maximized.
+There will be two such angles orthogonal to each-other.
+For reasons not fully understood, one of these often more or less lines
+up with the exhaust tip-off (metal tube with red cover at cathode end of tube).
+Label the axes and adjust the orientation of the tube so one is either vertical
+or horizontal, whichever causes the tip-off to be closest to the bottom
+(for convenience, the photons really don't care).
+<p>
+The power varies because the longitudinal modes of the laser cavity are
+moving through the neon gain curve as the tube expands due to heating.
+The roughly bell-shaped gain curve results in gain variation depending on
+its height.  If 5-10 VDC is applied to the heater (between the two red
+wires), the rate of the mode sweep will greatly increase since the tube
+is expanding faster.
+<p>
+As the tube/heater combination approaches thermal equilibrium where the
+power input from the electrical discharge in the bore of the laser tube
+and heater power are balanced by heat loss to the environment, the
+mode sweep will slow down and eventually stop.  If power is removed from
+the heater at that time, the discharge heat alone will no longer be
+able to sustain the same temperature, the tube will start to cool,
+and the mode sweep will reverse.
+<p>
+<center>
+<img src="../lhr007m2.gif"><br>
+<h4>Plot of Spectra-Physics 007 HeNe Laser Tube During Warmup (Detail)</h4>
+</center>
+<p>
+This shows the mode sweep from a cold start of a tube similar to the type
+included in the kit.
+<p>
+For thermal stabilization to be effective, what is desired is where a
+modest amount of heater power is needed to be at thermal equilibrium.
+Perhaps 20-30 percent of the power in the bore discharge.  For the 6
+inch tube running at at 3.5 mA, 900 V, the bore discharge power is just
+over 3 W.  So, 1 W of heater power should be sufficient to allow the
+laser to stabilize with reasonable immunity to ambient temperature changes.
+Using a 3 or 4 VDC power supply, it should be possible to simulate the action
+of an electronic feedback circuit to confirm that stabilization is possible.
+However, for the actual stabilized, 12 VDC is recommended to provide more
+headroom and flexibility.
+<p>
+A purist might object (due to electrical noise considerations),
+but this means that a
+single power supply could be used for both the HeNe laser power and the
+stabilizer.  For these kits, a 12 VDC power pack will be used for both.
+<p>
+<b>Beam sampler (if NOT using the waste beam for feedback):</b>
+<p>
+A variable attenuator plate is included in the kits to be used as a beam
+sampler if the waste beam is too weak for that purpose or if it cannot be
+used for some other reason.  It should be oriented at an acute angle to
+miminize it's effect on polarization.  20 to 30 degrees is recommended.
+It should be positioned so that the reflected
+beam is lowest power (since even that should be plenty strong)
+and the transmitted (presumably the useful beam) is highest power.
+<p>
+<b>Detector assembly:</b>
+<p>
+The main parts in this comprise a Polarizing Beam Splitter (PBS) cube
+and a pair of PhotoDiodes (PDs).  A small PCB is included to mount the
+PBS cube, PDs, and ancillary parts.
+<p>
+The diagrams below shows the PCB layout of the detector PCBs:
+<p>
+ <center>
+ <img src="../sgdp1/DP1_S1_PCB3.bmp">&nbsp;&nbsp;&nbsp;
+ <img src="../sgdp1/DP1_M1_PCB1.bmp"><br>
+ <h4>Typical Detector PCB Layout (left ones with PBS installed)</h4>
+</center>
+<p>
+ The left-hand pair of diagrams show two possible orientations for the PBS with
+ the beam entering from the side or top, your choice.
+<p>
+ It is recommended that the 2 pin sockets included in the detector baggy be used
+ for the photodiodes.  This eliminates issues of damage from soldering.  Trim
+ the PD's legs to around 1/8 inch.  They may also need to be shaved down
+ slightly to fit the holes in the sockets.  A spacer will be required to
+ raise the PBSC to be level with the PD(s).
+<p>
+ The locations of all the components should be self evident.
+<p>
+ If not desired or convenient to use the PCB,
+ the PBSC can be glued to a post with the PDs glued to its back and side,
+ or to some simple plastic or metal enclosure of your choice.  Take care
+ with the PD lead wires as they are easily broken.  Very thin wire (e.g.,
+ AWG #30) is recommended.  Do NOT apply any stress
+ while soldering as the heat can melt the plastic causing them to shift
+ and break internally.  After soldering, confirm that the PDs still behave
+ like diodes with a DMM.  Using the PCB is less stressful all around. ;-)
+</ul>
+<p>
+<b>Checking the beam sampler before final assembly:</b>
+<p>
+Cut a piece of a sticky black label or other similar opaque material to
+be about the same size as the mirror glass at the rear of the tube (order
+of 6-8 mm or 1/4 inch).  (Use a Magic Marker to turn a white label black
+if needed so it's more or less opaque.)  Use a tiny drill bit or similar
+tool to make a clean 0.7 to 1 mm hole in it.  With the laser powered, stick
+this aperture over the rear-end mirror so the weak waste beam
+passes through it.  The purpose of the aperture is to block "bore light"
+from affecting the photodiodes in the beam sampler.  (The tube
+provided may already have something like this in place
+but you might want to improve upon it.)
+<p>
+Place the PBS on a support so the waste beam passes
+through its center and a deflected beam shoots off to one side.  Eventually
+it will need to be mounted securely, but
+for now, a block of wood or stack of CDs and CD boxes will suffice.
+<p>
+Now use a white card as a screen to observe the weak beam coming straight
+back out of the PBS and the beam being reflected to the side.  They will
+vary in intensity along with the polarized modes coming out the front.
+One of the photodiodes will be placed behind the PBS cube and the other
+on the side.  If necessary, fine tune the tube orientation so each
+of the beams goes completely dark periodically during mode sweep.  Devise
+mounts for the PDs so each of the beams strikes its respective PD and
+any reflections do not go back into the tube.
+<p>
+<b>Testing the photodiodes response to laser light:</b>
+<p>
+To test the response of the silicon PhotoDiodes (PDs) included in these kits,
+a simple test circuit using a few resistors, a 5 VDC power supply
+(or USB charger cube), and DMM can be constructed before connecting
+the stabilization controller.  To determine the polarity of the PDs,
+use the DMM on the "Diode Test" range across the pins: The voltage
+drop will be between
+0.5 and 0.6 V if the red probe is connected to the anode.  The polarity is
+usually opposite for a VOM but they are only found in museums these days. ;-)
+<p>
+Wire up a test circuit as follows:
+<p>
+<pre>
+                                  V1
+                                   o
+             R Protect       PD1   |  R Load 1
+   +5 VDC o----/\/\----+-----|<|---+---/\/\-----+
+                       |                        |
+                       |          V2            |
+                       |           o            |
+                       |     PD2   |  R Load 2  |
+                       +-----|<|---o---/\/\-----+
+                                                |
+                                                |
+  GND/RET o-------------------------------------+
+</pre>
+<p>
+<ul>
+<li>+5 VDC through a 200 ohm to 1K ohm resistor to the cathodes of both
+ photodiodes.  This resistor simply provides protection to limit current
+ through the PDs should they be installed backwards or something unfortunate
+ occurs.  But if too large, they will limit the response to light so don't go
+ above 1K ohms.
+<p>
+<li>One end each of a pair of load resistors to the anodes of both PDs.
+ Their value will depend on the laser power.  The response of a silicon PD
+ is typically between 0.3 and 0.4 mA/mW.  So select load resistors (or
+ trim-pots) of appropriate value so that there will be a detectable response:
+<p>
+ <ul>
+ <li><b>Main beam of 0.5-5 mW:</b> 5K ohms.
+ <li><b>Sampled main beam of 0.1-0.5 mW:</b> 50K ohms.
+ <li><b>Waste beam of 0.01 to 0.05 mW:</b> 500K ohms.
+ </ul>
+<p>
+ CAUTION: If the PDs are at the anode-end of the tube, take care to keep the
+ setup at a safe distance as they won't like being zapped by the high voltage.
+ Nor will you. :( :)  A piece of clear plastic can also be added between the
+ tube and detector to provide HV insulation.
+<p>
+<li>The other end of the load resistors goes to GND/RET of the 5 VDC supply.
+<p>
+<li>Monitor the voltage across each load resistor with the DMM on the
+ DCV range (0 to 5 V typical).  Adjust the value of the load resistors
+ if needed.
+<p>
+<li>With the beam blocked to each PD, the voltage across its load resistor
+ should be close to 0 V.
+<p>
+<li>With the beam incident on the PD, there should be a detectable response
+ whose value will depend on the actual laser power and load resistor.  With
+ a 5 VDC supply, the available range is from 0 to slightly below 5 V.
+<p>
+<li>If the PBS cube (or a linear polarizer) in inserted in the beam AND
+ the tube is rotated so the polarization axes line up with the polarizer, the
+ voltage will vary during mode sweep.
+</ul>
+<p>
+<b>Closing the loop:</b>
+<p>
+To stabilize the laser so that the position of the modes is under automatic
+control requires some electronics to first run the tube in "Preheat Mode"
+so that the temperature of the tube/heater combination levels off somewhat
+above ambient, and then to "Lock Mode" to allow the output of one or both
+photodiodes to take control.
+<p>
+If you're willing to switch from Preheat to Lock mode manually, the
+required circuit can be as simple as 2 basic electronic components - a
+resistor and a power MOSFET.  This won't have superior performance but
+is quick and easy to get working and therefore will provide nearly immediate
+gratification. :)
+<p>
+Much more sophisticated approahes are possible including a fully digital
+control system with wireless Internet access and data logging. :)  But
+an intermediate level of complexity similar to that used in most commercial
+stabilized HeNe lasers is certainly well within the reach of someone with
+a moderate knowledge of electronics.  This would use a couple op-amps to
+to act as a transimpedance amplifier for the photodiodes and implement
+Proportional Integral (PI) control loop.
+<p>
+<b>Non-Arduiono implementations:</b>
+<p>
+(For the Arduino version of the kit, skip down to "Arduino implementation".)
+<p>
+Assuming a basic but not totally minimal approach, one of the following
+circuits should be suitable as a introductory exercise in laser stabilization:
+<p>
+<ul>
+<li><A HREF="../sghs1sch.pdf">Sam's Stabilized HeNe Laser 1 (SG-HS1)</A>.
+<li><A HREF="../sghs2sch.pdf">Sam's Stabilized HeNe Laser 2 (SG-HS2)</A>
+</ul>
+<p>
+Note that both these circuits have the photodiodes paralleled with opposing
+polarity with a single op-amp rather than separate preamps and a difference
+amp.  To do it this way will require modifying the detector PCB.
+<p>
+<center>
+<img src="../sg117s2.jpg"><br>
+<h4>Photo of Sam's Prototype Stabilized HeNe Laser Head and
+ Controller SG-HS2</h4>
+</center>
+<p>
+This laser uses a hand-wound heater but is otherwise similar to the kit.
+<p>
+To make everything fully automatic, either a simple timer as a delay
+from power-on, or a monostable circuit that detects when the mode sweep
+cycle exceeds a preset time can be used to do the switchoever at the
+once the tube has reached operating temperature.
+<p>
+For more detailed descriptions and other options, see
+the sections of the Laser FAQ starting with:
+<A HREF="https://www.repairfaq.org/sam/manuals/laserchn.htm#chnstab">Inexpensive Home-Built Frequency or Intensity
+Stabilized HeNe Laser</A>.
+<p>
+Or, use parts of the circuitry of a commercial stabilized HeNe laser like
+the Spectra-Physics 117 or Coherent 200.  There are complete schematics
+of these in the chapter: <A HREF="https://www.repairfaq.org/sam/manuals/laserhcl.htm#hcltoc">Commercial HeNe
+Lasers</A>.
+<p>
+<ul>
+<li>All the parts for these circuits are commonaly available from an
+ electronics distributor like Jameco, Digikey, or Mouser.  Nothing is
+ critical and substituting parts like different dual or quad op-amps from your
+ junk box should be just fine.
+<p>
+<li>Contruct the circuit on a Perf. board or protyping board.  Layout is
+ not critical as the frequencies are low.  If you'd like to make a PCB,
+ that's fine also but not necessary.
+<p>
+<li>It will probably be desirable to make the feedback resistors in the
+ first amplifier stage(s) either adjustable, or selected for the specific
+ laser tube waste beam power or beam sampler power to maximize and
+ equalize the amplitude of the mode signals.
+<p>
+<li>With the circuit set to go, first check the response of the first
+ amplifier stage(s) to the photodiode mode signals.  Drive the heater at
+ 1/2 to 2/3 of full power and watch the mode sweep.  When a full cycle
+ takes more than 20 or 30 seconds, it is probably time to close the
+ feedback loop.  If the stabilization is working, the modes will go through
+ a part of one cycle forward or backward, and then the heater power will
+ adjust so they stop.  The desired stable point is where the heater power
+ is at 20-30 percent of max.  If it stabilizes too high, the tube is too
+ hot; too low and the tube is too cool.
+</ul>
+<p>
+Using the most basic setup with the photodiodes paralleled with opposite
+polarity, the output of the laser when locked will be the two orthogonal
+linearly polarized modes with approximately equal amplitude.  With a slightly
+more complex preamp circuit, the amplitudes could be adjusted over a
+fairly wide range while retaining mode purity.  To use this
+rig as a single frequency laser for something like holography or
+homodyne interferometry, one of the modes should be blocked with
+a Linear Polarizer (LP) such as another PBS cube (for best efficiency)
+or a sheet polarizer.
+<p>
+<b>Arduino implementation:</b>
+<p>
+The only thing that changes using the Arduino is how the heater is controlled.
+Rather than an analog control loop with op-amps and the like, a digital
+control algorithm is implemented in microcomputer firmware using inputs
+from the photodiodes and driving the heater with a pulse width
+modulated signal as the output.  An Atmega 328 Nano 3.0 is the brains,
+a popular microcomputer used for numerous applications.  An optional PC
+running Windows (not included!) provides a way to monitor operation and
+change various parameters, but this is not essential.  The Nano firmware
+is programmed in C and the source code is provided should one desire to
+hack it. ;-)  Complete installation and assembly instructions may be found at
+<A HREF="../uSLC1/uSLC1.htm">Micro Stabilized Laser
+Controller 1 (&micro;SLC1) Installation and Operation Manual</a>.
+<p>
+<b>Enhancements/experiments:</b>
+<p>
+<ul>
+<li>The laser tube HR mirror may have no wedge.  This means that
+ there will be reflections from its outer surface back into the laser
+ tube.  This will both result in etalon effects causing
+ a slight ripple in output power (in addition to mode sweep) as the
+ tube warms up, and they may reduce the overall stability.  To determine if
+ your tube has wedge, project the waste beam onto a white card a few
+ feet way.  If there is wedge, it will have a faint ghost beam off to
+ one side.
+<p>
+ A simple fix is to
+ add a glass plate at a small angle (a few degrees) using clear 5
+ minute Epoxy or UV cure optical adhesive.  Index matching adhesive is
+ best but almost any type will be close enough to greatly reduce the
+ retroreflections.  DON'T use Crazy glue (cyanacrylic) or hard Epoxy!!!
+ as these may damage the optics and/or are more difficult to remove
+ if desired.
+<p>
+ An alternative that may be good enough is to coat the mirror glass with
+ a thin layer of clear Silicone or 5 minute Epoxy.  If done carefully,
+ this will not distort the waste beam very much but will provie a
+ non-uniform reflective surface that will greatly reduce the etalon
+ effects and may help some with back-reflections into the bore.
+<p>
+<li>Deliberately introduce retroreflections in the output beam
+ and determine how they
+ effect both the gross locking behavior and short and long term stability.
+<p>
+<li>Some outer covering over the heater may improve stability.  The tube
+ will stabilize with just the heater as it is, but by providing just a bit
+ of thermal insulation, the effects of the environment can be reduced
+ substantially.  Adding a temperature controlled enclosure could help
+ also, which is what the very best lasers of this type use.
+<p>
+<li>Look into how the performance is affected by the sophistication of
+ the controller, and with respect to 1 mode or 2 mode feedback schems.
+</ul>
+<p>
+<hr>
+<b><center>Sam's Laser FAQ, <A HREF="copyright.htm">Copyright &copy<A> 1994-2024,
+ Samuel M. Goldwasser, All Rights Reserved.<br>
+ I may be contacted via the
+ <A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+ Email Links Page</A>.</center></b>
+<hr>
+<p>
+</body>
+</html>

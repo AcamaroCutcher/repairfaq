@@ -1,0 +1,374 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/sgdp1/
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/sgdp1/">https://www.repairfaq.org/sam/sgdp1/</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<title>Dual Photodiode 1 (DP1)</title>
+<center>
+<h1>Dual Photodiode 1 (DP1)</h1>
+
+<h2>For Scanning Fabry-Perot Interferometers and Quadrature Decoders
+<p>
+Assembly and Operation Manual</h2>
+
+<h3>Version 1.00 (25-Dec-21)
+</h3>
+</h2>
+<h3>
+<A HREF="../copyright.htm">Copyright &copy</A> 1994-2021
+<br>
+Sam Goldwasser<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<p>
+<A NAME="sgpd1toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#sgpd1pre">Preface</a>
+ <ul>
+ <li><A HREF="#sgpd1aac">Author and Copyright</a>
+ <li><A HREF="#sgpd1dis">DISCLAIMER</a>
+ </ul>
+<li><A HREF="#sgpd1int">Introduction</a>
+<li><A HREF="#sgpd1spc">Specifications</a>
+<li><A HREF="#sgpd1too">Theory of Operation</a></h3>
+<li><A HREF="#sgpd1sch">Schematic</a>
+<li><A HREF="#sgpd1prt">Parts Lists</a>
+<li><A HREF="#sgpd1asb">Assembly</a>
+
+<li><A HREF="#sgpd1trb">Troubleshooting</a>
+</ul>
+<p>
+<A NAME="sgpd1pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="sgpd1aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="sgpd1dis">DISCLAIMER</a></h4>
+
+SG-DP is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware will not
+have a significant impact on the future of the Universe or anything else.
+We will not be responsible for any consequences
+of such bugs including but not limited to damage to the wafer FAB you
+picked up on eBay for $1.98 + shipping, financial loss from the use of
+37 spools of ABS due to the office 3-D printer fabricating a part 25.4x
+too large in all dimensions, or bruising to your pet's ego from any number
+of causes directly or indirectly related to SGPD1. ;-)
+<p>
+<A NAME="sgpd1int"></A>
+<hr>
+<h3>Introduction</h3>
+
+Note: Local links and clickable graphics open in a <i>single</i>
+new tab or window depending on your browser's settings.
+<p>
+This document describes the various simple PCBs used to convert a (usually
+laser) beam into two electrical signals, typically differentiated by
+polarization or phase.  Common to all are that there are locations for two
+bare photodiodes and for a plate or cube beam-splitter.  The electrical
+output is the photo-current which may be used directly with a load
+resistor.  Minor modifications are required to use these with the AB2 pre-amp.
+<p>
+There are several versions of these PCBs but all have the following:
+<p>
+<ul>
+<li><b>Pads for two photodiodes:</b> These are typically for the silicon
+ photodiodes included with most of the kits that have the anode on the left
+ and cathode on the right with th legs facing down.
+<p>
+<li><b>Pads for a PD protect resistor:</b> This is optional but protects the
+ photodiods and power supply if the photodiodes are accidentally installed
+ backwards or fail shorted.
+<p>
+<li><b>Input pin for bias voltage and GND:</b> This is typically from an
+ Arduino, wall adapter, or 9 V battery.
+<p>
+<li><b>Pads for an AC bypass capacitor:</b> For high speed operation, this
+ bypasses the power source for AC signals.
+<p>
+<li><b>Space for a plate or cube beam-splitter:</b> The typical size can
+ range from a 0.125 inch (3 mm) PBS cube to a 1x0.5 inch (25x12.5 mm) NPBS
+ plate depending on the specific version of the PCB.
+<p>
+<li><b>Center hole:</b> This allows the input beam to come from
+ beneath the PCB as in an SFPI.
+<p>
+<li><b>Mounting hole or holes:</b> These are for either for #4 or #8 screws.
+</ul>
+<p>
+The photos below show some of the versions of the DP1 PCBs in various stages
+of assembly.
+<p>
+<center>
+<a target="SGPD1" href="DP1_PCBs1.jpg">
+<img src="DP1_PCBs1.jpg" height=300></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="SGPD1" href="DP1_SFPI_PCB2.jpg">
+<img src="DP1_SFPI_PCB2.jpg" height=300></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="SGPD1" href="../mipm/Quad-Decoder-PCB2.jpg">
+<img src="../mipm/Quad-Decoder-PCB2.jpg" height=300></a><br>
+<h3>Various SG-DP1 PCBs: Single Channel, Two Channel, with PBS and Beam from Behind, QD1 Modified for AB2, Mounted on KMS, QD1 Quad Decoder using AP and bits of CP Sheet</h3>
+</center>
+<p>
+<A NAME="sgpd1spc"></A>
+<hr>
+<h3>Specifications</h3>
+
+The PCB designations are kind of arbitrary. ;-)
+<p>
+<ul>
+<li><b>SG-DET1:</b> Mid-size form factor - 9/16x7/8 inches.  Will fit 4 mm
+ BSC with 0.125 inch center hole for beam from behind. #8 mounting hole.
+<p>
+<li><b>SG-DET2:</b> Smallest form factor - 1/2x3/4 inches.  Will fit 6 mm
+ BSC with 0.125 inch center hole for beam from behind.  #4 mounting hole.
+<p>
+<li><b>SG-QD2:</b> Large form factor for BSC - 5/8x1 inches.  Will fit 10 mm
+ BSC with 0.125 inch center hole for beam from behind.  #8 mounting hole.
+<p>
+<li><b>KMS-DET1:</b> Designed to fit on Thorlabs KMS mirror mount, part of
+ the selectable FSR Scanning Fabry-Perot Interferometer - 1x1 inches with
+ cutouts for access to adjustment screws.  Will fit 6 mm BSC with 0.125
+ inch center hole for beam from behind.  #4 mounting holes.
+<p>
+<li><b>SG-QD1:</b> Largest form factor for BSC or variable Attenuator
+ Plate (AP) - 1-3/16 x 1-3/16 inches.  Will fit 12 mm BSC or >1 inch plate
+ with 0.125 inch center hole for beam from behind.  #4 and #8 mounting holes.
+</ul>
+<p>
+<A NAME="sgpd1too"></A>
+<hr>
+<h3>Theory of Operation</a></h3>
+
+The type of detector use here is called a "biased photodiode" and is
+essentially a current source with an output proportional to incident
+optical power.
+<p>
+A silicon photodiode (PD) when reverse biased
+by a positive DC voltage (battery or power supply) allows a current
+(designated Ipd) to flow with a sensitivity measured in amps / watt (A/W) or
+for our purposes, mA/mW of incident laser power.  The sensitivity for
+silicon at 633 nm is typically between 0.3 and 0.4 mA/mW and linear
+up to several mW for the types of PDs used here.  This relationship
+holds even when a load resistor R-Load is installed between the PD
+and circuit common (negative of the bias supply),
+resulting in an output voltage that is linear with respect to
+incident laser power based on Ipd * R-Load.
+For example, with a laser power of 0.5 mW, a PD sensitivity of 0.35 mA/mW,
+and R-Load of 10K ohms, Vo would be 1.75 V.
+<p>
+The most basic circuit is shown below:
+<p>
+<PRE>
+           Silicon
+          Photodiode
+   +---------|<|-------+-------o Output to scope or DMM
+   |  Cathode   Anode  |
+   |                   /
+   |                   \ R-Load
+   |                   /
+   |     Bias Supply   \
+   |       +| | -      |
+   +--------||||-------+-------o GND / Common / Return
+            | |
+</PRE>
+<p>
+Note the polarity of the PD with its cathode connected to the positive of the
+power supply and thus reverse biased.  With no light incident on the PD,
+only the so-called "dark current" will flow, which is generally small enough
+to be ignored (nanoamps or less).
+<p>
+Circuits like this are used in commercial detectors like the Thorlabs
+DET110 and for DP1 as well.  With the PD back-biased, the load can be
+an actual resistor as shown or the inverting input of an op-amp with
+its non-inverting input tide to 0 V / GND.
+<p>
+The PD1 PCBs include only the photodiodes, R-Protect, and an AC bypass
+capacitors as shown in the schematic below.
+
+<p>
+<A NAME="sgpd1sch"></A>
+<hr>
+<h3>Schematic</a></h3>
+
+The schematics for the DP1 Version 1.0 PCBs are the same except
+for a spot for PD3 in parallel with PD2 on some.  The SG-QD1 version
+is set up to use a variable attenuator plate as a non-polarizing beam-splitter.
+To minimize polarization effects, the AP is set at a 20 or 30 degree
+angle instead of 45 degrees, so the reflection is in a different direction.
+If used with a PBS or NPBS cube, PD3 can be used instead.  KMD-DET1
+can use PD2 or PD3 which are wired in parallel.
+<p>
+<pre>
+          R-Protect        PD1    J1-3
+   Vb+ >-----/\/\-----+----|<|-----<<------------+----------o Output 1
+                      |                          |
+                      |    PD2    J1-4           |
+                      +----|<|-----<<----------------+------o Output 2
+                      |                          |   |
+                      |                          /   /
+                     _|_                 R-Load1 \   \ R-Load2
+                     ---                         /   /
+                      |                          \   \
+                      |           J1-2           |   |               
+                      +------------<<------------+---+------o Ground
+
+      |<----- SBB or QDx PCB ----->|<---- Output / Power Wiring ----->
+  </PRE>
+<p>
+The graphics below show the layout diagrams for the various versions of
+the PCB with the parts installed:
+<p>
+<center>
+<a target="SGPD1" href="DP1_S1_PCB3.bmp">
+<img src="DP1_S1_PCB3.bmp"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="SGPD1" href="DP1_M1_PCB1.bmp">
+<img src="DP1_M1_PCB1.bmp"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="SGPD1" href="DP1_L1_PCB1.bmp">
+<img src="DP1_L1_PCB1.bmp"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="SGPD1" href="DP1_SFPI_PCB2.bmp">
+<img src="DP1_SFPI_PCB2.bmp"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="SGPD1" href="QD1_PCB1.bmp">
+<img src="QD1_PCB1.bmp" ></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a target="SGPD1" href="QD1_AB_PCB2.bmp">
+<img src="QD1_AB_PCB2.bmp" ></a>
+
+<h3>SG-DP1 PCB Layouts Version 1.00: Small with Beam from the Side, Small
+ with Beam from Behind, Medium, Large, SFPI with Beam from Behind, Quad
+ Decoder, Quad Decoder Modified for AB2</h3>
+</center>
+<p>
+To use these PCBs for a quad decoder requires an optical setup such as one of
+the following:
+<p>
+<center>
+<img src="../mipm/Quadrature_Decoder3.gif"><br>
+</center>
+<p>
+The left diagram is the classic arrangement with a plate-type Non-Polariziing
+Beam-Splitter (NPBS) at 45 degrees.  An NPBS cube could also be used.
+<p>
+The center and right diagrams use a variable Attenuator Plate (AP) in place
+of the NPBS, primarily due to cost.  But so as not to mess with the
+polarization too much, it is set at a small angle, so its photodiode needs
+to be mounted at a different location.  The difference between the two
+diagrams is only in the arrangement of the LPs and QWP: The one on the
+right can use the same type of CP sheet for both.
+<p>
+<A NAME="sgpd1prt"></A>
+<hr>
+<h3>Parts List</h3>
+
+All versions have locations for the following parts:
+<p>
+<pre>
+ Prt  Description                  Comments
+-------------------------------------------------------------------------
+  -   PCB, Various                 First released version
+
+  C1  Capacitor, 0.1 &micro;F            AC bypass
+  R1  Resistor, 1K, 1/8 W          PD protect (current limiting)
+
+ SKT1 Female-male socket, 2 pins   For PD1
+ SKT2 Female-male socket, 2 pins   For PD2
+
+ PD1  Silicon photodiode           Optical sensor 1
+ PD2  Silicon photodiode           Optical sensor 2
+
+  J1  Header/shell/pins or Screw   Power / signal
+       terminal block, 4 pin
+
+ BS1  Beam-splitter                Type depends on specific application
+</pre>
+<p>
+Other bits may be required like pieces of CP or LP sheet, a spacer or washer
+for raising the beam-splitter, and a mounting screw and spacer.
+<p>
+<A NAME="sgpd1asb"></A>
+<hr>
+<h3>Assembly</h3>
+
+No detailed "Heathkit&trade;-style" assembly instructions for these, sorry. ;-)
+<p>
+All electrical components are through-hole.
+<p>
+A low power soldering iron with narrow tip and thin (e.g., #22 AWG) rosin-core
+solder will be required.  DO NOT even think about attempting this without
+suitable soldering equipment.  It's well worth the investment.  A Weller
+soldering gun or propane torch will not work. :)  Rosin core solder is also
+essential.  And while
+I'm quite confident that you never make mistakes, a means of component removal
+such as a de-soldering pump (e.g., a full size SoldaPullt&trade;) will be
+highly desirable.  Screwing up component removal can easily ruin the PCB
+and is not covered under the limited unlimited warranty. :-)
+<p>
+Proper soldering technique will be such that the exposed solder on each
+pad should be shiny with a concave profile.  It should not be a blob and
+just needs to fill the hole.  Solder is not glue.
+Some excess solder doesn't hurt anything
+but looks unprofessional.  A 10X magnifier may come in handy for
+inspection.  Residual rosin can be cleaned off with
+isopropyl alcohol or an environmentally-friendly electronic solvent.
+However, leaving the rosin alone is also acceptable (if ugly).
+<p>
+Total assembly time should be well under 7 minutes for someone proficient
+in fine soldering.  Cutting component leads to 1/4 to 3/8 inch before
+installation will simplify soldering as the long leads won't be poking
+you in your one good eye. :( :)  Then trim flush after soldering.
+
+<h3><a name="sgpd1trb">Troubleshooting</a></h3>
+
+Troubleshooting?  What troubleshooting? ;-)  It's only a half dozen
+components.  Check for solder bridges and
+unsoldered leads, that the correct parts are installed, and for those with
+polarity, that they in the right way around.
+<p>
+For mostly friendly tech support, feel free to contact me via the link at the
+top of this page. ;-)
+<p>
+<hr>
+</body>
+</html>

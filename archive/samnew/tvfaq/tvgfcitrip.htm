@@ -1,0 +1,139 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvgfcitrip.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="GFCI tripping with TV, monitor, or other..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: GFCI tripping with TV, monitor, or other high tech equipment</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvgfcitrip.htm">https://www.repairfaq.org/samnew/tvfaq/tvgfcitrip.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">GFCI tripping with TV, monitor, or other..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvlightningd.htm">&lt;&lt;&nbsp;Comments on lightning dam..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvmultisystvs.htm">Multisystem TVs&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvgfcitrip">GFCI tripping with TV, monitor, or other high tech equipment</A></h3>
+
+Ground Fault Circuit Interrupters (GFCIs) are very important for
+minimizing shock hazards in kitchens, bathrooms, outdoors and other
+potentially wet areas.  They are now generally required by the NEC Code
+in these locations.  However, what the GFCI detects to protect people - an
+imbalance in the currents in the Hot and Neutral wires caused possibly
+by someone touching a live conductor - may exist safely by design in
+high tech electronic equipment.  The result - false tripping - is
+mostly a problem with 3 wire grounded devices with built in line filters
+having capacitors between Hot and Ground but may also occur with 2 wire
+ungrounded TVs due to the power-on surge into the highly capacitive
+or inductive loads of their power supplies.
+<p>
+However, it's also possible for this to happen when a TV is hooked to a cable
+system because it's cable shield is connected to Earth ground.  In such a
+case, this may or may not be a cause for concern.
+<p>
+TVs using Hot chassis designs couple the antenna and its cable shield to
+the tuner with small coupling capacitors.  A side effect is that some AC
+leakage current can flow through these capacitors, possibly enough to trip
+the GFCI.  If the TV's plug isn't polarized, try reversing it and see if
+the problem goes away.  If it is polarized, make sure your outlet is wired
+properly and you aren't using a non-polarized extension cord with the TV
+plugged reversed.
+<p>
+It's also possible the TV is faulty and the tripping is actually taking
+place as a result of a legitimate problem.
+<p>
+To assure the set is safe, (whether reversing the plug helps or not), a
+leakage test should really be performed by measuring the AC current between
+the TV's antenna shield and an Earth ground.  Try it with both polarities of
+the wall plug.  Anything over about 8 mA will trip a GFCI.  If the leakage
+current is less than this with either polarity of the wall plug, the GFCI is
+overly sensitive.  If the leakage current is much more with either polarity of
+the wall plug, the set is defective and should be serviced immediately.  It
+should not be used until the problem is corrected as a serious shock hazard
+exists.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvlightningd.htm">&lt;&lt;Comments on lightning dam..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvmultisystvs.htm">Multisystem TVs&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

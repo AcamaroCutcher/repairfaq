@@ -1,0 +1,656 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uMD1/SG-uMD1-V1.0-am.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<TITLE>Assembly Instructions for the SG-&micro;MD1 Version 1.0 PCB</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uMD1/SG-uMD1-V1.0-am.htm">https://www.repairfaq.org/sam/uMD1/SG-uMD1-V1.0-am.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<h1>
+Assembly Instructions for the SG-&micro;MD1 Version 1.0 PCB<br>
+</h1>
+<h2>
+Version 1.00 (19-Apr-19)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2022
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<link rel="icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+
+<p>
+<A NAME="umd1.0toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#sgumd1.0pre">Preface</a>
+ <ul>
+ <li><A HREF="#sgumd1.0aac">Author and Copyright</a>
+ <li><A HREF="#sgumd1.0dis">DISCLAIMER</a>
+ <li><A HREF="#sgumd1.0ack">Acknowledgment</a>
+ </ul>
+<li><A HREF="#sgumd1.0int">Introduction</a>
+<li><A HREF="#sgumd1.0sch">Schematic for SG-&micro;MD1 Version 1.0</a>
+<li><A HREF="#sgumd1.0pcb">PCB Layout for SG-&micro;MD1 Version 1.0</a>
+<li><A HREF="#sgumd1.0sbs">Step-by-Step "Heathkit&trade;-style" Instructions for SG-&micro;MD1 PCB Version 1.0</a>
+<li><A HREF="#sgumd1.0epl">Parts List for SG-&micro;MD1 Version 1.0</a>
+</ul>
+<p>
+<A NAME="sgumd1.0pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="sgumd1.0aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2016
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="sgumd1.0dis">DISCLAIMER</a></h4>
+
+&micro;MD1 is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+While every effort has been made to avoid this possibility, &micro;MD1 is an
+on-going development effort.  We will not be responsible for any consequences
+of such bugs including but not limited to damage to the wafer FAB you
+picked up on eBay for $1.98 + shipping, financial loss from the use of
+37 spools of ABS due to the office 3-D printer fabricating a part 25.4x
+too large in all dimensions, or bruising to your pet's ego from any number
+of causes directly or indirectly related to &micro;MD1. ;-)
+
+<h4><A NAME="sgumd1.0ack">Acknowledgment</a></h4>
+
+Thanks to Jan Beck for selecting the chipKIT DP32 and writing and testing
+initial versions of the firmware and GUI.  And for getting me interested
+in actually getting involved in this project.  If anyone had told me 
+six months ago that I'd be writing code in C, MIPS assembly language,
+and Visual Basic - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)  Jan maintains the master GUI source code
+as well as slightly different versions of the firmware and a 
+development blog on the overall project.
+And a version of the firmware providing basic readout of displacement
+on any Bluetooth wireless device with a terminal APP, or with a bit
+more polished presentation (though not the complete GUI) on Android devices,
+may be found on Jan's Web site.  See that and more under "References".
+<br>
+<p>
+<A NAME="sgumd1.0int"></A>
+<hr>
+<h3>Introduction</h3>
+
+The SG-&micro;MD1 kit of parts includes everything necessary for a 3 axis
+&micro;MD1 readout without sensors, as well as most other parts
+needed to populate the PCB to be equivalent to the chipKit DP32.
+<p>
+There are no more bare V1.0 SG-&micro;MD1 PCBs so this document is for
+reference-only should have one of the assembled V1.0 PCBs.
+<p>
+<b><font color="brown">
+This document provides detailed instructions for assembling the SG-&micro;MD1
+PCB <font color="blue"> Version 1.0.</font>
+A similar document will be provided when V1.2 is available.
+(There is no V1.1.)  V1.0 and V1.2 are functionally equivalent for &micro;MD1
+in that they can be swapped in a system or substituted for the original
+chipKit DP32 version without requiring
+any hardware or software changes.  Most of the differences
+relate to the LED indicators, the majority of which are not
+useful for &micro;MD1 anyhow. :)  But the correct assembly
+procedure must be used because the layout has changed slightly,
+along with some part numbers.  Check the marking on the
+PCB to confirm the version.
+</font></b>
+<p>
+The LEDs have changed both in terms of behavior and location in
+SG-&micro;MD1-V1.0.  The chipKit LEDs LED1-LED4 (on signals RB3-RB0) are
+still present but are located near the upper Arduino pin header and labeled
+LD8-LD5.  They are directly driven from the PIC32 pins and
+<i>their outputs are inverted</i>.  So for example, on SG-&micro;MD1-V1.0,
+<i>digitalWrite(PIN_LED3, 1);</i> turns the LED3 (LD6)
+<i>OFF</i>.  Thus for those rare occasions where the firmware outputs
+something to an LED (and anyone cares), the C code may need to be modified
+accordingly.  It doesn't matter for the heartbeat, but in firmware
+V58.xx, it might.  Four additional LEDs have been added
+for REF and MEAS1-MEAS3 and are directly driven from their respective
+line receivers.  Of all the LEDs, only LD8 and LD0 are actually
+needed.  LD8 (LED1) flashes to indicate that the boot loader is
+active.  And LD0 (Power) is a key part of Smoke Test #1, below. ;-)
+<p>
+All components are through-hole and except as noted in the detailed
+assembly procedure, should seat flush on the
+PCB.  They shouldn't be suspended in mid-air swinging in the breeze. :)
+Most components are identified on the silk-screen and with only a few
+exceptions, the label won't be obscured when the part is installed.
+<p>
+<A target="uMD1" HREF="SG-uMD1-1.0-1Axis.jpg">SG-&micro;MD1 V1.0 Single Axis
+PCB</A> shows the PCB populated with the parts for a single axis
+system without sensors.  However,
+R34 and R35 are not needed unless programming the PIC32
+from an IDE like MPLAB, and the JP7 header and the blue
+jumper would normally be replaced
+with a wire. :)  The input terminating resistors for REF
+and MEAS1 (R1,R2,R6,R7) have not been
+installed since their value may depend on the specific configuration,
+and in many cases can be omitted entirely.
+<p>
+A low power soldering iron with narrow tip and thin (e.g., #22 AWG) rosin-core
+solder will be required.  DO NOT even think about attempting this without
+suitable soldering equipment.  It's well worth the investment.  A Weller
+soldering gun or propane torch will not work. :)  Rosin core solder is also
+essential.  And while
+I'm quite confident that you never make mistakes, a means of component removal
+such as a de-soldering pump (e.g., SoldaPullt&trade;) will be highly desirable.
+Screwing up component removal can easily ruin the PCB and is not covered
+under the unlimited limited warranty. :-)
+<p>
+Proper soldering technique will be such that the exposed solder on each
+pad should be shiny with a concave profile.  It should not be a blob and
+just needs to fill the hole.  Solder is not glue.
+Some excess solder doesn't hurt anything
+but looks unprofessional.  A 10X magnifier may come in handy for
+inspection.  Residual rosin can be cleaned off with
+isopropyl alcohol or an environmentally-friendly electronic solvent.
+However, leaving the rosin alone is also acceptable (if ugly).
+<p>
+Total assembly time should be well under two hours for someone proficient
+in fine soldering.  Cutting component leads to 1/4 to 3/8 inch before
+installation will simplify soldering as the long leads won't be poking
+you in the face. :( :)  Then trim flush after soldering.
+<p>
+It is recommended that the USB driver and &micro;MD1 GUI be installed on
+your PC or laptop prior to assembly so that it will be possible to perform
+a "live" test as soon as the board is ready.
+
+<h4><A NAME="sgumd1.0sch">Schematic for the SG-&micro;MD1 Version 1.0</a></h4>
+
+The schematic for the SG-&micro;MD1 Version 1.0 PCB may be found at
+<A HREF="sgum1sch1.0.pdf">SG-&micro;MD1 Version 1.0 Schematic</A>.
+This includes everything on the board.  <A HREF="sgum0sch1.0.pdf">Minimally
+Populated SG-&micro;MD1 Version 1.0 Schematic</A> includes only the
+parts required for a system with up to three axes but no sensors.  It
+eliminates chipKIT DP32 features that are not needed for &micro;MD1 and
+is the version that will be of interest to most users.  The other parts
+can always be added at a later time if needed.
+<p>
+Printing out the schematic and having it available for reference while
+assembling the PCB may be helpful.
+
+<h4><A NAME="sgumd1.0pcb">SG-&micro;MD1 PCB Layout Version 1.0</A></h4>
+
+Refer to the SG-&micro;MD1 board layout below. 
+<p>
+<center>
+<img src="SG-uMD1-PCB-V1.0.gif">
+ &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="SG-uMD1-1.0-1Axiss.jpg">
+<br>
+<h3>SG-&micro;MD1 V1.0 PCB Layout Diagram (Left) and Single Axis Populated PCB (Right)</h3>
+</center>
+<p>
+As can be seen by comparing this layout with that of the chipKIT board, most
+parts are in similar locations.  The USB connector has moved to the bottom of
+the board along with its associated jumpers.  The Arduino headers have moved
+slightly and there are now complete layout patterns for up to 3 measurement
+channels and locations for the environmental sensors.
+<p>
+For use with environmental sensors, additional components will be required
+that are not part of the standard SG-&micro;MD1 kit.
+<p>
+The populated PCB shows all components required for a single axis system
+without sensors.  R34 and R35 are not needed unless programming the PIC32
+from an IDE like MPLAB.  JP7 and the blue jumper would normally be replaced
+with a wire. :)  The missing jumpers
+are either not needed or bridged by a trace on the underside of the PCB.
+The terminating resistors (R1,R2,R6,R7) have not been
+installed since their value may depend on the specific configuration.
+<p>
+If only interested in running the PIC32 for other purpsoes, or for
+downloading the bootloader or other firmware using MPLAB, it's even
+simpler.  Go to <A HREF="SG-uMD1-V1.0-MPLAB.htm">Assembly Instructions for the
+SG-&micro;MD1 for MPLAB Version 1.0 PCB</A>.
+
+<h3><A NAME="sgumd1.0sbs">Step-by-Step "Heathkit&trade;-style" Instructions for SG-&micro;MD1 PCB Version 1.0</a></h3>
+
+Print out this document so each step can be checked off ( ) as it is completed.
+<p>
+The parts list below assumes populating the SG-&micro;MD1 for 3 channels.
+So for a single channel system, some parts in this list may not be present
+and/or there is no need to install those associated with channels 2 and 3.
+<p>
+<ol>
+<li>( ) Confirm that all parts are present and undamaged:
+<p>
+ <ul>
+ <li>( ) 1x blank SG-&micro;MD1 V1.2 PCB.  Confirm the version on the
+  silkscreen near the location of the USB connector.  Inspect for plating
+  or other defects.
+<p>
+ <li>( ) 2x 8 pin DIP socket.
+ <li>( ) 1x 28 pin SDIP socket.
+ <li>( ) 4x 4 pin header.
+ <li>( ) 4x 4 pin shell.
+ <li>( ) 16x socket pins.
+ <li>( ) 1x USB Micro B female connector.
+ <li>( ) 2x UA9637 or UA9639 line receiver (8 pin DIP in foam or tube).
+ <li>( ) 1x PIC32MX250F150B-50I/S PIC32 (28 pin SDIP in foam or tube).
+ <li>( ) 1x MCP1700-3302E 3.3V regulator (TO92).
+ <li>( ) 3x tactile switch (pushbutton).
+ <li>( ) 2x 33 pF ceramic capacitor (marked with 33).
+ <li>( ) 5x 0.1 &micro;F ceramic capacitor (marked with 104 or 0.1).
+ <li>( ) 3x 4.7 &micro;F electrolytic capacitor.
+ <li>( ) 1x 10 &micro;F or 22 &micro;F tantalum capacitor (yellow gum drop).
+ <li>( ) 10x 3 mm LED.
+ <li>( ) 3x 51 ohm 1/8 W resistor (green-brown-black-gold).
+ <li>( ) 12x 150 ohm 1/8 W resistor (brown-green-brown-gold).
+ <li>( ) 1x 200 ohm 1/8 W resistor (red-black-brown-gold).
+ <li>( ) 4x 330 ohm 1/8 W resistor (orange-orange-brown-gold).
+ <li>( ) 1x 680 ohm 1/8 W resistor (blue-gray-brown-gold).
+ <li>( ) 15x 10K ohm 1/8 W resistor (brown-black-orange-gold).
+ <li>( ) 1x 8 MHz crystal (2 pin sardine can).
+ <li>( ) 1x 40 pin socket strip.
+ </ul>
+<p>
+ Some of these components are not required for &micro;MD1 but can be used
+ to fully populate the board or to provide more flexibility.
+<p>
+<li>( ) Install the USB Micro B connector on the top of the PCB.  First
+ solder the through-hole tabs.  Confirm that the connector is flush on the
+ board before soldering the pins.  The tabs and pins may not quite poke
+ through the PCB so assure that solder actually flows down inside the
+ holes and reaches them.  Take care to avoid solder bridges between
+ the very closely spaced pins.
+<p>
+ Note that the through-hole USB connector is installed at a right angle to the
+ PCB.  If you would prefer one that is parallel to the PCB and are comfortable
+ soldering an SMD connector with legs that are only 1.3 mm apart and
+ barely accessible even with a narrow-tip soldering iron, they are
+ readily available from electronics distributors or eBay and should
+ be compatible with the PCB layout pattern.  Or if you can locate a
+ through-hole connector that installs flat on the PCB,
+ contact me via the email links at the top of this page. :)
+<p>
+<li>( ) Install a jumper wire between the two right-most pads of JP7 (near
+ the USB connector).  For &micro;MD1 there should never really be any need
+ so use external power.
+<li>( ) Install IC2 (MCP1700T, TO92).  It should stand off from the PCB by
+ 1/8th inch or so.  Make sure the outline matches
+<li>( ) Install C10,C11 (4.7 uF).  Note polarity: Positive is marked
+ on the PCB and is also the square pad.  Negative on the capacitor is
+ marked by a line.
+<p>
+<li>( ) Install LD0 (3 mm LED).  The anode is the longer lead and the square
+ pad on the PCB.  The cathode is the shorter lead and the flat on the body of
+ the LED.  Cut the leads about 1/10" from the body if the LED can't be inserted
+ to sit flush on the PCB.  Take care not to overheat or stress the leads on
+ the LED when soldering.
+<p>
+<li>( ) Install R26 (10K ohms).
+<p>
+<li>( ) Smoke test #1:  Plug the board into a live USB A socket or charger
+ via the included USB A to USB Micro B cable.  LD0 (Power) should come on
+ immediately.  If a DMM is available confirm that the voltage measured across
+ pins 28 and 27 of IC1 is between 3.2 V and 3.4 V.  Unplug.  And, uh, nothing
+ should smoke. ;-)
+<p>
+</ol>
+ It is recommended that the following six sets of resistors be
+ soldered only after all have been inserted.  Errors in placement will
+ be more likely to be caught before soldering.
+<p>
+<ol start=9>
+<li>( ) Install R22,R34,R35 (51 ohms).
+<li>( ) Install R24 (200 ohms).
+<li>( ) Install R25 (680 ohms).
+<li>( ) Install R23,R30,R31 (10K ohms).
+<li>( ) Install R4,R9 (150 ohms).
+<li>( ) Install R5,R10 (330 ohms).
+<p>
+<li>( ) Install C6,C7 (33 pF).  These may not be labeled on the
+  silk-screen.  They are adjacent to pins 8,9 and 10,11 of IC1.
+<p>
+  Note: The 33 pF and 0.1 &micro;F capacitors may appear identical.
+  Inspect their marking to identify them.
+<p>
+<li>( ) Install C1,C3,C8,C9 (0.1 &micro;F).  Some of these may not be
+  labeled on the silk-screen.  0.1x0.2 inch parts having rounded ends 
+  without part numbers are 0.1 &micro;F caps.  They are near VR1, U1
+  (and U2), and pins 23,24 and 27,28 of IC1.
+<p>
+<p>
+  Note: The 33 pF and 0.1 &micro;F capacitors may appear identical.
+  Inspect their marking to identify them.
+<p>
+<li>( ) Install C4 (4.7 &micro;F).  Note polarity: Positive is marked
+ on the PCB and is also the square pad.  Negative on the capacitor is
+ the line.
+<p>
+<li>( ) Install C5 (10 &micro;F or 22 &micro;F tantalum capacitor, yellow
+ gum drop.)  Pay particular attention to the polarity.  These tend to
+ explode eventually if installed backwards.  The labeling should face away from
+ the PIC32 socket.
+<p>
+<li>( ) Install LD8 (3 mm LED) and R39 (10K).  Optional: Install LD5-LD7
+ and R36-R38 (10K).  The anode on the LEDs is the
+ longer lead and the square pad on the PCB.  The cathode is the shorter
+ lead and the flat on the body of the LED.  Take care not to overheat or
+ stress the leads on the LED(s) when soldering.
+<p>
+ Only LD8 (which corresponds to LED1 on the chipKit board) is really
+ needed.  It is used to indicate when the boot loader is active.
+ If installing only LD8, cut its leads about 1/10" from the body
+ if it can't be inserted to sit flush on the PCB.
+<p>
+ Note that on SG-&micro;MD1 PCB Rev. 1.0, the layout has these LEDs a bit
+ too close together.  Can you believe that? :)  So if installing all of
+ them, their leads will need to be formed to fit.  Take care not to
+ overheat or stress the leads on the LEDs when soldering.
+<p>
+<li>( ) Optional: Install LD1,LD2 (3 mm LED) and R3,R8 (10K).  The anode
+ of the LED is the longer lead and the square pad on the PCB.  The cathode
+ is the shorter lead and the flat on the body of the LED.  Cut their leads
+ about 1/10" from the body if they can't be inserted to sit flush on the
+ PCB.  Take care not to overheat or stress the leads on the LEDs when
+ soldering.
+<p>
+ LD1 and LD2 show activity on the REF and MEAS1 inputs, respectively.  Under
+ normal conditions, these serve no useful purpose other than to make the
+ board more illuminating and may be omitted. ;-)
+<p>
+<li>( ) Install BTN1,BTN2 (pushbuttons).  Press in place flush against
+ the PCB.  Solder all 4 pins on each.
+<li>( ) Install SKT1 (28 pin SDIP socket).  The cutout on the
+ socket should match the cutout on the PCB.  First solder two diagonal corner
+ pins and confirm the socket is flush against the PCB.  Then solder the rest.
+<li>( ) Install SKT2 (8 pin DIP socket).  The cutout on the
+ socket should match the cutout on the PCB.  First solder two diagonal corner
+ pins and confirm the socket is flush against the PCB.  Then solder the rest.
+<li>( ) Install J1,J2 (4 pin headers).  The tab should face toward the
+ center of the PCB.  First solder one pin and confirm the header is flush
+ against the PCB.  Then solder the rest.
+<p>
+<li>( ) Install X1 (8 MHz crystal in sardine can).
+<p>
+<li>( ) Carefully inspect for unsoldered pins, solder bridges and
+ other blemishes.  Correct as needed.  THIS IS ESSENTIAL!
+ It would be bad form to blow the PIC32 due to an errant blob of solder. :(
+<p>
+<li>( ) Carefully plug in the PIC32 confirming that all pins are seated
+ and none are bent.  The dot or cutout on the chip should match the PCB
+ labeling.
+<p>
+<li>( ) Smoke test #2. :)  Plug the board into a USB A socket on
+ your PC or laptop using the included cable.  The
+ power LED should come on and Windows should
+ recognize SG-&micro;MD1 as a USB device.  If the &micro;MD1 GUI is
+ then run, the graph should scroll from right to left.  With no
+ REF or MEAS signals, there will be no data, but this is an indication
+ that the PIC32 is alive.  And again, there should be no smoke. :)
+<p>
+<li>( ) Press Reset (BTN1) and hold it while also pressing Program (BTN2).
+ Release Reset and then release Program.  LED1 (LD8) should be flashing rapidly
+ indicating that the board is salivating in
+ anticipation of having new and improved firmware uploaded to it. ;-)
+ This confirms that the button circuitry is functional.  There should
+ be no actual need to load firmware as the latest version for &micro;MD1
+ will have been pre-installed so press Reset to exit boot mode.  Remove the
+ USB cable.
+<p>
+<li>( ) Carefully plug in a UA9637 or UA9639 and confirm that all pins are
+ seated and none are bent.  The dot or cutout should match the PCB labeling.
+<p>
+<li>( ) Optional: If LD1 and LD2 are present, plug the board into a
+ live USB A socket using the included cable.  It should be possible to
+ get the REF and MEAS1 LEDs to change state by Carefully touching the signal
+ pins on the REF and MEAS1 headers.
+<p>
+<li>( ) Optional: This will require the USB drivers and &micro;MD1 GUI
+ to be installed.  Plug the board back into USB and start the &micro;MD1 GUI.
+ Open the COM port.  The plot should start scrolling from right to left.  With
+ no signals, there will be a "No Signals" Error.  Touch signal pins on the REF
+ header (J1); the plot should jump upwards.  Touch signal pins on the
+ MEAS header (J2); the plot should jump downwards.  Exit the GUI
+ and unplug the USB cable.  If LD1, R3, LD2, and R8 are present, the REF
+ and MEAS1 LEDs may also change state.
+<p>
+<li>( ) Optional: Install R1,R2,R5,R6 (REF,MEAS1 input termination, 150
+ ohms).  Depending on the setup, it may be desirable to increase their value
+ or for short runs, to leave them out entirely if there is a common ground
+ elsewhere.
+<p>
+<li>( ) Congratulations!  This completes assembly of a 1 axis system.  Further
+ instructions on testing may be found in the <A HREF="uMD1.htm">Micro
+ Measurement Display 1 (&micro;MD1) Installation and Operation Manual</A>.
+</ol>
+<p>
+For a 2 or 3 axis system, add the following:
+<p>
+<ol start=35>
+<li>( ) Install C2 (0.1 uF).
+<li>( ) Install R15,R20 (150 ohms).
+<li>( ) Install R14,R19 (330 ohms).
+<p>
+<li>( ) Optional: Install LD3,LD4 (3 mm LED) and R13,R18 (10K).  The anode
+ of the LEDs is the longer lead and the square pad on the PCB.  The cathode
+ is the shorter lead and the flat on the body of the LED.  Cut their leads
+ about 1/10" from the body if they can't be inserted to sit flush on the
+ PCB.  Take care not to overheat or stress the leads on the LEDs when
+ soldering.
+<p>
+ LD3 and LD4 show activity on the MEAS2 and MEAS3 inputs, respectively.  Under
+ normal conditions, these serve no useful purpose other than to make the
+ board more illuminating and can be omitted. ;-)
+<p>
+<li>( ) Install SKT3 (8 pin DIP socket).  Assure that the cutout on the
+ socket matches the cutout on the PCB.  First solder two diagonal corner
+ pins and confirm it is flush against the PCB.  Then solder the rest.
+<li>( ) Install J3,J4 (4 pin headers).  Assure that the tab faces toward the
+ center of the PCB.  First solder one pin and confirm it is flush against the
+ PCB.  Then solder the rest.
+<li>( ) Carefully plug in a UA9637 or UA9639 confirming that all pins are
+ seated and none are bent.  The dot or cutout should match the PCB labeling.
+<p>
+<li>( ) Carefully inspect for unsoldered pins, solder bridges and
+ other blemishes.  Correct as needed.  THIS IS ESSENTIAL!
+<p>
+<li>( ) Optional: If LD3 and LD4 are present, plug the board into a
+ live USB A socket using the included cable.  It should be possible to
+ get the MEAS2 and MEAS3 LEDs to change state by Carefully touching the signal
+ pins on the MEAS2 and MEAS3 headers.  (The GUI can't be used to test MEAS2
+ and MEAS3 because it may not respond to the low count rate on these inputs.)
+<p>
+<li>( ) Optional: Install R11,R12,R16,R17 (MEAS2,MEAS3 input termination,
+ 150 ohms).  Depending on the setup, it may be desirable to increase their
+ value or for short runs, to leave them out entirely if there is a common
+ ground elsewhere.
+<p>
+<li>( ) Congratulations!  This completes assembly of a 3 axis system.  Further
+ instructions on testing may be found in the <A HREF="uMD1.htm">Micro
+ Measurement Display 1 (&micro;MD1) Installation and Operation Manual</A>.
+</ol>
+<p>
+For sensors, refer to the schematic. :)  The patterns on the PCB were designed
+to accommodate the most likely types, but some creativity may be
+needed depending on what actual parts are used.  Jumpers and bypass
+capacitors will also be required.  Pay careful attention to whether 5 V
+or 3.3 V is required.
+
+<h4><A NAME="sgumd1.0epl">Parts List for SG-&micro;MD1 Version 1.0</A></h4>
+
+These are the required parts for up to a 3 axis system without sensors
+and include parts for the Arduino and programming headers and some other
+functions that may be useful but are not essential or needed for &micro;MD1.
+Some parts like the REF/MEAS and most other LEDs (along with their
+associated current limiting resistors) can also be omitted if desired.
+Refer to the schematic for more details.
+<p>
+<PRE>
+ Reference   Type      Part/Value     Function
+-------------------------------------------------------------------------------
+   BTN1    Pushbutton   SPST NO       Reset
+   BTN2    Pushbutton   SPST NO       Program
+   BTN3+   Pushbutton   SPST NO       User
+
+    C1     Capacitor     0.1 &micro;F       U1 5 V bypass
+    C2*    Capacitor     0.1 &micro;F       U2 5 V bypass
+    C3     Capacitor     0.1 &micro;F       IC1 3.3 V bypass
+    C4     Capacitor     4.7 &micro;F       IC1 VBUS bypass
+    C5     Capacitor     10 &micro;F Tant.  IC1 VCAP bypass
+    C6     Capacitor     33 pF        IC1 crystal bypass
+    C7     Capacitor     33 pF        IC1 crystal bypass
+
+    C8     Capacitor     0.1 &micro;F       3.3 V bypass
+    C9     Capacitor     0.1 &micro;F       3.3 V bypass
+
+    C10    Capacitor     4.7 &micro;F       VIN bypass
+    C11    Capacitor     4.7 &micro;F       3.3 V bypass
+
+    IC1    IC         PIC32MX250F150B-50I/S PIC32 28 pin SDIP
+    IC2    IC           MCP1700T      3.3 V regulator
+
+    J1     Header        4 pin        REF input connector
+    J2     Header        4 pin        MEAS1 input connector
+    J3*    Header        4 pin        MEAS2 input connector
+    J4*    Header        4 pin        MEAS3 input connector
+
+    JP7+   Jumper block  3 pin        VIN select
+
+    LD0    LED          3 mm LED      Power LED
+    LD1+   LED          3 mm LED      REF LED
+    LD2+   LED          3 mm LED      MEAS1 LED
+    LD3+   LED          3 mm LED      MEAS2 LED
+    LD4+   LED          3 mm LED      MEAS3 LED
+    LD5+   LED        3 mm HB LED     P32_PGD RB0 LED (chipKit LED4)
+    LD6+   LED        3 mm HB LED     P32_PGC RB1 LED (chipKit LED3)
+    LD7+   LED        3 mm HB LED     RB2 LED (chipKit LED2)
+    LD8    LED        3 mm HB LED     RB3 LED (chipKit LED1)
+
+   PCB1    PCB        SG-&micro;MD1-PCB     Blank SG-&micro;MD1 PCB
+
+    R1     Resistor  150 ohm, 1/8 W   REF termination
+    R2     Resistor  150 ohm, 1/8 W   REF termination
+    R3+    Resistor  10K ohm, 1/8 W   REF LED current limiting
+    R4     Resistor  330 ohm, 1/8 W   REF 5V->3.3 V level shift
+    R5     Resistor  150 ohm, 1/8 W   REF 5V->3.3 V level shift
+
+    R6     Resistor  150 ohm, 1/8 W   MEAS1 termination
+    R7     Resistor  150 ohm, 1/8 W   MEAS1 termination
+    R8+    Resistor  10K ohm, 1/8 W   MEAS1 LED current limiting
+    R9     Resistor  330 ohm, 1/8 W   MEAS1 5V->3.3 V level shift
+    R10    Resistor  150 ohm, 1/8 W   MEAS1 5V->3.3 V level shift
+
+    R11*   Resistor  150 ohm, 1/8 W   MEAS2 termination
+    R12*   Resistor  150 ohm, 1/8 W   MEAS2 termination
+    R13+   Resistor  10K ohm, 1/8 W   MEAS2 LED current limiting
+    R14*   Resistor  330 ohm, 1/8 W   MEAS2 5V->3.3 V level shift
+    R15*   Resistor  150 ohm, 1/8 W   MEAS2 5V->3.3 V level shift
+
+    R16*   Resistor  150 ohm, 1/8 W   MEAS3 termination
+    R17*   Resistor  150 ohm, 1/8 W   MEAS3 termination
+    R18+   Resistor  10K ohm, 1/8 W   MEAS3 LED current limiting
+    R19*   Resistor  330 ohm, 1/8 W   MEAS3 5V->3.3 V level shift
+    R20*   Resistor  150 ohm, 1/8 W   MEAS3 5V->3.3 V level shift
+
+    R22    Resistor  51 ohm, 1/8 W    PIC32 reset
+    R23    Resistor  10K ohm, 1/8 W   PIC32 reset
+    R24    Resistor  200 ohm, 1/8 W   PIC32 reset
+    R25    Resistor  680 ohm, 1/8 W   PIC32 crystal
+
+    R26    Resistor  10K ohm, 1/8 W   Power LED current limiting
+    R30    Resistor  10K ohm, 1/8 W   Program button bias network
+    R31    Resistor  10K ohm, 1/8 W   Program button bias network
+    R32+   Resistor  10K ohm, 1/8 W   User button bias network
+    R33+   Resistor  10K ohm, 1/8 W   User button bias network
+
+    R34+   Resistor  51 ohm, 1/8 W    P32_PGD series resistor
+    R35+   Resistor  51 ohm, 1/8 W    P32_PGC series resistor
+
+    R36+   Resistor  10K ohm, 1/8 W   P32_PGD T5CK/RB0 (LED4) current limiting
+    R37+   Resistor  10K ohm, 1/8 W   P32_PGC RB1 (LED3) current limiting
+    R38+   Resistor  10K ohm, 1/8 W   RB2 (LED2) current limiting
+    R39    Resistor  10K ohm, 1/8 W   RB3 (LED1) current limiting
+
+   SKT1    Socket    28 pin, 300 mil  Socket for PIC32
+   SKT2    Socket    8 pin, 300 mil   Socket for REF/MEAS line receiver
+   SKT3*   Socket    8 pin, 300 mil   Socket for MEAS2/MEAS3 line receiver
+   SKT4+   Socket    40 pin, SIP      Socket strip for HDR1,HDR2,JP6
+
+    U1     IC       UA9637 or UA9639  REF/MEAS1 line receiver
+    U2*    IC       UA9637 or UA9639  MEAS2/MEAS3 line receiver
+
+   USB1    Connector                  USB Micro B female connector
+
+    X1     Crystal       8 MHz        PIC32 master clock
+</PRE>
+<p>
+"*" denotes parts that can be omitted for a single axis system.
+"+" denotes parts that are not required for &micro;MD1.
+<p>
+Notes:
+<p>
+<ol>
+<li>The only LEDs that are really needed are LD0 and LD8.
+ LD0 is the Power indicator to show that the thing is alive and is
+ required for Smoke Test #1.  LD8 corresponds to
+ chipKIT DP32 LED1, the bootloader activity indicator.  If I provide the
+ parts, all the LEDs will be the same color - super-bright green, blue, or
+ white (my choice).  And even with the 10K ohm series resistors limiting
+ current to less than 0.5 mA, they may still be annoyingly bright. ;-)
+ Feel free to substitute LEDs having your preferred decorator colors,
+ modifying the values of the current limiting resistors as needed to
+ equilize brightness.
+<p>
+<li>Some 0.1 &micro;F bypass caps may not have reference designators on the
+ silk-screen but their location should be obvious.  Refer to the photo of the
+ populated board.
+<p>
+<li>As with the chipKit DP32, VIN must be +5 VDC.
+</ol>
+<br>
+<hr>
+<p>
+-- end V1.00 --
+<p>
+</BODY>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</HEAD>
+

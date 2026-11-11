@@ -1,0 +1,303 @@
+<!--
+  Mirrored from https://www.repairfaq.org/REPAIR/F_Other_Briefs2.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/REPAIR/F_Other_Briefs2.html">https://www.repairfaq.org/REPAIR/F_Other_Briefs2.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+<html>
+<title>Sci.Electronics.Repair Faq: Other Select Repair Briefs
+</title>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</head>
+<h1>Repair Briefs from Other Sources</h1>
+Contents:<p>
+<ul>
+<!-- TlJHdR AutoNext_Back 1.04 -->
+<li>[<a href="F_Other_Briefs1.html">Previous</a>] segment
+ | [<a href="F_Other_Briefs.html">Sub-ToC</a>] for this document
+ | Main [<a href="F_Repair.html">Table 'O Contents</a>]
+<lI><a href="#OTHERBRIEFS_001">1.4)  Right channel dead in Sansui 2000X receiver</a>
+<lI><a href="#OTHERBRIEFS_002">1.5)  Magnavox 4head HiFi VCR</a>
+<lI><a href="#OTHERBRIEFS_003">1.6)  TTX 1450 SVGA Computer Monitor - Dead</a>
+<!-- TlJHdR AutoNext_Back 1.04 -->
+<li>Jump to [<a href="F_Other_Briefs3.html">Next</a>] segment.
+</ul>
+<hr>
+<h2><a name="OTHERBRIEFS_001">1.4)  Right channel dead in Sansui 2000X receiver</a></h2>
+<P>
+(From John Heinrichs (<a href="mailto:jheinric@albedo.colorado.edu"
+>jheinric@albedo.colorado.edu</a> | <a href="http://ucsu.colorado.edu/~heinrich/Home.html"
+>http://ucsu.colorado.edu/~heinrich/Home.html</a>))
+<P>
+<dl>
+<DT><strong>PATIENT</strong>
+<dd>Sansui 2000X receiver
+<DT><strong>CONDITION</strong>
+<dd>Purchased from a friend for $10 if I can fix it.
+According to previous owner, right channel completely dead and
+left channel distorted.  Chassis loose in wooden cabinet
+(obviously an earlier aborted attempt at repair).  No manuals or
+schematics.  This is a superb receiver, 85 watts/channel of
+clean, warm power.  High-end unit in the mid-70s.  Not only that,
+I had previously picked up a matching Sansui RA 500 analog reverb
+unit for $6 at an auction and wanted to put the two together.
+<DT><strong>APPROACH</strong>
+<dd>I started, simply enough, by checking the output
+fuses.  Right channel fuse missing, left fuse looks OK.  Aha!
+Easy enough...  Moved the left fuse to the right and put a new
+fuse in the right.  Replaced the fuse, thinking this was gonna be
+a good story.  Now to plug it in and see what happens.  Right
+channel dead, but left plays great.  That stuff about distortion
+must have been a mistake.
+</dl>
+<P>
+Next suspect - the power output transistors.  Sure enough, two of
+the four transistors have a direct short from the base to the
+emitter.  Pulled 'em out and hooked 'em up to a Heathkit
+transistor checker (they are 2SC1111s, so are NPN silicon).
+Leakage current at 100%.  Being short on cash right then, I went
+to my parts stock and found a set of four MJ423s taken, I
+believe, from a junked laser power supply.  According to the
+Motorola guide, they are also NPN silicon and have a
+significantly higher breakdown voltage (325 V) than the
+originals.  This amplifier is a pretty simple design and
+certainly too early for the fancy Darlington push-pull amps we
+see today.  So I'm pretty sure I can drop the MJ423s in with no
+problem.  When I power up the amp again, still no change.  With a
+gasp, I shut it down and pull out the replacements and check them
+again in case the real problem had fried them.  They're OK,
+<P>
+Now I look a bit further.  Are the low-value (0.5 ohm) power
+resistors discolored?  No, but I pull out the meter for an
+in-circuit  test, which will work since 0.5 ohms is much less
+than the total resistance of the rest of the circuit.  One of the
+four resistors is a dead short.  Again, I go to the parts bins
+and find a great 0.5 ohm replacement (3% tolerance, no less) but
+the leads are too short.  So I solder on some lead extensions and
+replace the bad one.  Power up - now I'm getting a very weak
+<P>
+Tracing the wires backwards, there's a small circuit board (in a
+card socket, thankfully) that looks connected to the power
+transistors.  So I pull the board out.  <strong>Aha!</strong>  A large black
+discoloration surrounds what's left of a 100 ohm resistor (the
+only way I can tell the value is by comparison with the duplicate
+circuit for the left channel).  The resistor reads open, so I
+replace it, along with a nearby 0.1 microfarad capacitor that is
+a little discolored and has cracks in the outer insulation.  Put
+<P>
+I start looking around and find a transistor that looks suspect. 
+A cheap bent metal heat sink is glued to the transistor case with
+some brown gunk.  Compared to the corresponding component on the
+left channel, the one on the right has an even darker color to
+the gunk, which looks crumbly.  So I try the transistor checker
+(I have an in-circuit tester, which I recommend highly) and it
+shows a leakage current of about 30%.  This one I manage to find
+in my guides and it shows a 2N2222A as a replacement.  I've got
+plenty of these from earlier dissections, so no problem.  After
+swapping this transistor out, the right channel comes up much
+better on headphones.  Sounds mighty fine, in fact.  So I hook it
+up to speakers.  Now the right channel is highly distorted, which
+increases with volume.  When I hook the right channel up to my
+scope, the waveform is distinctly clipped and only the negative
+signal excursions show up.  Looks like the waveforms I get with
+<P>
+As I recall, I spent the next four hours or so checking every
+component I could on that little circuit board.  I even went so
+far as to remove each of the remaining three or four active
+components and switch them between channels.  No change - still
+distorts under a load.  Then I started to do a detailed analysis
+of the circuit itself - actually developing a schematic - and
+discovered that the connections at the board edge were symmetric.
+Well, thank those engineers back in the 70s!  I inserted the
+board into the connector reversed and again found no change in
+the distortion.  Now I'm just about pulling my hair out.  At
+<P>
+Now to look at every possible connection in the signal path. 
+Speaker switch checks out fine.  Only thing left is the output
+fuse.  Fuse still looks good but, just to make sure, I replace
+it.  <strong>Voila!</strong>  No more distortion.  Now it hits me that I switched
+the fuses before I turned the thing on at the beginning.  There
+really was distortion on the left channel...  I've never seen a
+fuse do this before - acting just like a diode, but only when a
+<P>
+All that remained was to clean up 20+ years of dust and
+spiderwebs on the inside, lube the pulleys for the tuning
+mechanism, and dig up some replacement machine screws for
+mounting the chassis to the cabinet.  The cabinet looks like
+crap, but I'll deal with that later and do the reverb unit
+cabinet at the same time.  Now I've got the receiver set up in my
+shop, and it really does look cool next to the reverb.  The sound
+is excellent, and I have to confess I like the look of the old
+analog radio dial.  Best of all, all the parts I needed were in
+<P>
+<strong>Postmortem/lessons learned:</strong>  First, never change anything before
+the preliminary evaluation.  I would have saved a lot of time if
+I hadn't switched the fuses around.  Second, it would have also
+saved time to trace the entire circuit first and find all the
+problems (like the fried components on the small board) right
+away rather than the progressive look/replace/test process I
+<P>
+<hr>
+<h2><A NAME="OTHERBRIEFS_002">1.5) Magnavox 4head HiFi VCR</a></h2>
+<P>
+(From Willis Chung (<a href="mailto:NikonKidF3@aol.com"
+>NikonKidF3@aol.com</a>))
+<P>
+<dl>
+<DT><strong>PATIENT</strong>
+<dd>Magnavox 4head HiFi VCR</a> comes in with chief complaint that it won't
+load and eject tapes consistently.
+<DT><strong>SYMPTOMS</strong>
+<dd>A quick look inside with the cover off confirms this. The tape inside
+will partially elevate, but will not eject.  The machine will also not play
+the tape, even when it appears that it is all the way down.
+<DT><strong>TESTING</strong>
+<dd>With gentle finger assistance, the rental tape is raised and ejected while
+the VCR is trying to eject it.  A scratch tape is used to confirm that the
+problem is repeatable. An examination of the mechanism in the
+under-carraige shows a single toothed drive belt.  No slipping here.
+</dl>
+ 
+Thinking that the tape elevator mechanism was sticking, I clean and
+lubricate the elevator assembly.  Function does improve, but if a tape is
+loaded into the machine after a few minutes of inactivity, the machine
+fails to load it fully and fails to eject it.  Once the tape is ejected
+with finger assistance, subsequent loading usually resulted in correct
+function, with the machine going into the half load position, and then
+<P>
+ 
+Thinking that there was sonething mechanical that was sticking, I poked
+and prodded at a lot of the mechanical parts, finding nothing wrong,
+nothing sticking.  Thinking it was a mode switch problem, I took the mode
+switch out, disassembled it, and cleaned it thoroughly.  Thinking the
+machine was not sensing the position of the elevator mechanism, I
+disassembled and cleaned the elevator position switches and verified their
+function.  Naturally, none of these things changed the behavior of the
+<P>
+ 
+Stumped, I let the machine &quot;season&quot; on my bench for a few weeks.  I fix
+<P>
+ 
+After posting the problem, I received several suggestions.  #1 Check the
+elevated pinch roller mechanism for binding.  I had cleaned and lubed this
+already, but I took a close look at it.  No problems there.  #2 Check the
+<P>
+ 
+Hooking up a scope to the outputs of the switch mode power supply shows
+massive ripple on the +15 volt line.  Aha!  Tracking the line back, I find
+a capacitor (470mfd, 16volts!).  Soldering a 470mfd 35volt capacitor
+eliminates the ripple, and the machine loads and ejects like a champ. 
+Examination of the other capacitors in the power supply reveals one more
+16volt cap on a 15 volt power supply line.  I replace this one with a
+35volt one as well.  Seems like the power supply was designed to fail
+<P>
+ 
+<hr>
+<h2><a name="OTHERBRIEFS_003">1.6)  TTX 1450 SVGA Computer Monitor - Dead</a></h2>
+<P>
+(From Wilkin Claude (<A HREF="mailto:wilkinc@odyssee.net">wilkinc@odyssee.net</A>),
+Edited by Samuel M. Goldwasser)
+<P>
+<dl>
+<DT><strong>PATIENT</strong>
+<dd>TTX 1450 NI computer monitor
+<DT><strong>SYMPTOMS</strong>
+<dd>Gradual loss of brightness over several months followed by total failure.
+<DT><strong>TESTING</strong>
+<dd>Plug it in, dead, maybe some smoke...
+</dl>
+<P>
+A TTX 1450 NI monitor is brought to me for repair. Unit is from a family
+member who reports that monitor had been taking more and more time to show
+acceptable brightness when turned on. Monitor had been shown to a repair
+shop (person lives 200 miles from my home) that right away asked $50 for an
+estimate and $125 since the person there said (without opening the thing up)
+that it was the flyback or the picture tube that was defective. When I spoke
+to the family member and he told me of the story, I told him to bring me
+the monitor when he would come to visit me later that month if he didn't
+mind the wait. He decided to purchase another monitor and said if this one
+could be repaired for not too much money, he would use it to setup a
+computer just for his kids.
+<P>
+When I got the thing and plugged it, I saw smoke coming from some diodes and
+resistors on the board. One of these diodes was probably short, it actually
+glowed red! The thing would not show a picture, the power led in front would
+come on then turn off after about 2 minutes.
+<P>
+Visual inspection showed a swollen cap, a blown TL431 and a resistor so
+burnt that the color code could not be read. These looked like they were
+part of the switching power supply. The swollen cap showed a value of 7uf
+when tested, it should be 470uf. I have hope that the flyback or crt might
+not be the problem here after all...
+<P>
+Some components to be replaced could not be identified: that burnt resistor
+and two zener diodes. Time to get a schematic.
+<P>
+Luckly, TTX has an office right where I live. That schematic is available
+for $15. No, it's not a service manual, it's just a legal size copy of the
+schematic. I find this a little bit ridiculous but I have no choice, several
+postings on the internet for the schematic or just to I.D. the components
+brings no replies for the info. I get the schematic...
+<P>
+Finally, I see the component values. I probe around some more, I see that 2
+zeners (30V and 100V) in series in the power supply are short. I replace:
+470uf Cap, TL431 regulator, 2 zener diodes and the burnt resistor.
+<P>
+I turn unit on. No smoke, power led on but no picture.
+<P>
+I do some more probing around. I find that the horizontal output transistor
+is bad and there seems to be a 100 ohms resistor (that what the color code
+looked like...) that's open. I find a replacement to the transistor for $17 and
+change the 100 ohms 2W resistor. That resistor is in series with the primary
+of the flyback and the transistor. I suppose it when bad when the transistor
+shorted out.
+<P>
+I replace and turn the thing on. Hey! It works!...But wait, smoke again...I
+look around and see that the 100 ohm 2W resistor I put in is burning
+up...Time to look at the schematic.
+<P>
+My bad 100 ohms (so I taught) resistor is not on the schematic. I look there
+and I find a 1 amp. fuse. Exchanges through e-mail with other technicians
+brings speculation that 100 ohms is just not right. It's too high a value. I
+look at the resistor several times under different types of lighting and it
+always looks like a 100ohms...
+<P>
+I'm not going to blow another $17 transistor. Time to call TTX.I speak to
+somebody technical over there. He says I can put a 2.2 or 3.3 ohm resistor
+there. I guess it was 1 ohm or something like that. I still have the thing
+here and it doesn't look that discolored and I've been reading resistors for
+a long time and it does look like 100 ohms.
+<P>
+I put in a resistor (3 ohms) and everything is fine. I'll have a happy nephew.
+<P>
+<b>Comments:</b> It's hard to determine what really happened here. Perhaps the 470uf
+cap changing value brought this on. Having so many components fail is rare...I
+finally realised that the 1 ohm resistor is probably a resistor-fuse sometimes
+found in TV's. I have had to purchase these, but they were rare and cost $8.
+I guess that TTX guy I spoke too doesn't put one in too, he just uses
+<hr>
+<!-- TlJHdR AutoNext_Back 1.04 -->
+Go to [<a href="F_Other_Briefs3.html">Next</a>] segment.  
+Go to [<a href="F_Other_Briefs1.html">Previous</a>] segment.
+<p>
+Go to [<a href="F_Other_Briefs.html">Table 'O Contents</a>].
+<hr>
+<!-- Footer (~/.inc) V1.19 by Filip Gieszczykiewicz -->
+<!-- REF is generated by PRocess... You *MUST* change if not PRecess'ed -->
+<address>
+Please check attribution for Author. Processed by <b>filipg@repairfaq.org</b>
+<a href=
+"https://www.repairfaq.org/cgi-bin/Feedback%40ACTION%3Dfooter_REF%3D-REPAIR-F_Other_Briefs2.html.cgi"
+>[Feedback Form]</a>
+<a href="F_emllnk.html">[mailto]</a>. The most
+recent version is available on the WWW server
+<a href="../index.html">http://www.repairfaq.org</a>
+<a href="../COPYRIGHT.html">[Copyright]</a>
+<a href="http://www.repairfaq.org/DISCLAIMER.html">[Disclaimer]</a>
+</address>
+</body>
+</html>

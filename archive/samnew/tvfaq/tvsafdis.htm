@@ -1,0 +1,185 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvsafdis.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Safe discharging of capacitors in TVs an..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Safe discharging of capacitors in TVs and video monitors</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvsafdis.htm">https://www.repairfaq.org/samnew/tvfaq/tvsafdis.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Safe discharging of capacitors in TVs an..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;<a href="tvihw.htm">&lt;&lt;&nbsp;Incredibly Handy widgets</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvaiodc.htm">Additional information on..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvsafdis">Safe discharging of capacitors in TVs and video monitors</A></h3>
+
+It is essential - for your safety and to prevent damage to the device under
+test as well as your test equipment - that large or high voltage capacitors
+be fully discharged before measurements are made, soldering is attempted,
+or the circuitry is touched in any way.  Some of the large filter capacitors
+commonly found in line operated equipment store a potentially lethal charge.
+<p>
+This doesn't mean that every one of the 250 capacitors in your TV need to be
+discharged every time you power off and want to make a measurement.  However,
+the large main filter capacitors and other capacitors in the power supplies
+should be checked and discharged if any significant voltage is found after
+powering off (or before any testing - the CRT capacitance in a TV or video
+monitor, for example, can retain a dangerous or at least painful charge for
+days or longer!)
+<p>
+The technique I recommend is to use a high wattage resistor of about
+5 to 50 ohms/V of the working voltage of the capacitor.  This isn't critical -
+a bit more or less will be fine but will affect the time it takes to fully
+discharge the capacitor.  The use of a current limiting resistor will
+prevent the arc-welding associated with screwdriver discharge but will
+have a short enough time constant so that the capacitor will drop to
+a low voltage in at most a few seconds (dependent of course on the
+RC time constant and its original voltage).
+<p>
+Then check with a voltmeter to be double sure.  Better yet, monitor
+while discharging (not needed for the CRT - discharge is nearly
+instantaneous even with multi-M ohm resistor).
+<p>
+Obviously, make sure that you are well insulated!
+<p>
+<ul>
+<li>For the main capacitors in a TV or monitor power supply which might be
+ 400 uF at 200 V, this would mean a 5K, 10W resistor.  RC = 2 seconds.
+ 5RC = 10 seconds.  A lower wattage resistor can be used since the total
+ energy in not that great.   If you want to be more high tech, you can
+ build the capacitor discharge circuit outlined in the companion
+ document: <A HREF="../../sam/captest.htm">Capacitor Testing, Safe Discharging, and
+ Other Related Information</A>.   This provides a visible indication of
+ remaining charge and polarity.
+<p>
+<li>For the CRT, use a several M ohm resistor good for 30 kV or more (or a
+ string of lower value resistors to obtain this voltage rating).  A 1/4 watt
+ job will just arc over!  Discharge to the chassis ground connected to the
+ outside of the CRT - NOT SIGNAL GROUND ON THE MAIN BOARD as you may damage
+ sensitive circuitry.  The time constant is very short - a ms or so.
+ However, repeat a few times to be sure, then use a shorting clip as these
+ capacitors have a way of recovering a painful charge if left alone - there
+ have been too many stories of painful experiences from charge developing for
+ whatever reasons ready to bite when the HV lead is reconnected.
+<p>
+ Note that if you are touching the little board on the neck of the CRT, you
+ may want to discharge the HV even if you are not disconnecting the fat red
+ wire - the focus and screen (G2) voltages on that board are derived from the
+ CRT HV.
+<p>
+ <b>WARNING</b>: Most common resistors - even 5 W jobs - are rated for only a few
+ hundred volts and are not suitable for the 25 kV or more found in modern
+ TVs and monitors.  Alternatives to a long string of regular resistors are
+ a high voltage probe or a known good focus/screen divider network.  However,
+ note that the discharge time constant with these may be a few seconds.  Also
+ see the section: <A HREF="tvaiodc.htm">Additional information on discharging
+ CRTs</A>.
+<p>
+ If you are not going to be removing the CRT anode connection, replacing
+ the flyback, or going near the components on the little board on the neck
+ of the CRT, I would just stay away from the fat red wire and what it is
+ connected to including the focus and screen wires.  Repeatedly shoving
+ a screwdriver under the anode cap risks scratching the CRT envelope which
+ is something you really do not want to do.
+</ul>
+<p>
+Again, always double check with a reliable voltmeter!
+<p>
+Reasons to use a resistor and not a screwdriver to discharge capacitors:
+<p>
+<ol>
+<li>It will not destroy screwdrivers and capacitor terminals.
+<p>
+<li>It will not damage the capacitor (due to the current pulse).
+<p>
+<li>It will reduce your spouse's stress level in not having to hear those
+  scary snaps and crackles.
+</ol>
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvihw.htm">&lt;&lt;Incredibly Handy widgets</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvaiodc.htm">Additional information on..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/other/chscyc.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>The Central High School Cyclotron</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/other/chscyc.htm">https://www.repairfaq.org/sam/other/chscyc.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<br>
+<h1>The Central High School Cyclotron</h1>
+<p>
+<h3>Version 1.21 (6-Sep-19)<br>
+<br>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2019
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+</h3>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="chsctoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#chscycw">Introduction?</A>
+<li><A HREF="#chscycc">What is a Cyclotron?</A>
+<li><A HREF="#chscycf">The CHS Cyclotron Facility</A>
+<li><A HREF="#chscycr">True R and D</A>
+<li><A HREF="#chscvid">The only known Video of the CHS Cyclotron</A>
+<li><A HREF="#chscyco">Other Home-Built Cyclotrons</A>
+<li><A HREF="#chscycg">The First Generation Central High School Cyclotron</A>
+</ul>
+<br>
+<li>Back to <A HREF="#chsctoc">CHS Cyclotron Table of Contents</A>.
+<h3>Author and Copyright</h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2015
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+<p>
+<A NAME="chscint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#chsctoc">CHS Cyclotron Table of Contents</A>.
+<h2>Introduction</h2>
+
+This document summarize my experiences in high school many years ago with an
+atom smasher, sort of. :)  The material below used to be buried somewhere
+in Sam's Laser FAQ but the other sections there became unhappy that a
+cyclotron had little to do with lasers.  So it's now here. ;-)
+<p>
+First, the major players (complete names are not included since I am unable to
+contact them for permission to make this public):
+<p>
+<ul>
+<li>Donald - was involved in procuring (well, scrounging) the parts including a
+ 6 ton electromagnet (on a 99 year $1 lease).  This happened before I got
+ involved so our paths didn't quite intersect.
+<p>
+ Donald is now a high power lawyer. :-)
+<p>
+<li>Douglas - is Don's kid brother and joined our little group about the time I
+ got involved.
+<p>
+ Douglas - is/was involved in Washington, D.C. and at one time held the title
+ of "Deputy Assistant to Someone or Something", very high up, recently fired.
+<p>
+<li>Fred - an electronics buff, friend of mine through high school until our
+ paths parted.  Recently we got together again having discovered that we were
+ living within a mile of each-other.
+<p>
+ Fred now develops, markets, and manufactures special purpose linear ICs.
+</ul>
+<p>
+Now, Central High School (CHS) wasn't a technical high school but was and
+still is to some extent, one of the principle academic high schools in
+Philadelphia, PA, USA.  At that time, it was also an all boys school, with
+Girls' High, a long block away.  Now, it is co-ed.
+<p>
+There were the usual debating, rock climbing, sports, cycling, and all the
+other associations, clubs, societies, whatever, typical of any high school.
+<p>
+There were also the technical ones.  We had an amateur radio society and photo
+society, of course.  There were also probably organization for chemistry
+and biology but I don't really recall as I wasn't enthusiastic about chemistry
+(despite having acquired a cabinet full of beakers, flasks, and such) and
+biology was even lower on my list of fun activities.  But I do recall a field
+trip to the Pine Barrens in New Jersey to check out the trees. :)
+<p>
+I also managed to get involved in the Advanced Physics Lab (APL) where I did
+inherit a ruby laser based on a mid-60s Popular Science design (that never
+worked or maybe I was too chicken to turn up the capacitor charging circuit
+to reach threshold).
+(See <A HREF="http://blog.modernmechanix.com/2006/05/01/build-your-own-laser/">
+Modern Mechanix - Build Your Own Laser</A> for the original article if you're
+curious.)  Mostly, what was done in the APL is that Fred and I
+abused burned out light bulbs by among other things, driving a 110 VAC to
+2.5 kV transformer on 220 VAC and I would swear that for several seconds,
+achieved a plasma jet through the bulb in open air.  But it also looked good
+on my academic record!
+<p>
+There was also the... Cyclotron Society.  Myself, Doug, and Fred were the
+principle members.  There was also a guy named Gary but he used the place more
+for political reasons and always seemed to find excuses NOT to do anything
+technical.  Fred and I eventually got him thrown out of the Cyclotron Society
+on the basis of some infraction which to this day I don't know was real or
+not.   Douglas was in some ways similar and the room (to be described below)
+DID make a good book repository and hangout!  He, at least, didn't interfere
+with progress.
+<p>
+Now, lest you think this is the sort of accelerator you have seen on
+documentaries or even bad Sci-Fi movies, you would be disappointed.
+It was small - the maximum energy was theoretically if everything was optimal,
+maybe 1 million electron volts (1 MEV).  The diameter of the magnet pole
+pieces were 7 inches!  However, everything was there - magnets, RF source,
+vacuum system, gauges, the works.
+
+<h3><A NAME="chscycc">What is a Cyclotron?</A></h3>
+
+The cyclotron is the earliest type of atom smasher which uses the combination
+of a magnetic field to confine the (usually) protons and an RF field to
+accelerate them.  It was invented by Ernest O. Lawrence in 1930.  In a
+cyclotron, both the magnetic field and RF frequency are constant.  A charged
+particle traveling perpendicular to the magnetic field lines will follow a
+circular trajectory with the diameter determined by its energy (speed).  For
+velocities much less than the speed of light, the period of each orbit and
+thus the frequency of rotation is a constant.  So, if a little boost if given
+to the particles as they circle in the magnetic field, their energy will
+increase along with the orbit diameter.
+<p>
+Cyclotrons can be of a wide range of sizes.  Lawrence's original
+invention was only about 5 inches so ours at least was larger than
+that!  The upper limit on size is imposed by relativity.  Once the
+energy of the particles approaches their rest mass (from
+E=mc<sup>2</sup> or equivalently, their speed approaches the speed of
+light, the constant magnetic field/RF frequency behavior doesn't work
+anymore and they would lose synchronism with the RF.  I've seen a
+cyclotron with magnet pole pieces about 2 meters in diameter but even
+this is probably pushing things.  There were atom smashers called
+"syncro-cyclotrons" which were physically similar but varied the RF
+frequency as the particles spiraled outward to maintain synchronism.
+Nowadays, the modern versions are mostly "synchrotrons" which do away
+with all but the outer ring and may be miles in diameter producing
+energies of 100s of Giga electron-volts (GEV).  The "Super Conducting
+Super Collider" was supposed to be over 20 miles in diameter (perhaps
+more, I forget) but that died when BIG science fell out of favor in
+Congress.  The largest one was at Betavia, IL for awhile but that has
+probably been surpassed by something at CERN in Europe by now.
+
+<h3><A NAME="chscycf">The CHS Cyclotron Facility</A></h3>
+
+I wish I could have been involved in the original construction of this
+thing, but my tenure at Central had more to do with what might be
+termed a major rework and upgrade.  The details of how a public high
+school ended up with an atom smasher may forever remain a mystery but
+what is known is that the original version was cobbled together by
+students in the years prior to my high school days.
+The main mover and shaker was probably Donald, who if I recall
+correctly wrote a paper of sorts on "The effects of High Energy
+Protons on Semiconductors" - he stuck transistors with their covers
+removed inside the cyclotron and measured some combination of
+parameters and how they changed with exposure to high energy protons.
+Now, this was most likely totally bogus for reasons that will be come
+clear below, but I think it did win him a National Merit Scholarship.
+<p>
+The Cyclotron Room was on the main corridor in the school basement just around
+the corner from the Bookstore and opposite one of the storage areas for those
+Nuclear fallout rations the Government was so fond of stockpiling around
+the country (I think the mice benefitted mostly).  This was sort of fitting
+and I suppose there were some teachers who wouldn't rule out a nuclear
+accident from our activities!  We shared the approximately 15 x 20 foot room
+with one of two huge water chillers for the school. (I never did quite figure
+out if these were for the fountains or something else.)  However, the 5 gallon
+container of refrigeration oil left by HVAC techs next to the chiller came in
+handy from time-to-time.
+<p>
+The power supplies, RF source, and instrumentation were mounted in a 6 foot
+and 3 foot rack.  The magnet with the vacuum chamber was behind it with the
+vacuum system underneath.  The "instrumentation" was a microamp meter for
+measuring beam current later upgraded to one with a tube based preamp.
+We had a collection of probably non-functional radiation meters most likely
+"liberated" from that storage room across the hall.  There may have also been
+an actual working Geiger counter as well.  Our test equipment consisted of a
+very abused Triplet 1K ohm/volt VOM with a bent needle, having been unwound
+from the right-hand stop more than once.
+<p>
+<b>The magnet:</b>
+<p>
+This was a HUGE 7 inch resistive (hey, no one knew about superconducting
+magnets in those days) magnet wound with a lot of #20 wire.  (Once, we found
+the coil with an open connection - possibly cut by a saboteur!  Maybe that
+Gary fellow I mentioned - really never found out.  Or, it may have just been
+a natural failure.  Needless to say, there was a minor panic until the break
+was found!).  The magnet was on a 99 year lease for $1 from some company,
+maybe GE, like they'd ever want it back!  I don't know how they got it into
+the place, in pieces I guess.
+<p>
+The magnet was horizontal.  To install or remove the vacuum chamber required
+unscrewing some huge bolts and then prying apart the yoke.  Now, keep in mind
+that this thing weighed in at about 6 tons even though it is a rather small
+magnet.  So, replacing anything inside the vacuum chamber was always an
+interesting exercise.  Underneath was a very fragile glass diffusion pump
+that somehow survived.
+<p>
+Originally, power for the magnet came from a 200 VDC or so power supply.  We
+eventually concluded that this was grossly underpowered (another reason to
+suspect the cyclotron never really worked until the prior management) so we
+changed it to the 2,400 VDC electric utility pole transformer based power
+supply that was originally used for the RF source (mercury vapor rectifiers
+and all that).  It was controlled by a BIG Variac.  With this improvement,
+it probably was running near the 20,000 (2 Tesla) limit of an iron core
+magnet.  It was quite impossible to extract any ferrous/magnetic objects
+from between the pole pieces with the magnet fully energized. 
+<p>
+<b>The vacuum system:</b>
+<p>
+We had a Sargent-Welch rotary vane mechanical pump, maybe a 1405 but could have
+been the "economy version", and an all-glass (except for the tower and
+heater) oil diffusion pump.  The Welch usually needed to be started
+by hand as do many of these older pumps.  Belt guard, what's a belt guard? :)
+There must have been a box fan or something to cool the diffusion pump since
+it did not use tap water.  The diffusion pump was about 3 inches in diameter
+with a glass O-ring flange-flange reducer for the 1 inch coupling to the
+vacuum chamber squashed between the magnet pole-piece right above it.  There
+were no baffles, cold traps, or dryers.
+<p>
+An ion gauge provided our only real indication of vacuum level other than that
+wonderful clacking sound the mechanical pump made when it has drawn down below
+10 microns or so.  We had the obligatory hand-held Tesla ('Oudin') coil for
+leak testing though it was used much more often to chase the unwanted visitors
+from the cyclotron room. :)  Anyhow, once the whole affair was drenched in Red
+Glyptal, leaks really weren't an issue!
+<p>
+I seem to recall a scavenged thermocouple gauge as well but that may have been
+for the "Linear Time-of-Flight Resonance Mass Spectrometer" I started to build.
+That at least got me a free cruise on a Navy destroyer escort and my first
+plane flight to the Newport Navy Base as a consolation price at the local
+science fair since it was not completed and never really worked - but the
+charts and front panel were impressive!  I still have the Science Fair
+posters.  Oops, that's another story.....
+<p>
+The vacuum system would do at least 10<sup>-6</sup> Torr when it was
+cooperating.  Usually, it didn't take long to get there but since we really
+didn't trust the ion gauge all that much, we usually left the thing running
+overnight.  (The actual pump-down time was probably measured in a very small
+number of minutes.)  But, the ion gauge tube was never damaged from loss of
+vacuum. :)  The controller might have been a Varian RG-31X, a semi-antique
+even at that time.
+<p>
+<b>The vacuum chamber:</b>
+<p>
+For our huge 7 inch magnet, we needed a vacuum chamber large enough for the
+Ds (the electrodes that actually accelerate the protons - shaped like the
+letter 'D') and a little clearance.  In all, it was about 12 inches in
+diameter and two inches thick.  The 'D's (actually only one, see below) was
+mounted on a metal stud fixed in Epoxy passing through a glass insulator.
+<p>
+Most cyclotrons have a pair of 'D's and drive them with a balanced RF source.
+Someone decided that this wasn't necessary, so ours had a single brass 'D'
+made of sheet metal brazed at the edges with the RF between it and the ground
+of the vacuum chamber.  In principle, this would work though I suspect there
+would be less of a focusing effect.  What did we know?  I seem to recall
+later replacing the single 'D' with a pair made from machined aluminum.
+<p>
+<b>The RF source:</b>
+<p>
+Originally, a 200 W amplifier driven by a 50 W exciter generated the RF (about
+20 MHz if I recall correctly) for the 'Ds'.  This was based on a pair of
+811 tubes (remember those?). I later built a 1 kW linear amp (from the AARL
+Handbook) using an EIMAC 3-400Z or something like that.  The original power
+supply (866 mercury rectifier tube based) was moved to the magnet and a new
+solid state HV power supply was built for the amp.
+
+<h3><A NAME="chscycr">True R and D</A></h3>
+
+I consider the years I spent working on that machine to be more closely akin
+to true scientific research than anything since - designing giga instruction
+per second high performance 3-D visualization/graphics accelerators or
+microchip lasers just doesn't have the same feel!
+<p>
+I had to learn - on my own - about high vacuum technology, high power (well,
+relatively speaking) RF, instrumentation, at least a little E/M and high
+energy physics, and much more.  Keep in mind that no one else - including any
+of the teachers at Central High - had a clue about ANY of this!  I'm sure
+they thought we were building a bomb...
+<p>
+I also learned a lot about locksmithing (including all about making master
+keys using solder-fills and lock picking) - one has to be resourceful to
+succeed in these endeavors.  The teachers were aware of this and kind of
+accepted it (as well as benefitting at times), realizing the limitations
+of an environment where advanced science was more along the lines of
+dissecting a worm. :)
+<p>
+To be continued as I think of more tid-bits...
+
+<h3><A NAME="chscvid">The only known Video of the CHS Cyclotron</A></h3>
+
+Being before the days of smart phones and the WWW, making a video
+recording was basically shooting a home movie. ;-) So the link below
+opens an MP4 of a digital transcription of an 8 mm film made with a
+bare-bones Tower brand camera played on a Bell and Howell projector
+and photographed with a point-and-shoot Canon digital camera
+just before I shipped the projector, having sold it on eBay the day before.
+See: <A target="chscyc" HREF="https://www.repairfaq.org/sam/other/CHS_Cyclotron.mp4">Short Video of the Central
+High Cyclotron</A>.  The quality is rather dreadful due to the 8 mm format
+and mediocre camera, and would likely be unrecognizable to anyone who wasn't
+intimately involved. :)  And that isn't the sound of the vacuum
+pump but of the projector during copying. :)  But clickety-clack noise it made
+WAS very similar and
+could pass for the Welch vacuum pump under high vacuum. :)  P.S. I'm
+the short guy near the end.
+
+<h3><A NAME="chscyco">Other Home-Built Cyclotrons</A></h3>
+
+I don't know how many of these were successfully constructed prior to the CHS
+Cyclotron in the early 1960s.  However, there have been several, if not many,
+built since then both by individuals and as projects in various high schools
+and colleges.  Check out the following links:
+<p>
+<ul>
+<li><A HREF="http://www.niell.org/">Fred's World of Science</A> Not one, but
+ two home-built cyclotrons!
+<li><A HREF="http://www.physics.rutgers.edu/cyclotron/images/press_physics_today/Cyclotron.pdf">Building a Cyclotron on a Shoestring (Rutgers)</A>
+<li><A HREF="https://thecyclotronkids.wordpress.com//">The Cyclotron Kids Cyclotron Project Page</A>
+<li><A HREF="http://blog.modernmechanix.com/boys-build-a-cyclotron/">Boys Build A Cyclotron (Modern Mechanix, 1947)</A>
+<li><A HREF="https://mullinscyclotron.weebly.com/">Mullins Cyclotron</A>
+<li><A HREF="https://accelconf.web.cern.ch/AccelConf/CYCLOTRONS2013/papers/we1pb01.pdf">Houghton College Cyclotron</A>
+</ul>
+<p>
+Some brief references to our cyclotron may even be found by a determined
+Web search (at least one in the bio of a person who recalls having been
+involved).  I welcome any info or links to the CHS Cyclotron or any other
+home-built cycltrons that have existed.
+
+<h3><A NAME="chscycg">The First Generation Central High School Cyclotron</A></h3>
+
+I have now heard from two of the original builders of the Central High School
+Cyclotron, Lawrence H. Zuckerman and Nad Ostroff.  The following is simply in
+the order of their contact.
+<p>
+<b>Lawrence H. Zuckerman</b>
+<p>
+Larry resides in Pleasanton CA and was in the 218th class.
+(Email: (<A HREF="mailto:K3LZ@aol.com">K3LZ@aol.com</A>),
+<p>
+Here is a paraphrase of our email thread:
+<blockquote>
+<p>
+(From: Larry.)
+<p>
+I graduated with the 218th class of Central High School.  I was a member  
+of the Cyclotron Society and helped to build this accelerator when I was a
+freshman in the '58-'59 school year.  When we completed construction and
+performed a brief test, our work was publicized by the Heart Association,
+and a newspaper article with pictures of us appeared all over the country.
+<p>
+I remember guys who were much older than me -- had just graduated in the
+210th class and started college, such as Nathaniel Ostroff and Joshua 
+Horowitz.  I may think of other names later.   
+<p>
+Our faculty advisor was an MIT-educated physicist and later School  
+District of Philadelphia science curriculum executive, was Fred Hofkin.  
+<p>
+(From: Sam.)
+<p>
+Hi:
+<p>
+Hey, wow!  You're the first person from the original construction team 
+I've ever heard from.  I have seen a few Web references to other "personal"
+cyclotron projects, but nothing  about Central until what I wrote.
+<p>
+We were involved from '66 to '69 or '70.
+<p>
+Anything you can  add or correct would be most appreciated, with whatever
+attribution you'd like!
+<p>
+(From: Larry.)
+<p>
+It was Hofkin who told us that the cyclotron really only needed one Dee.
+I did not know any physics then and never thought about it all these years.  
+Now that I am thinking about it, the single Dee architecture worries me.  
+<p>
+You mentioned that the magnet assembly is there on a 99 year lease.  I  
+vaguely remember that fact, and also that the "lessor" is the University  
+of Pennsylvania, where I went to study Physics starting in 9/62.  
+<p>
+One of my tasks, assigned to me by Hofkin, was to determine the number of  
+turns on the magnet (so that, using the current value, the field density 
+and deflection could be calculated).  I recollect (maybe incorrectly) that  
+there were four coils, two slightly dis-similar pairs.  He said I could  
+use any method I wished, except for unwinding it. ;-)  I measured the wire
+gauge to determine ohms/thousand feet.  I measured the resistance of each
+coil.  The total of 72,800 turns rings a bell, (but  that was 50 years ago!).
+<p>
+My other task was to build the control panel, which was nothing more than a
+relay rack panel with switches, chassis, and 120 Volt AC connectors.  I did
+that OK, except giving the older boys a laugh by using bell wire; so Nat
+re-wired it with #18 zip/lamp cord, using both conductors in parallel.
+<p>
+The cyclotron calculations (which I certainly did not do at the time) said 
+that the frequency needed for the Dee was about 7 MHz.  You mentioned  a  
+small ham rig for that, which could have been a DX-20.  I don't remember  
+the power  amplifier.  
+<p>
+We fired up the equipment, opened it, and found a mark on the side in a 
+plausible location.  Was it from a proton beam?  I think it was too far
+from the Dee to be an RF arc.
+<p>
+The main (second stage oil diffusion) vacuum pump was donated to us by  
+EIMAC (Eitel-McCullough), a fact  mentioned in the AP/UPI released 
+newspaper article that had the picture of the six of us standing around the  
+cyclotron.  I think this happened late in the school year.  
+<p>
+I shall check with the CHS Associated Alumni (of which I am a member)  to  
+get more information.  If the cyclotron is still there, I  would like to 
+see it the next time I visit Philadelphia, which is once or twice a year.
+I have  also been looking for information about Fred Hofkin.  
+<p>
+As a bit of irony, for the past fifteen years, I have been living about 10 
+miles from the (E. O.) Lawrence Livermore Labs.  I am an RF design 
+engineer at NATIONAL SEMICONDUCTOR.
+<p>
+If I think of anything else or obtain more documentation,  I'll send it to  
+you.  Nice work on your web site!
+<p>
+(From: Sam.)
+<p> 
+Thanks for the info.  
+<p>
+Using the same basic calculations as you did, we concluded that the
+magnet was way underpowered by the original power supply and moved it
+over to the rectified pig-pole transformer supply.
+<p>
+Hmmmm, let's see.  Assuming a mean diameter of 2 feet and #20 AWG wire, your
+72,800 turns is about 450,000 feet with 10 ohms/thousand feet for
+#20 AWG wire, that would be roughly 4,500 ohms.  I seem to recall
+we measured 6,000 ohms, so not too far off. :)
+<p>
+I built a 1 kW linear amp from the AARL handbook that was then driven by
+the DX-20 exciter.  It replaced what was a home-built RF amp, supposedly
+about 200 W.
+<p>
+That calculation of 7 MHz may have been correct for the weaker magnet,
+though I think it was even weaker than that.  I seem to recall we 
+eventually ran it on 1 or 2 kV, rather than the 200 V it was on
+originally.  I'm not sure what the RF frequency we were running
+at, perhaps 20 MHz for a (20 kgauss) saturated iron magnet.
+But our only means of measuring field strength was by the student
+and hammer method - how many average CHS students it took to pull
+our standard hammer from the core when the magnet was energized! :)
+<p>
+The single Dee thing always bothered me also, but I seem to recall other
+references to it, so perhaps it's not totally bogus, though probably less
+efficient.
+<p>
+As far as whether it ever worked, I rather doubt any real proton beam
+from this machine would have had enough power to make a mark but who
+knows.  We finally got it to expose a piece of dental X-ray film,
+and that was marginal.
+<p>
+The most dodgy thing was probably the ion source due to its simplicity,
+had to be operated on the border between high vacuum and a pressure too
+high to sustain a beam.
+<p>
+And I'm still amazed that the glass diffusion pump survived!  :)
+<p>
+As far as to whether the thing is still there, I have no idea.  But
+who would want to move a 6 ton magnet!
+<p>
+Anything else you come up with will be  welcome.
+<p>
+(From: Larry.)
+<p> 
+It is great that you guys resumed work on the cyclotron after my days at  
+CHS and did so much; I knew nothing about this.  Following my freshman year, 
+I built much amateur radio transmitting and receiving equipment while in 
+high school, but I have no recollection that anyone ever went back into the  
+cyclotron room. 
+<p> 
+I imagine you are correct that any proton beam from this machine could not  
+make a visible mark.  
+<p> 
+If the cyclotron was ever cleared out, it was probably to make room for a 
+girls' lavatory!
+<p>
+(From: Sam.)
+<p>
+Or to add another water chiller. :)
+<p>
+I think we were actually the third generation.  Between your team and ours,
+there were Donald and several others.
+</blockquote>
+<p>
+<b>Nat Ostroff (nostroff11@gmail.com)</b>
+<p>
+This is more of a description:
+<p>
+(From: Nat.)
+<p>
+<blockquote>
+As I recall we both approached Fred Hofkin, our physics professor,
+with the idea and he became an enthusiastic supporter and mentor. He
+had contacts at the U of P physics dept where the magnet, an essential
+item, was sitting, unused. Once we got that big guy donated and
+delivered to the school basement room we could really get something
+going. We needed vacuum pumps, which came from Varian including an oil
+diffusion pump to get to high vacuum. The machine shop work was
+donated but not sure by whom. That got us the D for inside of the
+chamber and the chamber housing itself.  The vacuum chamber was also
+machined but the O seals were always leaking. We learned how to use
+Glyptol&trade; to seal it. It was a bitch to then have to open it. The RF
+gear came from my and Josh's ham stations. The high voltage power
+supply used a PolePig transformer with PCBs still in place. Who knew?
+I don't remember how we powered the magnet but that was a low voltage
+DC problem easily solved compared to the HVPS.
+<p>
+Before we graduated the team did try and run the system several
+times. As graduation approached and College beckoned the cyclotron
+team took on new undergrads and we phased out.
+<p>
+I lost track of what happened over the years but I did come back one
+time for a publicity photo shoot. I have the newspaper article and
+picture and will forward it by another email.
+<p>
+This project and the mentoring from Fred Hofkin set several of us on
+careers in science and engineering unlike anything taught in the
+classroom. The cyclotron project was funded by the Heart Association
+of Southeast Pennsylvania. That connection put Josh and I in contact with
+a project running at the Philadelphia General Hospital developing cardiac
+pacemakers.  This was 1959 and a lot of basic research was
+underway. Josh and I designed and built a number of pacemakers that
+were used in the lab on dogs to establish the parameters for
+pacing. Our final design was used on several human subjects. Again, we
+got some newspaper coverage of that too. All of this was the result of
+the experience gained from starting and working on a project conceived
+by a team of kids who saw the possibilities and ran with it. All
+mentored by a great teacher!
+<p>
+I continue to marvel at how we were able to work on the cyclotron when
+it involved lethal voltages and possible radiation but that was a
+special time and place. We usually worked on the device without hands
+on supervision from the faculty. Imagine that today!
+</blockquote>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#chsctoc">CHS Cyclotron Table of Contents</A>.
+<p>                                                       
+-- end V1.21 --
+<p>
+</body>
+</html> 

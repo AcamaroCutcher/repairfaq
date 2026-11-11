@@ -1,0 +1,236 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvdeflytst.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Deflection yoke testing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Deflection yoke testing</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvdeflytst.htm">https://www.repairfaq.org/samnew/tvfaq/tvdeflytst.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Deflection yoke testing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;<a href="tvewpp.htm">&lt;&lt;&nbsp;Excessive width/pincushio..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvdeflyrep.htm">Deflection yoke repair&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvdeflytst">Deflection yoke testing</A></h3>
+
+A faulty deflection yoke can affect the geometry (size and shape) of the
+raster, result in insufficient high voltage and/or other auxiliary power
+problems, and blow various components in the low voltage power supply or
+elsewhere.
+<p>
+<ul>
+<li>A simple test to determine if the yoke is at fault for a major geometry
+ problem (e.g., a keystone shaped picture) is to interchange the connections
+ to the yoke for the axis that is not affected (i.e., the vertical coils if
+ the width is varying from top to bottom).  If the raster/picture flips
+ (indicating that you swapped the proper connections) but the shape of the
+ raster remains the same - the geometry is unchanged, the problem is almost
+ certainly in the deflection yoke.
+<p>
+<li>Where high voltage (and other flyback derived voltages) are reduced and
+ other problems have been ruled out, unplugging the deflection yoke (assuming
+ no interlock) may reveal whether it is likely at fault.  If this results in
+ high voltage and a relatively clean deflection waveform or returns the power
+ supply or deflection chip load to something reasonable, a defective yoke is
+ quite possible.
+<p>
+ <b>CAUTION</b>: powering a TV or monitor with a disconnected yoke must be done with
+ care for several reasons:
+<p>
+ <ul>
+ <li>The CRT electron beam(s) will not be deflected.  If it turns out that the
+  yoke is the problem, this may result in a very bright spot in the center
+  of the screen (which will turn into a very dark permanent spot quite
+  quickly) :-(.  Disconnecting only the winding that is suspect is better.
+  Then, the other direction will still scan resulting in a very bright line
+  instead of a super bright spot.  In any case, make sure the brightness is
+  turned all the way down (using the screen/G2 control on the flyback if
+  necessary).  Keep an eye on the front of the screen ready to kill power at
+  the first sign of a spot or line.  Disconnecting the CRT heater as an
+  added precaution would be even better unless you need to determine if
+  there is a beam.
+<p>
+ <li>Removing the yoke (which is effectively in parallel with the flyback)
+  increases the inductance and the peak flyback voltage on the HOT.  In the
+  extreme, this may blow the HOT if run at full line voltage/normal B+.  It
+  is better to perform these tests using a Variac at reduced line voltage if
+  possible.
+<p>
+ <li>The deflection system will be detuned since the yoke inductance plays a
+  very significant role in setting the resonance point in most designs.
+  Don't expect to see totally normal behavior with respect to high voltage.
+  However, it should be much better than with the faulty yoke.
+ </ul>
+<p>
+<li>If possible, compare all measurements with a known good identical deflection
+ yoke.  Of course, if you have one, swapping is the fastest surest test of
+ all!  In many cases, even a not quite identical yoke will be close enough to
+ provide useful information for testing.  However, it must be from a similar
+ piece of equipment with similar specifications - size and scan range.  Don't
+ expect a color TV yoke to work in a high performance SVGA monitor!
+<p>
+ Note: the substitute yoke doesn't have to be mounted on the CRT which would
+ disturb purity and convergence adjustments but see the caution above about
+ drilling holes in the CRT face plate!
+</ul>
+<p>
+The deflection yoke consists of the horizontal coils and vertical coils (wound
+on a ferrite core), and mounting structure.  Little magnets or rubber/ferrite
+strips may be glued in strategic locations.  DO NOT disturb them!  In rare
+instances, there may be additional coils or other components mounted on the
+same assembly.  The following deals only with the actual deflection coils
+themselves - the other components (if any) can be tested in a similar manner.
+<p>
+Where the test procedure below requires removal of the yoke, see the section:
+<A HREF="tvrryoke.htm">Removing and replacing the deflection yoke</A> first.
+<p>
+<ul>
+<li>Horizontal - the horizontal section consists of an even number of windings
+ hooked up in parallel/interleaved with half of the windings on each of the
+ two ferrite core pieces.
+<p>
+ The horizontal windings will be oriented with the coil's axis vertical and
+ mounted on the inside of the yoke (against the CRT neck/funnel).  It may be
+ wound with thicker wire than that used for the vertical windings.
+<p>
+ <ul>
+ <li>Resistance check - This may be possible without removing the yoke from
+  the CRT if the terminal block is accessible.  Disconnect the individual
+  windings from each other and determine if the resistances are nearly
+  equal.  Check for shorts between windings and between the horizontal and
+  vertical windings as well.
+<p>
+  Typical resistance of the intact windings (at the yoke connector assuming
+  no other components): TV or NTSC/PAL monitor - a few ohms (3 ohms typical),
+  SVGA monitor - less than an ohm (.5 ohms typical).
+<p>
+ <li>Inspection - Look for charring or other evidence of insulation breakdown
+  due to arcing or overheating.  For the horizontal windings, this will
+  require removing the yoke from the CRT since little if any of the windings
+  are visible from the outside.  However, even then, most of the windings
+  are hidden under layers of wire or behind the ferrite core.
+<p>
+ <li>Ring test.  See the document "Testing of Flyback (LOPT) Transformers".
+  This deals with flyback transformers but the principles are the same.
+  Disconnecting the windings may help isolate the location of a fault.
+  However, for windings wound on the same core, the inductive coupling
+  will result in a short anywhere on that core reducing the Q.
+ </ul>
+<p>
+<li>Vertical - The vertical section is usually manufactured as a pair of windings
+ wired in parallel (or maybe in series) though for high vertical scan rate
+ monitors, multiple parallel/interleaved windings are also possible.
+<p>
+ The vertical windings will be oriented with the coil's axis horizontal and
+ wound on the outside of the yoke.  The wire used for the vertical winding
+ may be thinner than that used for the horizontal windings.
+<p>
+ <ul>
+ <li>Resistance check - This may be possible without removing the yoke from
+  the CRT if the terminal block is accessible.  Disconnect the individual
+  windings from each other and determine if the resistances are nearly
+  equal.  Check for shorts between windings and between the horizontal
+  and vertical windings as well.
+<p>
+  Typical resistance of the intact windings (at the yoke connector assuming
+  no other components): TV or NTSC/PAL monitor - more than 10 ohms (15 ohms
+  typical), SVGA monitor - at least a few ohms (5 ohms typical).
+<p>
+ <li>Inspection - Look for charring or other evidence of insulation breakdown
+  due to arcing or overheating.  The accessible portions of the vertical
+  windings are mostly visible without removing the yoke from the CRT.
+  However, most of the windings are hidden under layers of wire or behind
+  the ferrite core.
+<p>
+ <li>Ring test - Since the vertical windings have significant resistance and
+  very low Q, a ring test may be of limited value.
+ </ul>
+</ul>
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvewpp.htm">&lt;&lt;Excessive width/pincushio..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvdeflyrep.htm">Deflection yoke repair&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

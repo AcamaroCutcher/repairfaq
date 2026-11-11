@@ -1,0 +1,438 @@
+<!--
+  Mirrored from https://www.repairfaq.org/REPAIR/F_BC_Repair.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Repair Tips for Bearcat Scanner Radios</title>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/REPAIR/F_BC_Repair.html">https://www.repairfaq.org/REPAIR/F_BC_Repair.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<PRE>
+
+</PRE>
+<center>
+<h1>
+Repair Tips for Bearcat Scanner Radios
+</h1>
+<h2>
+February 15, 1999.
+<br>
+</h2>
+<h3>
+Copyright (C) 1993-1999
+<br>
+Bob Parnass, AJ9S (parnass@bell-labs.com)
+<br>
+--- All Rights Reserved ---
+</h3>
+</center>
+<br>
+<br>
+
+<b>NOTICE:</b> This article may not be reproduced in whole or in
+ part on CDROMS, in bulletin boards, networks, or
+ publications which charge for service without permission of
+ the author.  It is posted twice monthly on the USENET
+ groups rec.radio.scanner, alt.radio.scanner,
+ sci.electronics.repair, and rec.radio.info.  It is also
+ available electronically from the rec.radio.scanner ftp
+ archive on the official USENET FAQ library
+ <A HREF="ftp://rtfm.mit.edu/pub/usenet-by-group/rec.radio.scanner">ftp://rtfm.mit.edu/pub/usenet-by-group/rec.radio.scanner</A>.
+ The author writes a monthly &quot;Scanner Equipment&quot; column for
+ Monitoring Times magazine, published by Grove Enterprises,
+ but views expressed in this article are his own.
+<p>
+<hr>
+<h2>Introduction</h2>
+
+ The original Bearcat scanner line was manufactured by
+ Electra Company, a division of Masco Corp of Indiana.  In
+ the mid 1980s, Uniden, a Japanese company, bought out the
+ Bearcat scanner line and Uniden's first Bearcat scanner was
+ the BC800XLT model.
+<p>
+ Most of the models discussed in this article are
+ base/mobile units made by Electra during the 1970s and
+ 1980s although some of the capacitor failures occur in the
+ Uniden BC800XLT, too.
+<p>
+ Electra stamped all of its scanners with a manufacturing
+ date code on the rear of the cabinet. The code is comprised
+ of a single character (C = Cumberland, Indiana, P = Puerto
+ Rico), followed by four digits denoting year and week the
+ radio was built. For example, &quot;P8422&quot; denotes the radio was
+ made in the Puerto Rico factory during the 22nd week of
+ 1984.
+<p>
+ One way to roughly estimate a radio's age is to examine the
+ 4 digit date codes often stamped on the integrated
+ circuits.  The radio must have been made after the most
+ recent date stamp.
+
+<h2>Schematics, Owner's Manuals, and Parts Available</h2>
+
+ The re-incorporated Electra Corporation sells crystals,
+ antennas, power cords, owner's manuals ($11 ea) for some
+ older (pre-Uniden) Bearcat scanners.  Electra Corporation
+ is located at 11915 E. Washington St., Cumberland, IN
+ 46229.  Phone 317-894-3229.
+<p>
+ I cannot furnish schematics, manuals or parts.  To order a
+ user manual for an Electra/Bearcat scanner from Uniden,
+ call (800)235-3874 extension 2553.
+<p>
+ Some schematic diagrams may be obtained from
+ Uniden/Bearcat's parts department, (800)297-1023.  Uniden
+ currently charges a flat rate of $54 for scanner repairs.
+ They will repair and return &quot;out of warranty&quot; items without
+ an estimate unless the repair charges exceed the flat rate
+ charges.
+<p>
+ The phone number for repair is (800)297-1023, too.  I
+ recommend you call repair before sending the broken
+ scanner.  Items for repair via UPS (include receipt if
+ still under warranty) are usually sent to:
+<blockquote>
+
+                   Uniden America Corp.<br>
+                   4700 Amon Carter Blvd.<br>
+                   P.O. Box 95002<br>
+                   Fort Worth, TX 76155<br>
+</blockquote>
+
+ If Uniden doesn't have a schematic, try obtaining a
+ Photophacts from Howard Sams Publishing division of
+ Prentice-Hall at (800)428-7267,
+ <A HREF="http://www.hwsams.com/sams_model_new.html">http://www.hwsams.com/sams_model_new.html</A>
+<p>
+ G &amp; G Communications (telephone (716)768-8151) is a family
+ owned company which repairs scanners and stocks parts for
+ several older models, especially Electra/Bearcat and
+ Regency brands, but they don't sell manuals or schematics.
+ They are located at 9247 Glenwood Drive, LeRoy, NY 14482.
+ (<A HREF="http://www.iinc.com/ggcomm/">http://www.iinc.com/ggcomm/</A> or email ggcomm@iinc.com or
+ <A HREF="http://www.dejanews.com/profile.xp?author=ggcomm@aol.com&ST=PS">ggcomm@aol.com</A>)
+
+<h2>Common Construction</h2>
+
+ Most of the classic, metal-cased Bearcat base/mobile models
+ were built using two printed circuit boards:
+<ol>
+<li>a &quot;radio board&quot; containing the synthesizer, RF, IF,
+      and audio stages, and
+<p>
+<li>a &quot;feature board&quot; containing the microprocessor
+      controller and memory circuitry which gave each model
+      its own personality.
+</ol>
+ Although there are various vintage radios boards, they all
+ have similar circuitry.
+
+<h2Bad Solder Joints Common</h2>
+
+ Before addressing specific symptoms, circuit boards in the
+ malfunctioning scanner should be inspected for poor solder
+ joints.
+<p>
+ The Electra/Bearcat BC350, BC300, BC250, BC220, BC20/20,
+ BC211, BC210, and BC210XL models were hand assembled, and
+ every one I've serviced had several connections that were
+ either soldered poorly, or not soldered at all.
+<p>
+ Resoldering joints on the ribbon cable connecting the RF
+ and keyboard logic circuit boards in a BC250 attenuated the
+ microprocessor/synthesizer hash noise noticeably.
+<p>
+ A Bearcat 20/20 was experiencing periodic loss of memory on
+ some, but not all channels.  When the problem occurred, the
+ frequencies on some channels would be completely changed.
+ On other channels, the frequency would still be intact, but
+ the channel would be locked out, and the delay toggled from
+ &quot;on&quot; to &quot;off&quot;.  Some channels were not affected.
+<p>
+ The 2 &quot;AA&quot; memory backup batteries, and their holder,
+ tested good.  Much time was spent tracing logic, heating
+ and cooling components, and making voltage measurements.
+<p>
+ One of the secondary leads from the power transformer was
+ connected to the main circuit board through a hole drilled
+ through foil traces on both the top and bottom sides of the
+ board.  A close examination revealed that this lead had
+ been soldered only on the top of the board - the bottom
+ side had never been soldered.
+<p>
+ Soldering the lead on both sides of the board solved the
+ memory loss problem.
+<p>
+ Matt Roberds fixed a BC220 which experienced memory loss if
+ power was removed by resoldering the positive wire to 2-AA
+ battery holder.
+<p>
+ As built, the BC220 logic board is grounded only through
+ its mounting screws.  In the BC220, Matt recommends adding
+ real wire ground jumpers from the main board to the feature
+ (logic) board to fix grounding problems.
+
+<h2>Symptom: Blank Display</h2>
+
+ The BC300 scanner, and several other Bearcat models, employ
+ a switching type power supply stage to generate plus and
+ minus voltages in excess of 20 volts DC.  When this
+ switcher fails to function, the display goes blank, but the
+ squelch control appears to work, and white noise can be
+ heard in the speaker.
+<p>
+ In almost a dozen of the BC300 and BC800XLT scanners I've
+ fixed, C98, a capacitor in series with the primary of the
+ switching transformer failed, causing the output of the
+ supply to drop below the level needed to power the display.
+ The switching transformer is mounted on the RF circuit
+ board, and is much, much smaller than the main power
+ transformer, which is usually fastened to the metal
+ chassis.  See March 1996 Monitoring Times magazine for
+ BC800XLT capacitor locations and repair information.
+<p>
+ The 22uF/16V capacitor used for C98 in early BC300s was
+ marginal, and was replaced with a 47uF/25V capacitor in
+ later units.
+<p>
+ Jim Craig replaced a 22uF/35V C98 capacitor to repair his
+ BC210XW.
+<p>
+ Paul Grohe replaced a failed C98 with a low ESR (equivalent
+ series resistance), high frequency, switching regulator
+ grade capacitor, e.g.  a Panasonic HF series capacitor.  He
+ also recommends adding a 0.1 ceramic capacitor in parallel
+ with C98.
+<p>
+ I replaced the 22 uF capacitor in the switching power
+ supply stage of a BC210XL which caused the same symptom.
+ Other capacitors in the switcher stage have failed.  C114,
+ a 4.7 uF/35V tantalum capacitor failed in at least one
+ BC250, causing the display to blank.
+<p>
+ A more sinister problem affects the switcher in earlier
+ models.  The switching supply stage in the BC250 and
+ original BC210 is driven by a clock signal derived from a
+ custom Exar NC57902 divider integrated circuit (designated
+ IC6 in the BC250 scanner).  I've seen this divider IC fail
+ in several BC250s, causing a blank display (except for a
+ decimal point in the BC250's rightmost digit).  This custom
+ IC is no longer available from Uniden.
+<p>
+ Failure of IC9, the 9 volt NJM78M09A regulator in a
+ BC800XLT is another cause of a blank display.
+
+<h2>Symptom: Invalid Frequency Displayed</h2>
+<p>
+ A common Bearcat 250 malady is manifested by an invalid
+ frequency displayed on the readout. This condition is
+ temporarily &quot;cured&quot; by unplugging the AC line cord from the
+ wall, then replugging it.  This condition is symptomatic of
+ a power supply problem in which Q204, a Texas Instruments
+ TIP-29 located on the feature circuit board, fails.
+<p>
+ A Philips ECG291 will work as a substitute for the TIP-29.
+ Don't try a Radio Shack substitute, it hasn't worked.  See
+ Martin Toomajian's article, &quot;Bearcat 250 Erratic Display
+ Cure&quot;, in January 1987 Monitoring Times.
+<p>
+ A similar problem in the Bearcat 20/20 was discussed
+ previously in the section on bad solder joints.              
+<p>
+ Matt Roberds repaired the Montgomery Wards version of a      
+ BC220 and contributed these insights:                        
+<p>
+ &quot;I did add some heat-sinks, but you have to be careful what  
+ you do with the TIP29 on the logic board.  I added a long,   
+ flat heatsink to it and immediately created a whine in the   
+ audio.  I didn't use an insulator, as this was a temporary   
+ first-try.  As far as I can tell, the heatsink was           
+ radiating noise from the logic board into the front end on   
+ the radio board, which ended up being just below the         
+ heatsink.  Bypassing the TIP29 (a voltage regulator) with    
+ disc ceramics didn't work; using a smaller heatsink and an   
+ insulator fixed the problem.&quot;                                
+<p>
+  &quot;There is also a 220 ohm 1/4 watt resistor on the logic     
+ board.  It feeds the TIP29 from the main +16v supply.  It    
+ looked a little crispy.  I pulled one end and measured the   
+ current through it and it was about 30-35 mA.  This works    
+ out to right at 0.2-0.25 watt dissipation.  I didn't have a  
+ higher-wattage resistor, so I substituted 2 470-ohm          
+ resistors in parallel.&quot;
+
+<h2>Symptom: Squelch Won't Eliminate White Noise</h2>
+
+ Most Uniden/Bearcat base/mobile scanners feature an AUTO
+ squelch position, actuated by rotating the squelch knob
+ fully counter clockwise.  The BC350 used a separate
+ pushbutton switch for this purpose.  These scanners use a
+ flimsy potentiometer (designated R81 in BC300s) internally
+ mounted on the RF circuit board, to set the level of signal
+ required to open the squelch when in the AUTO position.
+ This pot also has an effect on the squelch action in the
+ non-AUTO mode, and determines at which point the squelch
+ knob must be positioned in order to silence the radio.
+<p>
+ Although the potentiometer is adjusted at the factory,
+ changes in component values due to aging often necessitate
+ readjustment of this internal pot.  Misadjustment of this
+ pot has been the cause of &quot;no squelch&quot; complaints in two
+ BC300s and a BC250 I fixed.
+<p>
+ Another squelch failure is due to a blown transistor that
+ acts as the electronic switch in the squelch circuit.  I
+ replaced this transistor in only one BC300, so I don't know
+ if this is a common problem.
+
+<h2>Symptom: Scanner Completely Dead</h2>
+
+ In Bearcat scanners using an internal power supply (e.g.,
+ BC350, BC250, etc.), the main power transformer is
+ connected directly to the AC line.  Since the on/off switch
+ is on the secondary side of the transformer, current flows
+ in the primary as long as the AC line cord is plugged into
+ an active AC outlet.  These transformers contain an
+ internal circuit breaker, not visible without unwinding
+ (destroying) the transformer.  The internal breaker is
+ known to fail prematurely in a batch of Bearcat power
+ transformers.
+<p>
+ If your scanner is completely dead, check the primary of
+ this transformer for an open circuit condition.
+
+<h2>Symptom: Keyboard Bounce</h2>
+
+ After much use, the Chromerics keyboards in Bearcat
+ scanners start to wear out.  The first sign of trouble is
+ usually keyboard bounce on the most frequently used key,
+ e.g., the MANUAL key.  Replacement keyboards are usually
+ available from UNIDEN, but replacement requires dexterity,
+ as one must take care not to tear the flat, flexible strip
+ connecting the keyboard to the logic board.
+
+<h2>Symptom: Keyboard Completely Unresponsive</h2>
+
+ The keyboard matrix is &quot;scanned&quot; by the microprocessor.
+ Another problem is when none of the keys seems to function;
+ the receiver just keeps scanning in spite of key
+ depressions.  I found this condition in a BC210XL scanner
+ owned by a heavy smoker. Perhaps nicotine smoke was to
+ blame, as the resistance between two input port pins on the
+ microprocessor was down to about 1000 ohms, fooling the
+ microprocessor into believing that a key was stuck in the
+ &quot;down&quot; position.  Scraping the circuit board between the
+ two pins with an X-Acto knife fixed the problem.
+
+<h2>Uniden/Bearcat BC200XLT Portable - Loss of Audio and Dial Lamp</h2>
+
+ If you can program frequencies into your BC200XLT but there
+ is no audio and the green backlight no longer functions, a
+ tiny transistor may have failed.
+<p>
+ Check for a defective PNP surface mount transistor, Q201
+ (2SB815B6-YDY).  Q201 is used as a switch to furnish 8 VDC
+ to several stages of the BC200XLT.  Its main purpose is to
+ switch off power hungry stages of the BC200XLT when the CPU
+ thinks the NiCd voltage has fallen below a threshhold.
+ That's an attempt to limit the current drain on weak NiCds
+ to avoid permanent damage.
+<p>
+ Q201 is located on the foil side of the &quot;Micom&quot; board,
+ adjacent to the black multi-pin connector which mates the
+ Micom and main boards together.
+<p>
+ Q201 can be destroyed by a few different causes, primarily,
+ by something in the scanner drawing too much current
+ through it. In one case, capacitor C36 shorted.  It's a 220
+ uF 10v electrolytic, located on the component side of the
+ main board, connected from pin 8 of the audio IC (IC2
+ NJM386SL) to ground.  Capacitor C55 shorted in another
+ BC200XLT.  Gary Bean reports he substituted a 2SA1298 for
+ Q201 and it worked fine.  In a pinch you bypass Q201 by
+ soldering a short piece of bare wire between the collector
+ and emitter, but you must first fix the component which
+ caused Q201 to fail.
+
+<h2>BC9000XLT: Loss of Sensitivity</h2>
+
+ John Ward has fixed two BC9000XLTs which suffered from &quot;low
+ sensitivity.&quot;  He fixed the solder joint where the antenna
+ jack connects to the circuit board.  In both cases the tab
+ from the board was on the opposite side of the jack from
+ where the little blob of solder applied at the factory was
+ located.
+<p>
+ It was an intermittent problem that depended upon the
+ position of the antenna cable - if the weight of the cable
+ placed tension on the jack in one direction contact was
+ made and the radio worked fine.  If the cable placed
+ tension on the jack in the opposite direction contact was
+ lost and so was reception.  The gap was barely noticeable.
+
+<h2>Other Problems</h2>
+
+ Complaints of low audio output and occasional microphonics
+ in three Uniden/Bearcat 800XLTs were caused by a bad 47 ufd
+ electrolytic capacitor in series between the external
+ speaker jack and audio amplifier.
+<p>
+ Andy Domonkos reports he often uses a tape recorder
+ connected to a Uniden/Bearcat BC890XLT.  RL-1, the carrier
+ activated relay inside the BC890XLT wore out.  Andy found
+ the identical relay sold at Radio Shack (part #275-232) and
+ says the BC9000XLT uses the same relay, too.
+
+<h2>Replacement Bulbs for BC760XLT</h2>
+
+ The Uniden BC760XLT's SCAN, MAN, PRI, and HOLD buttons are
+ illuminated by &quot;grain of wheat&quot; type incandescent bulbs.
+ Gary Saffer reports that the bulbs and buttons are located
+ on a small printed circuit board which sits behind the
+ radio's face plate.  Gary unsoldered the burned out bulbs
+ in his radio and replaced them with 12 volt Radio Shack
+ bulbs (#272-1092c).  They should last a long time when
+ powered by the 8 VDC supplied by the BC760XLT.
+
+<h2>Open Resistor in BC140</h2>
+
+ Robert Casey fixed his deaf, 16 channel Bearcat BC140
+ scanner.  A 10 ohm resistor had opened that fed a circuit
+ that generates 22V for the varactor diode tuner circuits.
+ Without the 22V, there was no tuning of the local
+ oscillator and front end, and no reception.  What he did
+ was compare voltages to a second working BC140.
+
+<h2>Sources for Replacement NiCd Battery Packs</h2>
+
+ Replacement NiCd battery packs and inserts for the
+ BC100XLT, BC200XLT, BC2500XLT, BC3000XLT, and other
+ scanners are available from Uniden.  I've purchased them at
+ lower cost from:
+
+<ol>
+<li>Mr. NiCd - E. H. Yost and Company, 2211-D Parview
+       Rd., Middleton, WI 53562. tel. (608)831-3443.  email
+       ehyost@midplains.net
+<p>
+<li>Battery-Tech Central, 2818 Southland Street SW, Cedar
+       Rapids, IA 52404-4141. tel. (800)267-3087 or
+       (319)364-0855.  email <A HREF="http://www.dejanews.com/profile.xp?author=rlassoc@inav.net&ST=PS">rlassoc@inav.net</A>
+<p>
+<li> Batteries Plus has stores across they country and some have
+ rebuilt Uniden NiCd packs for under $20.
+</ol>
+<hr>
+<p>
+Copyright 1999, Bob Parnass, AJ9S (parnass@bell-labs.com)
+<p>
+</body>
+</html>

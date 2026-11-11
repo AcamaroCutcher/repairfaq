@@ -1,0 +1,186 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/repspec/
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Reproducing Visible Spectra</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/repspec/">https://www.repairfaq.org/sam/repspec/</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<center>
+<h1>Reproducing Visible Spectra</h1>
+<h2>by Nick Spiker</h2>
+<h3>Edited by Sam Goldwasser</h3>
+</center>
+
+If you have ever tried to reproduce a true rainbow, or spectra in the
+visible range you may have noticed that you will end up with much less
+than ideal results.  The main reason for this is that when you
+reproduce color on a typical display, CRT, LCD, Plasma, DLP, etc., you
+generally only have a set number of colors to mix and produce an
+image.  Generally there are three colored primaries.  Some higher end
+DLP systems will use more than three colors.  Most of the people
+reading this are probably somewhat familiar with basic principles of
+operation behind most of these systems.  So I won't be covering the
+basics behind the mixing of color, and image output.  I do, however
+frequently see a large number of people that do not understand gamma
+as it applies to images and image output systems.  So I will cover it
+briefly in this section.  Gamma is a way of encoding image information
+in a nonlinear fashion.  Generally when this is done, more information
+is assigned to the darker values, and less in the highlights.  This is
+the case for any image with a gamma greater than one.  Usually a gamma
+of about two is used for image storage and representation.  The
+primary reason for assigning more information in the darker areas is
+because the human eye is less sensitive to changes in bright areas.
+<p>
+<A HREF="sRGB-gamma.png">sRGB-gamma</A> shows a
+plot of the sRGB intensities versus sRGB numerical values (red), and           
+this function's slope in log-log space (blue) which is the effective
+gamma at each point.  sRGB clips values below a certain numerical
+limit to reduce numerical problems because the slope approaches
+infinity.
+<p>
+Now, on to reproducing an accurate color spectra on a standard
+display.  In 1931, the CIE (International Commission on Illumination)
+decided to develop a standard for human vision.  They took three
+monochromatic light sources and had a bunch of people adjust the
+brightness of the three primaries to match them with a particular
+color from the visible spectrum.  The three primaries were chosen so
+that it roughly approximated the three types of color receptors (cone
+cells) in the human eye and were easily reproducible from a mercury
+vapor light source.  The wavelengths of 700 nm (red), 546.1 nm (green)
+and 435.8 nm (blue) were chosen for the primaries.  To match the
+colors, negative values of light had to be used.  The reason for the
+negative values is because you cannot directly stimulate one color
+receptor without stimulating another.  In order to achieve the
+negative values, white light was added to the sample of the spectrum
+to be matched until it could be matched with the three primaries.  The
+amount of white light needed represents the amount to be subtracted
+from the three primaries.
+<p>
+<A HREF="2deg-CIE-Linear.png">2 Degree-CIE-Linear</A> is
+a plot of the spectra into the CIE RGB color space as seen by an average
+human eye in a 2 Degree FOV and with no gamma correction applied.
+Once this data was obtained, it was translated into a new space which
+had the following properties:
+<p>
+<ol>
+<li>The new color matching functions were to be everywhere greater than or
+ equal to zero. In 1931, computations were done by hand or slide rule, and
+ the specification of positive values was a useful computational
+ simplification.
+<p>
+<li>The color matching function would be exactly equal to the photopic
+ luminous efficiency function (yellow) in
+ Photopic-&-Scotopic-Response for the "CIE standard photopic observer".
+</ol>
+<p>
+See <A HREF="Photopic-%26-Scotopic-Response.png">Photopic-&-Scotopic-Response</A>.
+<p>
+<ul>
+<li>Photopic vision is the vision of the eye under well-lit conditions
+ using cone cells. In humans and many animals, photopic vision allows
+ color perception.  Photopic vision is the scientific term for human
+ color vision under normal lighting conditions during the day.
+<p>
+<li>Scotopic vision is the monochromatic vision of the eye in dim
+ light. Since cone cells are nonfunctional in low light, scotopic
+ vision is produced exclusively through rod cells so therefore there is
+ no colour perception.
+</ul><!--Oldspam--><!--/Oldspam-->
+
+<p>
+The luminance function describes the variation of perceived brightness
+with wavelength. The fact that the luminance function could be
+constructed by a linear combination of the RGB color matching
+functions was not guaranteed by any means but might be expected to be
+nearly true due to the near-linear nature of human sight. Again, the
+main reason for this requirement was computational simplification.
+<p>
+For the constant energy white point, it was required that x = y = z = 1/3.
+By virtue of the definition of chromaticity and the requirement of positive
+values of x and y, it can be seen that the gamut of all colors will lie inside
+the triangle [1,0], [0,0], [0,1]. It was required that the gamut fill this
+space practically completely.  It was found that the color matching
+function could be set to zero above 650 nm while remaining within the
+bounds of experimental error. For computational simplicity, it was
+specified that this would be so.
+<p>
+<A HREF="2deg-CIE-1931-XYZ-Linear.png">2 Degree CIE-1931-XYZ-Linear</A> is a
+is a plot of the spectra into the CIE 1931 XYZ color space as seen by an
+average human eye in a 2 Degree FOV and with no gamma correction applied.
+<p>
+Most other RGB color spaces are defined in terms of the
+<A HREF="Cie-Chart.png">CIE Chart</A>.
+<p>
+Now, on with the problem of producing all of the colors on a
+standard RGB display.  As you can see on the CIE chart, the sRGB space
+lies completely within the monochromatic lobe.  So, in order to
+reproduce the color spectra on a sRGB model, a constant value has to
+be added to the colors to compensate for the negative effects of
+conversion into sRGB space.  Basically this is a desaturation method
+roughly equivalent to shining the spectra onto an already lit surface.
+This is shown in <A HREF="sRGB-Combo.png">sRGB-Combo</A>.
+<p>
+<A HREF="2deg-sRGB-Linear.png">2 Degree-sRGB-Linear</A> is a
+plot of the spectra into the CIE RGB color space as seen by an
+average human eye in a 2 Degree FOV and with no gamma correction applied.
+<p>
+After the positive value is added, conversion into the sRGB space
+including gamma correction looks like
+<A HREF="2deg-sRGB.png">2 Degree-sRGB</A>, which is a
+plot of the spectra into the sRGB IEC61966-2.1 color space as seen by
+an average human eye in a 2 Degree FOV with gamma correction applied.  There
+has been a linear addition to all wavelengths to compensate for the
+primary color locations of the sRGB color space.  The grey horizontal
+line represents where black would be if sRGB could reproduce the full
+spectra.
+<p>
+And the rendered spectra looks like
+<A HREF="2deg-sRGB-Spectra.png">2 Degree-sRGB-Spectra</A>, which is a
+rendering of the spectra into the sRGB IEC61966-2.1 color space as
+seen by an average human eye in a 2 Degree FOV with gamma correction
+applied.  There has been a linear addition to all wavelengths to
+compensate for the primary color locations of the sRGB color space.
+<p>
+The reason I am using the 2 Degree FOV data, is that it is the standard for the CIE space, and it generally produces more accurate results than the
+10 Degree FOV data from <A HREF="10deg-CIE-Linear.png">10 Degree-CIE-Linear</A>, which
+is a plot of the spectra into the CIE RGB color space as seen by an
+average human eye in a 10 Degree FOV and with no gamma correction applied.
+<p>
+I have included some other rendering methods that do not produce accurate
+results, but can be used for general reference:
+<p>
+<ul>
+<li><A HREF="2deg-sRGB-False-Spectra-Direct-Conversion.png">
+2 Degree-sRGB-False-Spectra-Direct-Conversion</A> which is a
+ rendering of the spectra into the sRGB IEC61966-2.1 color space as seen by an
+ average human eye in a 2 Degree FOV with gamma correction applied.  Negative
+ values have been clipped.
+<p>
+<li><A HREF="2deg-sRGB-False-Spectra-using-Photopic-Map.png">
+2 Degree-sRGB-False-Spectra-using-Photopic-Map</A> which is a
+ rendering of the spectra into the sRGB IEC61966-2.1 color space as seen by an
+ average human eye in a 2 Degree FOV with gamma correction applied.  There has
+ been a linear addition in porportion to the photopic response to all
+ wavelengths to compensate for the primary color locations of the sRGB
+ color space.
+</ul>
+<p>
+If you would like to know more about the specifics of human color
+vision, some good articles, along with examples and other links can be
+found at <A HREF="http://en.wikipedia.org/wiki/Color_vision">Wikipedia
+Color Vision</A> and <A HREF="http://en.wikipedia.org/wiki/SRGB">
+Wikipedia sRGB</A>.
+<br>
+<hr>
+<p>
+</body>
+</html>

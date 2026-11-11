@@ -1,0 +1,110 @@
+<!--
+  Mirrored from https://www.repairfaq.org/REPAIR/F_Other_Briefs3.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/REPAIR/F_Other_Briefs3.html">https://www.repairfaq.org/REPAIR/F_Other_Briefs3.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+<html>
+</title>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</head>
+<h1>Repair Briefs from Other Sources</h1>
+Contents:<p>
+<ul>
+<!-- TlJHdR AutoNext_Back 1.04 -->
+<li>[<a href="F_Other_Briefs2.html">Previous</a>] segment
+ | [<a href="F_Other_Briefs.html">Sub-ToC</a>] for this document
+ | Main [<a href="F_Repair.html">Table 'O Contents</a>]
+<lI><a href="#OTHERBRIEFS_001">1.7)  Dead 5 year old Sony TV</a>
+<!-- TlJHdR AutoNext_Back 1.04 -->
+<li>[<b>This is the last segment</b>]
+</ul>
+<hr>
+<h2><a name="OTHERBRIEFS_001">1.7)  Dead 5 year old Sony TV</a></h2>
+<P>
+(From David Klementovic)
+<P>
+<dl>
+<DT><strong>PATIENT</strong>
+<dd>5 year old Sony TV
+<DT><strong>CONDITION</strong>
+<dd>Failed to power on. tic-tic-tic from the PS.
+<DT><strong>APPROACH</strong>
+<dd>Had to be an overload or shorted component of some sort.
+</dl>
+<P>
+   My client asked me to repair his 5 year old Sony television which failed 
+   to power on. I put it up on the service cart, plugged in the line cord and
+   tried to power it on. I heard a tic-tic-tic sound coming from the switching
+   power supply board F. A quick check of the power supply was done with the 
+   ohmmeter but nothing obviously shorted or open.
+<P>
+   Then I removed plug F61 from the power supply board, pressed the power
+   on button on the set and the switching power supply began to work, I could
+   hear the audio amplifiers working through the speakers. Something in the 
+   television chassis was loading the power supply down. I metered the brown 
+   wire on plug F61 (B+ supply) and found it shorted to ground. Then I 
+   tested the horizontal output transistor Q503 and it was shorted. 
+<P>
+   I inspected the flyback and other high voltage components and seeing 
+   nothing else shorted replaced Q503 (2SD1941) horizontal output and Q502
+   (2SC2688-lk) horizontal driver with exact replacements. Now, I know that 
+   frequently horizontal output devices are over-stressed by some other 
+   defect in the chassis so I prepared for this possibility by removing B+
+   jumper wire JW-41, inserting a 5.6 ohm 10 watt resistor in its place and 
+   clipped my voltmeter leads across the resistor. This gave me the ability 
+   to monitor the current being consumed by the flyback transformer. 
+<P>
+   I powered up the set slowly using a variac and an isolation transformer, 
+   the picture was good. I adjusted the variac for 125 volts AC, set the 
+   customer picture controls on the Sony to midway, (brightness, sharpness)
+   and the Trinitone to LOW. I tuned to a music video channel on cable in 
+   order to observe the raster changing frequently from dark to light, and 
+   recorded a voltage drop across my 5.6 ohm resistor of 2.2 volts with a dark
+   raster to 3.98 volts with a white raster. 
+<P>
+   After 10 minutes of operation, the voltage across the resistor began to 
+   climb even though the raster was fairly dark at the time. At 5 volts the 
+   right side of the raster began to shrink, and after about the loss of 3 
+   inches of raster from the right side I powered the set off, alas there 
+   was more trouble in this set for me to debug. I inspected for problems with
+   the scan-derrived B+ voltages, pin cushion correction circuitry, deflection
+   yolk and retrace tuning capacitor, nothing found defective! The troubleshooting 
+   breakthrough came when I replaced a 0.47 mfd electrolytic 
+   capacitor (C525) which coupled the horizontal drive signal into the base 
+   of the horizontal driver transistor and C537, a 4.7 mfd electrolytic 
+   capacitor in the horizontal driver circuits. These two capacitors had weakened 
+   and had resulted in the eventual failure of the horizontal output 
+   transistor. I checked the horizontal waveform on the base of the horizontal 
+   output transistor and it looked OK. So I removed the 5.6 ohm resistor, 
+   soldered B+ jumper JW41 back in the circuit and tested the set for 6 hours.
+<P>
+   The Sony worked good and has continued to work good for my client for 3 months
+   now. 
+<P>
+<hr>
+<!-- TlJHdR AutoNext_Back 1.04 -->
+There is <b>no</b> Next.
+Go to [<a href="F_Other_Briefs2.html">Previous</a>] segment
+<p>
+Go to [<a href="F_Other_Briefs.html">Table 'O Contents</a>].
+<hr>
+<!-- Footer (~/.inc) V1.19 by Filip Gieszczykiewicz -->
+<!-- REF is generated by PRocess... You *MUST* change if not PRecess'ed -->
+<address>
+Please check attribution for Author. Processed by <b>filipg@repairfaq.org</b>
+<a href=
+"https://www.repairfaq.org/cgi-bin/Feedback%40ACTION%3Dfooter_REF%3D-REPAIR-F_Other_Briefs3.html.cgi"
+>[Feedback Form]</a>
+<a href="F_emllnk.html">[mailto]</a>. The most
+recent version is available on the WWW server
+<a href="../index.html">http://www.repairfaq.org/</a>
+<a href="../COPYRIGHT.html">[Copyright]</a>
+<a href="http://www.repairfaq.org/DISCLAIMER.html">[Disclaimer]</a>
+</address>
+</body>
+</html>

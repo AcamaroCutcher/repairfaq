@@ -1,0 +1,530 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/Blu-ray/site1/diode.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Blu-ray Reader Dissection by Leslie Wright and Sam Goldwasser -
+ Diode Page</title>
+
+<meta name="keywords" content="blu-ray laser diode, blu ray laser pointer,
+violet laser diode, violet laser pointer, blu ray, blu ray laser">
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/Blu-ray/site1/diode.html">https://www.repairfaq.org/sam/Blu-ray/site1/diode.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+
+<center>
+Copyright &copy; 2007-2011,
+ Leslie Wright <a target="aa" href="http://www.fineartradiography.com/">
+   www.fineartradiography.com</a> and
+ Sam Goldwasser <a target="aa" href="../../../index.html">
+   www.repairfaq.org</a>, All Rights Reserved.
+<p>
+<hr>
+<p>
+<h1>Dissection of a Blu-ray Reader Assembly:<br>
+The Laser Diode</h1>
+
+<h2>Leslie Wright and Samuel Goldwasser</h2>
+<br>
+<form action="http://translate.google.com/translate" target="aa">
+ <nobr><b>Translate this page with Google:</b>
+ <select name="langpair">
+ <option value="en|fr">Fran&ccedil;ais</option>
+ <option value="en|de">Deutsch</option>
+ <option value="en|es">Espanol</option>
+ </select>
+ <input name="hl" value="en" type="hidden">
+ <input name="prev" value="/language_tools" type="hidden">
+ <input name="u" value=
+  "http://www.fineartradiography.com/hobbies/lasers/blu-ray/index.html"
+   type="hidden">
+ <input value="OK" style="font-size: 11px;" type="submit">&nbsp;</nobr>
+</form>
+<br>
+
+<h3><a href="index.html">Return to Blu-ray Page</a></h3>
+</center>
+<br>
+<h2>
+<blink><span style="color: rgb(255, 0, 0);"><span style="font-weight: bold;
+text-decoration: underline;">Read FIRST! </span></h2></blink>
+
+If you are new to diode lasers, read this article carefully before
+attempting to do anything wqith the laser diode or even to disassemble
+the Blu-ray optics block!  This will avoid costly mistakes!
+Carefully read all the related material in
+<a target="aa" href="../../lasersam.htm">Sam's
+Laser FAQ</a>, especially in the chapters starting with: "Diode Lasers".
+The information there is invaluable, and extremely important!
+<p>
+<center><h2>Precautions</h2></center>
+
+All laser diodes, and especially the violet variety,
+are extremely ESD sensitive! So take serious antistatic precautions!
+Make sure ALL of your capacitors in your driver are FULLY discharged
+before connecting your diode to a driver. (Shorting just once is NOT
+enough, short them, and leave them shorted until your diode is soldered
+There should also be a resistor soldered permanently across the driver
+to do this automatically but don't depend on it!!!!
+
+<p>
+<center><h2>Laser Diode Extraction</h2></center>  
+
+Trying to test the diode in-situ, resulted in spurious readings,
+presumably from the drive circuitry, so this is not recommended.
+There is a flat flex-cable from the diode to the main assembly.
+
+These diodes are easily damaged by ESD.  Take extreme precautions when
+extracting and soldering!  Solder to the GND pin first and solder the other
+end of the wire to the VLD anode (+ve), thus shorting the diode. This
+should make it safe for extraction and handling. When you are ready
+to connect the diode to your driver, you can then snip the shorting
+wire.
+<p>
+Once you have soldered on your shorting link, you may slice through the
+flex-cable with a sharp knife. Two small screws must then be removed
+on the little metal mount for the diode, and then it can be eased out
+(still attached to the mounting bracket/heatsink).
+<p>
+If you wish the diode can be removed from its mount, by carefully
+prying it off with a craft knife. The remaining glue will have to then
+be removed.
+<p>
+And here it is:
+<p>
+<center>
+<a target="aa" href="ps3diode-images/kes400ad.jpg">
+<img style="width: 496px; height: 231px;" alt="LD Can and PCB"
+src="ps3diode-images/kes400ads.jpg"></a>
+<p>
+(Click on photo for closeup.)
+</center>
+<p>
+This shows two views of the laser diode can along with the PCB
+that would normally attach via the flex-cable to the driver circuitry.
+Note the 5 legs on the laser diode can and five corresponding holes in the
+PCB. If the soldermask gets damaged on the ground plane on the PCB,
+there will very likely be solder shorts when you attempt to attach your
+ultra-fine wires!  Carefully inspect your soldering before applying power!
+<p>
+<center><h2>Laser Diode Specifications</h2></center>  
+
+The laser diode can actually contains three laser diodes emitting at
+780, 660, and 405 nm (for CD, DVD, and Blu-ray, respectively).
+These are connected in a CCC (Common Cathode Can)
+configuration.  The case is the cathode (-ve) of all three laser diodes as
+well as the monitor photodiode.
+<p>
+The pinout for the PS3 diode is shown below (looking at the rear of the can).
+<p>
+<center>
+<img style="width: 300px; height: 214px;" alt="LD Pinout"
+src="ps3diode-images/pinout.jpg">
+</center>
+<p>
+<b>Pinout:</b>
+<p>
+<ul>
+<li>VLD: Violet (405 nm) laser diode anode (+ve).
+<li>RLD: Red (660 nm) laser diode anode (+ve).
+<li>IRLD: Infra-red (780 nm) laser diode anode (+ve).
+<li>PD: Monitor Photodiode anode.
+</ul>
+<p>
+<center>
+<img style="border: 3px solid ; width: 300px; height: 223px; color:
+rgb(255, 255, 255);" alt="LD Connections"
+src="ps3diode-images/rear-connections-closeup.jpg">
+</center>
+<p>
+This is a close-up of the connections on my unit.
+(Note the remaining section of flex-cable PCB.)
+<p>
+<ul>
+<li>Black: LD and PD cathodes (GND).
+<li>Blue: VLD anode (+ve).
+<li>Red: RLD anode (+ve).
+</ul>
+<p>
+Now typical violet laser diodes, according to whatever spec sheets you
+get your hands on, run from anywhere between 4.5 and 5.5 V, and
+35 to 90 mA!
+<p>
+For Example Nichia diode NDHV310APB:
+<p>
+<table style="text-align: left; width: 941px; height: 411px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small>Item</small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>Symbol</small></td>
+      <td style="text-align: center; width: 140px;" nowrap="nowrap"><small>Min</small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>Typ</small></td>
+      <td style="white-space: nowrap; width: 130px; text-align: center;"><small>Max</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>Unit</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small><span>Optical
+output</span></small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>Po</small></td>
+      <td style="text-align: center; width: 140px;" nowrap="nowrap"><small>-</small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>30</small></td>
+      <td style="width: 109px; text-align: center;" nowrap="nowrap"><small>-</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>mW</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small>Peak
+wavelength</small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>&lambda;p </small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>400</small></td>
+      <td style="width: 109px; text-align: center;" nowrap="nowrap"><small>408</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>415</small></td>
+      <td style="text-align: center;" nowrap="nowrap"><small>nm</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small>Threshold current</small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>Ith</small></td>
+      <td style="text-align: center; width: 140px;" nowrap="nowrap"><small>-</small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>45</small></td>
+      <td style="width: 109px; text-align: center;" nowrap="nowrap"><small>60</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>mA</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small>Operating
+current</small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>Iop</small></td>
+      <td style="text-align: center; width: 140px;" nowrap="nowrap"><small>-</small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>70</small></td>
+      <td style="width: 109px; text-align: center;" nowrap="nowrap"><small>90</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>mA</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small>Slope
+Efficiency</small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>&eta; </small></td>
+      <td style="text-align: center; width: 140px;" nowrap="nowrap"><small>0.7</small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>1.2</small></td>
+      <td style="width: 109px; text-align: center;" nowrap="nowrap"><small>1.6</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>W/A</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small>Operating
+voltage</small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>Vop</small></td>
+      <td style="text-align: center; width: 140px;" nowrap="nowrap"><small>-</small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>4.5</small></td>
+      <td style="width: 109px; text-align: center;" nowrap="nowrap"><small>5.5</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>V</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center;" nowrap="nowrap"><small>FWHM
+beam divergence<br>
+slow axis</small></td>
+      <td style="text-align: center; width: 102px;" nowrap="nowrap"><small>&theta; </small></td>
+      <td style="text-align: center; width: 140px;" nowrap="nowrap"><small>5</small></td>
+      <td style="width: 127px; text-align: center;" nowrap="nowrap"><small>8</small></td>
+      <td style="width: 109px; text-align: center;" nowrap="nowrap"><small>13</small></td>
+      <td style="width: 85px; text-align: center;" nowrap="nowrap"><small>&deg;</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center; height: 45px;" nowrap="nowrap"><small>FWHM beam divergence<br>
+fast axis</small></td>
+      <td style="text-align: center; width: 102px; height: 45px;" nowrap="nowrap"><small>&theta; </small></td>
+      <td style="text-align: center; width: 140px; height: 45px;" nowrap="nowrap"><small>18</small></td>
+      <td style="width: 127px; text-align: center; height: 45px;" nowrap="nowrap"><small>24</small></td>
+      <td style="width: 109px; text-align: center; height: 45px;" nowrap="nowrap"><small>30</small></td>
+      <td style="width: 85px; text-align: center; height: 45px;" nowrap="nowrap"><small>&deg;</small></td>
+    </tr>
+    <tr>
+      <td style="width: 136px; text-align: center; height: 56px;" nowrap="nowrap"><small>Monitor current</small></td>
+      <td style="text-align: center; width: 102px; height: 56px;" nowrap="nowrap"><small>Im</small></td>
+      <td style="text-align: center; width: 140px; height: 56px;" nowrap="nowrap"><small>0.1</small></td>
+      <td style="width: 127px; text-align: center; height: 56px;" nowrap="nowrap"><small>0.25</small></td>
+      <td style="width: 109px; text-align: center; height: 56px;" nowrap="nowrap"><small>0.6</small></td>
+      <td style="width: 85px; text-align: center; height: 56px;" nowrap="nowrap"><small>mA</small></td>
+    </tr>
+  </tbody>
+</table>
+<p>
+This is one of Nichia's higher powered diodes (the one in the
+PlayStation-3 outputs 20 mW max).  Note the variation in Ith
+of anywhere between 45 and 60 mA! And Iop of 70 to 90 mA!
+These specs, while not applicable to the PS3 diode, are important, as
+they give an idea as to the properties and variations in specification
+of Gallium Nitride laser diodes, i.e., once I work out Ith for my device,
+I can extrapolate Iop to within reasonable limits.
+So I read every 405 nm diode datasheet I could get my hands on!
+<p>
+A series of tests were conducted on the Violet laser diode and the
+following parameters were determined. (these are a guide only, and
+are the specs for my particular diode, your Ith may vary, and as a
+consequence, your operating current will vary!)
+<p>
+<ul>
+<li>Threshold current: ~28 mA.
+<li>Working voltage: ~4.5 V.
+<li>Operating current 30 to 40 mA. CAUTION: See additional comments below.
+</ul>
+<p>
+<center>
+<img style="width: 600px; height: 569px;" alt="LD Characteristics"
+src="ps3diode-images/diode-plot.jpg">
+</center>
+<p>
+The above graph is a plot of diode current, against optical output, and was
+measured using a Coherent Lasercheck As can be seen on the graph, threshold
+(Ith) occurs at 28 mA to 30 mA.
+<p>
+<b>Note:</b> On this graph, the final real measurement was made at 45.7 mA
+(13.9 mW). The line from 45.7 mA to 50 mA is extrapolated.
+<p>
+Sam ran some tests of the infra-red, red, and violet laser diodes, and
+the monitor photo diode using a laboratory laser diode controller, the
+LDX LDC 3900.  The results are summarised here:
+<p>
+<table style="text-align: left; width: 800px;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="text-align: center;" nowrap="nowrap">Diode</td>
+      <td style="text-align: center;" nowrap="nowrap">Ith</td>
+      <td style="text-align: center;" nowrap="nowrap">Iop(5 mW)</td>
+      <td style="text-align: center;" nowrap="nowrap">Ipd
+(5 mW</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" nowrap="nowrap">Infra
+red ~780 nm</td>
+      <td style="text-align: center;" nowrap="nowrap">26 mA</td>
+      <td style="text-align: center;" nowrap="nowrap">34 mA</td>
+      <td style="text-align: center;" nowrap="nowrap">485
+uA</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" nowrap="nowrap">Visible
+Red ~660 nm</td>
+      <td style="text-align: center;" nowrap="nowrap">22 mA</td>
+      <td style="text-align: center;" nowrap="nowrap">29 mA</td>
+      <td style="text-align: center;" nowrap="nowrap">355 uA</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" nowrap="nowrap">Violet
+~405 nm</td>
+      <td style="text-align: center;" nowrap="nowrap">35 mA</td>
+      <td style="text-align: center;" nowrap="nowrap">49 mA</td>
+      <td style="text-align: center;" nowrap="nowrap">115 uA</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+<ul>
+<li>Ith: Threshold current for the LD under test.
+<li>Iop (5 mW): Current required to produce 5 mW.
+<li>Ipd (5 mW): Current produced by the monitor photodiode at 5 mW.
+</ul>
+<p>
+Note the high Ith and Iop of the violet diode, as I stated, this had
+been ESD damaged, and thus had poor beam quality, and reduced output
+power. However, this at least gives us an indication of the response of
+the photodiode.
+<p>
+<center><h2>Determining Ith</h2></center>  
+
+There have been reports of diodes with thresholds ranging from 18 to
+35 mA! The diodes are manufactured by a batch process, as opposed to
+continuously, and there MAY be significant variation in operating
+parameters.  Always err on the side of caution and start your adjustments
+from 0 mA! It may well be that Ith may be lower or higher than expected!
+Once Ith has been determined for your particular diode, it is reasonable
+to conclude that the operating current range is Ith to Ith+10 mA, this
+should keep you within safe limits. Your diode voltage drop may also
+vary from ~4.4 V to 5.5 V.
+<p>
+To determine Ith, hook up the diode to your supply set at 0 mA
+(remember to have discharged you caps first!)
+Place a white card in front of the laser (the fluorescence will
+help determine the threshold). Gradually increase the current.
+Early on (possibly starting even at a fraction of 1 mA!!) there will be
+considerable violet emission, this is LED emission, and the device is not
+yet lasing, and will appear quite violet on the card. Once the diode
+reaches the lasing threshold, the light emitted will no longer be a
+diffuse circle but will take the form of a blue (because of fluorescence)
+bar, with various lines around the edges, and speckle should be noticeable.
+It will be quite dim at threshold, so keep a keen eye out.
+<p>
+Once you have determined Ith, make a note. Your maximum operating current
+(Iop) is around Ith+10 mA. So if Ith=28 mA, your maximum current ought to be
+38 mA.
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255);"
+ width: 300px; height: 269px;" alt="Violet 1"
+src="ps3diode-images/clos-up-run.jpg">
+</center>
+<p>
+In the above picture the laser and its little mount were just glued to
+the large heatsink, no heat transfer compound was used. (The heatsink was
+used because it was convenient.) I figured there
+was enough metal in the mount to dissipate any heat. The laser stayed
+cool throughout its operation. In the above picture, a common acrylic
+asphere lens was used as the collimator. It was just glued to a PCB
+and focus was adjusted by moving the PCB either towards or away from
+the diode.
+<p>
+The diode can is standard 5.6 mm diameter, and could be easily integrated into
+the collimating assembly of a dead red module.
+A far superior method of mounting is to obtain a decent red laser
+pointer, and remove the collimator from it (the good ones are made of
+brass, and are adjustable). It is then a matter of simply installing the
+diode, where the red one was, and adjusting the focus to suit.
+<p>
+<center><h2>Output Measurements</h2></center>
+
+The optical output was confirmed by
+<a href="http://www.greenlaser.co.uk/">Rob</a>
+as being 10 to 20 mW. (If you really push it!, I would say 15 mW is an
+ultimate upper limit if the thing to last any length of time!) There will
+be more info about this, as soon as he completes his measurements.
+<p>
+The raw output beam, before collimation is very ugly, and appears very
+multimode:
+<p>
+<center>
+<img style="border: 3px solid ; color: rgb(255, 255, 255);"
+width: 250px; height: 291px;" alt="Profile-2" src="ps3diode-images/violetprofile-2.jpg">
+</center>
+<p>
+The above image, was recorded by a digital camera and processed with
+ImajeJ. The satellite beams and other garbage can be quite easily seen.
+<p>
+As far as I can tell the diode is unsuitable for holography, although I
+have never tried it. The output is quite noisy, and appears
+multimode, but the use of laser diodes for holography has been proven
+before! It was once suggested that the coherence lengths of red laser
+diodes was sub-millimeter, but has been proven to surpass the coherence
+length of even the best gas lasers on the market! At some point I will
+measure the coherence length and post it here.
+I would imagine that as the technology progresses, we could reasonably
+expect to see single mode violet diodes on the market within 18 months.
+<p>
+<center><h2>Laser Diode Power Supply</h2></center>
+
+A suitable power supply for the violet diode is shown below.
+Its nothing novel or exciting, but it works so long as your
+application isn't too critical as far as optical noise or output
+variation is concerned.
+<p>
+<center>
+<img style="width: 600px; height: 186px;" alt="LD Driver Schem"
+src="ps3diode-images/schem.jpg">
+</center>
+<p>
+It is a simple current regulator based on the LM317, and is easy to build,
+and can be made quite compact.
+There will shortly be a circuit diagram available with light feedback
+and the capability of running all three diodes, so watch this space!
+<br style="text-decoration: underline;">
+<p>
+<center><h2>The Stacked Diode Assembly</h2></center>
+
+The laser diode can in the PS3 contains three laser diodes. The
+Red 660 nm diode is mounted next to the Infrared 780 nm diode, and both
+are bonded to the 405 nm Gallium Nitride violet diode. This is a very
+novel approach since it is exceedingly difficult to bond either AlGaAs
+or AlGaInP to the GaInN diode due to lattice mismatching. So far,
+the other Blu-ray pickups I have seen, have two objectives, and
+separate beam paths for the red/Ir and violet.
+<p>
+The patent for the stacked laser diode structure can be seen at:
+<p>
+<ul>
+<li><a target="aa" href="http://www.freepatentsonline.com/6956322.html">
+ http://www.freepatentsonline.com/6956322.html</big></a>,
+ U.S. Patent #6956322: "Semiconductor light emitting device
+ with stacked light emitting elements" (Sony).
+</ul>
+<p>
+This particular design shows a four pin can, since the
+photodiode is not present. (Sony was only patenting the stacked
+structure).
+<p>
+Since I can't really show the diagrams from the patent without copyright
+infringement, I have displayed some photographs of the diode structure
+below. These were kindly sent in to the site by John Rehwinkel
+<a target="aa" href="http://www.vitriol.com/">(www.vitriol.com)</a>
+whose violet diode can be seen in his
+<a target="aa" href="http://madbodger.livejournal.com/">Journal.</a>.
+<p>
+<center>
+<img style="border: 3px solid ; width: 500px; height: 452px; color:
+rgb(255, 255, 255);" alt="VLD Closeup" src="ps3diode-images/ld-closeup.jpg">
+</center>
+<p>
+Here is a close-up of the front of the diode. You can see the multiple
+connections to the device.
+<p>
+<center>
+<img style="border: 3px solid ; width: 400px; height: 330px; color:
+rgb(255, 255, 255); alt="LD Closeup Lasing Red"
+src="ps3diode-images/red-emit.jpg">
+</center>
+<p>
+Here is the diode with the red emitter powered.
+<p>
+<center>
+<img style="border: 3px solid ; width: 500px; height: 302px; color:
+rgb(255, 255, 255);" alt="LD Facets" src="ps3diode-images/facets.jpg">
+</center>
+<p>
+And a close-up of the facets. The large, rhomboid structure sits on top
+of the Red and Infra-red diodes (which are very small!) The large slab
+on the bottom, is GaN. note the fracture on the left corner of the GaN
+slab.
+<p>
+<center>
+<img style="border: 3px solid ; width: 500px; height: 323px; color:
+rgb(255, 255, 255);" alt="Violet Leak" src="ps3diode-images/violetleak2.jpg">
+</center>
+<p>
+This is a photo of the violet diode powered. Note the amount of light
+leaking from the left of the structure, where the afore mentioned fracture
+is. Although you should note that some light leaks out of all of the facets
+of the GaN die.
+<p>
+<hr>
+<center><h2>For More Information</center></h2>
+
+There have been extensive discussions on the USENET newsgroup
+alt.lasers, and the Internet forums
+<A target="aa" HREF="http://www.photonlexicon.com">Photon Lexicon</A> and
+<A target="aa" HREF="http://www.laserpointerforums.com">Laser Pointer
+Forums</A>.
+Checking the archives for those will probably turn up more than you ever
+wanted to know.  You can contact Leslie at: lesliewright8@hotmail.com
+and Sam through the Feedback form at
+<A target="aa" href="../../../index.html">RepairFAQ.org</A>.
+For a wealth of information about Laser related stuff, and plenty
+of diagrams, go to
+<a target="aa" href="../../lasersam.htm">Sam's
+Laser FAQ</a>.
+
+<center><h3><a href="index.html">Return to Blu-ray Page</a></h3></center>
+<center><h3><a href="../index.html">Return to Laser Pages</a></h3></center>
+<p>
+<hr>
+<center>
+Copyright &copy; 2007-2011,
+ Leslie Wright <a target="aa" href="http://www.fineartradiography.com/">
+   www.fineartradiography.com</a> and
+ Sam Goldwasser <a target="aa" href="../../../index.html">
+   www.repairfaq.org</a>, All Rights Reserved.
+</center>
+<p>
+</body>
+</html>

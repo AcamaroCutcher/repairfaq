@@ -1,0 +1,188 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvrpdptrcu.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Revival of dead or tired remote control ..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Revival of dead or tired remote control units</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvrpdptrcu.htm">https://www.repairfaq.org/samnew/tvfaq/tvrpdptrcu.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Revival of dead or tired remote control ..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvsdnptq.htm">&lt;&lt;&nbsp;Static discharge noise an..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvpwirrecv.htm">Problems with the IR remo..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvrpdptrcu">Revival of dead or tired remote control units</A></h3>
+
+There are two types of problems with hand held remote controls: they
+have legs of their own and they get abused or forgotten.  I cannot
+help you with walking remotes.
+<p>
+Where response is intermittent or the reliable operating distance is
+reduced, first check the batteries and battery contacts.  If some buttons
+are intermittent or dead, than the most likely cause is dirty or worn
+contacts under the rubber buttons or on the circuit board.
+<p>
+If there is no response to any functions by the TV or VCR, verify that any
+mode switches are set correctly (on both the remote and the TV or VCR).
+Unplug the TV or VCR for 30 seconds (not just power off, unplug).  This
+sometimes resets a microcontroller that may have been confused by a
+power surge.  Confirm that the remote has not accidentally been set to
+an incorrect mode (VCR instead of TV, for example).  If it a universal
+type, it may have lost its programming - reset it.  Make sure you are
+using the proper remote if have multiple similar models.
+<p>
+Test the remote with an IR detector.  An IR detector card can be purchased
+for about $6.  Alternatively, build the circuit at the end of this document.
+If the remote is putting out an IR signal, then the remote or the TV or VCR may
+have forgotten its settings or the problem may be in the TV or VCR and not
+the hand unit.  The following is just a summary - more detailed information
+is available in the companion document: <A HREF="../../sam/irrfaq.htm">Notes on the
+Troubleshooting and Repair of Hand Held Remote Controls</A>.
+<p>
+Problems with remote hand units:
+<p>
+All except (1) and (2) require disassembly - there may be a screw or two and
+then the case will simply 'crack' in half by gently prying with a knife or
+screwdriver.  Look for hidden snap interlocks.
+<p>
+<ol>
+<li>Dead batteries - solution obvious.
+<p>
+<li>Corroded battery contacts,   Thoroughly remove chemical deposits. Clean
+ contacts with pencil eraser and/or sandpaper or nailfile.
+<p>
+<li>Broken connections often between battery contacts and circuit board,
+ possibly on the circuit board - resolder.
+<p>
+<li>Bad resonator or crystal - replace, but diagnosing this without
+ an oscilloscope may be tough.  Broken connections on resonator legs
+ are common.
+<p>
+<li>Dirt/spills/gunk preventing keys from operating reliably.  Disassemble
+ and wash rubber membrane and circuit board with water and mild detergent
+ and/or then alcohol - dry completely.
+<p>
+<li>Worn or corroded contact pads on circuit board.  Clean and then use
+ conductive Epoxy or paint or metal foil to restore.
+<p>
+<li>Worn or dirty pads on rubber keypad.  Clean.  If worn, use conductive
+ paint or metal foil to restore.
+<p>
+<li>Cracked circuit board - can usually be repaired as these are usually single
+ sided with big traces.  Scrape off insulating coating and jumper breaks
+ with fine wire and solder.
+<p>
+<li>Bad LED. If IR tester shows no output, remove LED and power it from
+ a 9 V battery in series with a 500 ohm resistor.  If still no output,
+ replace with readily available high power IR LED.  Otherwise, check
+ driver circuits.
+<p>
+<li>Bad IC - if it is a custom chip, forget it!  Failure of the IC
+ is usually quite unlikely.
+<p>
+ (The following is from Duane P Mantick:)
+<p>
+ An awful lot of IR remotes use IC's from the same or similar series. A
+ common series comes from NEC and is the uPD1986C which, incidentally is
+ called out in the NTE replacements book as an NTE1758. A lot of these
+ chips are cheap and not too difficult to find, and are made in
+ easy-to-work-with 14 or 16 pin DIP packages. Unless you have no soldering
+ or desoldering skills, replacement isn't difficult.
+</ol>
+<p>
+There are a large variety of universal remotes available from $10-$100. For
+general TV/VCR/cable use, the $10 variety are fine. However, the preprogrammed
+variety will not provide special functions like programming of a TV or VCR.
+Don't even think about going to the original manufacturer - they will charge
+an arm and a leg (or more). However, places like MCM Electronics do stock a
+variety of original remotes - prices range from $9 - $143 (Wow $143, for just
+a stupid remote! It doesn't even have high definition sound or anything
+exotic). The average price is around $40.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvsdnptq.htm">&lt;&lt;Static discharge noise an..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvpwirrecv.htm">Problems with the IR remo..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

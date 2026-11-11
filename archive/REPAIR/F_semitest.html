@@ -1,0 +1,1619 @@
+<!--
+  Mirrored from https://www.repairfaq.org/REPAIR/F_semitest.html
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Basic Testing of Semiconductor Devices</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/REPAIR/F_semitest.html">https://www.repairfaq.org/REPAIR/F_semitest.html</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Basic Testing of Semiconductor Devices<br>
+and other information including<br>
+Introduction to Curve Tracers
+</h1>
+<h2>
+Version 2.38
+<br>
+</h2>
+<h3>
+Copyright &copy 1994-2001
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For corrections/comments/suggestions, please contact me via the
+<A HREF="F_emllnk.html">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="sttoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#stpre">Preface</A>
+ <ul>
+ <li><A HREF="#staac">Author and Copyright</A>
+ <li><A HREF="#stdis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#stint">Introduction</A>
+ <ul>
+ <li><A HREF="#stsod">Scope of This Document</A>
+ <li><A HREF="#stsaf">Safety Considerations</A>
+ </ul>
+<p>
+<li><A HREF="#sttvd">Testing Semiconductor Devices with a VOM or DMM</A>
+ <ul>
+ <li><A HREF="#stvdm">VOMs and DMMs</A>
+ <li><A HREF="#sttdj">Testing Diode Junctions with a Multimeter</A>
+ <li><A HREF="#stttm">Transistor Testing Methodology</A>
+ <li><A HREF="#sttam">Testing with a (Analog) VOM</A>
+ <li><A HREF="#sttdm">Testing with a (Digital) DMM</A>
+ <li><A HREF="#sttpt">Testing Power Transistors</A>
+ <li><A HREF="#sttdt">Testing Darlington Transistors</A>
+ <li><A HREF="#sttbr">Testing Digital or Bias Resistor Transistors</A>
+ <li><A HREF="#sttuj">Testing Unijunction and Programmable Unijunction
+    Transistors</A> </ul>
+<p>
+<li><A HREF="#stthy">Thyristors - SCRs and Triacs</A>
+ <ul>
+ <li><A HREF="#stwat">What are Thyristors</A>
+ <li><A HREF="#sttth">Testing SCRs and Triacs</A>
+ <li><A HREF="#sttds">Testing Diacs and Sidacs</A>
+ <li><A HREF="#sttil">Thyristors Driving Inductive Loads</A>
+ <li><A HREF="#stbut">Burning Up of Thyristors</A>
+ </ul>
+<p>
+<li><A HREF="#stast">Additional Semiconductor Testing</A>
+ <ul>
+ <li><A HREF="#stiub">Identifying Unknown Bipolar Transistors</A>
+ <li><A HREF="#stluk">Luke's Comments on Junction Voltage Drops and
+    Doping</A>
+ <li><A HREF="#stlan">Lance's Method for Determining C and E on an Unmarked
+    Bipolar Transistor</A>
+ <li><A HREF="#stmos">Testing MOSFETs</A>
+ <li><A HREF="#stled">Testing LEDs</A>
+ <li><A HREF="#stopt">Testing Opto-Isolators and Photo-Interrupters</A>
+ <li><A HREF="#stthr">Testing Thermistors</A>
+ <li><A HREF="#sttze">Testing Zener Diodes</A>
+ <li><A HREF="#sttmo">Testing MOVs</A>
+ <li><A HREF="#sttec">Testing Thermo-Electric (Peltier) Devices</A>
+ </ul>
+<p>
+<li><A HREF="#stmis">Miscellaneous Information</A>
+ <ul>
+ <li><A HREF="#stdof">Ordinary, Fast Recovery, and Schottky Diodes</A>
+ <li><A HREF="#sthot">Horizontal Output Transistor Pinouts</A>
+ <li><A HREF="#stdnr">Difference Between Normal and 'R' Marked Parts</A>
+</ul>
+<p>
+<li><A HREF="#stitc">Introduction to Curve Tracers</A>
+ <ul>
+ <li><A HREF="#stctd">Curve Tracer Design</A>
+ <li><A HREF="#stqdc">Quick and Dirty Curve Tracer</A>
+ <li><A HREF="#stict">In-Circuit Tester</A>
+ <li><A HREF="#stvac">Testing Vacuum Tubes (or FETs) on a Bipolar Curve
+    Tracer</A>
+ </ul>
+</ul>
+<A NAME="stpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="staac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For corrections/comments/suggestions, please contact me via the
+<A HREF="F_emllnk.html">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+Copyright &copy 1994-2001
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="stdis">DISCLAIMER</a></h2>
+
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+<A NAME="stint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="stsod">Scope of This Document</A></h3>
+
+The first part of this note describes procedures for testing of diodes
+(signal, rectifier, and zener); bipolar (NPN or PNP, small signal and power)
+transistors; SCRs, and MOSFETs for catastrophic failures like shorts and opens.
+<p>
+In most cases, this will identify bad silicon transistors.  Gain, frequency
+response, etc. are not addressed here.  While the tests can be applied to
+germanium devices, these are more likely to change characteristics, it would
+seem, without totally failing.
+<p>
+It is also possible to determine the lead arrangements of identified diodes
+and bipolar transistors as well as breakdown voltage ratings.
+<p>
+Curve tracers are pieces of electronic test equipment similar to an
+oscilloscope.  They can not only test transistors and other devices but
+evaluate the functional specifications as well.  The chapter: "Curve Tracer
+Design" includes information on their basic principles of operation and
+provides details on some very additions to conventional scopes to add
+some basic curve tracer capability.
+<p>
+This document evolved from a posting on the USENET newsgroup: sci.electronics
+(no longer active - closest replacement in the sci.electronics hierarchy is
+probably
+<A HREF="news:sci.electronics.components">sci.electronics.components</A>)
+from Randy Fromm
+(<A HREF="mailto:Randy@randyfromm.com">Randy@randyfromm.com</A>)
+who maintains a
+<A HREF="http://randyfromm.com/techdept/">Technical Department</A> with an
+extensive collection of repair related information.
+
+<h3><A NAME="stsaf">Safety Considerations</A></h3>
+
+None of the tests described in this document require probing live circuits.
+However, should you need to do so, see the document:
+<A HREF="F_safety.html">Safety Guidelines for
+High Voltage and/or Line Powered Equipment</A> first.
+<p>
+Before touching, probing, or unsoldering any component, make sure the equipment
+is unplugged and any large capacitors have been safely discharged.  See the
+document:
+<A HREF="F_captest.html">Capacitor Testing,
+Safe Discharging, and Other Related Information</A> or the specific document
+dealing with your equipment for details.  Not only can coming in contact with
+a live circuit or charged capacitor ruin your entire day, your test equipment
+could be damaged or destroyed as well.
+<p>
+<A NAME="sttvd"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<h2>Testing Semiconductor Devices with a VOM or DMM</h2>
+<h3><A NAME="stvdm">VOMs and DMMs</A></h3>
+
+Analog and Digital meters behave quite differently when testing
+nonlinear devices like diodes and transistors.  It is recommended that
+you read through this document in its entirety.
+<p>
+Caution: An analog VOM on the lowest resistance range may put out too much
+current for smaller devices possibly damaging them.  Ironically, this is more
+likely with better meters like the Simpson 260 which can test to lower ohms
+(X1 scale).  Use the next higher resistance range in this case or a DMM as
+these never drive the device under test with significant current.  However,
+this can result in false readings as the current may be too low to adequately
+bias the junctions of some power devices or devices with built in resistors.
+
+<h3><A NAME="sttdj">Testing Diode Junctions with a Multimeter</A></h3>
+
+On an (analog) VOM, use the low ohms scale.  A regular signal diode or
+rectifier should read a low resistance (typically 2/3 scale or a couple
+hundred ohms) in the forward direction and infinite (nearly) resistance
+in the reverse direction.  It should not read near 0 ohms (shorted) or
+open in both directions.  A germanium diode will result in a higher scale
+reading (lower resistance) due to its lower voltage drop.
+<p>
+For the VOM, you are measuring the resistance at a particular (low current)
+operating point - this is not the actual resistance that you will see in
+a power rectifier circuit, for example.
+<p>
+On a (digital) DMM, there will usually be a diode test mode.  Using this,
+a silicon diode should read between .5 to .8 V in the forward direction
+and open in reverse.  For a germanium diode, it will be lower, perhaps
+.2 to .4 V or so in the forward direction.  Using the normal resistance
+ranges - any of them - will usually show open for any semiconductor
+junction since the meter does not apply enough voltage to reach the value
+of the forward drop.  Note, however, that a defective diode may indeed indicate
+a resistance lower than infinity especially on the highest ohms range.  So, any
+reading of this sort would be an indication of a bad device but the opposite
+is not guaranteed.
+<p>
+Note: For a VOM, the polarity of the probes is often reversed from what
+you would expect from the color coding - the red lead is negative with 
+respect to the black one.  DMMs usually have the polarity as you would 
+expect it.  Confirm this using a known diode as a reference.  Also,
+'calibrate' your meter with both silicon and germanium semiconductors so
+you will know what to expect with an unknown device.
+
+<h3><A NAME="stttm">Transistor Testing Methodology</A></h3>
+
+As with diode junctions, most digital meters show infinite resistance for
+all 6 combinations of junction measurements since their effective resistance
+test voltage is less than a junction diode drop (if you accidentally get your
+skin involved it will show something between 200K and 2M Ohms).  The best way
+to test transistors with a DMM is to make use of the "diode test" function
+which will be described after the analog test.  For both methods, if you
+read a short circuit (0 Ohms or voltage drop of 0) or the transistor
+fails any of the readings, it is bad and must be replaced.  This
+discussion is for OUT OF CIRCUIT transistors *ONLY*.
+<p>
+One exception to this occurs with some power transistors which have built in
+diodes (damper diodes reversed connected across C-E) and resistors (B-E,
+around 50 ohms) which will confuse these readings.  If you are testing
+a transistor of this type - horizontal output transistors are the most common
+example - you will need to compare with a known good transistor or check the
+specifications to be sure.  There are some other cases as well.  So, if you
+get readings that do not make sense, try to confirm with a known good
+transistors of the same type or with a spec sheet.
+<p>
+Before testing an unknown device, it is best to confirm and label
+lead polarity (of voltage provided in resistance or diode test mode) of
+your meter whether it be an analog VOM or digital DMM using
+a known good diode (e.g., 1N4007 rectifier or 1N4148 signal diode) as
+discussed below.  This will also show you what to expect for a reading
+of a forward biased junction.  If you expect any Germanium devices, you
+should do this with a Ge diode as well (e.g., 1N34).
+<p>
+The assumption made here is that a transistor can be tested for shorts,
+opens, or leakage, as though it is just a pair of connected diodes.
+<pre>
+
+           C                                    C
+           o                                    o
+           |           +--|>|---o C             |           +--|<|---o C
+         |/            |                      |/            |
+   B o---|    =  B o---+                B o---|    =  B o---+
+         |>            |                      |<            |
+           |           +--|>|---o E             |           +--|<|---o E
+           o                                    o
+           E                                    E
+
+          NPN Transistor                       PNP Transistor
+
+</pre>
+
+Obviously, simple diodes can be tested as well using the this technique.
+However, LEDs (forward drop too high more most meters) and Zeners (reverse
+breakdown - zener voltage - too large for most meters) cannot be fully
+tested in this manner (see the specific sections on these devices).
+
+<h3><A NAME="sttam">Testing with a (Analog) VOM</A></h3>
+
+For NPN transistors, lead "A" is black and lead "B" is red; for
+PNP transistors, lead "A" is red and lead "B" is black (NOTE:  this
+is the standard polarity for resistance but many multi-meters have the
+colors reversed since this makes the internal circuitry easier to design;
+if the readings don't jive this way, switch the leads
+and try it again).  Start with lead "A" of your multi-meter on the base
+and lead "B" on the emitter.  You should get a reasonable low resistance
+reading.  Depending on scale, this could be anywhere from 100 ohms to
+several K.  The actual value is not critical as long as it is similar to
+the reading you got with your 'known good diode test', above.  All Silicon
+devices will produce somewhat similar readings and all Germanium
+devices will result in similar but lower resistance readings.
+<p>
+Now move lead "B" to the collector.  You should get nearly the same reading.
+Now try the other 4 combinations and you should get a reading of
+infinite Ohms (open circuit).  If any of these resistances is wrong,
+replace the transistor.  Only 2 of the 6 possible combinations should
+show a low resistance; none of the resistances should be near 0 Ohms (shorted).
+<p>
+As noted above, some types of devices include built in diodes or resistors
+which can confuse these measurements.
+
+<h3><A NAME="sttdm">Testing with a (Digital) DMM</A></h3>
+
+Set your meter to the diode test.  Connect the red meter lead to the
+base of the transistor.  Connect the black meter lead to the emitter.  A
+good NPN transistor will read a JUNCTION DROP voltage of between .45v
+and .9v.  A good PNP transistor will read OPEN.  Leave the red meter
+lead on the base and move the black lead to the collector.  The reading
+should be the same as the previous test.  Reverse the meter leads in
+your hands and repeat the test.  This time, connect the black meter lead
+to the base of the transistor.  Connect the red meter lead to the
+emitter.  A good PNP transistor will read a JUNCTION DROP voltage of
+between .45v and .9v.  A good NPN transistor will read OPEN.  Leave the
+black meter lead on the base and move the red lead to the collector.
+The reading should be the same as the previous test.  Place one meter
+lead on the collector, the other on the emitter.  The meter should read
+OPEN.  Reverse your meter leads.  The meter should read OPEN.  This is
+the same for both NPN and PNP transistors.  
+<p>
+As noted, some transistors will have built in diodes or resistors which
+can confuse these readings.
+
+<h3><A NAME="sttpt">Testing Power Transistors</A></h3>
+
+Power transistors without internal damper diodes test just about like
+small signal transistors using the dual diode model, high in one direction
+B-E or B-C.  If there is a built in damper diode, it is across C-E back
+biased under normal operating conditions.  Therefore, a reading between
+C-E will also test low in one direction and B-C will show a double diode drop
+in the reverse direction. Also, there is often a low value resistor - about
+50 ohms - between B-E when there is a built in damper.  This will show up
+as a nearly zero volt junction drop on the diode test scale of a DMM but
+such a reading does not indicate a bad part.  Use the resistance scale
+to confirm.
+
+<h3><A NAME="sttdt">Testing Darlington Transistors</A></h3>
+
+A Darlington is a special type of configuration usually consisting of 2
+transistors fabricated on the same chip or at least mounted in the same
+package.  Discrete implementations as well as Darlingtons with more than
+2 transistors are also possible.
+<p>
+In many ways, a Darlington configuration behaves like a single transistor
+where:
+<ul>
+<li>the current gains (Hfe) of the individual transistors it is composed of are
+  multiplied together and,
+<p>
+<li>the B-E voltage drops of the individual transistors it is composed of are
+  added together.
+</ul>
+Darlingtons are used where drive is limited and the high gain - typically over
+1,000 - is needed.  Frequency response is not usually that great, however.
+<PRE>
+
+                       C
+                       o
+                       |
+               +-------+
+               |       |
+          B1 |/ C1     |
+     B o-----|         |
+             |\ E1     |
+               |  B2 |/ C2
+               +-----|
+                     |\ E2
+                       |
+                       o
+                       E
+
+</PRE>
+Testing with a VOM or DMM is basically similar to that of normal bipolar
+transistors except that in the forward direction, B-E will measure higher than
+a normal transistor on a VOM (but not open and 1.2 to 1.4 V on a DMM's diode
+test range due to the pair of junctions in series.  Note, 1.2 V may be too
+high for some DMMs and thus a good Darlington may test open - confirm that the
+open circuit reading on your DMM is higher than 1.4 V or check with a known
+good Darlington.
+
+<h3><A NAME="sttbr">Testing Digital or Bias Resistor Transistors</A></h3>
+
+Occasionally you may find a transistor that includes an internal bias
+resistor network attached to the base and emitter so that it can be driven
+directly from a digital (e.g., TTL) source.  These may be used in consumer
+electronic equipment where space is critical or for no good reason other than
+to make it difficult to locate a suitable replacement device!
+<PRE>
+
+                         C
+                         o
+                         |
+            R1         |/ 
+     B o---/\/\---+----|     Typical R1, R1: 47K.
+                  |    |\ 
+                  /      |
+               R2 \      |
+                  /      |
+                  |      |
+                  +------+
+                         |
+                         o
+                         E
+</PRE>
+The addition of R1 makes testing with a multimeter other than for shorts
+more difficult.  With a VOM, you should see a difference in the B-E and B-C
+junctions in the forward and reverse directions.  However, a DMM will probably
+read open across all pairs of terminals.
+
+<h3><A NAME="sttuj">Testing Unijunction and Programmable Unijunction
+ Transistors</A></h3>
+
+Unijunction Transistors (UJTs) and Programmable Unijunction Transistors (PUTs)
+are used in similar sorts of circuits though the UJT is all but extinct.
+They both exhibit a negative resistance characteristic and can be used easily
+in low to medium frequency free running relaxation oscillators and other
+trigger type circuits.
+<ul>
+<li>The UJT goes into heavy conduction from E to B1 when E becomes more
+ positive than a critical trigger voltage, Vt = n * Vbb + .6. (n, the
+ 'intrinsic standoff voltage' is typically about .6).  It continues to
+ conduct until the emitter current drops below some minimum 'valley current'
+ value.  Sounds sort of like a thyristor, right? :)
+<p>
+<li>The PUT is even more like a thyristor: The PUT in that the triggering
+ takes place when the G becomes more positive than the A (probably plus a
+ diode drop, .6 V) so that the threshold voltage can now be set with a
+ voltage divider feeding the anode.  Then, current flows from the G to the
+ K terminal.  Note that its leads are even labeled like an SCR but it behaves
+ sort of backwards!
+</ul>
+For an initial test, check between B1 and B2 (UJT) or A and K (PUT) with an
+ohmmeter.  The resistance should be the same in both directions and typically
+a few K ohms or more.  A short or wildly different readings would indicate a
+bad device.
+<p>
+This doesn't prove that the device is good - only that it isn't blown up.  A
+more complete test requires a simple circuit and some means of detecting an
+audio output signal.
+<p>
+For the UJT:
+<pre>
+
+               +5 VDC o--------+---------+
+                               |         |
+                               /         |
+                            R1 \         |
+                          100K /         |
+                               \         |
+                               |         |B2
+                               +-----. |-+
+                               |      \|   Q1 UJT
+                               |      E|-+--------o
+                               |         |B1
+                           C1 _|_        /      To scope or
+                        .01uF ---     R3 \      audio amp
+                               |      1K /      ~1K Hz
+                               |         \
+                               |         |
+                 Gnd o---------+---------+--------o
+
+</pre>
+
+For the PUT (Programmable Unijunction Transistor), an additional voltage
+divider (R3 and R4) is needed to set the threshold:
+<pre>
+
+              +10 VDC o--------+---------+
+                               |         |
+                               /         /
+                            R1 \      R3 \
+                          100K /      1K /
+                               \         \
+                               |         |
+                               |         +-------+
+                               |         |       |
+                               +-----.   |A      |
+                               |     G\__|__ Q1  |
+                               |       _\_/_ PUT |
+                               |         |K      |
+                               |         +-------|------o
+                               |         |       |
+                           C1 _|_        /       /   To scope or
+                        .01uF ---     R2 \    R4 \   audio amp
+                               |      1K /    1K /   ~1K Hz
+                               |         \       \
+                               |         |       |
+                 Gnd o---------+---------+-------+------o
+
+</pre>
+<p>
+(From: Spehro Pefhany (speff@interlog.com).)
+<p>
+A PUT is essentially an SCR with a large reverse gate breakdown voltage
+(G can be more positive than A by maybe 40 V) and a sensitive gate.  
+When the voltage at A exceeds the voltage at G by a diode drop, and
+assuming enough voltage from A to K, the SCR turns on (conducts from A to
+K) and stays that way until the current drops below the holding current
+(typically around 100 uA, but it drops with increasing resistance in series
+with the gate). 
+<p>
+Symbol and example:
+
+<pre>
+                           _
+                         /   \
+      A   G              -----
+      | /               |     |
+    -----               |     | 
+     \ /    PUT          -----  2N6028
+    -----                | | |
+      | K                A G K
+
+</pre>
+<p>
+If you connect your meter from A to K, it should measure open both ways.
+If you connect the positive lead (which may be red or black, depending on
+the meter design) to A and the negative lead to K, and then momentarily
+short G to K it should change to a relatively low resistance reading
+(meter dependent). It will most likely stay latched when the G lead is
+returned to being open, because the meter measuring current will exceed
+the "holding current" of the PUT (called "valley current" in PUT specs).
+<p>
+If your meter has a "diode" range (in the ohms group), using that would
+assure there is enough open-circuit voltage to make this work, but it
+works this way in the half-dozen or so meters I have checked, using
+reasonable ohms ranges. 
+<p>
+Measurements between A and G, with K open, should be similar to a silicon
+diode (fairly low in one direction, open in the other). Between G and K,
+with A open, should be open in both directions.  
+<p>
+PUTs are pretty sensitive (less than 1 uA trigger current) so be sure to keep
+fingers away from the G lead. 
+<p>
+<A NAME="stthy"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<h2>Thyristors - SCRs and Triacs</h2>
+<h3><A NAME="stwat">What are Thyristors</A></h3>
+
+Thyristors are used to control power in numerous applications including
+light dimmers and motor speed controls, solid state relays, some microwave
+ovens, photocopiers, traction motors for electric locomotives and electric
+cars, power inverters for transmission of electric power over long distances,
+frequency converters, other DC-DC or DC-AC or AC-AC inverters, AC-DC regulated
+power supplies, and many other applications where efficient power control
+is required.
+<p>
+A Silicon Controlled Rectifier is one type of thyristor used where the power
+to be controlled is unidirectional.  The Triac is a thyristor used where AC
+power is to be controlled.  (There are exceptions in both cases but for this
+simple discussion these can be ignored).
+<p>
+Both types are normally off but may be triggered on by a low current pulse to
+an input called the Gate.  Once triggered on, they remain on until the current
+flowing through the main terminals of the device drops below a hold value which
+is very close to zero.  It is usually not possible (at least not easy) to turn
+thyristors off while current is flowing.  However, there are special types
+called Gate Turnoff Thyristors which enable this type of control as well.
+<p>
+Both SCRs and Triacs are 4 layer PNPN structures.
+
+<h3><A NAME="sthdw">How Does a Thyristor Work?</A></h3>
+
+The usual way an SCR is described is with an analogy to a pair of cross
+connected transistors - one is NPN and the other is PNP.  The base of the NPN
+is connected to the collector of the PNP and the base of the PNP is connected
+to the collector of the NPN.
+<p>
+If we connect the positive terminal of a supply to say, a light bulb, and then
+to the emitter of the PNP transistor and its return to the emitter of the NPN
+transistor, no current will flow as long as the breakdown voltage ratings of
+the transistor are not exceeded because there is no base current to either
+transistor.  However, if we provide some current to the base of the NPN
+(IG(+).)ransistor, it will turn on and provide current to the base of the PNP
+transistor which will turn on providing more current to the NPN transistor.
+The entire structure is now in the solid on state and will stay that way even
+when the input to the NPN's base is removed - until the power supply goes to
+zero and the load current goes below the hold value.
+<p>
+The same scenario is true if we reverse the power supply and use the IG(-)
+input for the trigger.
+<PRE>
+
+                   +------+
+    + >------------+ LOAD +----------------+
+                   +------+                |
+                                           |
+                                          E \|
+                                      PNP    |---+-------< IG(-)
+                                          C /|   |
+                                           |     |
+                                           |   |/ C
+                         Gate IG(+)  >-----+---|    NPN
+                                               |\ E
+                                                 |
+                                                 |
+    - >------------------------------------------+
+
+</PRE>
+A Triac works in a basically similar manner except that the polarity of the
+Gate can be either + or - during either half cycle of an AC cycle.
+<p>
+For a light dimmer or motor speed control, for example, the exact time when
+the thyristor is triggered relative to the zero crossings of the AC power is
+used to determine the power level.  Trigger the thyristor early in the cycle
+and the load is driver an high power.  Trigger the thyristor late in the cycle
+and there is only a small amount of power delivered to the load.  The thermal
+or mechanical inertia is generally counted to smooth out the power and results
+in smooth continuous operation (i.e., a light bulb controlled by a dimmer does
+not flicker.)
+<p>
+The advantage of thyristors over simple variable resistors is that they
+(ideally) dissipate very little power as they are either fully on or fully off.
+<p>
+There are a wide variety of other types of thyristor and thyristor-like
+devices.  In particular, are diacs and sidacs which have no gate input but
+simply turn on when a specified threshold voltage is exceeded across their main
+terminals.  See the section: <A HREF="#sttds">Testing Diacs and Sidacs</A>.
+These are often used to trigger other thyristors in phase control applications.
+<p>
+For more information on thyristors, see Horowitz and Hill or any thyristor
+databook.
+<p>
+<h3><A NAME="sttth">Testing SCRs and Triacs</A></h3>
+
+<ul>
+<li>For SCRs, the gate to cathode should test like a diode (which it is) on a
+  multimeter.  The anode to cathode and gate to anode junctions should read
+  open.
+<p>
+<li>For triacs, the gate to main terminal 2 (MT2) should test like a diode
+  junction in both directions.  MT1 to MT2 and gate to MT1 junctions should
+  read open.
+<p>
+<li>For diacs and sidacs, there is no gate terminal - resistance should be
+ infinite in both directions.  For more complete testing, see the section:
+ <A HREF=#sttds">Testing Diacs and Sidacs</A>.
+</ul>
+Note: Some thyristors will have a low G-K/MT2 resistance but it should not read
+as a short.
+<p>
+The real test is quite simple but will require a low voltage DC power supply
+and two resistors.  For triacs, a negative output from the supply is desireable
+as well to test the triggering when the gate is negative).
+<p>
+R1 will be used to limit current through the device and R2 will be used to
+limit current to the gate.  A 12 VDC supply of at least 200 mA capacity with
+a 100 ohm 2 W resistor for R1 and 1 K 1/4 W resistor for R2 should work for
+most small to medium power SCRs.  Check the 'minimum gate current' and
+'holding current' specs to be sure.  For larger devices, R1 and/or R2 may
+need to be smaller.
+<PRE>
+
+                      R1
+        + o----+-----/\/\---------+-----o Test+
+               |   100, 2W      __|__
+               |                _\/\_ Device Under Test - DUT
+      12 VDC   |    R2          / |   (SCR or triac).
+               +---/\/\---o <--'  |
+                    1K     o      |
+                           |      |
+        - o----------------+------+-----o Test-
+
+</PRE>
+<ol>
+<li>Connect the supply as shown.
+<p>
+<li>Trigger the gate from the positive of the supply through the current
+   limiting resistor (R2) and see that the DUT turns on stays on when the
+   gate is disconnected.
+<p>
+<li>Open the circuit to the anode (with the gate connected to the cathode)
+   again reconnect the anode resistor. The DUT should now be off again.
+</ol>
+<ul>
+<li>For triacs, repeat steps (2) and (3) with R2 supplied from a negative
+ voltage.
+<li>For diacs, testing must be at full rated voltage.  See the section:
+ <A HREF=#sttds">Testing Diacs and Sidacs</A>.
+</ul>
+If the device passes these tests, it is behaving properly and is probably
+functional.  However, without applying full voltage or current, there is no
+way of knowing if it will meet all specifications.
+<p>
+You can replace the DC supply with a low voltage power transformer (say, 12
+VAC).  Use a scope to monitor the voltage across the DUT or R1.  Then, when
+the gate is connected to R2, you should see the voltage across the DUT drop
+to nearly zero when it switches on part way through the positive cycle.  This
+phase will be determined by the voltage and value of R2.  It should remain off
+for the entire negative cycle (SCRs only) with the gate connected and remain
+off all the time with the gate connected to the cathode.
+<p>
+(From: T. O. Prellwitz (timilen@halcyon.com).)
+<p>
+If you have a semiconductor curve tracer you can configure a small audio
+transformer circuit to drive the gate. I did this with my B&K and it works
+well. The secondary should provide enough voltage to drive the gate of
+the SCR and the negative swing of the AC will cycle the scr off while
+the positive phase turns it on. I drive the transformer with an audio
+generator. Hope this offers some ideas.
+
+<h3><A NAME="sttds">Testing Diacs and Sidacs</A></h3>
+
+Diacs and Sidacs are thyristors without any gate terminal.  They depend on the
+leakage current to switch them on once the voltage across the device exceeds
+their specified ratings.  With an ohmmeter, they can be tested only for shorts.
+Resistance should be infinite in both directions.
+<p>
+However,  you can test a diac or sidac with a resistor, variable power supply
+(you will need at least the rating of the device), and a DMM.  Hook them in
+series and monitor across the device.  With care, your variable supply can be
+a Variac, 1N4007, and 1 uF, 200 V capacitor.  Use a 47 K resistor to limit the
+current:
+<PRE>
+
+               D1            R1
+        ~ o----|>|----+-----/\/\---------+------o Test+
+             1N4007   |      47K         |
+                     _|_ C1            __|__
+     Variable AC     --- 1 uF          _\/\_ Device Under Test - DUT
+     0 to 140 VRMS    |                  |
+                      |                  |
+        ~ o-----------+------------------+------o Test-
+
+</PRE>
+CAUTION: this is not isolated from the power line.  Use an isolation
+transformer for safety.  If the DUT is rated more than about 180 V, you will
+need to use a doubler and higher voltage capacitor but testing is otherwise
+similar.
+<p>
+As you increase the input, the voltage on the DUT will track it until the
+rated voltage at which point it will drop abruptly to zero and stay there
+until the voltage is reduced below its holding current.  Repeat with the
+opposite polarity.
+<p>
+With a scope it is even easier as you can use an AC supply directly (remove
+D1 and C1) and observe that the DUT will turn on at the proper voltage on
+both polarities of the AC waveform and stay on until the voltage crosses 0.
+<p>
+Use an isolation transformer for safey.
+
+<h3><A NAME="sttil">Thyristors Driving Inductive Loads</A></h3>
+
+<blockquote>
+"I am trying to turn on a triac which is driving an inductive load (solenoid)
+ using a digital signal without using an opto triac. I get limited success."
+</blockquote>
+(From: Jeroen Stessen (Jeroen.Stessen@philips.com).)
+<p>
+It is soooo easy: just use a DC current to drive the gate of the triac.  Even
+the polarity of the current doesn't matter, although most triacs are more
+sensitive for a negative input current (flowing out of the gate to a negative
+supply). A large triac may require some 50 mA.
+<p>
+There will be some applications where there is no 50 mA supply available.
+That's where you would want to drive with short pulses. But these pulses would
+have to occur around the expected instant of the zero-crossing of the load
+current, which is a bit tricky with an inductive load.
+<p>
+As an alternative you could look for a more sensitive triac, for not too large
+load currents there are types down to 5 mA or so.  If you have 50 mA of DC to
+spare, go for it, it will work.
+<p>
+By the way, never switch an inductive load like a power transformer ON at the
+zero crossing of the mains voltage. That's guaranteed to drive the transformer
+into saturation and create the worst possible current transient.  Try and
+switch on at maximum mains voltage, at +/- 90 degrees delay.  Do not use a
+voltage differentiator to generate +90 degrees phase shift, as it will be too
+sensitive to mains disturbances.  Instead, use a double integrator to give
+2 * -45 degrees and a low-pass filter. Using only 1 integrator to approach -90
+degrees gives too much attenuation of the voltage, hence 2 are recommended.
+
+<h3><A NAME="stbut">Burning Up of Thyristors</A></h3>
+
+(From: Neill Means (means@expert.cc.purdue.edu).)
+<p>
+Any thyristor will have a maximum change in current vs change in time  dI/dt.
+If this is exceeded,  then  current flowing through the thyristor will find
+the path of least resistance through the silicon.  Unfortunately, for us, this
+can be thought of as a molecular sized lightning bolt streaking through the
+doped layers of silicon - finding the path of least resistance from individual
+molecule to individual molecule.  This soon results in an 'avalanche' of
+electrons streaming through a very small path and this process feeds on itself
+until the thyristor dies.  This whole process probably takes only microseconds
+to happen.  
+<p>
+I don't know if fast blow fuses will help this situation if the current changes
+too rapidly.  A fuse is a very analog device with mass and it seems like it
+would be a slow, lumbering giant compared to almost instantaneous current
+change.
+<p>
+The solution for this problem?  I am guessing putting an appropriately sized 
+inductor in series with the light bulb, but just be sure to add the correct 
+over voltage snubbing network.  The inductor will keep the current from
+changing too rapidly.
+<p>
+<A NAME="stast"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<h2>Additional Semiconductor Tests</h2>
+<h3><A NAME="stiub">Identifying Unknown Bipolar Transistors</A></h3>
+
+The type (NPN or PNP) and lead arrangement of unmarked transistors can be
+determined using a multimeter based on similar considerations.  This, again,
+assumes the back-to-back diode model.  The collector and emitter can then be
+identified based on the fact that the doping for the B-E junction is
+always much higher than for the B-C junction.  Therefore, the forward
+voltage drop will be very slightly higher - this will show up as a couple
+of mV (sometimes more) difference on a DMM's diode-test scale or a slightly
+higher resistance on an analog VOM.
+<p>
+To determine the lead arrangement, label the pins on the unknown device
+1, 2, and 3.  Put the positive probe (as determined above) of you multimeter
+on pin 1.  Now, measure the resistance (VOM) or diode drop (DMM) to the other
+two pins.  If the positive probe is on the base of a good NPN transistor,
+you should get low resistance readings or a low diode drop to the other
+two leads.  The B-C resistance or diode drop will be just slightly lower
+than the B-E reading.
+<p>
+If one or both measurements to the other two pins is high, put the positive
+probe on pin 2 and try again.  If still no cigar, try pin 3.
+<p>
+If this still doesn't work, you may have a PNP transistor - repeat with the
+negative probe as the common pin.
+<p>
+If none of the six combinations yields a pair of low readings - or if more
+than one combination results in a pair of low readings, your transistor is
+likely bad - or it is not a bipolar transistor!
+<p>
+As noted, some power transistors have built in base resistors or damper
+diodes and will confuse these measurements.  However, the lead arrangement
+of these types of transistors is usually self evident (standard TO3, TOP3,
+or TO220 cases).  There are also some transistors with series base resistors
+which may prove confusing.  There are relatively rare, however.
+<p>
+Voltage ratings are more difficult and require a low current variable DC
+power supply with a maximum voltage output greater than the expected (or
+desired) breakdown rating of the transistors being tested.  A fixed DC
+supply with a suitable potentiometer is also satisfactory.  For tests up
+to 100 V, a 100K ohm pot would be satisfactory.  Put a current limiting
+resistor of about 100 K ohms in series with the output.  For higher voltage
+transistors, use an appropriate power supply and increase the value of the
+potentiometer (if used) and current limiting resistor.  It should be
+possible to determine approximate values for Breakdown Voltages such as:
+<p>
+	BVcbo - collector to base, emitter open.
+	BVceo - collector to emitter, base open.
+	BVces - collector to emitter, base shorted to emitter.
+	BVebo - emitter to base, collector open.
+<p>
+Apply your variable voltage across the appropriate leads and monitor
+at the transistor with your VOM or DMM.  The breakover point should be
+easily detectable.  The current limiting resistor should prevent damage
+to the part from power dissipated in the reverse biased junction.
+<p>
+This approach also works for signal, rectifier, zener diodes, and other
+similar devices.
+
+<h3><A NAME="stluk">Luke's Comments on Junction Voltage Drops and
+ Doping</A></h3>
+
+(From: Luke Enriquez VK3DLE (ecsclfe@lux.latrobe.edu.au).)
+<p>
+The B-C junction voltage drop is always very slightly lower than the E-B
+junction drop.  The drop is given by the equation:
+<pre>
+        Vdrop = Vt * ln ( Na*Nd/ni<sup>2</sup> )
+</pre>
+where:
+<pre>
+        Vt = kT/q = 26 mV at 300 degrees K
+
+        ni = intrinsic carrier concentration in a pure sample of silicon
+             (ni = 1.5 * 10<sup>10</sup> cm-3 at 300 deg K for silicon)
+
+        Nd = doping density atoms/cm<sup>3</sup> in the n-type material
+
+        Na = doping density atoms/cm<sup>3</sup> in the p-type material
+</pre>
+This equation means that if the doping density at the Base-Emitter junction
+is higher than the Base-Collector junction, the Vdrop of the Base-Emitter
+junction will be higher than that of the Base-Collector junction.
+<p>
+This has been confirmed below on a selection of common transistors using an
+El-cheapo DMM:
+<PRE>
+     Transistor       B-C Voltage     B-E Voltage
+   --------------------------------------------------
+       TIP3055           0.640           0.642
+       TIP2955           0.668           0.668
+       BD140             0.697           0.699
+       2N2369A           0.682           0.710
+       PN3563            0.752           0.753
+       BC108             0.715           0.716
+</PRE>
+CAUTION: Do not hold the transistor under test in your hand.  For every degree
+the transistor increases in tempreture, the Base-Emitter Diode Drop (commonly
+called Vbe) decreases by 2 mV. This is a significant amount when determining
+the B-E and B-C junctions.
+
+<h3><A NAME="stlan">Lance's Method for Determining C and E on an Unmarked
+ Bipolar Transistor</A></h3>
+
+(Slightly edited for readability --- sam)
+<p>
+(From: Lance (cast@iafrica.com).)
+<p>
+Using an analog (VOM - a DMM will not work), on its highest resistance range
+I test across the collector and the emitter one way and then change the leads
+around.  The reading that is lower reading is the one to note (the one
+with the most leakage on a uA meter).  Sometimes the needle only just barely
+moves.  For a PNP the positive lead is on the emitter and for a NPN the
+positive lead is on the collector.  Now you know the base collector
+and emitter, this has helped me work out how a circuit works by finding the
+legs of the working transistors and then repairing it. I found this in a
+very old mag more than fifteen years ago.  If I can't remember which way
+is what I use a known transistor. I then find out the hard way.  (Note:
+for a VOM, the polarities of the leads are often opposite of the color code
+as noted above --- sam).
+
+<h3><A NAME="stmos">Testing MOSFETs</A></h3>
+
+(From: Paul Mathews (optoeng@whidbey.com).)
+<ol>
+<li>Verify gate has infinite resistance to both drain and source.  Exception:
+   FETs with protection circuitry may act like there is a zener shunting GS,
+   i.e., diode drop for gate reverse bias, ~20V breakdown in fwd bias.
+<p>
+<li>Connect gate to source.  Drain to source should act like a diode.
+<p>
+<li>Forward bias GS with ~5 V.  DS in forward bias should measure very low 
+   ohms.  In reverse bias, it will still act like a diode.
+</ol>
+The usual failure mode:  GS short AND DS short.  In other words, everything 
+connected together.
+<p>
+(From: Richard Torrens (4qd@argonet.co.uk).)
+<p>
+A lot of common multimeters have a diode range: you can use this to measure
+a MOSFET out of circuit and get a good idea of whether it is OK. Meter negative
+on the source, you should get no reading (open circuit) on the drain. Not on
+the gate but if you measure the drain AFTER measuring the gate you will find
+it conducts. A finger between source and gate will bleed away the charge and
+the MOSFET stops conducting.
+<p>
+You really need a 'scope to check the drive circuit. What it does will
+depend on the circuit configuration, whether there is current limiting etc.
+<p>
+(From: E. Wolsner (interser@algonet.se).)
+<p>
+My way of testing a power MOSFET is indeed simple and normally sufficient:
+<p>
+One ohmmeter is connected to the drain and the source, measuring the
+resistance between drain and source, which should be very high. Another
+ohmmeter is connected between gate and source. This ohm-meter should have a
+high resistance capability (maybe 20 M ohms) and thus have a relatively high
+test voltage (more than 5 volts).  Now this voltage, when connected with the
+proper polarity, will turn the mosfet on, which will be indicated by the first
+ohm-meter. It will show zero resistance. To turn the transistor off, you
+reverse the gate-source voltage, and the drain-source ohm-meter will again
+indicate high resistance.
+<p>
+(Portions from: Egon Wolsner (interser@algonet.se).)
+<p>
+The multimeter must be able to provide at least 5 volts output on the
+resistance measuring range (this usually means that a DMM will not work).
+If it does, here is the procedure:
+<p>
+First you measure the resistance between the drain and source terminals, it
+should be infinity. Then connect the plus to the gate and the minus to the
+source pin. That should turn the MOSFET on. Then you measure the resistance
+between the drain and source pins, which should verify that the resistance is
+indeed near zero.  (The gate capacitance will hold the device in the on-state
+long enough for this test.)  Turn the mosfet off by shorting the gate and
+source pins (for a n-channel MOSFET)
+<p>
+(From: Bruce (reglarnavy@aol.com).)
+<p>
+You can get a pretty good idea about the condition of a MOSFET with some
+quick & simple bench tests.  The first thing you can do with a meter is measure
+the parasitic substrate diode that connects the drain to the source.  In an
+NMOS part, this diode's cathode will be at the drain, and the anode at the
+source.  It will meter out similar to any conventional diode in both fwd /
+reverse directions.  You can see this diode in the schematic representation of
+the FET in some databooks and a few schematics.  The FET should show infinite
+resistance, gate - source and gate - drain.  If it does not, then the gate
+oxide may be blown.
+<p>
+A second simple test can be done with a meter and a 9 V battery.  First,  short
+the gate to the source to discharge any stored charge there.   Then put your
+meter on ohms and connect it across the drain - source.  It should measure as
+an open.  Briefly connect the 9 V across the gate (+) to source (-) , again,
+NMOS polarities, and the meter resistance should fall to a very low resistance,
+on the order of an ohm or less.  Removing the battery will not change the
+reading, because in a good FET, Ciss will remain charged for a long time and
+keep the FET on.   Most FETs come on at Vgs=2 volts or so.  
+<p>
+If these two tests work, then the FET is off to a good start.  Substituting a
+power supply and a proper load resistor for the meter, and a variable voltage
+(a pot across the 9v will work) for the Vgs supply, in the aforementioned test,
+will obviously be a more realistic test, and will also let  you measure Vds,
+Id, etc.
+<p>
+BEWARE ESD WITH FETS!  Wear a wrist strap, keep the parts away from insulators
+like plastics, and make sure your soldering iron tips are grounded.  If you do
+not have any of the black ESD foam to keep your parts in, then look around for
+an anti-static bag that once may have contained a computer board, SIMMs, etc.
+
+<h3><A NAME="stled">Testing LEDs</A></h3>
+
+Electrically, LEDs (and IR emitting diodes, strictly speaking called IREDs)
+behave like ordinary diodes except that their forward voltage drop is higher.
+<p>
+Typical values are:
+<p>
+IR: 1.2 V, Red: 1.85 V, Yellow: 2 V, Green: 2.15 V.  The new blue LEDs will
+be somewhat higher (perhaps 3 V).  These voltages are at reasonable forward
+current.  Depending on the actual technology (i.e., compounds like GaAsP, GaP,
+GaAsP/GaP, GaAlAs, etc.), actual voltages can vary quite a bit.  For example,
+the forward voltage drop of red LEDs may range at least from 1.50 V to 2.10 V.
+Therefore, LED voltage drop is not a reliable test of color though multiple
+samples of similar LEDs should be very close.  Obviously, if the device is
+good, it will also be emitting light when driven in this way if the current is
+high enough.
+<p>
+So, test for short and open with a multimeter (but it must be able to supply
+more than the forward voltage drop to show a non-open condition).
+<p>
+An LED can be weak and still pass the electrical tests so checking for output
+is still necessary.
+<p>
+Therefore, if these tests don't find a problem, drive the LED from a DC supply
+and appropriate current limiting resistor.  For the IR types, you will need a
+suitable IR detector.  See the document: "Notes on the Troubleshooting and
+Repair of Hand Held Remote Controls" for a variety of options.
+
+<h3><A NAME="stopt">Testing Opto-Isolators and Photo-Interrupters</A></h3>
+
+Both these classes of components are basically similar: a light source (usually
+an IR LED) and photodetector together in a single package.
+<ul>
+<li>The opto-isolator will be totally sealed with adequate separation between
+ the two parts to provide the specified isolation voltage rating.
+<p>
+<li>The photo-interrupter (and similar devices) will provide a beam path that
+  can be blocked or otherwise modified by external means.
+</ul>
+For both types, the photodetector can be a photodiode, phototransistor,
+photothyristor, or other more complex device or circuit.
+<p>
+Refer to an optoelectronics databook or the catalog of a large electronics
+distributor for specific pinouts and specifications.
+<p>
+Assuming a photodiode or phototransistor type (most common), these can be
+tested for basic functionality pretty easily:
+<p>
+Wire up a test circuit as follows:
+<PRE>
+
+          +5 o-----+------------------+
+                   |                  |
+                   /                  /
+                   \ 500              \ 5K
+                   /                  /
+                   \                  \
+                   |  _|_ S1          |
+                   +--- ----+         +-------------o Out
+                        - - | - - - - | -
+                       :  __|__      _|_ :
+                   LED :  _\_/_ ---> /_\ : Phododiode
+                       :    |         |  :
+                        - - | - - - - | -
+         Gnd o--------------+---------+-------------o Gnd
+
+</PRE>
+Depressing S1 should result in the Output dropping from +5 V to close to 0 V.
+For monitoring on a scope, drive the LED with a pulse generator and current
+limiting resistor instead of S1.  With a photo-interrupter type, blocking
+or adding a reflector to the optical path (as appropriate) should result in
+similar behavior.
+
+<h3><A NAME="stthr">Testing Thermistors</A></h3>
+
+There are two types of thermistors:
+<ul>
+<li>Positive Temperature Coefficient (PTC) types have a resistance that
+  increases with increasing temperature.
+<p>
+<li>Negative Temperature Coefficient (NTC) types have a resistance that
+  decreases with increasing temperature.
+</ul>
+For a small thermistor, put an ohmmeter on it and the heat it up with a blow
+dryer, heat gun, or the tip of a soldering iron - the resistance should change
+smoothly (up or down depending on whether it is PTC or NTC type).  If the
+resistance changes erratically, or goes to infinity or zero, the device is
+bad.  However, you will need specifications, temperature measuring sensors,
+etc. to really determine if it is operating correctly.
+
+<h3><A NAME="sttec">Testing Thermo-Electric (Peltier) Devices</A></h3>
+
+While these are often called Thermo-Electric Coolers (TECs), they are equally
+good (or poor) at heating.  The typical TEC uses a series connected string
+of thermocouple-like junctions sandwiched between a pair of ceramic plates.
+They are generally specified in terms of maximum temperature difference
+(typically between 60 to 70 &deg;C); maximum current, voltage, and power
+dissipation; and physical dimensions.
+<p>
+Most problems will be obvious - like the entire thing was smashed by your pet
+elephant or melted down due to applying too much power. :)  However,
+a hairline crack in one of the interior junctions could be undetectable
+without testing.
+<p>
+The best way to test a TEC is to apply a controlled current and monitor the
+voltage across the device as a function of current and measure the temperature
+difference between the hot and cold surfaces.  Then, compare the readings
+with the device's specifications.  If these aren't known, it may be possible
+to match up your device with one of similar dimensions.  One major supplier
+is <A HREF="http://www.melcor.com/">Melcore</A>.
+<p>
+Testing for continuity can be done with an ohmmeter but really only if the
+temperature of the two sides is exactly equal - otherwise there will be
+a voltage offset (the junctions also generates voltage when a temperature
+difference is present - and this can also serve as a test of sorts).
+<p>
+The I-V characteristics should be fairly linear over a relatively wide
+range of current within the device's specified operating range.  However,
+the voltage for a given current does vary slightly with the temperature
+difference between the hot and cold surfaces.
+<p>
+<hr>
+<br>
+<A NAME="stmis"></A>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<h2>Miscellaneous Information</h2>
+<h3><A NAME="stdof">Differences Between Ordinary, Fast Recovery, and Schottky
+ Diodes</A></h3>
+
+When the polarity reverses on a diode, it takes finite time for the charge
+carriers to be cleared from the area of the junction.  During this time,
+reverse current flows.  For high frequency applications - i.e., switching
+power supplies, horizontal deflection circuits, etc. - a normal diode would
+act more like a short circuit and result in poor performance or even burn
+out.
+<p>
+There are a variety of alternatives: fast, super-fast, ultra-fast (and so
+forth) recovery diodes, schottky diodes, and others that must be used in
+high frequency signal, switching, and power supply circuits:
+<p>
+Thus, if you find a bad diode in a piece of electronic equipment, don't
+assume it is just an ordinary diode because the case looks the same.  Replacing
+a fast recovery diode with a 1N4007 will very likely just result in more
+confusion.  A proper device must be used even for testing.  In most cases,
+a faster part can be substituted without problems.  However, there are
+occasional situations where the specific characteristics of a slow part
+(a reverse pulse due to its long recovery time or high capacitance) are
+depended upon for the circuit to operation properly!
+<p>
+(From: John Popelish (jpopelish@rica.net).)
+<p>
+Fast recovery diodes have a little gold added to the silicon (and perhaps
+other process changes) that make the minority carriers (holes in n type and
+electrons in p type sides of the junction) have shorter lifetimes, so that in
+addition to sweeping them out by applied voltage, the carriers spontaneously
+disappear.  This makes the diodes turn off faster.  Other tricks help the
+diodes to turn off with less of a snap, to reduce high frequency noise
+generation.  These changes usually compromise other properties of the diode,
+like reverse leakage, forward drop or breakdown voltage, so there are lots of
+different combinations of trade-offs.
+<p>
+Schottky diodes are really just half diodes.  A metal intimately bonded to a p
+type semiconductor.  Holes have a zero lifetime in metal, so the minority
+lifetime is just about zero for schottky diodes.  They also have about half a
+diode drop in the forward direction, and so are twice as efficient even for
+low frequency rectification.  The trade off here is that they can only be made
+to handle low reverse voltages and even there, they have more reverse leakage
+than junction diodes.
+<p>
+Motorola published a diode handbook that goes into a lot more detail on these
+things and I recommend it.
+
+<h3><A NAME="sthot">Horizontal Output Transistor Pinouts</A></h3>
+
+You will nearly always find one of two types of horizontal output transistors
+in TVs and monitors:
+<ul>
+<li>Metal can - TO3 package:
+<PRE>
+               _
+             / O \         View from bottom (pin side).
+           / o   o \
+          (  B   E  )      B = Base, E = Emitter, C = Collector.
+           \       /
+             \ O / C       The metal case is the Collector.
+</PRE>
+
+<li>Plastic tab - Mostly these will be the TO3Pn (n = several suffixes) package
+ but some B/W TVs and mono monitors or video display terminals may use HOTs
+ in the smaller TO220 package:
+
+<PRE>
+                    TO3Pn
+       TO220        _____
+       _____       /     \
+      |  o  |     |   O   |      View from front (label side).
+      |-----|     |-------|
+      |Label|     |       |      B = Base, E = Emitter, C = Collector.
+      |_____|     | Label |
+       | | |      |_______|      If there is an exposed metal tab, that is
+       | | |        | | |         the Collector as well.
+       B C E        | | |  
+                    B C E
+</PRE>
+</ul>
+Some other transistor types use the same pinout (TO66 for metal can, TO218
+and TO220 for plastic tab) but not all.  However, for horizontal output
+transistors, these pinouts should be valid.
+<p>
+Note that those with a built in damper diode may read around 50 ohms between
+B and E (near 0 on the diode test range) - this is normal as long as the
+resistance is not really low like under 10 ohms.
+
+<h3><A NAME="stdnr">Difference Between Normal and 'R' Marked Parts</A></h3>
+<blockquote>
+"Does anyone know the difference between transistor BDY58R and BDY58 (if any
+ at all)?"
+</blockquote>
+(From: Paul Grohe (grohe@galaxy.nsc.com).)
+<p>
+Yep! We "hit our head" on this one while diagnosing a sick scope.
+<p>
+Electrically, the parts are exactly the same.  The "R" stands for 'reverse'.
+The 'R' pinout is a mirror image of the normal one.
+<p>
+<PRE>
+
+                     C                                  C
+                ____|_|____                        ____|_|____ 
+               |           |                      |           |
+               |___________|                      |___________|
+                | |     | |                        | |     | |
+                 B       E                          E       B
+
+         Top view of 'normal' SOT              Top view of 'R' SOT
+
+</PRE>
+This makes layout of high-frequency pairs easier because traces do not have to
+cross over one another, and the layout is 'cleaner' but bites you if you are
+unaware!
+
+<h3><A NAME="sttze">Testing Zener Diodes</A></h3>
+
+The following applies to both testing of zeners for failure and determining
+the ratings of an unknown device.  Zeners most often fail short or open
+with short probably more likely.  However, it is also possible, though a lot
+less common, for the zener voltage to change (almost always to a lower voltage)
+and/or for the shape of the I-V curve to change dramatically (e.g., become
+less sharp cornered).
+<p>
+With a VOM, a good zener diode should read like a normal diode in the forward
+direction and open in the reverse direction unless the VOM applies more than
+the zener voltage for the device.  A DMM on its diode test range may read the
+actual zener voltage if it is very low (e.g., a couple V) but will read open
+otherwise.  The most common failure would be for the device to short - read
+0.0 ohms in both directions.  Then, it is definitely dead. :)
+<p>
+Some zeners are marked with a JEDEC (1N) part number, others with a couple of
+colored bands (e.g., for 18 V, brown/gray), or a house number or house color
+code.
+<p>
+You can easily test a zener and identify its voltage rating with a DC power
+supply, resistor, and multimeter.  You will need a power supply (a DC wall
+adapter or AC wall adapter with a rectifier and filter capacitor is fine)
+greater than the highest zener voltage you want to test.  Select a resistor
+that will limit current to a few mA.  For example, for zeners up to about
+20 V, you can use:
+<PRE>
+
+                             R=2K
+            24VDC o----------/\/\----------+----------o
+                                          _|_.        +
+                                         '/_\ ZD   VOM/DMM
+                                           |          -
+              Gnd o------------------------+----------o
+
+</PRE>
+This same approach applies to other devices that exhibit a similar behavior
+such as the B-E junction of a bipolar transistor.
+
+<h3><A NAME="sttmo">Testing MOVs</a></h3>
+
+MOVs are used mostly for surge suppression in power strips and the front-ends
+of the power supplies of TVs, VCRs, and other consumer electronic equipment.
+They are those brightly colored things that look like Epoxy dipped capacitors.
+At least, that's what they look like when new.  A common failure mode is for
+the MOV to be totally obliterated by a surge or from old age.  Then testing
+is not needed! :)
+<p>
+They are supposed to be located beyond the line fuse (though possibly not
+always).  In this case, where the line fuse blows but there is no visible
+damage to the MOV(s), the simplest test may be to just temporarily remove the
+MOV(s) and see if your problem goes away.
+<p>
+A multimeter can be used to test for leakage (there should be none) but the
+best option is to remove the device.  Since the proper functioning of the
+equipment doesn't depend on any MOVs (in 99.9999 percent of the cases - the
+exception being where the MOV is used as a high voltage triggering device
+or something like that rather than a surge suppressor), remove the MOV(s),
+test the equipment, and just replace the MOV(s) if in doubt.
+<p>
+(From: Brad Thompson (Brad_Thompson@pop.valley.net).)
+<p>
+Usually, the manufacturers specify a maximum leakage current (usually one
+milliampere) at a AC specified voltage. You'd need a Variac adjustable AC
+source, an isolation transformer (for safety), an AC voltmeter and an AC
+milliammeter to make the measurement.
+<p>
+An MOV works as follows: It's essentially a batch of metallic-oxide grains
+separated by insulating layers. Repeated voltage surges break down the
+insulating layers, lowering the overall resistance and eventually causing the
+device to draw too much current and trip whatever overcurrent protection is
+inherent in the system.
+<p>
+I've seen MOVs exuding tiny metallic "teardrops" through their epoxy coatings,
+which remained bright and shiny. These devices needed replacement!
+<p>
+(From: Kevin Carney (carneyke@us.ibm.com).)
+<p>
+This is not a valid test for breakdown voltage but these devices read a few
+megohms when damaged.  The new replacements read open on my meter that has a
+20 Megohm range of a DMM.
+<p>
+<A NAME="stitc"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<h2>Introduction to Curve Tracers</h2>
+<h3><A NAME="stctd">Curve Tracer Design</A></h3>
+
+A curve tracer is a piece of test equipment or an add-on to an oscilloscope
+which provides a graphical display of the V-I (or other parameters) of an
+electronic component.  The design of a curve tracer is simple in principle
+(description here for bipolar transistors):
+<p>
+For the horizontal (collector supply) you need a variable ramp generator.
+If your scope has a sweep output, then you can derive it from this - if
+you are not interested in frequency response, an audio amplifier may be
+adequate with a volume control to adjust the amplitude.
+<p>
+For the base drive you need a programmable current source capable of putting
+out a series of constant currents for the base drive.  Here, a counter driving
+a D/A set up for a current output mode.  Use the trigger output or sweep
+output of the scope to increment the counter so that it sequences through
+a set of say, 10 current settings.
+<p>
+Then, you need some way of sensing collector current to drive the vertical
+channel - a small series resistor in the emitter circuit, for example.
+<p>
+For simple diode tests, you can just use a variable AC voltage source like a
+variable isolation transformer (with a current limiting resistor) across the
+diode.  The X (horizontal) input of the scope goes across the device under
+test.  The Y (vertical) input of the scope goes across the current limiting
+resistor or a separate series current sense resistor.  See the section:
+<A HREF=#stqdc">Quick and Dirty Curve Tracer</A>.
+<p>
+Then, you can jazz it up with microprocessor controlled on-screen display.
+<p>
+Curve tracers can be big expensive things (e.g., multi-$K) or little add-ons
+to regular scopes.  Here one company selling a curve tracer kit or assembled.
+I have no idea how good it is but check out
+<A HREF="http://www.fullnet.com/u/tomg/index.html">Gootee Systems</A> for more
+info.
+<p>
+Popular Electronics, May 1999, has complete plans for a "Semiconductor Tester"
+which can handle NPN and PNP bipolar transistors, JFETs and MOSFETs, all sorts
+of diodes including zeners, and a variety of other devices.  This is basically
+a curve tracer adapter for an oscilloscope.  With a little ingenuity, it can
+be enhanced to test virtually all the semiconductors discussed in this
+document.
+<p>
+Therefore, if you want a sophisticated piece of test equipment, one of these
+would be suitable.  Or, get yourself a used Tektronix 575 curve tracer.  This
+will do just about everything you could possibly want (including the testing
+of vacuum tubes with the addition of a bit of external circuitry.)
+<p>
+However, to just test 2 terminal devices - or to just get a feel for device
+characteristics, there are much simpler, cheaper, alternatives.
+
+<h3><A NAME="stqdc">Quick and Dirty Curve Tracer</A></h3>
+
+I threw the following circuit together in about 10 minutes.  With minor
+modifications, it is capable of displaying V-I curves for diodes, zeners,
+transistors, thyristors, resistors, capacitors, inductors, etc.
+<p>
+I used a 12 VAC transformer just because it was handy.  You can use anything
+you like as long as you understand the safety implications of higher voltages
+and make sure the components you use can withstand the power that might be
+dissipated in them if the Device Under Test (DUT) is a dead short.  In
+addition, it is bad form to blow out the DUT while testing it!  A signal
+generator driving a small audio transformer could also be used if it is
+desired to test components at frequencies other than 60 (or 50) Hz.
+<PRE>
+
+          o-------+     X       R1
+                   )|| +------/\/\/\------+----o Horizontal Scope Input
+                   )||(                   |         (Voltage Display)
+                   )||(                   o
+    Adjustable AC  )||(                   +
+     from Variac   )||(                  DUT
+                   )||(                   -
+                   )||(                   o
+                   )||( Y       R2        |
+                   )|| +--+---/\/\/\------+----o Scope Ground
+          o-------+       |
+                    T1    +--------------------o Vertical Scope Input Inverted)
+                                                   (Current Display)
+
+</PRE>
+CAUTION: turn down the intensity of the scope so the spot is just barely
+visible so that when there is no input, you don't end up drilling a hole
+in the face of the CRT!
+<ul>
+<li>R1: Current limiting and phase shift control.  I used 500 ohms which works
+    well for small signal semiconductors and capacitors around 1 uF.
+<p>
+<li>R2: Current sense.  I used 10 ohms and put the scope on the one of the
+    .1, .2, or .5 V/cm ranges.
+<p>
+<li>T1: Small power transformer.  I used the 12 VAC wall wart from an obsolete
+    modem.  This will supply a voltage of up to about 17 V peak to your DUT.
+<p>
+    For higher power or higher voltage devices, substitute a suitable larger
+    transformer.
+</ul>
+Modify these (selector switches might be nice) for your needs.  A Variac
+provides a convenient method of adjusting the voltage applied to the DUT.
+<ul>
+<li>Zener diodes - the result will be exactly like the picture in your
+  textbook.  Try this with a 5 or 6 V zener to confirm that your rig is
+  working.
+<p>
+<li>Resistors - the display should be a straight diagonal line.  You should be
+  able to compute their value from the ratio of V to I.
+<p>
+<li>Capacitors - you should see the phase shift between voltage and current
+  resulting in an ellipse (though you will probably have to adjust the scale
+  factors to obtain a usable display with typical capacitor values).
+<p>
+<li>Bipolar transistors - a source of (DC) base current is needed.  You can
+  be fancy or simple.  For a simple source, I used a variable 0 to 15 V power
+  supply and a current limiting resistor.  Since we know that the voltage drop
+  across the B-E junction is fairly constant at around .7 V (for silicon), the
+  output of the supply can be calibrated in terms of base current.
+<p>
+<li>SCRs - connect a suitable resistor in series with a diode or two (or a
+  diac) between the gate and DUT+ (so that gate current in included in
+  the V-I curve).  When the threshold current is exceeded, the device should
+  turn on and remain on until the zero crossing.  With the reverse polarity,
+  the device should remain off.  For triacs, use diodes in parallel in both
+  directions or a diac.  A triac should trigger on both polarities of the AC
+  waveform.
+</ul>
+
+<h3><A NAME="stict">In-Circuit Tester</A></h3>
+
+The following is along the same lines as the "Quick and Dirty Curve Tracer"
+but is suitable for in-circuit testing as the current and voltage are limited
+to safe values for most devices (less than 1 VAC and than 1 mAAC respectively).
+<p>
+The very complicated circuit is shown in: <a href="curve.gif">curve.gif</a>
+and below in ASCII.
+<p>
+CAUTION: Use at your own risk.  I cannot absolutely guarantee that there
+won't be certain devices in use today that didn't exist in 1975 that might
+be unhappy with this approach.
+<p>
+(From: Wern Thiel (wern@zoo.toronto.edu).)
+
+<PRE>
+
+                220
+         o-----/\/\-------+---------+-------------o  Vertical Scope Input
+                          |         |
+                          |         \
+           To the 3 V     |         / 1 K
+           winding of a   |         \
+           6 V center     /         /
+           tapped power   \ 100     |
+           transformer    /         o-------------o  Ground
+                          \         |
+                          |         o
+                          |  Red component test lead
+                          |
+                          |  Black component test lead
+                          |         o
+                          |         |
+         o----------------+---------+-------------o Horizontal Scope Input
+
+</PRE>
+In the August 1975 issue of Popular Electronics author Lou Garner wrote in a
+story called "A simple On-Board Tester" about this fairly simple piece of test
+equipment.
+<p>
+The device can be used with any type of oscilloscope and consists of a 6 volt
+filament transformer, three 1/4 watt resistors and two test probes.  Half of
+the filament voltage is applied to a voltage divider consisting of 220 ohm and
+100 ohm resistors, yielding 1 volt ac on top of the 1 K ohm resistor.  This
+voltage can be applied to any component or combination of components across
+which the test leads are placed. The current is limited to one milliampere
+by the 1 K ohm resistor.
+<p>
+The voltage across the probes is connected to the horizontal input of a scope
+while the voltage across the 1 K ohm resistor as a result of the current
+through it is connected to the vertical input.
+<p>
+What we see on the scope is a voltage across a component under test versus the
+current through the component:
+<PRE>
+Resistors:     Open   Horizontal line.
+               10 K   10 degree.
+                1 K   45 degree.
+                  0   Vertical line.
+<p>
+Capacitor:     .1 uF  Shallow ellipse.
+              2.6 uF  Circle.
+             50.  uF  Narrow vertical.
+<p>
+Transformer:          Ellipse depending on impedance.
+<p>
+Diodes (Germanium):   Right angle display.
+<p>
+Diodes (Silicon):     Right angle one side longer
+                      (any leakage showing less sharp angle).
+<p>
+Transistors:          Test as two diodes (B to E and B to C).
+<p>
+Integrated Circuits:  Input for gates and counters show a certain signature
+                        display.
+<p>
+                      Outputs display a different signature.
+<p>
+                      A short will show a vertical line.
+<p>
+                      An open will show a horizontal line
+</PRE>
+In circuit testing is done with *no* power applied to the equipment under test.
+<p>
+With some experience one is able to test components in and out of circuit and
+troubleshoot without danger of a damage to components.
+
+<h3><A NAME="stvac">Testing Vacuum Tubes (or FETs) on a Bipolar Curve
+ Tracer</A></h3>
+
+A transistor curve tracer can be easily adapted to test vacuum tubes (OK,
+valves for those of you on the other side of the lake) if it has an adequate
+voltage range for the collector (now plate) drive and independent control of
+base and collector polarity.  All that is needed is to add a separate
+transformer to power the tube's filament(s) and a resistor to convert base
+current to voltage.
+<p>
+For FETs, just leave off the transformer.
+<p>
+(From: Michael Covington (mcovingt@ai.uga.edu).)
+<p>
+Get an old Tektronix 575 (mine cost $25 at a hamfest).  That is a transistor
+curve tracer that goes back to the 1950s and goes up to 200 volts.
+<p>
+It doesn't have FET settings, but you can control the 'base' and 'collector'
+polarity independently.  So what you do is put a 1 K resistor from 'base'
+to ground, so that you can read milliamps as volts.  Then put a positive-going
+voltage on the 'collector' and a negative-going current into the 'base'.
+<p>
+For tubes, emitter, collector, and base are cathode, plate, and grid,
+respectively.  Naturally you also need a filament supply; I use a lab-type
+DC supply because it's handy and can't introduce hum.
+<p>
+I also test FETs that way (without the filament supply, of course).  Then,
+emitter, collector, and base become source, drain, and gate respectively.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#sttoc">Semiconductor Testing Table of Contents</A>.
+<p>
+-- end V2.38 --
+<p>
+</BODY>
+</HTML>

@@ -1,0 +1,230 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/vacuum/tmpnotes.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+<head>
+<title>Lesker Vacuum Systems TurboMolecular and Drag Pumps Notes</title>
+
+<META  name="keywords" content="pumps,vacuum pumps,TurboMolecular and Drag Pumps Notes">
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+
+<body bgcolor="FFFFFF">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/vacuum/tmpnotes.htm">https://www.repairfaq.org/sam/vacuum/tmpnotes.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<table border="0" cellspacing="0" cellpadding="10" align="left">
+  <tr> 
+    <td> 
+      <h1>Turbomolecular Pumps and Drag Pumps: Technical Notes</h1>
+<p>
+      <h2>This Page From: <A HREF="http://www.lesker.com/">Lesker Vacuum
+        Systems</a></h2>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <div align="left">
+        <h2>Turbomolecular Pumps</h2>
+      </div>
+      <div align="left"><img src="Turbopmp.gif" align="right"> </div>
+        <div align="left"> 
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Resembling a jet 
+          engine, a turbo pump has a stack of rotors, each with multiple, angled 
+          blades which drive at very high tangential speed. Gas molecules, hit 
+          by the underside of the angled blades, move with momentum in the direction 
+          of the higher pressure exhaust.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Turbo pumps come 
+          in two basic designs. In the <b>SNECMA</b> design (named after a French 
+          jet-engine manufacturer) all gas enters through the main flange at the 
+          visible single-end of the pump; the <b>Pfeiffer</b> (named after the 
+          original turbo pump's manufacturer) double-ended design, has two rotors 
+          set-mounted on a common axle. Gas enters the pump through a right angle 
+          port between the two rotor sets and exits into an exhaust manifold connecting 
+          the two ends of the pump.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">For normal commercially-available pumps, pumping speeds range from approximately 20 L/s to 3,000 L/s (although 
+          some turbo pumps manufactured in Russia are quoted with pumping speeds 
+          of 20,000 L/s). All gases are pumped at roughly the same rate. One pump, 
+          for example, listed with 450 L/s for nitrogen, has a pumping speed for 
+          hydrogen of 310 L/s.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">When selecting a 
+          turbomolecular pump, consider not only the rate of pumping, but also 
+          compression ratio (CR). Let's look at an example:</font></p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">The pump we 
+              mentioned above (with a rate of 450L/s for Nitrogen) has a CR for 
+              nitrogen listed 4 x 10<sup>8</sup> and a CR for hydrogen of 630 
+              (<em>compression ratio</em> determines the partial pressure of any 
+              specific component gas in the chamber). If the nitrogen partial 
+              pressure in the foreline measures 1 x 10<sup>-4</sup> Torr, the 
+              chamber may reach a partial pressure of 2.5 x 10<sup>-13</sup> Torr 
+              (a factor of 4 x 10<sup>8</sup> lower). The actual partial pressure 
+              depends on the nitrogen gas load caused by wall outgassing, virtual 
+              and real leaks, etc. and the effective pumping speed. However, if 
+              the foreline has hydrogen at the same partial pressure as nitrogen, 
+              the chamber will not reach less than 1.6 x 10<sup>-7</sup> Torr 
+              of hydrogen. We can understand the differences in CR for the various gases, qualitatively, by comparing the most probable velocity at 25&#176C for hydrogen 
+              (1,700 m/s) and nitrogen (400 m/s) with the tangential velocity 
+              of a 6" diam. turbo rotor rotating at 36,000 rpm (approx. 280 m/s). 
+              The fraction of the lighter gas that will "backstream" through the 
+              turbo rotors, without blades striking it, will be higher because 
+              of the gas's faster rate of speed.</font></p>
+          </div>
+        </li>
+        <li> 
+          <div align="left"> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">By making the 
+              foreline partial pressure low for light gases, a turbo pump yields 
+              an excellent ultimate vacuum. In one method, a smaller turbo or 
+              hybrid pump, backed in turn by a mechanical pump, backs the primary 
+              turbo pump. To calculate the effect of two pumps on the chamber's 
+              partial pressures, multiply the CRs. For example, if the two turbo 
+              pumps each have CRs of 10<sup>3</sup> for hydrogen, then in series 
+              their combined CR is 10<sup>6</sup>.</font></p>
+          </div>
+        </li>
+      </ul>
+      <div align="left"> 
+        <p><font face="Arial, Helvetica, sans-serif" size="2"> Turbo pumps reach 
+          full operating speed within a few minutes of switch-on, making a separate 
+          roughing line unnecessary since the accelerating turbo can rough the 
+          chamber. The trick is to match chamber volume and the effective pumping 
+          speed, and to time the turbo pump's start so its rotational speed is 
+          high enough to prevent backstreaming when the chamber reaches 10<sup>-1</sup> 
+          Torr (that is, when an oil-sealed mechanical pump's relative backstreaming 
+          rate starts its rapid rise).</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">With proper venting, 
+          a turbo pump can be entirely halted in under one minute. This slight 
+          delay before the chamber reaches atmospheric pressure and can be opened 
+          usually works for most applications. The benefit is clear. If the pump 
+          does not run while venting the chamber, we have no need for a high vacuum 
+          valve between pump and chamber. Further, in a correctly designed and 
+          operated system, the turbo pump does not allow oil vapor to backstream 
+          so that the system does not require an LN2 trap between chamber and 
+          pump.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">A turbo pump's high 
+          rotational speeds (some small diameter units operate at 60,000 rpm) 
+          put serious strain on the shaft bearings. Most manufacturers now offer 
+          light-weight <b>ceramic ball bearings</b> with grease lubrication since 
+          this combination is both light, lowering the momentum of the bearing, 
+          and has a low bearing-lubricant vapor pressure at the pump's working 
+          temperature.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">More recently, manufacturers have begun offering <b>magnetically levitated bearings</b> which are 
+          either permanent magnets for the small sized pumps or a combination 
+          of permanent and dynamic magnetic fields, supporting the shaft without 
+          contact. Magnetically levitated pumps (such as those manufactured by 
+          Shimadzu) include non-contact bearings, resulting in a turbo pump that 
+          has true zero oil-vapor backstreaming with bearings that never wear 
+          down.</font></p>
+        </div>
+      <h2>Applications</h2>
+      <div align="left"> 
+        <p><font face="Arial, Helvetica, sans-serif" size="2">Turbomolecular pumps 
+          are used in a wide variety of high vacuum applications -- any that demand 
+          clean, truly oil-free vacuum between 10<sup>-4</sup> and 10<sup>-10</sup> 
+          Torr. The single-ended pump is frequently chosen to replace a comparably 
+          sized diffusion pump in existing systems. Versions made from materials 
+          that withstand chemical attack when pumping corrosive gases find extensive 
+          application in semiconductor processing, particularly those using reactive 
+          gas plasmas. For truly oil-free systems, choose magnetically levitated 
+          turbo pumps. They can work with an oil-free piston pump or in some circumstances, with a diaphragm pump. The initial cost of a turbo pump is higher than a diffusion pump with similar pumping speed. But the lack of need for external components 
+          (see Technical Notes ), the turbo pump's lower running costs, and the 
+          almost negligible chance that clumsy operation will cause an expensive 
+          vacuum disaster, make the turbo pump the first choice for many users. (We do not recommend turbo pumps for systems generating dust or particulate matter, 
+          nor where the induced micro-vibrations might upset precise positioning, 
+          e.g. electron microscopes, micro-surface analysis, atomic force and 
+          scanning tunneling microscopes.) Turbo pumps find applications in processes 
+          involving:</font></p>
+      </div>
+      <ul>
+        <li> 
+          <div align="left"> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">metal etching,</font></p>
+          </div>
+        </li>
+        <li> 
+          <p><font face="Arial, Helvetica, sans-serif" size="2">dielectric etching,</font></p>
+        </li>
+        <li> 
+          <p><font face="Arial, Helvetica, sans-serif" size="2">interconnect etching,</font></p>
+        </li>
+        <li> 
+          <p><font face="Arial, Helvetica, sans-serif" size="2">ion implantation,</font></p>
+        </li>
+        <li> 
+          <p><font face="Arial, Helvetica, sans-serif" size="2">sputtering, and</font></p>
+        </li>
+        <li> 
+          <p><font face="Arial, Helvetica, sans-serif" size="2">plasma deposition.</font></p>
+        </li>
+      </ul>
+      </td>
+  </tr>
+  <tr> 
+    <td> 
+      <h2>Drag Pumps</h2>
+        <p><font face="Arial, Helvetica, sans-serif" size="2"><img src="Dragpump.jpg" align="right">The drag pump has three distinct stages for moving gas through the chamber:</font></p>
+        <ul>
+          <li> 
+                <p><font face="Arial, Helvetica, sans-serif" size="2">First, a 
+                  single-stage impeller, similar to the top row of blades in a 
+                  turbomolecular pump ensures the highest possible pumping speed 
+                  for the open area of the pump's inlet.</font></p>
+          </li>
+          <li> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">In the second 
+              stage a high speed rotor spins between two closely-spaced, inner- 
+              and outer-cylindrical walls with helical grooves facing the rotor. 
+              When the rotor's tangential velocity approaches that of the average 
+              gas molecule's velocity, momentum transfer causes flow toward the 
+              exhaust port. To assist that flow, the spiral grooves on the outer 
+              wall have a downward shape while the ones on the inner wall have 
+              an upward shape.</font></p>
+          </li>
+          <li> 
+            <p><font face="Arial, Helvetica, sans-serif" size="2">In the third 
+              stage, a dynamic seal allows the pump to operate with a high exhaust 
+              pressure.</font></p>
+          </li>
+        </ul>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">The compression 
+          ratios for drag pumps typically measure: 10<sup>9</sup> for N<sub>2</sub>, 
+          10<sup>4</sup> for He, 10<sup>3</sup> for H<sub>2</sub>. Use drag pumps 
+          in applications requiring clean, low pumping speeds (less than 10 L/s) 
+          and modest ultimate pressures (10<sup>-6</sup> Torr). The drag pump 
+          accepts continuous inlet pressures below 0.1 Torr and discharges with 
+          a foreline pressure of 10 to 40 Torr. The latter pressure indicates 
+          that diaphragm pumps, not normally suitable for backing high vacuum 
+          pumps, could work in some applications with drag pumps.</font></p>
+        <p><font face="Arial, Helvetica, sans-serif" size="2">The grease lubricated, 
+          ceramic ball bearings used to suspend the rotor have a light weight 
+          with a low coefficient of friction. Low forces on the bearing cage and 
+          low bearing temperatures, give these pumps high reliability with field 
+          maintenance intervals of over one year. These bearings have two major 
+          benefits over oil lubricated designs: they allow for easy user replacement; 
+          and they allow the pump to be mounted in any orientation.</font></p>
+    </td>
+  </tr>
+<tr><td>&nbsp;</td></tr></table></body>
+</html>
+
+
+
+
+
+
+
+		
+
+
+
+

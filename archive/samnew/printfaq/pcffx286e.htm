@@ -1,0 +1,151 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcffx286e.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Epson FX-286e printer problems&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: Epson FX-286e printer problems</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcffx286e.htm">https://www.repairfaq.org/samnew/printfaq/pcffx286e.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">Epson FX-286e printer problems&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pcfcp15psm.htm">&lt;&lt;&nbsp;Compaq Pagemarq 15 printe..</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfpdce570.htm">Paper debris clogging Eps..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcffx286e">Epson FX-286e printer problems</A></h3>
+
+<blockquote>
+"I just received the above printer in a non-working condition. It
+ exhibits the following symptoms:
+<p>
+ When power is applied, the head appears to try and move, but will not
+ unless you manually get it started. Then it goes to its home position.
+ You then hear three beeps, and nothing else can be done to elicit any
+ response from the printer. The power LED comes on, but the paper-out
+ will not, regardless if there is paper installed or not. The paper
+ detect switch is working properly (checked with ohmmeter by
+ inserting/removing paper while across switch). Also, I hooked up a
+ resistor and +5 V to the paper-out LED, and it lit up ok. I have also
+ mapped out the stepper motor leads, and resistance checks show that it
+ appears to be ok.
+<p>
+ MY question is if perhaps I lost one of the outputs for one of the
+ stepper phases. The controller seems to be one large power-ic from what
+ I've traced out."
+</blockquote>
+<p>
+Could be.  Do you have a scope? You could check the phases.
+<p>
+<blockquote>
+"I know if you keep voltage across one phase, you can lock a stepper. If
+ you lose power to one phase, will the other phases keep it going
+ provided you manually start it like I'm doing?"
+</blockquote>
+<p>
+Also check for bad connections to the stepper from the logic board - I 
+have seen these on printers.
+<p>
+It doesn't explain your other problems, however.  Once initialized, even
+though the print head doesn't move properly, I would expect the printer
+to work in other respects.
+<p>
+(From: Joe Wagg (jwagg@fs.cei.net).)
+<p>
+The 3 beeps tell you there's a carriage error, probably from an incorrect
+number of steps needed to reach the home position. Since you've already
+checked the motor, the next step is to check the motor drivers. Using a
+meter with a diode check function, put the red lead on ground and the black
+lead on each phase coming from the board (disconnect the motor first). The
+readings should be within 20 percent of each other, not open or shorted. Also
+make sure the motor, pulleys, and carriage are all relatively clean and move
+freely. The other symptoms are caused by the carriage error, which halts the
+cpu to prevent damage. Clear up the carriage error and the other problems
+should go away. You should also make sure that all socketed chips are properly
+seated and don't have dirty contacts.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfcp15psm.htm">&lt;&lt;Compaq Pagemarq 15 printe..</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfpdce570.htm">Paper debris clogging Eps..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

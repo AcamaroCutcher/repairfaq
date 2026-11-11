@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--
+  Mirrored from https://www.repairfaq.org/sam/manuals/
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<TITLE>Sam's Electronics and Laser Kit Information and Manuals</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/manuals/">https://www.repairfaq.org/sam/manuals/</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<br>
+<br>
+<h1>
+Sam's Electronics and Laser Kit Information and Manuals</h1>
+<h2>
+Version 2.12 (24-Apr-2026)
+<br>
+</h2>
+<h3>
+<A HREF="../copyright.htm">Copyright &copy<A> 1994-2024
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<hr>
+<p>
+<ul>
+<li>
+<FORM METHOD="POST" ACTION="../../cgi-bin/United1.cgi">
+<INPUT TYPE="hidden" NAME="REF" VALUE="-REPAIR-F_Repair.html_addme">
+<INPUT TYPE="hidden" NAME="TO" VALUE="SAM">
+<INPUT TYPE="hidden" NAME="ACTION" VALUE="feedback">
+<INPUT TYPE="SUBMIT" VALUE="[Contact and Feedback Form]">.  Please specify that you want a response if you do. :)
+</FORM>
+</ul>
+<p>
+<A NAME="mantoc"></A>
+<hr>
+<br>
+This page has links to the various assembly, construction, instruction,
+operation, and other manuals associated with my electronics and laser kits,
+as well as a few for information only and/or that are not currently for sale
+but can be duplicated relatively easily.
+<p>
+<b><font color="darkred">For any of the kits that use an Atmega328
+Nano 3.0 microcomputer, if problems
+are encountered in uploading the firmware or running the GUI, the 2019 or
+earlier version of the CH340 driver may be required.  It may be found at
+<A HREF="https://www.repairfaq.org/sam/CH341SER.EXE">CH340 Windows USB Driver Installer (2019)(Local)</a>.
+More info may be found in the &micro;SLC1 manual, below.</font></b>
+<p>
+Note: Links open in a single new window or tab depending on your browser's
+settings. 
+<p>
+But first since most of these involve HeNe lasers in some form:
+<p>
+<b>Must Read:</b>
+<ul>
+<li><A target="MAN" HREF="lashvsaf.htm">Safety Guidelines for HeNe Lasers and
+ Bare Laser Tubes</a>  These safety guidelines are specifically for the types
+ of HeNe laser provided in the kits below.  For general electronics safety
+ info, see <A target="MAN" HREF="../safety.htm">Safety Guidelines for High
+ Voltage and/or Line Powered Equipment</a>.
+</ul>
+<p>
+<b>HeNe Lasers and Laser Controllers:</b>
+<p>
+<ul>
+<li><A target="MAN" HREF="lsk1ins2.htm">Red HeNe Laser Kit 1 (Including
+ Zeeman)</a>.  Basic setups consisting of a HeNe laser tube from 0.5 to
+ 1.0+ mW, compatible power supply, cables and ballast resistors.  Zeeman
+ adds a set of magnets to convert to two frequency laser.  The longitudinal
+ mode behavior of these tubes is not guaranteed to be suitable for stabilizing
+ but they are suitable for most laser experiments.
+<p>
+<li><A target="MAN" HREF="lsk1ins3.htm">High Power Red HeNe Laser Kits</a>.
+ These typically have an output of 2-4 mW in a TEM00 beam.  The tubes may be
+ either random or linear polarized (most are random).  Includes the tube,
+ compatible AC-Input or DC-Input HeNe laser power supply brick, ballast
+ resistors, tube clips, and high voltage wire, and plastic tube mounts if
+ compatible.
+<p>
+<li><A target="MAN" HREF="stabins4.htm">Stabilized HeNe Laser Kits (Normal
+ setup with and without Arduino)</a>.  The tube in these kit has been tested
+ to be suitable for stabilizing.  In addition to the parts in the Red HeNe
+ Laser Kit above, it includes a thin-film heater and power supply, PBS, and
+ photodiodes so the laser can be stabilized and used as a single frequency
+ laser.  The Arduino version includes the &micro;SLC1 locking controller kit.
+<p>
+<li><A target="MAN" HREF="stabins9.htm">Stabilized HeNe Laser Kits (Compact
+ setup with and without Arduino)</a>.  Similar to above but using a plastic
+ housing for the tube and power supply so issues with high voltage wiring are
+ eliminated.  And the laser part of it is, well, compact. ;-)
+<p>
+<li><A target="MAN" HREF="stabins6.htm">High Power Stabilized HeNe Laser Kit
+ with or without Arduino</a>.  The tube in these kits has an output power of
+ 2.5 mW or more so that the locked power in a single mode is similar to
+ that of higher power commercial stabilized HeNe lasers.
+<p>
+<li><A target="MAN" HREF="zeemins3.htm">Stabilized Zeeman HeNe Laser Kit
+ with or without Arduino</a>.  In addition to a tube tested to be suitable
+ for Zeeman, it includes a set of 50 rare earth magnets to be configured
+ surrounding the tube along with additional optics for Zeeman stabilization and
+ testing, along all the parts in the other stabilized HeNe kits.
+<p>
+<li><A target="MAN" HREF="zeemins4.htm">Stabilized Zeeman HeNe Laser Kit with
+ Hewlett Packard (HP), Agilent, or Keysight Laser Tube Assembly
+ with Arduino</a>.  This replaces the bare tube, heater, magnets,
+ and waveplates with the tube assembly from a 5517 or Z4203/N1211A
+ laser, but still using the &micro;SLC1 Arduino controller.
+<p>
+<li><A target="MAN" HREF="../uSLC1/index.html">Micro Stablized Laser Controller 1
+ (&micro;SLC1)</a>.  These are parts for ONLY the Arduino-based
+ locking controller that will work with most 0.5 to 4+ mW HeNe
+ laser tubes.
+<p>
+<li><A target="MAN" HREF="och1ins1.htm">Assembly and Operating Instructions
+ for Open Cavity HeNe Laser Kits</A> with HeNe laser tubes having one
+ or two Brewster windows, or perpendicular windows.
+</ul>
+<p>
+<b>Michelson Interferometers:</b>
+<p>
+<ul>
+<li><A target="MAN" HREF="mich3ins.htm">Construction Guidelines for Michelson
+ Interferometer Optics Kits</a>.
+<p>
+<li><A target="MAN" HREF="../mipm/mipm2.1.htm">Sam's Educational Michelson
+ Homodyne Interferometer Project Manual V2.1</a>  This is a general Michelson
+ interferometer apparatus implemented with commercial as well
+ as custom parts.  It supports a variety of
+ interferometer configurations, tests demonstrating thermal and pressure
+ sensing, displacement measurement using homodyne interferometry
+ with &micro;MD0, and more.  Several
+ versions are now available on eBay.  Search for "Sam's Michelson
+ Interferometer Experimental Setup".
+<p>
+<li><A target="MAN" HREF="../mipm/mzipm2.1.htm">Sam's Educational Michelson
+ Heterodyne Interferometer Project Manual V2.1</a>  This is similar to the one
+ above but uses a stabilized HP/Agilent 5517 two frequency (Zeeman) HeNe laser
+ in place of an unstabilized linear or random polarized HeNe laser.  It
+ supports the same interferometer configurations, tests demonstrating
+ thermal and pressure sensing, and more.  But also includes a ball
+ bearing rail and &micro;MD2 for higher performance displacement
+ measurement.  It should be available soon.
+<p>
+<li><A target="MAN" HREF="lpcpsht1.htm">Notes on Linear Polarizer and Circular
+ Polarizer Sheets</a> Basic information on using the types of sheet polarizers
+ included in some of the interferometer kits.
+</ul>
+<p>
+<b>Displacement Measuring Interferometers and Displays:</b>
+<p>
+<ul>
+<li><A target="MAN" HREF="hobspcl1.htm">One, Two, or Three Axis Laser
+ Interferometer Displacement Measurement System</a>.  Complete systems for
+ precision measurement including an HP/Agilent 5501B or 5517 laser,
+ interferometer optics, optical receiver(s), power supplies, and &micro;MD2
+ readout.
+<p>
+<li><A target="MAN" HREF="diyidms1.htm">DIY Interferometer Displacement
+ Measurement System</a> includes parts to construct the laser and &micro;MD
+ display for homodyne, heterodyne, or combined (but not at the same time)
+ interferometer.  Except for the laser tube, everything else is akin to
+ using stone knives and bear skins rather than commercial parts. ;-)
+<p>
+<li><A target="MAN" HREF="mmlmkit1.htm">Minimal MLM Homodyne DIY Interferometer
+ Displacement Measurement System</a> includes parts to construct the laser and
+ &micro;MD display.  The laser is Multiple Longitudinal Mode (MLM) without
+ stabiilzation.  This is just about the simplest interferometer setup possible.
+<p>
+<li><A target="MAN" HREF="../uMD0/uMD0.htm">Micro Measurement Display 0
+ (&micro;MD0)</a> minimal implementation for homodyne interferometers using
+ single frequency or unstabilized HeNe lasers as well as linear and rotary
+ encoders and ring laser gyros. Includes links to detailed
+ "Heathkit&trade;-style" assembly instructions for the optional SG-&micro;MD0
+ PCB.  Limited performance but at ultra-low cost with large
+ hackability factor. ;-)  Great for a course project or to just
+ to get your feet wet in precision measurement.
+<p>
+<li><A target="MAN" HREF="../uMD1/uMD1.htm">Micro Measurement Display 1
+ (&micro;MD1)</a> for heterodyne interferometers using two frequency lasers.
+ Includes links to detailed "Heathkit&trade;-style" assembly
+ instructions for the SG-&micro;MD1 PCB.  Note that only the PCB
+ and programmed PIC are available directly.  However, a Digikey "Cart" with
+ most of the other parts is linked from the manual.
+<p>
+<li><A target="MAN" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2
+ (&micro;MD2)</a> for homodyne interferometers using single frequency lasers
+ as well as linear and rotary encoders and ring laser gyros. Includes links
+ to detailed "Heathkit&trade;-style" assembly instructions for
+ the SG-&micro;MD2 PCB.
+<p>
+<li><A target="MAN" HREF="../lipm/lipm.htm">LIPM: An Inexpensive Laser
+ Interferometer-Based Precision Measurement System</a>. This is not a manual
+ but an article on what the DIY Interferometer Displacement Measurement System
+ Kit is based on and provides more general information.
+<p>
+<li><A target="MAN" HREF="../lipm/lhipm1.htm">A Low Cost Heterodyne
+ Displacement Measuring System with Sub-nm Resolution</a>. Similar to the
+ above but is more specific to the heterodyne interferometer.
+<p>
+<li><A target="MAN" HREF="../uMD0/quadins1.htm">Basic Quadrature-Sin-Cos
+ Decoder and Quad-A-B Interfaces</a> including optics and electronics for
+ homodyne interferometers to drive &micro;MD0 and &micro;MD2.
+<p>
+<li><A target="MAN" HREF="../sgor3/sgor3.htm">Optical Receiver 3 (OR3)</a> for
+ Heterodyne Interferometers, including assembly and operation.  These are
+ similar in function to HP/Agilent 10780s usable at more than 3 MHz with
+ optical power below 5 &micro;W but are smaller and run on 12-15 VDC.
+<p>
+<li><A target="MAN" HREF="../sgab2/sgab2.htm">Quad-A-B Preamp 2 (QAB2)</a> for
+ Homodyne Interferometers and Optical Encoders, including assembly and
+ operation.  These provide two channels of optical to RS422
+ conversion at more than 3 MHz (3,000,000 counts/second) with optical
+ power below 25 &micro;W and run on 12-15 VDC.
+<p>
+<li><A target="MAN" HREF="../sgdp1/sgdp1.htm">Dual Photodiode 1 (DP1)</a>
+ simple PCBs for mounting beam-splitters and photodiodes (with or without
+ waveplates) to be used as dual polarization and quad-decoders
+ for scanning Fabry-Perot and homodyne interferometers.
+<p>
+<li><A target="MAN" HREF="https://www.repairfaq.org/sam/uMC1/mcp1.htm">Micro Motion Control Platform
+ (&micro;MC1)</a> for use with the displacement measuring interferometers
+ or Michelson interferometer kits.  Includes stepper motor-driven linear
+ stage, motor driver, Arduino-compatible controller with custom breakout PCB.
+</ul>
+<p>
+<b>Scanning Fabry-Perot Interferometers:</b>
+<p>
+<ul>
+<li><A target="MAN" HREF="sfpiins1.htm">Basic Scanning Fabry-Perot
+ Interferometer Kit (also known as SFPI Kit 1)</a>.  These are parts to
+ construct a confocal SFPI with as FSR of ~1.75 GHz for laser wavelengths from
+ ~590 nm to ~650 nm using your creativeness for mounting everything. ;-)
+ An SFPI of this type is also known as a Laser Spectrum Analyzer.
+ It includes the mirrors, PZT, and photodiodes.
+<p>
+<li><A target="MAN" HREF="sfpiins2.htm">Deluxe Scanning Fabry-Perot
+ Interferometer Kit (also known as SFPI Kit 2)</a>.  This adds Thorlabs
+ parts to simplify construction.
+<p>
+<li><A target="MAN" HREF="sfpiins6.htm">Deluxe Short, Mini, Micro, and Nano
+ Scanning Fabry-Perot Interferometer Kits</a>.  These use the same mirrors
+ as those above, but with smaller frames to construct really compact
+ instruments.
+<p>
+<li><A target="MAN" HREF="../sfsfpi/sfsfpi.htm">Selectable FSR Scanning
+ Fabry-Perot Interferometer Kit 1</a>.  This one is for the SFPI nerd-type who
+ would like to explore the resonances in a spherical cavity that his or her
+ professor probably doesn't even know exist. ;-)  It uses the same mirrors as
+ the kits above, but with an adjustable mirror mount on a
+ lockable carriage on a rail and micro-positioner to be able
+ to quickly and easily set the cavity spacing precisely over the entire stable
+ range for the 4.2 cm RoC mirrors.
+<p>
+<li><A target="MAN" HREF="sfpiins3.htm">Long and High Resolution Scanning
+ Fabry-Perot Interferometer Kits</a>.  Similar to above but the mirror RoCs
+ are from ~13 to 100 cm, generally to achieve higher resolution.  These also
+ include a few at other wavelengths.
+<p>
+<li><A target="MAN" HREF="sfpiins7.htm">Universal Scanning Fabry-Perot
+ Interferometer Kit</a>.  The ultimate SFPI kit for the mirror junkie in
+ you life. ;-)  It has parts to construct all of the confocal SFPIs, above
+ (but not at the same time).
+<p>
+<li><A target="MAN" HREF="sfpiins4.htm">Planar Mirror Scanning Fabry-Perot
+ Interferometer Kits</a>.  Both mirrors are planar to be able to provide
+ an arbitrary FSR, or because suitable curved mirrors are not available.
+<p>
+<li><A target="MAN" HREF="../mLMA1/mLMA1-V2.htm">Mini Laser Mode Analyzer 1
+ Manual (V2)</a>.  mLMA1 is an Arduino-based self-contained miniature
+ controller intended for the short Basic and Deluxe SFPIs, as well as
+ providing readout of power in the lasing modes or output power, Zeeman
+ split frequency, and more.  NOT recommended for high resolution and
+ or planar SFPIs.
+</ul>
+<p>
+<b>The following are not currently available as kits and probably never
+will be.  They are here for information only:</b>
+<p>
+<ul>
+<li><A target="MAN" HREF="../mLMA1/mLMA1-V1.htm">Mini Laser Mode Analyzer 1
+ Manual (V1)</a>.  This was the predecessor to mLMA1-V2.  Its benefit is
+ simplicity in hardware and especially the firmware so it can be easily
+ hacked. ;-)
+<p>
+<li><A target="MAN" HREF="../UBPD1/UBPD1.htm">Universal Bipolar PWM
+ Driver 1</a>.  High
+ efficiency Arduino-based power supply for electromagnets and the like
+ providing continuous control of positive and negative output up to at
+ least 2 amps depending on the DC power supply feeding it.
+</ul>
+<p>
+<hr>
+<p>
+-- end V2.12 -- 
+</BODY>
+</HTML>

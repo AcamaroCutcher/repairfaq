@@ -1,0 +1,168 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvtsteq.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Test equipment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: Test equipment</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvtsteq.htm">https://www.repairfaq.org/samnew/tvfaq/tvtsteq.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">Test equipment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;<a href="tvprgdiag.htm">&lt;&lt;&nbsp;Program to aid in diagnos..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvihw.htm">Incredibly Handy widgets&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvtsteq">Test equipment</A></h3>
+
+Don't start with the electronic test equipment, start with some analytical
+thinking.  Your powers of observation (and a little experience) will make
+a good start.   Your built in senses and that stuff between
+your ears represents the most important test equipment you have.
+<p>
+However, some test equipment will be needed:
+<p>
+<ul>
+<li>Multimeter (DMM or VOM) - This is essential for checking of power supply
+ voltages and voltages on the pins of ICs or other components - service
+ literature like the Sams' Photofacts described elsewhere in this document
+ include voltage measurements at nearly every circuit tie point for properly
+ functioning equipment.  The multimeter will also be used to check 
+ components like transistors, resistors, and capacitors for correct value
+ and for shorts or opens.  You do not need a fancy instrument.  A basic 
+ DMM - as long as it is reliable - will suffice for most troubleshooting.
+ If you want one that will last for many years, go with a Fluke.  However,
+ even the mid range DMMs from Radio Shack have proven to be reliable and
+ of acceptable accuracy.  For some kinds of measurements - to deduce trends
+ for example - an analog VOM is preferred (though some DMMs have a bar graph
+ scale which almost as good).
+<p>
+<li>Oscilloscope - While many problems can be dealt with using just a
+ multimeter, a 'scope will be essential as you get more into advanced
+ troubleshooting.  Basic requirements are: dual trace, 10-20 MHz minimum
+ vertical bandwidth, delayed sweep desirable but not essential.  A good set
+ of proper 10X/1X probes.  Higher vertical bandwidth is desirable but most
+ consumer electronics work can be done with a 10 MHz scope.  A storage scope
+ or digital scope might be desirable for certain tasks but is by no means
+ essential for basic troubleshooting.
+<p>
+ I would recommend a good used Tektronix (Tek) or Hewlett Packard (HP)
+ scope over a new scope of almost any other brand.  You will usually get
+ more scope for your money and these things last almost forever.  Until
+ recently, my 'good' scope was the militarized version (AN/USM-281A) of
+ the HP180 lab scope.  It has a dual channel 50 MHz vertical plugin and
+ a delayed sweep horizontal plugin.  I have seen these going for under
+ $300 from surplus outfits.  For a little more money, you can get a
+ Tek 465 or 465B (newer version but similar specifications) 100 Mhz
+ scope ($200 to $600, sometimes cheaper on eBay or elsewhere but there
+ is more risk than buying from a reputable dealer).  I have now acquired
+ a Tek 465B and that's what I use mostly these days.  The HP-180 is still
+ fine but I couldn't pass up a really good deal. :)  The Tek 465/B or other
+ similar model will suffice for all but the most demanding (read: RF or
+ high speed digital) repairs.
+<p>
+<li>A video signal source - both RF and baseband (RCA jacks).  Unless you
+ are troubleshooting tuner or video/audio input problems, either one
+ will suffice.  RF sources include a pair of rabbit ears or an outdoor
+ antenna, a cable connection, or a VCR with a working RF modulator.
+ This will be more convenient than an antenna connection and will permit
+ you to control the program material.  In fact, making some test tapes
+ using a camcorder or video camera to record static test patterns will
+ allow you full control of what is being displayed and for how long.
+<p>
+<li>Color bar/dot/crosshatch signal generator.  This is a useful piece
+ of equipment if you are doing a lot of TV or monitor repair and need
+ to perform CRT convergence and chroma adjustments.  However, there
+ are alternatives that are almost as good: a VHS recording of these
+ test patterns will work for TVs.  A PC programmed to output a suitable
+ set of test patterns will be fine for monitors (and TVs if you can set
+ up the video card to produce an NTSC/PAL signal.  This can be put
+ through a VCR to generate the RF (Channel 3/4) input to your TV if
+ it does not have direct video inputs (RCA jacks).
+</ul>
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvprgdiag.htm">&lt;&lt;Program to aid in diagnos..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvihw.htm">Incredibly Handy widgets&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

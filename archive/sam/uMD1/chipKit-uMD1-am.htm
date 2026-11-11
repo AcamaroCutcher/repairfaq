@@ -1,0 +1,540 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uMD1/chipKit-uMD1-am.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<TITLE>Assembly Instructions for the &micro;MD1 using the Digilent chipKit DP32</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uMD1/chipKit-uMD1-am.htm">https://www.repairfaq.org/sam/uMD1/chipKit-uMD1-am.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<h1>
+Assembly Instructions for the &micro;MD1 using the Digilent chipKit DP32
+</h1>
+<h2>
+Version 1.00 (21-Jun-20)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2022
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<link rel="icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/uMD1/uMD1-16%40v%3D2.ico" type="image/x-icon">
+
+<p>
+<A NAME="umd1cktoc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#umd1ckpre">Preface</a>
+ <ul>
+ <li><A HREF="#umd1ckaac">Author and Copyright</a>
+ <li><A HREF="#umd1ckdis">DISCLAIMER</a>
+ <li><A HREF="#umd1ckack">Acknowledgment</a>
+ </ul>
+<li><A HREF="#umd1ckint">Introduction</a>
+<li><A HREF="#umd1ckasb">Assembly using the chipKIT DP32 Board</a>
+ <ul>
+ <li><A HREF="#umd1ckepl">Electronic Parts List using chipKit</a>
+ <li><A HREF="#umd1cksch">Schematic using chipKIT</a>
+ <li><A HREF="#umd1ckjst">chipKIT DP32 Jumper Settings</a>
+ <li><A HREF="#umd1ckwir">Wiring the chipKIT DP32 Board</a>
+ </ul>
+</ul>
+<p>
+<A NAME="umd1ckasb"></A>
+<hr>
+<h3>Assembly using the chipKIT DP32 Board</h3>
+
+Unless you dug up a dusty chipKit DP32 in the back of one of your electronics
+junk drawers (or I unloaded the last one I have), what's in here is mostly
+irrelevant.  Go (back) to
+<A HREF="uMD1.htm#umd1suasb">Assembly using SG-&micro;MD1</a>.
+
+<h4><A NAME="umd1ckepl">Electronic Parts List using the chipKit DP32</A></h3>
+
+The following are the components required to put together a single axis
+system, multiple axis system, and one with environmental sensors using
+the chipKit DP32 board.  All
+parts are available from major electronics distributors like Digikey
+and should total no more than around $30 to $35 for a basic system, perhaps
+$10 more for the deluxe version.
+<p>
+Note: Environment sensors are a works in progress.  The parts may change, so
+it is recommended that these not be added just yet.  Or perhaps forever as
+the engineers quit in protest due to support issues with the sensor C
+programming libraries. :( :)
+<p>
+<b>Parts for single axis system without environmental sensors</b>
+<p>
+<ul>
+<li>Digilent chipKIT DP32 development board or my SG-&micro;MD1 replacement.
+ These come assembled with the DP32 microprocessor (PIC32) preprogrammed with
+ the firmware uploader and current version of the &micro;MD1 firmware if
+ provided by me.
+<p>
+ Designing your own PCB is also an option since for &micro;MD1, not much is
+ needed on the board besides the PIC32MX250F128B microprocessor (under $4
+ from Digikey).  But this requires a device programmer to install the boot
+ loader (or upload the firmware) since the PIC32 won't come with the boot
+ loader in NVRAM.
+<p>
+<li>USB A male to USB B Micro male cable.
+<li>UA9637, UA9639, or equivalent dual RS422 line receiver in DIP package.
+<li>8 pin DIP socket (not essential but recommended).
+<li>4 x 150 ohm resistors for RS422 termination.
+<li>2 x 150 ohm and 2 x 330 ohm resistors for 5 V to 3.3 V level
+ conversion from line receiver outputs to microprocessor input pins.
+<li>2 x 4 pin header for REF and MEAS signals.
+<li>2 x 4 pin mating shell with pins for REF and MEAS signal cables.
+</ul>
+<p>
+All resistors are 1/4 W for chipKIT, 1/8 W for SG-&micro;MD1, though 1/4 W
+resistors can be installed standing up.
+Typical connectors are TE Connectivity AMP MTA-100 series header
+(PN 640454-4), shell (PN 1375820-4), and pins (PN 1375819-1), though similar
+parts are available from Molex and others.  (However, header and shell/pins
+may need to come from the same manufacturer.)  And you're perfectly free to
+use your own favorite parts for these, or wire the cables in directly.
+An electronics distributor like Digikey will have all these parts (except
+now for the chipKIT DP32).
+<p>
+<b>Additional parts for 2 or 3 axis system</b>
+<p>
+For a system with 2 or 3 axes, double everything associated with the
+RS422 line receivers and add a 4 pin header, shell, and 4 pins for each
+additional axis.
+<p>
+<b>Additional parts for temperature, pressure, and humidity sensors</b>
+<p>
+Since environment sensors are a works in progress, it is recommended that
+these not be added just yet.  Currently, due to timing issues, the sensors
+are updated ONLY when the &micro;MD1 board is reset.  (Sensors are entirely
+disabled in the firmware by default.)  We may be switching to
+a SHT20 I2C humidity/temperature sensor in place of the AM2301.  It's about
+$10 installed on a PCB like the BMP180.  The I2C bus timing is handled in
+hardware so there should be far fewer timing issues.  However, it's
+quite likely these will never be completed, sorry.  Or, you can try Jan
+Beck's version of the board and firmware which supposedly works with
+the sensors (but doesn't have the sub-wavelength interpolation).
+<p>
+Note that as a practical matter, for hobbyist or experimental use, it's
+probably more than adequate to enter environmental compensation parameters
+manually (or use the defaults), so including the sensors is not essential.  The
+errors will be no more than a few parts per million for typical variations
+in indoor ambient conditions.
+<p>
+For remote environmental sensor support, the following are required.
+<p>
+<ul>
+<li>BMP180 temperature/pressure sensor PCB (4 or 5 pin version).  (Or
+ SHT20 4 pin PCB - NOT the SMD part unless you can handle that!
+<li>AM2302 humidity/temperature module.
+<li>5 pin header for AM2302 Humidity and Temperature Sensor.
+<li>6 pin header for BMP180 Temperature and Pressure Sensor.
+<li>5 pin mating connector for AM2302 cable.
+<li>4 pin mating connector for BMP180 cable.
+</ul>
+<p>
+The only reason the 5 and 6 pin headers are listed for these
+is so they will be different than the 4 pin headers for the interferometer
+signals and prevent accidental wrong connections.  The headers and connectors
+can be omitted entirely if the sensors are mounted on the &micro;MD1 board
+or cables can be soldered in permanently.
+<p>
+Note that "BMP180" and "SHT20" actually refers to the itty-bitty SMD sensor
+modules itselves.  You really don't want to deal with those. :)  Thus, they
+are usually provided soldered to a small PCB with the required support
+circuitry.  There may be several versions of the PCBs for these sensor.
+For example, one for the BMP180 has a built-in 3.3 V so it
+can run from 5 VDC power.  Both are shown in the schematic but only one
+of them is needed. :)  Either can be used here since we
+have both 5 V (VIN) and 3.3 V available.  Important: There are at least two
+different pinouts for the 5 pin version and yours may not agree with the
+photo, below.  Adjust pin connections accordingly.  This likely also applies
+to the SHT20.
+<p>
+These sensors are available on eBay and many other sources.  On eBay, the
+BMP180 PCB without regulator is going for less than $1, the AM2302 for
+around $3, and the SHT20 on PCB for around $10.
+
+<h4><A NAME="umd1cksch">Schematic using the chipKIT DP32</a></h4>
+
+Here is the schematic for &micro;MD1 parts used
+with the chipKIT DP32 version along with the optional
+environmental sensors.  Only the top circuits using U1 are required for a
+single channel system.  (The schematic of the chipKIT DP32 board itself
+may be found at <A target="uMD1" HREF="https://reference.digilentinc.com/_media/chipkit_dp32:chipkit_dp32_sch.pdf">chipKIT DP32 Schematics (PDF)</A>.)
+<h3>
+<center>
+<img src="uMD1Isch.gif">
+<p>
+&micro;MD1 Interferometer Signal Inputs and Sensors Schematic</h3><p>
+</center>
+<p>
+The only jumper that should remain for a system without environmental
+sensors is the one for voltage select on JP7 in the lower left of the
+photo, above.
+
+<h4><A NAME="umd1ckjst">chipKIT DP32 Jumper Settings</a></h4>
+
+Remove all jumpers if the chipKIT DP32 board was purchased from an electronics
+distributor.
+<p>
+<ul>
+<li>Install (or confirm that there is) a jumper on JP7 between the pins
+ labeled "VBUS".  This uses the USB bus for power.  Even with all options,
+ the current available from USB should be adequate.
+<p>
+<li>If the environmental sensors are used, install jumpers on the left pairs
+ of pins at locations JP4 and JP5.
+</ul>
+<p>
+<h3>
+<center>
+<img src="chipKIT_DP32_PCB1.jpg">
+<br>
+<p>
+chipKIT DP32 PCB Board Top View (Signal Labeling)</h3>
+<p>
+For a single axis system without environmental sensors, the only jumper
+that should remain is the one on JP7 in the lower left of the photo, above.
+</center>
+
+<h4><A NAME="umd1ckwir">Wiring the chipKIT DP32 Board</a></h4>
+
+This will require a low power soldering iron (preferably grounded and
+temperature-controlled) and rosin core solder.  Your 250 watt Weller soldering
+gun or propane torch is NOT appropriate. ;-)
+<p>
+Pins on the UA9637/9 DIP are numbered counterclockwise as shown below, or
+starting at the dot or dimple if your part doesn't have a notch.
+<p>
+<img src="UA9639pins.gif">
+<p>
+Pins on the chipKIT board are labeled on the silkscreen but there are at
+least two different revisions and the numbering isn't the same!
+<p>
+<PRE>
+   Pin   Arduino Labeling   Signal Labeling   Signal Name
+ ------------------------------------------------------------
+  J3-1           9               RA0             RPA0
+  J3-2          10               RA1             RPA1
+  J3-3          11               RB0             RPB0
+  J3-4          12               PGC (RB1)       RPGC (RPB1)
+  J3-5          13               RB2             RPB2
+  J3-6          14               RB3             RPB3
+  J3-7          15               RA2             RPA2
+  J3-8          16               RA3             RPA3
+  J3-9          17               RB4             RPB4
+  J3-10         18               RA4             RPA4
+  J3-11         3.3V             3.3V            3.3V
+  J3-12       VIN (5V)         VIN (5V)        VIN (5V)
+  J3-13         GND              GND             GND
+
+  J4-1           0*              RB5             RPB5
+  J4-2           1*              RB7             RPB7
+  J4-3           2*              RB8             RPB8
+  J4-4           3*              RB9             RPB9
+  J4-5           4               RB10            RPB10
+  J4-6           5               RB11            RPB11
+  J4-7           6               RB13            RPB13
+  J4-8           7               RB14            RPB14
+  J4-9           8               RB15            RPB15
+  J4-10          -                -                -
+  J4-11         3.3V             3.3V            3.3V
+  J4-12       VIN (5V)         VIN (5V)        VIN (5V)
+  J4-13         GND              GND             GND
+</PRE>
+<p>
+* 5 V tolerant.
+<p>
+The numbers refer to standard Arduino signal "pin" designations while the RPBs
+refer to DP32 PORT A or B bits.  The photo of the chipKIT board,
+below, has the Arduino designations.  This is revision C and is what Digkey has
+been shipping.  It also has the power LED, so perhaps that's an addition. :)
+The relevant board wiring is the same for the two versions, it's just the
+silkscreens that differ.  But there are apparently older versions that may not
+be the same.
+<p>
+Note 1: The jumpers on JP7 are NOT in the correct position for our needs
+in the photo below.
+<p>
+Note 2: VIN MUST be +5 VDC to use the chipKit DP32 with &micro;MD1 parts.
+<h3>
+<center>
+<img src="chipKIT_DP32_PCB2.jpg">
+<br>
+chipKIT DP32 PCB Board Top View (Arduino Labeling)</h3> 
+</center>
+<p>
+<br>
+CAUTION: Most PIC pins are NOT 5V tolerant - they will be unhappy if
+a 5 V signal is connected to them directly.  Thus VIN (5V) or any signal
+that may go higher than 3.3V should NEVER
+be connected to them, even for an instant.  Bad things may happen.  3.3V
+is acceptable through a current limiting resistor (just to be doubly safe,
+for the micro that is).  Hooking raw power to what may be a logic output
+(accidentally or otherwise) is never a good thing!  P.S. "Unhappy" and
+"Bad things may happen" could mean that you'll ruin the PIC chip.
+<p>
+<b>Wiring the basic system - single axis, no sensors</b>
+<p>
+<ol>
+<li>Install the 8 pin socket in any convenient location (though a suggestion
+ is shown below).  Orient it with
+ pins 1-4 facing the DP32.  Take note of the rows of pads that are
+ connected on the PCB as indicated by white boxes surrounding them.
+ These can be convenient to minimize jumpers and
+ for common wiring, but may be confusing to the uninitiated.  If using them,
+ a recommended location for the DIP is near the middle of the area with
+ connected pads straddling the long strips for power and GND.  Note that
+ the GND, 3V3, and VIN labeling apply ONLY to the single pads of J3 and
+ J4, not the boxed in connected pads near them!
+<p>
+<li>Vcc (pin 1) goes to a VIN pad.
+<p>
+<li>GND (pin 4) goes to a GND pad.
+<p>
+<li>The four 150 ohm RS422 terminating resistors go between 1IN+,1IN-,2IN+,2IN-
+ (pins 5,6,7,8) and GND pads.
+<p>
+<li>REF and ~REF input pins go to 2IN+ and 2IN- (pins 6 and 5) respectively.
+ REF Return goes to GND.  See note below about the returns in the cables.
+<p>
+<li>MEAS and ~MEAS input pins to 1IN+ and 1IN- (pins 8 and 7) respectively.
+ MEAS Return goes to GND.  See note below about the returns in the cables.
+<p>
+<li>2OUT (pin 3) goes to a 150 ohm resistor.  The other end of this resistor
+ goes to a 330 ohm resistor and its other end goes to GND.  The junction
+ of the two resistors is the REF clock signal and goes to pad RB5.  This
+ voltage divider assures that the standard TTL output of the line receiver
+ provides a 3.3 V compatible signal.
+<p>
+<li>1OUT (pin 2) goes to a 150 ohm resistor.  The other end of this resistor
+ goes to a 330 ohm resistor and its other end goes to GND.  The junction
+ of the two resistors is the MEAS clock signal and goes to pad RB0.  This
+ voltage divider assures that the standard TTL output of the line receiver
+ provides a 3.3 V compatible signal.
+</ol>
+<p>
+The graphic below shows a suggested layout for the line receiver, the
+required resistors, and the jumper location.  4 pin headers are shown
+for REF and MEAS.  Their presence and type are optional but the use of some
+type of connectors is recommended.   This view is of the bare chipKIT PCB
+as it would look with no other parts present.
+<h3>
+<center>
+<img src="chipKIT_DP32_PCB_Parts2.gif">
+<br>
+chipKIT DP32 PCB Board Pattern with Suggested Parts Layout</h3>
+</center>
+<p>
+(If constructing a multiple axis system and/or one with environmental
+sensors, there is more below on the suggested layout.)
+<p>
+It is recommended that bypass capacitors (0.1 &micro;F ceramic and 22
+&micro;F electrolytic typical) be installed between Vcc and GND
+of the line receiver(s) as close to the chip(s) as possible.  While I have
+not seen problems with power supply noise, others have, though it's not
+clear under what conditions.  But bypass caps are inexpensive insurance. :)
+<p>
+For those not familiar with the common resistor color code
+(Black/0, Blown/1, Red/2, Orange/3, Yellow/4, Green/5, Blue/6, Violet/7,
+Gray/8, White/9), the resistors shown above are 150 ohms (brown-green-brown
+or 15 with 1 zero) ohms and 330 ohms (33 with 1 zero) ohms.  The gold stripe
+indicates 5 percent tolerance on the value but for the use here, tolerance
+doesn't matter.  (It's possible the resistors you use will have 4 stripes
+where 3 of them are the value and the 4th is the multiplier, along with one
+for tolerance.  If in doubt confirm the value with a multimeter.)  The chart below is from Digikey.  (If the link decays, a Web search will readily
+find another one.)
+<p>
+<center>
+<img src="http://www.digikey.com/-/media/Images/Marketing/Resources/Calculators/resistor-color-chart.jpg"><br>
+<h3>Resistor Color Code Chart (from the Digikey Web site)</h3>
+</center>
+<p>
+Below is the suggested wiring arrangement, color coded to differentiate
+REF, MEAS, VIN, and GND.  It's not critical, but keeping wires short will
+minimize confusion.  For the long runs, use thin insulated hookup wire or
+wirewrap wire.  There are no issues of high current :) so #30 AWG is fine
+for all connections.  The short (GND connections) can be done with bare
+wire.  This should all be on the <b>bottom</b> of the board.  Poke the
+stripped end of the wire through any convenient hole that is close to
+and electrically connected to the correct signal, or wrap it around
+the end of the resistor lead or connector pin before soldering.
+<p>
+<h3>
+<center>
+<img src="chipKIT_DP32_PCB_Wiring2.gif">
+<br>
+chipKIT DP32 PCB Board Suggested Wiring Routing</h3>
+</center>
+<p>
+For a 2 or 3 axis system, especially if adding environmental sensors,
+it may be desirable to squash this layout somewhat to make space for a
+second dual line receiver.  This can be done easily by standing up some
+of the resistors.  And/or use a quad line receiver chip.  However, the
+layout below which replicates the pattern for a second RS422 line receiver
+will work.  But note that most of the pads used by additional parts
+are NOT bussed so interconnecting them will have to be done by running
+jumper wires.
+<p>
+For the environmental sensors, the diagram shows headers to attach
+extension cables so that the sensors can be mounted close to the
+interferometer setup.  It is also possible to mount them on the
+board directly in place of the headers.  But generally,
+the sensors should be located where the relevant environmental conditions
+are present, though only the temperature is at all likely to differ, and
+possibly be affected by the (very slight) power dissipated on the board.
+(Unless your interferometer is in a vacuum chamber!)
+The signals are all low frequency so a reasonable cable
+length can be used without concern for shielding, crosstalk, or
+frequency response.  But using twisted pairs is probably prudent
+for anything longer than a few feet.  Also note the additional jumpers
+at JP4 and JP5.
+<p>
+Once the board has been wired, mounting it in such a way that the bottom
+can't touch anything and short out is highly recommended.  Use standoffs
+in the four corner holes or something similar, and an insulating sheet
+under it.
+<p>
+<b>Wiring the cables</b>
+<p>
+The specific wiring for REF and MEAS will depend on the setup.  If using
+HP/Agilent/Keysight lasers:
+<p>
+<ul>
+<li><b>5517 or 5501 laser with separate 10780 optical receiver:</b> Cables
+ will be required for REF on the round 18 pin laser head connector or
+ cable, and MEAS from the 10780 optical receiver.
+<p>
+<li><b>5518A laser:</b> REF and MEAS are both on the round 18 pin connector on
+ the back of the laser head or cable.
+<p>
+<li><b>5519A/B laser:</b> REF and MEAS are both on the 7 pin connector on the
+ back of the laser head or cable.
+</ul>
+<p>
+It's usually not necessary to run the REF and MEAS Return (RET) signals to
+the board even if there is no common ground connection between the
+board, and laser and interferometer optical receiver(s).  The terminating
+resistors will provide the ground reference.  In fact, under some conditions
+where everything is tied together with a common ground, the RET connections
+could add noise due to a ground loop.  The line receivers only care about
+the difference between the REF and ~REF or MEAS
+and ~MEAS voltage levels as long as the absolute voltage levels are
+within their common mode and absolute voltage specifications.
+For cables of a few feet or less, it's almost certain that no
+connections are required for the Returns.  But for long runs,
+shielded cable or twisted pairs may be desirable.  This won't
+apply to most hobbyist/experimenter applications. :)  There has to be
+a common Ground somewhere though, usually via the power supply.
+<p>
+Refer to the various connection diagrams in
+<A target="uMD1" HREF="../laserhst.htm#hstish3">Hewlett
+Packard/Agilent/Keysight Stabilied HeNe Lasers</a>.
+<p>
+Much more on the details of the board can be found in the Diglent chipKIT
+DP32 references, below.
+<p>
+<b>Wiring the 2nd and 3rd axes</b>
+<p>
+<ol>
+<li>Replicate the layout of the 8 pin socket, headers, and terminating and
+ level shifting resistors as for the single axis system.
+<p>
+<li>MEAS2 and ~MEAS2 input pins go to 1IN+ and 1IN- (pins 8 and 7)
+ respectively.  MEAS2 Return goes to GND.  See note above about the
+ returns in the cables.
+<p>
+<p>
+<li>MEAS3 and ~MEAS3 input pins go to 2IN+ and 2IN- (pins 6 and 5)
+ respectively.  MEAS3 Return goes to GND.  See note above about the
+ returns in the cables.
+<p>
+<p>
+<li>1OUT (pin 2) goes to a 150 ohm resistor.  The other end of this resistor
+ goes to a 330 ohm resistor and its other end goes to GND.  The junction
+ of the two resistors is the MEAS2 clock signal and goes to pad RPB2.
+<p>
+<li>2OUT (pin 3) goes to a 150 ohm resistor.  The other end of this resistor
+ goes to a 330 ohm resistor and its other end goes to GND.  The junction
+ of the two resistors is the MEAS2 clock signal and goes to pad RPB3.
+</ol>
+<p>
+<center>
+<img src="chipKIT_DP32_PCB_Parts9.gif">
+<br>
+<h3>chipKIT DP32 PCB Board Pattern with Suggested Parts Layout for
+ Multiple Axes and Environmental Sensors</h3>
+</center>
+<p>
+If using the suggested layout, most of the pads are NOT connected
+together so this will need to be done with jumpers.
+<p>
+<b>Wiring the BMP180 sensor</b>
+<p>
+Important: There are at least two different pinouts for the 5 pin version
+of the BMP180 and yours may not agree with the photo, above.  Adjust pin
+connections accordingly.  In addition, VIN may be called Vcc and 3Vo may
+be called 3.3V.  However, they are the same function.
+<p>
+Select a location on the chipKIT board that does NOT have connected pads.
+The BMP180 can be soldered directly to the board, installed in a
+socket, or run remotely via a cable.
+<p>
+<ol>
+<li>Identify the version of the BMP180 you have and suitable locations
+ on the chipKIT board that do NOT have connected pads.  Use the labels
+ on the BMP180 PCB to identify the signal pins, NOT their location.
+<p>
+ <ul>
+ <li>If the BMP180 has 5 pins, VIN or Vcc goes to a VIN pad.  Do NOT connect
+  3Vo or 3.3V on the BMP180 to anything.
+ <li>If the BMP180 has 4 pins, 3.3V goes to a 3V3 pad.
+ </ul>
+<p>
+<li>GND goes to a GND pad.
+<li>SDA goes to RB9.
+<li>SCL goes to RB8.
+<li>Install jumpers at locations JP4 and JP5 as shown in the diagram, above.
+</ol>
+<p>
+<b>Wiring the AM2302 sensor</b>
+<p>
+Select a location on the chipKIT board that does NOT have connected
+pads.  The AM2302 can be soldered directly to the board, installed in a
+socket, or run remotely via a cable.
+<p>
+<ol>
+<li>3.3V goes to a 3V3 pad.
+<li>Both GND pins go to a GND pad.
+<li>DTA goes to RB7.
+<li>Install a 10K ohm resistor between DTA and 3.3V.
+</ol>

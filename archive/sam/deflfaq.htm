@@ -1,0 +1,2345 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/deflfaq.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>TV and Monitor Deflection Systems</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/deflfaq.htm">https://www.repairfaq.org/sam/deflfaq.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+TV and Monitor Deflection Systems
+</h1>
+<h2>
+Version 1.29 (2-Sep-07)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="dstoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#dspre">Preface</A>
+ <ul>
+ <li><A HREF="#dsaac">Author and Copyright</A>
+ <li><A HREF="#dsdis">DISCLAIMER</A>
+ <li><A HREF="#dsack">Acknowledgment</A>
+ </ul>
+<p>
+<li><A HREF="#dsint">Introduction</A>
+ <ul>
+ <li><A HREF="#dssod">Scope of This Document</A>
+ <li><A HREF="#dssaf">Deflection System Safety</A>
+ </ul>
+<p>
+<li><A HREF="#dshdf">Horizontal Deflection System Fundamentals</A>
+ <ul>
+ <li><A HREF="#dshdh">How Does the Horizontal Deflection Circuit Work?</A>
+ <li><A HREF="#dsbdc">Basic Deflection Circuit Operation</A>
+ <li><A HREF="#dsdyc">The Deflection Yoke Connection</A>
+ <li><A HREF="#dswew">What are S and E/W or N/S Correction?</A>
+ <li><A HREF="#dsscc">S-Correction Circuit Operation</A>
+ <li><A HREF="#dsnse">N/S and E/W Correction Circuit Operation</A>
+ <li><A HREF="#dsscp">S-Correction Problems</A>
+ <li><A HREF="#dshlc">Horizontal Linearity Correction</A>
+ <li><A HREF="#dsewp">E/W Correction Problems</A>
+ <li><A HREF="#dsdns">Differences Between N/S and E/W Correction</A>
+ <li><A HREF="#dsdbp">Deflection Based Power Supplies</A>
+ <li><A HREF="#dseht">EHT (High Voltage) Generation</A>
+ <li><A HREF="#dsdir">The Difference Between the Ideal and the Real</A>
+ </ul>
+<p>
+<li><A HREF="#dshot">Horizontal Output Transistor (HOT) Information</A>
+ <ul>
+ <li><A HREF="#dswsm">Why are There So Many Different HOTs?</A>
+ <li><A HREF="#dshss">HOT Specs and Substitution</A>
+ <li><A HREF="#dsuht">Is There a Universal HOT Replacement for TVs?</A>
+ <li><A HREF="#dsuhm">Is There a Universal HOT Replacement for Monitors?</A>
+ <li><A HREF="#dsthu">Typical Types of HOTs Used in Monitors</A>
+ <li><A HREF="#dsvbh">Varieties of BU508 HOTs</A>
+ <li><A HREF="#dsasb">Why Do Apparently Similar or Better HOTs Sometimes Run Hot</A>
+ <li><A HREF="#dssth">Storage Time of HOTs</A>
+ <li><A HREF="#dsthd">Typical HOT Dissipation</A>
+ <li><A HREF="#dswmn">Why MOSFETs are Not Generally Used for HOTs</A>
+ <li><A HREF="#dsobd">Optimizing Base Drive for HOTs</A>
+ <li><A HREF="#dswid">What is This Diode Across My HOT?</A>
+ <li><A HREF="#dswic">What is This Funny Capacitor (or Capacitors) Across My HOT</A>
+ </ul>
+<p>
+<li><A HREF="#dshft">Horizontal Output Transistor Failure and Testing</A>
+ <ul>
+ <li><A HREF="#dshkb">HOTs Keep Blowing (or Running Excessively Hot</A>
+ <li><A HREF="#dfbdhh">Base Drive and Hot HOTs</A>
+ <li><A HREF="#dshtb">HOTs Blowing at Random Intervals</A>
+ <li><A HREF="#dsprh">Preventing Random HOT Failures</A>
+ <li><A HREF="#dsmhf">More on HOT Failure</A>
+ <li><A HREF="#dsssh">Saga on Swapping of HOTs</A>
+ <li><A HREF="#dsbct">Brief Comments on Testing the HOT</A>
+ <li><A HREF="#dstrh">Testing of Replacement HOTs</A>
+ <li><A HREF="#dsorh">Oscillation or Ringing at HOT Base?</A>
+ </ul>
+<p>
+<li><A HREF="#dsadd">Additional Deflection System Information</A>
+ <ul>
+ <li><A HREF="#dsweb">Web Resources on Deflection Systems</A>
+ <li><A HREF="#dswhd">Why are Nearly All Horizontal Driver Circuits Transformer Coupled</A>
+ <li><A HREF="#dsmhd">More on Horizontal Driver Circuits</A>
+ <li><A HREF="#dsscm">S-Correction Circuits on Multi-Scan Monitors</A>
+ <li><A HREF="#dswhf">Why do Some Monitors Fail if Driven at the Wrong Horizontal Frequency</A>
+ <li><A HREF="#dstwk">Tweaking the Deflection Rates in a Fixed Frequency Monitor</A>
+ <li><A HREF="#dscdy">Converting to a Different Yoke Inductance</A>
+ <li><A HREF="#dsyil">Yoke and Interlocks</A>
+ <li><A HREF="#dswyn">Why the Yoke is Needed to Keep the Horizontal Deflection System Happy</A>
+ <li><A HREF="#dsptm">Probing TV and Monitor Yoke Signals</A>
+ <li><A HREF="#dsbrh">Breathing Compensation</A>
+ <li><A HREF="#dssim">Circuit Simulation of the Deflection System?</A>
+ <li><A HREF="#dsjch">Jurb's Comments on HOT Troubleshooting</A>
+ <li><A HREF="#dshdc">Horizontal Deflection Circuit from Small TVs and Monitors</A></h3>
+ </ul>
+</ul>
+<A NAME="dspre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#dstoc">Deflection Systems Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="dsaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="dsdis">DISCLAIMER</A></h3>
+
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+
+<h3><A NAME="dsack">Acknowledgment</A></h3>
+
+Special thanks to Jeroen H. Stessen (Jeroen.Stessen@philips.com) for
+his extensive contributions to this document.  However, he does insist on the
+additional disclaimer that "I (he) will not be responsible for any unforeseen
+consequences resulting from following this advice".
+<p>
+<A NAME="dsint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#dstoc">Deflection Systems Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="dssod">Scope of This Document</A></h3>
+
+TVs and most computer and video monitors depend on the use of similar (at
+least in concept) circuit configurations to generate several outputs:
+<ul>
+<li>Current waveform required in the deflection yoke coils of the CRT for
+  linear sweep of the electron beam to create a high quality (geometry and
+  linearity) picture.  This is close to a sawtooth but not quite.
+<p>
+<li>CRT High voltage (20 to 30 kV or more) required to accelerate the electron
+  beam and provide high brightness and sharp focus, as well as other related
+  voltages - focus and screen (G2).
+<p>
+<li> Various auxiliary power and signals for other subsystems of the equipment
+  (low voltage, CRT filament, feedback, etc.).
+</ul>
+This document addresses the basic principles of operation of these types of
+deflection systems.  While most people with any familiarity with TV or monitor
+operation or repair have some vague idea of how these circuits work (probably
+just enough to be dangerous), many are incorrect or at least very incomplete.
+<p>
+Most of this information applies to the horizontal deflection which operates
+at the higher frequency in a raster scan display (except for peculiar rotated
+portrait formats where the functions of the horizontal and vertical scan are
+interchanged.
+<p>
+Equipment which utilizes this circuitry includes TV (direct view as well
+3-CRT and light valve projection types), computer and video monitors, tube
+based video cameras (e.g., vidicon), and other magnetically deflected CRT
+devices.
+<p>
+Vertical deflection circuits are much less complex due to the lower scan rate
+(e.g., 50 to 120 Hz V as compared to 15.734 kHz H for an NTSC TV or up to 120
+kHz or more for a high resolution computer monitor).  Most of the control and
+output drive circuitry is contained in a special vertical chip in modern
+equipment.
+
+<h3><A NAME="dssaf">Deflection System Safety</A></h3>
+
+The deflection components of an operating TV or monitor contains substantial
+power with high voltages and high currents.  This circuitry in many TVs and
+some monitors is directly line connected (no isolation).  There are often
+large high voltage filter capacitors on the B+ supply and these may retain a
+lethal charge for some time after the plug is pulled.  The CRT HV capacitance
+can also retain a dangerous charge - possibly for weeks!
+<p>
+Read, understand, and follow the recommendations in the document:
+<A HREF="safety.htm">Safety Guidelines for
+High Voltage and/or Line Powered Equipment</A> before attempting any TV or
+monitor repairs.  See the specific documents:
+<A HREF="tvfaq.htm">Notes on the
+Troubleshooting and Repair of Television Sets</A> or
+<A HREF="monfaq.htm">Notes on the
+Troubleshooting and Repair of Computer and Video Monitors</A> as appropriate
+for your equipment.
+<p>
+<A NAME="dshdf"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#dstoc">Deflection Systems Table of Contents</A>.
+<h2>Horizontal Deflection System Fundamentals</h2>
+ 
+<h3><A NAME="dshdh">How Does the Horizontal Deflection Circuit Work?</A></h3>
+
+Although there are many variations, the basic operation of the horizontal
+deflection/high voltage power supplies in most TVs, monitors, and other CRT
+displays is very similar.
+<p>
+For understanding the working of the deflection circuit regard the flyback
+transformer as an inductor.  The airgap stores energy, some of which may be
+tapped off during flyback by secondary rectifiers (e.g., vertical deflection,
+signal circuits, and high voltage supplies) and non-rectified loads (e.g.,
+filament supply) but these have hardly any influence on the basic working
+principles.
+<p>
+The scenario described below is only true in the steady state - the first few
+scans are different because the picture tube capacitance is still discharged.
+This represents a short-circuit at the secondary side of the flyback. It
+prevents proper demagnetizing, hence the core will go into saturation (unless
+special soft-start measures have been taken, like a B+ supply that comes up
+slowly). Generally, a hard start of the line deflection circuit represents a
+very heavy load on the HOT.  This will happen after a picture tube flashover
+or if the B+ is connected suddenly (due to intermittent contact) and can mean
+instant death to the HOT due to secondary breakdown.  See the section:
+<A HREF="#dsmhf">More on HOT Failure</A>.
+
+<h3><A NAME="dsbdc">Basic Deflection Circuit Operation</A></h3>
+
+The following description is only the basics.  For more information, see
+the article by David Sharples in "Electronics World", June 1996.
+<p>
+A very simplified circuit is shown below - many components needed to create
+a practical design have been omitted for clarity.  First concentrate only on
+the portion of the schematic shown below to the left of the yoke components:
+<PRE>
+
+                         B+
+                          o
+                          |
+                          +
+                           )::
+                Part of T2 )::
+                   Flyback )::
+                   Primary )::
+                           )::
+                          +
+                          |
+                          +-------+---------+----------+
+                          |       |         |          |
+         Horizontal       |       |         |          +
+           Drive          | C     |         |           )::    (Horizontal
+             T1       B |/      __|__      _|_          ):: L2  Deflection
+         --+    +-------|       _/_\_      ---          )::     Yoke - HDY)
+    Driver  )::(        |\        |   D1    | C1       +
+    Stage   )::(     Q1   | E     | Damper  | Snubber _|_ C2
+    (not    )::(     HOT  |       |         |         --- S-correction
+     shown  )::(          |       |         |          |
+         --+    +---------+---+---+---------+----------+
+                             _|_
+                              -
+               B+ Return (may not be signal ground)
+
+</PRE>
+The current in the flyback primary and collector of the HOT are *not* equal.
+The horizontal deflection yoke, damper diode, HOT collector, snubber HV
+capacitor(s), and flyback primary all connect to the same point.  We begin our
+adventure at the end of the scan - retrace - when the flyback period begins:
+<p>
+<ol>
+<li>At the end of scan, current is flowing through the flyback primary to the
+   HOT, Q1.  At the start of the flyback period, Q1 turns off.  (This must be
+   done in a controlled manner - not just a hard shutoff to minimize stresses
+   on the HOT - but that is another story).  Since current in an inductor
+   (the primary of the flyback has inductance) cannot change instantaneously,
+   the current is diverted into the snubber capacitor, C1.  The inductance of
+   the flyback primary (T2) and C1 forms a resonant circuit so that the voltage
+   climbs on C1 as the current goes down.  At its peak, this voltage will be
+   1000 V to 1500 V.
+<p>
+<li>C1 now begins to discharge in reverse through the primary of T2 (back into
+   the B+ supply - the filter capacitor will stabilize the B+ output) until
+   its voltage (also C-E of the HOT) reaches 0.
+<p>
+<li>If there were no damper diode (D1), this voltage would go negative and
+   continue to oscillate as a damped sinusoid due to the resonant circuit
+   formed by T2 and C1 (and the other components).  However, D1 turns on as
+   the voltage goes negative and diverts the current through it clamping the
+   voltage near 0 (-Vf for the diode).
+<p>
+   Note that the damper diode D1 may have been built into the HOT T2 in the
+   case of an inexpensive or small screen TV or even some monitors that don't
+   have any circuitry for E/W correction.
+<p>
+Steps (1) to (3) have accomplished the flyback function of quickly and cleanly
+reversing the current in T2 (and, as we will see, the deflection yoke as well).
+The full flyback (and yoke current) are now flowing through the forward biased
+damper diode, D1.
+<p>
+<li>At the beginning of scan, the damper diode (forward biased) carries the
+   bulk of the current from the yoke and flyback.  The nearly constant
+   voltage of the B+ across T2 results in a linear ramp of current now
+   through the damper diode since it is still negative and decreasing
+   in magnitude.
+<p>
+<li>At approximately mid-scan, the current passes through zero and changes
+   polarity from minus to plus.  As it does so, the damper diode cuts off
+   and the HOT picks up the current (with a voltage drop of +VCEsat).  Current
+   is now flowing out of the B+ supply.
+<p>
+   The base-drive to the HOT must have been switched on before this point!
+   Timing is not very critical as long as it happens between the end of the
+   flyback and the zero crossing of the summed current.  The location of the
+   zero crossing depends on the secondary load, notably the beam current.
+   Larger beam current requires that the HOT be switched on earlier. The
+   designer has to do some optimizing here...
+<p>
+<li>During the second half of the scan, the HOT current ramps up approximately
+   linearly.  This is again due to the nearly constant voltage of B+ across
+   the inductance of the flyback primary.
+<p>
+<li>Near the end of scan, the HOT turns off and the cycle repeats.
+<p>
+   The HOT has a storage time between 3 us and 7 us, thus the base-drive is
+   switched off earlier, in a controlled way to properly remove the charge
+   carriers from the collector region in the HOT. The peak amplitude of the
+   base current and the way it is decreased determine the ultimate dissipation
+   in the HOT and are thus subject of heavy optimization. This is hampered
+   by the fact that there is much spread in HOT parameters. 
+</ol>
+<p>
+Thus, the current in the flyback (ignoring the yoke components) is a nearly
+perfect sawtooth.  The ramp portion is quite linear due to the essentially
+constant B+ across the flyback primary inductance.  The current waveform can
+be easily viewed on an oscilloscope with a high frequency current probe.  See
+the section: <A HREF="#dsptm">Probing TV and Monitor Yoke Signals</A>.
+<p>
+The voltage across the C-E of the HOT is a half sinusoid pulse during the
+flyback (scan retrace) period and close to zero at all other times (-Vf of
+the damper diode during the first half of scan; +VCEsat for the HOT during
+second half of scan).
+<p>
+Caution: Without a proper high frequency high voltage probe, it is not possible
+or safe to observe this point on an oscilloscope with full B+.  However, where
+the equipment can be run on a Variac, this clean pulse waveform can be observed
+at very reduced B+.  Excessive ringing or other corruption would indicate a
+problem in the flyback, yoke, or elsewhere.
+<p>
+Normally you would use a 100:1 probe suitable for 2 kV peak.  You could always
+make your own voltage divider out of a couple of suitable resistors and use a
+regular 10:1 or 1:1 probe.  Beware that also the capacitive division ratio
+must be correct because the line frequency is high enough to make it relevant.
+<p>
+The current through Q1+D1 is several amperes peak-peak. There's a lot of
+power circulating here, making this a *dangerous* circuit in every way!
+
+<h3><A NAME="dsdyc">The Deflection Yoke Connection</A></h3>
+
+So, you ask: "Why can't the yoke just be placed in series or parallel with the
+flyback primary?".  After all, the current is a nice sawtooth.  Isn't that what
+we want?  (And this would be easier to understand than placing it where it
+is, in series with the S-correction capacitor, C2.)
+<p>
+There are several reasons including:
+<p>
+<ul>
+<li>The desired yoke current is not quite a sawtooth but includes two major
+  corrections: S and E/W (described below).  These cannot be applied easily
+  with such a configuration.
+<p>
+<li>The flyback also generates the HV and secondary output voltages and the
+  primary current might then be affected by these and change as a function
+  of beam current (picture brightness) or audio level (although feeding the
+  audio amplifiers from LOT windings is not common anymore).
+</ul>
+<p>
+Note that some TVs and monitors cut off power to the horizontal deflection
+circuits if the yoke connector is removed.  This is a separate interlock
+and not a result of the B+ flowing through the yoke.  Its purpose is to
+protect the circuitry and the CRT.  With no deflection, the very bright spot
+in the center of the screen would quickly turn into a very dark permanent
+unsightly blemish.  With appropriate precautions to avoid this costly
+situation, it is possible to power a monitor or TV with the yoke winding(s)
+disconnected to determine if a defective yoke is messing up the deflection
+system operation.  See the documents:
+<A HREF="monfaq.htm">Notes on the
+Troubleshooting and Repair of Computer and Video Monitors</A> or
+<A HREF="tvfaq.htm">Notes on the
+Troubleshooting and Repair of Television Sets</A> for additional information.
+<p>
+The yoke is placed across the C-E of the HOT in series with a capacitor
+(S-correction) and other components which in effect form a variable power
+supply (analogous to the constant B+) which is used to compensate for the
+various problems of scanning a nearly flat screen.  However, for initial
+understanding, simply think of C2 as a constant voltage power supply
+similar to B+.
+<p>
+So, the HOT turns off and produces a single sinusoidal pulse across
+the HOT (Q1) which "charges" up L2 (the yoke) with current flowing through
+it (from top to bottom).  At the beginning of scan, that current continues to
+flow through the yoke via the damper diode and decreases approximately
+linearly (since the voltage on C2's is working against it)
+until near mid-scan, it reverses direction and flows backwards through
+the yoke via the HOT which has been turned on prior to mid-scan.  All
+the while, the voltage across C2 is nearly constant so this current
+change is nearly linear, only modified slightly by the S-correction
+effect of C2.  To emphasize: C2 has to be present or else this explanation
+won't make sense and the circuit won't work.
+<p>
+Note that it will also be easier to understand the yoke operation if
+one realizes that the flyback circuit and yoke circuit are more or less
+independent: The function of the HOT and flyback are to produce a carefully
+shaped high voltage pulse across the yoke circuit.  Except for the brief
+period where that pulse is active, the voltage across the HOT is close to
+zero.  So, the current flowing through the flyback can't affect what's
+happening in the yoke circuit.
+
+<h3><A NAME="dswew">What are S and E/W or N/S Correction?</A></h3>
+
+These terms actually refer to the various corrections to deal with what is
+normally called scan linearity and pincushion distortion.  Most larger TVs
+and nearly all high quality monitors will have various user and internal
+controls to optimize the corrections for each scan rate (multiscan monitors).
+<p>
+And yes, E/W/N/S stand for directions. :)
+<p>
+Because the screen of most CRTs is relatively flat (even those not advertized
+as flat) and the electron gun is relatively close, any picture tube will
+naturally have serious linearity problems and pincushion distortion if there
+were no corrections applied.  Near the *edges* and *corners* of the screen the
+spot will move faster because the same angular speed translates to a larger
+linear speed.  This is simple trigonometry.
+<p>
+There are 3 ways of correcting N/S: 
+<ol>
+<li>The design of the deflection coil (distribution of the windings). 
+ This is cheap and robust but it requires a huge design effort. 
+ Also, if for some reason the glue that holds the wires together 
+ gets soft then the geometry and convergence may be affected. 
+<p>
+<li>With permanent magnets. After the tube has been built it is 
+ switched on and some magnets are stuck on the back to improve 
+ geometry, convergence and or landing. This is very difficult 
+ but relatively cheap. I would expect it in better monitors. 
+<p>
+<li> With active N/S correction. A line-frequency complex waveform is 
+ injected as current into the raster deflection coil. This allows 
+ arbitrary correction of N/S waveforms, within the limitations of 
+ the waveform generator and the bandwidth of the system. This can 
+ be easy to adjust, or not, depending on the design, and it is 
+ most expensive of all. I would expect it in workstation monitors. 
+</ol>
+<p>
+As for problems with N/S geometry, if there is an active circuit at all, then
+it would correct only 4-way symmetrical errors, so you would expect an error
+in all 4 corners. I don't know of any circuits that would affect only 1 
+corner.  A magnet might affect only 1 corner, it might have dropped. 
+A coil might have softened in 1 corner, due to heat. That would be beyond
+repair, I guess. But it is not very likely either.  My guess is that the error
+has always been there, from the start and it was just noticed!
+
+<h3><A NAME="dsscc">S-Correction Circuit Operation</A></h3>
+
+The first correction to apply, in both directions, is S-correction.  By simply
+putting a capacitor in series with each coil, the sawtooth waveform is modified
+into a slightly sine-wave shape (the top and bottom are somewhat squashed).
+This reduces the scanning speed near the edges. Linearity over the two main
+axis should now be good.
+<p>
+When we add in the yoke components (only the horizontal deflection coil and
+S-correction capacitor or S-cap are actually shown above) conditions are only
+slightly more complex:
+<p>
+First, consider what would happen if instead of the S-cap, the yoke were
+connected to B+ like the flyback.  In this case, the total current would
+divide between the flyback primary and the yoke.  It would still be a sawtooth
+as described above.  Of course, component values would need to be changed
+to provide the proper resonant circuit behavior.
+<p>
+That's called 'tuning of the flyback capacitor', to achieve the proper
+duration of the flyback pulse, matching the blanking time of the video
+signal, and to achieve the proper peak flyback voltage, matching the
+Vces specification of the HOT with a reserve of about 20%.
+That's two conditions, requiring two degrees of design freedom.
+There are 3 freedoms: supply voltage, flyback capacitor and yoke
+inductance.
+<p>
+With the S-cap and yoke wired as shown above, the inductance of the yoke and
+S-cap form a low pass filter such that voltage on the S-cap will be a smoothed
+version of the pulses on the HOT collector (similar in effect to the B+ feeding
+the flyback but not a constant value).  The average value of the S-cap voltage
+will be positive.
+<p>
+The S-capacitor together with the yoke inductance forms a resonant circuit
+whose frequency is tuned lower than the line frequency. It has the effect
+of modifying the sawtooth current into a sine-wave shape. This is called
+'S-correction'. It reduces the scanning speed at the left and right edges
+of the screen.
+<p>
+The value of the S-cap can be selected so that the voltage varies in such a
+way as to squash the current sawtooth by the appropriate amount to largely
+compensate for the fact that the electron beam scans a greater distance with
+respect to deflection angle near the edges of the screen.
+<p>
+Think of it this way: When the scan begins, the yoke current is at the maximum
+value in the direction to charge the S-cap.  The voltage across the S-cap
+is causing the current to decrease but the S-cap is also gaining charge so
+the rate of decrease is increasing.  At the time the current passes through
+0, the S-cap is charged to its maximum.  The current now reverses direction
+retracing its steps.  Got that! :-).  This is another example of a portion
+of a resonant circuit.  The voltage on the S-cap is varying by just the right
+amount to compensate for the geometry error.
+<p>
+Many CRTs, especially the flatter ones, have a need for geometry correction
+that goes beyond simple S-correction. Most tubes need inner pin-cushion
+correction, which is also called "dynamic S-correction". It is an adaptation
+of the diode modulator circuit, which is only found with tubes that need
+E/W (pin-cushion) correction in the first place.  See the section:
+<A HREf=#dsnse">N/S and E/W Correction Circuit Operation</A>.
+<p>
+Some tubes need more S-correction only at the extreme edges, this is called
+"higher-order S-correction". This requires another resonant circuit, tuned to
+a higher frequency, which is more difficult to implement. Most sets will not
+have such circuit. 
+<p>
+Many tubes in the USA (with only 100 degrees deflection angle) are
+"raster-correction-free" so they will not have much correction circuitry other
+than basic S-correction. There will be no diode-modulator for E/W-modulation.
+Such sets will have larger remaining errors that tubes (with 110 degrees
+deflection angle) that need active correction to begin with. 
+<p>
+For multiscan monitors, S-caps must be selected for each scan range since the
+timing varies with scan rate.  These are only approximate corrections but
+good enough for most purposes.  MOSFET or relay circuits take care that for
+each range of scanning frequencies the correct combination of S-correction
+capacitors is selected.
+<p>
+As an example, consider a multiscan monitor which supports VGA (31.4 kHz,
+800x600 at 56 Kz (35 kHz), and 800x600 at 60 Hz (38 kHz):
+<p>
+For good geometry between 31, 35 and 38 kHz, two discrete values for the S-cap
+is barely enough. Actually a 3rd value optimized for 35 kHz would be better. If
+there is only one S-cap and it is optimized for 38 kHz, then at 31 kHz you will
+be using a too large angle of the sine (of the resonant frequency between the
+S-cap C and the deflection coil inductance). Possibly even > 180 degrees,
+making the current fold back. Apart from an obvious geometric distortion,
+there is also increased risk of HOT failure because you're operating too close
+to the resonant frequency.
+<p>
+Applications of CRTs in TVs are a lot less critical than computer monitors, so
+don't expect too much of them. It is simply not worth the money until more
+critical applications like WebTV come along.  The market is not willing to
+pay for corrections to problems that most people would never notice (with
+typical TV pictures). 
+
+<h3><A NAME="dsnse">N/S and E/W Correction Circuit Operation</A></h3>
+
+Then remain the N/S and E/W errors, meaning that near the corners the scanning
+speed is still too large.
+<p>
+To a large extent the N/S errors can be corrected by a suitable yoke coil
+design.  For smaller tubes (90 to 100 degrees types) this is also possible for
+E/W errors. For larger tubes (110 degrees) or high quality tubes, electronic
+
+
+E/W correction is required. This is the well-known pincushion.
+<p>
+E/W correction is modulation (which implies multiplication) as a function
+of vertical beam position. The amplitude of the horizontal deflection current
+is modulated with a parabola waveform which is derived from the vertical
+deflection circuit. This squeezes the top and bottom lines back into the left
+and right screen borders.
+<p>
+N/S correction (if any) is a method of injection - addition of a high
+frequency waveform (harmonics of the line frequency) to the low-frequency
+field-deflection waveform.
+<p>
+This requires costly nasty circuitry which is better avoided.
+<p>
+This is how the diode modulator for E/W correction works:
+<PRE>
+
+           B+
+            o
+            | (Vb)
+            +
+             )::
+  Part of T2 )::
+     Flyback )::
+     Primary )::
+             )::
+            +
+            |                    <- Yoke components ->
+            +-------+---------+---------+----------+
+            |       |         |         |          |
+            |       |         |         |          +
+            |       |         |         |           )::    (Horizontal
+            |     __|__      _|_        |           ):: L2  Deflection
+            |     _/_\_      ---        |           )::     Yoke - HDY)
+            |       |   D1    | C1      |          +
+            |       | Damper  | Snubber |         _|_ C2
+            |       |         |         |         --- S-correction
+            |       |         |         |          |
+            |       +---------+---------)----------+
+            |       |         |         |(NC)      |
+            |       |         |         |          +
+            | C     |         |         |        L3 )::
+        B |/      __|__      _|_       _|_   Bridge )::  L4
+     -----|       _/_\_      ---       ---     coil )::  E/W Coil    
+          |\        |   D2    | C3      | C4       +     ::::         (Vm)
+       Q1   | E     | Damper  | Snubber | Snubber  +----+^^^^+---+-----+-----
+       HOT  |       |         |         |          |             |     |
+            |       |         |         |      C5 _|_          +_|_   E \|B
+            |       |         |         |  Bridge ---        C6 ---  Q2  |---
+            |       |         |         |     cap  |             |    C /|
+            |       |         |         |          |             |     |
+            +-------+---------+---------+----------+-------------+-----+------
+           _|_                                            E/W Amplifier (PNP)
+            -
+       B+ Return (may not be signal ground)
+
+</PRE>
+The deflection supply B+ gives a constant voltage Vb. At the output of
+the E/W amplifier there is a variable voltage Vm. Because there can not
+be an average voltage over any coil, the average voltage over the
+deflection circuit (L2 + C2) is Vb-Vm. The scanning width is proportional
+with this voltage Vb-Vm. By modulating Vm as a field-frequency parabola
+which is higher for the top and bottom lines it is achieved that the
+scanning width is reduced for the corners of the screen.
+<p>
+The required field-parabola waveform is derived from the field deflection
+circuit. Amplitude and DC-level are adjustable, for correcting pin-cushion
+distortion and setting the screen width. EHT is *not* influenced !
+<p>
+The E/W amplifier usually has a PNP emitter follower only, because it
+must only sink current and dissipate a bit of power. The coils L3 and L4
+take care that the E/W amplifier sees no line-frequency.
+The "bridge" components L3 and C5 resemble the deflection coil with its
+S-correction capacitor and carry the large amplitude alternating current.
+L3+C5 are tuned to approximately the same frequency as L2+C2.
+<p>
+C1, C3 and C4 must be tuned so that EHT is independent of Vm and peak
+voltage over D2+C2 is high enough but not too high when Q2 is off.
+C4 is usually a small ceramic capacitor of approx. 1 nF mounted close
+to the HOT Q1, it also suppresses EMI. Flyback capacitors are critical
+components. Wrong types may overheat and burn. Bad contacts here or
+elsewhere in the deflection circuit may arc and also cause fire.
+<p>
+There are many variants to this circuit, e.g. for dynamic S-correction.
+Multi-sync monitors need added circuitry to make the EHT independent of
+the line frequency (if there is not a separate EHT supply, that is).
+<p>
+If the E/W modulator fails then you will see that the top and bottom lines
+will be much too wide. There are several parts that could have failed. It's
+usually not too difficult to find why there's no parabola.  If you have
+partial loss of E/W modulation, notably in the extreme corners, then you
+should suspect the tuning of the 3 flyback capacitors that belong to the
+diode modulator circuit. That's a specialist job...
+<p>
+<h3><A NAME="dsscp">S-Correction Problems</A></h3>
+<ul>
+<li>An open S-cap will result in no horizontal deflection - a vertical line.
+<p>
+<li>A shorted S-cap will likely load down the B+ possibly resulting in a blown
+  fuse or other power supply components.
+<p>
+<li>An S-cap that changed value (or in the case of a multiscan monitor, selected
+  to be the wrong value) will result in distortion at the left and right sides
+  of the screen:
+<p>
+ <ul>
+ <li>Too low: picture will be squashed towards edges.
+<p>
+ <li>Too high: picture will be stretched towards edges.
+ </ul>
+<p>
+  Note that this is not the same as what is commonly called linearity which
+  would likely affect only one side or gradually change across the screen.
+</ul>
+
+<h3><A NAME="dshlc">Horizontal Linearity Correction</A></h3>
+ 
+Since there is non-zero resistance associated with the components (mainly
+coil losses) in the yoke circuit (yoke winding, ESR of S-cap, etc.) the world
+is not quite as ideal as one would hope.  Without compensation, this resistance
+would result in non-linearity of the picture - it would tend to be squashed on
+the  right side as the resistance saps energy from the yoke circuit.
+<p>
+The waveform becomes a damped sinewave, which will be 'undamped' by restoring
+energy during the flyback.
+<p>
+One way to deal with this is to add a magnetically biased saturable inductor in
+series with the horizontal deflection yoke.  This is called the linearity coil.
+<p>
+Its core is magnetically biased near the point of saturation such that the
+inductance decreeases with increasing current and this helps to stretch the
+right hand side of the scan.  In other words, during the scan the coil
+saturates so that the inductance decreases.  At the end of scan there is
+practically no voltage left over the linearity coil so that the deflection
+coil gets maximum voltage.
+
+<h3><A NAME="dsewp">E/W Correction Problems</A></h3>
+
+The common name for the adjustments is likely to be 'Pincushion Amp' and
+'Pincushion Phase'.  They are controlling the E/W correction circuits.
+<p>
+Pincushion Amp adjusts the amplitude of the correction signal.
+<p>
+Pincushion Phase adjusts where the correction is applied on the vertical scan.
+<ul>
+<li>Failure of the E/W correction circuit will result in very noticeable
+  pincushioning distortion of the vertical edges.
+<p>
+<li>Excessive E/W correction will result in barrel distortion of the vertical
+  edges.
+<p>
+<li>A bad power supply derived from the flyback could also result in similar
+  symptoms due to ripple or lack of power to the pincushion circuitry.
+</ul>
+
+<h3><A NAME="dsdns">Differences Between N/S and E/W Correction Implementation</A></h3>
+
+While the desired effects are symmetric - modulate the amplitude of one
+component of the deflection circuit (H or V) by the other (V or H), the
+implementations will differ substantially.  The reasons should be obvious:
+The line frequency is much higher than the field frequency.
+<p>
+E/W correction is easy: the lower frequency modulates the higher frequency.
+This reduces to simple amplitude modulation.  Well, simple in principle. The
+line circuit is a high-energy circuit.  For this purpose the diode modulator
+circuit has been invented.  It allows an energy exchange between the line
+deflection  circuit and a pseudo deflection circuit.
+<p>
+N/S correction is difficult: the higher frequency modulates the lower
+frequency. It *can* be done with sort-of amplitude modulation by using a
+'transductor'. This is not a transformer but a component with 2 coils and a
+saturable core where the (line frequency) current through 1 coil modulates
+the inductance of the other coil. If there are tuned parts in the circuit
+then the correction will be highly sensitive to line frequency variations.
+<p>
+It can also be done with a regular transformer, by injecting a strong signal
+(from an amplifier) with line frequency components into the field deflection
+circuit.
+<p>
+Either way, it's an expensive solution which should be
+avoided by designing the deflection coils in such a way
+that the picture tube needs no active N/S correction.
+
+<h3><A NAME="dsdbp")Deflection Based Power Supplies</A></h3>
+
+Several types of auxiliary power may be obtained from the flyback, somewhat
+as a byproduct of the deflections system operation.  These may provide DC
+(using high speed rectifiers and small filter capacitors), or AC.  Although
+not always well known, the coupling factor with the primary is decent for a
+flyback transformer and so there can be scan rectifiers as well as flyback
+rectifiers in the same system - and often are.  Refer to the diagram, below:
+<ul>
+<li>Scan power is obtained during the forward stroke as with a 'normal'
+  transformer.  Energy is transferred while the HOT/damper diode is conducting.
+  The output rectifier is oriented so that current flows during scan time.
+  (Dots on the transformer winding match.)
+<p>
+  The scan rectifiers make no use of the stored magnetic energy, they load the
+  primary directly during the scan part. They do not cause an increase of the
+  stored magnetic energy so a heavy load is not a problem.
+<p>
+<li>Flyback power is obtained from the stored energy in the flyback
+  transformer's inductance when the HOT shuts off.  The output rectifier is
+  oriented so that current flows at flyback time.  (Dots on the transformer
+  windings oppose.)
+<p>
+  The flyback rectifiers on the other hand (especially the EHT) draw from the
+  stored magnetic energy.  When the secondary load increases, the magnetization
+  current will also increase.  Ultimately this will cause saturation of the
+  ferrite core. Excess beam current is a common cause for this and should be
+  avoided by the beam current limiter.  The advantage of a flyback rectifier
+  is that it provides 7 times more volts per winding than a scan rectifier.
+<p>
+<li>AC power (usually only for the filament or a feedback signal) flows during
+  both scan and flyback.
+</ul>
+<PRE>
+                 _  _
+                  \/                                   _/\_
+   B+ ------+    +----|>|-----+---o +V1  B+ ------+    +----|>|-----+---o +HV
+           o )::( o  Scan     |                  o )::(   Flyback   |  
+             )::(  Rectifier _|_+                  )::(  Rectifier _|_+ 
+             )::(            ---                   )::(            ---
+             )::(             |                    )::(             |
+       _/\_  )::(             |              _/\_  )::( o           |
+  HOT ------+    +------------+         HOT ------+    +------------+
+                             _|_                                   _|_
+                              -                                     -
+
+</PRE>
+Here, V1 is just a typical example of an auxiliary supply derived from a scan
+rectifier and HV is the best known example of the use of a flyback rectifier.
+Since the deflection system runs at 15 kHz or higher, fast recovery diodes
+must be used as rectifiers.  However, at these frequencies, the uF ratings of
+the filter capacitors can be quite small compared to power line (50/60 Hz)
+based systems.
+
+<h3><A NAME="dseht">EHT (High Voltage) Generation</A></h3>
+
+The EHT (Extra High Tension or HV to the CRT ) is generated from a secondary
+winding on the flyback transformer having several thousand turns of very fine
+wire.  Being a flyback supply, the actual output voltage is many times what
+would be calculated based on turns ratios alone.  The HV rectifier consists of
+a stack of silicon diodes with a total PIV rating of 50 kV or more.
+<p>
+Because the flyback pulse is so narrow, the rectifier diode will
+conduct only a short time. Thus the peak current in the winding will
+be quite high, resulting in a significant voltage drop when loaded.
+The internal impedance of the EHT source is in the order of 1 MOhm,
+so with a load of e.g. 1 mA the EHT will drop 1000 V = -3%.
+Usually the EHT voltage is far from stable, 10% drop is quite normal.
+<p>
+If the EHT voltage drops, then the electrons will be accelerated less
+and will move through the deflection field at a lower velocity. As a
+result they will be easier to deflect by the magnetic field, and the
+picture size will grow. Without special measures, brighter pictures
+will be larger. The measure is to feed some EHT information or beam
+current information to the deflection circuits, reducing the deflection
+current amplitude a bit for bright pictures. For horizontal deflection
+this is done by the E/W modulator. This is called anti-breathing.
+<p>
+Sets with raster correction free picture tubes don't have an E/W 
+modulator. There the correction may be done by means of a power 
+resistor in series with the B+ supply. A large beam current causes 
+more power consumption, this lowers the B+ supply voltage and thus 
+reduces the line deflection current. That also reduces the EHT even 
+further, but the deflection current has a stronger effect on the 
+picture width than the EHT. Better methods exist too.
+<p>
+The EHT information is also used to protect the flyback transformer
+from overload. As the load increases, the average primary current
+rises. Ultimately it may reach a level where the transformer core
+may go into saturation. This causes large peak currents in the HOT
+which might lead to destruction. To prevent this, some EHT information
+is fed to the contrast controller, to automatically reduce the
+picture brightness whenever the white content is too much. This is
+called the average beam current limiter. 
+<p>
+A failure in the video path, like a video output amplifier stuck at
+0 V, causes a high beam current that will not react to the contrast
+controller. In that case the beam current limiter will not work and
+the set should switch off automatically, usually within a few seconds
+after applying power. When the cathodes heat up, you'll see an even
+picture with diagonal retrace lines and then it will switch off.
+
+<h3><A NAME="dsdir">The Difference Between the Ideal and the Real</A></h3>
+
+Don't expect to find the circuits shown above staring you in the face when you
+get your Sams' Photofact or service manual.  There are a semi-infinite number
+of variations on this basic theme.  Some of them will, to put it mildly, appear
+quite obscure (or to put it more positively, creative) at first.
+<p>
+You may see all sorts of additional passive components as well as transformers
+for generating additional voltages not provided by the flyback.  There may be
+diodes in places you would think would be impossible.  Therefore, to really
+understand even approximately how each design works may require some head
+scratching but the basic operation of them all seems to be very similar.
+<p>
+<A NAME="dshot"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#dstoc">Deflection Systems Table of Contents</A>.
+<h2>Horizontal Output Transistor (HOT) Information</h2>
+<h3><A NAME="dswsm">Why are There So Many Different HOTs?</A></h3>
+
+I find it fascinating (ok, well at least interesting) that after 20 years
+of designing totally solid state TVs and monitors, HOTs have not become
+jelly bean parts.  Why does every new design insist on a unique HOT?  I
+don't believe this is simply due to increased requirements like wider
+deflection angles or (for computer monitors) higher scan rates.
+<p>
+Actually there is still some progress going on :-).
+<p>
+TV's for Europe DO get higher scan rates, you know.  Our entire high-end
+range runs on 31250 Hz. Sets with VGA capability often run even higher.
+100 Hz HDTV was supposed to run on 62500 Hz but that is a big technological
+problem as you might imagine.
+<p>
+Larger screen sizes (32" 16:9, 33" 4:3) do tend to have less sensitive
+deflection coils, so the peak-peak amps go up. Combined with the
+higher scan rate this often means that some new transistor must be
+found, even if it is only a higher rated selection from an existing 
+type. There are also 1700 V Vce types next to the regular 1500 V.
+<p>
+And in USA it is known that setmakers (like ourselves) have
+standard transistors marked with a different type number, to prevent
+repairmen from putting in just any would-be replacement type.
+For a fact, it IS risky to put in the wrong replacement, the faulty
+drive conditions may destroy it early. So try and avoid this.
+<p>
+To comfort you, the BU508 is still widely used!
+
+<h3><A NAME="dshss">HOT Specs and Substitution</A></h3>
+
+Refer the article on deflection circuit design by David Sharples
+(Electronics World & Wireless World, June 1996).
+<p>
+Every line transistor has its own requirements for:
+<ul>
+<li>Amount of base drive current, especially the Ib at end-of-scan.
+<li>Waveform of base drive current (rising, steady, falling)
+<li>Speed of reduction base drive current at switch-off.
+</ul>
+The most effort goes into the optimization of the magnitude of the base drive
+current. The problem is: gain spread. In the ideal world, all transistors
+would come from the factory with exactly the same gain.  In the real world,
+this isn't the case - it isn't even close. You have to find *one* optimum
+drive so that neither the high-gain nor the low-gain type will dissipate too
+much power taking into consideration the variations in other circuit components
+as well.  There used to be other spread factors influencing the dynamic
+transistor parameters but fortunately, these have been mostly eliminated by
+better process control.
+<ul>
+<li>Overdriving causes a slow switch-off behavior, some collector current keeps
+ flowing during the beginning of the flyback and will cause dissipation.
+<p>
+<li>Underdriving causes bad saturation, the collector voltage will start to
+ rise before the flyback should start. This too causes dissipation.
+</ul>
+Either condition is easily observed with an oscilloscope, a current probe and
+a 1:100 voltage probe (be sure to calibrate it for high frequency response!).
+<p>
+The dissipation as a function of the base drive current is a more-or-less
+parabolic function with a global minimum. The minimum will be different for
+high-gain and low-gain types. By measuring the curves for both extreme types
+and combining them, an optimum drive for the random type will be found, with
+a figure for the worst-case dissipation.
+<p>
+All this will only be true if you insert a device which is a member of the
+population spread for which you optimized the base drive.  If you just insert
+a random other device (different type, same type but different brand, same
+type and brand but much older/newer batch) then all bets are off. Dissipation
+may be way too high, with early failure as a result (and possibly a distorted
+picture geometry due to excess damping of the waveform).
+<p>
+It is certainly not possible to substitute a standard HOT (BU508) in place of
+a more advanced type (in >> 15 kHz applications like a monitor).  It is also a
+very bad idea to substitute a BU508 in place of a much lighter type like a
+BUT11 (used in <= 17" sets). It will fail!
+<p>
+With horizontal output transistors, it is *not* true that 'bigger is better'.
+If you substitute a heavier transistor (more amps, more volts, more watts,
+faster switching, whatever) for a lighter one, then there is a very big chance
+that it will fail earlier, not later.  The reason is that the drive conditions
+will now be wrong (most likely underdrive) and the transistor will overheat
+from too high conduction losses (Ic * Vce,sat).  So do yourselves a favour and
+get a correct replacement type.
+<p>
+If cost weren't an issue, transistors and other parts could be hand selected
+(and some are in any case).  But, you wouldn't be able to buy a monitor for
+$200 if that were required!
+
+<h3><A NAME="dsuht">Is there a Universal HOT Replacement for TVs?</A></h3>
+
+WARNING: As noted elsewhere in this document, the following approach is much
+less likely to work with long term (or even more than a few millisecond)
+reliability in high performance computer monitors.
+<p>
+(From: Chris Jardine (cjardine@wctc.net).)
+<p>
+I shouldn't say this, but, the TV repair shop I worked for a number of
+years ago stocked 1 universal Horizontal Output Transistor 2SC1308K or
+NTE238. This worked in almost every set out there that used a
+transistor and not SCR's (RCA, etc.). This may not be the best way of
+substituting, but, these 2 part numbers seem to have fairly high gain,
+power capability, voltage ratings, current ratings, etc. These
+characteristics made it a good substitute and when you buy 100 at a
+time you would get a really good price.
+<p>
+This may not work in your case, but, my $.02
+
+<h3><A NAME="dsuhm">Is There a Universal HOT Replacement for Monitors?</A></h3>
+
+<blockquote>
+"Would anyone like to comment on BU508's, they should be to the same spec.
+ and born equal.  My experience has been that different manufacturers BU508's
+ behave differently.  One make will fry and last about 3 weeks, put in a
+ different make, no circuit change, and it runs cool, and is still running 3
+ years later.  Price doesn't seem to be a guide, a $1 one may run cool and
+ have no mfr. code, while a branded one might cost a lot more and run hot."
+</blockquote>
+Yes, here you have the problem exactly!
+<p>
+There is such a thing as component spread. Base drive must be optimized for
+the whole range of gain within a type.  That range can be so large that at the
+limits of the spread the dissipation can still be too large. The reason is
+that the device with the largest gain will be overdriven, causing a tail in
+the current at switch-off, whereas the device with the smallest gain will be
+underdriven, causing it not too saturate enough. Each condition can be easily
+viewed on the 'scope. By varying the base drive you can minimize dissipation.
+<p>
+Normally one basedrive is set for the entire population, accepting the
+variation in dissipation and its upper limit.  Sometimes the variation is so
+large that this will not be acceptable. But this is unlikely for a BU508 in a
+16 kHz application. Substituting it with a similar type from a different brand
+with different parameter spread may indeed cause it to dissipate too much and
+thus fail early. This has nothing to do with price or quality, just with a
+different optimum base drive. If base drive has been optimized for a brand
+with low parameter spread then it can be that the heatsink may have correctly
+been selected smaller...
+<p>
+Since you live in the UK, you should definitely read David Sharples' article
+in Electronics World (was it June 1996 ?).  He literally optimizes base drive
+for a living.
+
+<h3><A NAME="dsthu">Typical Types of HOTs Used in Monitors</A></h3>
+
+<PRE>
+14", SVGA (38 kHz)         A-types: BU2508AF, 2SC4830,  2SC5148.
+
+                           D-types: BU2508DF, 2SC4762,  2SC4916,  2SC5149,
+                                    2SC4291,  2SC5250.
+
+15", XVGA (64 kHz)         A-types: BU2520AF, BU2522AF, 2SC3885A, 2SC3886A,
+                                    2SC4757,  2SC4758,  2SC5129,  2SC4438,
+                                    2SC4770,  2SC4743,  2SC5067,  2SC5207,
+                                    2SC5251,  2SC5002.
+
+                           D-types: BU2520DF, 2SC3892A, 2SC3893A, 2SC4531,
+                                    2SC4763,  2SC4124,  2SC4769,  2SC5296,
+                                    2SC4742,  2SC4744,  2SC4927,  2SC5003.
+
+                          C                            
+                          o                      C o--+--+
+                          |                           |  |
+                        |/                          |/  _|_
+                   B o--|             B o--+--------|   /_\ Dd
+                        |\                 |        |\   |
+                          |                |   Rd     |  |
+                          o                +--/\/\----+--+--o E
+                          E                               
+                                                          
+                A-Type without damper      D-Type with Damper
+</PRE>
+Note that transistors with built-in damper diodes also are likely to have a
+base to emitter resistor of about 50 ohms - keep this in mind when testing
+a HOT with a multimeter - that 50 ohm resistor will look like a shorted
+junction on the diode test scale.
+<p>
+In nearly all the above cases, the devices will plug-in substitute for each
+other within a category.
+<p>
+For designs with larger screen sizes (and higher frequencies) the device
+selection is not so straightforward as some designs which split the horizontal
+deflection and high voltage generation circuitry.
+<p>
+Continuous dissipation is hardly ever the cause of failure. Failure is usually
+due to some infrequent transient condition. For multi-frequency monitor designs
+of 1991-1994 mode-change was/is a big killer. When repairs are made it is wise
+to cycle through a mode-change sequence. Delays of about 1 min. between changes
+should  be used, shorter delays can cook the device.
+<ul>
+<li>As a rule, once an engineer has a bad experience with mode change he
+  takes greater care in the small-signal circuitry of his next design.
+  This has led to mode change, in general, becoming more benign in the
+  last couple of years. However, in Taiwan & Korea there is a high turn
+  round of engineering staff and some, shall we say, less than perfect
+  designs do still reach production.
+<p>
+<li>To "cook" a device by mode changing would take at least 30 mins. of
+  continuous changing with a delay of about 20 seconds between each change.
+<p>
+<li>If a device fails during such a sequence the old spit test is good
+  indicator of why a device fails. That is, a drop of spit on the HOT
+  immediately after failure can tell us a lot: if it sizzles, then the device
+  has probably cooked, if it doesn't then the device failed instantly after
+  one stressful cycle. Frontiers of technology it is isn't but it is a useful
+  technique.
+<p>
+<li>If you do get failures which haven't been caused by the HOT "cooking" I
+  have no easy solution, sorry!
+<p>
+<li>Winfield Hill's comments reflect the experiences of many. School physics
+  teaches that bipolar's are current driven and MOSFET's are voltage
+  driven. In practice, of course, this is a gross over-simplification.
+  A MOSFET in deflection would, as we say in the north of England, have
+  to be a "bloody big bugger". For example, a 1500V MOSFET that behaved
+  as a BU2508 would have to be nearly twice the size and at least twice
+  the price. Getting 10V on all the gate cells of such a big chip requires
+  a lot of charge to be injected (i.e., current) and then removed (reverse
+  current); much like a bipolar drive.
+</ul>
+
+<h3><A NAME="dsvbh">Varieties of BU508 HOTs</A></h3>
+
+(From: J. G. Simpson (ccjs@cse.bris.ac.uk).)
+<p>
+BU508 series seem to come in a number of variants, I haven't sorted out the
+specification for each listed variant, but have found that it's worth trying
+replacements by different manufacturers.  Also if the device is on a grounded
+piece of metal as heatsink try adding another radiator (twisted vane is my
+preference).  Some TV manufacturers introduce post production mods to change
+resistance values to provide more drive into the base, this may be in the base
+or emitter.  Scope the waveform for parasitic high frequency oscillation and
+check that the waveform looks clean. Check voltage rails, supply and derived,
+and that the set is not over scanning. Check all the components around the
+horizontal output stage, it may be the manufacturer. had a duff batch of some 
+component (often a capacitor that goes OC) that keeps failing
+which then stresses the BU508.
+
+<h3><A NAME="dsasb">Why Do Apparently Similar or Better HOTs Sometimes Run Hot and Blow?</A></h3>
+
+It is often surprising that replacing a horizontal output transistor
+with one that has overall better specifications does not work out - it
+may run hot and fail.
+<p>
+There is more to characterizing a transistor than just maximum voltage,
+current, and power dissipation.
+<p>
+One important parameter is current gain:  Too low a gain for a particular
+operating point may result in incomplete turn-on during scan resulting in high
+dissipation.  You want the transistor to be in the fully saturated state.  A
+larger HOT is more likely to have a lower current gain.
+<p>
+If you read the app notes put out by the manufacturers like Motorola you
+will also find that fast turn off based drive (negative step) is actually
+not what you want since this traps excess carriers in the high resistivity
+collector region which leads to continued conduction and heating.  The ideal
+waveform also provide adequate drive during scan but not excessive overdrive
+and is thus an increasing ramp to account for the increasing collector current
+during scan.
+<p>
+Characteristics like this are not dealt with by the basic specs but can
+differ substantially among otherwise similar transistors.
+<p>
+Also see the section: <A HREF="#dsphss">HOT Specs and Substitution</A>.
+
+<h3><A NAME="dssth">Storage Time of HOTs</A></h3>
+
+Storage time differs between transistor types, there's parameter spread 
+within a type (lower Hfe gain gives shorter storage time and v.v.) and 
+it depends on load (higher beam current or larger deflection amplitude 
+due to E/W modulation gives shorter storage time).
+<p>
+Variations in storage time would translate into horizontal position
+errors of the picture. That's why the base-drive to the HOT is 
+generated by a PLL that measures the phase of the output of the HOT,
+which is the flyback pulse at the collector. This PLL is called the 
+PHI-2. It keeps a constant phase relation between the sync at the input 
+and the flyback pulse. As a result, you will see the base-drive pulse
+shifting in time as a function of HOT load, this is normal.
+<p>
+Most deflection processors generate a base-drive pulse with a constant 
+duty-cycle. This means that also the switch-on moment of the HOT will 
+vary with the load. This makes it extra difficult to optimize the 
+base-drive because there is only a limited time interval where the HOT 
+may be switched on and that interval is shorter with high beam current 
+load. On-time is typically between 50% and 55%, depending on the IC.
+<p>
+The feedback of the flyback pulse to the PHI-2 PLL is not perfect
+because the shape of the pulse distorts as a function of beam current.
+This will give a dynamic geometry error. It is compensated by feeding
+a certain amount of EHT information to the PLL.
+
+<h3><A NAME="dsthd">Typical HOT Dissipation</A></h3>
+
+Just measuring the actual power dissipation in a HOT is not trivial due to
+the nasty shapes of the voltage and current waveforms.  You can't do this with
+your DMM!  A couple of ways of doing this are:
+<ul>
+<li>Monitor the voltage and current waveforms for the HOT.  Integrate the
+ instantaneous measured V*I over the duration of one scan line and multiply
+ by the horizontal scan rate.
+<p>
+<li>Mount the HOT and a fixed power resistor on identical heat sinks so that
+ their thermal enviroments are the same.  Then, adjust the current through the
+ resistor (and thus its power dissipation) so that the temperature rise of
+ the heat sinks for the two are equal.
+</ul>
+Here are some measured values for TV HOTs with optimized drive:
+<p>
+(From: David, a Philips application engineer).
+<ul>
+<PRE>
+14-21", 16 kHz: About 1 W      (some have the HOT running in free-air)
+21-36", 16 kHz: Less than 2 W  (some new large CRT's only need 9 A p-p)
+25-36", 32 kHz: Less than 4 W  (dissipation really is prop. to frequency)
+</PRE>
+</ul>
+I am sure I don't need to tell you that the dissipation varies with the type
+of HOT used and the drive.
+
+<h3><A NAME="dswmn">Why MOSFETs are Not Generally Used for HOTs</A></h3>
+
+One would think that with a MOSFET's high impedance voltage drive and other
+desirable characteristics, they would have displaced bipolar transistors for
+horizontal deflection circuits.  Why not?
+<p>
+True, a MOSFET is much much much easier to drive. In modern switched-mode power
+supplies they reign, rightfully so. They are effective and rugged.
+<p>
+*But* in line deflection things are not so easy. I'll give you 4 reasons:
+<ol>
+<li>The flyback pulse is regularly 1200 V peak, allowing for margins you need
+   a 1500 V device. There are few or no FETs available for that.  In a small
+   set, a 1000 or 1200 V device may be usable.   With effort, the deflection
+   circuit impedance may be re-scaled for greater current and lower voltage.
+<p>
+<li>The conduction losses (Vds = Id * Rds) of a FET are quite high, this
+   not only is wasteful dissipation but it also affects the linearity
+   of the picture (it's a damped sine-wave, going slower and slower).
+<p>
+<li>For the same power losses a FET needs a much bigger silicon area,
+   also FETs are made in a more advanced process, with IC-like features,
+   this translates directly into greater cost!  They are several times more
+   expensive.
+<p>
+<li>A FET has no storage time, hence it has no storage-time modulation,
+   which is a disadvantage because that would help to improve the natural
+   stability of the control of the phase of the line deflection.
+</ol>
+And these are just some major reasons, there are minors too.  We have looked
+into it time and again and still the bipolar wins!
+
+<h3><A NAME="dsobd">Optimizing Base Drive for HOTs</A></h3>
+
+It is interesting that the problem of base drive optimization receives a fair
+bit of attention, either for allowing a (non-compatible) replacement HOT to
+survive or for rebuilding a fixed frequency monitor to a different scan
+frequency. I wish there was an easy way to teach the average hobbyist a method
+to do this himself.
+<p>
+The recipe itself isn't all to difficult: mostly we change the value of the
+power resistor that feeds the line drive circuit until the temperature of the
+HOT heatsink is at minimum. Too much basedrive current increases the switching
+losses, too little basedrive current increases the conduction losses. The
+optimum is somewhere in the middle. All you need is a handful of power
+resistors and a thermometer on the heatsink.
+<p>
+If you need to optimize for a general HOT type (as opposed to one single
+sample) then you kindly ask the manufacturer to provide some limit case
+samples (lowest and highest hFE found) and find a basedrive that satisfies
+both extremes. Of course you must select a slightly larger heatsink. So far so
+good.  The difficult bit is when you find that you need to change other
+components in the drive circuit as well, like the spread inductance of the
+driver transformer, a damping resistor, a duty cycle of a drive signal etc.
+And of course you may find that the HOT you planned to use is entirely
+unsuitable for this application ...
+<p>
+Anyway, it's never a case of just 'drive it hard'.
+
+<h3><A NAME="dswid">What is This Diode Across My HOT?</A></h3>
+
+It is called a damper diode and is essential to proper operation of the TV's
+or monitor's horizontal deflection as well as to the continued life and
+happiness of the HOT.  Using an HOT with an internal damper is OK even if
+there is a separate one in the circuit.  The other way around (leaving it out
+entirely) will likely result in instant - i.e., single scan - destruction of
+the HOT.  This is because in modern deflection system designs, the damper
+carries the horizontal yoke current for a significant portion of the scan.
+If it is not present, the HOT will be forced to try to eat this current - in
+reverse - across C-E.
+<p>
+The damper is a special high voltage fast recovery type of diode - a 1N400x
+type will not work in its place.
+<p>
+BTW, many of these HOTs have a D after the part number to indicate that
+they have the internal damper and include a B-E resistor (which may confuse
+transistor testing) of about 50 ohms.  However, the D is not a sure indication
+of an internal damper - nor is its absence an indication of a lack thereof.
+The entire part number must be checked to be sure.
+
+<h3><A NAME="dswic">What is This Funny Capacitor (or Capacitors) Across My HOT?</A></h3>
+
+These may go by the name flyback, high voltage, snubber, or deflection
+capacitors.  When the HOT is shut off, the current flowing in the inductance
+of the flyback primary and horizontal deflection yoke cannot be stopped
+instantly.  These capacitors provide a place for this current to go and
+is part of a tuned circuit (in combination with the flyback and yoke)
+which needed to accomplish the flyback function.
+<p>
+If this capacitor is open or missing, excessive flyback voltage will result
+probably killing the HOT.  If the HOT does not fail, the result will likely be
+greatly increased high voltage.  Should the X-ray protection circuitry not
+shut down the deflection, there could be internal or external arcing and/or
+destruction of components like the flyback or tripler.
+<p>
+For proper operation and continued safety, only proper exact replacements
+should be used for these parts.
+<p>
+<A NAME="dshft"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#dstoc">Deflection Systems Table of Contents</A>.
+<h2>Horizontal Output Transistor Failure and Testing</h2>
+<h3><A NAME="dshkb">HOTs Keep Blowing (or Running Excessively Hot)</A></h3>
+
+Unfortunately, these sorts of problems are often difficult to definitively
+diagnose and repair and will often involve expensive component swapping.
+<p>
+You have just replaced an obviously blown (shorted) horizontal output
+transistor (HOT) and an hour (or a minute) later the same symptoms
+appear.  Or, you notice that the new HOT is hotter than expected:
+<p>
+Would the next logical step be a new flyback (LOPT)?  Not necessarily.
+<p>
+If the set performed normally until it died, there are other possible
+causes.  However, it could be the flyback failing under load or when it
+warms up.  I would expect some warning though  - like the picture shrinks
+for a few seconds before the poof.
+<p>
+Other possible causes:
+<ol>
+<li>Improper drive to horizontal output transistor (HOT). 
+<p>
+ <ul>
+ <li>A too weak drive (or a HOT with a too low Hfe) causes Vce(sat) to be too
+     large, giving conduction losses.
+<p>
+ <li>A too strong drive (or a HOT with a too high Hfe) causes it to switch off
+     too slowly, giving switching losses.
+ </ul>
+<p>
+   Base drive should be optimized to balance between these 2 losses.  Check
+   driver and HOT base circuit components.  Dried up capacitors, open
+   resistors or chokes, bad connections, or a driver transformer with shorted
+   windings can all affect drive waveforms.
+<p>
+<li>Excessive voltage (B+) on HOT collector - check low voltage regulator (and
+   line voltage if this is a field repair), if any.
+<p>
+<li>Defective safety/flyback capacitors or damper diode around HOT.  (Though
+   this usually results in instant destruction with little heating).
+<p>
+<li>New transistor not mounted properly to heat sink - probably needs mica
+   washer and heat sink compound.
+<p>
+<li>Replacement transistor not correct or inferior cross reference.
+   Sometimes, the horizontal deflection is designed based on the quirks
+   of a particular transistor.  Substitutes may not work reliably.
+<p>
+   Well, you can always *try* to optimize the base drive by changing the value
+   of the power resistor that feeds the drive circuit at the primary of the
+   drive transformer.  But you're on your own here!  Clearly label what you
+   have done or else your name will be mud if the unit ever needs to be
+   repaired by someone else in the future.
+<p>
+<li>And, of course, bad connections in the drive or output circuitry can be the
+   cause of almost any sort of failure!
+</ul>
+The HOT should not run hot if properly mounted to the heat sink (using
+heatsink compound).  It should not be too hot to touch (CAREFUL - don't
+touch with power on - it is at over a hundred volts with nasty thousand
+volt spikes and may be line connected - discharge power supply filter caps
+first after unplugging).  If it is scorching hot after a few minutes, then you
+need to check the other possibilities.
+<p>
+However, it is possible that the deflection circuit is just poorly designed
+in the first place and it has always run hot (though it is unlikely to have
+always been scorching hot).  There is no way to know for sure without a
+complete analysis of the circuit - not something that is a realistic
+possibility.  In this case, the addition of a small fan may make a big
+difference in HOT survival.
+<p>
+It is also possible that a defective flyback - perhaps one shorted turn - would
+not cause an immediate failure and only affect the picture slightly.  This
+would be unusual, however.  See the document:
+<A HREF="flytest.htm">Testing of Flyback
+(LOPT) Transformers</A>.
+<p>
+Note that running the set with a series light bulb may allow the HOT
+to survive long enough for you to gather some of the information needed
+to identify the bad component.
+
+<h3><A NAME="dfbdhh">Base Drive and Hot HOTs</A></h3>
+
+One common cause of a HOT running excessively hot is wrongly dimensioned base
+drive.  This may be due to problems in the drive circuit due to bad components
+(often a capacitor) or as a result of poor design.  There is usually easy
+evidence if you look at the rising edge of the collector voltage. If it rises
+too early, before the end of the scan, then the transistor is underdriven and
+there will be excess conduction losses. If it rises too late, or rather when
+there is still a lot of collector current during the flyback, then the
+transistor is overdriven and there will be excess switching losses. The
+condition can be varied by playing with the power resistor that supplies the
+line drive circuit.  It would be appropriate to vary this as a function of
+parameter spread within one type of transistor. This is not necessary for 16
+kHz deflection because there is sufficient margin for error.
+<p>
+Other deviations may be due to an inappropriate waveform of the base
+current. It should not fall too quickly because the HOT needs time for
+recombination of electron-hole pairs. This is typical of high voltage
+transistors which have a very wide and high-impedance collector-base region,
+difficult to control.  Setting this right is the one-time responsibility of
+the TV designer. It can be disturbed by a wrong transistor substitution of
+course, so check whether a correct type has been mounted.  That's what I mean
+when I say that a bigger HOT is not better.  A BU508 requires a totally
+different base drive from a BUT12.
+<p>
+Also see the section: <A HREF="#dsobd">Optimizing Base Drive for HOTs</A>.
+
+<h3><A NAME="dshtb">HOTs Blowing at Random Intervals</A></h3>
+
+The HOT may last a few months or years but then blow again.
+<p>
+However, a combination of mode switching, loss of sync during bootup, running
+on the edge of acceptable scan rates, and frequent power cycles, could test
+a monitor in ways never dreamed of by the designers.  A TV may suffer from
+similar failures due to repeated power cycling, video input selection, or
+channel changing.  It may take only one scan line that is too long to blow
+the HOT.  Newer horizontal processor chips are quite smart about preventing
+HOT killing signals from reaching the horizontal driver but they may not be
+perfect.
+<p>
+On the other hand, the cause may be along the lines of those listed in the
+section: <A HREF="#dshkb">HOTs Keep Blowing (or Running Excessively Hot)</A>
+and just not as obvious - blowing in a few days or weeks instead of a few
+seconds but in this case, the HOT will likely be running very hot even after
+only a few minutes.
+<p>
+Another possible cause for random failures of the HOT are bad solder
+connections in the vicinity of the flyback and HOT (very common due to the
+large hot high power components) as well as the horizontal driver and even
+possibly the sync and horizontal oscillator circuits, power supply, or
+elsewhere.
+
+<h3><A NAME="dsprh">Preventing Random HOT Failures</A></h3>
+
+As noted above, a bigger HOT is not necessarily the answer. A selection of the
+same HOT for 1700 V breakdown voltage may help but is not an option outside
+the design lab.  Sometimes very exotic HOT type numbers occur, which are really
+a selection from a standard type, used for statistical failure analysis. 
+<p>
+A separate EHT supply (only in the most expensive monitors) would also help to
+save the deflection transistor, but might kill its EHT twin.  Of course, not
+an option in the field.
+<p>
+Soft-start circuits make a biiig difference, but are an inherent part of the
+design, not an afterthought. 
+<p>
+The chance of failure may also be a function of an unspecified transistor
+parameter, so sometimes the mere swapping of a HOT may solve it permanently. 
+<p>
+And, if in the unlikely event it is an EMI problem (like a cellular phone lying
+on top or the set) then obviously the cause must be eliminated. A layout change
+is a better remedy but out of reach of a repair shop.
+
+<h3><A NAME="dsmhf">More on HOT Failure</A></h3>
+
+<blockquote>
+"I'm sure this has been discussed before, but I have worked on several
+ monitors lately with shorted HOT's, replacing that one part has fixed all of
+ them, and I have not had a reoccurrence yet. Does something cause HOT's to
+ blow, or do they just short occasionally for no reason?"
+</blockquote>
+Actually, we know fairly well why HOTs blow, at least in television.  They
+almost always fail from secondary breakdown, not from average dissipation.
+Secondary breakdown occurs instantly if the combination of voltage and current
+is too high, even for only 1 line period. 
+<p>
+Usually this happens due to a hard-start condition of a flyback converter. In
+case of a CRT display this usually applies to the high voltage output which is
+loaded by the built-in capacitance of the tube. When the FBT starts to charge
+that capacitance it sees a short-circuit. This causes the core of the FBT to
+go into saturation and the primary current rises to a multiple of what it
+should be.
+<p>
+When the HOT switches off such a large current it breaks down.  That is, some
+HOTs break down. Most are better than spec and survive.  If it survives the
+first hard start it will likely survive many.
+<p>
+Such situation occurs most likely after a picture tube flashover, when the EHT
+capacitance has been shorted. After about 3 line periods the current through
+the HOT becomes too high. Only a soft-start method can really prevent it but
+it is a bit hard to design a circuit.
+<p>
+Other causes for HOT failure may be false drive pulses, e.g. due to a bad sync
+input (not likely for a monitor with a slow line PLL) or due to EMI. It should
+not happen, but it will. Some manufacturers have better designers than
+others. Ahem...
+
+<h3><A NAME="dsssh">Saga on Swapping of HOTs</A></h3>
+
+(From: Malik (M.Dad@mmu.ac.uk).)
+<p>
+The prologue:
+<p>
+I have in for repair a Tatung monitor model CM14UAE. Originally it was 
+dead this fault was quickly remedied by replacing the line output 
+transistor which was 'dead short', causing the power supply to shut down.
+<p>
+Now the transistor I replaced seems to get a hell of a lot hotter than it 
+should, when it gets to a certain temperature after about half an hour the 
+width begins to collapse at which point I quickly switched off. If I switched
+off for a few seconds and back on again I would get the width back but again 
+it quickly began to collapse.
+<p>
+Things you need to know:
+<p>
+The LOP stage is independent from the EHT transformer. i.e. there is a 
+separate transformer for the EHT (and A1 supplies etc) with its own 
+transistor and a separate line output only transformer with its own 
+transistor.
+<p>
+I have also tried substituting the efficiency diode, still no joy. 
+I have also replaced the EW transistor and its driver.
+<p>
+To me it seems that the transistor is not being switched properly, 
+although the waveforms do look OK.
+<p>
+Original line output device 2SC3893A, which I replaced with a BU508DF 
+(European equivalent according to the books.  I also tried a 2SC3883 which
+used  for the same job in other SVGA monitors. Both give the same problem,
+<p>
+I will be trying to get the original transistor in case this is the 
+problem but I don't think it will make a difference. 
+<p>
+And the conclusion:
+<p>
+Anyway after all that headache I finally received through the post the
+original 2SC3893A. I fitted this and left the monitor on test. Sigh of
+relief, the problem has gone away. 
+<p>
+It seems the timing on this device differs from all the others I
+tried. The transistor runs at a reasonable temperature even after a few
+hours use.
+<p>
+The moral of this story is, use original line output transistors.
+Unless you are 100% sure the replacement works in its place. Don't rely
+too much on equivalent books, these should be used as a guide. The
+book I looked at specified the BU508DF as a direct replacement for a
+2SC3893A, but as I know now it doesn't work properly.
+<p>
+The HOT should not run too hot to touch.  If the replacement sizzles, it
+won't last long and is probably deficient in some specification.  If the
+monitor or TV appears to work normally otherwise, try an exact replacement
+HOT if available before swapping other expensive parts like the flyback
+(LOPT).  For testing, however, a substitute can usually be used - with a
+series light bulb and Variac.
+ 
+<h3><A NAME="dsbct">Brief Comments on Testing the HOT</A></h3>
+
+For a TV or monitor with no blown fuses that will not start, here are two
+quick checks to see if the HOT is good and has power and drive:
+<ul>
+<li>HOT tests - check across each pair of pins for shorts (preferably removed
+  from the circuit board).  No junction should measure less than 50 ohms
+  or so.  Lower readings almost certainly indicate a bad HOT.  If in-circuit,
+  however, the reading between base and emitter will be near zero due to the
+  secondary of the driver transformer.  See the document:
+  <A HREF="semitest.htm">Basic Testing of
+  Semiconductors</A>.  Don't be confused by internal damper diodes and B-E
+  resistors.
+<p>
+<li>Power - measure across the collector to emitter with a multimeter (with
+  the HOT removed or if there is no deflection, this is safe with it in
+  place).  There should be solid B+, typically about 100 to 160 V (for TVs, 115
+  VAC sets - possibly higher for 220 VAC sets), 60 to 170 V or higher for
+  auto-scan monitors.  If this is missing, either there is a problem with the
+  power supply or the emitter fusable resistor has blown (probably in addition
+  to the HOT) and there is no return for your voltmeter.  If it is pulsing,
+  the power supply may be cycling on overvoltage - the HOT may be good in this
+  case but there is no base drive.
+<p>
+<li>Drive: put an oscilloscope on the base - there should be pulses around
+  .7 V for most of the scan and probably going negative a couple volts at
+  least for retrace.  Specific timing will depend on the actual scan rate.  If
+  drive is weak or missing,  If drive is weak or missing, determine how it
+  is derived as there may be a problem in the startup power supply or
+  deflection IC.
+</ul>
+WARNING: Use an isolation transformer for the oscilloscope tests (and whenever
+you are probing a TV in general)!!!  This part of the circuit, in particular,
+is usually line connected.  See the document:
+<A HREF="safety.htm">Safety Guidelines
+for High Voltage and/or Line Powered Equipment</A>.
+
+<h3><A NAME="dstrh">Testing of Replacement HOTs</A></h3>
+
+The following is useful both to confirm that a substitute replacement HOT is
+suitable and that no other circuit problems are still present.  However,
+single scan line anomalies (particularly when changing channels and/or where
+reception is poor with a TV or when switching scan rates and/or when no or
+incorrect sync is present with a monitor) resulting in excessive voltage
+across the HOT and instant failure are still possible and will not result
+in an HOT running excessively hot.
+<ul>
+<li>Function - Confirm that the monitor or TV behaves EXACTLY as you expect.
+ Look for any sign of changes in picture width and other aspects of geometry
+ that might indicate a less than happy horizontal deflection system.
+<p>
+<li>Temperature - After letting the unit run for a while, unplug the unit
+ and confirm that the voltage on the HOT collector is near zero (discharge the
+ power supply filter capacitors if it is not) and see how hot the HOT is.
+ Note: Unplugging without switching of off may result in the capacitors
+ discharging faster if the unit has a soft (logic controlled) on/off switch.
+ Careful, the HOT may be really hot - start at the far end of the heat sink
+ and work your way towards the transistor case.  Obviously, a temperature
+ probe (insulated!) would be better as it would be able to make measurements
+ while the HOT is powered.  You can also use a cheap thermometer for this
+ purpose - attach its sensor to the heat sink near the HOT.
+</ul>
+(From: Raymond Carlsen (rrcc@u.washington.edu).)
+<p>
+After installing a replacement HOT in a TV set or monitor, I like to check the
+temperature for awhile to make sure the substitute is a good match and that
+there are no other problems such as a weak H drive signal. The input current
+is just not a good enough indicator.  I have been using a WCF (well calibrated
+finger) for years. For me, the rule of thumb, quite literally, is: if you can
+not hold your finger on it, it's running too hot, and will probably fail
+prematurely. Touching the case of the transistor or heat sink is tricky....
+<p>
+Metal case transistors will be connected to the collector and have a healthy
+pulse (>1,200 V peak!) and even with plastic case tab transistors, the tab will
+be at this potential.  It is best to do this only after the power is off and
+the B+ has discharged.  In addition, the HOT may be hot enough to burn you. 
+<p>
+A better method is the use of an indoor/outdoor thermometer. I bought one
+recently from Radio Shack for about $15 (63-1009). It has a plastic 'probe' on
+the end of a 10' cable as the outdoor sensor. With a large alligator clip, I
+just clamp the sensor to the heat sink near the transistor and set up the
+digital display near the TV set to monitor the temperature. The last TV I used
+it on was a 27" Sanyo that had a shorted H.  output and an open B+ resistor.
+Replacement parts brought the set back to life and the flyback pulse looked
+OK, but the transistor was getting hot within 5 minutes... up to 130 degrees
+before I shut it down and started looking for the cause. I found a 1 uF 160
+volt cap in the driver circuit that was open. After replacing the cap, I
+fired up the set again and monitored the heat sink as before. This time, the
+temperature slowly rose to about 115 degrees and stayed there. I ran the set
+all day and noticed little variation in the measurement. Test equipment doesn't
+have to cost a fortune. 
+
+<h3><A NAME="dsorh">Oscillation or Ringing at HOT Base?</A></h3>
+<blockquote>
+"Could this be happening because I'm using the wrong HOT?"
+</blockquote>
+At these relatively low frequencies your scope probe is probably not suspect,
+although you should keep loops small and not underestimate the effect of high
+dV/dt inside the line transformer.
+<p>
+First, how do we know if the oscillations were already there with the
+original HOT ? I suppose you have never measured that ...
+<p>
+Second, it is NEVER a good idea to replace a HOT with just any other
+type because there can be significant differences which are not at all
+visible in the spec. Even for specialists it's quite difficult to
+optimize the drive conditions for a new HOT type. You're on your own here.
+<p>
+Third, some oscillations are normal because the inductance of the base
+drive transformer does form part of a damped resonant circuit. Usually
+these oscillations show after switching OFF the HOT and they can be a
+problem if the negative Vbe is insufficient during the flyback pulse
+and the transistor might be turned back on, which would kill it.
+As a rule of thumb, Vbe should be -2 V during flyback, but there are
+exceptions. Depending on the HOT type, some damping resistor may have 
+to be applied. I've never heard of oscillations during HOT ON.
+<p>
+If the collector waveforms (V and I) seem OK and the HOT does not
+overheat then maybe you shouldn't worry too much. But do check at high
+beam current too (max. brightness on a white picture) because then the
+HOT must be switched on earlier to provide the magnetizing current to
+the line transformer too. 
+<p>
+(From: Alan McKinnon (a.mckinnon@pixie.co.za).)
+<p>
+I've run into this kind of thing several times recently on different
+sets, this is what I've found:
+<ol>
+<li>Do you have a damper resistor (about 30 or so ohms) across B-E of the HOT.
+   It can go open circuit, causing weird stuff.
+<p>
+<li>Check the supply feed resistor into the transformer of the line drive
+   circuit. These can go high, especially if it's a high value resistor
+   dropping a supply of 120 odd volts down to 30 or so.
+<p>
+<li>Check all small resistors and caps in the line drive circuit, take then out
+   and measure them, in circuit reading are funny in this area.
+<p>
+<li>Try a new drive transformer.
+</ol>
+
+<A NAME="dsadd"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#dstoc">Deflection Systems Table of Contents</A>.
+<h2>Additional Deflection System Information</h2>
+
+<h3><A NAME="dsweb">Web Resources on Deflection Systems</A></h3>
+
+Here is an article originally from Sencore archived at
+<A HREF="reppic/horiz-tv.pdf">Sam's Copy of
+Sencore's Understanding the TV Horizontal Output Stage</A> as the original
+link died.  While specifically written for television sets, most of it
+also applies to monitors.
+
+<h3><A NAME="dswhd">Why are Nearly All Horizontal Driver Circuits Transformer Coupled?</A></h3>
+
+Almost every TV and monitor in the universe uses a small high frequency
+transformer to couple the drive signal from the horizontal oscillator to the
+horizontal output transistor base.  There are several reasons why this is so
+popular:
+<ul>
+<li>One (probably secondary) reason is that this provides one of the
+  isolation barriers between a line-connected HOT and flyback primary
+  and the signal circuits of the TV.
+<p>
+<li>A more important rational is that a transformer is nice easy way of
+  impedance matching the horizontal driver circuit (100s to 1000s of ohms)
+  to the few ohm input impedance of the horizontal output transistor
+  base which requires upwards of several amps for proper drive.  A typical
+  driver transformer may be in the 5-10:1 turns ratio representing 25-100:1
+  impedance ratio.
+<p>
+<li>A byproduct of all this is that it is unlikely for a faulty driver stage
+  to kill the HOT.  Unlikely but not impossible.
+</ul>
+However, there are apparently some smaller TVs that use a direct coupled
+drive scheme but these are definitely the exception.
+
+<h3><A NAME="dsscm">S-Correction Circuits on Multi-Scan Monitors</A></h3>
+
+(Quoted text from a curious but frustrated tinkerer/technician.)
+<blockquote>
+"Hi there. Recently, I've encountered this circuit (or ones similar to it)
+ several times in VGA monitors and I'd like to know what it's purpose is.
+<PRE>
+
+               +-------------------+-----------------+
+               |D                  |                 |
+              _+--+                |                 |
+           G||  __|__             _|_              __|__
+     S0 ----||  _/_\_ IRF620      ___ .64 uF       _\_/_
+            ||_   |                |                 |
+               +--+                |                 |
+               |S        .64 uF    |B                |
+     Ground o--+-----------||------+---o * See Text  +------o To +76 V
+               |S                A |C                |
+              _+--+                |                 |
+           G||  __|__             _|_              __|__
+     S1 ----||  _\_/_ IRF620      ___ .64 uF       _/_\_
+            ||_   |                |                 |
+               +--+                |                 |
+               |D                  |                 |
+               +-------------------+-----------------+
+</PRE>
+     The IRF620's are N channel Enhancement Mode MOSFETs. 
+<p> 
+  <li>The connection at this point is to the HOT collector via the horizontal
+       deflection yoke (HDY), width, and linearity coils."
+</blockquote>
+You will probably find that 0, 1, or 2 of the MOSFETs will be turned on
+(S0, S1 set to ground or +15 V (typical) depending on the scan rate.  This
+would introduce varying amounts of S-correction (E/W) depending on the
+horizontal scan rate.
+<p>
+The diodes are probably for clamping and protection.  The MOSFETs are used
+as switches.  You, in effect, get 1, 2, or 3 x .64 uF between the yoke return
+(the point marked '*') and ground.
+<p>
+This circuit is from an auto-scan computer monitor where it switches the
+effective S-correction capacitor to one of 3 possible values depending on
+scan rate.
+<p>
+Note that this approach is used both in multi-scan and auto-scan monitors.
+The multi-scan (largely obsolete technology though still used in some specific
+applications) has two or more discrete line frequencies and the auto-scan has
+a whole range of available frequencies. You would not guess this from the
+discrete switching of the S-correction capacitors. Obviously, the S-correction
+is optimized only for 3 frequencies and approximated for all others. This is
+generally good enough (even) for auto-scan.
+<p>
+The internal diodes anti-parallel to the MOSFET (A to S, K to D) are important
+to set the DC voltage over the extra S-capacitors to a reasonable value before
+they are first switched in. At lower line frequencies the extra capacitors are
+permanently switched on.
+<p>
+For each given scan frequency there is only one correct value for the
+S-correction capacitor. If you limit your circuit to only 3 discrete values
+(like 0.64, 1.28 and 1.92 uF) then the horizontal geometry can be optimized
+for only 3 scan frequencies.
+<p>
+Somewhere between these 3 frequencies there will be 2 switch-over points where
+more S-correction capacitance is added by the switches.  Generally, around
+these border frequencies the geometry will be worst (because whatever the
+position of the switch, there will be an error one way or the other) and it
+would be wise to switch over near some little-used frequencies and thus
+optimize for the much-used frequencies like 31, 38, 48 and 64 kHz.  For the
+other scan frequencies, the geometry will then be only approximately correct.
+Luckily, S-correction is not very critical.
+<p>
+For any given scan frequency, the position of the MOSFET switches is constant:
+either on or off. These are not used in a switched mode.
+<p>
+There *will* be one or two other MOSFET switches that switch at a line scan
+rate in order to take care of the correct dependency of the (average) supply
+voltage and E/W voltage in function of the scan frequency.
+<p>
+There is a difference in the horizontal deflection circuit of a TV versus
+an auto-scan monitor. In the diode bridge of a TV, the deflection circuit
+is in the upper half of the bridge and the "bridge circuit" is in the
+lower half of the circuit. The E/W amplifier *sinks* current from the
+centre node (and dissipates). The VB supply voltage is constant.
+<p>
+In the diode bridge of a auto-scan monitor, the deflection circuit is in
+the lower half of the bridge. This makes the S-correction capacitor grounded
+and thus easier variable (without need for level shifters, opto-couplers,
+etc).  The E/W amplifier *sources* current into the centre node. The VB supply
+voltage is made variable, linearly proportional to the line frequency, by 
+means of a switched-mode down-converter topology. The same topology is also 
+used for the E/W amplifier, which now actually delivers power to the circuit.
+With this topology you can have a constant (even regulated) EHT and a
+constant deflection current amplitude, independent of the line frequency.
+<blockquote>
+"In another similar monitor, this circuit had completely self-destructed
+ and taken out a few other things too (fire).  The monitor shuts down
+ immediately unless the HOT is disabled or connections A, B, and C are *all*
+ broken (no other combination works).  It almost seems like it's used to
+ accommodate or change the horizontal frequency for different video modes.
+ For some reason, the monitor is now powering up so seems like it might be
+ an intermittent short somewhere."
+</blockquote>
+By disconnecting A,B,C you effectively take the coils of the horizontal
+deflection yoke (HDY) out of the circuit. By disabling the line transistor
+(HOT) there remains only DC voltage over the bridge- and S-correction
+capacitors. Either way there is no voltage over the HDY. I would suspect a
+short or arcing in the deflection coil. Just a wild guess, though.
+<p>
+There is enough energy present in the deflection circuit (also in the HDY)
+to create a very nice fire, let there be no doubt about that. A loose contact
+in series with this circuit is potentially fatal.
+
+<h3><A NAME="dsmhd">More on Horizontal Driver Circuits</A></h3>
+
+Usually, the primary voltage is *constant* when the driver transistor is ON
+and thus the HOT is OFF. Then when the driver switches OFF, the stored magnetic
+energy switches the HOT to ON. 
+<p>
+This is called non-simultaneous base drive, which is most common.  The primary
+voltage that you see then is mostly a transformed version of the secondary
+voltage, over the series base impedance.  The voltage at HOT=ON is not forced
+from the primary side.
+<p>
+Usually the "cold" side of the primary of the driver transformer is connected
+via a power resistor and filtering electrolytic capacitor to the B+.  The R
+determines the average voltage and thus the base drive current. Higher R means
+less base drive and vice-versa.  Varying the value of this resistor is the
+first choice for minimizing the power dissipated in the HOT.
+<p>
+The filtered DC voltage at the cold side is (typically) a little over
+1/2 * V(B+). Then when the driver switches off the voltage at the hot side
+(of the primary) will be higher, but typically not higher than V(B+). But how
+high exactly is a coincidence.
+
+<h3><A NAME="dswhf">Why do Some Monitors Fail if Driven at the Wrong Horizontal Frequency?</A></h3>
+
+I think it *should* not have failed. It is the purpose of the deflection
+processor to guard that the line deflection never runs at a forbidden
+frequency. It is possible that such protection is not good enough,
+that when the PLL is not in lock it might generate a very irregular
+line drive. That can prove to be immediately fatal to a line transistor.
+All it takes is one line length that is too long, followed by a flyback
+pulse that is too high, and it's all over. Second breakdown, terminal.
+<p>
+Trying a too high line frequency is usually not harmful, generally your
+EHT will be too low and your deflection current amplitude too.
+The HOT might eventually die from overheating due to bad drive conditions,
+but otherwise any decent monitor should be able to withstand it.
+In the better cases it simply refuses to sync on an illegal frequency.
+<ol>
+<li>While increasing the frequency of the horizontal drive *all other factors
+   being equal* should not result in HOT death, all other factors are not
+   always equal.  The sync circuits may select an improper set of voltages,
+   the drive waveform (as mentioned) may be insufficient, etc.
+<p>
+<li>The sync may lock to a submultiple so the drive may be at 1/2 H resulting
+   in a too long on-time and poof.
+</ol>
+As noted, this can be a one shot affair - absolutely no warning.  My
+recommendation remains to attempt if at all possible to obtain the
+specs for any monitor you intend to use.
+
+<h3><A NAME="dstwk">Tweaking the Deflection Rates in a Fixed Frequency Monitor</A></h3>
+
+Pulling a fixed frequency monitor by more than a few percent will likely
+be a problem.  I know this is not the answer you were looking for but
+getting a new inexpensive video card may be a better solution.
+<p>
+If not, you are looking for an adjustment called horizontal oscillator,
+horizontal frequency, or horizontal hold.  If you do tweak, mark everything
+beforehand just in case you need to get back to the original settings.
+There is some risk - changing it too far may result in damage either
+immediate or down the road - I have no idea.
+<p>
+Here is a discussion about modifying a monitor to run at other scan rates than
+for which it was originally designed (in this case, a lower one):
+<blockquote>
+"I would like to convert IBM XGA2 (39.4 kHz JH) monitors (9515, 9518) to work
+ at VGA (31.4 kHz H) rates.
+<p>
+ I have the schematics, and with datasheets/application notes from chipmakers'
+ websites altering the scan-frequencies and the mode-switching logic has been
+ relatively straightforward.
+<p>
+ That's as regards the 'small-signal' bits (and frame output), to leave a
+ 39.4 kHz scan for 75 fps graphics and provide 31.5 kHz for the 400-line DOS
+ text (VGA startup) mode, and 350-line graphics.
+<p>
+ *But* the HOTs blow up at 31.5 kHz: after a while in the first of a number
+ of 9515s, almost instantly in 9518.  The corpses and heatsinks are very hot,
+ as in 'high temperature' as well as function :-(("
+</blockquote>
+Blowing up the HOT after minutes is due to bad base drive, or (much more rare)
+due to LOT core saturation.  Blowing up a HOT immediately is due to too high
+collector pulse.
+<blockquote>
+"The base drive looks fine on a 'scope as regards holding the HOTs (or now an
+ experimentally-substituted forward diode) firmly saturated for the longer 'on'
+ time, and then sharply/cleanly turning them off."
+</blockquote>
+There's more to a good base drive than just 'looking fine' on a scope. The aim
+is to minimize the dissipation in the HOT.  This requires just the right amount
+of base current and reducing it in a particular manner at the end of each line.
+(A process that we call 'de-holing', removing all the holes from the
+high-impedance collector region, this must not go too fast.)
+<ul>
+<li>Too little base drive current will cause the collector voltage to start
+  rising too early, before the beam has reached the right end of the screen.
+  The HOT goes out of saturation too early, causing dissipation.
+<p>
+<li>Too much base drive current will cause the collector current to reduce too
+  slowly during the beginning of flyback. The HOT goes out of saturation too
+  late, also causing dissipation.
+</ul>
+Usually for lower line frequency you need a bit more base drive.
+<blockquote>
+"I have only a rather vague mental picture of how a LOPT works.  I think that,
+ as a load on the HOT, it is almost purely inductive from turn-on (though not
+ from the EHT-generating turn-off)."
+</blockquote>
+If there are secondary scan-voltage rectifiers then they add to the load during
+(beam) scan. Otherwise it is always inductive.  During flyback, the flyback
+capacitor and the secondary flyback rectifiers cause the characteristic flyback
+pulse shape.
+<blockquote>
+"Hence I suppose that the longer 'on' period allows the current to
+ increase to a higher (and destructive) level."
+</blockquote>
+Not the higher current in itself is destructive, but the increased magnetic
+energy is. During flyback, 1/2*L*I^2 is converted to 1/2*C*V^2 in the flyback
+capacitor. More energy means more voltage over the HOT. Over 1500 V peak it
+will be destroyed immediately.
+<blockquote>
+"If magnetic saturation were to be reached, it would even look more like a dead
+ short than an inductance."
+</blockquote>
+That's true, but it occurs mainly due to excess beam current.  Secondary
+flyback load causes the primary scan current to rise.
+<blockquote>
+"My questions are twofold: (1) how correct is my understanding?"
+</blockquote>
+Fair enough. You can get a fair idea by running simulations with ideal
+circuit models. But to understand what happens inside a HOT you need very
+advanced models. Which don't even exist (yet)!
+<blockquote>
+"(2) More to the point, what solution is there?"
+</blockquote>
+You're doing a good job guessing. I'll let you continue.
+<blockquote>
+"One that springs to mind is to reduce the voltage of the HOT's supply,
+ something like proportionally to the increase in 'on' time, so that the peak
+ current is back to what it is at the higher frequency."
+</blockquote>
+Exactly. Peak current and more importantly peak voltage, because then
+also the EHT will be kept constant.
+<blockquote>
+"This would be a non-trivial task, both to provide a second voltage (at quite
+ high current) and to switch between them."
+</blockquote>
+Maybe not trivial but a lot easier than you think.
+<blockquote>
+"Though some multi-frequency monitors have such multiple (switched) supplies,
+ I don't think all do: what alternatives can be adopted?  How does one
+ calculate in this area, or is it (unfortunately) a matter of having LOPTs
+ intended for the purpose?"
+</blockquote>
+The LOPT must be optimized for the higher line frequency and the corresponding
+short flyback duration.  For lower line frequencies, you want to reduce the B+
+voltage so that it is proportional to the line time.  This is in fact very easy
+if you use a switched-mode down-converter (is that called a 'buck'?) and you
+make the on-time of the switch *constant*.  Now the line frequency may be
+varied over a wide and continuous range. This gives near constant EHT too.
+<p>
+On other monitors, a voltage determined by the detected scan rate is returned
+to the power supply in place of the usual zener reference to adjust its output.
+<p>
+You can use an extra filter coil to provide constant B+ to the line deflection
+circuit or you can use the LOPT primary for that.  There are some subtle
+problems with which I will not bother you.
+<p>
+It may be necessary to reduce base drive current for line frequencies beyond a
+certain value.
+<p>
+The 'only' other thing left to do is to keep geometry correct for the various
+display modes. Mainly by switching in more or less S-correction capacitance
+(using FETs or even relays).
+<p>
+Don't assume that you will be able to re-invent the multi-scan monitor on your
+own. I think you will find that you have insufficient resources to do that.
+<p>
+Honestly.
+
+<h3><A NAME="Converting to a Different Yoke Inductance</A></h3>
+
+<blockquote>
+"I have a tube 27" with bonded yoke where the horizontal inductance is 0.290
+ mH and the vertical inductance is 7.5 mH.  I would like to use a deflection
+ board designed for a 0.11 mH horizontal yoke inductance."
+</blockquote>
+
+That's quite a difference (a factor of 2.6)! Forget it.  That's more work than
+even an expert would be willing to spend on a single prototype. Usually the
+lower impedance is intended for a higher line deflection frequency, so that
+requires a total redesign. 
+<p>
+I don't know of any simple impedance transformation trick to operate 
+the coil at a regular line frequency (with up-transformed impedance) 
+except for sinewave deflection where I once succeeded in doing that. 
+But this is sawtooth deflection, not so easy. Sorry. 
+
+<h3><A NAME="dsyil">Yoke and Interlocks</A></h3>
+
+<blockquote>
+"I was asked a question today that I never thought of much before. If 
+ you remove the yoke (unplug it) from a TV or monitor is the high voltage 
+ still present and if so can this cause damage to the set. Thanks"
+</blockquote>
+The answer is an unqualified maybe on all counts.
+<p>
+Some have an interlock so you lose power to the deflection/set if the yoke
+is unplugged - found that out on a Magnavox chassis that would not do anything
+without the yoke connections.
+<p>
+Those that continue to have power may result in damage - at the very least,
+if the HV is present, you will be drilling a hole in the center of the
+screen since deflection will be absent.  The horizontal deflection will
+be detuned possibly resulting in overheating, excess HV, etc.
+<p>
+If you do try this, I recommend using a Variac and carefully monitoring
+the CRT for presense of a very bright spot (which will turn into a very
+dark spot quite quickly) as well as an excessively hot HOT.
+<p>
+BTW, disconnecting the yoke may be desirable to troubleshoot a horizontal
+deflection/high voltage if the yoke is suspect.  If the yoke is loading the
+deflection output due to shorted turns, disconnecting it may allow high
+voltage to come up - just go slow and nothing will blow.
+<p>
+(From: Stefan Huebner (Stefan_Huebner@rookie.fido.de).)
+<p>
+Some yoke plugs have a jumper wire to remove +B from the flyback when
+pulling it. But this may still damage the SMPS since they are not all
+build for running without a minimum load. Some yoke plugs only have the
+four yoke wires connected; in those sets HV will build up when the plug
+is pulled and you may even destroy something in the flyback area (most
+likely the HOT) because the horizontal deflection yoke is an essential
+part of the flyback circuitry (exception: some monitors, foe example Eizo,
+which have separate HOTs for the flyback and the horizontal yoke).
+
+<h3><A NAME="dswyn">Why the Yoke is Needed to Keep the Horizontal Deflection System Happy</A></h3>
+
+If you unplug the yoke (even if there is no interlock), while the system may
+still work to some extent, performance will be poor.  High voltage will be
+reduced and parts may overheat (and possibly blow up).
+<ul>
+<li>One reason to do this at all is as a quick test to determine if the yoke is
+  defective.  While the resulting waveforms will not be totally correct, they
+  should be much better than with a shorted yoke installed and there may be
+  enough HV to get a spot on the screen.  Caution: It may be quite bright.
+  See the documents:
+  <A HREF="monfaq.htm">Notes on the
+  Troubleshooting and Repair of Computer and Video Monitors</A> or
+  <A HREF="tvfaq.htm">Notes on the
+  Troubleshooting and Repair of Television Sets</A> for more info and
+  precautions.
+<p>
+<li>Another more fun reason is if it is desired to use the flyback subsystem of
+  a defunct TV, monitor, or computer terminal as a stand-alone high voltage
+  power supply - but details are left as an exercise for the highly motivated
+  (and cautious!) student.  See the document: 
+  <A HREF="gadget.htm">Salvaging
+  Interesting Gadgets, Components, and Subsystems</A> for more exciting
+  details.
+</ul>
+WARNING: High voltages and possibly line voltage present at HOT, yoke, flyback
+outputs, and elsewhere!
+<p>
+Of course, just removing the yoke doesn't work. The flyback capacitor is tuned
+for the presence of both inductances: line transformer and deflection coil. If
+you remove the deflection coil then the remaining primary transformer
+inductance is about 5 times as large.  So, rule-of-thumb, you would have to
+decrease the flyback capacitor by a factor of approximate 5.  But that's not
+all:
+<p>
+Without the deflection coil, a lot less current runs through the horizontal
+output transistor. So, in all likelihood, it will now be overdriven. So you
+need to reduce the basedrive. But that's not all:
+<p>
+If you remove the picture tube capacitance and the deflection coil then all
+peak energy demand must be delivered from the primary winding of the line
+transformer. Even the shortest peak load will cause saturation. The parallel
+deflection coil will at least lend some temporary energy, and the picture tube
+capacitance does an even better job. A good high-voltage source without the
+benefit of a deflection coil is more expensive...
+<p>
+If you *must* get rid of the 'ugly' deflection coil, then you may want to
+replace it with an equivalent 'pretty' coil.  But:
+<ul>
+<li>It must be able to carry the peak current without saturation (a deflection
+  coil has such a huge air gap that it can not possibly ever saturate, but a
+  smaller coil can).
+<p>
+<li>It must have a low enough dissipation so you might have to wind it with
+  litz-like wire (multi-stranded isolated), do not underestimate the losses in
+  high-frequency coils,  mostly due to skin- and proximity-effect. 
+<p>
+<li>Yes, it can be done, good luck.
+</ul>
+And you might want to add a discrete high-voltage capacitor.  How to isolate
+the wiring (corona discharge!) is left as an exercise to the reader... (We
+pot them in convenient blocks).
+
+<h3><A NAME="dsptm">Probing TV and Monitor Yoke Signals</A></h3>
+
+Due to the particular nature of the signals on the deflection yoke, special
+techniques must be used to safely view them on a scope.  Note that the
+following also applies to some extent to deflection signals in tube-type
+video cameras and other similar devices as well.
+<p>
+You cannot put a ground clip on either pole of the line yoke, because one
+side carries the flyback pulses which are approx. 1000 Vpp and the other side
+carries the S-correction voltage which may be 100 V average with a (?) 50 Vpp
+line parabola.  Both signals are at line frequency (15.75 kHz and up).  You
+need a 100:1 oscilloscope probe for the 1000 Vpp signal!   The field coil
+carries lower voltages (order of 50 Vpp max) and at field frequency (50 to
+120 Hz).
+<p>
+Usually you connect the scope ground to a large heatsink, unless that carries
+a warning label that it is not grounded...  ALWAYS check first to identify a
+proper ground and use an isolation transformer for safety since even this may
+not be the same as the power line ground.
+<p>
+If you have a current probe for your scope, this can be used to monitor the
+various current waveforms.  I have used my Tektronix current probe to view the
+yoke current on TVs.  The rendition of the horizontal deflection current
+waveform is quite good.  However, the vertical suffers from severe distortion
+due to the low frequency cutoff of this probe.
+<p>
+You can build a not-very-fantastic (but quite usable) current problem using a
+split ferrite core of the type used on keyboard and monitor cables (preferably
+one that snaps together).  The following will work:
+<ul>
+<li>Wrap seven turns of insulated wire around one half of the core.
+<li>Solder a 2.2 ohm resistor across the two leads to act as a load.
+<li>Connect to the vertical input of your scope via a coaxial cable or probe.
+</ul>
+You can experiment with the number of turns and load resistor value for best
+results.
+<p>
+To use your fabulous device, insert one and only one of the current carrying
+wires inside the ferrite core and clamp the two halves together.
+<p>
+For a typical TV horizontal deflection yoke, this results in about a .3 V p-p
+signal.  The shape was similar to that from my (originally) expensive Tektronix
+current probe.  Enjoy the show!  Due to its uncompensated design, this simple
+probe will not work well (if at all) for low frequency signals.
+
+<h3><A NAME="dsbrh">Breathing Compensation</A></h3>
+
+Breathing is a change in picture size caused by a variation of the EHT voltage
+due to varying beam current loading. The EHT has a typical output impedance of
+(approx.) 1 M Ohm. Average beam current varies between 0 and 2 mA, so the
+voltage drops by 2 kV (from 30 kV), or worse.  At lower EHT, the electron beam
+is easier to deflect, so the picture size will increase.
+<p>
+Brighter picture -> higher beam current -> lower EHT -> larger picture.
+That's the law of physics.
+<p>
+The breathing can be compensated by decreasing the deflection current
+amplitude as a function of the beam current. A voltage called "EHT-info" is
+generated from the beam current as delivered by the line transformer. This is
+fed to the deflection circuit for feed-forward correction. For horizontal
+deflection this means feeding it to the East-West modulator.
+<p>
+And here's the catch for you Americans: many USA sets don't have an East-West
+modulator! Most picture tubes (for the USA) with 90 or 100 degrees deflection
+don't need (much) pin-cushion correction, so there is no fundamental need for
+the East-West modulator and so there is also no correction possibility for the
+anti-breathing. There are other options for corrections, like creating a
+deliberate higher output impedance for the V+ deflection supply etc., but
+these are passive measures which will lack accuracy.
+<p>
+Sets with 110 degrees deflection angle (common in Europe) will need active
+East-West correction and should also perform adequate anti-breathing. Although
+that is still difficult enough, I should know...
+<p>
+The LD/DVD "Video Essentials" contains test pictures to check your breathing
+performance. It advises you a simple counter- measure: reduce the beam current
+by lowering the contrast setting ! This will also improve the sharpness (less
+spot blooming) and increase the lifetime of the picture tube (less burn-in of
+the phosphors). But you need to darken the room because the picture will
+obviously be much darker.
+
+<h3><A NAME="dssim">Circuit Simulation of the Deflection System?</A></h3>
+
+If it were that easy...  You could use any regular circuit simulation 
+like Spice or Microcap. The real problem is in obtaining the device 
+models, particularly the horizontal output transistor and the line 
+transformer. Initially you could start with ideal components (switch, 
+inductor) and see if you've got the basic component values right. 
+That will give you some basic insight into the working of the circuit, 
+but it is then that the real fun starts. For example, storage time 
+modulation of the HOT is essential for the Phi-2 PLL response... 
+I don't think you will find any realistic device models for power 
+transistors, so you will have to breadboard and actually measure... 
+
+<h3><A NAME="dsjch">Jurb's Comments on HOT Troubleshooting</A></h3>
+
+(From: JURB6006 (jurb6006@aol.com).)
+<p>
+The base current is hard to read, but the HDT (Horizontal Drive Transistor)
+collector waveform can give you a readable picture of it. When you put a scope
+probe on the base of the HOT, the reading is almost useless, it tells you more
+about a parameters of the HOT than whether or not it has sufficient drive. 
+<p>
+The reason for this phenomenon is the same as the reason they use a transformer
+to drive the HOT in the first place. A complimentary pair of transistors would
+do the job just fine, as long as they don't need the isolation. If the chassis
+uses an SMPS, it would be cheaper except for one thing. The HOT itself. 
+<p>
+Even though the transformer steps down quite a bit, it is <u>still</u> a
+current source. As many linear amplifying stages we see using discreet
+components, the fact that a bipolar transistor device is current driven gets
+obscured.
+<p>
+The HDT collector voltage waveform can tell many things. When the base of the
+HOT is disconnected it will become what looks like the upper left quadrant of a
+circle. When loaded with that junction it looks more like a square wave. There
+is a hump at the beginning of the top, maybe about a 120 kHz component, that's
+the lag of the base current through whatever components and stray inductance.
+Then the top roses at a slower rate, that's when the collector current is
+ramping in the HOT.
+<p>
+Without linearity problems, it's probably turning on good enough. A good piece
+of the on time of the HOT is during trace. The major problem I have found is
+the turnoff time. Apparently if enough forward bias is applied, a pretty good
+negative spike is developed for turnoff of the HOT. If you can scope the HOT
+collector, you will see this as a rounding of the end of the pulse. When that
+top of about a 70 Khz sine wave hits the baseline, you want a sharp corner on
+it. If that part of the waveform is rounded, the HOT will fail. (transistor)
+<p>
+The only effect this has on the raster, if you can underscan it you can see a
+slight compression at the left side. Also depending on the exact design of the
+H sweep circuit, you might not even see that, and even if you had spikes
+between the pulses, the pincushion circuit might isolate them enough so you
+don't see it in the raster.
+
+<h3><A NAME="dshdc">Horizontal Deflection Circuit from Small TVs and Monitors</A></h3>
+
+(From: Carlos Marques (c_finos@hotmail.com).)
+<p>
+This is another common horizontal deflection system, used mainly in small
+TVs and monitors.  This method of horizontal deflection has a high value
+decoupling non-polar capacitor (4.7 uF typically) across the HOT in series
+with the yoke.  The collector of the HOT is also connected to the FBT, at
+a tap which joins two windings.  One of the windings connects to the
+positive supply, and the other connects to a diode which is connected to
+ground.  Sometimes this diode has a small capacitor in parallel with it.
+I have seen this configuration many times, and I don't understand it very
+well, mainly the flyback process.
+<p>
+<PRE>
+
+                                           B+
+                                           o
+                                           |
+                                           +
+                                            )::
+                                            )::
+                                            ):: Part of T2
+                                            )::  Flyback
+                                            ):: Transformer
+                          +-------+--------+ ::
+                          |       |         )::
+                          |      _|_ 4.7uF  )::
+         Horizontal       |      --- NP     )::
+           Drive          |       |        +
+             T1         |/ C      |        |
+         --+    +-------|         +        +------+
+            )::(        |\ E       )       |      |
+    Driver  )::(     Q1   |    Hor )      _|_    _|_ 56nF
+    Stage   )::(     HOT  |   Yoke )      /_\    ---
+            )::(          |       +        |      |
+            )::(          |       |        |      |
+         --+    +---------+---+---+--------+------+
+                             _|_
+                              -
+
+</PRE>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#dstoc">Deflection Systems Table of Contents</A>.
+<p>
+-- end V1.29 --
+<p>
+</BODY>
+</HTML>

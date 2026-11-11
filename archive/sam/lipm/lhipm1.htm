@@ -1,0 +1,2478 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/lipm/lhipm1.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/lipm/lhipm1.htm">https://www.repairfaq.org/sam/lipm/lhipm1.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+<html>
+<head>
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+<title>A Low-Cost Heterodyne Interferometer-Based Precision Measurement System
+ with Sub-nm Resolution</title>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head>
+<center>
+<h1>A Low-Cost Heterodyne Interferometer-Based Precision Measurement System with
+ Sub-nm Resolution</h1>
+<h3>Version 1.01  (28-Mar-2025)</h3>
+</h2>
+<h3>
+<A target="lhipm" HREF="../copyright.htm">Copyright &copy<A> 1994-2025
+<br>
+Sam Goldwasser and Jan Beck<br>
+--- All Rights Reserved ---
+<br>
+<br>
+</center>
+For contact info, please see the
+<A target="lhipm" HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+
+<p>
+<A NAME="lhipm1toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#lhipm1pre">Preface</a>
+ <ul>
+ <li><A HREF="#lhipm1aac">Author and Copyright</a>
+ <li><A HREF="#lhipm1dis">DISCLAIMER</a>
+ <li><A HREF="#lhipm1ack">ACKNOWLEDGMENT</a>
+ </ul>
+<p>
+<li><A HREF="#lhipm1abs">Abstract</a>
+<p>
+<li><A HREF="#lhipm1int">Introduction</a>
+<p>
+<li><A HREF="#lhipm1ima">Interferometers for Metrology Applications</a>
+<p>
+<li><A HREF="#lhipm1las">The Zeeman Two Frequency Laser</a>
+ <ul>
+ <li><A HREF="#lhipm1imp">Laser Implementation</a>
+ <li><A HREF="#lhipm1uslc">Micro Stabilized Laser Controller (&micro;SLC1)</a>
+ </ul>
+<p>
+<li><A HREF="#lhipm1pio">Practical Interferometer Optics</a>
+<p>
+<li><A HREF="#lhipm1uMD2">Micro Measurement Display 2 (&micro;MD2)</a>
+<p>
+<li><A HREF="#lhipm1algn">Aligning and Testing the System</a>
+<p>
+<li><A HREF="#lhipm1con">Conclusions</a>
+<p>
+<li><A HREF="#lhipm1spc">Specifications</a>
+<p>
+<li><A HREF="#lhipm1prts">Parts Lists</a>
+<p>
+<li><A HREF="#lhipm1refs">References</a>
+</ul>
+<p>
+<A NAME="lhipm1pre"></A>
+<hr>
+<h2>Preface</h2>
+<h3><A NAME="lhipm1aac">Authors and Copyright</A></h3>
+
+Authors: Samuel M. Goldwasser and Jan Beck
+<p>
+For contact info, please see the
+<A target="lhipm1" HREF="../emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A target="lhipm1" HREF="../copyright.htm">Copyright &copy<A> 1994-2025
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="lhipm1dis">DISCLAIMER</a></h3>
+
+The information in this document
+is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+We will not be responsible for any consequences
+of such bugs including but not limited to damage to the $100,000,000
+wafer FAB that was purchased on eBay for $1.98 + shipping, financial
+loss from the waste of
+28 spools of ABS due to the office 3-D printer fabricating a part with
+random dimensions due to loss of lock, or bruising to your pet's ego
+from any number of causes directly or indirectly related to
+the implementation and use of this system. ;-)
+
+<h3><A NAME="lhipm1ack">ACKNOWLEDGMENT</a></h3>
+
+Thanks to Jan Beck for getting me interested
+in microcomputer development.  If anyone had told me 
+six months ago that I'd be writing code in C, MIPS assembly language,
+and Visual Basic - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)
+Links to his Web information may be found under
+<A HREF="#lhipm1ref">References</a>.
+<br>
+<p>
+<A NAME="lhipm1abs"></A>
+<hr>
+<h2>Abstract</h2>
+
+A complete system is described which provides all the functions required
+for precision measurement of displacement or other movement based on
+two frequency (heterodyne) laser interferometry.  The stabilized HeNe
+laser, interferometer optics, and signal processing are built up from
+readily available low cost components with readout of displacement
+or velocity, angle, and straightness, including frequency analysis via a
+Windows-based PC.  Performance should be similar to that of
+commercial systems costing 100 times as much with a usable resolution
+below 1 nm and readily detectable changes even lower.  Complete documentation is
+available including circuit schematics and software/firmware source code.
+Any portion or its entirety can be easily replicated for educational
+research purposes or to be used in an actual application.
+<br>
+<p>
+<A NAME="lhipm1int"></A>
+<hr>
+<h2>Introduction</h2>
+
+Precision measurement of displacement (change in position)
+using laser interferometry is a well established
+enabling technology for wafer positioning in lithography steppers,
+programming of profiles in diamond turning optical lathes, and numerous
+other metrology applications.  These systems use the wavelength of laser
+light as the "yard stick" to provide resolution down to the nm-scale.
+Most such systems are based on heterodyne interferometry using a
+a special low power two frequency Helium-Neon (HeNe) laser,
+various interferometer optics configurations,
+and digital processing for measurement
+display or closed-loop motion control.  The vast majority of commercial
+systems in use are from HP/Agilent (now Keysight), followed by Zygo, Excel,
+and a few others.  Systems employing single frequency lasers are also
+available.  Both types use very similar interferometer optics and
+have advantages and disadvantages.  The hardware for the single
+frequency laser is somewhat simpler.  However, the two-frequency approach
+is less sensitive to changes in laser (optical) power and alignment,
+which eases the burden on the processing electronics.
+<p>
+Such technology tends to be expensive, at least if a turn-key
+solution is desired.  The typical cost of a basic commercial system
+can easily exceed $20,000 and goes way up from there.
+While there is a great deal of surplus equipment
+available on eBay and elsewhere, putting together a usable system is still
+typically several thousand dollars, assuming working lasers can be obtained.  A
+large percentage of those listed on eBay are only good as door stops since
+they were removed from service due to an end-of-life tube.  And much of the
+critical documentation and support for other parts of the system
+is likely only available to original customers.  In this article, we describe an
+implementation that can be assembled by a dedicated hobbyist or researcher
+for less than $200 depending on skill level and the desire to use as few
+commercial (or at least interferometer-specific)
+parts as possible.  It is based on the type of common HeNe laser tube
+that were manufactured by the
+hundreds of thousands annually for use in grocery store barcode scanners, and
+are still widely available on the surplus market.  A permanent magnet
+converts it into a two-frequency Zeeman laser, and some optics and
+an Arduino-compatible microprocessor board
+stabilizes the laser to produce the required F1 and F2 optical frequency
+components.  Multiple interferometer configurations may be constructed
+from a few basic types of new or surplus low cost general purpose optics
+in place of those intended for commercial interferometers.
+The measurement electronics are implemented using a second higher performance
+microprocessor with custom firmware and a
+Windows-based Graphical User Interface (GUI) for readout, plotting, and
+logging.  Absolute displacement (change in position)
+down to better than 1/250 wavelength at 633 nm (a few nm) and
+a detectable displacement change below 0.1 nm is readily achievable.
+Velocity as well as frequency spectra (via a real time DFT)
+are also computed automatically.
+Measurement of angle and straightness (among others) are also possible
+with appropriate interferometer optics configurations and have similar performance.
+<p>
+The construction of a system like this is just one step up above that of
+using beach sand and iron ore for raw
+materials with stone tools and bear skins for assembly. :)  But if properly
+calibrated, the performance should be comparable to that of commercial
+metrology systems.
+<p>
+While not currently "open-source", technical support including electronic
+schematics and source code for the firmware is available to all users, and
+source code for the Windows GUIs can be made available at little to no cost
+for non-commercial users.  The development environments are freely available
+from their respective suppliers.
+<p>
+The system consists of several distinct and essentially independent
+subsystems and may be built up in stages with complete testing once each
+one is completed:
+<p>
+<ol>
+<li><b>Two frequency HeNe Zeeman laser:</b> This consists of a common
+ 4 to 6 inch (100-150 mm) 633 nm (red) random polarized
+ HeNe laser tube selected to be usable in this application,
+ its high voltage power supply, a set of
+ rare earth magnets to do the Zeeman splitting,
+ a thin-film heater and the associated controller
+ called &micro;SLC1 for "Micro Stabilized Laser Controller 1"
+ implemented using an Arduino-compatible microprocessor,
+ and a handful of discrete electronic components.  The controller includes a
+ Windows GUI but that is only required for initial setup and
+ optional tuning of the feedback loop parameters, though the defaults will
+ usually provide satisfactory performance.
+<p>
+<li><b>Interferometer optics:</b>.  While the basic interferometer
+ measures the change in path length (displacement) between a reference arm and measurement
+ arm, a small number of component types can be configured in a variety
+ of ways to provide angle, straightness, flatness, and other more
+ specialized measurements.  These can be assembled on a breadboard,
+ rail, or cage, along with a translating or rotating stage.
+ Low cost custom optical receivers (basically amplified AC photodiodes)
+ are used to sense the two signals that are compared to make the actual measurements.
+<p>
+<li><b>Measurement display:</b>  Once the laser and optics are assembled,
+ the &micro;MD2 Micro Measurement Display implemented using a Teensy 4.0 Arm Cortex-based
+ microprocessor and Windows PC can be added to read out and plot the
+ displacement, velocity, angle, or straightness, as well as to save the raw
+ data to a file for subsequent processing using an application like Excel or
+ Matlab.  For displacement, the usable accuracy has been demonstrated
+ to be a few nm with a resolution (or easily detectable
+ changes) better than 0.1 nm.  For context, 0.1 nm is approximately
+ the diameter of a hydrogen atom minding its own business.
+</ol>
+<p>
+Either of the three major subsystems - laser, optics and optical receivers,
+and readout display - can be swapped out for a commercial implementation should
+that ever be desired (or if the builder doesn't want to construct
+that one) as the interfaces are fully compatible
+with commercial systems from HP/Agilent/Keysight, Excel, Zygo, and others.
+<p>
+However, this is NOT an inexpensive solution to repairing a $100,000,000.00
+wafer FAB, or the one found on eBay for $1.98 + shipping. ;-)
+The effort required at each stage makes it extremely NOT cost effective for a
+commercial effort, especially if engineers' time has any value.  Furthermore,
+the reliability of a system constructed in this manner could be
+questionable unless a major effort is made in the design and construction.
+Rather, it is intended as a challenge and learning experience but may also have
+research applications where all aspects of its design and implementation
+can be tweaked.
+<p>
+This article begins with background material on interferometers for
+metrology applications starting with the basic Michelson interferometer
+and progressing through those typically used with single and two-frequency
+lasers.  Then each of the subsystems above are covered in more detail.
+<p>
+Note: Off-page links open in a <i>single</i> new tab or window depending
+on your browser's settings.
+<br>
+<p>
+<A NAME="lhipm1ima"></A>
+<hr>
+<h2>Interferometers for Metrology Applications</h2>
+
+All of the measurements performed by these systems are based on variations
+of the Michelson interferometer, invented over 100 years ago by Albert
+Michelson.  This is one of the simplest interferometer configurations as
+shown below:
+<p>
+<center>
+<img src="../michint1.gif">
+</center>
+<p>
+In short, a light beam is split into two parts which
+are bounced off of a pair of reflectors and recombined at a detector.  Any
+change in the relative path lengths of the two "arms" formed by the
+reflectors results in a phase shift between the waves in the two beams
+resulting in constructive or destructive interference,
+which can be measured and converted to displacement (change in position)
+down to nanometer precision.  All other types of measurements made by
+these systems are based on opto-mechanical configurations designed
+such that changes in the measured variable are detectable by what is
+in essence a Michelson interferometer.  For example, angle can be measured
+by putting a Retro-Reflector (RR) on a rotary stage and using simple
+trigonometry to convert displacement to angle.
+<p>
+Where the Path Length Difference (PLD) between the two arms is small, the
+requirements for the laser are not very stringent.  In fact, for very
+small PLDs, an LED or even a totally incoherent source like an incandescent
+lamp may be substituted for the laser.  However, to be useful for the PLDs
+necessary for most applications (millimeters to 10s of meters), the light
+source must be a laser.  And not just any laser, but one
+that has a narrow "line-width".  While the popular concept of a
+laser is of a light source that is monochromatic (single color
+or wavelength), in reality most lasers do not even come close.
+It takes careful design and implementation to achieve that.
+For these metrology applications the laser should ideally
+produce an output that is a single optical frequency with a line-width
+approaching zero.  In practice, it isn't that narrow but can result in
+a line-width of much less than 1 MHz, resulting in a usable PLD of 100s
+of meters.  A two frequency laser (the type that
+will be relevant in the remainder of this article) produces a pair of
+narrow line-width components typically separated by a few MHz, each of which
+has similar properties.  (More on two frequency lasers below.)
+<p>
+The simple Michelson interferometer setup can be used in a metrology system,
+but it has severe limitations which make it impractical for most applications.
+Alignment is <i>extremely</i> critical.  Even the slightest deviation from
+perfect alignment will result in a reduction or loss of signal.  Yet when
+perfectly aligned, one half of the optical power from the laser reflects
+directly back into the laser - which may destabilize it resulting in
+erratic fluctuations of its output in amplitude, optical phase, optical
+frequency, and polarization.
+<p>
+The first enhancement of the Michelson interferometer is to add a means of
+separating the outgoing and return beams so that there is virtually no
+optical power returned to the laser.  The simplest way to do this is to
+replace the mirrors with Retro-Reflectors (RRs), typically cube-corner
+(trihedral) prisms, which have the property of returning the beam precisely
+parallel with the outgoing beam, but which may have an offset.  In this way,
+virtually none of the reflected light ends up back at the laser.
+The use of the RRs also greatly reduces the
+sensitivity to alignment as any change in their angle is converted to a
+small change in the distance between the outgoing and return beams, but
+they remain parallel.
+<p>
+<center>
+<img src="mirr1.gif">
+</center>
+<p>
+The second enhancement is to use a polarizing beam-splitter in place
+of the 45 degree partially reflecting mirror (used as a beam-splitter).
+<p>
+<center>
+<img src="li1.gif">
+</center>
+<p>
+The beams reflected to the two
+arms of the interferometer then have orthogonal polarization which effectively
+makes them independent until they are combined at the detectors and means
+the maximum amount of the laser optical power is available - nothing exits
+out the unused side of the beam-splitter as it would in the basic Michelson
+setup, above.  While about half the power is lost in the detection scheme
+that is typically used, that could in principle be recovered.
+The result is then one of the most widely used
+configurations - the so-called "Linear Interferometer" (LI).
+<p>
+To make use of the LI in a practical metrology system, the setup
+is a bit more complex, primarily due to the need to determine the
+direction of position change and account for the actual laser power
+to optimize the measurement accuracy.
+<p>
+<center>
+<img src="../inter1f.gif">
+</center>
+<p>
+When this configuration has a single frequency laser, polarizing
+optics, and cube-corner retro-reflectors, it is called a
+"homodyne interferometer" and is used in some applications but has
+limitations.  The primary one is that
+signal amplitude depends critically on the returned optical power,
+which can vary based on the age of the laser, alignment, and dirt on
+the optics.  That is why there is generally an "Intensity" detector to keep
+track of the signal strength and adjust the processing accordingly.
+Electronic and optical noise is also an issue.
+<p>
+For these reasons, the approach based on a two-frequency laser
+called a "heterodyne interferometer" is
+much more common in critical applications, especially where a large
+amount of movement (change in displacement) is involved.
+The optics including the polarizing beam-splitter and
+retro-reflectors are similar, but instead of a laser producing a single
+optical frequency, the laser produces two closely spaced optical frequencies,
+F1 and F2 most commonly differing by between 1 and 20 MHz.  These have
+orthogonal polarization and are separated by the polarizing
+beam-splitter in the same way as with the single frequency laser.
+This approach is virtually immune to changes in beam power
+due to laser aging or contamination along the optical paths
+and less sensitive to changes in alignment.  The
+difference or "split" frequency is in essence a carrier so that electronic
+processing can be done in the AC domain.  Even though the laser output
+is no longer a single line, as a result of the way the processing is
+done, the effective PLD and change in PLD can still be hundreds of meters
+and is not directly affected by their difference, but only on the line-width
+of each component, which are similar to those of the single frequency
+laser and extremely narrow.  The disadvantage of
+the heterodyne approach is that the value of the difference of "split"
+frequency limits the maximum rate of motion in the direction which
+reduces the difference in frequency between F1 and F2.  More on
+this below.
+<p>
+Nearly every microchip in the universe is made
+in a FAB using multiple lithography steppers controlled by interferometers
+using two frequency lasers.  Many precision and custom optical components are
+produced on diamond turning lathes guided by similar devices.  And there
+are numerous other specialized applications including the manufacture of
+engine camshafts.  Even some high precision 3-D printers
+may employ laser interferometers for positioning.
+<p>
+There are several ways of implementing a two-frequency laser.  A single
+frequency laser can have part of its beam shifted in optical frequency
+by an Acousto-Optic Modulator (AOM).  This is used in several high
+performance Zygo and Agilent/Keysight systems where a split frequency
+of up to 20 MHz is desirable to achieve rapid stage movement.  Or
+two single frequency lasers can be "offset locked" to each-other
+opto-electronically to achieve similar results, though this approach
+is not to be the best of our knowledge used in
+any commercial systems due to its complexity and cost.  These
+techniques do have the benefit that the two optical frequencies can
+be separated by an arbitrary amount enabling a potentially greater
+maximum slew rate of the moving stage.
+<p>
+However, the most common technique is also perhaps the most clever and
+elegant: By applying an axial magnetic field of up to a few hundred Gauss to a
+random polarized HeNe laser tube (more on this later),
+the neon gain curve is split into two parts by the Zeeman
+effect separated in optical frequency by approximately 2.8 MHz/Gauss.
+Where the tube meets certain criteria including
+being random polarized and having minimal mirror (and other)
+asymmetry / birefringence, a lasing line centered between the gain curves will be
+split into left and right circular polarized components (originating from
+each of the gain curves) with a separation of up to a few MHz due to
+mode pulling.  This was covered in the book: "Gas Lasers",
+by Charles Geoffrey Blythe Garrett, McGraw-Hill advanced physics monograph,
+1967.  Yes, most of the serious theoretical work on this stuff was done over 50 years ago
+in the first decade after the invention of the laser. ;-)  And re-derived based on
+phenomenological behavior by the authors, which is believed to have been "borrowed" by at
+least one major laser company.
+<p>
+Should anyone care about the gory details, here is a simplified
+equation to estimate the split frequency based on the physical parameters
+of the tube:
+<p>
+<pre>
+                 MHz             c * (1-R)
+   DF = B * 2.8(-----) * k * -----------------
+                Gauss         GB * &pi; * L * &radic;R
+</pre>
+<p>
+where:
+<p>
+<ul>
+<li>B (Magnetic Field) is the strength of the applied axial magnetic field in Gauss.
+<li>R (OC Mirror Reflectance) compared to a perfect reflectance of 1.  (R for the HR
+ is assumed to be 1.)
+<li>c (Speed of Light) is 299,792,458 m/s.
+<li>GB (Gain Bandwidth) is the FWHM of the lasing medium gain profile,  For the HeNe
+ laser, it is assumed to be 1.6 GHz.
+<li>L (Cavity Length) is the distance between mirrors.
+<li>k (A constant) to make everything work out. :-)
+</ul>
+<p>
+And if the convoluted equation in Garrett is boiled down to its fundamentals, the
+result is similar.  (You really don't want to see the original!)  So in
+the end, it comes down to the difference frequency being proportional
+to the product of B and CB multiplied by a constant.  Or in more detail
+(at least to the first order), the DF is proportional to the magnetic
+field multiplied by the OC transmission and divided by to the cavity
+length. With a constant thrown, the "proportional" becomes an "approximately equal". ;-)
+This simplified equation has proven quite accurate in predicting the split frequency
+of real laser tubes whose physical parameters are known.
+<p>
+Practical Zeeman lasers operate in what we have dubbed the "high field regime"
+where the magnetic field is generally above around Gauss where the
+tube asymmetry/birefringence has minimal effect on general behavior and
+specifically the split frequency.  Textbooks and the scientific literature
+have often dealt with Zeeman using smaller magnetic fields where lasing
+behavior is highly impacted by tube birefringence.  In the high field regime,
+as long as there is a beat signal over part of mode sweep, Zeeman behavior
+should be satisfactory for use in a two frequency laser.  The known exception
+to this is with some LASOS tubes intended for single frequency lasers as noted below.
+<p>
+Since these left and right circularly polarized
+lasing modes come from the same laser tube, they
+inherently have identical beam characteristics and are perfectly aligned
+with each-other.  A Quarter WavePlate (QWP) converts the left and
+right circular polarization to orthogonal linear polarization resulting
+in the required F1/F2 frequency components
+aligned with the horizontal and vertical axes of the laser.  The axial Zeeman
+HeNe laser is found in all HP/Agilent/Keysight 55xx lasers as well as
+lasers from several other companies, and is by far the most common approach
+in use today and for the past 40+ years.  While the Zeeman approach is limited
+to a practical maximum split frequency of around 4 MHz, corresponding to
+a maximum stage slew rate of over 1 meter per second using LI optics,
+this is adequate for many applications.  (With improvements in the
+laser tube implementation, Zeeman split frequencies up
+to over 7 MHz are possible but at very lower laser power due to the height
+of the neon gain curves in the overlap region approaching zero, but they may be
+used in the some specialized applications.)
+<p>
+Thus, the output of the laser consists of a pair of optical frequency
+components called "F1" and "F2" that are orthogonally polarized and differ
+by the split frequency.  There is also an electrical signal
+based on |F2-F1| at the split frequency called "REF" derived from an
+optical receiver inside or external to the laser.  Using a "Linear
+Interferometer" (LI), one frequency component is bounced off a fixed
+retro-reflector while the other one bounces off a retro-reflector
+mounted on the "Tool" or target whose position is to be measured.
+<p>
+F1 and F2 can be interchanged in function with
+the only effects being that the sign of any detected movement is
+swapped and that the actual optical wavelength being used for the
+measurement will be whichever one is sent to the Tool.  For the following
+we assume F1 goes to the Tool.
+One may ask: Since F1 is not equal to F2, aren't there calibration issues since
+strictly speaking, the "yardstick" is based on the optical component that
+goes to the Tool?  In principle yes, but with a difference of only a few
+MHz between F1 and F2, any error from using the wrong one is typically
+less than 0.01 ppm (parts per million) which is usually of no consequence.
+<p>
+The reference and measurement beams
+return and are combined in the interferometer.  After
+passing through a polarizer at 45 degrees to a photodiode in the
+optical receiver, the difference in optical frequency
+is converted to an electrical signal called "MEAS".
+When the Tool retro-reflector is stationary, MEAS equals REF.
+When the Tool retro-reflector moves,
+the difference frequency between F1 and F2 - and thus MEAS - changes due to
+the Doppler effect.  Comparing the phase of the fixed REF signal (|F2-F1|)
+derived from the beam out of the laser to the changing MEAS signal
+(|F2-F1+&Delta;F1|) determined by the Tool motion results in the displacement.
+<p>
+However, one issue alluded to above is that the value of the
+laser's REF frequency limits the maximum stage slew rate.  If
+the velocity of motion is high enough in the direction where MEAS
+decreases to cause it to approach or pass through 0 Hz (MEAS=REF-&Delta;F1<=0),
+tracking would be lost.  So the basic specification for the laser includes the
+minimum REF frequency (if there is a range as there would be with a
+Zeeman laser).  For example, the 5517B
+has a spec'd REF frequency range of 1.9 to 2.4 MHz resulting in a
+guaranteed maximum slew rate of 0.5 meters per second in that direction using a
+linear interferometer.  Motion in the opposite direction has no such
+limit and in principle, a system could be designed to take advantage of that
+asymmetry.
+<p>
+<center>
+<img src="../inter2f.gif">
+</center>
+<p>
+For the Linear Interferometer (LI), a change of phase of 360 degrees at
+the optical receiver represents a displacement of 1/2 wavelength of the
+laser light (due to the beam to the Tool going out and back).  For the
+red HeNe laser, this "native resolution" is approximately 316.5 nm (633/2 nm).
+(The precise specifications for HP/Agilent/Keysight lasers are
+a vacuum wavelength of 632.991353 nm corresponding to an optical
+frequency of 473.612248 THz.)
+<p>
+And note that if using the &micro;MD2 display, the native resolution (before any
+averaging or interpolation) doubles (or halves depending on your point
+of view!) again for free to approximately 158 nm with a
+corresponding similar improvement for all the other interferometer configurations as well.
+<p>
+A system named a "Laser Doppler Displacement Meter" (LDDM) is a special case where
+the interferometer is entirely inside the laser housing with only a cube corner for
+the retro-reflector.  While more limited than one using external interferometer optics,
+this greatly reduces the size and mass of the moving target and is sufficient for many
+applications.  The remote reflector may be barely larger than the diameter of the laser
+beam, using a 1/4" (or smaller) cube corner weighing less than a
+couple grams.  In fact, the original Hewlett Packard 5500A laser-based
+system was an example of an LDDM in terms of architecture at least, but
+it was massive.
+<p>
+There are two other common interferometers for displacement
+measurements that are widely used.
+<p>
+<center>
+<img src="../hpintrf1.gif">
+</center>
+<p>
+The "Plane Mirror Interferometer"
+(PMI) enables the remote reflector to be a mirror rather than a cube-corner,
+thus permitting translation perpendicular to the measurement axis.  The
+RRs inside the PMI provide the required offset to avoid back-reflection into
+the laser.  The PMI is probably the most commonly used standard configuration.
+The "Single Beam Interferometer" (SBI) requires much less space while still
+maintaining the same beam size by using a pair of Quarter WavePlates (QWPs) to
+minimize back-reflections to the laser.
+As far as the measurements are concerned, there are no changes for the SBI,
+and a factor of 2X improvement in resolution for the PMI because of the double pass
+resulting in a basic resolution of approximately 158 nm.
+<p>
+Other arrangements of the components of the interferometer
+(sort of like reconfiguring LEGO&trade; blocks)
+will result in equivalent behavior as long as the beam paths are similar
+through the interferometer and polarization remains at 0 or 90
+degrees with respect to the laser baseplate.
+For example, the Tool could move at right angles to the laser by moving the
+retro-reflector from the top to the side.  Then
+F2 would go to the Tool instead of F1.  The only change in the
+measurement would possibly be to flip the sign of the displacement.
+<p>
+Multiple axes can be accommodated by splitting the laser's output and using
+separate interferometers, optical receivers, and channels for the
+measurement electronics.
+<p>
+There are a variety of more complex interferometers for displacement including
+those for higher stability or higher resolution displacement, or to support
+multiple axes in one monolithic interferometer block.  
+<p>
+Other configurations exist for measuring angle, straightness, flatness,
+squareness, and others.
+<p>
+<center>
+<img src="../hpintrf2.gif">
+</center>
+<p>
+But they are all variations on the basic Michelson interferometer.
+Most only result in changes in the calibration factor, except for angle where
+a slightly more complex calculation based on high school trigonometry
+is involved.  Any type of physical
+movement that can be converted into a change in the PLD can be measured
+or controlled using these techniques.
+<p>
+And by allowing the Reference retro-reflector to move, differential measurements
+can be made as well.  And as to the difference between the optical frequencies
+of F1 and F2, for the same reason that this is generally of no concern with basic
+measurements, any error would typically be less than 0.01 ppm.  So if the differential path
+length changed by 1 meter, there would be a 10 nm error in the measurement.
+Should that actually be significant, a double pass interferometer like the
+PMI could be used with the beams for the two passes being reflected
+from separate mirrors, or a pair of interferometers could be employed
+with the difference calculated in the measurement electronics.
+In practice, uncorrected errors due to temperature, pressure, and
+humidity are orders of magnitude larger.
+<br>
+<p>
+<A NAME="lhipm1las"></A>
+<hr>
+<h2>The Zeeman-Split Two Frequency HeNe Laser</h2>
+
+The heart of these systems is the Zeeman-split two frequency HeNe laser.
+It must provide a stable output consisting of
+a pair of known constant optical frequencies typically separated by a few MHz, known as
+the "split frequency" or "REF frequency".  The two optical frequencies (henceforth
+denoted F1 and F2) must be stable as they are in effect the "yardstick"
+on which all measurements are based.  The split frequency
+is in essence a carrier used by the processing electronics, but it's
+precise value - or even long term stability - isn't critical.
+<p>
+It turns out that the red (633 nm) HeNe has several characteristics that make
+it the ideal laser for these metrology applications even more than 50
+years after its invention.  (Murphy must have been on vacation!)
+The first is that the Doppler-broadened gain bandwidth
+of neon is only around 1.6 GHz, and even accounting for other factors
+which affect the precise location of the gain curve and can shift it
+by up to around +/-1 GHz (total extent of 3.6 GHz), the optical frequency
+would already be good to better than 10 parts-per-million (ppm).
+And by specifying the isotope ratio of <sup>20</sup>Ne to <sup>22</sup>Ne
+in the gas-fill, the approximate temperature and pressure inside the tube,
+and electronically locking the lasing modes relative to the Ne gain
+curve, this can be easily improved by a factor of 250 or more.  So the
+optical frequency is locked to an intrinsic characteristic of the HeNe
+lasing process which is absolute and doesn't change much over the life
+of the tube.  In fact the optical frequencies of more than a dozen HP/Agilent/Keysight
+lasers picked at random that were not near end-of-life differed by less than 10 MHz!
+That's 0.02 ppm!  This could not be done with anywhere similar precision
+for diode or solid state lasers due to their orders of magnitude wider
+gain bandwidth.  And while locking a diode or solid state laser to a
+reference frequency like a specific spectral line in a gas cell or
+an external high finesse optical cavity is possible, the cost
+of such an implementation would be so high that it is simply not
+a practical alternative for a commercial system.
+<p>
+Including even a brief theoretical introduction to the principles of the HeNe Zeeman laser
+would require too much space, and understanding how the thing works is
+really not essential for a metrology user.  If really interested, refer
+to the Laser FAQ chapter on Stabilized HeNe Lasers, and specifically,
+the sections starting with
+<A target="lhipm1" HREF="https://www.repairfaq.org/sam/lipm/laserhst.htm#hstish3">Hewlett-Packard/Agilent/Keysight
+Stabilized HeNe Lasers</A>, or the hairy math-heavy technical literature,
+mostly from the 1960s (!!). :)  But here's the instant explanation similar
+to what was given above: When an
+axial magnetic field is applied to a HeNe laser tube meeting specific
+requirements, it will split the neon gain curve into two parts shifted up
+and down in optical frequency by about 2.8 MHz/gauss such that when a
+single lasing mode is centered between them, it will split due to
+mode pulling from each of the gain curves into two lasing modes with left and
+right circular polarization separated by up to a few MHz.
+There, now you know even if it wasn't necessary. ;-)
+But a few more simplified details may be found in
+<A HREF="https://www.repairfaq.org/sam/hp5517ms.pps">HP/Agilent 5517 Zeeman-Split HeNe
+Laser Mode Sweep Animation</A> (Powerpoint).
+<p>
+To construct a useful system, it's sufficient to be
+able to select an appropriate tube and magnets, convert to
+F1/F2 frequency components using a QWP, and implement the stabilization.
+And while not to underestimate the required effort,
+it is all straightforward and well within the
+capabilities of individual with a basic technical background and experience.
+No large corporation is required.
+
+<h3><A NAME="lhipm1imp">Laser Implementation</a></h3>
+
+For a two-frequency laser to be suitable for metrology applications, it must
+provide a stable F1/F2 frequency output from a single split mode
+without additional "rogue modes".
+This is achieved through a combination of the physical design of the
+laser tube, strength of the Zeeman magnet, and control electronics.
+<p>
+<center>
+<img src="../henezsl1.gif"><br>
+</center>
+<p>
+<b>Laser Tube:</b>
+<p>
+The requirements for the HeNe laser tube for a two-frequency Zeeman laser are:
+<p>
+<ul>
+<li><b>Wavelength:</b> This must be 633 nm (red). While HeNes at other wavelengths could
+ in principle be used for Zeeman lasers, the output power of sufficiently "other color
+ tubes is too low to be of practical value.
+<p>
+<li><b>Single (TEMoo) spatial mode:</b> This means only a single axial mode is
+ oscillating and the beam profile is Gaussian.  Most short 633 nm tubes satisfy
+ this requirement.
+<p>
+<li><b>Length 150 mm or less:</b>  A short tube will
+ guarantee a single split mode when locked.  This
+ is also dependent on the strength of the magnetic field and reflectivity of
+ the mirrors, but limiting the length to 150 mm should be sufficient
+ and surplus tubes of this length are still very common.  All
+ other factors being equal, a shorter length also increases the split
+ frequency and there are some barcode scanner tubes as short as
+ around 115 mm.  But their output power will usually be lower.
+ While it is possible to use somewhat longer tubes, their maximum
+ split frequencies will be much lower, limiting slew rate performance.
+ The maximum usable split frequency changes as the inverse square of the tube
+ length.
+<p>
+<li><b>Random polarized:</b>  This means that there is nothing inside the tube
+ to force it to linear polarization, which is essential so that the
+ circular polarized modes can be produced.  Most short tubes satisfy
+ this criteria since linearly polarized tubes are more expensive to
+ manufacture and were not needed for barcode scanners.  It does NOT
+ usually mean the modes are flipping polarization randomly at high speed.
+ However, the less birefringence there is in the mirrors and tube geometry
+ the more likely it is for mode polarization to switch (or "flip").
+ Such tubes are actually better for Zeeman (but not for use in many
+ other applications like single frequency lasers).
+<p>
+<li><b>Limited mirror or tube asymmetry:</b>.  If the polarization axis
+ preference is too large, the magnetic field will be insufficient to split
+ the mode and there will be no beat signal.  There is no way to predict this
+ a priori but most common barcode scanner tubes have proven satisfactory with a
+ modest to strong magnetic field.  A tube called a "flipper" due to actual
+ random changes in polarization (which might be undesirable for other
+ applications including single frequency stabilized lasers) tend to
+ be better for two frequency Zeeman lasers.  But some LASOS tubes with their
+ mirrors designed for one or two mode stabilized lasers
+ that have textbook mode sweep with no magnetic field
+ may be useless for two frequency lasers.  In a magnet,
+ they turn into Zeeman flippers, abruptly
+ jumping in polarization at a fixed point in mode sweep even
+ at fields well above anything that would be useful.
+</ul>
+<p>
+HeNe laser tubes that satisfy these requirements were used
+in many applications.  Hand-held and in-counter barcode scanners were perhaps
+the most common with 100s of thousands of units deployed annually during
+their peak in the 1980s.  Others include alignment, positioning, and
+document scanning.  It's mostly a coincidence and ironic that they
+are also suitable to be used as Zeeman lasers in very sophisticated
+precision metrology applications, a byproduct of low power (under 1 mW) making
+most of them 150 mm in total length or less and no requirement for a
+polarized output with its increased cost.
+<p>
+<center>
+<img  WIDTH=550 src="../uphnlt1.jpg"></A><br>  
+<h3>Typical HeNe Laser Tube from a Barcode Scanner</h3>
+</center>
+<p>
+Fortunately, nearly all of these tubes are so-called "hard-sealed" so that they
+don't leak significantly over any time scale that matters, Thus a laser
+that was unused or healthy and put on the shelf in the 1980s will generally
+be perfectly usable 35+ years later with minimal if any reduction in
+performance.
+<p>
+Most tubes meeting the requirements listed above from Melles Griot,
+Siemens/LASOS, and JDS Uniphase have been found to be suitable
+for a Zeeman laser.  Specific models that have proven satisfactory include:
+<p>
+<ul>
+<li><b>JDS Uniphase (now Lumemtum):</b> 1007, 1008.
+<li><b>Melles Griot (now Pacific Lasertec):</b> 05-LHR-002, 05-LHR-006, 05-LHR-007.
+<li><b>Siemens (now LASOS):</b> 7621, 7643.
+<li><b>Spectra-Physics:</b>: </b> 007.
+</ul>
+However, there are some Far East imports that may
+not work well or at all for a variety of reasons.  So purchasing one
+of those low cost new tubes may turn out to be a poor decision.  These
+types of tubes are still manufactured for various applications including
+Zeeman lasers.  Pacific LaserTec (PLT, formerly Melles Griot) is one
+supplier of such tubes.  Of course, a new tube will be much more expensive than an
+eBay special ;-), but it will have guaranteed specifications and a full lifetime.
+<p>
+Hewlett Packard (HP) developed the first practical (or at least widely used)
+metrology systems based on two-frequency HeNe Zeeman lasers.  Since the
+early 1970s, HP (later Agilent and now Keysight) has dominated the field.
+While they have always used custom HeNe laser tubes, other manufacturers
+like Excel Precision have opted for more conventional tubes which are mostly
+only slight variations on standard models and virtually physically
+identical to the barcode scanner variety.  The diagram below shows a
+comparison of the two.  The HP/Agilent design is the most common one, having
+been used for over 40 years.
+<p>
+<center>
+<img src="hpbctbe1.gif"></A><br>
+</center>
+<p>
+Note the complexity of both versions compared to the barcode
+scanner tube.  The helical winding near the center is the internal resistance
+heater used for cavity length control, wound on a solid precision glass
+"mirror spacing rod" which "floats" between the springs at each end in the
+case of the "Long" tube but is fused into the rear glass shell in the "Short"
+tube.  All that complexity greatly increases cost without really
+improving performance in any fundamental way.
+<p>
+Versions of the "Long" tube were used from the early 1980s through the early
+2000s.  The "Short" tube appeared in the early 2000s in high performance
+lasers, but has now replaced the Long tube for all models.
+Even though it is shorter :-), the maximum output power is actually higher
+due it being a more optimized modern design.
+<p>
+For the HP/Agilent/Keysight tubes,
+the output beam comes from the cathode-end on the right.
+For a barcode scanner tube, it may come from either end depending on the
+original requirements.  For a given length tube, anode-end output may result
+in slightly more power.  As a practical matter, it doesn't make much difference
+except in mounting and avoiding getting zapped by the high voltage. ;( :)
+<p>
+To use a barcode scanner tube as a total drop-in replacement or substitute
+for a HP/Agilent/Keysight tube would in principle require knowing its optical
+frequency, which depends on several factors including the specific isotope
+ratio of the neon in the tube, and its pressure and temperature under operating
+conditions.  The optical frequency could be measured by beating (heterodyning) its locked
+output with that of a healthy HP/Agilent/Keysight laser or other wavelength
+reference laser.  Performing a test like this is
+not that difficult, requiring basic optics for combining the beams
+and a fast photodiode and RF spectrum analyzer or oscilloscope.
+But the error would probably be less than 1 part per million
+(1 ppm) at most, and from experience, likely to be a small fraction
+of that.  As a practical matter, a change of 1 &deg;C in temperature
+or 2.5 mm/Hg in pressure of the overall system (not the laser tube
+itself) results in a similar change in wavelength, so uncorrected
+environmental effects are likely to dominate.
+Thus if a $100 barcode scanner tube-based laser was substituted for a
+$12,000 Keysight laser, it might very well go unnoticed.  But
+that's still not a good reason to install one in your FAB! ;-)
+<p>
+The primary functional difference would be that cavity
+length control would use an external heater attached to the tube,
+typically either a commercial thin-film Kapton heater or one wound
+with thin wire for the heating element.  The latter implementation might
+not be considered as elegant, but the resulting performance is similar.
+<p>
+The primary downside of using standard tubes is that they do
+tend to have a somewhat shorter life - typically
+2 to 3 years versus 3 to 5 years in 24/7 service.
+This is due to the smaller gas volume and differences in the cathode material.
+But the cost is likely to be less than 1/10th that of the custom tubes.
+(Non-operating or "Shelf life" for all modern tubes is essentially infinite.
+They are "hard-sealed" and don't leak over any timescale that matters.)
+<p>
+<b>Beam Expander/Collimator:</b>
+<p>
+For the beam to be useful in an interferometer, it needs to be well
+collimated.  The divergence of a diffraction limited beam from a single
+spatial mode laser like this is inversely proportional to diameter.  So
+a larger diameter beam can be better in this regard.  It is also easier
+to align and provides more area thus minimizing the effect of the edges
+in the cube corner where hitting them may be unavoidable.
+<p>
+The raw beam from the typical small tubes to be used in this system has a
+diameter of only around 0.5 mm with a theoretical minimum divergence of
+around 1.7 mR.  But many have a larger divergence - as much as 8 mR by
+design from the requirements of the original barcode scanner application.
+Thus, additional optics
+are required to collimate the beam.  The most common arrangement is a
+Galilean or Kepler telescope consisting of a pair of lenses.  The one
+closest to the laser has a short focal length and expands the beam while
+the second one has a longer focal length and collimates it.  The expansion
+factor is the ratio of the absolute value of the
+focal lengths.  The difference between the two
+types is that the Galilean telescope uses a negative lens while the Kepler
+telescope uses a positive lens for the beam expander.  The only practical
+differences are that the Galilean telescope is slightly more compact and
+the beam doesn't focus anywhere (which is really only relevant for high
+power pulsed lasers).
+<p>
+Based on the physical size of the interferometer optics that will be
+used with the system under consideration here using compact interferometer
+optics that are NOT single beam configurations, a 2.5-3 mm beam is optimal
+so that a pair of lenses of 9 and 54 mm or thereabouts
+will be suitable.  However, the single beam configurations would
+be better using a 5-6 mm beam since they will be hitting the cube
+corner where there are edges.  Thus 9 and 108 mm lenses could
+be used.  For short range displacements of a few cm, a smaller beam
+as narrow as 1 or 1.5 mm would be acceptable using a single lens
+collimator.
+<p>
+Based on the ultimate divergence, a 3 mm beam will have a useful range of
+around 1 meter while a 6 mm beam is good to 5 meters or more.  The largest
+common beam diameters used with these systems is 9 mm for a range of
+more than 20 meters.
+<p>
+A large variety of inexpensive glass lenses are available from
+<A HREF="http://www.surplusshed.com/">Surplus Shed</a>.
+<p>
+<b>Tube Heater:</b>
+<p>
+To generate the F1/F2 components requires that the lasing mode be centered
+between the split neon gain curve.  This is done by controlling the distance
+between the tube's mirrors down to a precision of several <i>nanometers</i>.
+The first HP Zeeman lasers used a PieZo Transducer (PZT) behind the rear
+mirror inside the tube.  PZT actually derives from
+the chemical formulation of most of these materials - lead zirconate
+titanate (Pb[Zr(x)Ti(1-x)]O3), but it's easier to remember the
+acronym based on the device name! ;-)  This is not possible with
+a barcode scanner tube.  While a PZT (or electromagnetic actuator) could
+be attached to one of the mirror mounts pushing and pulling on it
+externally, this would be rather complex and a bit clunky (though an
+electromagnet has been used in at least one commercial system).
+<p>
+Later HP lasers replaced the PZT with an electric resistance heater inside
+the tube, as depicted in the diagrams, above.  While the response of
+a heater isn't as fast, it is more than adequate and eliminates
+the high voltage required by the PZT.  This just affects the time from
+power on to the laser being locked and ready.  But for a system that is
+typically turned on and left on for hours - or forever - the difference
+between a few seconds and 5 minutes is not relevant except to those
+in Marketing. :)  A heater can also be wrapped around
+the outside of the tube with acceptable performance as noted above.  In fact, lasers like
+these are often rebuilt by independent facilities using a conventional
+tube (not all that much different than the barcode variety)
+and external heater since genuine original tubes are not
+available from HP/Agilent/Keysight - they will only repair lasers at
+a cost approaching that of a new laser, and will
+not sell new tubes even to their customers.  To the best of our knowledge,
+there never has been any other commercially available tube with an internal heater.
+<p>
+The heater is used to control the cavity length of the laser tube so that a
+stable split frequency is generated.  A variety of schemes can be used for an
+external heater but the simplest is either a thin-film Kapton/Polyimide heater
+from a company like Minco or a Bifilar-wound heater using insulated copper
+"magnet" wire.  The latter is much less expensive and perfectly satisfactory
+but somewhat tedious to wind by hand.  Both types have been used in commercial
+stabilized lasers and rebuilt Zeeman lasers.
+<p>
+<center>
+<img src="../hprhhlt1.jpg"></A>
+<h3>Conventional HeNe Laser Tube with Heater, Ballast, and Cables Added</h3>
+</center>
+<p>
+The general scheme is that the heater is designed to raise the temperature
+of the tube assembly to comfortably above where it would be simply from 
+the heating due to the electrical discharge inside the tube alone.
+Then a modest amount of power can maintain the temperature constant using
+a feedback loop.  Typically, this is around one third to one half
+of the electrical power to the laser tube with the heater driver running
+at half of its maximum power.  The thermal design is such that there is a
+controlled amount of heat loss through conduction and convection to
+the environment so that this balance can be maintained over an acceptable
+range of ambient conditions via the feedback loop.  This sounds like it
+could be finicky in practice, but there is wide lattitude in choosing the various
+parameters.
+<p>
+<b>Zeeman Magnet:</b>
+<p>
+Commercial Zeeman-split lasers generally utilize a cylindrical Alnico
+permanent magnet in which the tube is mounted.  Typical dimensions are:
+length of 4 inches, outside diameter of 2 inches, and inside diameter
+of 1.5 inches.  The axial field strength measured near the center inside may
+be anywhere from around 150 to 400 gauss or more depending on the laser model
+(e.g., 5517A, B, C, D, etc.).  The REF or "split" frequency is determined primarily
+by the magnetic field strength, mirror spacing, and output mirror reflectivity.
+But the tube current, operating temperature, and other conditions also affects
+it.  If the parameters are not selected carefully, one can end up
+with no beat at all or "rogue" modes in addition to the desired split mode.
+Rogue modes appear when additional longitudinal modes fit within the
+split neon gain curves.  Rogue modes suck power from the desired split mode but more
+importantly, may cause the lock point to shift position significantly.
+For these reasons, using the magnet salvaged
+from a (dead) HP or other Zeeman laser could result in poor performance,
+particularly with the barcode scanner tube if testing under operating
+conditions isn't done.  It is trivial to reduce the magnetic field to any
+arbitrary value either mostly reversibly or permanently,
+and usually possible to increase it to beyond 500 G with
+an easily constructed magnetic charger.  So, using a commercial cylinder magnet
+is always an option but its field may need to be adjusted.
+<p>
+However, a variety of other approaches for
+the magnet are possible.  A series of strong bar magnets about 4 inches
+in length surrounding the tube is the approach that was used by Teletrac
+as well as Spindler and Hoyer.  Another option, which is probably the least
+expensive is to use many small rare earth magnets stacked and secured
+in a similar way.  It has been possible to purchase a quantity of
+50, N50 or N52 rare earth magnets 6 mm in diameter by 10 mm in length for
+around $6-10 delivered.  (Increasing "N" parameter is supposed to correlate
+with strength, but I've found N50s to be 20 percent stronger than N52s
+from some suppliers.)  When 49 of them are arranged in 7 stacks (like
+bar magnets), a sufficiently strong field is created to result in an
+acceptable split frequency using various barcode scanner tubes.
+This is typically 0.8 to 1.2 MHz if the magnets are snug against the tube
+with just a thick plastic spacer to provide electrical insulation.
+By adding magnets or pole pieces to concentrate the field,
+the split frequency can be increased.  By removing magnets, or
+mounting them spaced from the tube by a non-ferrous cylinder,
+the split frequency can be decreased.  A variety of other shapes,
+sizes, and types of magnets can also be used.
+<p>
+However, caution must be exercised to avoid ending up with a configuration
+that provides a field so strong that rogue modes are generated.  Without
+a means of displaying the longitudinal modes in real-time using a
+Scanning Fabry-Perot Interferometer (SFPI), one simple method
+that usually is sufficient is to monitor the split frequency as magnets
+are added.  If the increase in field strength does NOT result in an
+approximately proportional increase in the maximum split frequency,
+rogue modes are appearing.  There may also be a visible distortion of the
+beat signal and the location where the F1/F2 modes are equal (which would
+be the lock-point) may end up with a reduced or missing beat signal.
+This is usually not so much an issue with the 7x7 array of rare earth magnets
+but could be if more are used, and is almost certain to occur if an
+HP-style cylindrical magnet is charged to the maximum possible field strength
+using a barcode scanner tube.
+<p>
+All the bars or stacks must all be mounted with the same N-S direction.
+Mounting the resulting magnet with all poles N-S or S-N flipped only reverses the sign of
+the feedback error term for locking and the sign of the displacement
+versus direction of motion for any given interferometer configuration.
+It's not really even necessary to know this when constructing
+the tube assembly unless one is a stickler for consistency. :)
+In that case, make it the same as <i>any</i> HP Zeeman magnet.
+<p>
+<center>
+<img src="../aztrem1.jpg"><br>
+<h4>Melles Griot 05-LHR-007 HeNe Laser Tube with Heater and Axial Zeeman Magnets</h4>
+</center>
+<br>
+<p>
+This shows the 49 magnets simply taped in place on the shell from a plastic pill
+bottle that slips over the laser tube/heater combination.
+The length and number of stacks can be traded off to optimize the performance,
+usually to achieve the highest split frequency.  Where a tube is not
+cooperating and there is no beat at all, additional magnets can be
+added.  With this approach, it's not likely the field will be too strong.
+For an experimental system, the split frequency is not critical as it only
+affects the maximum velocity that can have displacement unambiguously
+determined in the direction that reduces the MEAS
+frequency.  However, too weak a magnetic field will result in no splitting
+at all, or an unstable output.  Something around 1 MHz is a comfortable
+minimum which should be achievable with readily available magnets.  But
+a somewhat lower split frequency is fine.  Not all tubes
+will work with this relatively weak magnetic field, though most will
+work with a genuine HP/Agilent cylindrical magnet.  But that would be
+cheating. :)  So, the best option is to be able to select among several
+short tubes to determine which is best.  A rough measure of the effect of
+the magnet in producing a Zeeman beat is to observe percentage of time or
+duty cycle during mode sweep during which there is a beat - the higher it is,
+the more effective the magnet is in overcoming the asymmetry of the tube.
+<p>
+In order to test for the split frequency, the tube must be powered inside
+the magnet while monitoring its output with a high speed photo-detector
+behind a polarizer.  A suitable detector can be constructed using almost
+any small silicon photodiode, a 9 volt battery (or power supply) to back bias
+it, and a load resistor of a few k ohms, with the vertical input to an
+oscilloscope across the resistor.  An example of a
+suitable silicon diode is an OSRAM SFH 206K,
+around $1 from an electronics distributor.  As the tube warms up and the cavity
+expands, the lasing mode will drift through the neon gain curve which
+is split by the magnetic field.  When it is in the region where the
+split gain curves overlap, there will be a beat.  Generally, it will be
+present for only a part of the mode sweep cycle, but then appear and vary in
+amplitude and frequency.  Determining what exact frequency will correspond
+to the usable split frequency can be tricky for the barcode scanner tubes with
+relatively weak magnetic fields, but it will probably be where the
+amplitude of the beat signal is highest and/or centered over the
+region where it appears.
+<p>
+A test setup with a similar tube is shown on the left with a video of its
+behavior with power applied to the heater on the right.
+<p>
+<center>
+<img src="zeembt4.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+<video controls="" muted="" preload="none" src="https://www.repairfaq.org/sam/lipm/zeembtv1.mp4" width="512">
+<source src="https://www.repairfaq.org/sam/lipm/zeembtv1.mp4" type="video/mp4">
+</center>
+<br>
+<center>
+<b>Testing the tube for Zeeman Behavior with Heater and Magnets</b>
+</center>
+<p>
+A tube that is particularly well suited for Zeeman will have the beat present
+for a larger part of the mode sweep cycle and/or the Zeeman beat will be
+present at a lower magnetic field.  HP/Agilent tubes generate a beat
+down to close to 0 G.  Barcode scanner tubes may require 100 G or more.
+<p>
+Note that observing the split lasing modes directly (as opposed to inferring
+them from the scope or frequency counter display) is tricky.  Spectrometers,
+optical spectrum analyzers, and wavemeters generally do not come anywhere
+close to having the required resolution, which works out to be order of
+0.002 picometer (pm) to resolve two lasing lines separated by 1.5 MHz.
+The only relatively straightforward solution is to use a high resolution
+Scanning Fabry-Perot Interferometer (SFPI), also called a Laser Spectrum
+Analyzer (LSA).  While most common commercial SFPIs
+have a resolution no better than 10 or 20 MHz, there are some special ones
+that go down to 1 MHz or less.  And it's possible to build an SFPI with
+even higher resolution but that requires special mirrors, which are normally
+very expensive.  However, sometimes surplus mirrors intended for a totally
+different application can be found that would be suitable.  For more
+information, see the Laser FAQ chapter on Laser Instruments and
+Applications, specifically the sections starting with
+<A target="lhipm1" HREF="https://www.repairfaq.org/sam/lipm/laserlia.htm#liasfpi">Scanning
+Fabry-Perot Interferometers</A>.
+<p>
+Once the split frequency has been confirmed and optimized, the magnets should be
+secured with RTV silicone or other moderately high temperature adhesive.
+(Hot-melt glue may be problematic since the temperature near the heater
+may exceed 70 &deg;C.)  For my prototype, groups of 7 of these
+magnets were wrapped with 1 inch wide Kapton tape to make stacks
+that would not fall apart and these will held in place against the tube
+with elastic bands made of strips from a bicycle tire inner tube.  That
+was sufficient for testing and used in the prototype, but something
+more permanent would be worthwhile so they don't shift over time.
+<p>
+Note that rare earth magnets may lose their magnetic properties in an
+irreversible way if they get too hot (e.g., from the stabilization
+heater).  The specific temperature depends on so-called "N Grade".  Therefore,
+it may be desirable to insulate them from the actual tube and heater by a small amount.
+However, I have not really seen or heard of this being an issue.
+Alnico is not affected by heat (at least not at any temperature that
+matters) but for a similar size magnet is much weaker.
+<p>
+<b>Stabilization Feedback and REF Frequency Generation:</b>
+<p>
+The Zeeman split modes are a pair of left and right Circularly Polarized
+(CP) longitudinal modes separated by up to a few MHz in optical frequency.
+CP modes aren't generally usable in a two-frequency interferometer so they
+must be converted to Linearly Polarized (LP) modes aligned with the
+X and Y axes of the laser for both the stabilization
+feedback and the actual F1/F2 output.  In addition, the electrical
+REF signal needs to be generated for use by the measurement
+electronics.  As noted above, this can be done by splitting off a
+portion of the main beam and putting it through a polarizer at 45 degrees
+with a sensitive optical receiver to convert that to an electrical signal,
+or the small waste beam out the back of the laser tube can be used with a
+polarizer (at any angle because it is circularly polarized) for this purpose.
+<p>
+To lock the laser tube using the heater to control cavity length at
+the optimal location to generate a stable two frequency output requires
+optical feedback.  The most common technique is to use a
+Polarizing Beam Splitter (PBS) which separates the F1 and
+F2 components to be used for the feedback.  Photodiodes generate current
+signals proportional to the amplitudes of F1 and F2 and
+the control loop adjusts the cavity length using
+the heater to force their amplitudes to be equal.  When the slope of the
+error signal is correct, this will assure that the lock point is centered
+between the split neon gain curves where the Zeeman beat occurs.
+<p>
+Most commonly, the two photodiodes feed trans-impedance amplifiers to
+buffer the F1/F2 signals.  However, it's possible to simply reverse bias
+the PDs which then feed resistive loads to generate the require voltage
+signals.  While the transfer function may not be quite as linear,
+somewhat noisier, and more susceptible to temperature changes, as a
+practical matter, this simplified approach has proven satisfactory for
+most purposes as long as the beam has enough intensity so that
+the photo-current will result in a few volts across the load (resistor
+to set gain in parallel with the input impedance of the A/D).
+<p>
+While it is theoretically possible to monitor the REF signal and lock
+based on its behavior (usually by either maximizing or minimizing its
+frequency depending on the specific conditions) these schemes end up
+being more complex and have practical issues which may make them inferior
+to the simpler dual mode approach.  More than one manufacturer even used a
+Phase Locked Loop (PLL) with a crystal reference to lock the split frequency - but
+this is exactly the <i>wrong</i> thing to do as the split frequency can change
+for any number of reasons which don't correlate with the F1/F2 optical
+frequencies.  With HP/Agilent/Keysight lasers, it always "wonders"
+back and forth with a seconds or minutes cycle.  And
+placing a Newport magnetic base clamp near
+the laser will affect the strength of the magnetic field seen by the
+electrical discharge inside the laser tube and then as a result of the
+PLL maintaining the split frequency constant, indirectly
+result in a change in the F1/F2 optical frequencies!  Definitely not what is desired.
+<p>
+Two common layouts are shown below.
+<p>
+<center>
+<img src="bsref1.gif"><br>
+</center>
+<p>
+The two schemes are virtually identical:
+<ol>
+<li>Top: A QWP in the output beam converts the CP modes to LP F1/F2 modes,
+ and then a beam sampler picks off a portion of the resulting beam to be used
+ for the feedback.  A photodiode behind a polarizer in the waste beam is used
+ to generate the electrical reference signal.
+<p>
+ Degrees of freedom:
+<p>
+ <ul>
+ <li>N-S polarity of magnet.
+ <li>Orientation of QWP to select F1 or F2 to align with X axis.
+ <li>Selection of outputs from PBS to F1 and F2 photodiodes.
+ </ul>
+<p>
+<li>Bottom: A QWP in the output beam converts the CP modes to LP modes, and a
+ beam sampler picks off a portion of the result which is passed through a
+ polarizer to a photodiode for the electrical reference signal.  A second
+ QWP in the waste beam converts the CP modes to LP modes to be used for
+ the feedback.
+<p>
+ Degrees of freedom:
+<p>
+ <ul>
+ <li>N-S polarity of magnet.
+ <li>Orientation of QWP in output beam to select F1 or F2 to align with X axis.
+ <li>Orientation of QWP in waste beam to select F1 or F2 to align with X axis.
+ <li>Selection of outputs from PBS to F1 and F2 photodiodes.
+ </ul>
+</ol>
+<p>
+The QWP is oriented with its principle axes aligned with the X and Y axes
+of the laser.  The LP is oriented at 45 degrees to obtain the beat signal
+from F1 and F2.  The PH minimizes bore light to the photodiode(s).
+<p>
+The second approach requires an additional QWP, but provides a bit more
+flexibility in selecting the orientation of F1/F2 with respect to the
+X and Y axes polarity of the feedback signal.  Essentially, it decouples
+the stabilization feedback from the output.  Given the availability of
+low cost optical mica QWPs, the cost difference is not significant.
+But for all practical purposes, either can be made to work.
+<p>
+The REF signal must be derived from the actual output of the laser.
+A simplified optical receiver is shown below:
+<p>
+<center>
+<img src="sgor3sch.gif"><br>
+<h4>Schematic of Simple Optical Receiver with Performance Similar to that of
+ HP 10780</h4>
+</center>
+<p>
+Using the waste beam can be a challenge due to its low power which is a
+somewhat random variable depending on the leakage through the high reflector
+mirror.  It may be 25 &micro;W or less and the polarizer will reduce
+it even further.  The circuit above has performance similar to that of
+the HP 10780A but can be constructed entirely from readily available
+inexpensive off-the-shelf parts.  It should work for the waste beam
+as well as the measurement beam from the interferometer.
+Surface mount components are not even required, though a 4 layer PCB
+does provide better performance (mainly noise immunity) than construction
+on a "Perf" board.  The use of a "Solderless Breadboard is definitely
+NOT recommended.  And for really low power signals, shielding may be
+required.  Alternatively, a genuine 10780 (almost any version) can be used.
+Cost-wise, 10780s used to be really inexpensive on eBay though in 2025,
+they are running around $100.  A pair of them could be used initially
+(REF and MEAS) and then a DIY circuit could be substituted later for
+each in the interest of purity. :)
+<p>
+Where there is no waste beam or it is too weak, the beam
+sampler in the output would be required.
+<p>
+Also of note is that the residual asymmetry in the laser tube will affect the
+orthogonality of the F1/F2 polarized components.  There is a specific orientation
+of the tube with respect to the X and Y axes to optimize this.  Determining it
+is a simple matter of using an arbitrary orientation for the tube and incrementally
+adjusting the angle of the QWP, and at each orientation locating
+the angle at which the beat signal using a linear polarizer is <i>minimized</i>.  The
+tube and QWP should then be oriented at 45 degrees with respect to that angle. Since the
+construction of the tubes used in HP/Agilent/Keysight lasers requires them to
+be in a fixed orientation inside the housing, a Half WavePlate (HWP) has always
+been present after the QWP to rotate the F1/F2 components to line up with the
+X/Y axes.
+
+<h3><A NAME="lhipm1uslc">Micro Stabilized Laser Controller</a></h3>
+
+The function of the axial Zeeman HeNe laser controller is to lock the laser
+such that the Zeeman split longitudinal mode is centered between the
+split gain curves so that the required beat signal will then be present.
+Stabilization can be achieved by either forcing the mode signals corresponding
+to F1 and F2 to be equal, or by using the split frequency signal itself,
+locking it to a crystal reference or its maximum or minimum during mode
+sweep.  The latter is actually not optimal and in fact worse as external
+factors like magnetic fields in the vicinity as well as reflections
+from uncoated optical surfaces can change the split frequency.
+While at least two commercial lasers have used the latter approach,
+locking - touting their ultra-stable approach - using the split
+frequency has inherently inferior performance.  Therefore most axial
+Zeeman lasers utilize dual-mode locking.  It's simpler and more robust.
+<p>
+As noted above, stabilization is done by controlling
+the laser tube's cavity length with a heater to an accuracy of a few nm.
+In order for this to be effective, both heating and cooling are
+required.  Heating is implemented by driving the heater surrounding
+the tube with a variable source of power; cooling is by allowing
+convection and conduction to the environment.  The tube must be preheated
+to a temperature significantly higher than ambient where the rate of
+temperature rise due to maximum power into the heater, and cooling with
+no power are similar, where the steady state is maintained with approximately
+50 percent heater power.  The controller therefore must preheat the tube and
+then maintain the lock point with feedback using the beam sampler and
+photodiodes by adjusting the heater power.  Heating and cooling near
+ambient temperature using a Thermo-Electric Cooler (TEC) is possible but
+generally more complex both physically and in terms of electronics, and
+thus more expensive.  And not needed.
+<p>
+Laser controllers can be implemented in many ways.  In fact, locking
+as a proof of concept can be achieved with as few as 3 discrete electronic
+parts costing under $1. ;-)  A more practical controller providing the
+required functionality can be implemented with a few dozen discrete
+electronic components and op-amps, but requires some skill to design,
+assemble, and test.  And aside from some
+minor adjustments, these are not very flexible.  Most modern systems are
+based on microprocessors with firmware (low level fixed software) in charge of
+all functions.  These provide flexibility for the designer, but must be
+considered a black box by the end-user since documentation is rarely
+available even to paying customers.  For this system, a controller
+based on an Arduino compatible microprocessor and a hand-full of
+discrete components named &micro;SLC1 is used potentially having the
+best of both worlds being easy to construct and fully documented.
+<p>
+<center>
+<img src="../uSLC1/uSLC1z1.gif"><br>
+<h3>Two Frequency Axial Zeeman HeNe Laser using &micro;SLC1
+</center>
+<p>
+&micro;SLC1 provides the following functions in its firmware:
+<p>
+<ul>
+<li>Test for laser output.
+<li>Warm up until the operating temperature is reached.
+<li>Check whether the behavior is satisfactory at this temperature, and
+ adjust the temperature if necessary.
+<li>Close the feedback loop to lock the laser.
+<li>Test for satisfactory stability.
+<li>Detect error conditions.
+</ul>
+<p>
+The algorithm is based on determining the tube temperature where around a 50
+percent heater power will maintain as stable lock.  This is achieved in 3
+phases:
+<ol>
+<li>The laser tube is powered and constant heater power is applied until the
+ mode sweep cycle time exceeds a specific value.
+<p>
+<li>Switch to proportional feedback and determine the value of the heater
+ drive signal needed to maintain lock compared to 50 percent heater power.
+ Then heat or cool at a constant power for a fixed duration and repeat
+ until this is within a specified threshold of 50 percent.
+<p>
+<li>Switch to PID feedback.  (Though D has yet to be implemented.)  The
+ laser is now locked.  If lock is lost for any reason (like back-reflections)
+ as indicated by an excessive loop error, it will go to back to one of the
+ other phases.
+</ol>
+<p>
+Since the entire laser takes a while to come to thermal equilibrium - much
+longer than it takes to achieve initial lock - there
+is also an option to "relock" one or more times after a specified duration
+by repeating phases 2 and 3.  This should result in improved resilience
+to ambient temperature changes, though in most situations, they are not needed.
+<p>
+A bidirectional communications link with a Windows PC (desktop, laptop,
+tablet, etc.) enables both monitoring of laser operation, and adjustment
+of almost every parameter affecting locking behavior, but is not required
+during normal operation.
+<p>
+The actual control loop runs at around 1 kHz using a timer interrupt.
+There are 8 "states" to implement the list of functions above, which
+determine exactly what is done on each pass through the loop.  State
+transitions may be based on the duration in the state or a specific
+condition like the loop error.  And it's far from optimal.  Various
+low or zero cost improvements can be added like a higher speed loop.
+<p>
+The photo below shows an Axial Zeeman laser built almost totally from scratch.
+It doesn't even incorporate any HP/Agilent parts except for the recycled
+5501A baseplate, but that doesn't count. :)  The feedback for stabilization
+utilizes the waste beam from the back of the tube.  The only part that is not
+present is a beam expander.
+<p>
+<center>
+<img src="../sgazl1p2.jpg" width=800>
+<h3>Sam's Home-Built Axial Zeeman Two Frequency HeNe Laser using
+ &micro;SLC1</h3>
+</center>
+<p>
+The same setup could be configured as a (non-Zeeman)
+single or dual mode stabilized HeNe laser (assuming the tube
+is satisfactory for those) by removing the stacks of
+magnets surrounding the tube cylinder and Quarter WavePlates (QWPs) mounted
+in the blue sleeves at the rear and front (not visible).   &micro;SLC1 may
+also be used with at most minor modifications to the hardware and firmware
+to replace the controllers for most commercial stabilized HeNe lasers.
+<p>
+The &micro;SLC1 Graphical User Interface (GUI) Main Window is shown below:
+<p>
+<center>
+<img src="../uSLC1/Main_Window_ZLocked1.gif"><br>
+<h3>&micro;SLC1 Main Window Near End of Locking Process</h3>
+</center>
+<p>
+Note that in a normal (non-Zeeman) dual mode stabilized HeNe laser, a suitable
+lock point will be where the amplitude of the two polarized modes are equal.
+Depending on which mode is selected at the output by a polarizer, its location
+may be on the high or low side of the neon gain curve, but they are otherwise
+equivalent.  In a Zeeman HeNe, the lock point must be centered between the
+split neon gain curves for there to be a beat.  However, there are two
+locations during mode sweep where the amplitudes of the polarized modes are
+equal.  One is more or less equivalent to the non-Zeeman case with
+the modes separated approximately by the longitudinal mode spacing (FSR) of
+the cavity but there is no useful beat from these since it would be
+greater than 1 GHz.  Thus the sign of the error signal matters and
+it would be somewhat challenging to predict which is the desired one
+ahead of time, so if it locks at the wrong location and there is no
+beat, the outputs of the photodiodes in the beam sampler should be
+swapped. ;-)
+<p>
+The controller will run independently of the PC so that once the
+optimal locking parameters have been set up and stored in non-volatile
+memory, the PC is no longer needed.  But the "Factory Defaults" are generally
+satisfactory.
+<p>
+&micro;SLC1 is currently be further developed for use in a commercial
+product by a major laser company.  It has also been coded on other
+Arduino-compatible platforms including the minimalist ATtiny85 Digispark.
+<p>
+Complete information on &micro;SLC1 including firmware source code
+an be found at <A target="lhipm1" HREF="../uSLC1/uSLC1.htm">Micro Stabilized Laser
+Controller 1 (&micro;SLC1) Installation and Operation Manual</A>.
+<p>
+<A NAME="lhipm1pio"></A>
+<hr>
+<h2>Practical Interferometer Optics</h2>
+
+As noted above, all of the widely used configurations are variations on the
+Michelson Interferometer modified to eliminate or minimize undesirable side
+effects (like back-reflections directly into the laser) and convert the
+measured variable into a change in path length.
+<p>
+Most of the configurations are similar to common widely used
+implementations, though, a few do not have any commercial counterparts.
+However, they can all be constructed from generic optical components
+like those shown below.  Of course, providing a stable mounting
+is more challenging than bolting together stainless steel HP housings.
+<p>
+<center>
+<img src="iprts1.jpg" width=640><br>
+<h3>Generic Interferometer Optics: 1/2 inch PBS and CCs, QWPs, Mirrors</h3>
+</center>
+<p>
+A suitable mounting arrangement most be provided which may include some
+amount of adjustment capability (though this is usually minimal).  A 3-D
+printer can be put to good service in this regard.  For short term
+experiments, ABS or other common feed stock will be more than adequate.
+But for anything permanent, materials with better stability with respect
+to physical and environmental factors may be required.
+<p>
+<ul>
+<li>The Polarizing Beam-Splitter (PBS) cubes are the central component of
+ all of these interferometers.  On commercial versions, they may have
+ different part numbers, but all those that are the same size are otherwise identical.
+<p>
+<li>The Cube Corners (CCs, retro-reflectors) are trihedral prisms metal-coated
+ on their back surfaces, which are protected with paint.  Metal coating is
+ required to minimize their effect on polarization.  (Those in the photo
+ are copper-coated due to availability, but silver would be slightly more
+ efficient.)
+<p>
+<li>The mirrors are either first surface protected aluminum or dielectric.
+ Two types may be required.
+ Those used for redirecting the beam to the remote stage or whatever
+ must be of very high quality in terms of flatness so as not to distort
+ the beam.  However, the mirror used to reflect the return beams to
+ the optical receiver (if required) can be almost anything.
+<p>
+<li>The Quarter WavePlates (QWPs) are made of optical grade mica with a
+ precise thickness.  This is similar to what are used in commercial
+ Zeeman HeNes internally (for converting circular to linear polarization).
+</ul>
+<p>
+Due to the relatively low cost and availability of 1/2" (12.7 mm) PBS
+cubes, all of these use them rather than 1" (25.4 mm) PBSs.
+All but the last one use 1/2" cube corner
+trihedral prism retro-reflectors.  That one is an example of a configuration
+that is precisely equivalent to the standard size Linear Interferometer
+but uses a pair of 1/2" PBSs.  For those that are NOT single beam
+configurations, this requires a beam diameter of 3 mm or less and the working
+distance is limited to approximately 1 meter based on beam divergence
+considerations.  (For the first configuration - with no retro-reflectors - the
+practical distance and displacement range is much smaller.)
+And most are designated "Compact" since they are about half the size of
+most of their commercial counterparts..  Due the small size, an
+angled mirror may be needed to pick off the return beam to a standard optical
+receiver like the HP/Agilent 10780.  And the Single Beam versions could also
+be arguably called "Compact" since without the metal block, they, too, could
+be even smaller.
+<p>
+However, basic approaches like this aren't limited to home-built optics:
+<p>
+<center>
+<img src="ttpmid1.jpg" width=512><br>
+<h3>Teletrac Plane Mirror Interferometer Optics and Photodiode</h3>
+</center>
+<p>
+This is part of a combined interferometer/optical receiver assembly from a
+Teletrac TIPS-5 measurement system that uses basic components glued
+together without fancy expensive machined mounts: a 1/2" PBS, two
+1/2" CCs, and a QWP, along with a bare photodiode.
+<p>
+Some of the optical components may NOT be AR-coated.  The primary effect
+will be small losses from the Fresnel reflections from the uncoated surfaces.
+To avoid the possibility of these affecting operation of the interferometer,
+those components should be mounted at a very slight angle, not shown in
+the diagrams.
+<p>
+Note that in the diagrams below for the single beam versions,
+where a ray is drawn centered on a cube corner, the beam should be
+as wide as possible to minimize the signal loss from the apex or corners
+of the prism.  In addition, the optical quality in terms of angle
+and polishing of the prism must be
+high enough to minimize wavefront distortion and signal degradation.
+The relative performance of genuine HP/Agilent, name brands like Thorlabs
+or Newport, or inexpensive Far East imports, is not known in this regard,
+though the general specifications are quite similar.  For short range
+(including use as the reference-only CC in the LI or PMI) it probably doesn't matter.
+<p>
+For our purposes using the heterodyne approach, the "Laser" is assumed to
+be a two frequency Zeeman HeNe and there is a linear polarizer at 45 degrees
+in front of the Optical Receiver.  However, these configurations
+are generally equally applicable to the homodyne approach but with a single
+frequency laser and quad-sin-cos detector.
+<p>
+And while most of these configurations are not as critical in terms of
+alignment as the classic Michelson configuration, alignment is still
+important.  In general, wherever beams interact in the interferometer,
+they should be as parallel as possible and overlap
+of the REF and MEAS beams should be maximized at the optical receiver.
+That typically requires them to be within 0.1 mR.
+<p>
+Construction doesn't require fancy costly Newport-quality opto-mechanical
+parts.  A 3-D printer can be used to create miniature mounts that will be
+more than precise and stable enough for experimental use.  For more permanent
+installation, 5 minute Epoxy or UV-cure optical cement will suffice.
+(Suitable optical cement is now inexpensively available for
+smartphone screen repair and can be cured using a $2 365 nm LED,
+resistor, and battery.)  Where adjustable alignment is required,
+shims or split washers can provide the compliance needed.
+<p>
+For the following a 3 mm beam diameter is assumed unless otherwise noted.
+<p>
+<h3>Interferometer Configurations:</h3>
+<p>
+The first group are for displacement measurements (change in linear position).
+Any of these can be modified for differential displacement measurements by
+mounting the reference mirror or cube corner (above the cube) on a second
+moving stage or whatever, possibly with the addition of suitable beam
+turning optics.
+<p>
+<ul>
+<li><b>No Retro-reflector Single Beam Interferometer:</b>
+ This is the closest to the classic Michelson interferometer except that
+ by adding the Quarter WavePlates (QWPs), there will be virtually no
+ back-reflections to the laser.  However, alignment is still very critical
+ and with no retro-reflectors and based on tests, this configuration is only
+ useful over a range of a few cm.  The basic resolution is 1/2
+ wavelength (316 nm).
+<p>
+<center>
+<img src="cnrri1.gif"><br>
+</center>
+<p>
+<li><b>Compact Linear Interferometer:</b>
+ The Linear Interferometer (LI) was one of the first configurations and
+ is still probably the most used.  The use of cube corner retro-reflectors,
+ generally implemented as trihedral prisms, greatly simplifies alignment
+ extending the useful range to 1 meter or more and suppresses
+ any back-reflections to the laser.  The basic resolution is 1/2
+ wavelength (316 nm).
+<p>
+<center>
+<img src="cli1.gif"><br>
+</center>
+<p>
+<li><b>Compact Plane Mirror Interferometer:</b>
+The Plane Mirror Interferometer (PMI) enables the use of a planar mirror
+as the remote reflector which is required where the stage may move
+perpendicular to the axis of motion by more than a few mm.  Alignment is
+still relatively simple as the cube corners in the interferometer provide
+some compensation of sorts.  The basic resolution improves by a factor
+of two to 1/4 wavelength (158 nm).
+<p>
+<center>
+<img src="cpmi1.gif"><br>
+</center>
+<p>
+<li><b>Single Beam Interferometer:</b>
+The Single Beam Interferometer (SBI) is intended to be used where space
+is limited with the standard (HP/Agilent) implementation being about 2/3rds
+the size of the basis LI.  The basic resolution is the same as that of
+the LI at 1/2 wavelength (316 nm).  A really compact SBI could be constructed
+using a 1/4" PBS and 1/4" CCs.
+<p>
+<center>
+<img src="sbi1.gif"><br>
+</center>
+</ul>
+<p>
+The next two are intended for angular measurements but could also be used
+for differential measurements if the retro-reflectors are mounted separately.
+<p>
+<ul>
+<li><b>Compact Angular Interferometer:</b>
+ The Angular Interferometer is basically a differential interferometer
+ where the measurement algorithm implements the trigonometry to display angle instead
+ of displacement.  The sensitivity is proportional to the spacing between
+ the two measurement beams, so making this *too* compact is not desirable
+ and larger retro-reflectors (e.g., 25.4 mm cube corners) will enable a
+ greater angular range without clipping.
+<p>
+<center>
+<img src="cai1.gif"><br>
+</center>
+<p>
+<li><b>Single Beam Angular Interferometer:</b>
+This has similar sensitivity to the one above but allows for (and requires)
+a larger beam diameter from the laser
+<p>
+<center>
+<img src="sbai1.gif"><br>
+</center>
+</ul>
+<p>
+<ul>
+<li><b>Straightness Interferometer</b>
+<p>
+The Straightness Interferometer is more specialized and probably not
+something that a typical hobbyist/experimenter type would care about.
+If is included here for completeness should one have particular masochistic
+tendencies as these are very challenging to construct and align.
+<p>
+This implementation doesn't require a hard-to-find and expensive
+Wallaston prism.  By adjusting the angle of the beams/mirrors, the range and
+sensitivity can be customized.  Note that this implementation does require
+that the laser beam enter the interferometer at a slight precise angle, so
+setup does become trickier.  The reference line for the straightness
+measurement is indicated in the diagram below in green.  Also, the
+standard implementation is relatively insensitive to slight angular
+changes of the Wollaston prism; this one is not.  Note that to provide
+full range, the mirrors will need to be moved slightly apart, or be longer
+than with an implementation using a Wallaston prism.
+<p>
+<center>
+<img src="msi3.gif"><br>
+</center>
+</ul>
+<p>
+Flatness measurements may be made using the angular optics with the
+Straightness Short display mode and custom coefficient.
+<p>
+<ul>
+<li><b>Dual-PBS Linear Interferometer:</b>
+<p>
+Finally, to create equivalent non-Single Beam configurations using a larger
+beam with longer range, it is possible to use a pair of small PBS cubes to
+create the equivalent of the standard 1 inch PBS.  They can be any size
+that comfortably accommodates the desired beam diameter.  1/2 inch (12.7 mm)
+PBSs will work with beams up to 9 mm.  A slightly smaller 2/5 inch (10 mm)
+PBS will be satisfactory for 6 mm beams.  The cube corners
+would also double in size to 1 inch.  The QWPs (if any) would need
+to either increase in size or could be implemented with a pair of
+smaller ones.  The following is an example for the Linear
+Interferometer; others should be self evident.
+<p>
+In this implementation, the one inch PBS of the normal (e.g., HP 10702A) Linear
+Interferometer has been replaced with a pair of smaller PBSs.  The
+performance should be similar and this allows for the use of inexpensive
+1/2 inch PBS cubes while retaining the ability to use a 6 or 9 mm beam
+for longer range operation.  A similar scheme can be used to make a full
+size plane mirror interferometer.
+<p>
+Note: The scale of the diagram below is double compared to the others.
+Each PBS is 1/2 inch while the Cube Corners are 1 inch.  And there is
+no longer a need for a mirror to get the beam to the Optical Receiver as
+the spacing is adequate for it to go direct.
+<p>
+However, relative alignment of the two PBSs is absolutely critical and must
+be done to a small fraction of a mR.  This can be accomplished securing one
+of the PBSs to a rigid plate with adhesive and then by positioning
+the other PBS using a six degree of freedom manipulator with a laser beam
+to precisely align them, and then securing that also with adhesive.  This
+may be more trouble than it is worth to save a few bucks.  One inch PBS
+cubes with satisfactory performance are less than $100 new.
+<p>
+<center>
+<img src="dpli1.gif"><br>
+</center>
+</ul>
+<p>
+<A NAME="lhipm1uMD1"></A>
+<hr>
+<h2>Micro Measurement Display 2 (&micro;MD2)</h2>
+
+In a heterodyne interferometer system, the displacement information is
+contained in the phase difference between the REF and MEAS signals.
+Where the remote reflector is stationary,
+this difference is constant.  When its position changes, there will be more or
+less wavelengths and fractions thereof between the interferometer and moving stage.  This is
+what needs to be determined and converted to a displacement in common
+units like mm or inches.
+<p>
+A variety of techniques can be used to extract this information but virtually
+all are ultimately based on digital counters for REF and MEAS whose
+difference is used to calculate displacement, or a single
+up/down counter with suitable logic to deal with race due to near simultaneity
+of REF and MEAS.  These result in a basic resolution of 1/2, 1/4, or 1/8
+wavelength depending on the type of interferometer.  Additional hardware,
+software, or firmware are then (optionally) used to extend the resolution
+down to the nm range or below.  A variety of techniques can be used including
+Phase Locked Loops (PLLs) to multiply the REF and MEAS frequencies by
+16 or 32 or more before applying them to the counters, or digital estimation of
+the phase difference between the REF and MEAS signals.  PLLs are used
+in commercial systems like the HP 5508A while phase estimation is used
+in the system here - &micro;MD2 - since it can be done entirely in firmware.
+<p>
+Early measurement displays like the HP 5505A were based on SSI-MSI TTL
+and occupied 5-1/4 inch high rack mounted units.  Modern ones are typically
+implemented with a combination of microprocessors, FPLDs, and custom LSI parts.
+<p>
+LHIPM is intended to use Micro Measurement Display 2 (&micro;MD2) which runs on
+an inexpensive Teensy 4.0 Arm Cortex-based microprocessor, which includes all the
+required hardware except for the line receivers for REF, and up to three
+axes of MEAS signals.  Counters inside the
+Teensy implement the basic measurement computations along with high performance
+firmware in C and ARM assembly code which estimates the phase difference
+between REF and MEAS(s) to extend the resolution.  The firmware source code is freely
+available (though modification is highly discouraged).  The system uses a custom PCB
+to mount the Teensy and associated input circuitry dubbed SG-&micro;MD2,
+but as a practical matter, it is so simple that an alternative PCB could
+be designed in around 10 minutes. ;-)
+<p>
+<center>
+<img src="../uMD2/inter2f-uMD2.gif"><p>
+<h3>Precision Measurement System using Two-Frequency Laser and &micro;MD2
+ Measurement Display</h3>
+</center>
+<p>
+The graphic above show the specific example of a Linear Interferometer (LI)
+for displacement (change in position) measurements, with velocity calculated
+as the rate of change of position.  By substituting different interferometer
+configurations, higher resolution displacement as well as angle, straightness,
+and other physical variables can be measured.
+<p>
+The &micro;MD2 Graphical User Interface (GUI) runs on PC or laptop
+under Windows&trade; (XP/Vista/7/10/11 or later) via a USB interface.
+Raw measurement data from the SG-&micro;MD2 board can also
+be input directly to something like Excel&trade; or Matlab&trade;, or a user-developed
+analysis application.  The screenshots below show the displacement of
+a mirror on a PZT driven by a triangle waveform from a function generator.  The
+p-p amplitude for the plots from left to right are around 300 nm, 40 nm, 5 nm
+and 1 nm, respectively.
+<p>
+<center>
+<A target="uMD2" HREF="Interpolation_Screenshot_300nm.gif">
+<img src="Interpolation_Screenshot_300nm.gif" height=400></a>&nbsp;&nbsp;&nbsp;
+<A target="uMD2" HREF="Interpolation_Screenshot_40nm.gif">
+<img src="Interpolation_Screenshot_40nm.gif" height=400></a>&nbsp;&nbsp;&nbsp;
+<A target="uMD2" HREF="Interpolation_Screenshot_5nm.gif">
+<img src="Interpolation_Screenshot_5nm.gif" height=400></a>&nbsp;&nbsp;&nbsp;
+<A target="uMD2" HREF="Interpolation_Screenshot_1nm.gif">
+<img src="Interpolation_Screenshot_1nm.gif" height=400></a><br>
+<A target="uMD2" HREF="Interpolation_Screenshot_1nm.gif"></a>
+<h4>Firmware V261.30 Screenshots with Interpolation Enabled for Motion with
+ Peak-to-Peak Amplitudes of Approximately 300 nm, 40 nm, 5 nm, and 1 nm</h4>
+</center>
+<p>
+No, these displays are NOT of the electrical signal but the actual displacement
+measured using the interferometer and &micro;MD2!
+<p>
+Some "wandering" up and down of the average displacement
+up to a few nm with a period of a few seconds is present
+at the highest resolutions.  I had always assumed that this was due to
+the relative sampling of the REF and MEAS edges with respect to the 600 MHz CPU clock.
+The entire system is synchronous, so at some point that sampling comes into play.
+Similar behavior was present with &micro;MD1 interpolation as well (though it may have
+been worse).  However, I recently came across a scientific paper that discusses similar
+artifacts associated with interaction of the F1 and F2 components
+of the Zeeman laser itself.  This should not be present with a laser that uses an AOM
+to create the F1/F2 components through up and down conversion of a single frequency
+optical carrier.  But the only lasers I have using an AOM are the Zygo 7701/2s and
+their 20 MHz split frequency is too high to do useful interpolation with the current
+firmware.  And they probably wouldn't do what is needed anyhow.
+And these effects may not even be relevant anyhow.
+However, swapping my modified Melles Griot 05-STP-910 for
+a genuine HP/Agilent/Keysight 5517 laser may be instructive.
+The &micro;MD Tech Support Department was never able to locate the cause of that
+either, despite the billions of nanoseconds devoted to it. ;-)   But there are
+also thermal effects and vibration.  It is almost impossible to really measure
+these nm-scale changes without outside disturbances dominating.  In fact, to
+record these data, a PZT (piezo-beeper element) with the remote mirror
+attached to it had to be secured directly to
+the HSPMI.  And even then any vibration like tapping the table or even
+walking nearby still shows up in the display.
+<p>
+The most precise level is implemented using Phase Interpolation.  This
+algorithm in effect "looks" at the waveforms of REF and MEAS averaged over many
+cycles and computes their relative phase.  It turns out that that is the simple
+part.  What is more challenging is linking the computed phase to the
+integer part of the displacement (DISP) based on the difference between
+the REF and MEAS counters.  This is not trivial even if done in an FPGA or low
+level digital hardware, and even more so with a set of counters running
+independently of the firmware code execution.  In essence, a change in
+DISP should be accompanied by a large change in Phase.  For example, if
+DISP increments by 1, the Phase MUST decrease by close to 360 degrees so
+the interpolated value is continuous across the boundary.  But due to the
+aforementioned uncertainly, that will often not take place.  Without
+correction, the result will be spikes in the displacement up to a
+a wavelength in amplitude depending on the interferometer resolution.
+<p>
+<center>
+<A target="uMD2" HREF="Interpolation_Screenshot_with_Glitches1.gif">
+<img src="Interpolation_Screenshot_with_Glitches1.gif" height=400></a><br>
+<h4>Appearance of the Displacement Data with Boundary Correction Disabled</h4>
+</center>
+<p>
+And the actual data is much more messy than this as there will usually be
+multiple glitches both positive and negative, but the &micro;MD GUI plotting
+routine subsamples.
+<p>
+A state machine implemented in firmware is used to determine what happens
+for each sample based on whether consistent changes in displacement and phase
+take place.  And if not, why not.  The next state to be based on two
+conditions:
+<p>
+<ol>
+<li>The absolute value of the difference in displacement count between the
+ present and previous sample is tested and must be l or less.  If it is not,
+ the current version of phase computation cannot be used and the phase
+ computation is temporarily disabled.  These situations could conceivably
+ be handled with an even more complex state machine, but that is above my
+ our grade. ;-)  Perhaps AI could generate it.
+<p>
+<li>The current and previous displacement count, and the current and the
+ previous Phase must be consistent.  For most conditions, the next
+ state will continue to be the Normal State where behavior is as expected well
+ away from coincident REF and MEAS transitions.  Where they
+ are nearly coincident, it is allowed to enter a so-called "Bogus State" which
+ has a legal transition into it with precisely defined exit conditions.
+ The final alternative is to enter an Error State for illegal transitions
+ which include a change in displacement of more than 1 as well as impossible
+ simultaneous changes in displacement and phase.
+</ol>
+<p>
+As noted, a Bogus State is an allowed transition that occurs when the alignment
+of a change in displacement count does not coincide with a corresponding
+change in the computed phase.  This can occur both due to the uncertainty
+in digital sampling of the phase computation and counter timing using the
+CPU sampling clock, as well as noise on the input REF and MEAS analog
+signals and resulting jitter in the digital samples.  Transitions
+into Bogus states are perfectly legal.  By keeping track of the
+four possible Bogus States and the change in Displacement count and
+Phase for each sample, the appropriate Next State can be determined.
+This may lead to the same or another Bogus State, but must eventually
+transition to the Normal State.  Anything else is an error condition
+generally due to an illegal transition caused by a slew rate too
+large for phase interpolation to be usable.  In that case, the
+Phase value is zeroed out for that sample and the Phase State
+is forced back to the Normal State along with a delay of some
+number of samples to allow things to settle down.
+<p>
+Each state transition has an associated displacement count correction
+(+1, 0, -1) associated with it.  In essence, the computed Phase is used
+as the gold standard and the displacement count is forced to agree with it
+for each sample.
+<p>
+Note that this approach only works for very slow changes in displacement -
+on the order of less than 0.01 mm/second.  Averaging/super sampling is
+also applied independently of phase interpolation resulting a resolution
+on the order of 10 nm at any slew rate.
+This has proven to be remarkably robust, but as noted is only
+usable for slowly varying displacement in what I have dubbed the End-Point
+Regime or EPR.
+<p>
+Entering the EPR must be done carefully to avoid glitches and requires that
+the difference in displacement count between several prior samples be 0
+and then the phase calculation "reboots" and waits until REF
+and MEAS edges are not close to being coincident to assure the state
+machine restarts in the "Normal State" and not in some Bogus State.
+Leaving the EPR only requires that the absolute value of the displacement count
+be greater than 1.  The system will then (not accounting for
+averaging/super-sampling) revert back to the basic interferometer
+resolution with the phase computation disabled, e.g., ~79 nm for a PMI
+using dual-edge clocking.
+<p>
+Complete information on &micro;MD2 may be found at
+<A target="lhipm1" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2
+(&micro;MD2) Installation and Operation Manual</A>.
+<p>
+<b>&micro;MD2 Firmware Architecture:</b>
+<p>
+Everything is written in C except for the low level acquisition of
+REF/MEAS "waveforms" for phase estimation to extend the resolution
+which is in ARM Cortex assembly code.  However, based on speed tests,
+it appears as though this could all be done in C with little or no impact
+on performance as the assembler appears to optimally code the sampling loop.
+The firmware source may be found via the &micro;MD2 link, above.
+<p>
+The key feature of the Teensy processor that
+facilitates the &micro;MD2 are its four high speed 64 bit hardware counters so there is
+never a possibility of overflow within the life of the Universe (or at least
+before this thing becomes obsolete!).  These values are sent to the host
+via USB and are what all measurements are based on down to 1/2, 1/4, 1/8
+or 1/16 wavelength depending on the type of interferometer.
+<p>
+To extend its capabilities to higher resolution,
+code written in C and ARM assembly language captures 1000 or more samples as
+"waveforms" that are then analyzed in C and averaged to compute the phase
+difference between REF and each of the MEAS signals.  Imagine observing the
+waveforms on an oscilloscope and estimating their relative phase shift by
+eye.  This Phase is sent as a fractional value called "Phase" along with
+the REF and MEAS counts.  Note: To readers - even those inclined toward
+severe masochistic tendencies - modifications of the phase computation
+code should be avoided at all costs. :( :)
+<p>
+As noted above, one key
+issue that needed to be dealt with was uncertainty in changes of
+the REF/MEAS counters and the corresponding phase waveforms.  Without
+doing anything, there would be multiple major spikes or dips of up to
+1/2, 1/4, or 1/8 the wavelength in size depending on the interferometer
+resolution around these critical singularities.  To alleviate this,
+before a final value for displacement is computed, changes in the
+displacement count (the integer part of displacement)
+and phase are monitored for illegal combinations that should not be possible.
+For example, an increment or decrement of the displacement count
+MUST be accompanied by a similar large increase or decrease in phase
+to assure that the final value for displacement is continuous at the boundary.
+A state machine implemented in firmware which transitions are invalid
+and using the highly averaged Phase as the reference,
+adjusts the displacement count by +1 or -1 as appropriate to correct it.
+The usable resolution will depend on many factors including the signal
+quality (beam power, alignment) and split/REF frequency (lower is better),
+<p>
+The &micro;MD2 firmware may be selected to be in single axis or multiple
+axes mode.  Whether the phase estimation firmware is invoked for axes
+2 and 3 and the size of the data packet sent to the host is the primary
+difference.
+<p>
+The displacement computation and communications routines are invoked 1000 times per
+second (independent of the basic "Loop" of the Arduino pantheon, which is only
+currently used to drive the on-board OLED display.)  This is the rate which displacement
+samples are sent to the host.  The value of 1000 is arbitrary.  For use as a vibrometer, for
+example, it could easily be boosted by a factor of 10 or more.  In addition,
+non-time-critical information such as the firmware version, sample frequency,
+and diagnostic values are sent as low speed data to the host at a fraction of
+this rate.
+<p>
+There used to be support for environmental sensors in &micro;MD1 (which would
+be handled as low speed data), but it had been removed due to issues with reliability from
+bugs believed to be buried deep in some of the C libraries for reading
+the sensor hardware.  And it has not be added to &micro;MD2 due to similar concerns.
+It is ironic that capturing data at 100s of MHz is simple, but accommodating
+values that change once in perhaps several minutes caused problems.  So,
+entering temperature, pressure, and humidity values manually is required. :( :)
+This capability could perhaps be added to &micro;MD2 in the future as there is room on
+the PCB, but is not a high priority.
+<p>
+<A NAME="lhipm1algn"></A>
+<hr>
+<h2>Aligning and Testing the system</h2>
+
+Once the laser has been assembled and tested, and &micro;MD1 is successfully
+communicating with the host, the laser, optics, and MEAS optical receiver
+should be set up, preferably screwed down or otherwise secured so they
+can't accidentally shift position.
+<p>
+Some options for the moving component in a demonstration or test system
+include:
+<p>
+<ul>
+<li><b>Micrometer adjusted linear stage:</b> Check the accuracy of
+ your micrometer. :)  This is certainly the simplest and most straightforward
+ for test purposes.
+<p>
+<li><b>Voice coil positioner (loudspeaker woofer) with function generator:</b>
+ Show how very low amplitude signals can be converted to motion and detected.
+ Or, use the loudspeaker as a microphone and detect sounds!  With &micro;MD1,
+ tapping on my computer table 2 stories up and at the other end of the house
+ can be easily detected (with the GUI running via Windows Remote Desktop). 
+<p>
+<li><b>PeiZo Transducer (PZT) with function generator:</b> To demonstrate
+ detection and analysis of even low level displacement changes, mount the
+ plane mirror or small cube-corner on a PZT beeper element and measure
+ sub-micron movement.
+<p>
+<li><b>Machine tool calibration:</b> Attach the cube-corner or mirror to the
+ carriage on your Southbend lathe or Bridgeport milling machine.
+<p>
+<li><b>CD (or DVD) drive sled:</b> Use $$$$ equipment to monitor which track
+ is being played on your favorite disc! :)
+</ul>
+<p>
+Power the laser and optical receiver and wait for the laser to become LOCKED.
+Except for the possible relock which may occur with &micro;SLC1 to allow
+for the system to come to thermal equilibrium - the default is
+to do this once - it is ready for use.
+<p>
+Place the laser and other components in the general position of where
+they are to be located.  The following applies to the most common Linear
+Interferometer (LI) and Plane Mirror Interferometer (PMI) configurations.
+<p>
+<ul>
+<li>Align the laser beam with the interferometer without the remote reflector
+ installed.  For an LI or PMI, the beam
+ should be offset about 1/4 inch from the center, resulting
+ in a return beam for F2 (REF, without the remote retro-reflector) offset
+ from the outgoing beam by about 1/2 inch.  This spacing is not
+ critical as long as both the outgoing and return beams aren't cut off.
+ It doesn't really matter where the outgoing beam is in the
+ interferometer's aperture as long as the return beam satisfies the
+ above requirements.  The interferometer and laser beam
+ axes should be aligned.  It's best that the retro-reflectors (cube-corners -
+ trihedral prisms) are oriented so that the beams do not hit a
+ prism edge.  If one or both do, rotate the retro-reflector by 90 degrees
+ or reposition the beams.
+<p>
+ For the LI, make sure the direction of the beam into the interferometer is
+ such that it is reflected to the local (reference) retro-reflector.  For
+ the PMI, the QWP should face the remote plane mirror.
+<p>
+ Note that the alignment of the interferometer (LI or PMI) itself is not that
+ critical and it does NOT need to be on a precision adjustable mount.  For the
+ LI the RR also does not need to be on a precision adjustable mount but needs
+ to be mounted so that the direction and spacing of the outgoing and return
+ beams are correct.  Some degree of alignment is required but this can be
+ accomplished by loosening the mounting screws to adjust pan and/or using
+ shims to adjust tilt.  For the PMI, the remote plane mirror should be on
+ an adjustable mount because the reflected beam must be extremely parallel
+ to the outgoing beam.  This becomes more critical as the overall distance
+ and range of travel increases.
+<p>
+<li>Align the optical receiver with the REF beam from the interferometer.  If
+ using a 10780A/B/C, put a DMM or oscilloscope on the signal level test-point
+ to assist in alignment.  The response is non-linear, being
+ compressed at the upper end.  It may help to put an optical
+ filter in the laser beam to reduce the beam power or turn down the
+ gain of the 10780 for this.  Else the reading will all be squashed
+ at the of the range.  There may be a detected signal even without the remote
+ reflector, especially if the laser is higher power (e.g., 500 &micro;W).
+ This is due to imperfect coatings, imperfect rotational orientation,
+ and not totally pure f1/F2 components.  Monitor
+ the signal level (there is a test-point on the HP/Agilent receivers for
+ this) and fine tune the interferometer alignment and orientation
+ to minimize the signal level while maintaining the return beam centered
+ on the input to the optical receiver..
+<p>
+<li>Set up the remote cube-corner or mirror (as determined by the
+ specific interferometer configuration) so that the outgoing and
+ return beam are precisely parallel and that the local REF beam (aligned
+ above) is precisely superimposed on the remote MEAS beam to the optical
+ receiver.  At this point, there should be s strong signal.  If an
+ oscilloscope or frequency counter is monitoring the output of the optical
+ receiver, the signal will be at the REF frequency of the particular laser
+ and should appear clean with minimal jitter.  If monitoring the 10780
+ test-point, it may be necessary to reduce the 10780 gain (internal
+ trim-pot on 10780A, externally accessible via hole in top on the 10780B/C)
+ further so the range is not squashed at the top-end.
+<p>
+ For demonstration purposes, the reflector can be relatively close to
+ the interferometer, but that is not required.  It would certainly be
+ more dramatic to have it across the room!  However, for larger distances,
+ the beam diameter should be 5 mm or larger and
+ the quality of the cube-corner or mirror will be more critical.  And,
+ vibrations caused by the HVAC unit in the basement or a bus down the
+ street will show up in the readout!  Distance changes due to
+ temperature fluctuations will be clearly visible as a slow drift.
+</ul>
+<p>
+With genuine HP/Agilent optics, it's relatively easy to get all this working
+together.  Even modest misalignment can be tolerated, though the
+signal quality may degrade somewhat.  How straightforward it is with
+improvised optics may be dependent on how well the individual optical
+components are positioned and secured.  If this is done carefully, it
+should be similar.  Once everything is aligned,
+make sure it's all locked down.  Except for the remote reflector
+(cube-corner or mirror), nothing else should move (unless configured
+for differential measurements)!
+<p>
+When alignment is correct, REF and MEAS will be identical, except with
+a phase shift.  Moving the remote reflector will result in the frequency
+of MEAS increasing or decreasing by an amount proportional to the velocity.
+This is best visualized with a dual trace oscilloscope.  If both REF and
+MEAS are displayed and the scope is triggered using REF, then slow movement
+will result in MEAS shifting left or right on the screen.  Even with no
+movement, there will be jitter from almost any vibrations, even those due to
+the cooling fan in your laptop.  With poor alignment, REF and
+MEAS may still appear identical, but moving the remote reflector will result
+in either nothing changing, or losing counts so that returning to the
+original location will result in an incorrect reading.  The MEAS waveform
+may appear noisy in the latter case though possibly not detectable by eye.
+Serious problems will trigger a PA Error from &micro;MD2 but subtle ones
+may not.
+Note that a 10780F or 10780U can be used as the optical receiver, but these
+are intended to be fiber-coupled and lack the focusing lens and linear
+polarizer.  But if added, it would be equivalent to a 10780C.
+<p>
+<A NAME="lhipm1con"></A>
+<hr>
+<h2>Conclusions</h2>
+
+This article has presented a description of a heterodyne laser
+interferometer-based displacement measurement system with nanometer
+precision that can be constructed using parts about as
+close to stone knives and bear skins as is reasonably practical.
+<p>
+Such an undertaking is not for the lazy.  For someone who has little or no
+experience with lasers and electronics, it may take several months to a
+year or more.  For a tinkerer-scrounger type with some basic experience,
+it could be as little as a few days.  Construction will require the
+fabrication of some mechanical parts, wiring up of electronics, and
+testing of the laser and controller.  But this could make a nice
+college-level Senior Project if combined with some real application
+for precision measurement.
+<p>
+It is basically a combination of a stabilized Zeeman laser,
+generic interferometer optics, and microprocessor-based measurement display,
+and each can be done separately and then combined, or commercial alternatives
+can be substituted for selected ones if desired.
+<p>
+The result will be similar in performance to that of a $20,000 metrology
+system and the entire experience could be quite rewarding.
+<p>
+However, where enthusiasm is lacking, a half-hearted attempt will result in
+the parts ending up piled in a box in your attic next to the unfinished
+telescope mirror. :(  Trust me, I know about unfinished telescope mirrors. :)
+<p>
+<A NAME="lhipm1spc"></A>
+<hr>
+<h2>&micro;MD2 Specifications</h2>
+
+<ul>
+<li><b>Laser compatibility:</b>
+<p>
+ HP/Agilent/Keysight 5501A/B, 5517A/B/C/D,
+ 5518A, 5519A/B, Excel 1001A/B/F, Zygo 7705, and Zygo 7701/2/12/14/22/14
+ as well as clones or home-built
+ two frequency HeNe lasers with a REF/split frequency from below 1 MHz to
+ more than 20 MHz.  If the laser does not have a built-in optical receiver, a
+ 10780A/B/C or Zygo 7008, OR3, or equivalent will be needed.  Suitable DC power
+ supplies will be needed for the laser and/or optical receiver.  The 
+ &micro;MD2 board is powered from USB.  While all the common metrology lasers
+ operate at 633 nm, the wavelength is a configurable parameter in the GUI, so
+ devices with other wavelengths can be accommodated.
+<p>
+<li><b>Signal compatibility:</b> Differential inputs including RS422 and ECL
+ or PECL, and single-ended inputs like TTL and CMOS.  Analog inputs may be
+ accepted directly under some conditions.
+<p>
+<li><b>Interferometer optics support:</b> Linear Interferometer (LI, 10702A),
+ Plane Mirror and High Stability Plane Mirror Interferometer (PMI, 10706A/B),
+ Single Beam Interferometer (SBI, 10705A), High Resolution Plane Mirror
+ Interferometer (HRPMI, 10716A), Angular Interferometer (10770A),
+ Long Range Straightness Interferometer (LRSI, 10775A),
+ Short Range Straightness Interferometer (SRSI, 10774A), including
+ older versions as well Excel, Zygo, and other clone optics, and other
+ configurations like differential interferometers.  Relevant
+ measurement parameters may be set for older, non-standard, and/or
+ for home-built interferometers, and to accommodate other
+ interferometer configurations which have a different multiplier
+ coefficient with respect to displacement or angle including
+ squareness and flatness.
+<p>
+<li><b>Display:</b> Graphical User Interface (GUI) runs on almost any
+ post-Jurassic Windows PC Click for a sneak peek at the <A target="umd2"
+ HREF="http://www.repairfaq.org/uMD2/uMD2.gif">&micro;MD2
+ Main Window</A>.  Note that there is no requirement that the &micro;MD GUI
+ be used.  The raw data from the firmware can be input to another
+ application of the user's choice via the USB port as it is simply
+ a space-delimited text stream.  There is no communication in the
+ other direction (to the firmware).  Details are left as an exercise
+ for the user but the format is included in the &micro;MD2
+ Installation and Operation Manual.
+ The GUI is identical to the one used with &micro;MD1 and &micro;MD0.
+<p>
+<li><b>Number of axes:</b> Up to three independent axes are supported by
+ the firmware.  The GUI can display their values with a "primary" axis
+ selected among them for the main readout and graphing.  The values for
+ the other axes will also be displayed (but not shown in the graph).
+ There are no current plans for anything beyond this.  Multiple &micro;MD2s
+ can be ganged together to support a larger number of axes using a single laser
+ with separate instances of the &micro;MD GUi if necessary.
+<p>
+<li><b>Measurement modes:</b> Displacement, Velocity, Angle, Straightness
+ Long, Straightness Short, and Frequency (DFT, Discrete Fourier Transform
+ of the displacement data up to about 100 Hz).  Flatness, squareness,
+ and other measurements that can be framed in terms of the modes, above,
+ should be possible.  And Encoder Angle mode enables correct reading for
+ devices like rotary encoders and ring laser gyros.  All 3 axes must use
+ the same parameters.
+<p>
+<li><b>Units:</b> nm, &micro;m, mm, cm, m, in, ft for displacement,
+ Straightness Long, and Straightness Short, with /s for Velocity;
+ arcsec, arcmin, degree for Angle measurements.
+<p>
+<li><b>Plotting/graphing:</b> A real-time graph with automatic
+ vertical scaling and selectable horizontal compression
+ displays the trend of the selected parameter (e.g., displacement).  The
+ DFT is able to display a rough analysis of the velocity data in
+ the frequency domain.  The plot may be turned off (freeing up
+ desktop space and reducing CPU load if desired.
+<p>
+<li><b>Environmental compensation:</b> Manual entry of temperature, pressure,
+ and humidity.  Digital sensor inputs are not supported due to limited
+ interest and too many hassles in getting them to work correctly with
+ &micro;MD1.  But there is nothing fundamental preventing sensors to
+ be added with firmware developed by the user.  And there is space on
+ the SG-&micro;MD2 to install you favorite varieties. ;-)  However,
+ &micro;MD Central will not provide debugging support under any foreseeable
+ circumstances up to and including the exchange of large quantities of
+ folding money or Bitcoin. ;-)
+<p>
+<li><b>Resolution:</b>
+<p>
+ Basic resolution is 1/4, 1/8 or 1/16
+ wavelength for Displacement at 633 nm depending on the interferometer
+ optics.  With a Plane Mirror Interferometer (double pass), the resolution
+ is ~80 nm.  Using &micro;MD2, interpolation may be enabled to increase
+ the resolution up to a factor 100 or more for slow changes in displacement.
+<p>
+ An adjustable weighted average to smooth data may also be applied to the
+ readout and graph.
+<p>
+<li><b>Maximum range:</b> Displacement data is stored as 64 bit
+ signed integers where the basic increment is the resolution (1/4, 1/8, or 1/16
+ wavelength depending on the interferometer).  These will not overflow during
+ the life of a multiplicity of multiple universes. ;-)
+<p>
+<li><b>Data logging:</b> Capture allows displacement data to be saved to a
+ file at the sample rate.  The current default is 1,000 s/s.  (All other
+ modes are a function of this data.)
+<p>
+<li><b>Error detection:</b>
+<p>
+ REF dropout (REF or Head Error), beam dropout (MEAS
+ or Path Error), LOS (Loss Of Signal Error, both REF and MEAS disappear),
+ The detection duration sensitivity is about 1/300th of a second or more.
+ Also Slew (Rate+) Error (stage speed too fast in the direction that increases
+ MEAS frequency, Slew (Rate-) Error (stage speed too fast in the direction
+ that decreases MEAS frequency.
+<p>
+<li><b>Test capability:</b> Software-based displacement function
+ generator can be used to simulate the behavior with no laser or
+ interferometer or even the data acquisition hardware hooked up.
+ Includes constant, ramp, triangle, and sinusoid functions with
+ adjustable frequency/slope, amplitude, and offset.  For testing,
+ the error detection may be turned off.
+<p>
+<li><b>Hardware platform:</b> Teensy 4.0 which is based on the ARM
+ Cortex-M7 600 MHz CPU, plugged into the SG-&micro;MD2 PCB.
+ The board is powered from USB, which is also used for
+ firmware download and communications
+ with the PC-based GUI.  The Teensy 4.0 is available from many suppliers
+ for around $25.  The SG-&micro;MD2 PCB is now available as
+ a kit of SG-&micro;MD2 parts from me direct or on eBay, and
+ includes lifetime tech support. ;-)
+<p>
+<li><b>Local display:</b> Optional 0.96" 128x64 pixel OLED mounts on
+ SG-&micro;MD2 PCB.  This is only intended as a confirmation of activity
+ of the firmware and axis inputs with minimal formatting: Just the
+ firmware version, a unique sequence number, and the raw hardware
+ counts, displacement for axis 1,2,3, or REF frequency.  It does NOT currently nor
+ likely ever will duplicate the functions of the GUI, partially because the
+ communications link is only one way so critical information is not available
+ to the firmware, sorry.  However, user enhancements to the OLED firmware are
+ possible and are encouraged as long as we won't be involved in their debugging. ;-)
+<p>
+<li><b>Firmware development environment:</b> Arduino IDE, which is a free
+ download from www.arduino.cc.
+ The Quadencoder and Teensy 4.0 libraries must be downloaded separately.
+ Firmware is written in C.  But as a user, these are
+ only required to compile and upload the firmware to the SG-&micro;MD2 board.
+ The only user changes that may be required are to a few #define statements
+ that determine the number of axes, phase interpolation enable, and similar
+ basic parameters.  The
+ Where I provide the Teensy 4.0 board as part of &micro;MD2, a version of the
+ firmware will be preloaded, generally the most recent stable version for
+ heterodyne.  But updates in case of bug fixes (Arrrrgggg!)
+ will require being able to compile and upload.  And there will probably
+ be one at least every 1/2 microsecond initially.
+<p>
+<li><b>GUI development environment:</b> Microsoft Visual Studio.
+ The original development was done under VS2013, all later
+ versions should work.  This isn't of any consequence for the user
+ since the Windows executable is provided.  The &micro;MD2 GUI
+ may be test driven in "Test Mode" with simulated data
+ by downloading <A HREF="https://www.repairfaq.org/sam/lipm/umd2.exe">&micro;MD2.exe</A>.
+ (However, this version is not guaranteed to be the most up-to-date.)
+<p>
+<li><b>PC requirements:</b> PC/laptop/netbook running Windows XP/Vista/7/10
+ higher with MS Net Framework 4.0 or higher for the GUI.  It's possible
+ the Arduino IDE requires Win 7 or higher, but this hasn't been tested.
+ These will run on almost any PC with a free USB port that isn't totally
+ ancient.  The GUI requires
+ minimal disk space or memory.  For a full development environment using
+ Microsoft Visual Studio, 0.5 GB of free main memory (after Windows hogs
+ the rest of it) and 2 GB free disk space is recommended.  But again, as
+ a user, this is not needed.
+<p>
+<li><b>Firmware and GUI cost:</b> These will be free for hobbyist,
+ experimenter, research, and other non-commercial users.  The cost
+ for commercial users has not been determined but should be very modest
+ at most.
+<p>
+<li><b>Support:</b> Lifetime Tech support will be provided via email and
+ the &micro;MD2 Web site (this manual).  "Lifetime" is defined to be the
+ life of the user or the duration of the user's interest in precision
+ measurement.  This definition is subject to change without notice. ;-)
+ However, while the source code may be provided and bug reports are welcome,
+ we will NOT support unauthorized changes to either the firmware or GUI unless
+ they are deemed by our experts to be critical to the future of the
+ Universe! ;-)  And as multiple words of advice, all but the most trivial
+ modification of the firmware is guaranteed
+ to create multiple gray hairs regardless of your age even though
+ a number of the lines of code have comments, which may or may not mean anything
+ intelligible or at all relevant. :)  Furthermore, at some point I will have
+ purged my brain of detailed knowledge of the firmware's finer details
+ due to its limited memory capacity (my brain, not the Teensy), so
+ don't expect assistance in implementing anything beyond changes to
+ comments as the backups may no longer be accessible. ;-)
+</ul>
+<p>
+<A NAME="lhipm1prts"></A>
+<hr>
+<h2>Parts Lists</h2>
+
+The following includes the major components of the heterodyne version of
+this system excluding wire, cable, mounting hardware, etc.
+<p>
+<b>HeNe Zeeman Laser:</b>
+<p>
+<ul>
+<li>HeNe laser tube, 633 nm, less than 6 inches in length, typical 0.5-1 mW,
+ random polarized, tested for Zeeman behavior.
+<li>Compatible HeNe laser power supply and DC power supply if required.
+<li>Beam expander lenses, suggested focal lengths are 9 mm and 54 mm
+ for 6x expansion (2.5-3 mm beam) and 108 mm for 10x (5-6 mm beam).
+ The 9 mm lens can be either negative or positive for the Galilean or
+ Kepler telescope.
+<li>Tube heater to control cavity length using Bifilar wound #34 copper magnet
+ wire or thin-film Kapton heater (e.g., Minco).  The suggested cold heater
+ resistance is 16 ohms for use on a 12 V power supply.
+<li>Polarizing Beam-Splitter (PBS) cube at 633 nm for F1/F2 feedback signals,
+ 4x4x4 mm minimum.
+<li>Silicon photodiode (2 pieces) for F1/F2 amplitude feedback signals.
+<li>Fifty 10x6mm rare earth magnets to be arranged surrounding tube, 49
+ magnets in a 10x7 arrangement recommended.
+<li>Quarter WavePlate (QWP) to convert from circular to linear polarization
+ for stabilization feedback using waste beam.  (Not required if using a
+ portion of main beam for feedback signals.)
+<li>Quarter WavePlate (QWP) to convert from circular to linear polarization
+ for the main beam.
+<li>Uncoated beam sampler plate (e.g., microscope slide) for local REF  signal.
+<il>Polarizing filter for local REF signal.
+<il>Silicon photodiode for REF signal + preamp.  Or OR3 or HP-10780A/B/C optical
+ receiver.
+</ul>
+<p>
+<b>Stabilized Laser Controller (&micro;SLC1):</b>
+<p>
+Refer to the <A target="lhipm1" HREF="../uSLC1/uSLC1.htm">Micro Stabilized Laser
+Controller 1 (&micro;SLC1) Installation and Operation Manual</A>.
+<p>
+<b>Interferometer optics:</b>
+<p>
+These will handle most of the configurations describe above.
+<p>
+<ul>
+<li>PBS cube for 633 nm, 12.7x12.7x12.7 mm minimum.
+<li>Retro-reflector (12.7 mm cube-corner trihedral prism, 2 pieces) - for
+ reference and/or measurement arm depending on specific configuration.
+<li>Quarter WavePlate (2 pieces) - may be used depending on specific
+ configuration.
+<li>High quality planar mirror for some interferometer configurations
+ or for the remote reflector.
+<li>Small planar mirror to redirect input to the optical receiver if needed
+ for some interferometer configurations.
+<li>Linear polarizer and photodiode to obtain REF and MEAS signal(s) for testing.
+<li>Optical receivers for REF and MEAS signals: SG-OR3 or HP-10780A/B/C.
+<li>Micrometer, motor, voice-coil driven linear stage or other motion control
+ assembly to mount the moving retro-reflector or mirror.
+</ul>
+<p>
+<b>OR3 Optical Receiver:</b>
+<p>
+ Refer to the <A target="lhipm1" HREF="../sgor3/sgor3.htm">Optical Receiver (OR3) Assembly
+ and Operation Manual</A>.
+<p>
+<b>&micro;MD2 Measurement Display:</b>
+<p>
+ Refer to the <A target="lhipm1" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2
+ (&micro;MD2) Installation and Operation Manual</A>.
+<p>
+<A NAME="lhipm1refs""></A>
+<hr>
+<h3>References</h3>
+
+These links open in a <i>single</i> new window or tab.
+
+<h4>Sam's Laser FAQ</h4>
+
+<ol>
+<li><A target="lhipm1" HREF="https://www.repairfaq.org/sam/lipm/laserlia.htm#liatoc">Laser Instruments and
+ Applications</A>
+<li><A target="lhipm1" HREF="https://www.repairfaq.org/sam/lipm/laserhsl.htm#hsltoc">Stabilized HeNe Lasers</A>
+<li><A target="lhipm1" HREF="https://www.repairfaq.org/sam/lipm/laserhst.htm#hsttoc">Commercial Stabilized HeNe
+ Lasers</A>
+</ol>
+
+<h4>&micro;SLC1</h4>
+
+<ol start=4>
+<li><A target="lhipm1" HREF="../uSLC1/index.html">Micro Stabilized Laser Controller 1
+ (&micro;SLC1) Installation and Operation Manual</A>
+</ol>
+
+<h4>Measurement Displays</h4>
+
+<ol start=5>
+<li><A target="lhipm1" HREF="../uMD2/uMD0.htm">Micro Measurement Display 0
+ (&micro;MD0) Installation and Operation Manual</A>
+<li><A target="lhipm1" HREF="../uMD1/uMD1.htm">Micro Measurement Display 1
+ (&micro;MD1) Installation and Operation Manual</A>
+<li><A target="lhipm1" HREF="../uMD2/uMD2.htm">Micro Measurement Display 2
+ (&micro;MD2) Installation and Operation Manual</A>
+</ol>
+
+<h4>Jan Beck's Information</h4>
+
+<ol start=8>
+<li><A target="lhipm1" HREF="https://sites.google.com/site/janbeck/">Interferometer
+ Project Pages</a>
+<li><A target="lhipm1" HREF="https://github.com/janbbeck/InterferometerGUI/">Github
+ &micro;MD1 GUI Source Code Repository</a>
+</ol>
+
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#lhipm1toc">LHIPM Table of Contents</A>.
+<p>
+-- end V1.00 --
+<p>
+</BODY>
+</HTML>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagram · RepairFAQ companion</title>
+<meta name="description" content="An ASCII circuit diagram from the Sci.Electronics.Repair FAQ / Sam&#x27;s Laser FAQ, redrawn.">
+<meta property="og:title" content="Diagram · RepairFAQ companion">
+<meta property="og:description" content="An ASCII circuit diagram from the Sci.Electronics.Repair FAQ / Sam&#x27;s Laser FAQ, redrawn.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../companion/assets/favicon.svg" type="image/svg+xml">
+<script>(function(){var r=document.documentElement,s=null;try{s=localStorage.getItem('quake-viz-theme')}catch(e){}
+r.classList.toggle('dark-mode',s?s==='dark':matchMedia('(prefers-color-scheme: dark)').matches);r.classList.add('js')})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../companion/assets/companion.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true"></span>RepairFAQ<small>mirror &amp; companion</small></a>
+  <nav class="nav" id="nav" aria-label="Main"><a href="../index.html">Home</a><a href="../archive/index.html">Read the FAQs</a><a href="../companion/diagrams.html" aria-current="page">Diagrams</a><a href="../companion/credits.html">Credits</a></nav>
+  <button class="icon-btn" type="button" data-search-open aria-label="Search all FAQs (press /)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+  <button class="icon-btn" type="button" id="themeToggle" aria-label="Switch theme"></button>
+  <button class="icon-btn menu-btn" type="button" id="menuBtn" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<dialog class="search-dialog" id="searchDialog" aria-label="Search the FAQs">
+  <form method="dialog"><input class="search-input" type="search" placeholder="Search 4,405 pages: try “flyback”, “HeNe”, “microwave”…" aria-label="Search" autocomplete="off"></form>
+  <ul class="search-results"></ul>
+</dialog>
+
+<main id="main">
+  <div class="wrap">
+    <div class="detail-head">
+      <div class="crumbs"><a href="diagrams.html">Diagram explorer</a> / <span id="crumbPage"></span></div>
+      <h1 id="title">Loading…</h1>
+      <p id="sub" style="color:var(--ink-2)"></p>
+    </div>
+    <div class="aside-card attrib" id="notice"></div>
+    <div class="detail-grid">
+      <div>
+        <div id="viewer"></div>
+        <div class="pager"><a class="btn" id="prev" href="#">← Previous</a><a class="btn" id="next" href="#">Next →</a></div>
+      </div>
+      <aside>
+        <div class="aside-card"><h3>Read it in context</h3>
+          <p>This diagram appears in <a id="ctxLink" href="#"></a>.</p>
+          <p><a class="btn primary" id="readHere" href="#">Open in the mirror</a></p>
+          <p style="margin:0"><a id="srcLink" href="#">On repairfaq.org</a></p></div>
+        <div class="aside-card" id="ctxCard"><h3>The passage just before it</h3><blockquote id="ctx"></blockquote></div>
+        <div class="aside-card"><h3>About this drawing</h3>
+          <p>The animated and 3D views are drawn automatically from the ASCII text, as an interpretation of the original.
+          If they ever disagree, the original ASCII is authoritative.</p>
+          <p id="parts"></p></div>
+      </aside>
+    </div>
+  </div>
+</main>
+<footer class="footer"><div class="wrap">
+  <div>
+    <h4>Credit where it is due</h4>
+    <p>All FAQ content is the work of <strong>Samuel M. Goldwasser</strong> and <strong>Filip M. Gieszczykiewicz</strong>,
+    and of the many contributors quoted by name throughout, © the original authors, all rights reserved.
+    The original and authoritative site is <a href="https://www.repairfaq.org/">https://www.repairfaq.org/</a>.
+    This is a free, non-commercial mirror, kept so the information lasts. It carries no ads and charges nothing.</p>
+    <p>Mirror and companion maintained by <a href="https://acamaro.com/">Acamaro Cutcher</a>.</p>
+  </div>
+  <div><h4>The FAQs</h4><ul>
+    <li><a href="../archive/sam/laserfaq.htm">Sam's Laser FAQ</a></li>
+    <li><a href="../archive/REPAIR/F_Repair.html">S.E.R FAQ table of contents</a></li>
+    <li><a href="../archive/sam/sammenu.htm">Silicon Sam's Technology Resource</a></li>
+    <li><a href="../archive/sam/copyright.htm">Copyright and fair use</a></li>
+  </ul></div>
+  <div><h4>Companion</h4><ul>
+    <li><a href="../companion/diagrams.html">Diagram explorer</a></li>
+    <li><a href="../companion/credits.html">Credits and terms</a></li>
+    <li><a href="../AI_DIAGRAM_GUIDE.md">Guide for AI diagram tools</a></li>
+    <li><a href="https://acamaro.com/projects/">acamaro.com projects</a></li>
+  </ul></div>
+</div></footer>
+<script src="../companion/assets/companion.js"></script>
+
+<script type="module">
+import { mountViewer } from './assets/viewer.js';
+const [data, notices] = await Promise.all([fetch('data/diagrams.json').then(r => r.json()), fetch('data/notices.json').then(r => r.json())]);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function show() {
+  const [id, view] = location.hash.slice(1).split('/');
+  let i = data.findIndex(d => d.id === id); if (i < 0) i = 0;
+  const d = data[i];
+  const local = '../archive/' + encodeURI(d.page) + (d.anchor ? '#' + encodeURIComponent(d.anchor) : '');
+  document.title = `${d.heading} · RepairFAQ companion`;
+  document.getElementById('title').textContent = d.heading;
+  document.getElementById('sub').innerHTML = `From <a href="${local}">${esc(d.title)}</a>`;
+  document.getElementById('crumbPage').textContent = d.title;
+  document.getElementById('notice').innerHTML = `<h3>Author and Copyright</h3><p style="margin:0 0 6px;font-size:.85rem;color:var(--muted)">From the document this diagram belongs to${d.notice_from === 'site' ? ' (this page has no notice of its own, so these are the site-wide terms from repairfaq.org/sam/copyright.htm)' : ''}, reproduced in full as its terms require:</p><div class="notice">${esc(notices[d.notice] || '')}</div>`;
+  document.getElementById('ctxLink').textContent = d.title; document.getElementById('ctxLink').href = local;
+  document.getElementById('readHere').href = local;
+  document.getElementById('srcLink').href = d.source;
+  document.getElementById('ctx').textContent = d.context ? '…' + d.context : '';
+  document.getElementById('ctxCard').hidden = !d.context;
+  document.getElementById('parts').textContent = d.parts.length ? 'Recognized parts: ' + d.parts.join(', ') + (d.refs.length ? '. Reference designators: ' + d.refs.join(', ') : '') + '.' : '';
+  const v = document.getElementById('viewer'); v.className = ''; v.innerHTML = '';
+  mountViewer(v, d.ascii, { title: d.heading, source: d.source, credit: d.title, initial: { '3d': '3d', ascii: 'ascii' }[view] || 'svg' });
+  document.getElementById('prev').href = '#' + data[(i - 1 + data.length) % data.length].id;
+  document.getElementById('next').href = '#' + data[(i + 1) % data.length].id;
+  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+}
+addEventListener('hashchange', show);
+show();
+</script>
+</body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcfnljiiiec50.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Notes on HP LaserJet III error code 50&nbsp;&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: Notes on HP LaserJet III error code 50</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcfnljiiiec50.htm">https://www.repairfaq.org/samnew/printfaq/pcfnljiiiec50.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">Notes on HP LaserJet III error code 50&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;<a href="pcfljiiiec50.htm">&lt;&lt;&nbsp;HP LaserJet III error 50</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfpjljiiip.htm">Paper jams on HP LaserJet..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcfnljiiiec50">Notes on HP LaserJet III error code 50</A></h3>
+
+(From: Tony Duell (ard@p850ug1.demon.co.uk).)
+<p>
+[Error 50, SX Engine]
+<p>
+Remove the fuser (4 screws hidden down holes - it helps to remove the plastic
+cover from the left hand side (1 screw).) At the right hand side there's a 2
+pin plug that goes into the AC block. Test for continuity between the 2 pins
+on the fuser. If it's open, then it's either the fuser lamp or the
+overheating-protection thermal switch that's open. It's pretty easy to trace
+the connections and test them separately if you can figure out how to
+dismantle the fuser (I can talk you through it).
+<p>
+If the fuser is OK, then remove the outer plastic casing, and the AC block
+under the upper fan [at the right rear of the printer.  Remove the two screws
+securing the black plastic ozone filter housing, pull that housing straight up
+and off.  Three vertical screws secure the base, plus one horizontal one on
+the outside rear.  Then pull the AC block straight up.  The fuser must be
+removed prior to removing the AC block].
+<p>
+Most of the time the thing that fails is the Triac, Q101 on the lower board in
+the AC block. This means the fuser can't heat up.
+<p>
+Here are a few notes on what goes on in the AC block (totally unofficial,
+BTW).
+<p>
+Lower board:
+<p>
+R101, L101, C101, C102, C103 form a mains filter. The output of that goes to
+CB1 (circuit breaker) with VZ1 connected across the output of that lot as a
+spike suppressor. The output of that goes to the 2-pin plug (J104) and thence
+to the DC power supply. Watch out for J104 if you run an AC block out of the
+printer as it carries live mains.
+<p>
+The fuser control circuit on the lower board isn't complex either.  The live
+side of the mains (output of CB1) goes to T101 (current sense transformer)
+primary. The other side of the primary goes to the contacts of RL101 (fuser
+protection relay). There's a snubber SQ101 across the relay contacts. The
+other side of the relay contacts goes to one pin of J103 and thence to the
+fuser lamp. The other pin of J103 (and thus the other side of the fuser lamp)
+is returned to the neutral side of the mains via the triac Q101. This is
+triggered by SSR101. Oh, there are a couple of resistors (R102 and R103) in
+the triac gate circuit, and suppression components L102 and SQ102.
+<p>
+There's a 10 pin connector between the lower board and the upper board.  The
+pinout seems to be:
+<p>
+<PRE>
+ Pins 1,2    T101 current sense transformer secondary
+ Pins 3,4    RL101 relay coil
+ Pins 5,6    Solid State relay (SSR101) input (6 +ve)
+ Pin 7       Fan control
+ Pin 8       Fuser drive from the DC controller
+ Pin 9       Ground
+ Pin 10      +24 V (input)
+</PRE>
+<p>
+The last 4 pins are connected to the 4 pins of J101 which is connected to the
+DC controller. Shouldn't be hard to trace those.
+<p>
+Upper board:
+<p>
+This virtually never fails, so I'll simplify the description by missing out
+resistors, etc. You can trace the signal flow from this description anyway.
+<p>
+The fan control is trivial - the fan control input drives Q159 with the fan as
+the collector load.
+<p>
+The fuser control signal is AC coupled (C157) to Q157. The output of that is
+rectified/smoothed (D157/C156) and drives Q156. The collector load of Q156 is
+SSR101 on the lower board.
+<p>
+There's also a protection circuit, which works as follows. Normally Q153 is on
+which turns on Q152 and Q151. This turns off Q155 which has the protection
+relay as its collector load.
+<p>
+If the fuser control circuit fails so that Q156 stays on too long (which would
+cause the fuser to overheat), then C153 is discharged by D155 and the
+collector of Q156. This turns off Q153, Q152, Q151 and turns on Q155,
+energizing the protection relay and turning off the fuser.
+<p>
+If the fuser takes too much current then the output of the sense transformer
+T101 becomes large enough to trip the comparator IC151 (LM393). This turns on
+Q154 which discharges C153. The rest of the circuit operates as above.
+<p>
+(From: Jon Martin (jon.martin@unisys.com).)
+<p>
+There is a partial Schematic of the AC power supply at:
+<A HREF="http://forums.itrc.hp.com/cm/components/FileAttachment/0,,0xe7f5a14d9abcd4118fef0090279cd0f9,00.pdf">Fuser Controller RG1-1438</A>.
+<p>
+The fuser thermistor comes in on pin 4 or J206.  There's an 18k resistor
+(R237) to +5 V, and a 4.3K resistor to ground via SW205 (which is open when
+the base cover is on the printer -- the idea is to shut the fuser down if
+you power up the printer when dismantled). Then there's a 3.3K resistor in
+series (R747). And then a 4.7 uF cap (C210) to ground to smooth the signal
+out a bit.  Finally we get the AN0 input on the main microcontroller IC218.
+<p>
+The fuser drive signal comes out on port PD2.  This is buffered by IC219e
+('04) and IC211e ('07) before going to pin 2 of J208 and then to the AC block.
+<p>
+There is one more bit of circuitry to consider -- the overheat shutdown.
+If the fuser overheats (or the machine things it has), then a signal
+comes out on port PD3.  This turns on Q210 (2SC1815) which charges C211
+(100 uF) via R749 (330 ohms). There's a 4.7M resistor (R748) in parallel with
+C211, which gives a time constant of many <i>minutes</i>.  That's why to have
+to leave the printer off if the fuser seems to have overheated.  Anyway,
+the voltage across C211 is monitored by the AN3 input on the
+microcontroller
+<p>
+So, what to check?  C210 is a favorite, it goes leaky.  If that's not it,
+check (with the printer assembled and therefore SW205 open -- you have to
+solder wires onto the points so you can look at the signals) the following
+<p>
+<ol>
+<li>The voltage across C210 (should be around 2 V I think). If wrong, check
+ the fuser thermistor and connections, the R's and C's between it and the
+ microcontroller, etc
+<p>
+<li>The voltage across C210.  If it's more than 0 V, then switch off,
+ discharge C210 (short the leads together), try again.  If it rises again,
+ find out if Q210 is being turned on (Check the base voltage -- it's an
+ emitter follower). If so, then either the microcontroller is faulty, or
+ there's a problem you should have spotted in (1) :-). Check Q210, the R's
+ and C's, etc.
+<p>
+<li>Any pulses at the input to IC219e (pin 11 of IC219). If not, then
+ again, suspect the microcontroller if you've got this far.  If you do have
+ a signal there, check it again at the output (pin 10) of IC219e, then the
+ input of IC211e (pin 11) and the output of IC211e (pin 10 -- this should
+ be a 24 V level signal, not TTL). If you get a signal at the output of
+ IC211e, then make sure it gets to the AC block.  If it does, then the
+ fuser should work.
+</ol>
+<p>
+If the microcontroller is faulty then as far as I know, the only place to get
+a replacement is off another DC controller board.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfljiiiec50.htm">&lt;&lt;HP LaserJet III error 50</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfpjljiiip.htm">Paper jams on HP LaserJet..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

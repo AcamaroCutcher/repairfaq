@@ -1,0 +1,453 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcflppco.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Laser printer and photocopier operation&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: Laser printer and photocopier operation</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcflppco.htm">https://www.repairfaq.org/samnew/printfaq/pcflppco.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">Laser printer and photocopier operation&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;<a href="pcfijpb.htm">&lt;&lt;&nbsp;Ink-jet printer basics</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfsytypa.htm">So you took your printer ..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcflppco">Laser printer and photocopier operation</A></h3>
+
+Copiers and laser printers have a lot in common.  The major difference
+is in how the image is formed on a photosensitive drum:
+<p>
+<ul>
+<li>A copier uses a bright light and lens to focus an image of the original
+ (actually, a strip at a time which is scanned in most modern low to medium
+ performance copiers) onto the drum.  Adjusting the lens-to-original and
+ lens-to-drum distance is used to vary the reduction or magnification.
+<p>
+<li>A laser printer uses a low power sharply focused laser beam to scan one
+ line at a time on the drum.  Modern laser printers use infra-red solid
+ state laserdiodes similar to those used in CD players and optical disk
+ drives while older ones used helium neon lasers.
+<p>
+ The digital image is generated from a bit map stored in the printer's
+ memory and modulates the laser beam.  Scanning is mechanical - a high
+ speed motor spins a multifaceted deflection mirror to get the X-axis
+ and the paper moves to get the Y axis.
+<p>
+ LED printers use a large array of LEDs as the image source but are otherwise
+ similar to laser printers.
+<p>
+ Plain paper fax machines use similar techniques in their printing
+ mechanism.
+</ul>
+<p>
+Beyond this, copiers and laser printers are nearly identical (at least in
+principle) except that copiers use a positive process (dark areas in the
+original result in marks on the paper) and laser printers commonly use a
+negative process (a spot of light results in a dark mark on the paper).
+<p>
+The most sophisticated machines are now actually scanner-laser printer
+combinations with buffer memory so that multiple copies can be made without
+rescanning the original, sorting and collating is more flexible, scaling and
+rotation can be done digitally, and other features not possible with simple
+copiers.
+<p>
+(Portions from: Copenhagen Cowboy (cowboy@fastlane.net).)
+<p>
+The photosensitive drum is the heart of the laser printer or copier.  In
+larger machines, it may be a separately replaceable unit.  In most laser
+printers and smaller copiers, it is part of the 'toner cartridge' and
+is a throw-away (or may be recycled).
+<p>
+The drum is coated with a photosensitive material which has an extremely
+high resistance when in darkness.  It's resistance drops to a low value
+when illuminated.
+<p>
+All of the following takes place as a continuous process as the drum rotates.
+Note that the actual photosensitive drum in most copiers and laser printers
+has a circumference that is much smaller than the length of the printed page.
+Therefore, only a portion fits at any given time and the charging, exposure,
+transfer to the paper, cleaning, and erasing is a continuous process:
+<p>
+<ul>
+<li>The drum's surface is charged to a high positive voltage (typically 5 to 6
+ kV) by a set of charging corona wires in close proximity to the drum.
+<p>
+<li>The exposure process differs for copiers and laser printers:
+<p>
+ <ul>
+ <li>For copiers, a swath of the original is focused onto the drum.  As the
+  drum turns, a quartz lamp and strip mirror moves along the original and
+  second strip turning mirror moves at half this speed.  The result is that
+  the entire original's image is kind of 'peeled' onto the rotating drum.
+  (Look through the glass platform that supports the original of a copier
+  as it is copying and you will see what I mean.)
+<p>
+ <li>For laser printers, the negative image of the page stored in the printer's
+  buffer memory (the laser is turned on where the print is to be black) is
+  read out and scanned onto the drum one line (i.e., 1/300th or 1/600th of
+  an inch) at a time.
+ </ul>
+<p>
+ Where the light hits the drum's surface, its resistance drops dramatically
+ and the charge in these areas is dissipated.
+<p>
+ At this point, a swath of the image of your ultimate copied or printed page
+ resides as areas of electrostatic charge on the drum.  This is a 'latent'
+ image and must be 'developed'.
+<p>
+<li>As the drum continues to turn, the latent image rotates past the 'developer
+ unit' which contains a mixture of developer and toner.  For the most part,
+ developer is not really used up during the printing process but some is lost
+ and may need to be replenished from time-to-time (depends on design).
+<p>
+ <ul>
+ <li>Developer is a material which includes powdered iron or other powder
+  which is attracted by a magnet.
+<p>
+ <li>Toner is the actual 'ink' and consists of very finely powdered thermo
+  plastic particles.  These are 'fixed' in the fuser by literally melting
+  the image onto the paper.
+ </ul>
+<p>
+ Depending on design, the developer material may be separate or actually
+ combined with the toner.
+<p>
+ A magnet in the developer unit which is as long as the page is wide causes
+ the developer along with trapped toner to stand out following its lines of
+ force off of its long N-S pole pieces.  This forms a kind of brush of toner
+ and developer material which is in contact with the drum as it rotates with
+ its latent image.  Normally, the developer material brush is C-shaped, and
+ toner particles are carried in the C-shape (the back of the 'C' is against
+ the drum).
+<p>
+ Here is where the developing processes of copiers and laser printers differ:
+<p>
+ <ul>
+ <li>For copiers, the relative charges of the drum and toner are set up so that
+  toner is drawn to the unexposed (dark parts of the original) portions of
+  the drum resulting in a positive image on the paper. 
+<p>
+ <li>For laser printers, the relative charges of the drum and toner are set up
+  so that toner is drawn to the exposed (where the laser beam was turned
+  on) portions of the drum resulting in a negative image on the paper. 
+ </ul>
+<p>
+<li>The drum continues to rotate around and comes in contact with the paper.
+<p>
+ Below the paper is another corona, the 'transfer corona'.  Another high
+ voltage is applied to the back of the paper (once again, around 7 or 8
+ kV DC) to draw the toner from the drum to the paper. (Remember, all this
+ is going on in a continual cycle and it is all in motion).
+<p>
+<li>Depending on the manufacturer of the machine, you may or may not have a
+ third corona, the 'separation corona'.  This is needed to separate the
+ paper from the drum, but not disturb the toner on the paper (the separation
+ corona is usually 4 or 5 kV AC (if it was DC, you would separate the paper,
+ but have <b>VERY</b> smeared toner all over the page as to make it unreadable).
+ The separation corona usually has guides over it to keep the paper from
+ 'dipping' down too far into the corona shell.
+<p>
+<li>Paper is then transported to the fuser which 'fixes' the toner to the paper
+ via heat (to soften the toner particles) and pressure (to embed them in the
+ paper fiber).  There are parts in the fuser which also keep the paper from
+ sticking to the hot rollers.  A thermostatically controlled quartz tube lamp
+ provides the heat inside the anti-stick (Teflon coated) fuser roller.
+<p>
+<li>Finally, your copy or printed page is ready!
+<p>
+<li>However, we are not done as there is still some toner on the drum - it is
+ not possible to get it all off electrically) so there is usually a rubber
+ or plastic blade which rubs in direct contact with the drum.  This 'drum
+ blade' scrapes the toner off the drum, and the 'recovery blade' catches
+ it to keep it from falling back into the machine. A 'used toner auger'
+ transports the used toner (which is now changed both physically and
+ electrically and is also contaminated with paper dust (don't reuse your
+ used toner) because it can eventually damage the developer unit, cleaning
+ blades, fuser sections and other parts of the mechanism.
+<p>
+<li>Now that all the toner has been scraped off the drum, there is still some
+ residual charge on the drum from the previous exposure process.  You can't
+ scrape the static charge off the drum, so the cleaned drum is now fully
+ exposed to a bright light to discharge the drum surface and prepare it
+ again for a new charge, which comes right after the discharge lamps. 
+</ul>
+<p>
+That is the basic process.  Many variations are possible and depending upon
+the machine and manufacturer, some of this may be a little different.  Where
+a (disposable) toner cartridge is used, many of these components are replaced
+with the cartridge - typically the drum, toner itself and developer (usually
+combined into a single powder), developer magnet (really neat!), cleaning
+blades, some of the corona wires.
+<p>
+There is also some photocopier information at:
+<p>
+<ul>
+<li><A HREF="http://homepages.tcp.co.uk/~diverse/">Diverse Devices</A>
+</ul>
+
+<h4><A NAME="pcflspop">Laser printer operation summary</A></h4>
+
+(Portions from: Zaki (zg@ix.netcom.com).)
+<p>
+In general the principle of electrostatic laser printing is as follows:
+<p>
+<ol>
+<li>Charging a photoconductive selenium (or other) coated drum.
+<p>
+<li>Discharging the drum with the laser steering engine in accordance with the
+ input image rasterized pattern. (the laser is modulated to generate a
+ predefined pixel pattern on the face of the drum - the focal plane).
+<p>
+<li>The rotating drum attracts toner to the charged pattern (latent image)
+ generated by the laser.
+<p>
+<li>The toner is transfered from the drum to the moving papaer to generate a
+ full image.
+<p>
+<li>The paper carrying the toner moves through the heater to fuse the toner to
+ a fine non-erasable image.
+</ol>
+<p>
+The laser steering engine is combined of the following components:
+<p>
+<ul>
+<li>Infra-red diode laser, 3 to 4 mW in basic units, up to 30 mW or more
+ for high performance printers.
+<p>
+<li>Beam expander to form the required size of the collimated input beam which
+ generates the beam spot size in the focal plan.
+<p>
+<li>Cylindrical lens to reshape the laser elliptical beam to a round one.
+<p>
+<li>Spinning polygonal mirror to deflect the laser over the focal plan.
+<p>
+<li>F-Theta lens to flatten the inherent circular plan of a rotating mirror.
+ This lens is a very special lens which only few in the optical community
+ know how to design and fabricate. The one that you own is particularly
+ special because it is a Sectioned F-Theta lens which are typicaly more
+ expensive (most of them are spherical).
+<p>
+ If you need to scan or to print in high resolution 500 dpi or higher, you
+ end up using a glass F-Theta lens.
+</ul>
+
+<h4><A NAME="pcfclnhpsd">Cleaning and Handling of Photosensitive Drums</A></h4>
+
+Where the drum is located inside a replaceable toner cartridge, there is no
+need for special handling.  However, where the drum is a separate unit, the
+following applies.  Or, if for some reason, you need to disassemble (gasp!) a
+cartridge:
+<p>
+(From: David Kuhajda (dkuhajda@locl.net).)
+<p>
+Whatever you do, do NOT use alcohol on an organically based drum, it will
+ruin it.  The alcohol causes the material to crystalize.  I use to do copier
+service and this was stressed a lot by the manufacture as they switched from
+the old selenium drums to the new opc drums.
+Direct sunlight will immediately destroy the drum.  A couple of minutes
+under normal lighting is no problem, just place it in a dark area and put a
+black cloth over the top of the drum while it is out.  If you are replacing
+the drum cleaning blade or cleaning the crud off the blade, make sure you
+powder up the drum completely and the blade before reapplying power.  The
+toner actually is a slight lubricant and the rubber cleaning blade directly
+on the drum will also ruin it.  Just print a few low text copies after
+reassembling to allow the blade to reseat properly.
+<p>
+(From: hapticz@email.msn.com.)
+<p>
+Short periods (less than 5 min) under fluorescent lighting is safe.
+<p>
+Direct sunlight kills them immediately.
+<p>
+Just have a clean brown paper bag to shove it into while it sits on the table
+outside the machine.
+<p>
+Often more damage is done to them physically during insertion/removal. just be
+careful.
+<p>
+Xerox used to clean the 10" diameter drums with 90% isopropyl alcohol and some
+kind of "Kim Wipes" in our office, that was years ago though.
+
+<h4><A NAME="pcfblpmr">Book on laser printer maintenance and rapair</A></h4>
+
+(From: Michael (ncacaver@aol.com).)
+<p>
+Get the book:  "Easy Laser Printer Maintenance and Repair by Stephen J.
+Bigelow".
+<p>
+Your local library should have it or be able to get it. Stephen J. Bigelow
+has several other books on printer repair, both laser and non laser types.
+All are very good.
+
+<h4><A NAME="pcfdldlp">Discussion on laser diodes in laser printers</A></h4>
+
+<blockquote>
+"I just acquired the optics from a dead laser printer and have been trying to
+ understand it.  There are two functions I have yet to grasp.  One is something
+ which it has but for which I see no need.  There seems to be a heater
+ (Contains mica) and a thermometer, with PCB markings like "T1" and H2" or
+ something similar.  If these the laser is temperature controlled, why?  There
+ seems to be a control photodetector to monitor the laser diode so temperature
+ control appears like overkill unless the photodiode itself has too much
+ temperature dependence and the drum exposure is very critical."
+</blockquote>
+<p>
+(From: Jonathan M. Elson (jmelson@artsci.wustl.edu).)
+<p>
+There is a heater inside the fuser roller.  This is what melts the toner into
+the paper.  It is thermostatically controlled, and then has a safety
+thermostat in case the control fails.
+<p>
+There are two photodetectors for the laser.  One compensates for dimming
+of the laser over years of use, the other picks up the beam at a particular
+angle of the polygon mirror, and synchronizes the raster electronics to
+the polygon rotation.
+<p>
+<blockquote>
+"The other thing is something I cannot find, the aperture defining the nice
+ well-formed pixel.  So far I must admit the study has been a bit superficial
+ but the aperture  ought to be pretty obvious if there is one!"
+</blockquote>
+<p>
+The laser is the aperture.  With an optical path of 0.5 m or so, the laser
+is a pretty good approximation of a true point source.  A simple lens makes
+it look like a very good point source.
+<p>
+<blockquote>
+"Finally, how are the correction lens made?  They look like slices out of
+ the middle of some fair sized lenses, but that would be a very wasteful
+ way to make them.  Can they be diamond formed to nearly the final shape and
+ with such good finish so only a simple polish completes them.  Grinding the
+ old-fashioned way on a sliver of glass looks doomed to generating all sorts
+ of defective approximations to a sphere.  (As far as I can tell they are
+ glass, or some wonderfully hard plastic I would like to know more about!)
+ Can they be molded to sufficient precision?  (The sides are ground or sawn.)
+ Thanks to anyone who can bring me up to date on lens fabrication technique."
+</blockquote>
+<p>
+I think they mold these lenses to near correct shape, then grind and polish
+to the desired aspheric shape with specialty machines for that purpose.
+(Note that almost all eyeglasses are aspheric for astigmatism correction.)
+Yes, these lenses are glass, I've had a few printers apart myself.
+
+<h4><A NAME="pcftoton">Types of toner</A></h4>
+
+(From: Lionel Wagner (ck508@FreeNet.Carleton.CA).)
+<p>
+There are two basic kinds of toner: magnetic and non-magnetic.  If your laser
+printer has a Cannon 'engine' it most likely uses magnetic.  <b>NEVER</b> use the
+wrong type.  The imaging process is extremely delicate and specific toners are
+important.  Use of toner that is slightly different could result in all black
+or all white copies. 
+
+<h4><A NAME="pcfpiwtot">So you put in the wrong type of toner?</A></h4>
+
+<blockquote>
+"I have a 3M  Model 6312 copier.  I believe it is a re-badged Lanier.  I
+ didn't pay much for it but it worked well.  When the toner warning
+ light came on, I made the mistake of adding the wrong  kind of toner.
+ I removed the wrong toner as much as I could by vacuum. Is there
+ anything I should do  before adding the  right type of toner? Did I do
+ serious damage to the system? What to do  if the warning light
+ remained on even with the  right type of toner added? Any suggestion
+ will be greatly appreciated."
+</blockquote>
+<p>
+(From: Lionel Wagner (ck508@FreeNet.Carleton.CA).)
+<p>
+If your copier uses non-magnetic toner, it is mixed with iron powder,
+called the Developer.  Both have to be removed and all residue vacuumed out.
+If the copier uses magnetic toner, less of it will remain in the machine.
+Try to get as much as possible out.  Do not scratch the roller on which
+the toner sits.
+<p>
+<b>WARNING</b>: See the section: <A HREF="pcfwavlpt.htm">Warnings about vacuuming
+laser printer toner</A> before using a household vacuum cleaner to do this!
+<p>
+<br>
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfijpb.htm">&lt;&lt;Ink-jet printer basics</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfsytypa.htm">So you took your printer ..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

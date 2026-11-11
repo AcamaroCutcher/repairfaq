@@ -1,0 +1,64 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/laser/ssltech/timcir.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Timer Circuit for Tank Laser</title>
+<link rel="stylesheet" href="../../../../companion/assets/mirror-theme.css">
+</head>
+
+<body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/laser/ssltech/timcir.htm">https://www.repairfaq.org/sam/laser/ssltech/timcir.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../../index.html">companion guide</a></small></div>
+
+<font SIZE="4" COLOR="#0000ff"><b>
+
+<p ALIGN="CENTER">Timer Circuit for Tank Laser</p>
+</b></font><font SIZE="2">
+
+<p><img SRC="timc1.gif" width="800" height="600"></p>
+
+<p>Not shown above is another timer circuit for the amplifier delay. The lead is shown
+would go to another 1meg resistor and 5nfd cap then to pin 6 of the NE556 (amplifier delay
+circuit not shown). U1A (1/2 of the 556) variable resistor changes the delay time and U1B
+variable resistor changes the pulse width used to fire the SCR triggers.</p>
+
+<p>See The Power Supply circuit below:&nbsp;&nbsp; Note that the switches shown on each
+leg of the amp charging banks where isolated above ground and never operated with the
+power on inorder not subject a person to potential shock hazard and arcing of the switch
+contacts. Instead these switches were only manipulated after the cap bank voltage had
+depleted and the power supply was off.</p>
+
+<p><img SRC="timc2.gif" width="800" height="600"></p>
+
+<p>Below is the rest of the Power supply that includes the SCR trigger circuits for the
+Flashlamp and Series Injection Transformer.</p>
+
+<p><img SRC="timc3.gif" width="800" height="600"></p>
+
+<p>Below is the adjustable voltage regulator on the 14volt supply. Since the motor drawns
+quite amount of current for the LM317, the regulator should be mounted to a fair size
+heatsink. </p>
+
+<p><img SRC="timc4.gif" width="800" height="600"></p>
+
+<p>A suggestion is to include quite a few despike caps on the timer circuit. The motor
+must run and settle down before you allow the 300volts to the SCR triggers inorder to
+prevent accidental firing of the laser due to the trigger NE556 will pickup the motor
+start flunctuations. I solved this problem as follows: My push to fire switch triggers the
+following NE556 delay timers/relays to begin at the same time: A NE555 and relay to start
+the motor with a 2 second runtime, a NE556 and relay with delay to make switch contact for
+the 300v to SCR power and finally a NE556 and relay with delay to close the switch for the
+magnetic pickup to trigger the OSC and AMP timers. Refer to timing chart below.</p>
+
+<p><img SRC="timing.gif" width="763" height="846"></p>
+</font>
+</body>
+</html>

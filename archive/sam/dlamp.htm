@@ -1,0 +1,1142 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/dlamp.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Gas Discharge Lamps, Ballasts, and Fixtures</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/dlamp.htm">https://www.repairfaq.org/sam/dlamp.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<br>
+<h1><b><FONT SIZE = "8">Sam's and Don's D-Lamp FAQ</FONT SIZE></b>
+<br>
+Gas Discharge Lamps, Ballasts, and Fixtures</h1>
+<h2>Principles of Operation, Circuits, Troubleshooting, Repair
+<br>
+Version 1.36a (02-Dec-06)
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A>; 1996-2021
+<br>
+Samuel M. Goldwasser
+Donald L. Klipstein
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<p>
+<A NAME="dltoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#dlpre">Preface</A>
+ <ul>
+ <li><A HREF="#flaac">Authors and Copyright</a>
+ <li><A HREF="#dldis">DISCLAIMER</A>
+ </ul>
+<p>
+<li><A HREF="#dlint">Introduction</A>
+ <ul>
+ <li><A HREF="#dlbas">Gas discharge lamp basics</A>
+ <li><A HREF="#dlsaf">Safely Working with Gas Discharge Lamps and Fixtures</A>
+ </ul>
+
+<p>
+<li><A HREF="#dlneon">Neon Technology</A>
+ <ul>
+ <li><A HREF="#dlnls">Neon Lights and Signs</A>
+ <li><A HREF="#dlpsn">Power Supplies for Neon</A>
+ <li><A HREF="#dlnsi">Neon Sign Installation</A>
+ <li><A HREF="#dlpwn">Problems With Neon</A>
+ <li><A HREF="#dlnbl">Comments on Little Neon Bulbs and Tubes</A>
+ </ul>
+<p>
+<li><A HREF="#dlhid">High Intensity discharge Lamps</A>
+ <ul>
+ <li><A HREF="#dlhidt">High Intensity Discharge (HID) Lamp Technology</a>
+ <li><A HREF="#dlpwhid">Problems With High Intensity Discharge Lamps</A>
+ <li><A HREF="#dltdlf">Troubleshooting a Discharge Lamp Fixture</A>
+ <li><A HREF="#dlbbsm">Ballasts and Bulbs Should be Matched!</A>
+ <li><A HREF="#dlodld">Operation of Discharge Lamps on DC</A>
+ <li><A HREF="#dlsphid">Special purpose HID lamps such as xenon and HMI</A>
+ <li><A HREF="#dlhauto">HID Automotive Headlights</A>
+ <li><A HREF="#dlhidsb">Substitution of Metal Halide Lamps?</a>
+ <li><A HREF="#dljshb">Jonathan's 12 V Inverter for HID Lamps</A>
+ </ul>
+<p>
+<li><A HREF="#dllps">Low Pressure Sodium Lamps</A>
+</ul>
+<p>
+<A NAME="dlpre"> </A>
+<hr>
+<br>
+<li>Back to <A HREF="#dltoc">Discharge Lamp FAQ Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="flaac">Authors and Copyright</h3>
+
+Authors: Samuel M. Goldwasser and Donald L. Klipstein
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A>; 1996-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+<p>
+<h3><A NAME="dldis">DISCLAIMER</A></h3>
+
+We will not be responsible for damage to equipment, your ego, county wide
+power outages, spontaneously generated mini (or larger) black holes, planetary
+disruptions, or personal injury or worse that may result from the use of this
+material.
+
+<p>
+<A NAME="dlint"> </A>
+<hr>
+<br>
+<li>Back to <A HREF="#dltoc">Discharge Lamp FAQ Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="dlbas">Gas discharge lamp basics</A></h3>
+
+The use of electrically excited gas discharges significantly predates the
+invention of the incandescent lamp. Physics labs of yesteryear as well as
+today have use of a variety of gas filled tubes used for numerous purposes
+involving light generation including spectroscopy, materials analysis,
+studies of gas dynamics, and laser pumping. Look through any scientific
+supply catalog and you will see many different types of gas filled tubes
+in all shapes and sizes.
+<p>
+Gas discharge lamps are used in virtually all areas of modern lighting
+technology including common fluorescent lighting for home and office - and
+LCD backlights for laptop computers, high intensity discharge lamps for
+very efficient area lighting, neon and other miniature indicator lamps,
+germicidal and tanning lamps, neon signs, photographic electronic flashes
+and strobes, arc lamps for industry and A/V projectors, and many more.
+Gas discharge automotive headlights are on the way - see the section: "HID
+automotive headlights".
+<p>
+Because of the unusual appearance of the light from gas discharge tubes,
+quacks and con artists also have used and are using this technology as
+part of expensive useless devices for everything from curing cancer to
+contacting the dead.
+<p>
+Unlike incandescent lamps, gas discharge lamps have no filament and do not
+produce light as a result of something solid getting hot (though heat may
+be a byproduct).  Rather, the atoms or molecules of the gas inside a glass,
+quartz, or translucent ceramic tube, are ionized by an electric current
+through the gas or a radio frequency or microwave field in proximity to
+the tube.  This results in the generation of light - usually either visible
+or ultraviolet (UV).  The color depends on both the mixture of gasses or
+other materials inside the tube as well as the pressure and type and amount
+of the electric current or RF power.  (At the present time, this document
+only deals with directly excited gas discharge lamps where an AC or DC
+electric current flows through the gas.)
+<p>
+Fluorescent lamps are a special class of gas discharge lamps where the
+electric current produces mostly invisible UV light which is turned into
+visible light by a special phosphor coating on the interior of the tube.
+See: <A HREF="https://www.repairfaq.org/sam/f-lamp.html">Fluorescent Lamps, Ballasts, and Fixtures</A> for more info.
+<p>
+The remainder of this document discusses two classes of gas discharge lamps:
+low pressure 'neon' tubes used in signs and displays and high intensity
+discharge lamps used for very efficient area and directional lighting.
+
+<p>
+<h3><A NAME="dlsaf">Safely Working with Gas Discharge Lamps and
+ Fixtures</A></h3>
+
+Fixtures for gas discharge lamps may use up to 30,000 V while starting
+depending on technology.  And, they are often not isolated from the power
+line.  Neon signs are powered by transformers or electronic ballasts producing
+up to 15,000 V or more.  Thus, the only safe way to work with these is to
+assume that they are potentially lethal and treat them with respect.
+<p>
+Hazards include:
+<ul>
+<li>Electric shock.  There is usually little need to probe a live fixture.
+  Most problems can be identified by inspection or with an ohmmeter or
+  continuity tester when unplugged.
+<p>
+ <ul>
+ <li>Discharge lamps and fixtures using iron ballasts are basically pretty
+  inert when unplugged.  Even if there are small capacitors inside the
+  ballast(s) or for RFI prevention, these are not likely to bite.  However,
+  you do have to remember to unplug them before touching anything!
+ <p>
+  Neon signs using iron transformers are also inert when unpowered - just make
+  sure they are off and unplugged before touching anything!
+<p>
+ <li>However, those using electronic ballasts can have some nasty charged
+  capacitors so avoid going inside the ballast module and it won't hurt to
+  check between its outputs with a voltmeter before touching anything.
+  Troubleshooting the electronic ballast module is similar to that of a
+  switchmode power supply.  See the document: <A HREF="smpsfaq.htm">Notes
+  on the Troubleshooting and Repair of Small Switchmode Power Supplies</A>
+<p>
+ <li>The pulse starters of some high intensity discharge lamps may produce up
+  to 30 kV during the starting process.  Obviously, contact with this voltage
+  should be avoided keeping in mind that 30 kV can jump over an inch to
+  anyplace it wants!
+ </ul>
+<p>
+<li>Nasty chemicals: Various toxic substances may be present inside high
+ pressure discharge lamps (sodium and mercury) and neon signs (some phosphors).
+ Contact with these substances should be avoided.  If a lamp breaks, clean up
+ the mess and dispose of it properly and promptly.  Of course, don't go out
+ of your way to get gut on the broken glass!  WARNING: Metallic sodium reacts
+ with water to produce hydrogen gas, an explosive.  However, it is unlikely
+ that the inner tube of a sodium vapor lamp would break by accident.
+<p>
+<li>Ultra-Violet (UV) light: High intensity discharge lamps generate
+ substantial UV internally, often the particularly nasty UV-B variety.  Unless
+ designed to generate UV (for medicinal purposes, photoengraving, or
+ whatever), the short wave radiation will be blocked by the outer
+ glass envelope and/or phosphor coating.  However, should the outer envelope
+ break or be removed, the lamp will still operate (at least for a while - some
+ have a means of disabling themselves after a few hours or less of exposure
+ to air).  DO NOT operate such a lamp preferably at all but if you do, at least
+ take appropriate precautions to avoid any exposure to the UV radiation.
+</ul>
+
+And take care around sharp sheet metal!
+
+<p>
+<A NAME="dlneon"> </A>
+<hr>
+<br>
+<li>Back to <A HREF="#dltoc">Discharge Lamp FAQ Table of Contents</A>.
+<h2>Neon Technology</h2>
+
+<h3><A NAME="dlnls">Neon Lights and Signs</A></h3>
+
+Neon technology has been around for many years providing the distinctive
+bright glowing signs of commerce of all kinds before the use of colored
+plastics became commonplace.
+<p>
+Neon tubes have electrodes sealed in at each end.  For use in signs, they
+are formed using the glass blower's skill in the shape of letters, words,
+or graphics.  Black paint is used to block off areas to be dark.  They are
+evacuated, backfilled, heated (bombarded - usually by a discharge through
+the tube at a very high current) to drive off any impurities, evacuated
+and then backfilled with a variety of low pressure gasses.
+<p>
+Neon is the most widely known with its characteristic red-orange glow.
+Neon may be combined with an internal phosphor coating (like a
+fluorescent tube) to utilize neon's weak short-wave UV emissions.  A
+green-emitting phosphor combines with neon's red-orange glow to make a
+less-red shade of orange.  A blue-emitting phosphor may be used to result
+in a hot-pink color.  Neon may be used in tubing made of red glass to
+produce a deep red color.
+<p>
+Other colors are usually produced by tubing containing argon and mercury
+vapor.  The mercury is the active ingredient, the argon produces
+negligible radiation of any kind but is important for the "neon" tubing to
+work.  Clear tubing with mercury/argon glows a characteristic light blue
+color.
+<p>
+Such tubing is often phosphor-coated on the inside, to utilize the
+major short-wave UV emission of low-pressure mercury.  In this way, much
+of the "neon" tubes in use are a kind of fluorescent lamp.
+<p>
+Phosphor-coated tubing with mercury can glow blue, blue-green, slightly
+white-ish green, light yellow, bright pink, light purple, or white.
+<p>
+Use of mercury vapor with colored tubing (with or without phosphors) can
+provide a lime-green or deep blue or deep violet-blue.
+<p>
+Nowadays, nearly all "neon" tubing contains neon or mercury vapor (with
+argon), whether with or without phosphors and/or colored glass.  Well in
+the past, various colors were obtained (generally at reduced efficiency)
+by using different gases.
+<p>
+For example, helium can produce a white-ish orange light in shorter
+length, smaller diameter tubing.  Hydrogen in this case makes a
+lavender-hot-pink color.  These gases glow more dimly with duller color
+shades in larger tubing.  Krypton makes a dull greenish color.  Argon
+makes a dimmish purple color.  Nitrogen (generally in shorter length
+tubing) makes a grayish purple-pink color.  Xenon, which is expensive,
+generally glows with a dim bluish gray color, along with the glass tubing
+giving a slight dim blue fluorescence from very short wave UV from the
+xenon discharge.  Krypton also often causes a dim blue glass fluorescence.
+<p>
+For general information on neon signs and technology including a neon FAQ, see:
+
+<ul>
+<li><A HREF="http://www.neonshop.com/">The Internet's Neon Shop</A>
+<li><A HREF="http://www.signweb.com/index.php/channel/14/">Neon and
+ Lighting Channel Page</A>
+</ul>
+
+<h3><A NAME="dlpsn">Power Supplies for Neon</A></h3>
+
+Extremely high voltage power supplies are used to power neon signs.  In
+the past, this was most often provided by a special current limited HV
+line transformer called a neon sign or luminous tube transformer.  The
+output is typically 6,000 to 15,000 VAC at 15 to 60 mA.  One such unit
+can power 10s of feet of tubing.  This transformer acts as its own ballast
+providing the high voltage needed for starting and limiting the running
+current as well.  Warning: the output of these transformers can be lethal
+since even the limited current availability is relatively high.
+<p>
+As with everything else, the newest neon sign power supplies use an
+electronic AC-AC inverter greatly reducing the size and weight (and
+presumably cost as well) of these power supplies by eliminating the
+large heavy iron transformer.
+<p>
+Small neon lamps inside high-tech phones and such also use solid state
+inverters to provide the more modest voltage required for these devices.
+<p>
+(From Jeff Zurkow (jeff@atrox.com).)
+<p>
+In the course of looking for a neon sign transformer, I discovered the
+following line of flyback-type HV power supplies:
+<p>
+<ul>
+<li><A HREF="http://www.evertron.net/">Evertron High Voltage Neon Power
+ Supplies</A>.  (Ordering via
+ <A HREF="http://www.neoncentral.com/default.jsp">Neon Central</A>.
+</ul>
+<p>
+For example: the Evertron 2610 is rated at 10 kVAC, 10 mA for $45.50.  The
+model 2610D has dimming for $56.50.  There are also 3.5 kVAC and 6 kVAC
+models that are somewhat less expensive. The 3.5 kV unit runs on 12 VDC,
+the others on 115 VAC.
+<p>
+The neon bender I visited was kind enough to give me a couple of older
+units - one made by Evertron (Everbrite Electronics, model 3210) and the other
+by Transfotek international.  One of these (the Evertron) works, but he had a
+whole pile of dead ones from various makers. He considers all of the
+electronic ones unreliable (compared to conventional NSTs), but that's
+probably in 24/7 service.  They ought to be OK for intermittent use in
+laser and HV projects if the output voltage and current are sufficient.
+<p>
+<A HREF="etrn3210.gif">Evertron Model 3210 Gas Tube Power Supply</A> shows
+the schematic of this unit.  It has a pair of power MOSFETs driving a
+flyback style high voltage transformer, with a whole bunch of open-wound
+primaries and a potted secondary.
+<p>
+I did plug the thing in and was rewarded with an impressive arc at about 1
+cm electrode spacing (bare wires).
+<p>
+The Transfotek unit is completely potted, except for the AC input and
+on-off switch. And completely dead.
+
+<h3><A NAME="dlnsi">Neon Sign Installation</A></h3>
+
+(From: Clive Mitchell (clive@emanator.co.uk)).
+<p>
+The voltage required to light a run of neon tube is variable according to
+diameter, gas type, pressure and number of tubes in circuit.
+<p>
+For a 15 kV transformer and neon gas you could run:
+<ul>
+<li>33 feet of 10 mm tube,
+<li>45 feet of 12 mm tube,
+<li>60 feet of 15 mm tube,
+<li>78 feet of 20 mm tube,
+<li>102 feet of 25 mm tube.
+<p>
+<li>Deduct one foot of tube for every pair of electrodes (tube section).
+</ul>
+These figures are based on a chart in "Neon Techniques And Handling"
+which is the traditional neon reference.
+<p>
+The larger the diameter of the tube, the lower the voltage required, and
+the dimmer it will be.  Transformers come with different current
+ratings.  For larger diameter tubes, you can increase brightness by
+using a higher current.
+<ul>
+<li>Don't attempt to run too much tube on a transformer, since it can cause
+  breakdown of the insulation and destroy the transformer.
+<p>
+<li>Don't attempt to run too little tube on a transformer, since it can
+  cause overheating and burn-out.
+</ul>
+
+It is absolutely imperative that proper neon sign cabling and insulators are
+used, and that all local regulations are strictly followed.  If you are
+intending to work with neon tubing, you should learn as much as possible
+first, since neon poses both a shock and serious fire risk if installed
+incorrectly.
+<p>
+The lengths quoted above may vary according to the transformer you use.  The
+transformer manufacturers usually provide their own loading charts on request.
+<p>
+Anyone using this information does so at their own risk, and I cannot be held
+responsible for any horrible smouldering deaths experienced by incompetent
+dabblers, etc.
+<p>
+(From: Kenny Greenberg (kenny@neonshop.com)).
+<p>
+The neon circuit is not so simple. In a standard AC circuit neon acts like a
+diac - high breakover voltage followed by fast drop in resistance.  Neon sign
+transformers are designed to 'leak' and thus self-regulate. You have a
+combined resistive and reactive circuit.
+<p>
+But take heart, it's all been figured out. :-)
+<p>
+There are a few variables:
+<ol>
+<li>A 'purely' neon filled tube (generally in the red range) has a higher
+   voltage requirement than an argon-mercury tube (whose discharge is usually
+   providing UV for phosphor with a wide range of colors.
+<p>
+<li>The voltage requirement varies inversely with the tubing diameter.  That is
+   large diameters of a lower voltage requirement than small diameters.
+<p>
+<li>The voltage requirement varies directly with tubing length.
+<p>
+<li>The number of units (or pairs of electrodes) increases the voltage
+   requirement because the electrodes have a voltage drop.
+<p>
+<li>Wiring methods and length will also contribute to the formula but that's a
+   whole 'nuther discussion.
+</ol>
+You can download a free <A HREF="http://www.neonshop.com/Software/">Neon
+Voltage Calculator for Windows</A>.
+<p>
+An old tech method for determining the voltage requirement is to use a
+Variac on a large neon transformer.  Bring the voltage down to where the neon
+just flickers. This should be at a point approximately 78% of the required
+voltage.
+<p>
+A better way involves using a milliameter to measure open circuit and closed
+circuit current and an rms voltmeter to measure actual operating voltage.
+
+<h3><A NAME="dlpwn">Problems With Neon</A></h3>
+
+These fall into two categories:
+<ol>
+<li>Power supply - like fluorescent ballasts, the high voltage transformers
+   can fail resulting in reduced (and inadequate) voltage or no power at all.
+   Since they are already current limited, overheating may not result and
+   any fuse or circuit breaker may be unaffected.  The use of a proper (for
+   safety if nothing else) high voltage meter can easily identify a bad
+   transformer.  If a high voltage probe is not available, position (with
+   power off!) the ends of well insulated wires connected to the outputs
+   of the transformer a fraction of an inch apart (about 1/32" per 1,000 V
+   of transformer rating) and apply the power from a safe distance.  If a hot
+   arc results, the transformer is likely good (at least when cold).
+<p>
+<li>Neon tubes - these may lose their ability to sustain a stable discharge
+   over time as a result of contamination, gas leakage, or electrode damage
+   (either from normal wear or due to excessive current).  Check for obvious
+   damage such as a cracked tube or cracked seals around the electrodes or
+   badly deteriorated electrodes.  A previously working tube that now will
+   not strike or maintain a stable discharge on a known good transformer 
+   will need to be replaced or rebuilt.
+</ol>
+
+<h3><A NAME="dlnbl">Comments on Little Neon Bulbs and Tubes</A></h3>
+
+The comments below relate to the little neon bulbs used as indicators, for
+voltage regulation or limiting, and other applications in all sorts of
+electronic equipment.
+<p>
+(From: Mark Kinsler (kinsler@frognet.net).)
+<p>
+Neon lamps can be used for voltage limiters and oscillator elements and just
+about anywhere else that a non-linear element is needed.  The tremolo circuit
+in the classic Fender guitar amplifier uses a neon lamp relaxation oscillator.
+The neon lamp is heat-shrinked to a CdS photocell in the volume control
+circuit.
+<p>
+Less well-known is the fact that you can make a pretty reasonable computer
+logic element out of them: I believe that this was tried sometime in the
+1940's.
+<p>
+Another cool use is as a radiation sensor: you bias the lamp so that it almost
+turns on, after which any incident radiation: radio waves (as in police
+radar), light, or gamma radiation will kick the lamp on.  There were various
+circuits in the 1950's that used neon lamps to detect uranium, fight nuclear
+destruction, or escape the newly-developed police radar guns.
+<p>
+And finally, there's the mystery elevator button.  Again, you bias the lamp so
+that it almost, but not quite, turns on.  If you enclose the lamp properly,
+it'll stay off until you touch it.  The electric field variation from your
+touch will turn the thing on, and it'll stay on.  Such lamps are used in some
+self-service elevators: once the lamp is fired, the low voltage across it is
+sensed by the ancient logic circuits of the elevator controller and it'll send
+the elevator to the appropriate floor.  These were a lot of fun in the 1960's.
+I think the controllers used vacuum tubes.
+<p>
+The problem with neon lamps is that they're not so reliable.  Their turn-on
+voltage isn't particularly stable.  This means that oscillators have a
+tendency to drift as the lamps age or when ambient radiation changes.  I
+suspect that the computers are slow and cranky, and the radiation detector
+isn't anything you'd wish to stake your life or drivers' license on.
+<p>
+Still, they're great fun, and I have a fine time with them.  One other use:
+hang a neon lamp across a telephone line to detect the ring signal.  Place it
+in series with a piezo beeper, and you've got a reliable telephone ringer.
+<p>
+<A NAME="dlhid"> </A>
+<hr>
+<br>
+<li>Back to <A HREF="#dltoc">Discharge Lamp FAQ Table of Contents</A>.
+<h2>High Intensity discharge Lamps</h2>
+<h3><A NAME="dlhidt">High Intensity Discharge (HID) Lamp Technology</a></h3>
+
+These have been used for a long time in street, stadium, and factory lighting.
+More recently, smaller sizes have become available for home yard and crime
+prevention applications.  Like other gas discharge lamps, these types
+require a special fixture and ballast for each type and wattage.  Unlike
+fluorescents, however, they also require a warmup period.
+<p>
+There are three popular types:
+<ul>
+<li>High pressure mercury vapor lamps contain an internal arc tube made of
+  quartz enclosed in an outer glass envelope.  A small amount of metallic
+  (liquid) mercury is sealed in an argon gas fill inside the quartz tube.
+  After the warmup period, the arc emits both visible and invisible (UV)
+  light.  High pressure mercury vapor lamps (without color correction)
+  produce a blue-white light directly from their discharge arc.  Phosphors
+  similar to those used for fluorescent lamps can be used to give these a
+  color closer to natural light.  (Without this color correction, people
+  tend to look like cadavers).  Mercury vapor lamps have the longest life
+  of this class of bulbs - 10,000 to 24,000 hours.  The technology was first
+  introduced in 1934 and was the first of the commercially viable HID lamps.
+<p>
+<li>Metal halide lamps are constructed along similar lines to mercury vapor
+  lamps.  However, in addition to the mercury and argon, various metal
+  halides are included in the gas fill.  The most popular combination
+  is sodium iodide and scandium iodide.  A few versions of this lamp
+  have lithium iodide as well.  A much less common version has sodium
+  iodide, thallium iodide, and indium iodide.  The use of these compounds
+  increases the luminous efficiency and results in a more pleasing color
+  balance than the raw arc of the mercury vapor lamp.  Thus, no phosphor
+  is needed to produce a color approaching that of a cool white
+  fluorescent lamp with more green and yellow than a mercury vapor lamp
+  (without correction).  Some metal halide lamps have a phosphor that adds
+  some orange-ish red light, but not much, since the metal halide arc does
+  not emit much UV.
+<p>
+<li>High pressure sodium vapor lamps contain an internal arc tube made of
+  a translucent ceramic material (a form of aluminum oxide known as
+  "polycrystalline alumina").  Glass and quartz cannot be used since they
+  cannot maintain structural strength at the high temperatures (up to 1300
+  degrees C) encountered here, and hot sodium chemically attacks quartz
+  and glass.  Like other HID lamps, the arc tube is enclosed in an outer
+  glass envelope.  A small amount of metallic (solid) sodium in addition
+  to mercury is sealed in a xenon gas fill inside the ceramic arc tube.
+  Some versions of this lamp use a neon-argon mixture instead of xenon.
+  Basic operation is otherwise similar to mercury or metal halide lamps.
+  High pressure sodium vapor lamps produce an orange-white light and have
+  a luminous efficiency much higher than mercury or metal halide lamps.
+<p>
+  Since hot liquid sodium often eventually leaches through things and can
+  get lost this way, sodium lamps have a surplus of sodium in them.
+  Proper lamp operation depends on the sodium reservoir being within
+  a proper temperature range.
+</ul>
+Mercury vapor lamps are roughly as efficient as fluorescent lamps.  Metal
+halide lamps are much more efficient, generally around 50 to 75 percent
+more efficient than fluorescent lamps.  High pressure sodium lamps are
+roughly twice as efficient as fluorescent lamps.
+<p>
+Unlike fluorescent lamps, HID lamps will give full light output over a
+wide range of temperatures.  This often makes HID lamps more suitable than
+fluorescent lamps for outdoor use.
+<p>
+When cold, the metallic mercury or sodium in the arc tube is in its normal
+state (liquid or solid) at room temperature.  During the starting process,
+a low pressure discharge is established in the gases.  This produces very
+little light but heats the metal contained inside the arc tube and gradually
+vaporizes it.  As this happens, the pressure increases and light starts being
+produced by the discharge through the high pressure metal vapor.  A quite
+noticeable transition period occurs when the light output increases
+dramatically over a period of a minute or more.  The entire warmup process
+may require up to 10 minutes, but typically takes 3 to 5 minutes.  A hot
+lamp cannot be restarted until it has cooled since the voltage needed to
+restrike the arc is too high for the normal AC line/ballast combination to
+provide.
+<p>
+<h3><A NAME="dlpwhid">Problems With High Intensity Discharge Lamps</A></h3>
+
+While HID lamps have a very long life compared to incandescents (up to
+24,000 hours), they do fail.  The ballasts can also go bad.  In addition,
+their light output falls off gradually as they age.  For some types, light
+output may drop to half its original value towards the end of their life.
+<p>
+A lamp which is cycling - starting, warming up, then turning itself off -
+is probably overheating due to a bad bulb or ballast.  A thermal protector
+is probably shutting down the fixture to protect it or the arc is being
+extinguished on its own.  However, make sure that it is not something
+trivial like a photoelectric switch that is seeing the light from the lamp
+reflected from a white wall or fence and turning the fixture off once the
+(reflected) light intensity becomes great enough!
+<p>
+Sodium lamps sometimes "cycle" when they have aged greatly.  The arc tube's
+discolorations absorb light from the arc, causing the arc tube to overheat,
+the sodium vapor pressure becomes excessive, and the arc cannot be
+maintained.  If a sodium lamp "cycles", the first suspect is an aging bulb
+which should be replaced. 
+Sodium lamp "cycling" used to be very common, but in recent years the lamp
+manufacturers have been making sodium lamps that are less prone to cycling.
+<p>
+If you have more than one fixture which uses **identical** bulbs, swapping
+the bulbs should be the first test.  If the problem remains with the fixture,
+then its ballast or other circuitry is probably bad.  Don't be tempted to
+swap bulbs between non-identical fixtures even if they fit unless the bulb
+types are the same.
+<p>
+Warning: do not operate an HID lamp if the outer glass envelope is cracked
+or broken.  First, this is dangerous because the extremely hot arc tube can
+quite literally explode with unfortunate consequences.  In addition, the
+mercury arc produces substantial amounts of short wave UV which is extremely
+hazardous to anything living.  The outer glass normally blocks most of
+this from escaping.  Some lamps are actually designed with fusable links
+that will open after some specified number of hours should air enter the
+outer envelope.  Thus, an undetected breakage will result in the lamp dying
+on its own relatively quickly.
+
+<h3><A NAME="dltdlf">Troubleshooting a Discharge Lamp Fixture</A></h3>
+
+(From: Greg Anderson (a3a30878@bc.sympatico.ca).)
+<p>
+The following applies directly to high pressure sodium lamps. It may also
+also be used for metal halide and mercury vapour lamp problems as long as
+references to the starter are ignored. (Metal halide and mercury vapour
+lamps do not have starters, except for "instant re-light" metal hhalide
+lamps.)
+<p>
+The starter produces about 2 to 5 kV spikes to ionize the gas in the
+lamp. The starter normally has a triac across the ballast and a diac
+trigger cct. When open cct voltage is across the lamp, the diac fires
+the triac to short the ballast, the triac then opens. This "kick"
+produces the voltage spike. Once the gas ionizes, the lamp impedance
+drops then gradually increases as the lamp warms up. The lamp running
+voltage is about 1/2 of the open cct voltage
+<p>
+With the lamp removed and power on, you can normally hear a good starter
+"ticking". 
+<p>
+The open circuit voltage is stamped on the ballast and is between about 150
+and 350 Vac, depending on lamp wattage and ballast. Also, a capacitor is
+often connected in series with lamp to improve peaking and ballast
+action.
+<p>
+Steps to follow: 
+<ol>
+<li>Bypass the photo cell - It may be bad
+<li>Check connections - water, salt, and bird poop are not good for wiring
+<li>Check the capacitor, if installed - normally they blow-up when bad
+<li>Check for open/shorted ballast.
+<li>Power up and check for starter "ticking"
+<li>REMOVE starter from cct and measure open cct volts
+<li>Check/Replace lamp 
+<li>Check/replace lamp socket
+<li>Replace starter
+<li>Replace complete fixture.
+<li>Replace electrician. :)
+</ol>
+<p>
+Repairing a starter is not economically viable and often proves that
+electronic devices contain smoke and sometimes fire.
+
+<h3><A NAME="dlbbsm">Ballasts and Bulbs Should be Matched!</A></h3>
+
+HID bulbs generally need specific ballasts, and any given ballast can usually
+safely and effectively operate only one type or a few types of HID bulbs.
+<p>
+The bulb wattage must be matched to the ballast.  A smaller bulb will
+usually be fed a wattage close to what the proper bulb takes, and will
+generally overheat and may catastrophically fail.  Any catastrophic
+failures may not necessarily happen quickly.  A larger bulb will be
+underpowered, and will operate at reduced efficiency and may have a
+shortened lifetime.  The ballast may also overheat from prolonged 
+operation with an oversized bulb that fails to warm up.
+<p>
+See <A HREF="http://www.donklipstein.com/dschtech.html">The Discharge Lamp
+Mechanics Document (rather technical)</A> for why it can be bad to
+underpower an arc discharge lamp.
+<p>
+Even if the ballast and bulb wattages match, substitutions can be
+limited by various factors including but not limited to different
+operating voltages for different bulbs.  Examples are:
+<ol>
+<li>Pulse-start sodium lamps often have a slightly lower operating voltage
+   than metal halide and mercury lamps of the same wattage, and ballasts
+   for these sodium bulbs provide slightly more current than mercury and
+   metal halide ballasts for the same wattage would.  The higher current
+   provided by the pulse-start sodium ballast can overheat mercury and
+   metal halide lamps.  Mercury and metal halide lamps may also "cycle"
+   on and off in lower voltage sodium ballasts, such as many 50 to 100
+   watt ones.
+<p>
+<li>Metal halide lamps have an operating voltage close to that of mercury
+   lamps in many wattages, but have stricter tolerances for wattage and
+   current waveform.  Metal halides also usually need a higher starting
+   voltage.  Most metal halide lamps 100 watts or smaller require a high
+   voltage starting pulse around or even over 1,000 volts.
+<p>
+   175 to 400 watt metal halide lamp ballasts can power mercury lamps of
+   the same wattage, but the reverse is not recommended.  Mercury lamps 
+   50 to 100 watts will work on metal halide ballasts, but hot restriking
+   of mercury lamps 100 watts or smaller on metal halide lamps may be hard
+   on the mercury lamp since the starting pulse can force current through
+   cold electrodes and the starting resistor inside the mercury lamp.
+<p>
+<li>1,000 watt mercury lamps come in two operating voltages, one of which
+   is OK for 1,000 watt metal halide ballasts.  A few wattages of pulse-start
+   sodium (150 watts?) come in two voltages.
+<p>
+   A low voltage lamp in a high voltage ballast will be underpowered,
+   resulting in reduced efficiency, possible reduced lamp life, and possible
+   ballast overheating.  A high voltage lamp in a low voltage ballast will
+   usually cycle on and off, operate erratically, or possibly overheat.
+   This will usually result in greatly reduced lamp life in any case.
+<p>
+<li>One class of sodium lamps is made to work in mercury fixtures, but
+   these only work properly with some mercury ballasts, namely:
+<p>
+ <ul>
+ <li>'Reactor' (plain inductor) ballasts on 230 to 277 volt lines.
+<p>
+ <li>'High leakage reactance autotransformer' ballasts, preferably with
+     an open circuit voltage around 230 to 277 volts.  NOT 'lead',
+     'lead-peak' nor any metal halide ballast!
+ </ul>
+<p>
+   These sodium lamps may suffer poor power regulation and accelerated aging
+   in the wrong mercury ballasts, especially after some normal aging changes
+   their electrical characteristics.  Also, these lamps may overheat and
+   will probably have shortened life with pulse-start sodium ballasts.
+<p>
+<li>Many sodium lamps require a high voltage starting pulse provided only
+   by ballasts made to power such lamps.
+</ul>
+
+<h3><A NAME="dlodld">Operation of Discharge Lamps on DC</A></h3>
+
+Sometimes, one may want to run a discharge lamp on DC.  There are two
+possible reasons:
+<ul>
+<li>Only DC power is available.
+<p>
+<li>To reduce flicker.  Sometimes, the lamp performs differently for
+  electricity flowing in one direction than the other.  In addition, the
+  positive and negative ends of the arc can make different amounts of 
+  light, resulting in a flicker rate equal to the AC frequency rather than
+  twice the AC frequency.
+<p>
+  However, end flicker is usually not significant.  In HID lamps, the
+  total arc size is generally small.  Only if the fixture has a reflector
+  that causes some areas to receive light from only one end of the arc
+  should end flicker be significant.  In most multi-tube fluorescent
+  fixtures, the tubes are usually in series pairs with the two tubes in any
+  pair oriented in opposite directions.  This generally reduces end flicker
+  effects, especially in fixtures with diffusing lenses.
+<p>
+  Bulbs should perform close enough to identically in both directions, unless
+  the bulb is near the end of its life.  In such a case, one electrode
+  deteriorates enough to affect performance before the other does.  However,
+  this generally indicates a need to replace the bulb rather than to attempt
+  to make it flicker less.
+</ul>
+If you want to rectify the AC to provide the bulb with DC, use a bridge
+rectifier after the ballast.  Most ballasts, including all "iron" types,
+require AC of the proper voltage and frequency to work.  Do this only if
+only two wires feed the bulb.  Otherwise, diodes in the bridge rectifier may
+short parts of the ballast to each other, at least for half the AC cycle.
+Problems can also occur with fluorescent ballasts with filament windings.
+Only fully isolated filament windings or separate filament transformers
+should be used if you rectify the output of a ballast with filament windings.
+Also, the bridge rectifier must withstand the peak voltage provided by the
+ballast.
+<p>
+If the power supply is DC of adequate voltage, you need a resistor ballast
+or an electronic ballast specifically designed to run your lamp from the
+available DC voltage.  "Iron" ballasts only limit current when used with
+AC.  Preheat fluorescent lamps operated from DC supplies and without
+special ballasts need both the usual "iron" ballast to provide the
+starting "kick" and a resistor to limit current.
+<p>
+In addition, most discharge lamps are only partially compatible with DC, and
+some are not compatible at all.
+<p>
+Mercury vapor and fluorescent lamps generally work on DC.  However, the life
+may be shortened somewhat by uneven electrode wear.
+<p>
+Fluorescent lamps may get dim at one end with DC.  Since the mercury vapor
+ionizes more easily than the argon, some of it exists as positive ions.  This
+can cause the mercury to be pulled to the negative end of the tube, resulting
+in a mercury shortage at the positive end.  This is more of a problem with
+longer length and smaller diameter tubes. 
+<p>
+Some fluorescent fixtures made for use where the power available is DC have
+special switches to reverse polarity every time the fixture is started.  This
+balances electrode wear and reduces mercury distribution problems.
+<p>
+Mercury vapor lamps generally work OK with DC, but some may only reliably
+work properly if the tip of the base is negative and the shell of the base is
+positive.  This is because the starting electrode does its job best when it
+is positive.
+<p>
+In addition, if the nearby main electrode is positive, it may cause a thin
+film of metal condensation that shorts the starting electrode to the nearby
+main electrode.  This may make some brands, models, and sizes of mercury
+lamps unable to start after some use.  The negative main electrode will not
+release as much vaporized electrode material, since the electrode material
+easily forms positive ions making the electrode material vapor tend to
+condense on the electrode rather than condense on nearby parts of the arc
+tube.
+<p>
+Metal halide and sodium lamps should not get DC.  Use these only with
+ballasts that give the bulb AC.  In metal halide lamps, ions from the
+molten halide salts can leach into hot quartz in the presence of a DC
+electric field. This can cause strains in the quartz arc tube.  At the
+ends of the arc tube, electrolysis may occur, releasing chemically
+reactive halide salt components that can damage the arc tube or the
+electrodes.  The arc tube may crack as a result.
+<p>
+There are a few specialized metal halide lamps that are made to work on DC.
+These often have asymmetrical electrodes and/or short arc lengths.  These
+lamps often also must be operated only in specific positions, and only with
+the type of current they were designed for in order to achieve the proper
+distribution of active ingredients within the arc tube and to achieve proper
+electrode usage.  For example, some of these lamps may go wrong in some way
+or another with AC.
+<p>
+In high pressure sodium lamps, which contain both sodium and mercury, the
+sodium forms positive ions more easily than the mercury does and drifts
+towards the negative electrode.  The positive end can go dim from a lack
+of sodium.  In addition, if any part of the arc tube is filled with a
+mixture containing excessive sodium and a lack of mercury, heat conduction
+from that part of the arc to the arc tube will increase.  Furthermore, the
+hot arc tube may suffer electrolysis problems over time in the presence of
+sodium ions and a DC electric field.
+<p>
+Low pressure sodium lamps should not get DC for the same reasons.  The sodium
+is likely to drift to the negative end of the arc tube, and hot glass will
+almost certainly experience destructive electrolysis problems if exposed to
+hot sodium or sodium ions and a DC electric field.
+
+<h3><A NAME="dlsphid">Special purpose HID lamps such as xenon and HMI</A></h3>
+
+The usual general purpose HID lamps are mercury vapor, metal halide, and
+high pressure sodium. You can get these at home centers, although usually
+only in wattages up to 400 watts. These versions of HID lamps are
+optimized for high efficiency, long life, and minimized manufacturing
+cost.
+<p>
+However, the arc surface brightness of these lamps is roughly equal to the
+surface brightness of incandescent lamp filaments and general purpose
+halogen lamp filaments. For some applications such as endoscopy and movie
+projection, it is necessary to have a much more concentrated light source.
+This is where specialized HID lamps such as short arc lamps and HMI lamps
+come in.
+<p>
+Short arc lamps consist of a roughly spherical quartz bulb with two heavy
+duty electrodes spaced only a few millimeters apart at the tips. The bulb
+may contain xenon or mercury or both. Mercury short arc lamps have an
+argon gas fill for the arc to start in.
+<p>
+In a short arc lamp, the arc is small and extremely intense. The power
+input is at least several hundred and more typically a few thousand watts
+per centimeter of arc length. The operating pressure in the bulb is
+extremely high - sometimes as low as 20 atmospheres, more typically 50 to
+over 100 atmospheres. These lamps are an explosion hazard!
+<p>
+Mercury short arc lamps are used when a compact, intense source of UV is
+needed or where one cannot have the high voltage starting pulses needed
+for xenon short arc lamps. Mercury short arc lamps are slightly more
+efficient than xenon ones. The pressure in a mercury short arc lamp does
+not need to be as high for good efficiency as in a xenon one, but is still
+tremendous.
+<p>
+Xenon short arc lamps are more common than mercury ones, since they do not
+require time to warm up the way mercury lamps do and have a daylight-like
+spectrum. A disadvantage of xenon is the requirement of a very high
+voltage starting pulse - sometimes around 30 kilovolts!
+<p>
+Xenon short arc lamps are used for movie projection and sometimes for
+searchlights.  Lower wattage ones are used in specialized devices such as
+endoscopes.
+<p>
+HMI lamps are metal halide lamps with a more compact and more intense arc.
+The arc is larger and less intense than that of a short arc lamp. Typical
+power input is hundreds of watts per centimeter of arc length, but gets to
+a few kilowatts per centimeter in the largest ones.
+<p>
+HMI lamps are used in some spotlights. They are used in some endoscopes
+and projection applications where the intensity of the HMI arc is adequate
+since they cost less and last longer and are more efficient than true
+short arc lamps.
+<p>
+There are all sorts of HMI and similar lamps, including HTI lamps and the
+lamps used in HID auto headlights.
+
+<h3><A NAME="dlhauto">HID Automotive Headlights</A></h3>
+
+First there were gas lamps, then there were electric bulbs, then sealed
+beam, then halogen.  Now, get ready for - drum roll please! - high intensity
+discharge lamps with sophisticated controllers.  High-end automobiles from
+makers like BMW, Porsche, Audi, Lexus, and now Lincoln are coming equipped
+with novel headlight technology.  No doubt, such technology will gradually
+find its way into mainstream automobiles - as well as other applications
+for mortals.
+<p>
+Among the potential advantages of HID headlights are higher intensity,
+longer life, superior color, and better directivity:
+<ul>
+<li>Light intensity - HID lamps are about 3 times as efficient as halogen
+  lamps.  Thus, even when the efficiency of the DC-DC converter is taken
+  into consideration, the lower power input can actually result in much
+  brighter headlights than are possible with halogen bulbs.  This reduced
+  power also leads to cooler operation and less drain on the battery and
+  alternator.
+<p>
+<li>Lifespan - an HID lamp can be expected to last 2,700 hours or more and
+  thus covered under the bumper to bumper warranty for 100,000 miles.  As
+  a practical matter, the HID lamp may outlast the automobile.  Since
+  warranty replacement of headlights turns out to be a significant expense,
+  there is strong incentive to see this long lived technology take off.
+<p>
+<li>Spectral output - the light from the HID lamp is richer in blue (and more
+  like daylight) than halogen bulbs.  This turns out to enhance reflectivity
+  of signs and road markings.
+<p>
+<li>Beam pattern - the small arc size of the HID lamp permits the optical
+  system to be optimized to direct light more effectively to where it is 
+  needed and prevent it from spilling over to where it is not wanted.
+</ul>
+In order to make this practical - even for a $40,000 Lexus - special DC-DC
+converter chips have been designed specifically with automotive applications
+in mind.  These, along with a handful of other basic electronic components,
+implement a complete HID headlight control system.
+<p>
+The HID bulb itself is similar in basic design to traditional HID lamps:
+Two electrodes are sealed in a quartz envelope along with a mix of solids,
+liquids, and gasses.  When cold, these materials are in their native state
+(at room temperature) but are mostly gases when the lamp is hot.  Starting
+of these lamps may require up to 20 KV to strike an arc but only 50 to 150 V
+to maintain it.  Lamps may be designed to operate on either AC or DC current
+depending on various factors including the size and shape of the electrodes.
+A unique set of ballast operating parameters must be matched to each model
+HID bulb.
+<p>
+Of all the problems that had to be addressed for HID headlights to become
+practical (aside from the cost), the most significant was the warmup time.
+As noted in the section: "High intensity discharge (HID) lamp technology",
+common HID lamps require a warmup period of a few minutes before
+substantially full light output is produced.  This is, of course, totally
+unacceptable for an automotive headlight both for cold start (imagine:
+"Honey, I have to go cook the headlights") as well as when they need to be
+blinked.  The warmup problem was solved by programming the controller to
+deliver constant power to the lamp rather than the more common nearly
+constant current that would be provided by a traditional ballast.  With
+this twist along with a special lamp design, the lamp comes up to at least
+75% of full intensity in under 2 seconds.  The controller also provides
+'hot strike' capability for blinking (recall that HID lamps typically
+cannot be restarted when hot).  Thus, restarting a hot lamp is absolutely
+instantaneous.
+<p>
+While this technology is just beginning to appear, expect inroads (no pun
+intended) into household, office, store, factory, and other area and work
+lighting.  The combination of high efficiency, long life, desirable spectral
+characteristics, small size, and solid state reliability should result in
+many more applications in the near future.  The nearly instant starting
+capability addresses one of the major drawbacks of small HID lamps.
+<p>
+If you have some time and money to spare:
+<p>
+(From: Declan Hughes (hughes@aero.tamu.edu).)
+<p>
+Check out:  <A HREF="http://www.sylvania.com/">OSRAM Sylvania Products Inc</A>.
+<p>
+They have a "sample" for sale at $250.00 for one lamp including the 12 VDC
+electronic ballast. 42 W total power, 35 W light power, 3,200/2,800 lm output
+(there are two types, D2S and D2R), 2,000 hours rated lifetime, 91/80 lm/W
+luminous  efficacy, 4,250/4,150 K color temperature, 6,500 cd/cm^2 average
+luminance, 4.2 mm arc length, burning position horizontal +/- 10 deg., luminous
+flux after 1 sec. = 25%, max. socket temp. = 180 deg C, any errors are mine.
+
+<h3><A NAME="dlhidsb">Substitution of Metal Halide Lamps?</a></h3>
+
+The following was prompted by a request for info on replacing an (expensive)
+250 watt metal halide lamp in a video projector with something else.
+<p>
+I would not substitute this lamp, for many reasons below:
+<p>
+The metal halide lamp requires a ballast.  The ballast should only run a
+250 watt metal halide lamp of the same arc voltage.  You will have to
+measure the arc voltage yourself after the lamp warms up, and do this
+without exposing yourself to the nasty UV that some of these things emit
+but which does not pass through glass.  Arc voltages of many specialized
+metal halide lamps are not widely published and may or may not be
+available from the lamp manufacturer.
+<p>
+WARNING: The strike voltage on these may be several kV which will probably
+obliterate your multimeter should the arc drop out and attempt to restart
+while you are measuring it!  Either the operating or strike voltage may
+obliterate you should you come in contact with live terminals!
+(Special metal halides probably usually only need a couple to a few kV.
+Xenon metal halide automotive lamps need 6 to 12 kV to strike and 15 to 20 kV
+for hot restrike.  The worst are short arc xenon that may use up to 30 kV or
+more.)
+<p>
+Most metal halide lamps are AC types and some are DC and you can only
+use AC lamps on AC output ballasts and DC lamps on DC output ballasts.
+Different metal halide lamps may have different requirements for
+starting voltage also.
+<p>
+If you match arc voltage, AC/DC type, and the ballast will start the
+lamp, you might be in business but good chance not.  Many projector lamps
+have specific cooling requirements and some have specific burning position
+requirements.  Metal halide lamps may prematurely fail (possibly violently!)
+if they overheat, in addition to being off-color.  If overcooled, they are
+more like mercury lamps and will be off-color and have reduced light output.
+In addition, some metal halide lamps have a halogen cycle in them to keep
+the inner surface of the bulb clean, and that may not work if the lamp is
+overcooled and not enough of the chemicals in the bulb get vaporized.
+This could also even make the lamp fail.
+<p>
+If you get the alternate lamp to operate satisfactorily, the arc may be
+in a different location from that of the original lamp.  The arc may be of
+a different shape or size than that of the original lamp.  This can
+affect your projection.  Your projection may not get much light or may
+have illumination of only part of the picture.
+<p>
+The arc may have a different color or spectrum, which can affect the
+color rendering of what's being projected.  Metal halide arcs are often
+not of uniform color, and if the alternate lamp has a less color-uniform
+arc than the original lamp then your pictures may have strange color tints
+in them.
+<p>
+As for using a halogen instead of metal halide?  You will get less
+light, as well as problems from the filament having a different shape or
+size than the original metal halide arc does.  Most likely, the filament
+is larger or longer than the arc and this will reduce the percentage of
+the light being utilized.  Should you try a halogen lamp hack, you will
+almost certainly have to bypass the metal halide ballast.  And halogen
+lamps emit more infrared than metal halide lamps of the same wattage - you
+might overheat the source of your image (e.g., LCD panel or transparency).
+<p>
+I would not recommend substituting a projector lamp for all of these
+reasons.  This should only be tried at your own risk and only by those
+that are very familiar with all of the characteristics of the lamps in
+question - including being familiar with burning position requirements,
+cooling requirements, shape and size of the light-emitting region, etc.
+<p>
+Projector lamps in general, and especially specialized HID lamps, should
+be used only in equipment made specifically to use the particular lamps in
+question, or by those who know about these things well enough to make
+their own ballasts and know the other messy things about these lamps.  And
+you may not save much by using a different lamp - specialized metal halide
+lamps are all expensive.
+<p>
+And for anyone shopping for any sort of projector - look into price,
+availability, and life expectancy of lamps!
+
+<h3><A NAME="dljshb">Jonathan's 12 V Inverter for HID Lamps</h3>
+
+See <A HREF="jshidbal.htm">Jonathan's Electronic Ballast to Power HID
+Lamps from 12 VDC</A> for a description and schematic of an inverter
+that will drive a variety of high intensity discharge lamps from low voltage
+DC.  Or, just the schematic at <A HREF="jshb1sch.gif">Schematic of Jonathan's
+Electronic Ballast to Power HID Lamps from 12 VDC</A>.
+<p>
+<A NAME="dllps"> </A>
+<hr>
+<br>
+<li>Back to <A HREF="#dltoc">Discharge Lamp FAQ Table of Contents</A>.
+<h2>Low Pressure Sodium Lamps</h2>
+
+(Portions from: Bruce Potter (s60231@aix2.uottawa.ca))
+<p>
+Low pressure sodium lamps are the most efficient visible light sources in
+common use.  These lamps have luminous efficacies as high as 180 lumens per
+watt.
+<p>
+A low pressure sodium lamp consists of a tube made of special sodium-resistant
+glass containing sodium and a neon-argon gas mixture.  Since the tube is
+rather large and must reach a temperature around 300 degrees Celsius, the tube
+is bent into a tight U-shape and enclosed in an evacuated outer bulb in order
+to conserve heat.  As an additional heat conservation measure, the inner
+surface of the outer bulb is coated with a material that reflects infrared but
+passes visible light.  This material has traditionally been tin oxide or
+indium oxide.
+<p>
+The electrodes are coiled tungsten wire coated with thermionically emissive
+material, and somewhat resemble the electrodes of fluorescent lamps.  Unlike
+most fluorescent lamps, low pressure sodium lamps have only one electrical
+connection to each electrode and the electrodes cannot be preheated.
+<p>
+The gas mixture is a "Penning" mixture, consisting mainly of neon with a small
+amount of argon.  Depending on who you listen to, this mixture is .5 to 2
+percent argon, 98 to 99.5 percent neon.  More argon-rich mixtures around 98-2
+may be favored today since hot glass has some ability to absorb argon from a
+low pressure electric discharge.  Ideally the mixture should be only a few
+tenths of a percent argon, in order to ionize most easily and do so much more
+easily than pure neon or pure argon.
+<p>
+A significant surplus of sodium is contained in the glass arc tube since the
+glass may absorb or react with some of the sodium.  The sodium vapor pressure
+is controlled by the temperature of the coolest parts of the arc tube.  When
+the arc tube reaches a proper temperature, further heating is reduced by the
+lamp's efficiency at producing light instead of heat.
+<p>
+The arc tube has dimples in it, which are normally slightly cooler than the
+rest of the arc tube.  This causes the sodium metal to collect in the dimples
+instead of covering a larger portion of the arc tube and blocking light.
+<p>
+The low pressure sodium lamp usually requires 5 to 10 minutes to warm up.
+<p>
+The light of low pressure sodium consists almost entirely of the orange-yellow
+589.0 and 589.6 nm sodium lines.  This light is basically monochromatic
+orange-yellow.  This monochromatic light causes a dramatic lack of color
+rendition - everything comes out in an orange-yellow version of
+black-and-white!  This can cause some confusion in parking lots since cars
+become more alike in color.
+<p>
+Some basically red and reddish color fluorescent inks, dyes, and paints can
+fluoresce red to red-orange from the yellow sodium light and these will stand
+out in sodium light with color differing from that of the sodium light.
+<p>
+Another disadvantage of low pressure sodium light is that many objects will
+look darker than they would with an equal amount of other light.  Red, green,
+and blue objects look dark under low pressure sodium light.  Most other
+sources of light of sodium-like color such as "bug bulbs" have significant red
+and green output and will render red and green objects at least somewhat
+normally.
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#dltoc">Discharge Lamp FAQ Table of Contents</A>.
+<p>
+-- end V1.36a --
+<p>
+</BODY>
+</HTML>

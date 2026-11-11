@@ -1,0 +1,619 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/uMD2/SG-uMD0-V1.0-am.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<TITLE>Assembly Instructions for the SG-&micro;MD0 - RS422 and Analog Inputs</TITLE>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/uMD2/SG-uMD0-V1.0-am.htm">https://www.repairfaq.org/sam/uMD2/SG-uMD0-V1.0-am.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<p>
+<center>
+<h1>
+Assembly Instructions for the SG-&micro;MD0 - RS422 and Analog Inputs<br>
+</h1>
+<h2>
+Version 1.00 (27-Feb-21)
+<br>
+</h2>
+<h3>
+<A HREF="https://www.repairfaq.org/sam/uMD2/copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="https://www.repairfaq.org/sam/uMD2/emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+
+<link rel="icon" href="https://www.repairfaq.org/sam/uMD2/uMD1-16%40v%3D2.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://www.repairfaq.org/sam/uMD2/uMD1-16%40v%3D2.ico" type="image/x-icon">
+
+<p>
+<A NAME="umd0.0toc"></A>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#sgumd1.0pre">Preface</a>
+ <ul>
+ <li><A HREF="#sgumd1.0aac">Author and Copyright</a>
+ <li><A HREF="#sgumd1.0dis">DISCLAIMER</a>
+ <li><A HREF="#sgumd1.0ack">Acknowledgment</a>
+ </ul>
+<li><A HREF="#sgumd1.0int">Introduction</a>
+<li><A HREF="#sgumd1.0sch">Schematics for &micro;MD0 Version 1.0</a>
+<li><A HREF="#sgumd1.0agr">Assembly Guidlines for RS422 Version</a>
+<li><A HREF="#sgumd1.0aga">Assembly Guidlines for Analog Version</a>
+<li><A HREF="#sgumd1.0epl">Parts Lists</a>
+</ul>
+<p>
+<A NAME="sgumd1.0pre"></A>
+<hr>
+<h3>Preface</h3>
+<h4><A NAME="sgumd1.0aac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="https://www.repairfaq.org/sam/uMD2/emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="https://www.repairfaq.org/sam/uMD2/copyright.htm">Copyright &copy<A> 1994-2016
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1. This notice is included in its entirety at the beginning. 
+<br>
+2. There is no charge except to cover the costs of copying. 
+
+<h4><A NAME="sgumd1.0dis">DISCLAIMER</a></h4>
+
+&micro;MD0 is intended for use in hobbyist, experimental, research, and other
+applications where a bug in the hardware, firmware, or software, will not
+have a significant impact on the future of the Universe or anything else.
+While every effort has been made to avoid this possibility, &micro;MD2 is an
+on-going development effort.  We will not be responsible for any consequences
+of such bugs including but not limited to damage to the construction crane you
+picked up on eBay for $1.98 + shipping, financial loss from ending up in
+the Antarctic when the compass orientation provided by
+your home-built ring laser gyro was off
+by 1,536 degrees, or bruising to your pet's ego from any number
+of causes directly or indirectly related to &micro;MD0. ;-)
+
+<h4><A NAME="sgumd1.0ack">Acknowledgment</a></h4>
+
+Thanks to Jan Beck for providing support for enhancements
+and bug fixes and tolerating my silly C coding questions.
+He was also instrumental in developing the initial
+&micro;MD1 firmware and GUI.  And for getting me interested
+in actually getting involved in that project.  If anyone had told me 
+six months ago that I'd be writing code in C, MIPS assembly language,
+and Visual Basic - and enjoying it (sort of) - I would have suggested
+they were certifiably nuts. ;-)  Jan maintains the master GUI source code
+as well as slightly different versions of both the &micro;MD1 and
+&micro;MD2 firmware and a development blog on these and other projects.
+<br>
+<p>
+<A NAME="sgumd1.0int"></A>
+<hr>
+<h3>Introduction</h3>
+
+The &micro;MD0 kit of parts includes everything necessary for
+a 1 axis readout.  The extension to 2 or 3 axes is left as an
+exercise for the user.  But unlike &micro;MD1 and &micro;MD2,
+this is quite straightforward without adding too many gray hairs. ;-)
+<p>
+The Atmega 328P Nano 3.0 microcomputer is fully assembled including
+all pins.  So &micro;MD0 can be constructed on a solderless breadboard
+for testing at least.  Later, it can be transferred to a prototyping
+board with soldered connections.  All components are through-hole.  The
+only parts not included in the kit are jumper wires for the solderless
+breadboard.
+<p>
+<b>IMPORTANT:</b> All the resistors are labeled using the standard color
+as shown below.  Normal color vision
+is required to be able to identify these reliably.  Even then, it is sometimes
+difficult to confirm the values that differ in one band or in poor lighting.
+And a magnifier may be required to read
+some markings on these and other components.  If in doubt, have someone
+else assemble the kit or assist you.
+<p>
+For those not familiar with the common resistor color code
+(Black/0, Blown/1, Red/2, Orange/3, Yellow/4, Green/5, Blue/6, Violet/7,
+Gray/8, White/9), two of the resistors near the 8 pin UA9637 ICs in
+the layout diagram are are 680 (blue-gray-brown
+or 68 with 1 zero) ohms and 330 (33 with 1 zero) ohms.  The gold stripe
+indicates 5 percent tolerance on the value but for the use here, tolerance
+doesn't matter.  (It's possible the resistors you use will have 4 stripes
+where 3 of them are the value and the 4th is the multiplier, along with one
+for tolerance.  If in doubt confirm the value with a multimeter.)  The chart below is from Digikey.  (If the link decays, a Web search will readily
+locate another one.)
+<p>
+<center>
+<img src="http://www.digikey.com/-/media/Images/Marketing/Resources/Calculators/resistor-color-chart.jpg"><br>
+<h3>Resistor Color Code Chart (from the Digikey Web site)</h3>
+</center>
+<p>
+
+<h3><A NAME="sgumd1.0sch">Schematic for the SG-&micro;MD2 Version 1.0</a></h3>
+
+The schematic for both the RS422 and Quad-Sin-Cos (analog) versions
+may be found at: <A HREF="https://www.repairfaq.org/sam/uMD2/sgum0sch1.0.pdf">SG-&micro;MD0
+Version 1.0 Schematic</A>.  (Coming soon.)
+<p>
+Printing out the schematic and having it available for reference while
+installing the parts on the solderless breadboard.
+
+<h3><A NAME="sgumd1.0agr">AAssembly Guidlines for RS422 Version</a></h3>
+
+Coming soon.
+
+<h3><A NAME="sgumd1.0aga">AAssembly Guidlines for Analog Version</a></h3>
+
+Coming soon.
+
+<p>
+The parts list below assumes populating the SG-&micro;MD2 for 3 channels
+with the OLED display.  So for a single channel system, some parts in this
+list may not be present and/or there is no need to install those associated
+with channels 2 and 3 and/or for the OLED.
+<p>
+The OLED display color may be yellow/blue (yellow for first two lines of text
+with blue for the remaining 6 lines), all blue, or all white.  In addition,
+they may differ slightly in their pinout and mounting hole type/location
+as follows (viewed with the pins at the top):
+<p>
+ <ul>
+ <li><b>Type 1:</b> GND on the left and VCC (V3.3) on the right.
+  The mounting holes are round.  Their locations match the
+  SG-&micro;MD2 PCB holes.
+<p>
+ <li><b>Type 2:</b> VCC (V3.3) on the left and GND on the right.
+  The mounting holes are elongated.  Their locations do not match
+  the SG-&micro;MD2 PCB holes.
+ </ul>
+<p>
+ There may be other variations.  The kits will generally have the Type
+ 1 yellow/blue OLEDs.  If you bought a Type 2 OLED, DO NOT drill
+ holes in the SG-&micro;MD2 PCB to make the screws line up as this risks
+ shorting the internal VCC and GND planes, use some insulated wires in place
+ of the screws and Epoxy - or duct tape. ;-)  Elongating the holes in the
+ OLED PCB may be accepatable though.
+<p>
+<ol>
+<li>( ) Confirm that all parts are present and undamaged:
+<p>
+ <ul>
+ <li>( ) 1x blank SG-&micro;MD2 V1.0 PCB.  Confirm the version on the
+  silkscreen near the location of the USB connector.  Inspect for plating
+  or other defects.
+<p>
+ <li>( ) 1x Teensy 4.0 PCB in antistatic bag.
+ <li>( ) 1x 28 pin wide DIP socket (may be larger needing trimming).
+ <li>( ) 2x 14 pin SIP male-male socket strip for Teensy.
+ <li>( ) 1x 3 mm blue LED.
+ <li>( ) 1x 10 ohm 1/8 W resistor (brown-black-black-gold).
+ <li>( ) 1x 10K ohm 1/8 W resistor (brown-black-orange-gold).
+<p>
+ <li>( ) 3x 5 pin screw terminal block.
+ <li>( ) 3x UA9637 or UA9639 line receiver (8 pin DIP in foam or tube).
+ <li>( ) 3x 8 pin DIP socket.
+ <li>( ) 3x 0.1 &micro;F ceramic capacitor (marked with 104 or 0.1).
+ <li>( ) 4x 3 mm red LED (3 required, a spare).
+ <li>( ) 4x 3 mm green LED (3 required, a spare).
+ <li>( ) 12x 150 ohm 1/8 W resistor (brown-green-brown-gold).
+ <li>( ) 6x 330 ohm 1/8 W resistor (orange-orange-brown-gold).
+ <li>( ) 6x 680 ohm 1/8 W resistor (blue-gray-brown-gold).
+ <li>( ) 3x 1K ohm 1/8 W resistor (brown-black-red-gold).
+ <li>( ) 1x 10K ohm 1/8 W resistor (brown-black-orange-gold).
+ <li>( ) 3x 36K ohm 1/8 W resistor (orange-blue-orange-gold).
+ <li>( ) 1x 40 pin female-male socket strip.
+ <li>( ) 1x 1 pin male-male socket strip to be cut in pieces for
+  jumper headers (JBx) if desired.
+<p>
+ <li>( ) 1x 0.96" 128x64 OLED IIC display in antistatic wrap or bag.
+ <li>( ) 1x 4 pin SIP male-male socket strip for OLED.
+ <li>( ) 2x M2*16 screw for OLED mounting.
+ <li>( ) 2x M2 nut for OLED mounting.
+ </ul>
+<p>
+ For a single axis system, approximately 2/3rds of the components in the
+ last block will not be present.  And the OLED will not be present, uh, for
+ the system with OLED. :)
+<p>
+The "Optional" parts identified below
+can be omitted if that feature is not being
+implemented.  The LEDs especially are not really
+that useful and with the 10K ohm current limiting resistors, annoying bright.
+So you may want to at least experiment with higher values of resistors (like
+22K or even 47K) to tame them.
+<p>
+<li>( ) Install R0 (10K ohms) under where the Teensy socket will go.
+<p>
+<li>( ) Install R31 (10 ohms) under where the Teensy socket will go.
+<p>
+<li>( ) Trim the large socket if necessary so it has two rows of 14 pins.
+ This is for MPB1, the Teensy 4.0 PCB.
+<p>
+<li>( ) Carefully insert it in the PCB confirming no bent pins.  Rather
+ than flipping a coin :), orient it so the large cutout faces the USB to
+ the left.  Then solder
+ two corners and confirm it seats flat, then solder the other pins.  Inspect
+ for solder bridges and unsoldered pins.
+<p>
+<li>( ) Install the 8 pin sockets for U1 (single axis) and U2,U3 (three axes).
+ Note orientation - the cutout goes to the right as viewed in the layout
+ diagram.  Solder and inspect for solder bridges and unsoldered pins.
+<p>
+<li>( ) Install C1 (0.1 &micro;F, single axis) and C2,C3 (three axes).
+ C1,C2,C3 are the oval outlines to right of U1,U2,U3 respectively.
+<p>
+<li>( ) Install R4,R9 (330 ohms, single axis) and R14,R19,R24,R29 (three axes).
+<p>
+<li>( ) Install R5,R10 (680 ohms, single axis) and R15,R20,R25,R30
+ (three axes).
+<p>
+<li>( ) Install D0 (3 mm blue LED).  The anode is the longer lead
+ and goes to the right as viewed in the layout diagram.  The flat is the
+ cathode and goes to the left.  Cut the leads about 1/10" from the body
+ if the LED can't be inserted to sit flush on the PCB.  Take care not
+ to overheat or stress the leads on the LED when soldering.  Be as quick
+ as possible.
+<p>
+<li>( ) Optional signal LEDs:
+<p>
+ <ul>
+ <li>( ) Install R3 (36K ohms, single axis) and R13,R23 (three axes).
+ <li>( ) Install R8 (1K ohms, single axis) and R18,R28 (three axes).
+<p>
+ <li>( ) Install D1 (3 mm green LED, single axis) and D3,D5 (three axes).
+ <li>( ) Install D2 (3 mm red LED, single axis) and D4,D6 (three axes).
+<p>
+  The anode is the longer lead
+  and goes to the right as viewed in the layout diagram.  The flat is the
+  cathode and goes to the left.  Cut the leads about 1/10" from the body
+  if the LED can't be inserted to sit flush on the PCB.  Take care not
+  to overheat or stress the leads on the LED when soldering.  Be as quick
+  as possible.
+ </ul>
+<p>
+<li>( ) Install J1 (screw terminal block, single axis) and J2,J3 (three
+ axes).  Make sure the entrance holes for the wires face away from the
+ PCB!  Solder the center pin and confirm they are flat on the PCB, the
+ solder the others.  Check for solder bridges and unsoldered pins.
+<p>
+<li>( ) Install jumper wires (cut resistor leads) at JB1 and JB2 as shown
+ in blue on the layout diagram.  This selects the Homodyne signals.
+<p>
+<li>( ) Carefully inspect for unsoldered pins, solder bridges and
+ other blemishes.  Correct as needed.  THIS IS ESSENTIAL!
+ It would be bad form to blow the brain due to an errant blob of solder. :(
+<p>
+<li>( ) Test the Teensy before doing anything to it.  If it fails this test,
+ contact me before proceeding.
+<p>
+ <ul>
+ <li>Connect it to a USB port using the USB A to USB Micro B cable.
+  Assuming the &micro;MD2 firmware has been installed, after a
+  second or so, D13, the on-board LED, acts as a heartbeat monitor and
+  should start flashing in some pattern not yet fully determined, but
+  it will be unlike the "Blink" sketch. ;-)  Currently it's a short flash
+  ever 0.5 to 1 seconds.
+<p>
+ <li>It should also be spitting out data via the USB COM port.  In the
+  Arduino IDE, go to Tools->Port and select the port that it is plugged
+  into.  It should show something like: COM5 "Serial (Teensy)".
+<p>
+ <li>Go to Tools-Serial Monitor.  A window should appear showing data
+  being sent to the COM port.  It will be mostly boring but the 6th value
+  should be incrementing by 1, probably at around 1 kHz:
+<p>
+<PRE>
+  0 0 0 0 0 18016 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18017 10 124 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18018 8 100000 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18019 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18020 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18021 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18022 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18023 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18024 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18025 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18026 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18027 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18028 0 0 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18029 20 4099 0 0 0 0 0 0 0 0
+  0 0 0 0 0 18030 0 0 0 0 0 0 0 0 0 0
+</PRE>
+<p>
+  (Should you care, the 6th and 7th values are the "Low Speed Code" and
+  "Low Speed Data", respectively.  10,124 is the firmware version 1.24;
+  8,100000 is the sample rate of 1,000 x 100, and 20,4099 specifies 3 homodyne
+  axes + a homodyne multiplier of 4 x 256.)
+ </ul>
+<p>
+ Unplug the USB cable.
+<p>
+<li>( ) Assemble the Teensy 4.0 PCB to the pin or socket strips.  There will
+ either be a pair of 14 pin female-male socket strips precut or the male to
+ male pin strip that needs cutting:
+<p>
+ <ul>
+ <li><b>Female to male socket strips:</b> The male pins slip through the
+  Teensy PCB holes from the top so the female sockets are accessible when
+  Teensy is plugged into the large socket on the SG-&micro;MD2 PCB.
+<p>
+ <li><b>Male to male pin strip:</b> The short pins slip through the Teensy PCB
+  from the bottom.  (This is what's shown in the photo of the completed
+  SG-&micro;MD2 PCB, above.)
+ </ul>
+<p>
+  Solder a single pin near the center and
+  confirm it seats flush, then solder the rest.
+  To assist in alignment, the strips can be inserted in the 28 pin socket
+  taking care not to push any of the individual pins out of position.
+<p>
+<li>( ) Test the Teensy as above before plugging it into the SG-&micro;MD2 PCB
+ to confirm the soldering hasn't done anything bad.  Then unplug the USB
+ cable.
+<p>
+<li>( ) Carefully plug the Teensy into the 28 pin socket.  The USB socket
+ faces off the left side of the PCB as shown in the layout diagram.
+ Make sure all pins are seated and none are hanging off the socket.
+ CAUTION: Make sure all the pins line up with their entry points in the
+ socket to avoid squashing the leaf sprint contacts.
+<p>
+<li>( ) Reattach the USB cable.  The power LED should come on immediately
+ and after a second or so, the Teensy LED should start flashing as before.
+ Unplug the USB cable.
+<p>
+<li>( ) Plug a UA9637 or UA9639 IC into the U1 position.  The dot or cutout
+ should face to the right - these ICs are upside-down compared to the
+ Teensy part labeling as shown in the layout diagram.
+<p>
+<li>( ) Reattach the USB cable.  The power LED and possibly one or both
+ LEDs near U1 (if installed) should come on immediately
+ and after a few seconds, the Teensy LED should start flashing as before.
+<p>
+<li>( ) (Optional) Here is the nifty bit. ;-)  Moisten a finger (doesn't matter
+ which one) and touch the pins on J1.  With some practice, it will be possible
+ to make the LEDs near U1 to go on and off as the input to the line receivers
+ cause them to toggle.  While the behavior is not really predictable, just
+ the fact that they change indicates the the line receiver is working.
+ Since the UA9637 has some hysteresis, it latches but the slight charge
+ from your electric personality is enough to toggle it.  CAUTION: Don't
+ get carried away, these parts can be damaged by static discharges.
+ So, no cat's fur and plastic rods, please. :( ;-)
+ (This will not be possible if the terminating resistors are installed, thus
+ holding off on them for now.)
+<p>
+ If you're wondering how the OLED in the photo, above, can be displaying
+ such large numbers with nothing attached to the inputs, it was done this
+ way except the board was plugged in a USB charger, not a USB port.  That must
+ have a lot of ripple relative to my moistened finger, enough to easily
+ trigger the UA9637 even with its hysteresis.
+<p>
+<li>( ) Start the &micro;MD GUI and select the COM port used to upload
+ the firmware.  The graph should start scrolling.  But now, if you do the
+ moistened finger thing, it should be possible to get the displacement
+ to change for Axis 1.  Once confirmed, unplug the USB cable.
+<p>
+<li>( ) Repeat the previous 3 steps for axes 2 and 3 (U2/J2 and U3/J3)
+ if desired.
+<p>
+<li>( ) Heterodyne systems ONLY.  Add the following wire jumpers on the
+ bottom of the SG-&micro;MD2 PCB on the Teensy socket as required depending
+ on the number of axes.  Use thin insulated wire and take care to avoid
+ solder bridges.  The second attachment point for each jumper can be to
+ the appropriate labeled header pad:
+<p>
+ Single axis:
+ <p>
+  <ul>
+  <li>( ) Install jumper for REF: D1 to D9. (MPB1 socket pins 3 to 11.)
+  <li>( ) Install jumper for MEAS1: D2 to D10. (MPB1 socket pins 4 to 12.)
+  </ul>
+<p>
+ Three axis:
+<p>
+  <ul>
+  <li>( ) Install jumper for MEAS2: D3 to D0. (MPB1 socket pins 5 to 2.)
+  <li>( ) Install jumper for MEAS3: D4 to D14. (MPB1 socket pins 6 to 16.)
+  </ul>
+<p>
+ Note: The original design had the heterodyne signals assigned to pins that
+ were the same as homodyne signals.  But so far it has not been possible to
+ decipher the control of the ARM Cortex M7 crossbar to put them there and
+ the pins above need to be used for now at least.  Thus the duplicate
+ set of signals on the PCB V1.2 layout diagram.  If that gets resolved,
+ the additional jumpers will not be necessary.
+<p>
+<li>( ) Optional OLED:
+<p>
+ <ul>
+ <li>( ) Install the 4 pin female-male socket strip for the OLED
+  between JB3 and JB4 and HDR3.  If longer, it will need to be trimmed.
+<p>
+ <li>( ) Install wire jumpers to select V3.3 and GND for the
+  OLED at JB3 and JB4 depending on which version you have.  The outer positions
+  select V3.3/VCC on the left while the inner positions select V3.3/VCC
+  on the right.  DO NOT plug in the OLED until correct power connections are
+  confirmed with a DMM:
+<p>
+ <PRE>
+                  OLED                OLED
+             VCC GND SCL SDK     GND VCC SCL SDK
+                    o                   o
+                    |
+                JB4 o               JB4 o
+                                        |
+                    o                   o
+
+                    o                   o
+                                        |
+                JB3 o               JB3 o
+                    |
+                    o                   o
+</PRE>
+<p>
+  CAUTION: DO NOT jumper the middle pins together by accident, that will
+  short V3.3 to GND. :(
+<p>
+ <li>( ) If the OLED does not already have a 4 pin header attached,
+  cut off a 4 pin section of male-to-male pin strip and insert it under
+  the OLED with the short side through the OLED PCB just as with the
+  Teensy.  Solder one pin, confirm it seats flush,
+  and solder the rest.  Inspect for solder bridges and unsoldered pins.
+<p>
+ <li>( ) Insert an M2*16 mm screw through each of the bottom holes of the OLED
+  and loosely thread an M2 nut onto each.
+<p>
+ <li>( ) Plug the OLED into the 4 pin socket strip.
+  The holes in the PCB are a snug fit for
+  these screws so it should be possible to thread them in without nuts.  Set
+  them so the OLED is level and tighten the nuts just snug.
+<p>
+ <li>( ) Power up the PCB via the USB cable.  After a second or so, the OLED
+  should display something like "&micro;MD2 V1.xx" on the top line and
+  the sequence number on the 3rd line incrementing at the sample rate
+  (probably 1 kHz).  These OLEDs can display 8 lines of text; for the version
+  provided in these kits, the top two are yellow while the other 6 are blue.
+  It is NOT a color display.
+<p>
+ <li>( ) Using the moistened finger trick :), it should be possible to fool the
+  system into thinking there is activity on each of the installed axes
+  at which point lines will appear on the OLED with the relevant axis ID
+  and count.  This can be more fiddly than might be assumed as the Quadrature
+  counting hardware of the Teesny will ignore sequences of A and B that don't
+  make sense.
+ </ul>
+<p>
+<li>( ) (Optional) Install R1,R2.R6,R7 (single axis) and
+ R11,R12,R16,R17,R21,R22,R26,R27
+ (three axes).  The terminating resistors included in the kit are 150 ohms,
+ which is generally satisfactory.  However, your specific situation may
+ differ.  If in doubt, cut the 40 pin female-male socket strip 
+ into pieces and solder them in so other value terminating resistors
+ can be swapped in without desoldering.
+</ol>
+<p>
+Congratulations, you're all set to go.  Order that construction crane
+in need of a controller with free shipping on eBay. ;-)
+
+<h3><A NAME="sgumd1.0sei">Reference Voltage for Single Ended Input</a></h3>
+
+Where the input signals are differential with approximately equal average
+levels and an amplitude more than about 0.5 V, the UA9637 RS422 receivers
+are all that's needed.  This includes Quad-Sin-Cos which will automaigically
+convert to digital.
+<p>
+But where the input signals are single-ended such as normal TTL or only
+one polarity of a Quad-Sin-Cos, there are locations on the SG-&micro;MD2
+PCB for a reference voltage divider.
+<p>
+<PRE>
+           +5V
+            o
+            |
+            \
+        R32 /
+            \
+            /
+            |
+            +------+-----o Threshold Voltage
+            |      |
+            \     _|_
+        R33 /  C4 ---
+            \     _|_
+            /      -
+           _|_
+            -
+</PRE>
+<p>
+The threhsold voltage should be selected to be approximately mid-way between
+the nominal high and low levels.  For standard TTL, this would be 1.4 V.  The
+resistor values can be in the 10K range with C4 of 0.5 &micro;F.
+
+<h3><A NAME="sgumd1.0epl">Parts Lists</A></h3>
+
+These are for both the RS422 and analog versions.
+
+The LEDs (along with their
+associated current limiting resistors) can be omitted if desired.
+But every digital system requires some lights! ;-)
+Refer to the schematic for more details.
+<p>
+<b>RS422 Version Parts List</b>
+
+<PRE>
+ Reference   Type      Part/Value     Function
+-------------------------------------------------------------------------------
+    C1     Capacitor  0.1 &micro;F       U1 5 V bypass
+
+   LD1     LED        3 mm HB LED     Red LED
+   LD2     LED        3 mm HB LED     Green LED
+
+   MPB1    CPU        Atmega 328P Nano 3.0  Nano soldered to header
+
+   SBB1    Solderless Breadboard
+
+    R1     Resistor   1K ohm, 1/4 W   Red Power LED current limiting
+    R2     Resistor   100 ohms, 1/4 W Termination
+    R3     Resistor   36K ohm, 1/4 W  Green Power LED current limiting
+    R4     Resistor   100 ohms, 1/4 W Termination
+    U1     IC       UA9637 or UA9639  RS422 line receiver
+
+More to come.
+</PRE>
+
+<b>Quad-Sin-Cos Analog Version Parts List</b>
+<p>
+<PRE>
+ Reference   Type      Part/Value     Function
+-------------------------------------------------------------------------------
+    C1     Capacitor  0.1 &micro;F       U1 5 V bypass
+
+   LD1     LED        3 mm HB LED     Red LED
+   LD2     LED        3 mm HB LED     Green LED
+
+   MPB1    CPU        Atmega 328P Nano 3.0  Nano soldered to header
+
+   SBB1    Solderless Breadboard
+
+    R1     Resistor   1K ohm, 1/4 W   Red Power LED current limiting
+    R2     Resistor   36K ohm, 1/4 W  Green Power LED current limiting
+
+    U1     IC       LM393             Sin/Cos thresholding
+
+More to come.
+</PRE>
+<p>
+<br>
+<hr>
+<p>
+-- end V1.00 --
+<p>
+</BODY>
+<link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</HEAD>
+

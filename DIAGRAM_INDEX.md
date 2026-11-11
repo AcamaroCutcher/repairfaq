@@ -1,0 +1,679 @@
+# Diagram index
+
+All 667 ASCII diagrams. Open one at `companion/diagram.html#<id>`. Content © the original authors; see AI_DIAGRAM_GUIDE.md section 1.
+
+## Sam's Laser FAQ (272)
+
+- `d4497f71211d` Single-Phase 115 VAC Front-End · sam/laserapd.htm
+- `25f90457a386` Three-Phase 240/208 VAC Front-End · sam/laserapd.htm
+- `7f2f3186fc4e` Typical Linear Regulator Circuit · sam/laserapd.htm
+- `779c808608b3` Typical Switchmode Regulator Circuit · sam/laserapd.htm
+- `42755cc6116f` Switchmode Regulator Controller · sam/laserapd.htm
+- `3f8cac60e6ba` Hall-Effect Current Sensor (CS) · sam/laserapd.htm
+- `65464a259aad` Basic Inverter Type Power Supply · sam/laserapd.htm
+- `8eb9242cb35d` High Frequency Inverter Type Microwave Oven HV Power Supplies · sam/laserapd.htm
+- `4ab838191739` Multiple Loop Controller Organization · sam/laserapd.htm
+- `22e8a27873e6` Light Control Circuitry · sam/laserapd.htm
+- `90bf82f33cbf` Overcurrent Shutdown Circuit · sam/laserapd.htm
+- `70033e2d3e81` Ar/Kr Ion Tube Pulse Type Igniter · sam/laserapd.htm
+- `cf6a7752d5af` Alternative Starting Circuits for Small Ar/Kr Ion Tubes · sam/laserapd.htm
+- `6974631772cc` Low Voltage Power Supplies · sam/laserapd.htm
+- `e5431efd7480` Low Voltage Power Supplies · sam/laserapd.htm
+- `c2f0245aa998` Low Voltage Power Supplies · sam/laserapd.htm
+- `3a4e0d09c629` Low Voltage Power Supplies · sam/laserapd.htm
+- `3607939b950b` Typical Interlock Chain Wiring · sam/laserapd.htm
+- `203982155779` Construction of HV High Current Blocking Diodes · sam/laserapd.htm
+- `9271c54516a1` Driving Relays with AC Coils · sam/laserapd.htm
+- `4bd0f2fdda4c` Driving Relays with DC Coils · sam/laserapd.htm
+- `0b409fc1f975` Driving Relays with DC Coils · sam/laserapd.htm
+- `3d4726348525` 115 VAC Indicators · sam/laserapd.htm
+- `2913eb41fa22` 115 VAC Indicators · sam/laserapd.htm
+- `a2c7dcc9e61c` 115 VAC Indicators · sam/laserapd.htm
+- `9fcdf136b3d8` Interlock and Protector Indicator · sam/laserapd.htm
+- `520ec015178f` Interlock and Protector Indicator · sam/laserapd.htm
+- `dc4ca653fbdd` Visual Capacitor Bleeder Circuit · sam/laserapd.htm
+- `901437aa8941` Typical Organization of Ar/Kr Power Supply with Series Regulator · sam/laseraps.htm
+- `dd54422d294a` Typical Organization of Inverter Type Ar/Kr Power Supply · sam/laseraps.htm
+- `f5b165173bf3` Measurements of Current and Voltage in Ar/Kr Ion Laser Power Supplies · sam/laseraps.htm
+- `8549cee550aa` Measurements of Current and Voltage in Ar/Kr Ion Laser Power Supplies · sam/laseraps.htm
+- `31f2b8ae552f` Omni-150P Ar/Kr Ion Laser Power Supply Repair Saga · sam/laseraps.htm
+- `6f1fe76a5077` Ar/Kr Ion Tube Pulse Test Circuit 1 · sam/laseraps.htm
+- `277c3afea83c` Ar/Kr Ion Tube Pulse Test Circuit 2 · sam/laseraps.htm
+- `021b85b0a39b` Ar/Kr Ion Tube Pulse Test Circuit 2 · sam/laseraps.htm
+- `730696a8e354` Ar/Kr Ion Tube Pulse Test Circuit 3 · sam/laseraps.htm
+- `fea284921ae3` A Strange Small Argon Ion Tube · sam/laserarg.htm
+- `51c3847464d8` CU-2214 Interconnect Wiring · sam/laserasc.htm
+- `608bc0277e5e` CU-2214 Remote Wiring and Control Panel · sam/laserasc.htm
+- `be9684427196` CU-2214 Remote Wiring and Control Panel · sam/laserasc.htm
+- `8bacc2aeddec` CU-2214 Pulsed Test Supply · sam/laserasc.htm
+- `6231a2045f1f` SP-261 PSU to Laser Head Interconnect Wiring · sam/laserasc.htm
+- `65c9712113de` Introduction to SG-IT1 Schematics · sam/laserasc.htm
+- `a1f8e8616146` SG-IT1 AC Line Front-End · sam/laserasc.htm
+- `0f26493500a0` SG-IT1 Current Meter · sam/laserasc.htm
+- `c2d3fa578746` SG-IT1 Igniter · sam/laserasc.htm
+- `6031ddecd3c8` SG-IL1 Front Panel Layout · sam/laserasc.htm
+- `857fc8ff20c2` Someone Actually Built This Thing! · sam/laserasc.htm
+- `b1215c9ac6f2` Safety Issues When Troubleshooting Ion Lasers · sam/laseratr.htm
+- `185d1339e7d8` Home-Built Ar/Kr Ion Laser Description · sam/lasercar.htm
+- `e33f0e22d09c` Home-Built CO2 Laser Description · sam/lasercc2.htm
+- `9a420e8a5898` Flavio's CO2 Laser Notes · sam/lasercc2.htm
+- `23b3b910441e` Steve Hardy's Plans for His BIG CO2 Laser · sam/lasercc2.htm
+- `298045465267` Bill's CO2 Laser · sam/lasercc2.htm
+- `f1b024d1c9ea` Discussion of CO2 Laser Construction · sam/lasercc2.htm
+- `f73ee5b0d4b4` Steve's Notes on Boosting CO2 Laser Power and Quality Construction · sam/lasercc2.htm
+- `cd0fb94e705e` What About a Home-Built TEA CO2 Laser? · sam/lasercc2.htm
+- `58272cdd1e2b` Home-Built CuCl/CuBr Laser Description · sam/laserccb.htm
+- `4864c2beda3e` Chris's Copper Halide Laser · sam/laserccb.htm
+- `75e491545a50` Some Tests of the DPM1101 and DPM1102 · sam/lasercds.htm
+- `960eb95676aa` Home-Built Dye Laser Description · sam/lasercdy.htm
+- `4c4e40906fdf` Jon's Dye Laser and General Comments · sam/lasercdy.htm
+- `d2aa03edc9a7` Home-Built HeHg Laser Description · sam/laserchg.htm
+- `a86f51ac24f0` David's HeHg Laser Design · sam/laserchg.htm
+- `6ca295f220bb` Mark's Helium-Selenium (HeSe) Laser · sam/laserchg.htm
+- `d9b10a2b859e` Home-Built HeNe Laser Description · sam/laserchn.htm
+- `b4446c01f58c` K. L. Vander Sluis et. al. HeNe Laser · sam/laserchn.htm
+- `db52088769bd` Sam's Simplest Stabilized Laser Controllers · sam/laserchn.htm
+- `fdb1c626607c` Sam's Simplest Stabilized Laser Controllers · sam/laserchn.htm
+- `6d666f663701` Axial Zeeman Experiments with Long HeNe Laser Tubes · sam/laserchn.htm
+- `6c5ddbcdc6a6` Variac Wiring · sam/laserclp.htm
+- `b262a3706762` What Voltage? · sam/laserclp.htm
+- `c3e1a1bd802e` What Voltage? · sam/laserclp.htm
+- `d90317fcfcfc` What Voltage? · sam/laserclp.htm
+- `4f14195deeb0` Meters - Voltage and Current · sam/laserclp.htm
+- `75dee6307136` Meters - Voltage and Current · sam/laserclp.htm
+- `825897a0d8a4` Meters - Voltage and Current · sam/laserclp.htm
+- `e3bad49982be` Meters - Voltage and Current · sam/laserclp.htm
+- `753bb85898d9` Meters - Voltage and Current · sam/laserclp.htm
+- `076f6130fc0c` Simple Exciter · sam/lasercmg.htm
+- `517ee48ae49c` Cascade System · sam/lasercmg.htm
+- `930fdf378ba9` Cascade System · sam/lasercmg.htm
+- `51c114f5b93b` Home-Built N2 Laser Description · sam/lasercn2.htm
+- `6bb5664f9c39` Bruno Godard's N2 Laser · sam/lasercn2.htm
+- `0b86065a3348` Troubleshooting a Home-Built N2 Laser · sam/lasercn2.htm
+- `2f2855760ce4` Hughes 3800H Waveguide CO2 Laser · sam/laserco2.htm
+- `9056d386fa14` Possible Laser Lab Layout · sam/lasercon.htm
+- `131a95fead27` Gas Flames · sam/lasercon.htm
+- `147a6fc41dd4` Basic Induction Heater Circuit · sam/lasercon.htm
+- `06a78c25e568` Motor Wiring of Small Pfeiffer Rotary Vane Vacuum Pump Motors · sam/lasercva.htm
+- `b3d494cd019d` Salvaged Refrigeration Compressor Wiring · sam/lasercva.htm
+- `9467c4863bd3` Internal Construction of Hastings TC Gauge Tubes · sam/lasercva.htm
+- `ab0c09254930` Internal Construction of Hastings TC Gauge Tubes · sam/lasercva.htm
+- `d737906a7e3b` Internal Construction of Hastings TC Gauge Tubes · sam/lasercva.htm
+- `58ac29d3a3a6` Sam's Home-Built Thermocouple Vacuum Gauge 1 (SG-TC1) · sam/lasercva.htm
+- `215695fc0895` Hastings TC Vacuum Gauge Test Widget · sam/lasercva.htm
+- `86ab7a442ab1` Introduction to Diode Lasers and Laser Diodes · sam/laserdio.htm
+- `094ffa5d0c17` Laser Diode Construction · sam/laserdio.htm
+- `69f770500b16` Interpreting Laser Diode Specifications · sam/laserdio.htm
+- `cee66c179aaa` Determining the Laser Diode Pinout · sam/laserdio.htm
+- `1149cb23db5c` Powering Up the Laser Diode · sam/laserdio.htm
+- `2065dd90ac1b` Powering Up the Laser Diode · sam/laserdio.htm
+- `ade466f8c6a3` Characteristics of Some Typical High Power IR Platesetter Laser Diodes · sam/laserdio.htm
+- `7fbcf5bff412` IR Detector Circuit · sam/laserdio.htm
+- `a008ff3726b8` Reasons to Leave the CD Laser Diode in the Optical Block · sam/laserdio.htm
+- `6d26e16a8671` Coherent Genesis OPSL MX Laser Adjustments · sam/laserdio.htm
+- `9869da2afa53` Novalux Protera Model 488-5 NECSEL Laser · sam/laserdio.htm
+- `59f705a26ebd` Comments on Driver Education for Laser Diode Driver Designers · sam/laserdps.htm
+- `dcc884bccdef` Testing with a Laser Diode Simulator · sam/laserdps.htm
+- `250ee889fa15` Toshiba Laser Diode Power Supply (TO-LD1) · sam/laserdps.htm
+- `b5ed8f0ef76b` Laser Diode Power Supply 1 (RE-LD1) · sam/laserdps.htm
+- `1ee3d0681b5b` Laser Diode Power Supply 2 (RE-LD2) · sam/laserdps.htm
+- `91b7c945c98c` Laser Diode Power Supply 3 (RE-LD3) · sam/laserdps.htm
+- `b6d234365fb6` Laser Diode Power Supply 3 (RE-LD3) · sam/laserdps.htm
+- `14eb7f9c3f37` Laser Diode Driver from Red Laser Module 1 (RLM-LD1) · sam/laserdps.htm
+- `e64fc36f4b72` Laser Diode Driver from Cheap Red Laser Pointer 1 (LP-LD1) · sam/laserdps.htm
+- `6e1ffe5eadf7` Laser Diode Driver from Cheap Red Laser Pointer 2 (LP-LD2) · sam/laserdps.htm
+- `2643c6c688cf` Laser Diode Driver from Cheap Red Laser Pointer 3 (LP-LD3) · sam/laserdps.htm
+- `e71d02f2b039` Laser Diode Driver from Cheap Red Laser Pointer 4 (LP-LD4) · sam/laserdps.htm
+- `d0737863d955` Laser Diode Driver from Cheap Red Laser Pointer 5 (LP-LD5) · sam/laserdps.htm
+- `e3fdc4e5a8fb` Laser Diode Driver from IR Laser Module 1 (ILM-LD1) · sam/laserdps.htm
+- `6d08f4d191ae` Simple Laser Diode Power Supply · sam/laserdps.htm
+- `5a5b429c351a` Simple Laser Diode Power Supply · sam/laserdps.htm
+- `30233309d16c` Constant Current Supply for High Power Laser Diodes · sam/laserdps.htm
+- `f161e10c0341` Constant Current Supply for High Power Laser Diodes · sam/laserdps.htm
+- `991ee214e58a` Sam's High Power Laser Diode Driver 1 (SG-DH1) · sam/laserdps.htm
+- `2d1811cc9d17` Pulsed Laser Diode Drivers · sam/laserdps.htm
+- `87ea7ed9483d` Temperature Compensation For Laser Drivers Based On LM317 Regulators · sam/laserdps.htm
+- `6970e5021bbe` Driver Enhancements to Provide Modulation Capability · sam/laserdps.htm
+- `e9f1f22b6da3` Driver Enhancements to Provide Modulation Capability · sam/laserdps.htm
+- `6bab09d45b7d` Sam's Magnetic Pulser for Testing Faraday Rotation · sam/laserexp.htm
+- `971ab3b2cf29` Simple Beam Break Detector · sam/laserexp.htm
+- `f07e40bd9d54` Description of the SP-124 Laser Head · sam/laserhcl.htm
+- `70e81086f6aa` Longitudinal Modes of Operation · sam/laserhen.htm
+- `6ad818717d6a` Mode Sweep · sam/laserhen.htm
+- `317dbfea2fc5` Plots of HeNe Laser Power Output and Polarized Modes During Warmup · sam/laserhen.htm
+- `e8ea7cf1ec18` Early Versus Modern HeNe Lasers · sam/laserhen.htm
+- `df48d05e07f9` Structure of Internal Mirror HeNe Lasers · sam/laserhen.htm
+- `48e8e34b687f` Typical Magnet Configurations · sam/laserhen.htm
+- `c971b85682f7` Typical Magnet Configurations · sam/laserhen.htm
+- `5720363cd4c3` Typical Magnet Configurations · sam/laserhen.htm
+- `a41647045deb` Typical Magnet Configurations · sam/laserhen.htm
+- `b94f181c0689` Segmented HeNe Tubes · sam/laserhen.htm
+- `d9c459750f9d` Strange High Power HeNe Laser · sam/laserhen.htm
+- `0345b2861fc8` AC Input Circuitry for HeNe Laser Power Supplies · sam/laserhpd.htm
+- `7c50f83aa6a0` Voltage Multiplier Starting Circuits · sam/laserhpd.htm
+- `46da19bed975` Voltage Multiplier Operation · sam/laserhpd.htm
+- `2f43f316556c` Color TV or Monitor Voltage Multiplier · sam/laserhpd.htm
+- `8037fe00f827` Pulse Starting Circuit - Trigger Transformer with Isolated HV Winding · sam/laserhpd.htm
+- `fba7215c3d44` Isolated Pulse Starting Circuits · sam/laserhpd.htm
+- `93e588910a1f` Isolated Pulse Starting Circuits · sam/laserhpd.htm
+- `843b536dd1bb` Pulse Starting Circuit Using Small Flyback Transformer · sam/laserhpd.htm
+- `89cf84533844` HeNe Starter Using Electronic Ignition (or Other Similar) Modules · sam/laserhpd.htm
+- `dc09ab4f9ec5` HeNe Starter Using Electronic Ignition (or Other Similar) Modules · sam/laserhpd.htm
+- `6387b362bf81` HeNe Starter Using Electronic Air Cleaner HV Module · sam/laserhpd.htm
+- `b0cb59da0b21` HeNe Starter Using Electronic Air Cleaner HV Module · sam/laserhpd.htm
+- `18525108cf63` HeNe Starter Using Electronic Air Cleaner HV Module · sam/laserhpd.htm
+- `699c36363991` Inverter Based Starters · sam/laserhpd.htm
+- `de54cb565b2b` Inverter Based Starters · sam/laserhpd.htm
+- `c6f6cda40b66` Piezo Impulse Starting Circuits · sam/laserhpd.htm
+- `1f307017ae5e` Low-Side Post-Regulator · sam/laserhpd.htm
+- `76036418358d` High Compliance Cascade Regulator · sam/laserhpd.htm
+- `174411b18e34` High Compliance Cascade Regulator · sam/laserhpd.htm
+- `de15b5ea5b2f` Simple Shunt Regulator · sam/laserhpd.htm
+- `acf80801f920` Inverter Switchmode Regulator Controller · sam/laserhpd.htm
+- `f79a0b143d39` Modulation Using an Audio or Power Transformer · sam/laserhpd.htm
+- `5b5e7cd41444` Modulation Using a High Voltage NPN Transistor · sam/laserhpd.htm
+- `9b8cf992f547` Modulation Using a High Voltage PNP Transistor · sam/laserhpd.htm
+- `3f40e3075a1f` Modulation Using a Vacuum Tube · sam/laserhpd.htm
+- `b56708a77d34` Driving Multiple HeNe Tubes or One with a Center-Tapped Discharge Tube · sam/laserhpd.htm
+- `40ca5668d3b5` Driving Multiple HeNe Tubes with an Exposed Capillary · sam/laserhpd.htm
+- `4ba5c0ae2933` Basic HeNe Laser Power Supply Organization · sam/laserhps.htm
+- `0fcc09721e66` Sample Color Coding of AC Input Power Supply Bricks · sam/laserhps.htm
+- `dc5c2e38cb1c` Adapters for DC HeNe Power Supply Bricks · sam/laserhps.htm
+- `9e89359311e5` Adapters for DC HeNe Power Supply Bricks · sam/laserhps.htm
+- `ec8ab62abebe` Adapters for DC HeNe Power Supply Bricks · sam/laserhps.htm
+- `92605376ba2f` Adapters for DC HeNe Power Supply Bricks · sam/laserhps.htm
+- `990e174b88e0` 1 mW HeNe Laser Powered by 12 VDC, 1 A Wall Adapter · sam/laserhps.htm
+- `7cce9c7a0e28` 2 mW HeNe Laser Using AC Line Operated Power Supply Brick · sam/laserhps.htm
+- `ef875d73880c` Lab Style HeNe Laser Power Supply Using Power Supply Brick · sam/laserhps.htm
+- `116e7a5e994c` Locations of the Ballast Resistance · sam/laserhps.htm
+- `0fe04b29f510` Selecting the Ballast Resistor Using a Dummy Load · sam/laserhps.htm
+- `c4a3e135b962` Determining the Compliance Range of a Power Supply · sam/laserhps.htm
+- `0c804e114981` Ballast Resistor Selector and Meter Box · sam/laserhps.htm
+- `d3b569fb5584` Ballast Resistor Selector and Meter Box · sam/laserhps.htm
+- `b1e89646fa67` Testing a HeNe Laser Power Supply · sam/laserhps.htm
+- `2ee0840117d0` Testing a HeNe Laser Power Supply · sam/laserhps.htm
+- `1ebd6d256a71` Edmund Scientific HeNe Laser Power Supply (ES-HL1) · sam/laserhsc.htm
+- `622b8b5261bb` Laboratory for Science Model 200 Laser Power Supply (LS-200) This is an AC line power supply with additional filtering on the positive side (apparently as an afterthought) and a linear regulator. The negative portion of the supply would seem to have the same issues, but perhaps there was simply no room! The reverse engineered schematic may be found in LFS-200 HeNe Laser Power Supply (LS-200) . For more information, including schematics of the other parts of the laser, see the section: Laboratory for Science Model 200 Ultra Stable HeNe Laser . Back to Complete HeNe Laser Power Supply Schematics Sub-Table of Contents . Laboratory for Science Model 220 Laser Power Supply (LS-220) This is the low noise power supply found in the Laboratory for Science model 220 Ultra Stable HeNe laser. It is supposed to have less than 1 mV ripple on the high voltage. This diagram is not yet complete in the area of the control circuit in the lower right corner since it is difficult to trace it without removing the PCB. In particular, there are at least two tantalum caps and other components which contribute to the low noise performance. The secondary voltage of T1 was guessed. :) There were no part numbers on the PCB so these are arbitrary. The HeNe laser tube and its ballast resistor are not shown here. The ballast is a single 7 or 10 W resistor mounted on standoffs in the laser head. But there is also a thermal regulator in series with the anode of the tube. It implements a closed-loop feedback scheme using only the anode current with no other connections to stabilize the temperature of the OC mirror. X C7 C8 C9 +------------//----------------+------//-------+------//-------+ HV+ o / CR3 / CR4 CR5 / CR6 CR7 / CR8 / / +--/>/--+--/>/--+--/>/--+--/>/--+--/>/--+--/>/--+ T1 / CR1 Y R7 55 / C10 / C11 / C12 / +--+--/>/---+----+--/\/\--+------//-------+------//-------+------//-------+ //( / / / //( / C1 +_/_ / R1 +---------+----+---o Tube- //( / 10uF --- \ 499K T1: 1,200 VRMS, 20mA _/_ / / //( / 500V - / / (primary not shown) _V_ CR9 / / //( / / / / R7 \ / //( / +----+ CR1-CR6: 6kV + 120K / / //( / / / _/_ / // C Q1 //( / C2 +_/_ / R2 C1-C6: 10uF, 500V _V_ CR10 +--/ D40V4 //( / 10uF --- \ 499K C7-C9: 470pF, 6kV _/_ / /\ E //( / 500V - / / C10-C12: 6800 pF, 6kV //// R8 / / //( / / / 1N4007 120K \ / //( / +----+ (x2) 2W / / //( / / / / // C Q2 //( / C3 +_/_ / R3 +--/ D40V4 //( / 10uF --- \ 499K / /\ E //( / 500V - / / R9 / / //( / / / 120K \ / +--/--------+----+ 2W / / / / / / // C Q3 / C4 +_/_ / R4 +--/ D40V4 / 10uF --- \ 499K / /\ E / 500V - / / R10 / / / / / 120K \ / / +----+ R11 27.2K / // C Q4 / / / +---/\/\----+--/ D40V4 / C5 +_/_ / R5 / / /\ E / 10uF --- \ 499K / // E / / 500V - / / +--------+---------/ / / / / / +---+ Q5 /\ C / / +----+ ZD1 _/_, / / ZD2 PNP / / / / / 1N4099 '/_\ / _/_, +----+ / C6 +_/_ / R6 6.8V / / '/_\ R12 / / 10uF --- \ 499K (x2) +---+ / 5K 1W / / 500V - / / Adjust +---/\/\----------+ / / / / / +--/ For more information, see the section: Laboratory for Science Model 220 Ultra St\ able HeNe Laser Back to Complete HeNe Laser Power Supply Schematics Sub-Table of Contents . Metrologic Model ML 360 HeNe Laser Power Supply (ML-360) · sam/laserhsc.htm
+- `94c5a0c65d82` Laboratory for Science Model 200 Laser Power Supply (LS-200) This is an AC line power supply with additional filtering on the positive side (apparently as an afterthought) and a linear regulator. The negative portion of the supply would seem to have the same issues, but perhaps there was simply no room! The reverse engineered schematic may be found in LFS-200 HeNe Laser Power Supply (LS-200) . For more information, including schematics of the other parts of the laser, see the section: Laboratory for Science Model 200 Ultra Stable HeNe Laser . Back to Complete HeNe Laser Power Supply Schematics Sub-Table of Contents . Laboratory for Science Model 220 Laser Power Supply (LS-220) This is the low noise power supply found in the Laboratory for Science model 220 Ultra Stable HeNe laser. It is supposed to have less than 1 mV ripple on the high voltage. This diagram is not yet complete in the area of the control circuit in the lower right corner since it is difficult to trace it without removing the PCB. In particular, there are at least two tantalum caps and other components which contribute to the low noise performance. The secondary voltage of T1 was guessed. :) There were no part numbers on the PCB so these are arbitrary. The HeNe laser tube and its ballast resistor are not shown here. The ballast is a single 7 or 10 W resistor mounted on standoffs in the laser head. But there is also a thermal regulator in series with the anode of the tube. It implements a closed-loop feedback scheme using only the anode current with no other connections to stabilize the temperature of the OC mirror. X C7 C8 C9 +------------//----------------+------//-------+------//-------+ HV+ o / CR3 / CR4 CR5 / CR6 CR7 / CR8 / / +--/>/--+--/>/--+--/>/--+--/>/--+--/>/--+--/>/--+ T1 / CR1 Y R7 55 / C10 / C11 / C12 / +--+--/>/---+----+--/\/\--+------//-------+------//-------+------//-------+ //( / / / //( / C1 +_/_ / R1 +---------+----+---o Tube- //( / 10uF --- \ 499K T1: 1,200 VRMS, 20mA _/_ / / //( / 500V - / / (primary not shown) _V_ CR9 / / //( / / / / R7 \ / //( / +----+ CR1-CR6: 6kV + 120K / / //( / / / _/_ / // C Q1 //( / C2 +_/_ / R2 C1-C6: 10uF, 500V _V_ CR10 +--/ D40V4 //( / 10uF --- \ 499K C7-C9: 470pF, 6kV _/_ / /\ E //( / 500V - / / C10-C12: 6800 pF, 6kV //// R8 / / //( / / / 1N4007 120K \ / //( / +----+ (x2) 2W / / //( / / / / // C Q2 //( / C3 +_/_ / R3 +--/ D40V4 //( / 10uF --- \ 499K / /\ E //( / 500V - / / R9 / / //( / / / 120K \ / +--/--------+----+ 2W / / / / / / // C Q3 / C4 +_/_ / R4 +--/ D40V4 / 10uF --- \ 499K / /\ E / 500V - / / R10 / / / / / 120K \ / / +----+ R11 27.2K / // C Q4 / / / +---/\/\----+--/ D40V4 / C5 +_/_ / R5 / / /\ E / 10uF --- \ 499K / // E / / 500V - / / +--------+---------/ / / / / / +---+ Q5 /\ C / / +----+ ZD1 _/_, / / ZD2 PNP / / / / / 1N4099 '/_\ / _/_, +----+ / C6 +_/_ / R6 6.8V / / '/_\ R12 / / 10uF --- \ 499K (x2) +---+ / 5K 1W / / 500V - / / Adjust +---/\/\----------+ / / / / / +--/ For more information, see the section: Laboratory for Science Model 220 Ultra St\ able HeNe Laser Back to Complete HeNe Laser Power Supply Schematics Sub-Table of Contents . Metrologic Model ML 360 HeNe Laser Power Supply (ML-360) · sam/laserhsc.htm
+- `ebcd3f12a4bc` Metrologic Model ML660 HeNe Laser Power Supply (ML-660) · sam/laserhsc.htm
+- `19b6d17e6569` Metrologic Model ML920 HeNe Laser Power Supply (ML-920) · sam/laserhsc.htm
+- `ac010332b483` Spectra-Physics Model 130 HeNe Laser Power Supply (SP-130) · sam/laserhsc.htm
+- `322aa15e82f3` Spectra-Physics Model 132/132M HeNe Laser Power Supply (SP-132) · sam/laserhsc.htm
+- `dd6b109d1fd5` Spectra-Physics Model 155 HeNe Laser Power Supply (SP-155) · sam/laserhsc.htm
+- `f8ff7a47fc53` Spectra-Physics Model 155 HeNe Laser Power Supply (SP-155) · sam/laserhsc.htm
+- `4ed4c4e73c36` Spectra-Physics Model 235 Exciter (SP-235) · sam/laserhsc.htm
+- `c9e90dba669e` Spectra-Physics Model 247 HeNe Laser Power Supply (SP-247) · sam/laserhsc.htm
+- `9cc287e4ab70` Spectra-Physics Model 248 HeNe Laser Power Supply (SP-248) · sam/laserhsc.htm
+- `a3ef56cab054` Aerotech Model PS0 HeNe Laser Power Supply (AT-PS0) · sam/laserhsc.htm
+- `4ff8f72b2055` Aerotech Model PS1 HeNe Laser Power Supply (AT-PS1) · sam/laserhsc.htm
+- `b589f43ef6e2` Enhancements to AT-PS1 · sam/laserhsc.htm
+- `8897c2ee44a9` Aerotech Model PS2B HeNe Laser Power Supply (AT-PS2B) · sam/laserhsc.htm
+- `d231ac2c1bba` Aerotech Model PS2A-X HeNe Laser Power Supply (AT-PS2A-X) · sam/laserhsc.htm
+- `30411026343a` Spectra-Physics Model 255 Exciter (SP-255) · sam/laserhsc.htm
+- `6b3ef9d427f9` Enhancements to SP-255 · sam/laserhsc.htm
+- `e6a5fbb9b65f` Enhancements to SP-255 · sam/laserhsc.htm
+- `347c9b74fcf5` Spectra-Physics Model 256 Exciter (SP-256) · sam/laserhsc.htm
+- `3c5aeee142dc` Sam's Small Line Powered HeNe Laser Power Supply (SG-HL1) · sam/laserhsc.htm
+- `66938d3d631f` Sam's Mid-Size Line Powered HeNe Laser Power Supply (SG-HL2) · sam/laserhsc.htm
+- `b2ec9e3d3c97` Sam's Ultrabeam(tm) Line Powered HeNe Laser Power Supply (SG-HL3) · sam/laserhsc.htm
+- `6aa1a7a19d89` Operating Voltage for Kim's Mid-Size HeNe Laser Power Supply · sam/laserhsc.htm
+- `a11c37e080b7` Simple Inverter Type Power Supply Design Options · sam/laserhsc.htm
+- `74ef7bad83c4` Starting Circuit for Simple Inverter Type Power Supply for HeNe Laser · sam/laserhsc.htm
+- `91103fff6a5b` HeNe Inverter Power Supply Using PWM Controller IC (IC-HI1) · sam/laserhsc.htm
+- `e4983ed96592` Rewinding the Inverter Transformer · sam/laserhsc.htm
+- `9a8ff43056db` Melles Griot Lab Style HeNe Laser Power Supply · sam/laserhsc.htm
+- `a5a8ddd13fc3` Sam's Inverter Driven HeNe Laser Power Supply 1 (SG-HI1) · sam/laserhsc.htm
+- `7a35ca2cacb0` Sam's Inverter Driven HeNe Laser Power Supply 2 (SG-HI2) · sam/laserhsc.htm
+- `1c11e252aed9` Kim's Flyback Based HeNe Laser Power Supply (KC-HI1) · sam/laserhsc.htm
+- `a2d620fc2c58` Comparison Chart of Commercial Stabilized HeNe Lasers · sam/laserhst.htm
+- `a10990c90eb6` Simple Gauss Meter for Measuring Zeeman Magnet Strength · sam/laserhst.htm
+- `54b0763c7cf5` HP-10780 Optical Receivers · sam/laserhst.htm
+- `f3c1deb35db4` Identifying Connections to Unmarked HeNe Tube or Laser Head · sam/laserhtr.htm
+- `d62df1508525` Measuring the Negative Resistance of a HeNe Tube · sam/laserhtr.htm
+- `37664789d396` Measuring the Negative Resistance of a HeNe Tube · sam/laserhtr.htm
+- `1f2593d6d446` Daniel's Method for Aligning External Mirror Lasers · sam/laserhtr.htm
+- `efc08eabac68` Flavio's Comments on HeNe Tube Mirror Alignment · sam/laserhtr.htm
+- `6c0a53ec0895` Flavio's Comments on HeNe Tube Mirror Alignment · sam/laserhtr.htm
+- `eff85561939c` Followup Experiments with a Low Power RF Source on Patient #3 · sam/laserhtr.htm
+- `8341353008c7` Case Study of 145 Melles Griot 05-LHR-640 HeNe Laser Tubes · sam/laserhtr.htm
+- `946925132597` Sam's Super Cheap and Dirty Laser Power Meter · sam/laserioi.htm
+- `420bdb2f9661` Simple Photodiode Sensor Units · sam/laserioi.htm
+- `9a8db2ea34e3` Simple Photodiode Sensor Units · sam/laserioi.htm
+- `f9ce87123efe` Simple Photodiode Sensor Units · sam/laserioi.htm
+- `690ecce5317b` Simple Photodiode Sensor Units · sam/laserioi.htm
+- `37ed0e0d75b4` Sam's Laser Power Meter 1 (SG-PM1) · sam/laserioi.htm
+- `b7984d8f2fc7` Simple Laser Power Meter Using Photocell · sam/laserioi.htm
+- `cf991dc2b8e9` Sensor for a UDT Instruments Model 351 Power Meter · sam/laserioi.htm
+- `c8acb1b9a26e` The Single Pass Gain Test · sam/laserioi.htm
+- `bcbe1072b4e0` The Single Pass Gain Test · sam/laserioi.htm
+- `44d23f8594cc` The Single Pass Gain Test · sam/laserioi.htm
+- `b2074d08f818` The Single Pass Gain Test · sam/laserioi.htm
+- `2574e3d312cc` Laser Beam Cleanup - the Spatial Filter · sam/laserioi.htm
+- `6e3a9625e737` Where Does All the Energy Go? · sam/laserlia.htm
+- `bb1f4bb5168d` Adjusting the Confocal Cavity Spacing · sam/laserlia.htm
+- `3e8da5cfad69` Honeywell GG1342 Ring Laser Gyro · sam/laserlia.htm
+- `d5865c4312b4` Honeywell GG1320 Ring Laser Gyro · sam/laserlia.htm
+- `78844888c63f` Honeywell GG1320 Ring Laser Gyro · sam/laserlia.htm
+- `13bf5a7e1361` Basic Amateur Holography Setup · sam/laserlia.htm
+- `8dc26c5543c7` Photos of Assorted Helium-Neon Lasers · sam/laserpic/henepics.htm
+- `c56832d6c6f6` Compass-M Laser Control Panels · sam/laserscl.htm
+- `95ca7adc57a1` Compass-M Laser Control Panels · sam/laserscl.htm
+- `a09c448ba02a` Powering the C315M with the C215M Analog Controller · sam/laserscl.htm
+- `da689cea5a7f` Powering the C315M with the ILX Lightwave Model LDC-3900 · sam/laserscl.htm
+- `8ce8ab919cc9` LWE-122 Operation Using the RS232 Interface · sam/laserscl.htm
+- `668ebf32ed62` LWE-122 Operation Using the RS232 Interface · sam/laserscl.htm
+- `7c11d946d604` LWE-122 Operation Using the RS232 Interface · sam/laserscl.htm
+- `f21c9bb4c59b` LWE-142 Operation Using the RS232 Interface · sam/laserscl.htm
+- `45dc7dd3fd26` LWE-142 Operation Using the RS232 Interface · sam/laserscl.htm
+- `8a1b7df113c4` LWE-142 Operation Using the RS232 Interface · sam/laserscl.htm
+- `b9ec394e7fe4` LWE-142 Operation Using the RS232 Interface · sam/laserscl.htm
+- `c847053362e6` Problems and Quirks of an LWE-142 1 · sam/laserscl.htm
+- `08f8a1d4aef5` Problems and Quirks of an LWE-142 1 · sam/laserscl.htm
+- `8302bf974089` Problems and Quirks of an LWE-142 2 · sam/laserscl.htm
+- `c5847a8796a8` Problems and Quirks of an LWE-142 2 · sam/laserscl.htm
+- `7346dceaad99` LWE-221 Hardware Control Panel · sam/laserscl.htm
+- `52572523ad3d` LWE-221 Operation Using the RS232 Interface · sam/laserscl.htm
+- `f8cb4a3429ba` Description and Schematic of SG-SP2 · sam/laserssc.htm
+- `2f790bf9490a` Adjustment of Temperature Set-Points in Melles Griot High Power DPSS Lasers · sam/laserstr.htm
+- `5e3448416065` Adjustment of Laser Diode Current in Melles Griot High Power DPSS Lasers · sam/laserstr.htm
+
+## Sam's repair guides (Silicon Sam's Technology Resource) (259)
+
+- `245f855bbcf3` Pocket Wall Adapter Tester/Polarity Checker · sam/aapsfaq.htm
+- `8f44ef389bf4` Replacing Batteries With an AC Adapter · sam/aapsfaq.htm
+- `767ccf85fbfe` Converting an AC Output Wall Adapter to DC · sam/aapsfaq.htm
+- `00acb5af371c` Adding an IC Regulator to a Wall Adapter or Battery · sam/aapsfaq.htm
+- `f76039d3db90` Voltage, current, and resistance · sam/appfaq.htm
+- `db862828c9dd` Series and parallel circuits · sam/appfaq.htm
+- `1fd255b35fb1` Series and parallel circuits · sam/appfaq.htm
+- `3c39a408316f` Test equipment · sam/appfaq.htm
+- `ce78f9c1322c` Controls 2 - rheostats and potentiometers · sam/appfaq.htm
+- `4a1fb21ec990` Controls 2 - rheostats and potentiometers · sam/appfaq.htm
+- `122f20706c66` Controls 2 - rheostats and potentiometers · sam/appfaq.htm
+- `3ae81e109941` Locating burnt out bulbs in series circuits · sam/appfaq.htm
+- `c2ea6a8d2577` Controlling a fixture or outlet from multiple locations · sam/appfaq.htm
+- `a7ee7828f8da` Controlling a fixture or outlet from multiple locations · sam/appfaq.htm
+- `40f5588dde23` Controlling a fixture or outlet from multiple locations · sam/appfaq.htm
+- `b61616671121` Controlling a fixture or outlet from multiple locations · sam/appfaq.htm
+- `06d49d26a61a` Controlling a fixture or outlet from multiple locations · sam/appfaq.htm
+- `d76511bae622` Simplest dimmer schematic · sam/appfaq.htm
+- `51903f04d8e9` Simple 3-way dimmer schematic 1 · sam/appfaq.htm
+- `05401ec26159` Simple 3-way dimmer schematic 2 · sam/appfaq.htm
+- `477768d76eb9` Simple 3-way dimmer schematic 2 · sam/appfaq.htm
+- `2052893944e3` Independent dimming from two locations - kludge #3251 · sam/appfaq.htm
+- `79967d11c085` First Alert Series 50 rechargeable flashlight schematic · sam/appfaq.htm
+- `a65eca917a90` Black & Decker Spotlighter Type 2 rechargeable flashlight · sam/appfaq.htm
+- `1718d469f010` Brand Unknown (Made in China) rechargeable flashlight schematic · sam/appfaq.htm
+- `92e3726424b7` Solar Powered Walk Light · sam/appfaq.htm
+- `a88b8d81b2b2` Speed control of DC fans · sam/appfaq.htm
+- `3c3a24677210` Electronic air cleaner high voltage module schematic · sam/appfaq.htm
+- `f5282417aa56` Electronic air cleaner high voltage module schematic · sam/appfaq.htm
+- `cf3183557c61` Auto air purifier schematic · sam/appfaq.htm
+- `856427c4f5ea` Bug zappers · sam/appfaq.htm
+- `d3b14880f1ea` Circuit diagram of typical toaster oven/broiler · sam/appfaq.htm
+- `2840247989ac` Inductively coupled charging circuit · sam/appfaq.htm
+- `319406614014` Inductively coupled charging circuit · sam/appfaq.htm
+- `2b50c974e6c8` The Ground Fault Circuit Killer (GFCK) · sam/appfaq.htm
+- `ff1329a420a0` Ultrasonic cleaners · sam/appfaq.htm
+- `676408887478` Electromechanical doorbells and chimes · sam/appfaq.htm
+- `53983038a38c` Adding an additional set of chimes · sam/appfaq.htm
+- `5fa5068104f8` Adding an additional set of chimes · sam/appfaq.htm
+- `ed8f9c7ce64c` Single-phase induction motors · sam/appfaq.htm
+- `c4435b71f921` Range, oven, and furnace electronic ignition · sam/appfaq.htm
+- `965689ee1d1a` Defrost system operation and wiring · sam/appfaq.htm
+- `2ca070ad9120` Refrigeration compressor wiring · sam/appfaq.htm
+- `b67f69216bec` Why you should NOT connect G to N · sam/appfaq.htm
+- `90d7ebb7d81e` Handy-dandy phone line tester · sam/audiofaq.htm
+- `24b48030965a` Electrostatic Loudspeakers and Headphones · sam/audiofaq.htm
+- `27b993c2a575` Testing a Fax machine without a second phone line · sam/audiofaq.htm
+- `8245da5eba60` The iPad Mini LCD and Backlight, and Testing · sam/audiofaq.htm
+- `5630ce7d04d9` The iPad Mini LCD and Backlight, and Testing · sam/audiofaq.htm
+- `c8fc973c6de6` The iPad Mini LCD and Backlight, and Testing · sam/audiofaq.htm
+- `b8d1120309b5` Balancing a Meter Movement · sam/audiofaq.htm
+- `47fe63b855a2` Making Non-Polarized Capacitors from Normal Electrolytics · sam/captest.htm
+- `7f7d4f1d686a` Startup sequence · sam/cdfaq.htm
+- `4b11aa2c06bb` Sled motor drivers · sam/cdfaq.htm
+- `bccf706bb17c` Identifying connections to the optical pickup · sam/cdfaq.htm
+- `5e89bcfd76f6` Sony KSS series optical pickups · sam/cdfaq.htm
+- `9a3346c38f8a` What is an anti-aliasing filter · sam/cdfaq.htm
+- `605893dab885` What is an anti-aliasing filter · sam/cdfaq.htm
+- `f02e4aa73b78` Instant oversampling theory · sam/cdfaq.htm
+- `6e25788743da` Instant oversampling theory · sam/cdfaq.htm
+- `532de1db0dfe` Instant oversampling theory · sam/cdfaq.htm
+- `79d63f4e29ee` Instant oversampling theory · sam/cdfaq.htm
+- `af66afc34b5e` Instant oversampling theory · sam/cdfaq.htm
+- `891d4c22e62d` IR detector circuit · sam/cdfaq.htm
+- `b4c27f23bcd3` CW Laser Light (reverse engineered from commercial unit) · sam/cdfaq.htm
+- `940004a1f4ea` How Far is the Shadow Mask from the Phosphor Screen? · sam/crtfaq.htm
+- `95f13551daf5` Detailed Purity and Static Convergence Adjustment Procedure · sam/crtfaq.htm
+- `edfeafef3d71` Detailed Purity and Static Convergence Adjustment Procedure · sam/crtfaq.htm
+- `20d61c941740` Home-Made CRT Rejuvenator 2 · sam/crtfaq.htm
+- `242f1de10c10` Home-Made CRT Rejuvenator 2 · sam/crtfaq.htm
+- `7989a9cb27fb` Basic Deflection Circuit Operation · sam/deflfaq.htm
+- `18b9ed2392fe` N/S and E/W Correction Circuit Operation · sam/deflfaq.htm
+- `d938f3f0ce10` Differences Between N/S and E/W Correction Implementation · sam/deflfaq.htm
+- `499797cdc670` Typical Types of HOTs Used in Monitors · sam/deflfaq.htm
+- `900754ff5600` S-Correction Circuits on Multi-Scan Monitors · sam/deflfaq.htm
+- `c3819c845b66` Horizontal Deflection Circuit from Small TVs and Monitors · sam/deflfaq.htm
+- `443f05f8a501` Sync-on-Green Adapter Schematic · sam/ffmon.htm
+- `b7606c5502f2` Modifying an IBM 9517 XGA Monitor for SVGA Operation · sam/ffmon.htm
+- `6a104792994c` Sun 365-1335 or Sony GDM-20E20 monitor on PC · sam/ffmon.htm
+- `158fb7033641` Wiring for Preheat Fluorescent Fixtures · sam/flamp.htm
+- `5c2128b198ec` Wiring for Preheat Fluorescent Fixtures · sam/flamp.htm
+- `9d7fdafc7907` Wiring for Preheat Fluorescent Fixtures · sam/flamp.htm
+- `28303ce27962` Wiring for Preheat Fluorescent Fixtures · sam/flamp.htm
+- `5edb77f5eb9c` Wiring for Preheat Fluorescent Fixtures · sam/flamp.htm
+- `0d5c94510090` Wiring Diagram for Single Tube Rapid or Trigger Start Ballast · sam/flamp.htm
+- `4f4189a7305c` Wiring Diagram for Single Tube Rapid or Trigger Start Ballast · sam/flamp.htm
+- `91ed004f2fff` Wiring Diagram for Two Tube Rapid Start Ballast · sam/flamp.htm
+- `e25699706f62` Schematic of Typical Rapid/Trigger Start Single Lamp Ballast · sam/flamp.htm
+- `dc46b7ab599a` Schematic for Rapid Start Ballast with Isolated Secondary · sam/flamp.htm
+- `e23b77f5d223` Schematic of Rapid Start Dual Lamp Ballast · sam/flamp.htm
+- `5b6fd326954a` Fluorescent Lamps in Series? · sam/flamp.htm
+- `8825201d1723` Fluorescent Lamps in Parallel? · sam/flamp.htm
+- `fc05575eb0be` Notes on Dimming of Fluorescent Lamps · sam/flamp.htm
+- `430ceaa6aec6` Notes on Dimming of Fluorescent Lamps · sam/flamp.htm
+- `0f573863cda9` Flyback Construction · sam/flytest.htm
+- `600c69ed11dc` Method 1 · sam/flytest.htm
+- `155d48f511f8` Method 2 · sam/flytest.htm
+- `08f0941f77cc` Identifying the High Voltage Return on a Flyback · sam/flytest.htm
+- `85c655aae5ee` Typical Flyback Schematic · sam/flytest.htm
+- `356cac42c489` Basic Ignition Coil Circuit · sam/gadget.htm
+- `f10008924b84` Transformer Design - Tomato Launcher · sam/humor.htm
+- `c8c3a86fd672` Transformer Design - Tomato Launcher · sam/humor.htm
+- `7648bdc59854` Transformer Design - Tomato Launcher · sam/humor.htm
+- `87c09284cba8` Transformer Design - Tomato Launcher · sam/humor.htm
+- `346048e7a1ba` HV Inverter Circuit Diagram · sam/hvinvert.htm
+- `3608f3574289` HV Inverter Circuit Diagram · sam/hvinvert.htm
+- `fd44a33b36b5` LV Power Supply Description · sam/hvinvert.htm
+- `5edcfa8719b3` Typical Flyback Schematic · sam/hvinvert.htm
+- `e06eb3dfd2bc` Basic Considerations · sam/hvprobe.htm
+- `fd4b6ebaf16d` Sample Circuit · sam/hvprobe.htm
+- `b4056686e69c` More on Measuring High Frequency High Voltage · sam/hvprobe.htm
+- `5bc55f532f82` IR Detector Circuit Using Bare Photodiode · sam/irrfaq.htm
+- `c08e8a3a71e9` IR Detector Circuit Using IR Receiver Module · sam/irrfaq.htm
+- `2d398762f96e` Construction · sam/jacobs.htm
+- `849460c5ccf9` Flywheel removal · sam/lmfaq.htm
+- `d606b0e238ab` Cleaning the carburetor parts · sam/lmfaq.htm
+- `1d02f200b949` Throttle/speed control linkages on Craftsman/Tecumseh engines · sam/lmfaq.htm
+- `520d04d945ad` Engine reassembly · sam/lmfaq.htm
+- `20c65f83380b` Why you really don't want to attempt to move an immovable object · sam/lmfaq.htm
+- `2b68eef9c1a8` Crankshaft anatomy · sam/lmfaq.htm
+- `6381de7a3cf2` Basic operation of a float type carburetor · sam/lmfaq.htm
+- `32324dd201d7` Intake stroke (1) · sam/lmfaq.htm
+- `b71af7e7d9fe` Compression stroke (2) · sam/lmfaq.htm
+- `dc38601057cc` Ignition · sam/lmfaq.htm
+- `9fbd91c18176` Power stroke (3) · sam/lmfaq.htm
+- `439c2141cd0f` Exhaust stroke (4) · sam/lmfaq.htm
+- `a3f7ef5f29f7` Version 3 Enhancement · sam/mLMA1/index.html
+- `4c95b42ba21b` Introduction · sam/manuals/lsk1ins2.htm
+- `73cf63c6a458` Typical Detector PCB Layout (left ones with PBS installed) · sam/manuals/stabins4.htm
+- `e289e6062efc` Cross section diagram of typical magnetron · sam/micfaq.htm
+- `0c9ffe630795` Microwave generator circuit diagram · sam/micfaq.htm
+- `b08825d54c77` Testing the high voltage diode · sam/micfaq.htm
+- `4e8747820bd7` Testing the high voltage transformer · sam/micfaq.htm
+- `02cd345310a9` Biased Photodiode (BPD1) · sam/mipm/index.html
+- `40124201a8d9` Using the Oscilloscope · sam/mipm/mzipm2.1.htm
+- `58dcba0ff78b` Removing the CRT HV connector · sam/monfaq.htm
+- `6ac2d9e24554` Apple/Sony monitor dies after variable length of time · sam/monfaq.htm
+- `ac07dbe2ff34` Horizontal output transistor pinouts · sam/monfaq.htm
+- `b7721bc088db` HP DeskJet 560C Detailed problem description and possible solutions · sam/printfaq.htm
+- `a5393448e2e9` Using a Low Voltage Transformer to Increase or Reduce Line Voltage · sam/pwrfaq.htm
+- `4b1e465ac503` Solid State (AC->DC->AC) Converters · sam/pwrfaq.htm
+- `673245c95120` Solid State (AC->DC->AC) Converters · sam/pwrfaq.htm
+- `61b324c84e0c` Solid State (AC->DC->AC) Converters · sam/pwrfaq.htm
+- `c9d5dd7bd1f9` Repair Brief #35: Panasonic PV1414 Closed Circuit TV Camera with no Video · sam/rball.htm
+- `2af3fe5498af` Repair Brief #37: RCA EFR485 (CTC111) Color TV, Part 2 - No Picture · sam/rball.htm
+- `0803d3708dbc` Repair Brief #37: RCA EFR485 (CTC111) Color TV, Part 2 - No Picture · sam/rball.htm
+- `3d7cf9c18996` Repair Brief #52: Aztech CDA-268-01A CDROM Drive - Drawer Continuously Closing · sam/rball.htm
+- `1c3c0c32424c` Repair Brief #73: Sony D88 Portable CD Player, Part 1 - Does Not Recognize Discs · sam/rball.htm
+- `c54652432257` Repair Brief #84: Sony Portable CD Player - Dead · sam/rball.htm
+- `7293a5b30d39` Repair Brief #97: Panasonic VCR Power Supply - Comedy of Errors · sam/rball.htm
+- `dc06aa95d407` Repair Brief #100: Minox ME1 Electronic Flash for Minox B Camera - Dead · sam/rball.htm
+- `2a6971371530` Repair Brief #100: Minox ME1 Electronic Flash for Minox B Camera - Dead · sam/rball.htm
+- `07d85a229a2f` Repair Brief #100: Minox ME1 Electronic Flash for Minox B Camera - Dead · sam/rball.htm
+- `6afa2b7313ff` Detailed Solder/Shield Repair Procedure · sam/rcatune.htm
+- `7eef6c11efef` Bug Zapper 2 · sam/samschem.htm
+- `97a440d3b0ce` Ultrasonic Cleaner · sam/samschem.htm
+- `4bbac1331cf4` Plasma Mug HV Generator · sam/samschem.htm
+- `472728d304c8` Converting an AC Output Wall Adapter to DC · sam/samschem.htm
+- `c35a44c09af9` Adding an IC Regulator to a Wall Adapter or Battery · sam/samschem.htm
+- `592e1ccb094f` Dual Output Power Supply Using Centertapped Transformer · sam/samschem.htm
+- `116e22110203` Dual Output Power Supply Using Non-Centertapped Transformer · sam/samschem.htm
+- `b4448a1e5ee4` Higher Current Operation · sam/samschem.htm
+- `633a72dc0e6a` Adjustable High Current Regulated Power Supply · sam/samschem.htm
+- `7e91b3330bb8` 1.5 V Alkaline Cell Eliminator · sam/samschem.htm
+- `bda3bf259bb6` Full Wave Voltage Doubler · sam/samschem.htm
+- `be46c1f6683a` Super Simple Inverter · sam/samschem.htm
+- `2fcd1e95caf7` Archer Mini Flashlight Fluorescent Lamp Inverter · sam/samschem.htm
+- `448aeb1c12db` Energizer Mini Flashlight Fluorescent Lamp Inverter · sam/samschem.htm
+- `ae8af19ee81f` Notes on Energizer Mini Flashlight Fluorescent Lamp Inverter T1 is an E-core ferrite transformer. The core is 1/2" x 5/8" x 3/16" overall. The outer legs of the core are 3/32" thick. The central leg is 3/16" square. The square nylon bobbin has a diameter of 5/16". There is a .010" (estimate) gap (spacer) in between the two halves of the E-core. The 160T O (Output) is wound first followed by the 16T H (Heater), 32T D (Drive), and 16 T F (Feedback) windings. There should be a strip of mylar insulating tape between each of the windings. The number of turns were estimated after unsoldering the transformer from the circuit board as follows: The wire sizes were determined by matching the diameters of the visible ends of the wire for each winding to magnet wire of known AWG. The number of turns in the Output winding was determined based on its measured resistance, core diameter, and the wire gauge tables. A 100 kHz .1 V p-p signal was then injected into the Drive winding. The amplitudes and phases relationship of the resulting outputs from the Feedback, Heater, and Output windings were then measured. From these, the ratios of the number of turns and winding start/end were determined. The transistor was an MPX9610. I was not able to locate specs for this part number but a transistor like a 2N3053 or ECG24 should work. For PNP types, reverse the polarities of the power supply and C1. Since it is very low power, no heat sink is used in the Energizer flashlight. However, for other applications, one may be needed. Some experimentation with component values may improve performance for your application. When testing, use a variable power supply so you get a feel for how much output voltage is produced for each input voltage. Component values are not critical but behavior under varying input/output voltage and load conditions will be affected by C2 and C3, the number of turns on each of the windings of T1, and the gain of your particular transistor. WARNING: Output is high voltage and dangerous. Take appropriate precautions. / / / ---+--- are connected; ---/--- and ------- are NOT connected. / / / Back to Sam's Schematic Collection Table of Contents . Pocket Fluorescent Blacklight Inverter GH-RV-B1 (Schematic from: Axel Kanne (axel.k@swipnet.se).) This was reverse engineered from a toy pocket blacklight, made in China. It has been tested with tubes up to 6 W. 4.5 to 12V (4) T1(2) + o---+-------------------+---------------+ +-----+-+ / / R2 )::( / / / +--/\/\--+ W1 )::( +/-/+ / 470 / )::( / - / +_/_ C1 +-----/------+ ::( W3 / / FL1 --- 47uF // C _/_ C3 ::( / / (3) / 16V +---+------/ Q1 --- .015 ::( / - / / / / (1)/\ E / uF ::( +/-/+ / C2 _/_ / / +------+ ::( / / / .01uF --- / R1 / / W2 ):: +--+--+-+ / / +--/\/\--/-----/------+ / / / 20 / / / - o---+---------+------------+-----+--------------+ Notes on Pocket Fluorescent Blacklight Inverter GH-RV-B1 · sam/samschem.htm
+- `98360bab42d3` Automotive Light Stick Inverter · sam/samschem.htm
+- `d76d0a4d336d` Low Power Fluorescent Lamp Inverter 1 · sam/samschem.htm
+- `cf960234885d` Low Power Fluorescent Lamp Inverter 2 · sam/samschem.htm
+- `bdb9cdffc00d` Low Power Fluorescent Lamp Inverter 3 · sam/samschem.htm
+- `5e820c51d298` Medium Power Fluorescent Lamp Inverter · sam/samschem.htm
+- `286992cb6414` Medium Power Fluorescent Lamp Inverter · sam/samschem.htm
+- `e14778e25168` Lazar's Improved Medium Power F-Lamp Inverter · sam/samschem.htm
+- `d628b21921c8` Basic 200 W Power Inverter · sam/samschem.htm
+- `fdbd55da9003` Up to 350 VDC Inverter from 1.5 V Alkaline Cell · sam/samschem.htm
+- `295642f55b2e` Teeny Tiny Inverter Design · sam/samschem.htm
+- `52a95dc0026a` IR Detector Circuit Using Bare Photodiode · sam/samschem.htm
+- `cffe2294a717` IR Detector Circuit Using IR Receiver Module · sam/samschem.htm
+- `92b34bceebfd` Simple 3-Way Dimmer Schematic 1 · sam/samschem.htm
+- `1505e17b5924` Simple 3-Way Dimmer Schematic 2 · sam/samschem.htm
+- `f65dabd0dff9` Discrete Multivibrator · sam/samschem.htm
+- `c5784679a993` Simple Pushbutton Clock Circuit · sam/samschem.htm
+- `7199a0389799` Interesting Sequential Neon Flasher · sam/samschem.htm
+- `1ff1fc32dd97` Circuit to Allow AC Signal to Activate Small Relay · sam/samschem.htm
+- `a82cae487f7d` 1.5 V LED Flasher · sam/samschem.htm
+- `b86b3756defe` Dark Activated 1.5 V LED Flasher · sam/samschem.htm
+- `c9195eebdef1` Independently variable high and low time · sam/samschem.htm
+- `b9901312b10b` Fixed frequency, variable pulse width · sam/samschem.htm
+- `ba606562d195` Testing Darlington Transistors · sam/semitest.htm
+- `ac2d95bf70c9` Testing Digital or Bias Resistor Transistors · sam/semitest.htm
+- `222eef775ad7` Testing Unijunction and Programmable Unijunction Transistors · sam/semitest.htm
+- `015f1dbaa356` Testing Unijunction and Programmable Unijunction Transistors · sam/semitest.htm
+- `e51329ac411b` How Does a Thyristor Work? · sam/semitest.htm
+- `e7181cb174f1` Testing SCRs and Triacs · sam/semitest.htm
+- `e49560af3298` Testing Diacs and Sidacs · sam/semitest.htm
+- `dd6dacd10b52` Testing Opto-Isolators and Photo-Interrupters · sam/semitest.htm
+- `944e7d56c066` Difference Between Normal and 'R' Marked Parts · sam/semitest.htm
+- `4e5f2fe290c3` Testing Zener Diodes · sam/semitest.htm
+- `a9606817738d` Quick and Dirty Curve Tracer · sam/semitest.htm
+- `895ab384564e` In-Circuit Tester · sam/semitest.htm
+- `11aa7e322d9f` Parts List · sam/sgab2/sgab2.htm
+- `22a82c4960f9` Parts List · sam/sgor3/sgor3.htm
+- `cc167180c752` Description of typical flyback type SMPS · sam/smpsfaq.htm
+- `60cf4595b551` Switching between 115 VAC and 230 VAC input · sam/smpsfaq.htm
+- `c97445f794d0` Repair Story #9: Chris's HeNe Laser Adventure · sam/stories.htm
+- `19bbee5c2769` Here is update #1 · sam/stories.htm
+- `820fa486ce3d` Here is update #1 · sam/stories.htm
+- `91a92842a210` Here is update #1 · sam/stories.htm
+- `3c665c2a4ab8` Here is update #1 · sam/stories.htm
+- `cf83e84f1c11` Electronic Flash Fundamentals · sam/strbfaq.htm
+- `5665d818c389` Capacitor Discharge Indicator Circuit · sam/strbfaq.htm
+- `c677306bfd66` Lengthening the Duration of a Flash · sam/strbfaq.htm
+- `5069d2f01d66` Converting a Pocket Camera Strobe into a Repeating Strobe · sam/strbfaq.htm
+- `ec78b436ff0c` Repeating Trigger Using 555 Timer · sam/strbfaq.htm
+- `f3fde39885ac` Repeating Trigger Using Neon Tube (Indicator Lamp) · sam/strbfaq.htm
+- `3d4486dee674` Optoisolated Remote Trigger from low Voltage Logic or Signal · sam/strbfaq.htm
+- `ef1a620bafaf` Optoisolated Adapter for Older Flash Units to Low Voltage Cameras · sam/strbfaq.htm
+- `4e3dc7f84124` Zener Protected Adapter for Older Flash Units to Low Voltage Camera · sam/strbfaq.htm
+- `20ba5a1db154` Light Beam Triggered Strobe Circuit · sam/strbfaq.htm
+- `1d624f3b1734` Triggering a Slave Flash from a Dual Flash Camera · sam/strbfaq.htm
+- `037c80539ca6` Triggering a Slave Flash from a Dual Flash Camera · sam/strbfaq.htm
+- `b132c07fa63f` Tiny Tiny Inverter Design · sam/strbfaq.htm
+- `124ac915b946` Radio Shack Low Power Strobe · sam/strbfaq.htm
+- `631d1e33a63d` Flashbar Eliminator for SX-70 Polaroid Cameras · sam/strbfaq.htm
+- `6c25b5fec34c` Flashbar Eliminator for SX-70 Polaroid Cameras · sam/strbfaq.htm
+- `5e7f88194933` Flashbar Eliminator Schematic · sam/strbfaq.htm
+- `96fda1f28421` Photoflash Circuit from Keystone Pocket Camera · sam/strbfaq.htm
+- `782e2a3cfb0d` Electronic Flash Model ME1 for Minox B · sam/strbfaq.htm
+- `74e127c1fccf` Electronic Flash Model ME1 for Minox B · sam/strbfaq.htm
+- `9779a21ddeba` Vivitar Auto 253 Power Supply · sam/strbfaq.htm
+- `c20a8b58bdb0` Vivitar Auto 253 Exposure Control Circuit · sam/strbfaq.htm
+- `8f2ff3570a03` Vivitar Auto/Thyristor 292 Exposure Control Circuit · sam/strbfaq.htm
+- `596990831e43` Medium Power Photoflash Circuit · sam/strbfaq.htm
+- `00b1201c6642` Higher Power Photoflash with SCR Trigger · sam/strbfaq.htm
+- `20c603eb643c` Simple Commercial Timing Light · sam/strbfaq.htm
+- `26ca62a7badb` Welch Scientific Model 2153C Stroboscope · sam/strbfaq.htm
+- `439c2fb50fe7` Isolation Transformers · sam/tshoot.htm
+- `8eb242c30785` Typical Homemade Isolation Transformer · sam/tshoot.htm
+- `8945c5c2c4f9` Variable Autotransformers · sam/tshoot.htm
+- `86016fe478e8` What About the Scope Ground? · sam/tshoot.htm
+- `265e85c8c620` Incredibly Handy Widgets(tm) · sam/tshoot.htm
+- `e22938188663` Incredibly Handy Widgets(tm) · sam/tshoot.htm
+- `bf77cfe0f203` Safe troubleshooting techniques for line powered TVs · sam/tvfaq.htm
+- `323538e3ee81` Typical TV power supply front end · sam/tvfaq.htm
+- `3c83941bc81c` Interesting TV Switch Mode Power Supply · sam/tvfaq.htm
+- `a2b52aa0938e` Cable channel allocation · sam/tvfaq.htm
+- `bbade93fd632` Reference Voltage for Single Ended Digital Input · sam/uMD0/SG-uMD0-V1.0-am.htm
+- `446dda0396ff` Parts List for SG-µMD1 Version 1.0 · sam/uMD1/SG-uMD1-V1.0-am.htm
+- `5c40aac346b9` Reference Voltage for Single Ended Input · sam/uMD2/SG-uMD0-V1.0-am.htm
+- `66d927683239` Diagram of single video head · sam/vcrfaq.htm
+- `0f3ae3a659ef` Diagram of double video head · sam/vcrfaq.htm
+- `b733721a53da` VHS physical tape format · sam/vcrfaq.htm
+- `665344ba14cf` TTL to VGA/Analog · sam/vidconv.htm
+- `6e70f9f83c16` Notes on VGA to RGB Conversion · sam/vidconv.htm
+- `c10d4fe6728c` VGA to Grayscale Composite Monitor · sam/vidconv.htm
+- `31d3e962f6ee` Sun 13W3 · sam/vidconv.htm
+
+## Sci.Electronics.Repair FAQ (REPAIR/ and samnew/) (136)
+
+- `62546746170a` 10 . Conclusion and Credits · REPAIR/F_CompRFI.html
+- `6bfb50b05f45` 3 . How does the tape work · REPAIR/F_DC_tape.html
+- `3faa8ee0bbe3` 3 . How does the tape work · REPAIR/F_DC_tape.html
+- `42c136051e03` Table 1. Squelch Hysteresis Resistor In Selected Receivers · REPAIR/F_MR_Squelch.html
+- `ea93d09e7ce9` 3.13) JDR Microdevices (Just moved!) · REPAIR/F_Mail_Order2.html
+- `6a487a9756eb` 2.2) SNES (Super Nintendo Ent. System) · REPAIR/F_Pinouts1.html
+- `e9d383acdd8d` 5.2) Analog Sun 13W3 Color Pinout: · REPAIR/F_Pinouts1.html
+- `cec0f210e47b` 6.2.5) IDC-50 Male · REPAIR/F_Pinouts1.html
+- `cea8c3165cbe` 6.2.9) EISA/ISA/VLB · REPAIR/F_Pinouts1.html
+- `b9e2693fe3e4` 6.2.10) PCI Universal Card 32/64 bit · REPAIR/F_Pinouts1.html
+- `e1ed994403cd` 6.11.7) 2.5" IDE drive (44 pin connector) · REPAIR/F_Pinouts2.html
+- `95417e3bd2ab` 6.11.7) 2.5" IDE drive (44 pin connector) · REPAIR/F_Pinouts2.html
+- `2e365bec242f` 6.11.8) 3.5" IDE drive (40 pin connector) · REPAIR/F_Pinouts2.html
+- `ce78dc9e212e` 6.12) ISA / EISA · REPAIR/F_Pinouts2.html
+- `58969d42d390` 6.13) VESA Local Bus (VLB) Connector · REPAIR/F_Pinouts2.html
+- `7b281b093a97` 6.15) 30 pin Fast Page Mode SIMM 256kx8 256kx9 1Mx8 1Mx9 4Mx8 4Mx9 · REPAIR/F_Pinouts2.html
+- `48cd4bd0aa0c` 6.16) 72 pin Fast Page Mode SIMM 256k/512k/1M/2M/4M/8M x 32/36 bit · REPAIR/F_Pinouts2.html
+- `375e5583dc1c` 6.17.1) SCSI Connector Pinouts (Single Ended) IDC-50 Male · REPAIR/F_Pinouts3.html
+- `0490d07ba0f7` 6.17.2) SCSI Connector Pinouts (Differential) IDC-50 Male · REPAIR/F_Pinouts3.html
+- `d637dc2c611d` 6.17.3) Macintosh SCSI Connector Pinouts (Single Ended) DB-25S Female · REPAIR/F_Pinouts3.html
+- `0dd55637d39e` 6.18.1) PCI Cards Universal/3.3V/5V and 32/64 bit · REPAIR/F_Pinouts3.html
+- `10cee3387381` 6.19) Mini DIN-8 Macintosh Serial Connector · REPAIR/F_Pinouts3.html
+- `097019248f8b` 3 . SNES Multi-out cable connector pins. · REPAIR/F_SNES.html
+- `bbf77133c5ac` 1.1.5) Remote control key mappings · REPAIR/F_SonySet.html
+- `cfcf4579a268` 1.1.6) Screen Label : definitions · REPAIR/F_SonySet.html
+- `7604b293b030` 1.4) Schematic 1 · REPAIR/F_SyncGrn1.html
+- `559df24ffdb9` 6.1) Schematic 2 · REPAIR/F_SyncGrn3.html
+- `ae5fe6ac05b2` Chapter 9) Atari Field Service bulletin · REPAIR/F_VAtari3.html
+- `8e39a675b98a` 9.3) ORIGINAL · REPAIR/F_VAtari4.html
+- `bc3346b698af` 9.4) First Revision · REPAIR/F_VAtari4.html
+- `68a8e6589c4a` 9.5) Second Revision · REPAIR/F_VAtari4.html
+- `65361661eb6b` 9.6) STAR WARS Display Problems (continued...) · REPAIR/F_VAtari5.html
+- `bf96ba16f8cf` 9.8) TESTING TRANSISTORS WITH AN DIGITAL MULTI-METER · REPAIR/F_VAtari6.html
+- `ba76048142db` 9.8) TESTING TRANSISTORS WITH AN DIGITAL MULTI-METER · REPAIR/F_VAtari6.html
+- `9bf06cbe01ff` Chapter 10) TEMPEST DISPLAY troubleshooting (flowchart) · REPAIR/F_VAtari7.html
+- `1945a4b662db` 10.5) No HV (very dead sound) · REPAIR/F_VAtari8.html
+- `9109662894c1` 11.1) HV over-voltage protection circuit · REPAIR/F_VAtari9.html
+- `b090d04794fa` 11.2.1) COLOR PURITY · REPAIR/F_VAtaria.html
+- `c9b8278079c7` 11.2.3) ADJUSTMENT OF DYNAMIC CONVERGENCE (Figures 7, 8 and 9) · REPAIR/F_VAtaria.html
+- `266b40928026` 11.2.3) ADJUSTMENT OF DYNAMIC CONVERGENCE (Figures 7, 8 and 9) · REPAIR/F_VAtaria.html
+- `c67473fbe99f` 11.2.3) ADJUSTMENT OF DYNAMIC CONVERGENCE (Figures 7, 8 and 9) · REPAIR/F_VAtaria.html
+- `4a76448b049a` 11.2.3) ADJUSTMENT OF DYNAMIC CONVERGENCE (Figures 7, 8 and 9) · REPAIR/F_VAtaria.html
+- `e8660f3ad72b` 11.2.3) ADJUSTMENT OF DYNAMIC CONVERGENCE (Figures 7, 8 and 9) · REPAIR/F_VAtaria.html
+- `f09a1754941f` 12.1.1) Preliminary Procedure · REPAIR/F_VAtarib.html
+- `ae03f8da4cc8` 14.2) Schematic for IPC · REPAIR/F_VAtaric.html
+- `b8d9d18fd850` 15.1) FIRST HALF · REPAIR/F_VAtaric.html
+- `eb4a2427d534` 15.3) SECOND HALF · REPAIR/F_VAtaric.html
+- `aac8fcac6a42` 4.6) Series and parallel circuits · REPAIR/F_appfaq1.html
+- `33fbf6b7322d` 6.18) Controls 2 - rheostats and potentiometers · REPAIR/F_appfaq4.html
+- `c5bfdd84d31c` 7.14) Controlling a fixture or outlet from multiple locations · REPAIR/F_appfaq6.html
+- `f5a2e7ec26f7` 7.18) Simplest dimmer schematic · REPAIR/F_appfaq6.html
+- `5d60dfafbdd4` 7.20) Simple 3-way dimmer schematic 1 · REPAIR/F_appfaq6.html
+- `13d40946ef69` 7.21) Simple 3-way dimmer schematic 2 · REPAIR/F_appfaq6.html
+- `c289560b4782` 7.21) Simple 3-way dimmer schematic 2 · REPAIR/F_appfaq6.html
+- `f13e35dbee40` 7.23) Independent dimming from two locations - kludge #3251 · REPAIR/F_appfaq7.html
+- `c36f48d7fc5b` 7.29) First Alert Series 50 rechargeable flashlight schematic · REPAIR/F_appfaq7.html
+- `54992290a090` 7.30) Black & Decker Spotlighter Type 2 rechargeable flashlight · REPAIR/F_appfaq7.html
+- `3842b02e7336` 7.31) Brand Unknown (Made in China) rechargeable flashlight schematic · REPAIR/F_appfaq7.html
+- `e7846e9f0f9d` 7.45) Electronic air cleaner high voltage module schematic · REPAIR/F_appfaq8.html
+- `4360b64dc87d` 7.46) Auto air purifier schematic · REPAIR/F_appfaq8.html
+- `b6802ee39171` 7.100) Ultrasonic cleaners · REPAIR/F_appfaqa.html
+- `100ac85f5b83` 9.3) Pocket wall adapter tester/polarity checker · REPAIR/F_appfaqd.html
+- `54e3fb8c6268` 9.7) Converting an AC output wall adapter to DC · REPAIR/F_appfaqd.html
+- `298a04ec2da8` 9.8) Adding an IC regulator to a wall adapter or battery · REPAIR/F_appfaqd.html
+- `583b319c89d2` 12.8) Wiring for preheat fluorescent fixtures · REPAIR/F_appfaqf.html
+- `2d4fcd4f26f0` 12.10) Wiring for rapid start and trigger start fixtures · REPAIR/F_appfaqf.html
+- `4c93ae7133c9` 15.6) Range, oven, and furnace electronic ignition · REPAIR/F_appfaqi.html
+- `de6321d81ca3` 3.9) Handy-dandy phone line tester · REPAIR/F_audiofaq1.html
+- `3fd0af76ff32` 9.12) Photoflash circuit from pocket camera · REPAIR/F_audiofaq6.html
+- `4f3ecd69377e` 10.3) Pocket wall adapter tester/polarity checker · REPAIR/F_audiofaq7.html
+- `96ab001c3024` 10.9) Adding an IC regulator to a wall adapter or battery · REPAIR/F_audiofaq7.html
+- `2e2017f73605` 15.13) Sony KSS series optical pickups · REPAIR/F_cdfaqa.html
+- `a3d9d6b8eaf4` 16.5) What is an anti-aliasing filter · REPAIR/F_cdfaqb.html
+- `cd5f25236175` 16.7) Instant oversampling theory · REPAIR/F_cdfaqb.html
+- `16873baaddc1` 16.7) Instant oversampling theory · REPAIR/F_cdfaqb.html
+- `46a8e7c079a9` 17.7) Laser diode life · REPAIR/F_cdfaqd.html
+- `cc5c6657f12b` 3.1) How does the horizontal deflection circuit work? · REPAIR/F_deflfaq.html
+- `690d880e05b2` 3.2) Basic deflection circuit operation · REPAIR/F_deflfaq.html
+- `dff242611e48` 3.6) N/S and E/W correction circuit operation · REPAIR/F_deflfaq.html
+- `f89d8e377917` 4.15) S-correction circuits on multi-scan monitors · REPAIR/F_deflfaq.html
+- `911f16f71ee8` 3.13) Method 1 · REPAIR/F_flytest.html
+- `d450441d4585` 3.14) Method 2 · REPAIR/F_flytest.html
+- `af7e0cab4c8e` 3.20) Typical flyback schematic · REPAIR/F_flytest.html
+- `a484f67c506f` 2 . Introduction · REPAIR/F_hvinvert.html
+- `6aacfe9d5054` 6 . Sample Circuit · REPAIR/F_hvprobe.html
+- `56458e8c9f76` 4 . Construction · REPAIR/F_jacobs.html
+- `7c2f0244d446` 5.13) Microwave generator circuit diagram · REPAIR/F_micfaq2.html
+- `9e45ac0e177b` 8.15) High frequency inverter type HV power supplies · REPAIR/F_micfaq6.html
+- `69457cea5e6b` 12.28) Apple/Sony monitor dies after variable length of time · REPAIR/F_monfaqd.html
+- `1a11d1c1d4ac` 4.37) RCA EFR485 (CTC111) Color TV Part 2 No Picture · REPAIR/F_rball.html
+- `7f9e445c433c` 4.37) RCA EFR485 (CTC111) Color TV Part 2 No Picture · REPAIR/F_rball.html
+- `de48408a076d` 4.73) Sony D88 Portable CD Player Part 1 - Does Not Recognize Discs · REPAIR/F_rball.html
+- `f235b88e2cfa` 4.96) GE Frost-Free Refrigerator - Reduced Cooling · REPAIR/F_rball.html
+- `44d175ac1615` 4.97) Panasonic VCR Power Supply - Comedy of Errors · REPAIR/F_rball.html
+- `a37c0cc43e3a` 8.1) Super simple inverter · REPAIR/F_samschem.html
+- `a097564a4b17` 8.3) Archer mini flashlight fluorescent lamp inverter · REPAIR/F_samschem.html
+- `4eacdc7e7fa7` 8.5) Energizer mini flashlight fluorescent lamp inverter · REPAIR/F_samschem.html
+- `22a9686a98ae` 8.7) Pocket fluorescent blacklight inverter GH-RV-B1 · REPAIR/F_samschem.html
+- `eed9d7354011` 8.9) Low power fluorescent lamp inverter 1 · REPAIR/F_samschem.html
+- `a1623b98fd77` 8.11) Low power fluorescent lamp inverter 2 · REPAIR/F_samschem.html
+- `d732f40741a5` 8.13) Medium power fluorescent lamp inverter · REPAIR/F_samschem.html
+- `5b6075408a02` 8.13) Medium power fluorescent lamp inverter · REPAIR/F_samschem.html
+- `03882df71eb5` 9.2) Tiny tiny inverter design · REPAIR/F_samschem.html
+- `90a1d97e7649` 11.1) Simplest dimmer schematic · REPAIR/F_samschem.html
+- `53499d0ee5d7` 11.3) Simple 3-way dimmer schematic 1 · REPAIR/F_samschem.html
+- `2f8c0fdd22ee` 11.4) Simple 3-way dimmer schematic 2 · REPAIR/F_samschem.html
+- `0af04b786268` Chapter 13) Discrete Multivibrator Schematic · REPAIR/F_samschem.html
+- `0eea866b2d9c` Chapter 14) Ultrasonic cleaner schematic · REPAIR/F_samschem.html
+- `6de6a9404719` Chapter 20) Interesting Sequential Neon Flasher · REPAIR/F_samschem.html
+- `1b25f0211d9f` Testing Unijunction and Programmable Unijunction Transistors · REPAIR/F_semitest.html
+- `3f63f4af3ef3` 3.3) Description of typical flyback type SMPS · REPAIR/F_smpsfaq.html
+- `286b3adafc0a` 6.5) Switching between 115 VAC and 230 VAC input · REPAIR/F_smpsfaq.html
+- `26462adcd26b` 5.5) Flashbar eliminator schematic · REPAIR/F_strbfaq.html
+- `0cb729e9b046` 6.4) Repeating trigger using 555 timer · REPAIR/F_strbfaq.html
+- `88a38651a681` 6.5) Repeating trigger using neon tube (indicator lamp) · REPAIR/F_strbfaq.html
+- `5ee2e4196b7d` 6.7) Optoisolated remote trigger from low voltage logic or signal · REPAIR/F_strbfaq.html
+- `2384239919c1` 6.11) Tiny tiny inverter design · REPAIR/F_strbfaq.html
+- `fb86d6f510fd` 6.14) Light beam triggered strobe circuit · REPAIR/F_strbfaq.html
+- `185f9e2d0395` 6.16) Radio Shack low power strobe · REPAIR/F_strbfaq.html
+- `2f67f0d824ac` 7.1) Photoflash circuit from Keystone pocket camera · REPAIR/F_strbfaq.html
+- `b7983895486b` 7.4) Photoflash circuit from Kodak pocket camera · REPAIR/F_strbfaq.html
+- `87b6d2948c63` 7.9) Line powered photoflash circuit · REPAIR/F_strbfaq.html
+- `cb3d706a8402` 7.12) Higher power photoflash with SCR trigger · REPAIR/F_strbfaq.html
+- `fe00a0a29c2c` 7.16) Vivitar Auto 253 power supply · REPAIR/F_strbfaq.html
+- `69826fb057e5` 7.18) Vivitar Auto 253 exposure control circuit · REPAIR/F_strbfaq.html
+- `6dc32d0ed923` 7.22) Vivitar Auto/Thyristor 292 exposure control circuit · REPAIR/F_strbfaq.html
+- `314bd04b4ade` 7.25) High power (laser pump) strobe circuit · REPAIR/F_strbfaq.html
+- `e06bf138919a` 7.28) Simple commercial timing light · REPAIR/F_strbfaq.html
+- `bda7eff92d0b` 7.30) Commercial stroboscope · REPAIR/F_strbfaq.html
+- `1c86d7b2695d` 4.14) Incredibly handy widgets(tm) · REPAIR/F_tshoot.html
+- `715e17b24a35` 20.8) Safe troubleshooting techniques for line powered TVs · REPAIR/F_tvfaq2.html
+- `b0bbb5dad90a` 22.2) Typical TV power supply front end · REPAIR/F_tvfaq3.html
+- `741cbddbdca5` 30.35) Interesting TV Switch Mode Power Supply · REPAIR/F_tvfaqe.html
+- `89a522be67a8` 18.3) Diagram of single video head · REPAIR/F_vcrfaq9.html
+- `acf33a71a4eb` 18.4) Diagram of double video head · REPAIR/F_vcrfaq9.html
+- `4f801c102aa3` 22.31) VHS physical tape format · REPAIR/F_vcrfaqc.html

@@ -1,0 +1,163 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/tvfaq/tvhotsubsj.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="The horizontal output transistor substit..&nbsp;&nbsp; tvfaq repair micro wave broken vcr tv monitor cd radio dead NotTaR of Television Sets  ">
+  <title>SER FAQ: TVFAQ: The horizontal output transistor substitution jig trick</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/tvfaq/tvhotsubsj.htm">https://www.repairfaq.org/samnew/tvfaq/tvhotsubsj.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="tvfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-tvfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>NotTaR of Television Sets  </strong>: <font color="red">The horizontal output transistor substit..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tvitvsmps.htm">&lt;&lt;&nbsp;Interesting TV Switch Mod..</a> |
+		
+	
+&nbsp;<a href="../tvfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="tvkcotvsmpsr.htm">Ken's comments on (TV) SM..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="tvhotsubsj">The horizontal output transistor substitution jig trick</A></h3>
+
+(From: penguin@datastar.net).
+<p>
+Okay, here's a good trick you can use for almost all TV work. Mount a TO-3
+transistor socket on a heatsink that has about as much surface area as the
+skin of both fists balled up, actually the bigger the heatsink the better.
+Then mount a horizontal output transistor in the socket.  Use an ECG238 or
+equivalent.  Make sure you use a good mica insulator, as there will be over a
+thousand volts on the collector.
+<p>
+Solder a 1.5 foot red wire (18 gauge or bigger) to the collector, an equal but
+yellow wire to the base and an equal but green wire to the emitter (or use
+your own color codes).  You may be able to salvage a ready made heatsink with
+socket out of an old receiver or TV. Mine came out of some old Curtis Mathes
+TV's.  Solder a damper diode with the cathode to the collector and the anode
+to the emitter. Add a 200 ohm 1/4 watt resistor from base to emitter. Add
+these parts to the socket not the transistor, so the transistor can easily be
+changed if you ever need to.
+<p>
+Now you have a very useful test jig. If you are ever working on a TV that has
+a blown HOT (horizontal output transistor) you can pull out the bad part and
+connect this jig. Then you can run the set at low voltage.
+<p>
+If you have a set where the HOT is running too hot, this method often will
+give you some running time, hopefully enough time to find out what the problem
+is. Often the bad parts themselves will self destruct or heat up to where
+identifying them is easy. Usually a bad flyback will crack and smoke proving
+itself to be bad. Once your satisfied that the problem is cured, you can put
+the original HOT in knowing it will be safe.
+<p>
+Usually when I power a TV in this way (using a Variac) I'll bypass the series
+pass regulator with a jumper. This is easily done by finding the 180 to 330
+ohm 15 to 20 watt regulator bypass resistor and putting a jumper across it.
+With the regulator bypassed the power supply will go to 160 volts this is why
+it is necessary to use a Variac and only run it at about 60 volts. It is
+necessary when using this brute force approach, to make sure that all of the
+low voltage supplies coming off the flyback are fused with fusible
+resistors. Most models do fuse the LV supplies, but some don't. (One
+particular RCA comes to mind.)   Another good trick, if your out in the
+field and don't have a varactor handy, is to simply pull the series pass
+regulator (e.g. STR30130 etc.) and let all the power just come through the 20
+w bypass resistor. If the flyback is okay the B+ to the flyback will come up
+to about 60 to 90 volts, and in many cases you can even see a dim picture. 
+Anything less than 50-60 volts and the flyback is probably bad. Don't run it
+this way for more than a minute or two as the the resistor will be dissipating
+close to or more than its rated power under these circumstances. Of coarse you
+obviously can't use this method with switching power supplies.
+<p>
+Here's a good trick for the Sony TVs that use the SG-613, even though this
+device is a gate controlled SCR you can sub a regular HOT like the ECG238 on
+your test jig. I used to blow out these buggers to the tune of about $20
+dollars a pop til I figured out how to use the "HOT Heatsink Jig". Now with
+the jig connected, the horizontal width may not open up all the way, but you
+can run these old Sony's like this for about 5 minutes before the HOT jig
+starts to get too hot. Usually if they run this long they're ok and then you
+can put the SG-613 in knowing that you aren't going to see a bunch of $$$ go
+up in smoke. I had a Sony that would run for weeks then blow the SG-613
+finally put this one to rest when I changed out the horizontal output
+transformer which was separate from the flyback on this oldie.
+<p>
+Always be cautious of the high voltage on the collector of the HOT JIG.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="tvitvsmps.htm">&lt;&lt;Interesting TV Switch Mod..</a> |
+		
+	
+<a href="../tvfaq.htm">ToC</a>
+	
+		
+| <a href="tvkcotvsmpsr.htm">Ken's comments on (TV) SM..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

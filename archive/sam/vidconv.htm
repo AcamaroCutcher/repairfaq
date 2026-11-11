@@ -1,0 +1,3428 @@
+<!--
+  Mirrored from https://www.repairfaq.org/sam/vidconv.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<HTML>
+<HEAD>
+<TITLE>Notes on Video Conversion</TITLE>
+<link rel="stylesheet" href="../../companion/assets/mirror-theme.css">
+</HEAD>
+<BODY>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/sam/vidconv.htm">https://www.repairfaq.org/sam/vidconv.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../index.html">companion guide</a></small></div>
+
+<center>
+<PRE>
+
+</PRE>
+<h1>
+Notes on Video Conversion
+</h1>
+<h2>
+Version 2.01a (20-Apr-15)
+<br>
+</h2>
+<h3>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+Samuel M. Goldwasser
+<br>
+--- All Rights Reserved ---
+<br>
+<br>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<br>
+</center>
+<br>
+Reproduction of this document in whole or in part is permitted
+if both of the following conditions are satisfied:
+<ol>
+<li>This notice is included in its entirety at the beginning.
+<br>
+<li>There is no charge except to cover the costs of copying.
+</ol>
+</h3>
+<A NAME="nvctoc"></A>
+<hr>
+<br>
+<h2>Table of Contents</h2>
+<ul>
+<li><A HREF="#nvcpre">Preface</a>
+ <ul>
+ <li><A HREF="#nvcaac">Author and Copyright</a>
+ <li><A HREF="#nvcdis">DISCLAIMER</a>
+ </ul>
+<p>
+<li><A HREF="#nvcint">Introduction</a>
+ <ul>
+ <li><A HREF="#nvcsap">Scope and Purpose of This Document?</a>
+ <li><A HREF="#nvccso">Commercial Solutions</A>
+ </ul>
+<p>
+<li><A HREF="#nvcttr">TV (NTSC/PAL) to RGB</a>
+ <ul>
+ <li><A HREF="#nvcttr0">Watching TV on a VGA/SVGA Monitor</a>
+ <li><A HREF="#nvcttrs">SCART to VGA</a>
+ <li><A HREF="#nvcttr1">TV to Fixed Frequency Monitor</a>
+ <li><A HREF="#nvcttr2">TV to MGA</a>
+ <li><A HREF="#nvcttr3">TV to CGA</a>
+ </ul>
+<p>
+<li><A HREF="#nvcvgtl">PC VGA/SVGA to/from TTL</a>
+ <ul>
+ <li><A HREF="#nvcvgtl0">VGA to TTL (MGA, CGA, EGA) and Vice-Versa</a>
+ <li><A HREF="#nvcvgtl1">VGA to CGA 1</a>
+ <li><A HREF="#nvcvgtl2">VGA to CGA 2</a>
+ <li><A HREF="#nvcvgtl3">VGA to CGA 3</a>
+ <li><A HREF="#nvctlvg">TTL to VGA/Analog</a>
+ <li><A HREF="#nvccgvg">CGA to VGA</a>
+ </ul>
+<p>
+
+ <li><A HREF="#nvcvgta">VGA to Analog RGB</a>
+  <ul>
+  <li><A HREF="#nvcvgta1">VGA to Fixed Frequency Monitor (3, 4, or 5 BNC Connectors)</a>
+  <li><A HREF="#nvcvgta2">VGA to Apple RGB</a> 
+  <li><A HREF="#nvcvgta3">VGA to Mac (Monitor) Conversion</a>
+  <li><A HREF="#nvcvgta4">VGA to Sun/Sony GDM1960</a>
+  <li><A HREF="#nvcvgta5">VGA to Amiga 1024</a>
+  <li><A HREF="#nvcvgta6">VGA to SCART</a>
+  <li><A HREF="#nvcvgta7">Notes on VGA to RGB Conversion</a>
+  </ul>
+<p>
+ <li><A HREF="#nvcvgtv">VGA to TV - NTSC or PAL</a>
+  <ul>
+  <li><A HREF="#nvcvgtv1">VGA to TV Converter Boxes, Adapters, and Boards</a>
+  <li><A HREF="#nvcvgtv2">VGA to NTSC/PAL Chip</a> 
+  <li><A HREF="#nvcvgtv3">Questions and Answers on VGA to NTSC Considerations</a>
+  </ul>
+<p>
+<li><A HREF="#nvcvgtc">VGA to Composite Video</a>
+ <ul>
+ <li><A HREF="#nvcvgtc1">VGA to Grayscale Composite Monitor</a>
+ </ul>
+<p>
+<li><A HREF="#nvctpv">TV or Composite Video to RGB (Analog or Digital)</a>
+ <ul>
+ <li><A HREF="#nvctpv0">NTSC to CGA</a>
+ <li><A HREF="#nvctpv1">Composite Video (NTSC/PAL) to RGB</a>
+ <li><A HREF="#nvctpv2">Watching TV on a PC Monitor - NTSC/PAL to VGA</a>
+ <li><A HREF="#nvctpv3">Comments on TV to VGA/SVGA Conversion</a>
+ </ul>
+<p>
+<li><A HREF="#nvcvsc">Video Standards Conversion</a>
+ <ul>
+ <li><A HREF="#nvcvsc0">NTSC to PAL</a>
+ <li><A HREF="#nvcvsc1">What is a Scan Converter?</a>
+ <li><A HREF="#nvcvsc2">What is a Scan Doubler?</a>
+  <ul>
+  <li><A HREF="#nvcvsc2a">Scan Doubler Chips</a>
+  </ul>
+ <li><A HREF="#nvcvsc3">What is a Scan Divider?</a>
+ <li><A HREF="#nvcvsc4">RGB to PAL Chips</a>
+ <li><A HREF="#nvcvsc5">Digital Video Conversion Chips</a>
+ <li><A HREF="#nvcvsc6">Black Level Clamp</a>
+ <li><A HREF="#nvcvsc7">Inverting an Analog Video Signal</a>
+ </ul>
+<p>
+<li><A HREF="#nvcmis">Miscellaneous Video Conversion Topics</a>
+ <ul>
+ <li><A HREF="#nvcmis0">CGA Boards with NTSC Output</a>
+ <li><A HREF="#nvcctv">CGA to VGA</a>
+ <li><A HREF="#nvcmis1">NTSC/PAL to RF (Channel 3/4) Output</a>
+ <li><A HREF="#nvcmis2">VGA Monitor on Sun Sparc</a>
+ <li><A HREF="#nvcsvtc">S-Video to Composite</a>
+ <li><A HREF="#nvcctsv">Composite to S-Video</a>
+ <li><A HREF="#nvcrgvg">RGB Sync-On-Green to VGA</a>
+ </ul>
+<p>
+<li><A HREF="#nvcioi">Items of Interest</a>
+ <ul>
+ <li><A HREF="#nvcvvs">Various Video Standards</a>
+ <li><A HREF="#nvcioi0">General VGA Information</a>
+ <li><A HREF="#nvcvcmp">Comparison of Composite, S-Video, Component Video, and RGB</a>
+ <li><A HREF="#nvcioi1">TV Capture Cards for PCs</a>
+ <li><A HREF="#nvcioi2">Mixing of Independent Video Sources</a>
+ <li><A HREF="#nvcioi3">Studio Video Recording or Filming Directly from Monitors</a>
+ <li><A HREF="#nvcioi4">Video Controller Timing</a>
+ <li><A HREF="#nvcioi5">Sync Generator Chips</a>
+ <li><A HREF="#nvcioi6">Sync Separators</a>
+ <li><A HREF="#nvcioi7">Dead VCRs and Composite Monitors</a>
+ <li><A HREF="#nvcioi8">Video Cables</a>
+ <li><A HREF="#nvcioi9">Building a 5 BNC Cable</a>
+ <li><A HREF="#nvcioi10">Tweaking the Deflection Rates of a Fixed Frequency Monitor</a>
+ <li><A HREF="#nvcioi11">Modifying a CGA (or EGA) Monitor for NTSC or PAL Input</a>
+ <li><A HREF="#nvcioi12">How Can I Determine Monitor Specifications or Whether It Supports SVGA?</a>
+ <li><A HREF="#nvcioi13">Low Cost VGA Hacking</a>
+ <li><A HREF="#nvcioi14">Real Time Multi-Screen Displays</a>
+ <li><A HREF="#nvcioi15">On-Screen Display Implementation</a>
+ <li><A HREF="#nvcioi17">Video Resizing</a>
+ <li><A HREF="#nvcioi18">Video Resolution of Various VCR Formats</a>
+ <li><A HREF="#nvcioi19">What is Kell Factor with Respect to Interlaced Displays?</a>
+ </ul>
+<p>
+<li><A HREF="#nvccon">Common PC Video Connector Pinouts and Assorted Monitor Info</a>
+ <ul>
+ <li><A HREF="#nvccon0">Video Graphics Adapter (VGA)</a>
+ <li><A HREF="#nvccon1">VGA (VESA Standard)</a>
+ <li><A HREF="#nvccon2">VESA Display Data Channel Standard</a>
+ <li><A HREF="#nvccon3">VGA - 9 Pin</a>
+ <li><A HREF="#nvccon4">Enhanced Graphics Adapter (EGA)</a>
+ <li><A HREF="#nvccon5">Color Graphics Adapter (CGA)</a>
+ <li><A HREF="#nvccon6">Dell UltraScan 17ES</a>
+ <li><A HREF="#nvccon7">Monochrome Graphics Adapter (MGA)</a>
+ <li><A HREF="#nvccon8">MacIntosh Video</a>
+ <li><A HREF="#nvccon9">Mac (16") Monitor Info</a>
+ <li><A HREF="#nvccon10">Mitsubishi Diamond Scan Monitors</a>
+ <li><A HREF="#nvccon11">Sun 13W3</a>
+ <li><A HREF="#nvccon12">Sun/Sony GDM17E10</a>
+ <li><A HREF="#nvccon13">Sony PVM-2030 and PVM-2530 Profeel Pro Monitors</a>
+ <li><A HREF="#nvccon14">SGI Octane to Sony GDM-17E21 Cable</a>
+ <li><A HREF="#nvccon15">S-Video</a>
+ </ul>
+</ul>
+<p>
+<A NAME="nvcpre"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>Preface</h2>
+<h3><A NAME="nvcaac">Author and Copyright</A></h3>
+
+Author: Samuel M. Goldwasser
+<p>
+For contact info, please see the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ
+Email Links Page</A>.
+<p>
+<A HREF="copyright.htm">Copyright &copy<A> 1994-2021
+<br>
+All Rights Reserved
+<p>
+Reproduction of this document in whole or in part is permitted if both of the
+following conditions are satisfied:
+<p>
+1.This notice is included in its entirety at the beginning. 
+<br>
+2.There is no charge except to cover the costs of copying. 
+
+<h3><A NAME="nvcdis">DISCLAIMER</a></h3>
+
+Interconnecting a video source and display device that are not compatible can
+potentially result in expensive damage to either or both pieces of equipment.
+While this isn't that likely with just a bit of care, it cannot be ruled out.
+<p>
+We will not be responsible for damage to equipment, your ego, blown parts,
+county wide power outages, spontaneously generated mini (or larger) black
+holes, planetary disruptions, or personal injury that may result from the use
+of this material.
+<p>
+<A NAME="nvcint"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>Introduction</h2>
+<h3><A NAME="nvcsap">Scope and Purpose of This Document</A></h3>
+
+Questions relating to various aspects of converting one video format (like
+PC SVGA) to another (like NTSC) are very common.
+<p>
+Most of the articles in this document have been compiled over the last two
+years based on replies from myself and others to postings on the USENET
+newsgroups comp.sys.ibm.pc.hardware.video and those of the sci.electronics
+hierarchy.  I apologize if your response is not here - it could have been
+that I missed the posting and will welcome contributions.
+<p>
+As always, comments, suggestions, and corrections are welcome.
+<p>
+Note: in this document, the terms 'VGA' and 'SVGA' are used somewhat
+interchangeably.  However, strictly speaking:
+<p>
+<ul>
+<li>VGA refers to the basic original IBM VGA standard of 640 x 480 at 60 Hz.
+<li>SVGA refers to scan rates greater than and including the basic VGA rate.
+</ul>
+
+<h3><A NAME="nvccso">Commercial Solutions</A></h3>
+
+A number of companies offer adapters to handle many of the problems discussed
+below.  They may advertise in the backs of electronics/hobbyist magazines
+(many are not exactly large companies!) or turn up with a Web search.  Here
+is one:
+<p>
+<ul>
+<li><A HREF="http://www.GONBES.com/en/">Gonbes Technology Co., Ltd.</A>.
+ They also seem to specifically support conversion to enable many types
+ of industrial manufacturing/automation equipment to use modern video monitors.
+</ul>
+<p>
+I have absolutely no affiliation with this company nor do I have any
+first hand knowledge of their products.
+<p>
+<A NAME="nvcttr"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>TV (NTSC/PAL) to RGB</h2>
+<h3><A NAME="nvcttr0">Watching TV on a VGA/SVGA Monitor</a></h3>
+
+Depending on the monitor, you may need a lot of electronics.  VGA uses a
+31.47 kHz horizontal scanning frequency - twice NTSC.
+<ol>
+<li>If it is auto-scan and goes down to 15 kHz horizontal, then you need an
+   NTSC to RGB converter.  There are chips from companies like Sony,
+   Signetics, and others that will do this without too much pain.
+<p>
+<li>If it will not sync at 15.734 kHz, you will need a real time digital scan
+   converter consisting of a video digitizer and a full frame buffer with
+   suitably fast I/O,  For the special case of basic VGA, a subset of this
+   called a line doubler or scan doubler will also work but there are some
+   problems with this approach.  See the section: <A HREF="#nvcvsc2">What is a
+   Scan Doubler?</A>.
+</ol>
+For PAL (625/50) the relevant resolution is closer to 800x600.
+<p>
+There are boards for your PC that will take NTSC/PAL and put it into a window.
+<p>
+There are also stand-alone boxes that will allow you to view NTSC/PAL on a
+VGA computer monitors.  One example is the
+<A HREF="http://www.z64.com/e-vbox.htm">Z64 V-Box</A>.  I have no idea how
+well it performs.  However, from the specs, it would appear to have a limited
+color resolution (only Y:U:V 4:2:2) so while adequate for some games, it may
+display annoying contours for continuous tone images.  And since it only
+generates a resolution of 640x460, there may be serious artifacts when driving
+a higher resolution flat panel display.
+<p>
+What you may find in the end is that your $150 TV gives you a better picture.
+<p>
+(The following from: Stan Rohrer <rohrers@dmapub.dma.org>)
+<p>
+For cards as well that take NTSC and put it into a window on your PO:
+<p>
+Check in the PC mail-order catalogs and your local PC parts outlets.  
+There are a number of TV boards and frame grabber boards that do what you 
+want.  Prices start (I think) around $150.  Professional level conversion
+boxes soar above there somewhere.
+<p>
+I've just started investigating such devices.  PC Zone (800-258-2088 for 
+orders/catalog) and MicroWarehouse (800-367-7080) carry Computer Eyes and 
+TelevEyes by Digital Vision.  Prices here range from $300 to $600 with 
+the highest reported to include genlock and overlay capability.
+<p>
+PC Zone has an AITech TV board for $150.  I don't know if it will take NTSC
+video input or not.  One of the guys I work with just bought an (unknown
+brand) TV board that takes NTSC but he doesn't have it installed yet.
+
+<h3><A NAME="nvcttrs">SCART to VGA</a></h3>
+
+This will only be possible without a lot of work if the VGA compatible monitor
+or video projector can sync at the PAL (or whatever) scan rate.  If so,
+this may be possible with just a special cable.  If available, use an
+oscilloscope to confirm that your equipment produces the relevant signals (not
+all SCART connectors have all the signals).  See the document:
+<A HREF="../REPAIR/F_Pinouts.html">Pinouts for
+Various Connectors in Real Life(tm)</A> for the SCART pinouts.
+<p>
+While VGA usually expects separate H and V sync - it looks like SCART has
+them only in combined (composite) form but many monitors and video projectors
+will accept either.
+<p>
+(From: Someone who wishes to remain anonymous.)
+<p>
+I just bought a box that lets me view PAL/NTSC output from a VCR or DVD
+player on an old (but big) VGA monitor I had spare.
+<p>
+It's called the Gamars V-box.
+Inside it has a Philips SAA7111 and an Averlogic AL250 IC.
+Inputs are composite video and S-video, autodetecting PAL or NTSC.
+Output is VGA.
+<p>
+The quality is great. The only problem is that playing an NTSC disc in my
+PAL DVD player causes the DVD player to output PAL at 60 Hz. This fools the
+V-box into engaging NTSC mode, which results in a black and white picture.
+<p>
+The box was inexpensive, about $40 or so.  Cheap importer:
+<A HREF="http://www.goldenshop.com.hk/AI-trad/Misc_htm/m-vgabox.htm">Golden
+Shop VGA Box Page</A>.
+<p>
+(From: Mike Deane.)
+<p>
+I have played with the V-Box unit, and it's pretty good considering it =
+wasn't really meant for converting monitors into TVs. However, it only =
+produces 640 x 480 resolution, which is not so great if you were =
+planning to use a 1024x768 TFT display with it. The screen syncs up OK, =
+but cannot do a decent job of multiplying up the resolution, so the =
+result is fairly nasty.
+
+<h3><A NAME="nvcttr1">TV to Fixed Frequency Monitor</A></h3>
+
+The hardware needed to watch TV on a typical high resolution fixed frequency
+monitor would cost more than a nice large TV.  In two words, forget it!  In
+addition to decoding the NTSC/PAL to RGB, the scan rates are SO different that
+the only hope would be to build a full blown scan converter.
+
+<h3><a name="nvcttr2">TV to MGA</a></h3>
+
+<blockquote>
+"How hard would it be to make my amber Hercules monitor display the output from
+ my VCR? the VCR has a RCA video output and a coaxial RF output and I want to
+ use the monitor as an orange TV."
+</blockquote>
+This is almost certainly not worth the effort as the monitor accepts TTL (2
+bits) and can display at most 4 gray (well, amber) levels without extensive
+modifications.  In addition, the scan rates differ substantially between
+NTSC or PAL and the Hercules standard.  As noted below and elsewhere in this
+document, a CGA monitor with a composite video input would be a better choice.
+<p>
+(From: Jerry Penner (jpenner@sentex.net).)
+<p>
+You want to connect a Herc Mono TTL monitor to a composite video signal?  Can
+you say 'Big Waste of Time and Effort'?  If you want a black and orange or
+black and green TV screen, connect your RCA video output on your VCR to the
+input of a composite CGA monitor. These monitors were used on Sanyo MBC
+computers, and early Apple clones as well as some XT's.  Colour composite
+CGA monitors used to be used on C-64 and Vic-20 computers. Their usefulless
+as TV/game monitors is legendary, and you'll be lucky to find a used one for
+under CDN$80.
+
+<h3><a name="nvcttr3">TV to CGA</a></h3>
+
+<blockquote>
+"I have a RGB CGA monitor and would like to use it to display a composite
+ or S-video signal from a VCR.  I was wondering if anyone knows how to
+ accomplish this or knows of any economical products that  will be able to
+ do this.  Any info on S-video pinouts would also be greatly appreciated."
+</blockquote>
+Is it strictly CGA?  If so, that is TTL and you can forget about displaying
+VCR S-video without extensive and not worth-it modifications.  Some CGA
+monitors have composite inputs or analog RGB inputs.  With analog RGB inputs,
+you need an NTSC to RGB converter.  These can be built with a single chip and
+some discrete components.  There are probably converter boxes available as
+well.  If it accepts composite, then just use the normal video out from
+your VCR.  S-video won't gain you anything unless the monitor has separate
+Y and C inputs as well.  If all it has is S-video in, then you can combine
+the Y and C signals with a resistor and capacitor. See the section:
+<A HREF="#nvcsvtc">S-Video to Composite</A>.
+<p>
+I have a Magnavox CM8762-074T RGB Color Monitor which accepts both CGA TTL
+and NTSC color composite video inputs.  Locating monitors of this type may
+be an alternative to video format conversion.  These may be available for
+next to nothing as the owners have upgraded and are often not interested in
+(or aware of) their present utility.  They are often of relatively high
+quality and display a very nice picture since their original intended
+resolution is similar to that of NTSC.  I use the Magnavox CM8762-074T for
+testing of VCRs and other baseband video sources.
+<p>
+<A NAME="nvcvgtl"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>PC VGA/SVGA to/from TTL</h2>
+<h3><a name="nvcvgtl0">VGA to TTL (MGA, CGA, EGA)</a></h3>
+
+Both the signal format and scan rates are incompatible.  Therefore, simple
+conversion between analog VGA/SVGA and any of the TTL formats - Mono, CGA,
+and EGA - is generally not realistically possible.
+<p>
+Some (mostly older high-end) monitors will accept multiple input types
+like VGA, EGA, and composite.  Some examples are: Mitsubishi AUM1371/81,
+Tatung CM1495, Princeton Ultra-14, and NEC MultiSync.  These can select
+between VGA and EGA input (either a switch or cable) and the Mitsubishi (at
+least) will also accept composite (NTSC) video.
+
+<h3><a name="nvcvgtl1">VGA to CGA1</a></h3>
+
+The following applies with minor changes (scan rates, number of bits) to
+MGA, CGA, EGA, and most other TTL video signal formats as well.
+
+<blockquote>
+"I am trying to use an old Sony monitor, (PVM-1342Q), which only accepts a
+ CGA video signal through a 9 pin connector.  My output is SVGA via a HD15
+ pin connector.  Any suggestions on pin assignments or existing converters
+ to do the job?"
+</blockquote>
+Assuming the monitor is actually CGA, it is probably not worth it.  CGA
+is TTL and SVGA is analog - you would need a converter and then only end
+up with CGA's 8 colors or whatever.
+<p>
+The scan rates differ by a significant factor.  If you can program your
+VGA card for the monitor's horizontal scan rate (around 15.734 Hz - similar
+to NTSC in the case of CGA), then the remaining problem is converting from
+analog to TTL.  This will require some high speed comparators and logic.
+
+<h3><a name="nvcvgtl2">VGA to CGA 2</a></h3>
+
+For the general case of desiring to drive a true CGA-TTL monitor from a VGA
+card, there are three options:
+<ol>
+<li>Replace the monitor with a VGA monitor.
+<p>
+<li>Replace the video card with a CGA card if you can find one.
+<p>
+<li>Completely redesign the CGA monitor to accept the VGA scan rate and analog
+    video input.  Neither of these is easy or necessarily even possible and the
+    resolution of the CRT may be inadequate in any case.
+</ol>
+If the monitor accepts analog RGB, it may be possible to program you VGA card
+to put out the CGA (15.734 kHz) horizontal scan rate to be compatible with a
+CGA monitor of this type.  Your hardware and software may or may not support
+this easily or at all.
+<p>
+If it's a true CGA monitor, there simply is no practical way to use it with a
+VGA card.  Period.  If it's one of the original multisyncs that happens to work
+with CGA, then there's some hope. However, these weren't so common: Sony 1302,
+Mitsubishi AUM1381 or Diamond Scan, plus a few others).  In this case, you just
+need the proper cable and the appropriate switch settings for the monitor.
+<p>
+
+<h3><a name="nvcvgtl3">VGA to CGA 3</a></h3>
+
+<blockquote>
+"We are trying to upgrade our print servers and have a lot of CGA monitors
+ and a lot of PS2 computers with VGA cards. We don't need more than 2
+ colors (mono) but when we make an adapter to connect the R to R, G to
+ G, B to B, H to H, V to V, Ground to Ground and the rest NC we don't
+ really get what is wanted.
+<p>
+ Well, what happens is that the display is quite acceptable other than
+ the fact that there are two of everything on the screen indicating timing
+ problems. Covering the right side of the screen with a sheet of paper
+ works to cure the problem but a more acceptable solution is needed.
+<p>
+ Adjustments to the monitor frequency, width, phase, H-hold, etc. don't help."
+</blockquote>
+This is not surprising as the horizontal scan rates for VGA and CGA differ
+by about a factor of two.  This is much too large change for the monitor to
+accommodate.
+<p>
+Note that CGA outputs TTL level signals (0 to 3-5V) and VGA outputs
+analog levels (.7 V p-p).  Therefore, what you have done may not work
+in any case if the monitor expects strictly a TTL input.  However, your
+monitor must be compatible with the VGA levels.
+<p>
+The monitor would have to sync at double its normal scan rate for the picture
+to properly fill the screen.  First, it would be difficult to modify the
+monitor for such a substantial change in horizontal scan rate.  Second, and
+more importantly, any such change could compromise the safety  - stressing
+the monitor's circuitry - increasing the risk of failure and the possible
+fire hazard.  Therefore, I would not recommend even making the attempt unless
+you are quite knowledgeable in the design of monitor deflection circuits and
+power supplies.
+<p>
+One other option other than replacing the video card or the monitor would be
+to determine if your PC is capable of putting out CGA scan rate video.  Many
+video cards do have this capability not so much for CGA as for NTSC/PAL
+compatibility.  However, some programming or use of special video drivers
+(software) may be required.
+<p>
+Alternatively, you may be able to find an inexpensive card that would be
+able to provide the correct timing or even some old CGA cards that no
+one wants anymore.  Also, monochrome video rates are 18.43 kHz.  If you can
+find some MGA cards, you may be able to tweek the monitor that far.
+<p>
+Actually, for your intended application, painting over one half of the screen
+isn't such a bad idea. :-)
+
+<h3><a name="nvctlvg">TTL to VGA/Analog</a></h3>
+
+This requires matching the scan rates and implementing a suitable digital
+to analog converter to take the TTL data and produce analog signals.
+<p>
+A scan converter can be used on the analog signals once they are generated
+to adapt the video to your monitor.  However, I don't know if scan converters
+with suitable input and/or output capabilities exist.
+<p>
+The digital to analog conversion can be done with a few resistors if you
+are not terribly fussy about the quality.  For example, the following
+circuit should be able to generate a reasonable VGA signal from a 2 bit
+input (e.g., MGA or one of the EGA color channels):
+<PRE>
+
+                       450 ohms                       
+  Bit 1 (MSB) o--------/\/\/------------+
+                                        |
+                       900 ohms         |
+  Bit 0 (LSB) o--------/\/\/------------+-------+----o Analog video signal
+                                                |
+                                                /
+                                                \ 75 ohms (termination, may
+                                                /          be inside monitor).
+                                                \
+                                                |
+  Ground o--------------------------------------+----o Monitor Ground
+
+</PRE>
+This assumes the H and V sync are separate signals.  If this is not the
+case, these will need to be combined into this signal (at least one
+of the channels) as well.
+<p>
+I have not tested this circuit.  Using low value pullups on the TTL
+signals (say 220 ohms) should help improve the high level consistency.
+
+<h3><a name="nvccgvg">CGA to VGA</a></h3>
+
+There are two problems:
+<ul>
+<li>CGA is TTL; VGA is analog.  Relatively simple circuitry can convert
+  the TTL levels into the 0.7 or so V signal.
+<p>
+<li>CGA scan rate is approximately 15.75 kHz; VGA is 31.4 kHz.  Therefore,
+  unless the VGA monitor can scan at the lower rate (some early multiscan
+  monitors like the Mitsubishi AUM1371/81/91 can do this), a scan doubler
+  will be needed.  See the section: <A HREF="#nvcvsc2">What is a Scan
+  Doubler?</A>.
+</ul>
+In general, where only 1 (or a few) of these are needed, locating true CGA
+monitors at used computer stores or thrift shops is definitely the easier
+way to go!
+<p>
+<A NAME="nvcvgta"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>VGA to Analog RGB</h2>
+
+Note that in some cases, no actual hardware is needed - the video adapter may
+be programmed to do what you want either using existing or special driver
+software or at a low level by directing controlling the video chipset:
+<p>
+(From: Jack Schidt (jack@wintel.net).)
+<p>
+Most questions regarding changing or using VGA signals in non-standard (PC)
+methods, is answerable only by consulting either:
+<ol>
+<li>Graphics adapter manufacturer (if known) of the VGA adapter, or
+   integrated motherboard.  They may have the information you need.
+<p>
+<li>Graphics chip manufacturer.  They will have programming information or
+   books you can read to change the device programming.  NTSC mode set
+   commands are sometimes on the graphics chip mfg's Website or BBS.
+<p>
+   However, this is not always simple!
+</ol>
+If you are lucky, you can reach an apps engineer in either case who has
+knowledge of your requirements, and has the means to supply you a solution.
+Otherwise, you need to write a short assembly language program to stuff the
+VGA controller registers with the correct parameters for what you are trying
+to do.
+
+<h3><a name="nvcvgta1">VGA to Fixed Frequency Monitor (3, 4, or 5 BNC Connectors)</a></h3>
+
+Questions about this specific problem are among the most common as low
+cost fixed frequency monitors become available when their workstation
+hosts are decommissioned due to the march of progress.
+<p>
+You will have to obtain the specs to have any idea of whether what you want
+to do is possible.  These are very often high resolution with a typical
+horizontal scan rate of 64 kHz.
+<p>
+There are several issues:
+<ul>
+<li>Video compatibility - here is the one area where you are likely fine - your
+   monitor is probably compatible with VGA analog video levels - .7 V p-p.
+<p>
+<li>Scan rate - your horizontal and vertical refresh rate.  I would expect
+   that the monitor is not auto-scan and probably not compatible with
+   VGA or SVGA.  Please check the specs if you have them or post a message
+   so that someone else can identify it.  You need to know its horizontal
+   and vertical scan frequency range.
+<p>
+   If it is fixed frequency, you will be able to use it only in your high
+   resolution (probably) applications.  Booting the PC will require a normal
+   VGA monitor for the messages to be seen.
+</ul>
+Assuming you are willing to use something else to boot and only run at a
+single resolution, then the last hurdle is sync:
+<ul>
+<li>Sync.  You have 5, 4, or 3 BNC (coax) connectors on the back of the
+ monitor.
+<p>
+ <ul>
+ <li>5 BNC connectors - this means that your likely have separate horizontal
+     and vertical (H and V) sync inputs - just what your VGA card wants.  In
+     this case, as far as sync is concerned at least, all you need is a
+     VGA-to-5 BNC cable.
+<p>
+ <li>4 BNC connectors - this means that your monitor requires composite sync.
+     The H and V sync signals must be combined into one TTL level signal.
+     Some cards like those from ATI will probably drive it with just a VGA to
+     4 BNC cable since they can be programmed to generate composite sync with
+     no additional hardware.  (Actually, get a VGA to 5 BNC - you just won't
+     use one of the syncs and this may come in handy at a later time).
+<p>
+     You need to determine what its expected H and V rates are to see if they
+     fall within the range of the video card.  Some internal twiddling may
+     be possible depending on the monitor.  Also, the software size adjustment
+     in the ATI Install program also affect rates so that adds another couple
+     of degrees of freedom.
+<p>
+     If you need to combine the H and V sync, a TTL gate, single transistor
+     circuit, or sometimes just a couple of resistors will do it.
+<p>
+     For example, if you are able to program your video card for negative
+     sync polarity, then an AND gate (which will act as an OR for negative
+     logic) should do it.  For positive sync polarity, a NOR gate or NPN
+     transistor will work.  It is also possible to build an auto-polarity
+     switching circuit to accommodate any combination of positive and negative
+     sync polarities.  In some cases, just using a resistor in series with
+     each sync line will be enough.
+<p>
+ <li>3 BNC Connectors - these monitors need what is known as 'sync-on-green'.
+     This will require some circuitry to combine the H+V+video into one
+     signal.  The circuitry is quite simple if you are electronically handy.
+     Commercial boxes to do this are also available.
+<p>
+     (From: Exar (exar@aol.com).)
+<p>
+     For any type of video converters call ALTINEX,INC. in California
+     714-524-5400 they make a device that will combine sync, separate sync, put
+     it on Green, shift image left or right. Product name is DA1910SX. I have
+     several of them for my PC, MAC SGI and SUN.
+<p>
+     See the documents:  "Fixed Frequency Monitor FAQ" and "Sync-On-Green PC
+     Video FAQ" for details.
+<p>
+     Some monitors have the required circuitry to accept separate sync
+     internally that is not brought out for a particular model.  In this
+     case, some careful exploration may reveal hidden treasures.
+</ul>
+</ul>
+So, check your scan rate.  If that is not compatible, then you will need
+a new display board anyway.  If it is compatible, then you will just need the
+sync combiner.  Then there is the problem of booting DOS or Windows - these
+usually want 640x400 at boot.
+<p>
+There are video cards designed for just this purpose.  Whether the investment
+is worth it compared with a new PC compatible monitor is questionable IMO.
+<p>
+See the document: <A HREF="ffmon.htm">Notes
+on Approaches to Using Fixed Frequency Monitors on PCs</A> for additional
+information and names of companies who manufacture the special video adapters.
+
+<h3><a name="nvcvgta2">VGA to Apple RGB</a></h3>
+
+<blockquote>
+"Is there any way to modify an Apple 12-inch RGB color monitor
+ so that it can display 640x480 (instead of 512x384)?
+<p>
+ Has anyone ever managed to do this?  Any opinions on whether
+ or not it is possible?"
+</blockquote>
+I assume you want VGA resolution - 31.4 kHz horizontal.
+<p>
+This would require changing the horizontal scan rate by a large amount and
+is unlikely to be easily accomplished without extensive modifications to
+the monitor's circuitry.  This should not even be attempted unless you are
+knowledgeable in the design of monitor deflection circuits and power supplies.
+<p>
+For other Apple (MacIntosh) monitors, see the section: <A HREF="#nvcvgta1">VGA
+to Fixed Frequency Monitor (3, 4, or 5 BNC Connectors)</A> as most of these
+run at a fixed frequency.  For example, the Mac II rate is 35.0 kHz H and 
+66.67 Hz V.
+
+<h3><a name="nvcvgta3">VGA to Mac (Monitor) Conversion</a></h3>
+
+I have no idea of what this gadget actually does but it may be worth checking
+out:
+<p>
+(From: James Willcox (jwillcox@spitfire.net).)
+<p>
+Boca makes an adapter.  I have one and it works fine.  It has little switches
+on it to select resolution and refresh rate.
+
+<h3><a name="nvcvgta4">VGA to Sun/Sony GDM1960</a></h3>
+
+
+(From: Flupke ut Warns (P.O.Langemeijer@student.utwente.nl).)
+<p>
+The most important thing is to get the sync pin(s) connected and the
+horizontal scan rate as close to the required value.
+<p>
+(From Paul Langemeijer).
+<p>
+If you have a GDM-1960, you can make an even easier modification to the
+monitor.  A thing I might add to the problem of the sync-on-green, is the
+'modifying' of your monitor.  Well actually it isn't that hard. If you remove
+some of the panels (the one near the connectors with the monitor turned off!),
+I found holes for two more BNC connectors.  You can put them in, attach a
+bridge and put in two resistors (the holes for these are obvious, the numbers
+are above them).  And you've got a 5-BNC monitor (and it works).  You should
+use 75 Ohm resistors and the monitor syncs perfectly at 1024*768 at 85 Hz
+(Standard VESA videomode).
+<p>
+(From: Pascal Specht (specht@roguewave.fr).)
+<p>
+I'm now running the GDM-1960 from my DECstation 5000 on my PC.
+<p>
+I found an even easier way (if you can live without the three VIDEO OUT
+BNC's).  Simply reuse two of them for H and V-sync - No resistors, no holes to
+bore.  This applies to my Digital GDM-1960 D3.  Simply follow up the cables
+going from these 'video out' BNC's and take them off at the other end.  Put
+these ends now into the obvious holes for the two predesigned places intended
+to take in the missing BNC connectors.  Add the bridge to make the HSync
+connected. That's it. It perfectly works on my nVidia RIVA 128 with
+1024x768 at 85 Hz, but also 1280x1024 at 60 Hz.
+
+<h3><a name="nvcvgta5">VGA to Amiga 1024</a></h3>
+
+From: jcaldwel@iquest.net (Mr. Caldwell)
+<p>
+It is a CGA frequency only monitor. It has an 8 pin analog jack on the back 
+and may have a 5 pin ttl jack and ttl to analog converter inside for 
+standard CGA, you can use a cable for the analog plug to a 9 pin d plug for 
+MCGA and get 320 x 200 by 16 Million colors. Some IBM cards will put out the 
+correct frequency and analog signal, most won't. I used an ATI Wonder VGA
+card that would work correctly *if* manually configured.
+<p>
+Otherwise you need a VGA to NTSC converter.  See the section:
+<A HREF="#nvcvgtv">VGA to TV - NTSC or PAL</A> for more information.
+
+<h3><a name="nvcvgta6">VGA to SCART</a></h3>
+
+SCART is basically an analog RGB + composite sync interface found mostly
+on PAL (and maybe other European standard) TVs but rarely on TVs in the U.S.
+<p>
+Signal conversion from VGA to SCART is straightforward - just a matter of
+generating composite sync and making the proper cable.  However, it has the
+same problems as the others with respect scan rates unless you are running
+an O/S like Linux or an X-server - for the latter case, see:
+<A HREF="http://www.sput.nl/hardware/tv-x.html">X on TV</a>.
+
+<h3><a name="nvcvgta7">Notes on VGA to RGB Conversion</a></h3>
+
+See the document: <A HREF="ffmon.htm">Approaches
+to Using Fixed Frequency Monitors on PCs</A> for an adapter using a
+programmable logic device to implement conversion from separate H and V
+sync to sync-on-green.  Or, here is a solution using discrete logic:
+<p>
+(From: Jon Jenkins (jenkinsj@ozy.dec.com).)
+<p>
+I use standard 74HC DIP gates available from any electronics store. I use
+a 14 pin DIP socket originally so that I could change gate types (OR/XOR/AND)
+easily. 74HC86 (XOR) works just great with the VR320 (I am using it now can
+also use OR, don't understand why ??).
+<p>
+The VN10KM is a small signal N channel enhancement mode MOSFET also available
+from most electronics store.
+<p>
+If the video card you are using is a standard VGA output (I'm using a diamond
+stealth 64 VRAM):
+<ul>
+Pin 1:  Red video<br>
+Pin 2:  Green video<br>
+Pin 3:  Blue video<br>
+Pin 4:  Monitor ID bit 2<br>
+Pin 5:  Ground<br>
+Pin 6:  Red return<br>
+Pin 7:  Green return<br>
+Pin 8:  Blue return<br>
+Pin 9:  NC<br>
+Pin 10: Sync return<br>
+Pin 11: Monitor ID bit 0<br>
+Pin 12: Monitor Id bit 1<br>
+Pin 13: H sync<br>
+Pin 14: V sync<br>
+Pin 15: NC
+</ul>
+I join all the "returns" together with the ground on the small PCB and use
+that as a common ground for the RGB cable to the monitor. You can use separate
+if you want to but you should join the green return and sync returns together.
+I did find some small shadowing if I didn't group them all together.
+<p>
+Just a note, when you set up your video card in Windows (or Win95) set it
+to 1280x1024x72|66 or whatever is closest.  I use a VR260 (1024x864) at
+1027x768@66Hz (check with your manual DA or D4 are 72Hz) your VGA will not
+like this frequency so either disconnect it quickly or before you actually
+set the video card to this mode (i.e. put the OK as the active control in
+Windows and then connect the VR320 and hit return) My diamond setup gives
+me 10 seconds to do this adjustment When you exit you will probably have
+to select the 1280x1024 mode with your old VGA connected again and from then
+on every time you start Windows you will be able to view it in "big" colour
+mode.  Note the vr320 will not work in DOS mode as it is not an auto-scan
+monitor so all you see when you boot up is garbage until Windows starts, I
+put "win" in my autoexec.bat file. 
+<p>
+Note there is a danger here: I had set up the monitor and for some reason it 
+did not work so I couldn't see what was going on: my old VGA wouldn't work and
+the VR wouldn't work either so I had to find the cards .ini files and edit by
+hand to get back to usable video!!
+<p>
+For FreeBSD/XF86 the lines are:
+<ul>
+#VR260 monitor is 70MHz 1024x864<br>
+#VR320/319 monitor is 130MHz 1280x1024<br>
+Modeline
+  "1280x1024" 130.81 1280 1312 1472 1696 1024 1027 1030 1063 +hsync +vsync<br>
+Modeline
+  "1024x864" 69.2 1024 1040 1168 1272 864 864 867 904 +hsync +vsync<br>
+</ul>
+The circuit to do this is as follows:
+<p>
+Notes:
+<ol>
+<li>You may be dealing with 135MHz square waves so there are lots of high
+   frequency stuff around; use good RF practices.
+<p>
+<li>The coupling capacitors are a safeguard to start with.  I don't use them
+   because they caused shadowing around sharp colour changes (the old RC
+   effect).
+<p>
+<li>Use the XOR gate first as a test but you may need other gates to actually
+   get it working.
+<p>
+<li>An oscilloscope will be handy for final adjustment.
+<p>
+<li>Make the device is as close as possible to the video outlet on the VGA
+   card.
+<p>
+<li>Take the 5V from the PC power supply inside the box.  I just hooked one of
+   the spare connectors which I also use for an external fan (Pentiums being
+   the heaters they are!). Make sure (check it again!!) (and again!!!) you
+   don't get the 12V one!!
+<p>
+<li>You must use a VN10KM or other small signal N-channel enhancement mode 
+   MOSFET.  Others will not work!!
+</ol>
+<PRE>
+
+                         +5 V
+                           o
+                           |
+                           /
+                           \ VR1 (1k carbon mini pot)
+                           / (Warning: don't let this go near zero!)
+                           \
+           33uF tantalum   |   ~0.3V DC in porch area
+    GREEN o----+----||-----+----------------------+---o GREEN to monitor
+               +----||-----+                      |                       
+           .1-.01uF ceramic                       |                              
+                                                  |
+           Gnd                                    |
+            o                                     |
+            |                                     |
+            /                                     |
+            \ 47k                                 |
+            |                                    _|
+    HSYNC o-+----|-------\                      |
+                 | GATE   |------CSYNC----+----||   VN10KM or similar small
+    VSYNC o-+----|-------/                |     |_  N channel enhancement MOSFET
+            |                             \       |
+            \                             / 47K   o
+            /                             \      Gnd
+            \ 47K                         /     
+            /                             |
+            |                             o
+           gnd                           gnd
+
+</PRE>
+HSYNC, VSYNC and CSYNC are grounded with 47k carbon resistors
+<p>
+Gate type=LS or HC types, HC preferred:
+<ul>
+<li>OR:   for -ve logic sync and no hsync during vsync.
+<li>NAND: for +ve logic sync and no hsync during vsync.
+<li>XOR:  for -ve or +ve logic sync and hsync during vsync.
+</ul>
+Capacitors are optional, I don't use them.
+<p>
+Use XOR gate with DEC monitors and as a first shot with others, then OR gate
+then NAND gate.
+<p>
+Get an oscilloscope and adjust porch levels to 0.3V and 0 level (sync level)
+to 0.0V
+<p>
+<A NAME="nvcvgtv"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2><a name="nvcvgtv0">VGA to TV - NTSC or PAL</a></h2>
+
+<blockquote>
+"I am interested in converting a signal from my video card to a signal 
+ that can be taken into the video in on my vcr.  I realize that it is not
+ going to be easy.  Still I would appreciate how to do it."
+</blockquote>
+You are correct - this is not easy.
+<ol>
+<li>You need to convert RGB to NTSC or PAL - there are single chips for this.
+   Try Sony, Philips, Motorola, and others.  These will combine the R, G, B,
+   Hsync, and Vsync into a single composite video signal using a minimum
+   of additional components.  The same part can usually do either NTSC or
+   PAL by changing a jumper and possibly some of the external components.
+<p>
+   For example:
+<p>
+   (From: Brian B <biersacb@execpc.com>
+<p>
+   <blockquote>
+   "In the July 1996 issue of Electronics Now, a MC1377P (Motorola) is used
+    to convert RGB to NTSC/PAL.  The chip can be purchased through the Newark
+    catalog.  This chip is very easy to use and should make your circuit
+    simple."  (See the wiring instructions, below. --- sam.)
+<p>
+   Some other possibilities may be: ADV7175/ADV7176,  UPC1352 (ECG/NTE1416).
+   </blockquote>
+<p>
+   (From: Quick Fix (iradg@guru.nu).)
+<p>
+   <blockquote>
+ "The MC1377 is a 20 pin all-in-one chip. Connect the following: +12 VDC to
+  pin 14 and ground to pin 15, composite sync to pin 2, RGB to pins 3, 4,
+  and 5, respectively.  Put a 3.58 MHz xtal between pins 17 and 18. Optional Y
+  delay pin 6 to 8. Video output at pin 9.  I have made and sold many of these.
+  </blockquote>
+<p>
+<li>You need to match the horizontal scan rate to NTSC (15.734 kHz) or PAL
+   (15.625 kHz).  Even basic VGA is roughly twice this - 31.4 kHz.  If your
+   video card can be programmed to put out interlaced NTSC or PAL rate video
+   then this is easy.  If not, it is more difficult.  If you want to use any
+   higher resolution than basic VGA (640x480) for a 60 Hz system or 800x600
+   for a 50 Hz system, it is a very non-trivial problem requiring a scan
+   converter which includes a video A-D, full frame store, interpolator,
+   readout timing, and video D-A.  Unless you are an experienced digital
+   and analog designer, you really really do not want to tackle this.
+</ol>
+For the special case of VGA to NTSC or PAL, you may be able to get away with
+something less than a full blown scan converter.  See the section:
+<A HREF="#nvcvsc3">What is a Scan Divider?"</A>.
+<p>
+You can also buy little boxes to do this.  Quality is general not great
+as you are seriously limited by the NTSC/PAL standards.  Even with S-video
+inputs to a TV or and S-VHS VCR played on a high-end TV, don't expect to
+be able to throw away your computer monitor!
+<p>
+Here's one link to check:
+
+<ul>
+<li><A HREF="http://www.ramelectronics.net/html/PC-TV_video_adapter.html">RAM
+ Electronics Industries, Inc. SVGA to Video Adapter</A>
+</ul>
+
+I have no idea of whether this devices works as advertised.
+
+<p>
+(From: Tomi Holger Engdahl.)
+<p>
+There is all sorts of information relevant to video at:
+<ul>
+<li><a href="http://www.epanorama.net/links/video.html">Epanorama Video
+ Links</a>
+</ul>
+<p>
+There is collection of links to RGB to NTSC/PAL converter and other video
+chips at:
+<p>
+<ul>
+<li><a href="http://www.epanorama.net/links/videochips.html">Epanorama Video
+ Chips</a>
+</ul>
+<p>
+For more detail on this, check my circuit and related software at
+<ul>
+<li><a href=
+"http://www.tkk.fi/Misc/Electronics/circuits/vga2tv/cindex.html/">VGA to TV
+Converter</a>
+<p>
+</ul>
+Probably the most complete VGA to TV conversion pages in the web can be found
+at:
+<p>
+<ul>
+<li><a href=
+"http://www.epanorama.net/links/videocircuits.html#converters">Epanorama
+Video Conversion Links</a>
+</ul>
+<p>
+There you can find schematics, drivers, tips, ideas, documents, links to
+commercial products and much more. It does not have everything you need but it
+is a good start.  Going to composite video or RF is more complicated as there
+are three composite video standard NTSC, PAL and SECAM in use in the world and
+there are also some small differences in modifications of those used in
+different countries) which is the reason why there are not much of this kind
+of project. VGA to TV conversion is not simple technology either (the circuit
+can be simple but there are quite many things to consider when designing such
+circuit).
+<p>
+Homebuilt circuit persons should take a look at:
+<p>
+<ul>
+"http://www.epanorama.net/links/videocircuits.html#converters">Epanorama
+Video Conversion Links</a>
+</ul>
+<p>
+There you can find my design of VGA to TV converter which outputs RGBS signals
+suitable for TV SCART RGB input (I have also designed one with composite video
+output, but that's for a commercial application).  At the same page you can
+find a PAL composite video output version of the circuit designed by Paulo
+Coelho. 
+<p>
+For introduction to scan conversion, check
+<ul>
+<li><a href="http://www.extron.com/">http://www.extron.com/</a>
+</ul>
+Specifically:
+<p>
+<ul>
+<li><a href="http://www.extron.com/technology/archive.asp?id=scanconv">Scan
+Conversion: Making the Video Connection</a>
+</ul>
+<p>
+Flickering is a problems always when yu do graphics to TV systems.  The
+graphics material must be designed so that flicker is not noticeable or the
+scan converter box must include some kind of filtering to do the job.
+<p>
+NTSC/PAL system limit the bandwidth which makes picture to loose
+some details. The picture is usually even worse than that, because of the
+cheap video encoding chips used in many converters.
+<p>
+(From: Bill Sloman (sloman@sci.kun.nl).)
+<p>
+Try the Analog Devices AD721 and AD722. When I used the AD720, I had to add a
+National Semiconductor LM1881 sync separator, and black-level clamps on the
+red, green and blue inputs to get the right DC levels.
+<p>
+Check them out at <a href="http://www.analog.com/">Analog Devices</a>.
+<p>
+(From: Leon Heller (leon@lfheller.demon.co.uk).)
+<p>
+Raytheon has a chip which produces broadcast quality PAL/NTSC from VGA.
+I think that Harris does one, as well.
+
+<h3><a name="nvcvgtv1">VGA to TV Converter Boxes, Adapters, and Boards</a></h3>
+
+(From: Kevin Centanni (kpc@panix.com).)
+<p>
+There are a couple of VGA-to-TV converter boxes that also output an NTSC
+RGB signal.  I own one from UMAX - I think it's called the TV-Mini.  I
+bought it from Global Computer Supplies for about $175.  I also think
+that MicroWarehouse sells this product.  There's a model sold by AVer
+also that has RGB out... but it's over $300.
+<p>
+The UMAX TV-Mini is a small box that plugs into your VGA card... it also
+has a female VGA connector on it so you can display images on your
+computer monitor and television monitor at the same time.  The TV-Mini
+is powered by the PC's keyboard connector.  It has an RCA jack for
+composite NTSC, an S-Video jack for S-video output and a Mini-8-DIN for
+RGB output... if you go to UMAX's web page, they'll talk about how the
+TV-Mini comes with an RGB SCART cable (SCART is a strange looking
+connector that's used on many European televisions) - but it doesn't
+come with this cable.
+<p>
+I was able to build a small adapter cable with some parts from
+Digi-Key.  The TV-Mini manual provides the Mini-9-DIN pinouts.
+<p>
+(From: Jerry G. (jerryg@total.net).)
+<p>
+I have played around with a few.  The ones in the upper $300 to $400 are not
+too bad.  You will get a reasonable picture.  I found the cheap ones are
+extremely poor.
+<p>
+The best way to do it is with a video display card that has it built in.
+These cards are expensive because the scan rate must be changed. There is a
+lot of high speed ram and processing involved to do it right.
+<p>
+It is not a question of movement involved.  It is a question of scan rate
+conversion that makes things complex.   With this conversion there is the
+requirement of some complex quantizing to also convert the characters to match
+as well.  In a lower priced card that I have seen good results is the ATI card
+with the NTSC output.  I don't know the price of the card, but it is not
+cheap...!  There is a Targa card that is excellent, but the price is too high
+unless you are in the business...  But like I said, the higher the price, I
+found the pictures
+get better.
+<p>
+Also, the bandwidth for the fonts, and data comming through the conversion
+is extremely wide.  It is wider than off of a conventional TV broadcast, or
+what comes out of a VCR.  The TV set that you use must have a Video Component 
+input, and be able to handle at least 600 lines resolution or better.  If not,
+you will be cutting the performance of the signal right at the end!   If your
+TV has S-Video capability, get the card with that option.  It is better than
+using encoded NTSC or PAL.   The S-Video mode keeps the color information
+separate for processing.  This allows for a better signal to noise in the
+luminance signal, thus rendering cleaner pictures.  
+<p>
+Please note, that you will never get the same picture out of a TV video
+monitor as your computer monitor.  They are based on very different processing
+and CRT design.   There are VGA   Monitor projectors on the market, and I
+would consider renting one for the casual use.  It will certainly do a much
+better job.  This is what I recommend and do for my clients.   Don't even think
+about buying such a projector unless you have a lot of use for it.  They are
+extremely expensive, and require periodic maintenance.
+<p>
+(From: E. Abel (EugeneA1@worldnet.att.net).)
+<p>
+I've used an ATI 3D Expression+ PC2TV.  The S-Video output is not bad,
+although text is really not very crisp.
+<p>
+Surprisingly, the TV output from the Canopus Pure 3D card is much better.
+Text is actually readable. (this is on a 27" Sony trinitron TV.)  The Canopus
+card uses a Chrontel chip to do the conversion.
+<p>
+Of course, at $190 the card is a little pricy.
+
+<h3><a name="nvcvgtv2">VGA to NTSC/PAL Chips</a></h3>
+
+<blockquote>
+"I am trying to build a circuit to convert the RGB output of a video game to
+ my large screen TV."
+</blockquote>
+(From: Leon Heller (Leon@lfheller.demon.co.uk).)
+<p>
+If the game outputs VGA, Raytheon has a chip, the TMC2360, which
+converts it to broadcast quality PAL/NTSC video.
+<p>
+Another IC that does most of the required functions is the
+<A HREF="http://www.analog.com/">Analog Devices</A> AD725 "RGB to
+NTSC/PAL Encoder".
+<p>
+(From: a-freak@freenet.de.)
+<p>
+A very nice IC is the TDA8501 which converts RGB or YUV to Y/C and FBAS
+signals, needs very few external parts ana can be switched between NTSC and
+PAL with a single jumper.  See
+<A HREF="http://www.semiconductors.philips.com/pip/TDA8501.html">TDA8501
+Datasheet</A> for more details.
+<p>
+Together with a sync processor like the TDA2579 and a colour decoder like
+the TDA4650 it gives a very simple color standard converter.  Also the fast
+input switch allows one to build a very simple video genlock for home
+computers.
+
+<h3><a name="nvcvgtv3">Questions and Answers on VGA to NTSC Considerations</a></h3>
+
+This dialog resulted from the desire to construct a VGA to NTSC converter
+to output PC video to a TV or VCR.
+<p>
+"I managed to construct a VGA to RGB converter so far, so I'm almost halfway
+ there, all I believe I need now is an RGB to NTSC converter circuit,
+ although i was trying to avoid the cost of buying one they sell in the PC
+ catalogs."
+<p>
+Can you program your video card to output 15,734 Hz H interlaced scan?
+If so, you will have a lot less hassle.
+<blockquote>
+"I figure the odds are in my favor by creating one myself, and as far as I
+ know, no harm could come to my computer by attempting it since the VGA/RGB is
+ and output only and not and I/O.  Now since I already manged to convert my
+ VGA to RGB, hopefully you might be able to answer some specific questions
+ for me?"
+<p>
+"Is there a minimum & maximum resolution for a TV , or does that depend
+ on the size of the TV?"
+</blockquote>
+If you mean resolvable spots on the TV screen, realistically, it is about
+half VGA horizontally and perhaps a little more than half vertically or
+about 320x300 give or take.
+<p>
+If you mean scan lines, that is pretty much fixed at 525 total interlaced
+2:1 at 60/30 Hz (625 at 50/25 Hz for PAL 50 Hz systems) with about 420 (540)
+actually visible on a typical TV.  TV's are not auto-scan - they are designed
+to run at a single scan rate.
+<p>
+Therefore, even displaying easily viewable VGA resolution will be tough.
+A TV with an S-video input may do somewhat better.
+<p>
+(Remember when you had at most 40 characters across on a Commodore?)
+<blockquote>
+"Assuming the construction of this circuit would only allow a maximum
+output from my VGA card, what resolution would that be? 640x480 or 800x600?
+(I have no expectations of anything higher)"
+</blockquote>
+
+As noted, for a regular TV, you can send it 640x480 but it will be
+somewhat fussy.  800x600 is really out of the question.  A high quality
+TV-monitor might do VGA ok.  The actual number of lines on a TV is, of
+course, only about 480 active with perhaps only 420 visible due to
+the CRT bezel.  Unlike an auto-scan monitor, you don't get easy control 
+of this and no control of the number of lines.
+ 
+<blockquote>
+ "Finally, taking into consideration the limitations of such a device, I
+ only intend for this to be used for full motion video playback, as my
+ current video capture card, as well as all other cards currently on the
+ market, lack the ability to output the video back to the original source
+ (i.e. a VCR or camcorder)."
+</blockquote>
+Unfortunately, even expensive solutions are still limited by NTSC.  However,
+since your playback is often at reduced resolution (e.g., MPEG) to begin with,
+this may be acceptable.
+<p>
+(From: FoulDragon (fouldragon@aol.com).)
+<p>
+I'll warn you: You can get a box that will make your PC display on a TV, but
+it will not be worth your while.  We use them at our school, they cost from
+US $100 and up, and the picture, even on a good TV is very poor.  If you can
+afford one of those boxes, buy a used VGA [even monochrome] and use that as
+you will be much happier. 
+<p>
+(From: Terry Lin (tlin@servtech.com).)
+<p>
+I find that with the ATI PC2TV, on a S-Video hookup on a Sony XBR, the image 
+quality is pretty decent.  The flicker removal makes even a full white screen 
+easy to look at (provided you have the contrast turned down, which should be 
+done on every set).  I have seen what poor external boxes can do, they give me 
+adaches with the flicker and blurriness.  Just make sure your setup is right 
+before evaluating the entire PC to TV monitor thing.
+
+<p>
+<A NAME="nvcvgtc"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2><a name="nvcvgtc0">VGA to Composite Video</a></h2>
+
+Realize that no matter what you do, the quality you get on the TV/VCR
+is not going to be anywhere near what you see on the computer screen.
+You must keep this in mind when designing layouts, selecting text fonts
+and font sizes, etc.  The new video cards with on-board NTSC/PAL output
+should be better than your average cheap converter but don't expect
+miracles.
+<blockquote>
+"I need a bit of advice on converting VGA or SVGA to output suitable for a
+ color composite monitor and/or a regular NTSC standard television. I have seen
+ add on cards or outboard boxes that will convert VGA to standard TV but I am
+ not sure if this will have the same effect on a Color Composite Monitor. You
+ see I am wondering if it would be more cost effective to keep my old Apple
+ Color Composite Monitor and buy the necessary hardware to convert VGA output
+ from my IBM clone or to just go ahead and buy a bottom end 14" VGA monitor?
+ Can I even get true 24 bit 800 x 600 color performance out of a TV or a color
+ composite monitor?"
+</blockquote>
+A color composite monitor may be somewhat better than a good TV but it is
+still limited by the NTSC standard - mainly horizontal resolution but color
+rendition as well.  There is no way to get even basic VGA performance (640
+x 480) from a TV or composite monitor.
+<p>
+You are much better off getting a bottom-end SVGA monitor for your PC.  As
+noted, the resolution of a TV or composite monitor is not even good enough
+to do justice to VGA (640x480) when using the composite video input.  Direct
+RGB can be better but the pitch of the CRT relatively coarse dot or slot mask
+or aperture grill is then likely to be the limiting factor.  A composite
+monitor or TV will give you approximately 480-490 lines vertically but 10
+to 15 percent of these may be hidden by the CRT bezel due to overscan.
+However, horizontal resolution is much worse.  You will be lucky to get
+half the VGA resolution (300 to 350 lines).  For SVGA, there is simply no way
+to display 800 x 600 without expensive scan conversion on such a tube and you
+will not be able to read text or display clear graphics.  In addition, since
+the composite monitor or TV is interlaced, there will be annoying flicker of
+graphics with thin horizontal lines.
+<p>
+Save your pennies - prices for basic monitors are dropping.  Your Apple monitor
+may work fine on your VCR, however.
+<p>
+(From: Jerry Roush (roush_jerry@htc.honeywell.com).)
+<p>
+There is an "inexpensive" device available from JDR Microdevices that
+works fairly well, called the AVerKey (JDR part no. VGA-NTSC)  They
+are about $100.  It also has S-video output.
+
+<h3><a name="nvcvgtc1">VGA to Grayscale Composite Monitor</a></h3>
+
+This will only work if you can program the video card to produce a compatible
+resolution and scan rate.
+<p>
+If you would like to experiment, here is a really simple circuit that may work
+well enough for combining Hsync, Vsync, and one of the VGA color signals, say
+green, into a composite video.
+<p>
+If the monitor sense lines on the VGA connector are tied MS1 (pin 12) = GND,
+MS0 (pin 11) = no connect, then some programs will default to monochrome and
+use a reasonable color map.  I don't know how you will get a reasonable
+mapping to monochrome for the others.
+<p>
+All you will need are 4 resistors.
+<p>
+I am calling your connector on the monitor 'Composite Video In'.
+<ul>
+<li>Hsync through 500-1K ohm (R1) to Composite Video In.
+<li>Vsync through 500-1K ohm (R2) to Composite Video In.
+<li>Green Video through 200 ohm (R3 - variable) to Composite Video In.
+<li>Green Video side of R3 to Ground through an 82 ohm (R4) resistor.
+<li>Tie this ground to the BNC or RCA connector ground.
+</ul>
+<PRE>
+
+                         R1 
+        Hsync o--------/\/\/------------+
+                                        |
+                         R2             |
+        Vsync o--------/\/\/------------+
+                                        |
+                         R3             |
+  Green Video o----+---/\/\/--+---------+--------o Composite Video In 
+                   |     ^    |                    (Termination = Hi Z)
+                   \     +----+
+                   /                    +--------o GND of monitor
+                   \ R4                 |
+                   /                    |
+                   |                    |
+ GND (shield) o----+--------------------+
+
+</PRE>
+It is essential that all this be built as close to the monitor as possible
+for best signal quality.
+<p>
+Set monitor video termination for Hi-Z.  R4 provides the cable termination
+to minimize reflections and ghosting of the green video signal.
+<p>
+Set your video card for negative sync polarity.
+<p>
+You may need to tweak these values for best results.  This will depend on
+your actual signals.  The variable R3 may provide enough range for this.
+<p>
+<A NAME="nvctpv"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>TV or Composite Video to RGB (Analog or Digital)</h2>
+<h3><a name="nvctpv0">NTSC to CGA</a></h3>
+
+<blockquote>
+"Does anyone know how to convert a video out signal into a signal
+ usable by a CGA monitor (RGB + H and V sync)?"
+</blockquote>
+If your CGA monitor is TTL, then it may not be possible, at least not
+without modifications to the monitor.  You need to convert from NTSC to RGB.
+There are single chips (with a few external components) solutions to this.
+Try Sony, Philips/Signetics, and Analog Devices (I think) as well as others.
+These take NTSC (or PAL) and output RGB and sync.  CGA is not analog
+(continuous range of video values).  It is TTL with Red, Green, and Blue
+signals as well as a separate Intensity signal.  Unless your CGA monitor can
+take analog video (.7 V p-p) inputs, you will still only be able to get
+8 or 16 colors - not a normal TV picture. (And even for that, you will
+need external circuitry to convert the analog output of the decoder chip
+to TTL.)
+<p>
+However, some CGA monitors have internal NTSC composite inputs and in
+that case, it is simply a matter of flipping the appropriate switch.
+
+<h3><a name="nvctpv1">Composite Video (NTSC/PAL) to RGB</a></h3>
+
+Several companies provide single ship solutions requiring only the addition of
+a few discrete components to convert NTSC or PAL to RGB and H+V or C sync.
+Some have options for YIQ, S-Video, and other formats at the input or output
+in as well.
+<p>
+See: Epanorama Video chips and circuits page:
+<p>
+<ul>
+<li><a href="http://www.epanorama.net/links/videochips.html">Epanorama Video
+ Chips</a>
+</ul>
+<p>
+for an extensive list of video encoder, decoder, sync, and other chips with
+links to their datasheets.  Also, check out the web sites or databooks of
+Sony, Philips, Brooktree, Motorola, Linear Technology, etc.
+<p>
+One example is the Motorola MC44011.  (However, it would appear to not be
+a currently available part as of Summer, 2001, as I could not find it on
+either the Motorola or On-Semi Web sites).
+<p>
+This part can be used without an external delay line (for PAL to RGB) but a
+delay is recommended.  The chip also provides an A/D sampling clock output
+for video digitizing applications.
+<p>
+(From: Julie Porter (Julie.Porter@efi.com).)
+<p>
+I was able to get my Sony PVM Monitor to successfully take a YC input on the
+RGB port. I used the MC44011 and it worked!  However be advised. The MC44011
+has just been announced for last buy this month! March of 1999. There are no
+other non digital solutions. The TDA3330 has been unavailable for some time.
+There is some additional information on my
+<A HREF="http://www.delectra.com/anavid">Video Animation</A> Web site.  I urge
+people to call Motorola and ask that this component, not be discontinued as
+there are many web references designs that use it. There are no substitutes.
+It should also be noted that if people are considering these designs then they
+should get the parts soon. The part will go out of production this fall (1999).
+<p>
+(From: Jeremy Todd (bulb@cix.compulink.co.uk).)
+<p>
+Sony makes at least two PAL decoder chips - CXA1621S and V7021.
+<p>
+It looks like you'd need a separate sync stripper (LM1881 or EL4581CN)
+<p>
+Brooktree's Bt812KHF is a much fancier thing for video processing and
+multimedia stuff. 
+<p>
+From RS(UK) both the Sony chips are 10UKP each for 1 off's.  The Bt812KHF
+is 107UKP!!
+<p>
+(From: Sam).
+<p>
+Also, some questions are along the lines of the following:
+<blockquote>
+"I looked at several chip manufacturers. Most have extensive documentation
+ on their chips in PDF format. Again, most of the chips currently available
+ convert Y/C to digital RGB, and have a lot of extra brightness/sharpness
+ control built in. Too complex- the simplest chip I came across was 18 pins
+ and still required two dozen external components."
+</blockquote>
+(From: Eugene (eugenek@istar.ca).)
+<p>
+The answer is: MC44011 by Motorola, cost $28(Can).  It requires some sort of a
+micro to program it (PIC or the like will do).
+<p>
+There is no external critical components except for a 14.318MHz crystal (found
+on any PC motherboard).
+<p>
+About the old TV single-chip decoders. This is not true, I've been working
+with those things for 15 years, and in 70-80s the decoders were much more
+complicated than they are now (each decoder, actually, requires a delay line
+(sometimes more than one) and a bunch of various filters). Yes, you had one
+chip and half a dozen of coils, trim-caps to tune (that required some
+equipment and knowledge).
+<p>
+Sorry, the chip I suggest has 44pins :-( but little hassle :-)
+
+<h3><a name="nvctpv2">Watching TV on a PC Monitor - NTSC/PAL to VGA</a></h3>
+
+Questions are along the lines of the following:
+
+<blockquote>
+"I'm wondering whether I could use my NEC Multisync as a TV. Long ago 
+ I had a Mitsubishi Colour Monitor which could also be directly connected
+ to the videorecorder.  Sure, I could use cards in my PC like "WIN/TV",
+ but then every time I want to look TV I have to switch on the PC as well.
+<p>
+ Is there the possibility to convert a video to a VGA signal? My NEC has
+ only a VGA input.  Or: Are there any monitors available which have both
+ inputs (like my old Mitsubishi)?"
+<p>
+"I have a VGA monitor That I want to use to watch TV.  I want to be able
+ to maybe build a box that will let me plug a vcr video out into the monitor.
+ I do not want to spend tons of $$$$$.  Can anyone tell me if there is a way
+ to do this??"
+<p>
+"I have a HI-FI VHS that is attached to my stereo.  Therefore, my audio needs 
+ are well taken care of.  I now need the video.  I had to sell my TV a little
+ while ago so I do not have a T.V. at this point.  I have recently acquired a
+ 20" monitor for my PC (DFI brand.)  It has the RGB (red-green-blue) connectors
+ on the back along with a Horizontal and Vertical cable connections.  So I have
+ a cable that plugs into my video board on my PC that turns into 5 connectors
+ at the end that connects to the monitor."
+<p>
+"Does anyone have any information on viewing composite video on SVGA
+ type monitors. I have a MAGNAVOX SVGA monitor and if possible I'd like
+ to feed composite video from my VCR and Sony PSX and PANASONIC 3D0 to
+ it. Rather than getting a Toshiba TIMM monitor there has to be some
+ kind of blackbox that will allow someone to do this...Please send info
+ to the address provided or post here."
+</blockquote>
+It depends on your monitor:
+<ol>
+<li>The monitor needs to support the NTSC scan rate - 15,734 H, 60 V.  Some
+   NECs do (like the 3D) but others do not (like the 2A).
+<p>
+<li>You need to convert NTSC to RGB.  There are boxes on the market for this
+   or if you are handy with electronics, single chips to do this. Check out
+   Sony, Philips, Analog Devices, Motorola, and others for NTSC/PAL to RGB
+   decoder chips.
+</ol>
+For PAL (625/50) the relevant resolution is closer to 800x600.
+<p>
+If your PC monitor scans down to 15.734 kHz, then all you need to do is
+convert the line level NTSC composite to RGB and sync.  Some older
+auto-scan monitors like the Mitsubishi AUM1381 even have a composite
+NTSC input jack.  Conversion requires a single chip and a few discrete
+components.  Commercial converter boxes are also available.
+<p>
+However, if it is a modern SVGA/auto-scan that does not go below 31.4 kHz,
+then it is a non-trivial problem requiring a video A/D, frame memory,
+readout electronics, video D/A, etc.  This is called a scan converter
+and is not an afternoon project even for an experienced design engineer.
+<p>
+You can of course buy PC cards that will enable you to watch TV in a
+window on you PC.
+<p>
+There are also external boxes that will accept antenna/cable or NTSC/PAL
+composite input and drive a VGA monitor.  One such unit is the 'Proview'
+(Proview Technology, Garden Grove, CA).  This is reviewed in Popular 
+Electronics, June, 1997.  It appears to be quite capable with its own internal
+181 channel tuner and IR remote control.  It accepts both RF (antenna or cable)
+and composite inputs and can select between the video source or computer to
+drive the monitor (but does no processing of the computer's VGA signal - full
+screen only).  With a suggested list price of $119, the Proview could represent
+a cost effective alternative to a new TV if you have a VGA monitor sitting
+around collecting dust.
+<p>
+Another one can be found at:
+<p>
+<ul>
+<li><a href="http://www.aver.com/">AVerMedia</a>
+</ul>
+<p>
+(I have no personal experience with any of the above products --- sam).
+<p>
+In any case, a $150 TV may actually produce a better picture.  This is because
+the CRT/electronics in a computer monitor is optimized for focus at the expense
+of brightness.  Therefore, sharpness may actually be excessive and brightness
+may be inadequate except under subdued lighting conditions (especially on a
+well worn monitor!).
+<p>
+(From: Helmut Weber (Helmut.Weber@hamburg.sc.philips.com).)
+<p>
+There are some companies that have boards ready, which you only have to buy
+and plug into your PC.  Try:
+<p>
+<ul>
+<li><a href="http://www.miro.com">http://www.miro.com</a>
+</ul>
+<p>
+(From someone else. --- sam).
+<blockquote>
+"I want to display output of VCR on my computer monitor.  Is there a video
+ card that has Video In (such as RCA in)?  Would you tell me which video cards
+ they are? Or does anyone know any other way to display VCR out on a computer
+ monitor?  Or Is there a PC monitor exist that has RCA input jacks?"
+</blockquote>
+(From: Todd McCormick (todd@galstar.com).)
+<p>
+There are lots of video cards that have video capture and real time display
+from RCA phono and S-Video inputs, Matrox Rainbow Runner (which requires a
+Matrox Millenium/Mystique 220/G200) or the upcoming Marvel, the ATI
+All-In-Wonder and it's decendents.....
+<p>
+There are several other cards that fill this bill.  There are external devices
+that attach to your parallel ports, or USB port, or Firewire port which can
+also do this.  Some of the older Diamond monitors also had video input as well
+as a computer input but they were quite expensive.
+
+<h3><a name="nvctpv3">Comments on TV to VGA/SVGA Conversion</a></h3>
+
+You need a lot more than cables.  Here are some comments:
+<ol>
+<li>Your SVGA monitor must be able to sync down to 15,735 Hz Horizontal - the
+   NTSC scan rate - this is CGA speed and few modern monitors go this low.
+   You thus need a scan converter - not cheap.
+<p>
+<li>You need to convert the composite video or S-video out from your VCR into
+   separate RGB and possibly H and V sync.  This means electronics not
+   just wires.
+<p>
+<li>You will need a good switchbox to select between the sources, you cannot
+   just hook them together.
+<p>
+<li>The quality of the TV video on your expensive SVGA monitor will likely
+   be worse than on a $150 TV due to the fine focus of the monitor and
+   the possibly lower brightness.  To put it simply, the monitor is too
+   good for NTSC video.
+<p>
+<li>Why tie up your computer system watching TV?  The other alternative is
+   to get one of those TV tuner and/or frame grabber cards for the PC.
+</ol>
+<p>
+<A NAME="nvcvsc"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>Video Standards Conversion</h2>
+<h3><a name="nvcvsc0">NTSC to PAL</a></h3>
+
+<blockquote>
+"Does anyone know of a simple way to convert NTSC signals produced by 
+ American video equipment to UK PAL signals."
+</blockquote>
+If you simply mean the color conversion, then a couple of chips will do it.
+<p>
+There are chips to do RGB to NTSC or PAL color encoding but not, as far as I
+know, scan conversion.  For your needs, look into Sony, Philips, and Analog
+Devices, Motorola, and others.
+<p>
+See: Epanorama Video chips and circuits page:
+<p>
+<ul>
+<li><a href="http://www.epanorama.net/links/videochips.html">Epanorama Video
+ Chips</a>
+</ul>
+<p>
+for an extensive list of video encoder, decoder, sync, and other chips with
+links to their datasheets.
+<p>
+As has been pointed out, using the strict definition of NTSC to PAL as
+referring only to the color encoding, all you need is a couple of chips for
+NTSC to RGB and then RGB to PAL, maybe even a single chip.  However, for the
+very common interpretation of NTSC to PAL (IMHO, maybe a little USA-biased) is
+with respect to US NTSC 525 line 60 Hz systems to PAL 625 50 Hz systems which
+is where the non-trivial part comes in.
+<p>
+If what you really mean is NTSC 525/60 Hz to PAL 625/50 Hz, it's not trivial.
+<ul>
+<li>The horizontal and vertical scan rates differ 15734 vs. 15625.
+<li>The number of lines/frame differ 525 vs. 625.
+<li>The color encoding differs.
+</ul>
+If you simply want to watch an NTSC tape on a PAL TV it may work but not with
+proper color if the vertical has a wide enough range to sync or you have a
+vertical hold control with enough range.  If your intent is to put it into a
+VCR, you can safely forget it.
+<p>
+The usual way is to use a scan converter.  Essentially, an NTSC color
+decoder/A-D feeds a frame buffer (approximately VGA size).  The frame buffer
+is then read out at PAL rates and the necessary interpolation is performed
+using digital processing to go from 525 (480 or so active) to 625 (580 or so
+active) lines.  The output is sent to a video DAC and then color encoded for
+the PAL system.  Everything all happens in real-time.
+<p>
+Needless to say, this is not your basic hobbiest afternoon project.
+<p>
+Here are some additional comments:
+<p>
+(From: Clive Tobin (tobin@nwus.com).)
+<p>
+Conversion is not a trivial matter, involving interpolating scanning lines,
+changing the field rate, and changing the color encoding scheme. I am not
+aware of a simple chip set that will do it. There are several ways of doing it
+with bought equipment, listed in order of increasing price:
+<ol>
+<li>If you can stand to look at it on your computer instead of your TV, you can
+   buy TV tuner cards with video input jacks, that will display NTSC on your
+   VGA computer screen. I think I have seen these for around $100.
+<p>
+<li>Buy a multistandard TV, which are becoming increasingly popular and don't
+   cost much more than single-standard ones. You would not need an NTSC tuner
+   if it has a video input jack. (I don't know if your camera has an RF
+   modulator as well as a video output.)
+<p>
+<li>Buy a standards converting VCR, such as Aiwa HV-MX1, Samsung SV-4000W, or
+   similar. These can be used as a stand-alone converter, or to convert the
+   video to record tapes in a different standard. These sell for around $600
+   and up. I think they all have RF modulators to feed your TV set if it is
+   lacking a video input jack. If you get one of these you could go into the
+   standards conversion business, converting home tapes of overseas
+   relatives.
+<p>
+   Editor's note: Not all multi-standard VCRs do what you want.  Some/many
+   simply convert the color encoding between NTSC and PAL without affecting
+   the scan rate (which is much more difficult/expensive).  A wide vertical
+   range TV or monitor might produce a viewable picture with these but at the
+   wrong speed (off by 5/6 or 6/5 including the sound)!  Unless the product
+   specifications clearly state 'full conversion' or 'scan rate conversion' or
+   something similar, you can probably assume they take the cheap way out!
+   Make sure you can return the VCR if it doesn't meet your needs! --- sam.
+</ol>
+The cheapest of all, if you can stand to see the image in black and white with
+the vertical size off, would be to plug it into the video input jack of a PAL
+monitor that has a wide-range vertical hold control. Don't use the RF
+(antenna) input of a regular TV as it may not work at all because of the
+different carrier frequencies.  (You did buy one with video and audio jacks,
+didn't you?)
+<p>
+(From: Geoffrey S. Mendelson (geoffm@pita.cs.huji.ac.il).)
+<p>
+There are digital converters that do this "on the fly". Akai (and Radio Shack
+in the US) sell a VCR for $500-600 (US) that works well. Panasonic sells the
+AG-W1 (NV-W1) that is an excellent VCR and a much better converter for about
+$1800.
+<p>
+You can also buy just the converters.
+<p>
+Avoid VCR's that claim to play PAL tapes on NTSC TVs. They convert the color
+signal from PAL to NTSC (well enough for the kiddies to watch tapes), but
+assume you can "stretch" the sync of your tv to work with 50Hz video.
+<p>
+(From: Tim Jacobs (timothy.jacobs@gecm.com).)
+<p>
+The output from these PAL VCRs won't always record properly, because they take
+advantage of the fact that the TV can put up with some signal variations that
+a low-bandwidth VCR (such as an ordinary VHS machine) can't.
+<p>
+The other big problem is the higher frame rate of NTSC as  opposed to PAL.  In
+NTSC you have 30 frames per second against PAL's 25.  PAL frames have 100 more
+lines than NTSC frames.  So to convert, you have to drop 5 frames each second,
+add 100 lines every frame, and then you have to worry about the Colour!
+<p>
+This is very complicated if you want good quality.
+<p>
+Here in the UK, there is a VCR available from, IIRC, Panasonic, that will
+convert between PAL, NTSC, and SECAM (French system).  You chose your input
+system which is either from socket inputs or the tape play-back, and your
+output system which is to socket outputs or tape record.  The machine then
+does the conversion for you.
+<p>
+The only problems I see with this VCR are, no TV Tuner, and they cost around
+1000 UKPounds.
+<p>
+(From: Chris Hall christopher.hall@bbc.co.uk).)
+<p>
+At a broadcast level, probably the best known TV standards converters are made
+by Snell and Wilcox.  I have also used a Barco unit. At a PC level, Vine
+Micros made a number of boxes for much less money than broadcast kit which do
+the conversions between PC (and Mac) video standards and broadcast ones.
+
+(From: Steve Darsey, N5PMB (sdarsey@yahoo.com).)
+
+We use a Sony DSC1024G everyday, does what you ask. Up to 1024x768 to NTSC or
+PAL video in composite, component (RGB or Y,RY,BY) and S. It will also go the
+other way. NTSC or PAL to a computer monitor. Also does NTSC to/from PAL. It
+will also do aspect ratio conversion. Did a letter box from a 16x9 source, no
+sweat. I have also seen it used to down-convert HD to SD TV.
+<p>
+The Hyperconverter is very comparable, at the time of our purchase, it did not
+do much more than pure scan conversion from the PC to video. I have no
+knowledge of their current model.
+<p>
+If price is no object, look for the Fulsom 9000 series boxes. Those
+machines can deal with much larger (over 1600x1200) pixel rates and will
+probably walk your dog and water the plants. :)
+<p>
+Find an AV rental or convention show production facility and see if they
+rent one. We use Alford Media, they have a few locations around the country.
+
+<h3><a name="nvcvsc1">What is a Scan Converter?</a></h3>
+
+A scan converter accepts video of one format - say SVGA - and outputs it to
+some other format - say NTSC.  Some are designed for fixed input format while
+others can adapt - possibly automatically like an auto-scan monitor - to a
+wide range of input scan rates and resolutions.  Output format is most often
+selectable between NTSC and PAL scan rates (or those of other TV formats) with
+a variety of output options such as composite, RGB, SCART, and S-Video.
+<p>
+The typical scan converter must implement the following functions.  (This
+example applies to a unit designed to convert from SVGA or workstation
+video format to NTSC):
+<ol>
+<li>Analog to digital converter (A-D or ADC).  In the case of VGA/SVGA or
+   workstation video, there will be 3 video signals - R, G, and B - and each
+   of these must be digitized separately.  The A-Ds used are generally single
+   chip 'flash' types using a bank of voltage comparators (e.g., 255 compares
+   for 8 bits of output precision) or similar technique to achieve the high
+   speed conversion needed in modern video applications.  These may be able
+   to convert up to 135 M samples per second or more as they must run at the
+   dot clock rate of the RAMDAC of the input video source.  A filter (input
+   anti-aliasing) may be needed to limit the bandwidth of the input signal.
+   Ideally, the sampling will be adjusted to occur at the center of each
+   pixel but this is not always possible.
+<p>
+<li>Full frame store.  The resulting digitized data - usually 6 to 8 bits for
+   each color - is stored in a frame buffer generally constructed from DRAM
+   or VRAM.  This memory must be capable of being written to and read out
+   effectively at the same time - dual port or pseudo-dual port.  In some
+   special cases, less memory is needed but these are the exceptions.  With
+   VRAM, the input may use the serial port since it is strictly sequential
+   (and very high speed) and the readout can use the random access port for
+   interpolation (since its rate is lower but multiple pixels and lines may
+   need to be accessed, see below).
+<p>
+<li>Readout and interpolation.  Hardware must be able to access the frame store
+   without conflict at the desired output scan rate.  Since the output video
+   format has a different (generally fewer) number of pixels per line and
+   total scan lines, some means must be provided to combine multiple pixels
+   and lines into the output video stream.  For interlaced output (as used
+   by most TV standards), some amount of interpolation between lines (in the
+   vertical direction) is desirable to reduce the flicker of fine horizontal
+   lines (in graphical material) which would otherwise fall in a single output
+   video field.  For RGB full color, there is a separate interpolator for each
+   color channel.
+<p>
+  <ul>
+  <li>Nearest neighbor interpolation simply uses the closest sample from the
+     stored data.  This is very easy to implement since it is just a matter
+     of computing a memory address - often by just truncating bits.  However,
+     quality is poor - pixelly - and usually unacceptable for all but the
+     least critical and cheapest applications.
+<p>
+  <li>Bi-Linear interpolation takes pairs of input pixels in the horizontal
+     and vertical direction and combines them to form an output pixel that
+     is their weighted sum.  This results in a much smoother and more pleasing
+     display.  Since two pixels on each line and and two lines are required
+     for the computation of each output pixel, the bandwidth requirements of
+     the frame store and processing complexity are greater resulting in a more
+     expensive system.  However, this is the minimum level of interpolation
+     required to produce decent quality output video.
+<p>
+  <li>Cubic or higher order interpolation uses more than two points in each
+     direction resulting in somewhat better results at greatly increased
+     cost.  This is likely to be found mostly in the high performance
+     professional equipment used in television studios and production houses.
+  </ul>
+<p>
+   The output of the interpolator is typically 6 to 10 bits of data for each
+   color channel.
+<p>
+<li>Video digital-to-analog (D-A or DAC) converter.  A high speed DAC (three
+   for RGB) converts the each of the interpolated data streams to an analog
+   signal.  A filter (output anti-aliasing) may be needed to smooth edge
+   transitions.
+<p>
+ <ul>
+ <li>For driving RGB monitors, this is the final output.
+<p>
+ <li>For NTSC or PAL, RGB along with H and V sync are further processed by an
+     RGB-to-NTSC/PAL encoder.  It may output be composite video as well as
+     separate Y and C to provide for various output connector options: RCA
+     or BNC, S-Video, SCART, etc.
+ </ul>
+<p>
+<li>Microprocessor control.  Most modern scan converters use sophisticated
+   computer control to provide for advanced levels of auto-scan, many user
+   conveniences, stored setups, and so forth.  Features may includes various
+   amounts of user or RS232 (PC) controlled pan, scroll, and zoom; control
+   of sampling times and speeds; and selectable levels of interpolation to
+   control smoothness or sharpness.
+</ol>
+However, in the end, no matter how the scan converter is implemented, if the
+ultimate destination is an NTSC or PAL TV, the resulting picture quality will
+be very limited.  Even a $20,000 professional scan converter may not be able
+to display fully legible VGA on an NTSC or PAL TV.
+<p>
+For more information on features and selections of scan converters, try:
+<p>
+<ul>
+<li><a href="http://www.extron.com/technology/archive.asp?id=scanconv">Scan
+Conversion: Making the Video Connection</a>
+</ul>
+<p>
+(I have no affiliations with this company and am in no way necessarily
+endorsing any of their products or claims.)
+<p>
+Implementing a system of this type is a challenging task even for an
+experienced engineer with extensive design experience with both analog 
+and digital systems.
+<p>
+(From: Derek Roberts (der@cam-orl.co.uk).)
+<p>
+If you really want to do this properly, check out the Genesis Microchip 
+gmVLD8 which uses DSP techniques to do the un-interlacing. Of course you
+need to add an A-D, field or frame store and some control,  But this is
+the basis of a decent quality scan converter.
+
+<h3><a name="nvcvsc2">What is a Scan Doubler?</a></h3>
+
+This is a special case of a scan converter where the output format has roughly
+twice the number of lines as the input format and runs at twice the horizontal
+scan rate.  Various scan doubler boxes are available commercially.  For
+example, check out the offerings from <A HREF="http://www.hrx.com/">Harmonic
+Reseach</A>.  (I have no idea of whether they are any good - just an example.)
+<p>
+The following is described for NTSC; A similar approach can be taken with PAL
+625/50 to SVGA at 800x600, 50 Hz.
+<p>
+To convert NTSC interlaced at 30 frames/second 60 fields per second to
+VGA which is at 60 complete non-interlaced frames per second requires
+a simple scan converter.  This is basically an NTSC color decoder and
+video A/D feeding a full frame memory storing RGB (probably at 24 bits), and
+VGA video D/A.  I say simple to compare it to the general case where in
+addition to frame store, you need a high speed interpolator to convert
+between resolutions.  VGA is close enough to NTSC resolution (at least
+in terms of the number of active video lines) that no interpolation is
+needed.  See the section: <A HREF="#nvcvsc1">What is a Scan Converter?</A>.
+In either case, this is a non-trivial project.  IMHO, this is a poor use of an
+expensive monitor.  A $200 TV will likely look better.
+<p>
+An even simpler approach is possible as well which only requires a one or two
+line buffers instead of a full frame store.  Each input line is read in and
+reformatted to the appropriate VGA line (even or odd) depending on which field
+is being displayed.  The other lines are blanked (i.e., display even lines and
+blank the odd lines during the even field display).  This would only require
+enough buffer memory for one or two scan lines (depending on whether the
+implementation uses a double buffer or more sophisticated write and read
+timing) which would be a significant cost and complexity savings compared
+to a full frame store.  The disadvantage is that since half the lines are
+by necessity left blank, the maximum possible brightness of the display will
+be reduced.  It is not possible to use the blank lines as the interleaving
+of the even and odd fields will be incorrect and result in a poor display.
+<p>
+Inexpensive scan doublers do exist.  For example:
+<p>
+(From: Jeffrey Kessler (kessler@fas.harvard.edu).)
+<p>
+I picked up a device called the "Video Cheese Box" from a company called
+<A HREF="http://TVONE.com/">TVOne</A>.  This is a $70 box that acts as a
+rudimentary line doubler.  It takes a composite or S-Video input and outputs
+a 640 X 480 60 Hz VGA signal.
+<p>
+The picture is dramatically better than on a regular TV.
+<p>
+I'm in no way affiliated with this company except for having
+purchased one of their products.
+
+<h4><a name="nvcvsc2a">Scan Doubler Chips</A></h4>
+
+Several companies now provide single chip (or minimal chip) solutions to a
+major part or all of this problem.  For example, Siemans has just announced
+the SDA9400 Scan Rate Converter which appears to includes nearly everything
+required - even the buffer memory - to convert from interlaced to progressive
+(i.e., non-interlaced) scan in Y-U/V format.
+<p>
+(From: Richard Birchall (birchallr@aecl.ca).)
+<p>
+<A HREF="http://www.averlogic.com/">AverLogic</A> has a chip that makes the
+task of implementing a scan doubler almost trivial.  From their product
+description: "The AL250 is a 64 pin single
+chip scan doubler/de-interlacer. It converts interlaced TV signals (e.g.,
+NTSC or PAL) into non-interlaced RGB format for output to a PC monitor or LCD
+panel.  The single device also corrects color accuracy on different types of
+CRT and removes jagged edge artifacts from motion pictures.  To allow a
+regular PC monitor to display television or video input you just
+need to add a de-coder and the AL250."
+
+<h3><a name="nvcvsc3">What is a Scan Divider?</a></h3>
+
+For the special case of converting from VGA at 640x480 (31.4 kHz H, 60 Hz V)
+to NTSC or SVGA at 800x600 (31.4 kHz H, 50 Hz V) to PAL, something simpler
+than a full blown scan converter may be satisfactory.  In this case, it is
+only necessary to provide storage for a single scan line (rather than an
+entire frame store) since the input horizontal frequency is (almost) exactly
+twice that of NTSC (15.734 kHz) or PAL (15.625 kHz).  A double buffer where
+one buffer is storing while the other is reading out at approximately half
+the VGA pixel rate should work. With appropriate timing, even lines become
+the even field and odd lines become the odd field (I may have this backwards).
+It is still not a trivial undertaking.  Keep in mind that the quality you will
+get on NTSC or PAL will be poorer than the VGA due to fundamental NTSC or PAL
+bandwidth limitations.  Also, flicker for line graphics will be significant
+due to the interlacing at 30 Hz.
+
+
+<h3><a name="nvcvsc4">RGB to PAL or NTSC Converter Chips</a></h3>
+
+(From: Gary L. Sanders (75052.2665@CompuServe.COM).)
+<p>
+Philips has chips, as does Raytheon, these would take digital RGB
+and convert to oversampled PAL output.
+<p>
+(From: Mike Diack (moby@kcbbs.gen.nz).)
+<p>
+Analog devices does a chip (AD720/721) which has the delay & filter elements
+on the chip itself.
+
+<h3><a name="nvcvsc5">Digital Video Conversion Chips</a></h3>
+
+<blockquote>
+"I'd appreciate on an Integrated Circuit (IC) made by a Hong Kong company
+ called Display Research Laboratory."
+</blockquote>
+(From: Philip Decker (pdecker@lds.loral.com).)
+<p>
+The IC is a Video Interlace Processor (VIP), part number VIP-01033.  It
+converts 16-bit digital VGA video (5:6:5, R:G:B) to similarly formatted
+NTSC/PAL compatible video.
+<p>
+The IC can also be bought as part of a circuit board with additional
+components, producing composite, Y/C, and SCART analog RGB outputs, in
+three different configurations:
+<ul>
+<li>piggy-back to VGA, via feature connector ($55)
+<li>external VGA to TV converter ($90)
+<li>ISA bus card with VGA included ($180)
+</ul>
+
+<h3><a name="nvcvsc6">Black Level Clamp</a></h3>
+
+<blockquote>
+"I'm looking for a simple GOOD black level clamp circuit for clamping a
+ video signal."
+</blockquote>
+(From: Joseph H Allen (jhallen@world.std.com).)
+<p>
+This is actually a very interesting subject.  Assuming you have a constant
+video level (or AGC), a simple diode clamp on the horizontal sync tips
+(diode clamp the sync so that the black level is where you want it) is
+actually a high quality black level clamp.  The sync level is constant after
+all.  I use this method in accurate video digitizers for DC restoring the
+video before putting it into an A/D converter.  The cool thing about simple
+diode DC restorers is that the capacitance is usually much less than that of
+the analog switches needed in other types.  For example one of the best
+analog switches is the readily available 74HC4316, but even this has 40pF
+(if memory serves) on its pins.
+<p>
+The really hard part is finding a high quality large-signal linear video
+amplifier.  If the video is capacitor coupled to the video amp, then the
+average brightness level will change the voltage of the black and sync
+levels seen by the amplifier.  This is ok if the video amp is linear, but
+most aren't so the sync amplitude ends up changing depending on brightness. 
+I.e., the black level will change depending on the brightness of the image
+(this is completely unacceptable for medical image capturing devices, for
+example).
+<p>
+The way linearity is measured for video amplifiers is the term "differential
+gain".  It gives the largest difference in percent between a constant
+small amplitude signal (traditionally the color carrier is used for this)
+measured at different voltage levels (hopefully which sweep the entire
+output swing of the video amplifier).
+<p>
+Now you have to be very careful about manufactures differential gain
+measurements.  Many of them play games to get even a mediocre 3% - 1%
+differential gain.  Typically they specify this parameter with a reduced
+output range (when you really want the parameter to apply to rail-to-rail
+output swings so you can get a 2V signal needed for most A/D converters) or
+limit the input range, the gain or flat out lie (I have no idea where
+comLinear got the specs for their clc520/522 variable gain amplifier, for
+example.  It says .5% in the datasheet, but I measure it to be more like 5%).
+<p>
+All older video amplifier ICs (like the uA722 and NE592) are really lousy. 
+Discrete transistor amplifiers also suck (many monitors use a cascode
+amplifier which is very bad).  Most new ICs suck too- especially those which
+are labeled as video amplifiers.  The only ones which I have been satisfied
+with are the newest current feedback OP-amps (the + side is high-impedance,
+but the - side is zero ohms.  Usual op-amps are linear, but have a limited
+bandwidth because the - input is high impedance).  These have enough
+open-loop gain so that they really are linear.  One that I really like is
+the AD9617: .01% differential gain (!), 160MHz bandwidth, immense slew rate
+(settles to less than 1% of final value within 10ns or so) and only costs
+about $10.
+<p>
+If you need variable gain (for AGC perhaps), the best chip to use the AD834
+500MHz multiplier.  This little 8-pin chip is expensive (like $40) but it is
+the only thing that even approaches being linear (and even it is quite a bit
+worse than the AD9617).
+<p>
+(From: Brian Campanotti (bcampano@toronto.cbc.ca).)
+<p>
+Look at the Clamping ICs from Gennum Corp (part numbers GB4550
+and GB4551).  They do input buffering and clamping.  They are
+a good front end to any video project.
+<p>
+(From: Mika Iisakkila (iisakkil@alpha.hut.fi).)
+<p>
+Since your application probably needs some kind of an input/output buffer
+anyway, you might consider some integrated DC restored video amplifier.
+Elantec (now part of <A HREF="http://www.intersil.com/html/">Intersil</a>
+makes excellent such chips.
+<p>
+EL2090 is really good as far as video quality goes, but a bit
+expensive for applications that don't need 100 MHz bandwidth and
+near-zero droop. EL4089 is simpler and cheaper, but not quite
+"broadcast" quality. There's also some new chip, but I haven't looked
+into it yet.
+<p>
+For both chips, you'll need to get the sample pulse from somewhere, so
+you can't lose the LM1881. I've used the burst gate output from it to
+control 2090's sample input, and quality of the result far surpasses
+my measuring instruments.
+
+<h3><a name="nvcvsc7">Inverting an Analog Video Signal</a></h3>
+
+Inverting a video signal means doing something to both the luminance
+(intensity) and chrominance (assuming a color signal).  This is not totally
+trivial (at least, it is more than just putting it through an op amp).  You
+would have to convert to baseband, strip off the sync and invert the signal,
+recombine with sync, remodulate to channel 3 or 4.
+<p>
+If you want to also invert the colors, then you have to decode the chrominance
+to RGB, invert these, reencode, recombine, etc.
+<p>
+The assumption here is that the input is an NTSC or PAL composite video signal
+and that the desired output is a valid composite waveform with negative sync
+tips.  In this case, what is required is as follows:
+<ul>
+<li>Sync separation to identify and preserve the sync relationships.
+<li>NTSC or PAL to RGB conversion.
+<li>Inversion of the individual RGB components.
+<li>RGB to NTSC or PAL conversion along with the sync.
+</ul>
+Bypassing the conversions would be messy as you would be dealing the chroma
+phase space - I wouldn't even want to risk a wild guess as to what would be
+involved.
+<p>
+For monochrome video, the conversion steps would be replaced with a simple
+inverting amplifier and possibly an analog switch to merge the sync.
+<p>
+There may be some shortcuts one can take but you get the picture (no pun).
+<p>
+(From: Joel Kolstad (kolstadj@CSOS.ORST.EDU).)
+<p>
+Also note that straight video signal inversion will produce some...
+interesting... color changes, but not the same changes as you get from
+photographic film.  For monochrome video, the end result will look like
+a photographic negative.
+<p>
+<A NAME="nvcmis"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>Miscellaneous Video Conversion Topics</h2>
+<h3><A NAME="nvcmis0">CGA Boards with NTSC Output</a></h3>
+
+Original CGA cards and faithful clones included RCA connectors. IBM CGA and
+100% compatible cards each featured both an RGBI (Red, Green, Blue,
+Intensity) monitor output and a single RCA jack for composite output to a
+TV or composite video monitor (usually NTSC). Some clones omitted the RCA
+output.
+
+<h3><A NAME="nvcctv">CGA to VGA</a></h3>
+
+This requires both converting the signal levels from TTL to analog as well
+as doubling the scan rate since modern VGA monitors will not go down below
+31 kHz H.  CGA is around 15.7 kHz.  If you aren't fussy about how the colors
+map, the signal level conversion may be just some resistors.  However, the scan
+rate conversion requires capturing the data on each line and spitting it out
+twice in one line time, and providing the proper H sync to match.  This
+would consist of a double buffer digital line memory (for the CGA TTL bits)
+and timing logic to store line n while reading out line n-1 twice at double
+the rate.  It's all doable but not a project for a digital novice.
+
+<h3><A NAME="nvcmis1">NTSC/PAL to RF (Channel 3/4) Output</a></h3>
+
+This is called an RF modulator.  Every VCR in the universe has one of these
+and the vast majority are in self contained modules that can be reused.  It
+will be the silver colored metal box that has the two RF (antenna and TV)
+connectors.
+<p>
+These are also available from surplus electronics outlets for under $5 or
+as generic replacements for VCR servicing for $12 to $20.
+<p>
+The only connections required to make them work are a source of regulated
+power - 5 to 12 V depending on model and possible s control voltage to
+select output instead of pass-through mode.
+
+<h3><a name="nvcmis2">SVGA Monitor on Sun Sparc</a></h3>
+
+This question comes up somewhat less frequently than the opposite (Sun fixed
+or dual frequency monitor on PC SVGA):
+<ul>
+<li>It needs to accept the single or dual fixed frequencies put out by the Sun
+  frame buffers. This shouldn't be a problem for most modern higher-end SVGA
+  monitors but it should be confirmed.  These specs should be in the Sun user
+  manual.
+<p>
+<li>It needs to accept composite sync.  Sometimes, this is listed as a feature
+  in the monitor specifications.  Or, it may work but not be advertised where
+  the monitor is to be connected to a PC (i.e., why manufacture more than one
+  version of the monitor circuitry if you don't have to?).   Else, you will
+  need an adapter to separate the H and V sync.
+<p>
+<li>You will need a 13W3 to HD15 cable.  Unless the adapter cable provides
+  them, the monitor sense lines will not be present (at least not
+  automatically), so you may have to tell the Sparc the resolution explicitly.
+</ul>
+(From: jmz@southwind.net).
+<p>
+Most any multisync "VGA" style monitor will work with the GX, TX or CG3/CG6
+frame buffers on a Sun Sparc.  Commercial 13W3 cables and adapters are
+available or you could get the instructions from a couple of places on the net.
+<p>
+I use my ViewSonic 17s on both Macs and Suns.
+<p>
+You should have a copy of Birdsall's Sun FAQ and you may wish to join the
+Suns-at-Home mail list, for all Sun self-maintainers.  Use a search engine for
+these and they should vector you to the cable pinouts as well.
+
+<h3><a name="nvcsvtc">S-Video to Composite</a></h3>
+
+The basic requirement is to sum the luma (Y) and chroma (C) signals.
+A low pass filter may also be included.
+<p>
+One trivial implementation that should always work (if not optimal)
+is to have the chroma signal (C) pass through
+a 470 pF capacitor tied directly to the luma signal (Y).
+However, there may be excessive color noise in areas of fine detail.
+There is a tradeoff between color noise and smearing of the fine
+detail in the picture as the capacitor value is increased.
+Bypassing the capacitor with a 10 to 50 ohm resistor may help as well.
+On one DVD player, 15 or 20 ohms (with or without a capacitor) was best.
+Some experimentation may result in better performance but to get a
+decent picture.  Nothing is critical.
+<p>
+Or save the hassle and just buy a $3 S-video to RCA adapter cable with the
+capacitor built in on eBay. :)  The parts to make one will cost more than
+this.  But some of these adapters appear to simply tie Y and C together at the
+connector with no electronic parts inside.  At least that's what it looks
+like based on testing one with an ohmmeter.  This does work with some
+sources but may result in inability to even sync with others.
+<p>
+However, on my tests of a single type of S-video source (a Cyperhome
+CH-DVD 300S DVD player, the only one I have with an S-video output),
+the best performance with both a high-end composite-only input TV (RCA
+ColorTrak 2000 from 1984 and a small LCD monitor) in terms of minimum
+color noise was with the composite output, slightly worse with the direct
+Y to C connection.  The capacitor between Y and C had the highest level of
+color noise.  The composite output had almost none.  I do not know if this
+was because there is some low pass filtering of the signals inside the
+DVD player, but the resolution didn't seem noticeably affected.
+<p>
+I would be interested in knowing what an optimal implementation of an
+S-video to composite converter would be using discrete components.  There are
+chips to do this such as the
+<A HREF="http://www.intersil.com/data/fn/FN6184.pdf">Intersel ISL59114</A>.
+But they require a separate power supply and come in itty-bitty SMT packages
+that are generally difficult to impossible to wire.
+If anyone knows, please contact me via the
+<A HREF="emaillnk.htm">Sci.Electronics.Repair FAQ Email Links Page</A>.
+<p>
+<A HREF="http://skemarangkaian.com/s-video-converter-circuit/">S-Video
+Converter Circuit (Christian Tavernier)</A> is a more complex implementation.
+I have not tested this circuit.
+
+<h3><a name="nvcctsv">Composite to S-Video</a></h3>
+
+Basically, all that is needed is to separate the Y and C signals.  It would
+probably be best if the C were put through a high pass filter to remove
+the Y and Y were put through a low pass filter to remove the C but the
+following appears to work with just a cable and a small capacitor.
+<p>
+<ul>
+<li><A HREF="http://www.hut.fi/Misc/Electronics/circuits/svideo2cvideo.html">
+  Tomi Engdahl's S-Video to Composite Video Page</A>.
+</ul>
+
+<h3><a name="nvcrgvg">RGB Sync-On-Green to VGA</a></h3>
+
+There are all sorts of video widgets available, or if you're inclined
+to build something yourself, ICs to do it.
+<p>
+Do a Web search for "video sync stripper" and "RGBHV to VGA".  There should
+be plenty of options.
+<p>
+One of these would be by far the easiest, though not the cheapest (at least
+in parts cost).  But if you have a MAC-compatible monitor which uses composite
+sync, then it's just a matter of using a high speed voltage comparator to get
+the sync-on-green to TTL.  Putting the green video into the VGA green may work
+without any conversion since the sync will hopefully be blacker than black.
+<p>
+<A NAME="nvcioi"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>Items of Interest</h2>
+<h3><A NAME="nvcvvs">Various Video Standards</a></h3>
+
+<ul>
+<li><A HREF="
+ http://www.tek.com/Measurement/App_Notes/Component_Puzzle/standards.html">Various Standards for Analog Component Video</A>
+</ul>
+
+<h3><A NAME="nvcioi0">General VGA Information</a></h3>
+
+(From: Tomi Holger Engdahl.)
+<p>
+VGA monitor pinouts and more related links can be found at:
+<ul>
+<li><a href="http://www.epanorama.net/links/videoconnector.html">Epanorama
+ Video Connectors</a>
+</ul>
+<p>
+Information on how one commercial VGA to TV converter grabs a VGA signal can
+be found at:
+<p>
+<ul>
+<li><a href="http://www.hut.fi/Misc/Electronics/circuits/vga2tv/box800.html">
+ SkyVision BOX-800 VGA to TV converter</a>
+</ul>
+<p>
+Information about video signals in general can be found at:
+<p>
+<ul>
+<li><a href="http://www.epanorama.net/links/video.html">Epanorama Video
+ Links</a>
+</ul>
+
+<h3><A NAME="nvcvcmp">Comparison of Composite, S-Video, Component Video, and RGB</a></h3>
+
+(From: Dave Martindale (davem@cs.ubc.ca).)
+<p>
+Composite is better than using an RF modulator and feeding the signal into the
+TV tuner but is otherwise the worst of them all.
+<p>
+S-video uses two signal paths, luma and chroma.  It's better than
+composite video, which mix both together into a single signal.
+<p>
+But component video is better than S-video.  With component, you have
+three separate signals - usually Y, R-Y, and B-Y.  This bypasses the
+subcarrier encode/decode process entirely, and gives better quality.
+<p>
+There's also RGB, which is potentially just a bit better than Y/R-Y/B-Y,
+but can also be considered a different type of "component".
+
+<h3><A NAME="nvcioi1">TV Capture Cards for PCs</a></h3>
+
+Here are some Web sites of companies who market various video products for PCs.
+<p>
+<ul>
+<li><a href="http://www.hauppauge.com/">Hauppauge Computer Works</a>
+<li><a href="http://www.diamondmm.com/">Diamond Multimedia</a>
+<li><a href="http://www.matrox.com/">Matrox</a>
+</ul>
+<p>
+But be careful, what they say is not always the reality...
+
+<h3><A NAME="nvcioi2">Mixing of Independent Video Sources</a></h3>
+
+If they are truly independent, then this is a non-trivial problem.  You will
+need to either:
+<ol>
+<li>Genlock the two video signals so that they are in sync before mixing.
+   Depending on the sources, the difficulty may range from easy to
+   impossible.  Production video equipment will probably have the necessary
+   inputs and outputs.  Consumer stuff probably will not.  For mixing
+   N signals sources, N-1 will need to have genlock inputs.
+<p>
+If this is not possible then (assuming two sources):
+<p>
+<li>You need a real time programmable video delay.  This would typically
+   consist of a video A/D, dual ported frame store, readout delay timing
+   logic, and video D/A.  Since there is no way to assure the precise phase
+   stability needed for PAL encoding, you would probably need to separate
+   the luminance and chrominance and deal with them separately.
+<p>
+   The delay would need to be anywhere up to 1/2 frame (or 1 frame if
+   only one of the sources can be delayed).  Not an afternoon project.
+   For N sources, you would need N-1 0 to full frame delay units.
+   Also note that commercial broadcasts will sometimes shift frame
+   reference when cutting between remote locations which are not genlocked.
+   If these sources are to be supported, you will need an automatic
+   adjustment scheme to maintain synchronization.
+</ol>
+For info on the availability of commercial devices, you may want to
+post to one of the video newsgroups - <a href="news:rec.video.production">
+rec.video.production</a>, for example.
+
+<h3><A NAME="nvcioi3">Studio Video Recording or Filming Directly from Monitors</a></h3>
+
+<blockquote>
+"I'm designing graphics for a computer that is used on a the set of a 
+ TV show.  When the camera operators shoot the screen, horizontal lines 
+ roll up and down.  I assume it has something to do with the scan 
+ rates.  I know there is a small program for the Macintosh that 
+ corrects this, but I know of nothing for the PC.  Does anyone know?"
+</blockquote>
+(From: Dic (dic@werple.mira.net.au).)
+<p>
+This depends on whether they are shooting on video or film.  There are display 
+cards for PC which allow you to dial up the vertical output rate, which you
+want to match to either 30Hz( NTSC frame rate) or 24Hz (typical film frame
+rate).  Multiples are fine, i.e. 60 or 48Hz respectively.
+<p>
+But that isn't the end of it.  You may have (approximately) matched the frame
+rate of the camera, but you have to also lock them together as there will be 
+a certain amount of drift due to slight differences in the two scan (frame)
+rates. For film there are devices called a Computach or a Synclock, which
+attach to the movie camera and take a video input (you can just feed it
+sync from your PC card but you may need to fiddle the level or polarity).
+<p>
+On set, they roll the camera and adjust the shutter phase so the vertical 
+blanking bars on the PC fall in between movie frames. The synclock then
+keeps the camera perfectly synchronized to the PC sync.
+<p>
+If you're shooting on video it's a bit harder. You need to genlock the video
+camera to the PC, which can be awkward as the PC sync may not be quite 
+steady enough (directors HATE having to lock to ANYTHING).
+<p>
+The hardest thing to do is run several PC's in the same shot, because they
+won't be scanning in sync; you can lock your camera to only one at a time.
+If anyone knows of PC videocards that can be genlocked together I'd be very
+interested.
+<p>
+We do a lot of this kind of work and at the end of the day, particularly
+if there is more than one PC in shot, we record the computer graphics to 
+video and use Amiga monitors, because they look like PC monitors but
+take video input.  We use Umatic or Betacam tapes because the playback machines
+can be drum locked together.  Obviously though, if you need a high degree of
+interactivity with the actor, this won't work too well.
+<p>
+The vertical blanking bar on a PC is quite fine so if they aren't in the
+foreground you can usually get away with just matching the vertical rate
+of the PC as close as possible to that of the video/film camera. You won't
+see flicker, just a fine dark line moving up or down the picture slowly.
+<p>
+That is about the sum total of my experience but if anyone else has better 
+suggestions I'd be very interested.  I have seen some TV/movies with 
+multiple computers in shot with no sign of flicker or blanking bars; maybe
+the bars are just too fine to show up?
+<p>
+(From: falcon@tao.agoron.com (Tom Strano)
+<p>
+In my personal experience, I've found that simply setting the video mode on
+a PC to 640*480, any color depth, and a 60 Hz refresh rate, results in a
+very stable picture, even when taped with a cheap consumer camcorder and no
+attempt at synchronization.  I've done this with at least 3 different
+computers, all with different monitors and video cards, and it always works
+fine. Perhaps I'm just luckier than some technicians...
+
+<h3><a name="nvcioi4">Video Controller Timing</a></h3>
+
+<blockquote>
+"I wonder if anyone could tell me a good reference on how CRT controllers
+ operate.  Specifically, how do the HSYNC, VSYNC, BLANK, and dot clocks
+ interact.  Or, would some kind soul like to explain it?  Thanks."
+</blockquote>
+I am not exactly sure what you really want but here are some simple
+descriptions:
+<ul>
+<li>DOT Clock: the pixel clock.  1/(Pixel period).
+<p>
+<li>Hactive: the time during which video on a line is actually displayed.
+<p>
+  <ul>
+  <li>Hactive*DOTclk=#Pixels.
+  </ul>
+<p>
+<li>Hblank: the time during which no video is displayed and the beam is being
+  retraced.
+<p>
+<li>Hsync: positive or negative pulse during Hblank which synchronizes the
+  horizontal deflection circuits of the monitor.
+<p>
+<li>Htotal: Hactive+Hblank.
+<p>
+<li>Vactive: the number of lines during which video in a frame is visible.
+<p>
+<li>Vblank: active for the number of lines during which video is not visible and
+  the beam is retracing to the top of the screen.
+<p>
+<li>Vsync: positive or negative pulse during Vblank which synchronizes the
+  vertical deflection circuits of the monitor.
+<p>
+<li>Vtotal=Totaltime=(Vactive+Vblank)*Htotal.
+<p>
+<li>Csync: Hsync combined with Vsync usually be ORing or XORing.
+<p>
+<li>Cblank: Hblank Ored with Vblank.
+<p>
+<li>Composite video: Video combined with Csync usually the video is
+  .7 V p-p positive-bright riding on top of .3 V negative Csync.
+</ul>
+For RGB, some monitors will want 'sync on green' which is this
+type of signal only for the green video.  R and B and just the
+straight video.  Mono composite is this signal.
+NTSC/PAL: RGB color encoded and modulated.  Composite video is used
+for the luminance (intensity) with the color information modulated
+on a subcarrier (which is ignored by a B/W TV).
+<p>
+One source for info on timing specs is the data sheet for a video
+DAC or RAMDAC.  They will usually define all of these parameters.
+
+<h3><a name="nvcioi5">Sync Generator Chips</a></h3>
+
+One example is the 74ACT715 programmable video sync generator.  A Web search
+will easily find its datasheet.
+<p>
+(From: (opal@opal.co.il).)
+<p>
+Try philips SAA1101.
+
+<h3><a name="nvcioi6">Sync Separators</a></h3>
+
+(From: Myron Brookshire (harris.mbrooksh@ic1d.harrris.com).)
+<p>
+Try using the National Semiconductor LM1881 It's a 8 pin DIP that does
+exactly what you need.
+<p>
+I think it costs @ $8.00 and you only need a couple of caps
+externally.
+<p>
+(From: Jan Arvidsson (janarv@algonet.se).)
+<p>
+The EL4583C from Elantec has a dedicated HSYNC output in addition to CSYNC
+and VSYNC outputs, available on the less expensive LM1881 (National). It is
+of course very easy to derive a pure HSYNC signal from the CSYNC output!
+
+<h3><a name="nvcioi7">Dead VCRs and Composite Monitors</a></h3>
+
+Most VCRs go to their graves not because of electronics problems but because
+of the death of the tape transport.  Or, perhaps, because the owner was not
+willing to spend the money or take the time to resuscitate (or has killed it
+due to improper servicing).  Of course, it might just need a 50 cent rubber
+tire (but that is for another FAQ).  What this means is that the tuner and
+video circuitry is generally as good as the day the VCR rolled off the
+assembly line.
+<p>
+If you have a composite monitor (probably gathering dust at this point), then
+this in conjunction with the otherwise useless VCR will result in quite a nice
+TV.   Many CGA monitors as well as early auto-scan or multi-scan monitors have
+NTSC (or possibly PAL) compatible composite inputs.  Some even have built in
+speakers.  A set of RCA patch cables and you are all set.  Since they were
+designed for high resolution (at the time) computer applications, the quality
+is generally excellent.  (Note: I do not make the same quality claims for
+modern SVGA monitors as their display is optimized for high scan rate computer
+video and not CGA or NTSC).  In addition, controls are usually accessible to
+permit any desired degree of underscan or overscan.
+<p>
+It may even be possible to use the VCR's timer to turn your rig on and off
+automatically!  (It just requires faking out the record/cassette interlock
+and locating a signal that can be used to control a power relay.
+<p>
+Conserve your landfills - save a VCR!
+
+<h3><a name="nvcioi8">Video Cables</a></h3>
+
+<blockquote>
+"Does anyone know about the specifications of the video and sync signals  
+ for VGA monitors?"
+</blockquote>
+Video: .7 V p-p, (more positive is brighter).
+<p>
+Sync: separate horizontal and vertical TTL signals.  May be either polarity.
+<blockquote>
+"I am trying to send VGA signals over some 180 feet of cable,  I'd especially
+ be interested in the required line impedance of the cable."
+</blockquote>
+Line impedance: 75 ohms terminated at both ends.
+<blockquote>
+"Is it possible to produce a Composite Sync signal (or maybe even a  
+ composite video signal) that could be fed into an off-the-shelf VGA  
+ monitor, so I could use only 3 instead of 5 coaxial wires in parallel?"
+</blockquote>
+RG59U 75 ohm coax is what is normally used, but you will need a good quality
+cable to go 180 feet without too much signal degradation.  Of course, it also
+depends on what resolution and thus what video bandwidth you need and how
+much dispersion (signal delay as a function of frequency) you can tolerate.
+<p>
+It is relatively easy to combine the H and V syncs together and then combine
+these with the video (usually the green signal for 'sync-on-green') but most
+low cost VGA monitors do not support this mode and you would then need to
+separate the signals at the far end.  You could come up with alternative
+ways of combining the signals to save on cables but these will all complicate
+your circuitry at the monitor end.  There are multiple coax cables inside a
+single sheath for just this purpose.
+
+<h3><a name="nvcioi9">Building a 5 BNC Cable</a></h3>
+
+This is straightforward, if time consuming and tedious.
+<p>
+The five coaxial cables (75 ohm, RG59 typical) are wired as shown in the
+table.  The corresponding VGA connector pin numbers are in ().
+<PRE>
+             Coax Center         Coax Shield
+          ---------------------------------------
+            Red Video  (1)      Red Return (6)
+            Green Video  (2)    Green Return (7)
+            Blue Video  (3)     Blue Return (8)
+            H Sync (13)         Ground (5,10)
+            V Sync (14)         Ground (5,10)
+</PRE>
+Tie pin 11 (ID0) to Ground to indicate a color monitor.
+Leave pin 12 (ID1) open.
+<p>
+Make sure that the lengths of the cables are fairly well matched - to within
+a couple of inches - to assure that the 3 color channels line up precisely.
+(One foot of cable is about 1.5 to 2 ns of delay which is significant for
+a 10 ns dot clock!).
+<p>
+Also note that you will lose your 'Plug-and-Play' capabilities without the
+direct control connections to the monitor (or for monitors without these
+features).
+<p>
+That's it!
+<p>
+You will wish that your fingers were about 10 times smaller than they are,
+however. :-)
+
+<h3><A name="nvcioi10">Tweaking the Deflection Rates of a Fixed Frequency Monitor</a></h3>
+
+Pulling a fixed frequency monitor by more than a few percent will likely
+be a problem.  I know this is not the answer you were looking for but
+getting a new inexpensive video card, video card designed for fixed frequency
+monitors, or new monitor, may be a better solution.
+<p>
+If you insist, the adjustment would be called something like horizontal
+oscillator, horizontal frequency, or horizontal hold.  If you do tweak, mark
+everything beforehand just in case you need to get back to the original
+settings.
+<p>
+WARNING: Make sure you understand the issues involved in working inside a
+monitor!  See the document: <A HREF="safety.htm">Safety Guidelines for High
+Voltage and/or Line Powered Equipment</A>.  Something that looks innocent can
+really ruin your whole day!
+<p>
+There is also some risk to the monitor - changing it too far may result in
+damage either immediately (the horizontal output transistor or power supply
+may blow) or increase component stress reducing reliability and shortening
+its life.  There is no way to know without looking at the design.
+
+<h3><a name="nvcioi11">Modifying a CGA (or EGA) Monitor for NTSC or PAL Input</a></h3>
+
+These are often high quality monitors and would make nice TV displays -
+especially as there are many no doubt gathering dust on their way to
+the dumpster!
+<p>
+However, these are digital (TTL) monitors with respect to the video inputs
+and proper linear video amplifiers may not even be present.  Therefore, you
+may need to implement both the NTSC or PAL decoding as well as boosting the
+signal levels to the hundred volts or so needed to drive the CRT.
+<p>
+The scan rate of CGA is the same as NTSC so deflection is not a problem.
+<p>
+For PAL (625/50) instead of NTSC, the vertical rate will need to be reduced
+to 50 Hz but this should not be a problem.  The horizontal scan rate is close
+enough (15.625 kHz).
+<p>
+Similar comments apply to EGA monitors that have a compatible scan rate.
+EGA represents a range of scan rates between 15.75 kHz and 21.85 kHz so
+this should not be a problem.
+
+<h3><a name="nvcioi12">How Can I Determine Monitor Specifications or Whether It Supports SVGA?</a></h3>
+
+There is no easy way to tell by just examining the monitor visually.  Even
+those with only a 9 pin rather than a 15 pin connector are sometimes SVGA
+(e.g., Mitsubishi AUM1381 and NEC Multisync II which will do 800x600 at
+56 Hz V non-interlaced and 1024x768 interlaced at 43 Hz V).
+<p>
+You cannot even safety test scan rates on all monitors - some will blow up
+or be damaged by being driven with incorrect video.
+<p>
+For a monitor that you already have, posting the model number or looking
+it up is really the only way to be sure of its capabilities.
+<p>
+Quicky tests:
+<ol>
+<li>Check the video connector.  If it has a high density (VGA) 15 pin connector
+   then there is a greater likelihood of SVGA but not always.
+<p>
+<li>Check the manufacturing date on the back.  If it has a manufacturing date 
+   of 1991 or later, the likelihood of it supporting SVGA is higher as
+   demand for VGA-only monitors was rapidly declining by this point.
+<p>
+<li>Check the dot pitch on the CRT by examining the screen with a magnifier.
+   If it is really coarse, the monitor probably cannot do anything beyond VGA.
+<p>
+<li>Become familiar with the major manufacturers and models so that you will
+   recognize the common SVGA models.
+</ol>
+While not conclusive, positive results on the first 3 of these tests definitely
+increases the likelihood that it supports at least some SVGA modes.  Of course,
+if you recognize a model number, you have dramatically increased your odds
+of success - assuming it works!
+<p>
+<A HREF="http://www.monitorworld.com/">Monitor World</a>
+has quick access to the general specifications of many common
+PC and MAC compatible video monitors.  (There used to be many
+monitor spec Web sites but most disappeared.)
+
+<h3><a name="nvcioi13">Low Cost VGA Hacking</a></h3>
+
+Typical question:
+<blockquote>
+"I have an old mitsubishi monitor, model number C3919N,  Scan rate is
+ 15.5-23.5kHz horizontal, analog.  I want to run video from my pc svga card
+ into this monitor.  I found the correct video mode, resolution, etc. in
+ which it works, but have one problem. I get two perfect images displayed
+ on this screen."
+</blockquote>
+(From: Martin Moeller (mmoeller@delphi.com).)
+<p>
+I have a copy of a very detailed book on using old 19" monitors for VGA:
+<ul>
+<li>The Cheap VGA book<br>
+  Self Published by a Michael Johnson, Esoteric Electronics<br>
+  35-R Derryfield Road<br>
+  Derry, NH 03038<br>
+  Night only Phone: 1-603-434-8494
+</ul>
+This book contains a lot of good information and advice. He also sells kits
+for less than $50 (see comment below --- sam) to make the sometimes needed sync
+inversion from VGA.  (VGA cards invert H and V sync depending on mode to tell
+the monitor what rate to go to.  As far as I know only IBM ever used this.)
+<p>
+I have not tried his kits but the book is very good.  BTW if you pay much
+more than $300 for a 19' surplus monter you have been moderately had.  I do
+not have any other connection with this person,  I just think his book is
+very good if you are even thinking of using a "non-VGA" monitor with a VGA
+card.
+<p>
+(From the Editor).
+<p>
+A circuit to perform the automatic sync polarity correction is shown at:
+<p>
+<ul>
+<li><a href=
+"http://www.tkk.fi/Misc/Electronics/circuits/vga2tv/cindex.html/">VGA to TV
+Converter</a>
+</ul>
+<p>
+The cost of the parts for this circuit is probably under $5 even if bought
+from Radio Shack.
+<p>
+Note: I believe there may be a problem with the use of normal or LS TTL
+for the sync buffers of this circuit due to their sourcing of current when
+the input is LOW.  A gate with a Low Level Input Current of less than .2 mA
+should be used. (--- sam)
+
+<h3><a name="nvcioi14">Real Time Multi-Screen Displays</a></h3>
+
+These are the type of displays used to view multiple video inputs
+simultaneously on a single screen - security monitoring, for example.
+<p>
+You have two problems: compressing the signals to 1/4 screen and synchronizing
+them.  The straightforward (though not simple) approach is to digitize each
+at 1/4 resolution into a frame buffer which is read out at NTSC rates.  This
+overcomes the issues of genlocking and timing of the 4 quadrants.
+
+<h3><a name="nvcioi15">On-Screen Display Implementation</a></h3>
+
+<blockquote>
+"I am looking for chips that do on-screen display of text and simple 
+ graphics. I've got some information about a Philips chip PCA8516 which 
+ seems to be a pretty nice complete chip for doing everything I want. Are 
+ there other chips out there that do this as well?"
+</blockquote>
+(From: Jack Climent (rocket5@haven.ios.com).)
+<p>
+When you are looking for something for the consumer marketplace, Look 
+toward Mt. Fuji :-).
+<p>
+The MB88303 from fujitsu is an "NMOS Television Display Controller" And 
+the NJM 22075 is a "Sync & Video SuperImposer".  These two chips and very 
+little else form a complete on screen text & Min graphics system.  Add a 
+uC and you are in business. Also low cost and easy to implement.  Have 
+hardware & software someplace if needed.
+<p>
+(From: Winfield Hill (hill@rowland.org))
+<p>
+This isn't an easy thing to do, as quite a bit of electronics is required.
+Fortunately, this function is needed for TV sets, VCRs etc and several
+manufacturers have created custom VLSI chips to do the task, which is called
+On Screen Display or OSD.  For example, Phillips, SGS-Thompson, Rohm, and NEC,
+etc. all make OSD chips.  Some, like Motorola, include the OSD function within
+a microprocessor.
+<p>
+I like the NEC uPD6464A chip.
+<p>
+Using an OSD chip, you can roll your own design (e.g. see September
+and October 1996 Electronics World, which uses a discontinued chip!), but it's
+still a non-trivial task!  One easy solution is to purchase a BOB-4
+video overlay module from <http://www.decadenet.com/">Decade Engineering</A>,
+which solves the disappearing OSD chip
+problem by using industry-standard microcontroller and FPGA chips.  It
+accepts printer-like commands through 'TTL-232' or SPI ports.  BOB-4
+has text scroll and crawl, vector graphics, user-installable fonts,
+and other features that didn't exist in the old OSD chips.
+Small-quantity prices are posted on the Order page at Decade's
+website.
+
+<h3><a name="nvcioi17">Video Resizing</a></h3>
+
+<blockquote>
+"I'm looking for a device to do resize (in horizontal direction only) of a
+ video signal.  Basically I need a fractional decimator (in this case 2:3).
+ Harris has some stuff that might be useful, and Phillips has some devices
+ but I think they're more geared towards NTSC/PAL (data rate here is around
+ 20 MHz, but, then again, isn't the luminance typically sampled at a pretty
+ high rate?).  Anyway, I also know I could do it in an FPGA with bit-serial
+ arithmetic, but I'd rather buy something."
+</blockquote>
+(From: David L. Tosh (dlt@earthlink.net).)
+<p>
+Check out:
+<ul>
+<li><a href="http://www.gennum.com/">Gennum</A>
+</ul>
+<p>
+Gennum makes several multirate filters for video resizing.
+
+<h3><a name="nvcioi18">Video Resolution of Various VCR Formats</a></h3>
+
+Luminance Specifications:
+<ul>
+<li>VHS (240 lines) - FM Dev: 1 Mhz; Freq Range: 3.4-4.4 Mhz. (Sync tip -
+ White)
+<li>SVHS (400 lines) - FM Dev: 1.6 Mhz; Freq Range: 5.4-7 Mhz.
+<li>BETA1 (250 lines) - FM Dev: 1.3 Mhz; Freq Range: 3.5-4.8 Mhz.
+<li>BETA2/3 (240 lines) - FM Dev: 1.2 Mhz; Freq Range: 3.6-4.8 Mhz.
+<li>SuperBETA (285 lines) - FM Dev: 1.2 Mhz; Freq Range: 4,4-5.6 Mhz.
+<li>ED BETA (500 lines) - FM Dev: 2.5 Mhz; Freq Range: 6.8-9.3 Mhz.
+</ul>
+The above refers to resolvable horizontal resolution - the maximum number of
+vertical lines that can be seen using an arbitrary high quality monitor to
+view the VCR's output.  Also, this applies only to luminance - intensity,
+not color.  The color resolution is much lower and in the particular case
+of SVHS vs. VHS at least, not improved over VHS since it is recorded in
+exactly the same way.  Also, I don't know whether this is a just noticeable
+difference (JND) or percent response type of spec where the lines are really
+just resolvable.
+<p>
+Vertical luminance resolution in the monitor or TV is determined by the video
+standard (NTSC, PAL) and the quality of the monitor or TV.  Specifically,
+for NTSC (525 total lines for NTSC) there can be a maximum of 482 or so
+active video lines and something like 580 for PAL (625 line).  The remaining
+lines are for blanking and sync during retrace.  These are physical scanning
+lines.
+<p>
+Vertical luminance resolution for the VCR is determined only by the number
+of active video scan lines for each standard.
+<p>
+Factors which reduce the effective vertical resolution are CRT focus (spot
+size) and stability of the interlace, and Kell factor.  (See the section:
+<a href="#nvcioi19">What is Kell Factor with Respect to Interlaced
+Displays?</a>.
+<p>
+Depending on the video standard, vertical color resolution may be less.
+<p>
+Depending on the video source, there will be a variety of other factors
+which reduce the effective resolution horizontally and vertically.
+
+<h3><a name="nvcioi19">What is Kell Factor with Respect to Interlaced Displays?</a></h3>
+
+(From Bob Myers (myers@fc.hp.com).)
+<p>
+The Kell factor - which has to do with the fact that we're often undersampling
+an image from the standpoint of the Gospel According to St. Nyquist - IS
+a factor in the reduction of vertical resolution, but interlacing plays
+a part as well.  This comes from at least two factors:
+<ol>
+<li>The monitor or receiver usually cannot precisely interleave the two fields.
+<p>
+<li>More importantly, there are steps taken to reduce the interline flicker
+   which reduce the effective vertical resolution.  This includes running the
+   line width of the display somewhat larger than would otherwise be the case,
+   and in interlaced cameras, discharging the entire screen (including the
+   lines from the "other" field) after every field scanned.
+</ol>
+Interlace is particularly troublesome on moving images, where you will often
+perceive momentarily "missing" details.  There was a LOT of discussion
+regarding the gory details of interlacing in the recent HDTV debates within
+SMPTE and other groups.
+<p>
+<A NAME="nvccon"></A>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<h2>Common PC Video Connector Pinouts and Assorted Monitor Info</h2>
+
+Many of these are also available at the
+<A HREF="../index.html">Sci.Electronics.Repair FAQ site</A> (and
+its mirror sites) in the document:
+<A HREF="../REPAIR/F_Pinouts.html">Pinouts for Various
+Connectors in Real Life(tm)</A>.
+<p>
+Also see the connector info at:
+<p>
+<ul>
+<li><a href="http://www.hardwarebook.info/">The Hardware Book</a>
+<li><a href="http://www.gamesx.com/avpinouts/">Gamesx.com - A/V and
+ Miscellaneous Pinouts</a>
+</ul>
+
+<h3><a name="nvccon0">Video Graphics Adapter (VGA)</a></h3>
+
+Note that IBM called VGA 'Video Graphics Array' probably in reference to the
+video memory.  However, we will use the more popular terminology since it
+agrees with the naming conventions of the other PC standards.
+<p>
+Original VGA (31.5 kHz - 640x480)/SVGA (35-37 kHz - 800x600) 15 pin sub D:
+<PRE>
+                                                                 6
+ 1 Red (Analog)   6 Red   Return    11 (ID0) GND (Color)     11. . . 1
+ 2 Green (Analog) 7 Green Return    12 (ID1) NC (Color)        . . .
+ 3 Blue (Analog)  8 Blue  Return    13 Horizontal Sync         . . .
+ 4 Reserved       9 No Connect      14 Vertical  Sync          . . .
+ 5 Ground        10 Ground          15 No Connect              . . .
+                                                             15  10  5
+</PRE>
+Note: Monitor ID Lines ID1,ID0=NC,G for color; G,NC for Mono.  ID0 only may
+      be used.
+<p>
+Mono VGA is similar using only the Green Video and Return.
+
+<h3><a name="nvccon1">VGA (VESA Standard)</a></h3>
+
+(From: Bob Myers (myers@fc.hp.com).)
+<p>
+Note that many of the pins shown above as "no connects" (actually, these
+were sometimes used as monitor ID bits by many manufacturers) are now
+defined under the VESA Display Data Channel standard.  This standard provides
+two protocols for display ID and control, including support for the full
+ACCESS.bus interface.  The current definition of the "VGA" pinout per the
+DDC standard is:
+<PRE>
+                                                                    6
+ 1 Red (Analog)   6 Red   Return       11 Monitor ID0 (opt.)    11. . . 1
+ 2 Green (Analog) 7 Green Return       12 Data (SDA)              . . .
+ 3 Blue (Analog)  8 Blue  Return       13 Horizontal Sync         . . .
+ 4 Reserved       9 +5 VDC (frm host)* 14 Vertical  Sync          . . .
+ 5 Return        10 Sync return        15 Data clock (SCL)*       . . .
+                                                                15  10  5
+</PRE>
+Those signals marked with an asterisk would be supplied by the host only
+if the host supports the DDC2 protocol (I2C or ACCESS.bus).
+
+<h3><a name="nvccon2">VESA Display Data Channel Standard</a></h3>
+
+(From: Bob Myers (myers@fc.hp.com).)
+<p>
+This defined several protocols for digital communications between a
+host system and its display.  DDC provides 3 different modes:
+<p>
+<ul>
+<li>DDC1 - A unidirectional (display to host only) serial communications system
+ which provides basic display ID and feature support information
+ (including supported timings, display size, colorimetry and gamma,
+ etc.) to the host.  This uses pin 12 on the 15-pin "VGA" connector as
+ a data line.
+<p>
+<li>DDC2B - Adds clock (pin 15) and return (pin 11, I think - I'm at home, and
+ don't have the standard with me) to enable at least ID information to 
+ be obtained via an I2C interface.  I2C is a bidirectional interface,
+ but display control via DDC2B is not defined at this time.
+<p>
+<li>DDC2AB - Full ID and control of the monitor via ACCESS.bus.  As ACCESS.bus
+ is basically a command and protocol definition on top of the I2C
+ hardware interface, this uses the same lines as DDC2B.
+</ul>
+<p>
+DDC was the first and only definition of the 15-pin D-subminiature
+video output connector which VESA has provided.  No further definitions
+on this connector will be made, as VESA is instead concentrating on the
+new Enhanced Video Connector standard which is due out later this year.
+This will define a completely new connector which will include support
+for DDC and separate syncs as in the 15-pin D-sub, and will also include
+support for audio I/O, video input, and the USB and P1394 serial interfaces.
+
+<h3><a name="nvccon3">VGA - 9 Pin</a></h3>
+
+This is pretty standard as the NEC Multisync II, Tatung CM1495, and others use
+the same pinout.  However, there is at least one other pinout that has been
+used which is similar to the CGA pinout.  Also see the document:
+<A HREF="../REPAIR/F_Pinouts.html">Pinouts for Various
+Connectors in Real Life(tm)</A>.
+<p>
+I used a multimeter to determine this on the VGA to 9 pin adapter for a NEC
+Multisync II.
+<ul>
+Pin 1: Red Video
+Pin 2: Green Video
+Pin 3: Blue Video
+Pin 4: H Sync
+Pin 5: V Sync
+Pin 6: Red Return
+Pin 7: Green Return
+Pin 8: Blue Return
+Pin 9: Ground
+</ul>
+Note: IBM PGC assigns pin 4 to Composite Sync and pin 5 is a no-connect.
+<p>
+BTW, don't use an EGA 9 pin extension cable to connect it to VGA.  While this
+will work, the wires are not shielded or the wrong wires and you will get
+ghosting and ringing at vertical edges.  I constructed mine using proper 75
+ohm coax for the RGB and H and V sync as well (though it is not needed for
+the sync).
+<p>
+(From: Carl Mueller).
+<p>
+If you're sure it's a VGA monitor (not CGA or EGA, which are not compatible
+with VGA), then there are two possible likely pinouts for the plug.  I believe
+they are both detailed in the ibm PC hardware FAQ.  One possibility is the CGA
+pinout, and the other is the 9-pin VGA pinout.  Check the grounds to find out.
+
+<h3><a name="nvccon4">Enhanced Graphics Adapter (EGA)</a></h3>
+
+EGA - TTL (15.74-21.85 kHz) 9 pin:
+<PRE>
+ 1 GND                    6 Secondary Green Video/Intensity
+ 2 Secondary RED Video    7 Secondary Blue Video
+ 3 Primary RED Video      8 H Sync TTL Positive
+ 4 Primary GREEN Video    9 V Sync TTL Negative
+ 5 Primary BLUE Video
+</PRE>
+
+<h3><a name="nvccon5">Color Graphics Adapter (CGA)</a></h3>
+
+CGA - TTL (15.75 kHz - 320x200 or 640x200) 9 pin:
+<PRE>
+ 1 GND                    6 Intensity
+ 2 Unused	          7 Unused
+ 3 RED Video              8 H Sync TTL Positive
+ 4 GREEN Video            9 V Sync TTL Positive
+ 5 BLUE Video
+</PRE>
+
+<h3><a name="nvccon6">Dell UltraScan 17ES</a></h3>
+
+This pinout may be used by a number of Dell monitors.  The connector looks
+like a standard VGA/SVGA HD15 but is wired differently (for some unfathomable
+reason).
+<p>
+(From: Chris Lawson (lawsonc@micron.net).)
+<ul>
+Pin 1:  Gnd
+Pin 2:  Red video
+Pin 3:  Gnd
+Pin 4:  Green video
+Pin 5:  Gnd
+Pin 6:  Gnd
+Pin 7:  NC
+Pin 8:  VSync
+Pin 9:  HSync
+Pin 10: Blue video
+Pin 11: NC
+Pin 12: NC
+Pin 13: NC
+Pin 14: NC
+Pin 15: NC
+</ul>
+
+<h3><a name="nvccon7">Monochrome Graphics Adapter (MGA)</a></h3>
+
+MGA - TTL (18.43 kHz - 720x350) 9 pin:
+<PRE>
+ 1 GND                    6 Intensity
+ 2 Unused	          7 Video
+ 3 Unused                 8 H Sync TTL Positive
+ 4 Unused                 9 V Sync TTL Negative
+ 5 Unused
+</PRE>
+
+<h3><a name="nvccon8">MacIntosh Video</a></h3>
+
+Mac II - analog (35 kHz H, 66.67 Hz V - 640x480) 15 pin.
+Mac II and Quadra - analog (49.7 kHz H, 74.55 Hz V - 832x624) 15 pin.
+<PRE>
+ 1  Red Ground           9 Blue Video
+ 2  Red Video           10 Sense 2
+ 3  Composite Sync      11 Ground
+ 4  Sense 0             12 Vertical Sync
+ 5  Green Video         13 Blue Ground
+ 6  Green Ground        14 Ground
+ 7  Sense 1             15 Horizontal Sync
+ 8  Reserved (+12)
+</PRE>
+
+<h3><a name="nvccon9">Mac (16") Monitor Info</a></h3>
+
+(From: Dale Adams (adams9@apple.com).)
+<p>
+Note that the Apple 16" monitor is a fixed frequency display - i.e., it
+only works at one resolution and scan frequency.  Here are the partculars:
+<ul>
+<li>Resolution:           832x624
+<li>Pixel clock rate:     57.2832 MHz
+<li>Vertical scan rate:   75 Hz
+<li>Horizontal scan rate: 49.7 kHz
+</ul>
+ 
+Here's the pinout for the Apple DB15 video connector:
+<PRE>
+Pin    Signal          Description
+-----  -----------     ----------------------------------------
+1      RED.GND         Red Video Ground
+2      RED.VID         Red Video
+3      CYSNC~          Composite Sync
+4      MON.ID1         Monitor ID, Bit 1
+5      GRN.VID         Green Video
+6      GRN.GND         Green Video Ground
+7      MON.ID2         Monitor ID, Bit 2
+8      nc              (no connection)
+9      BLU.VID         Blue Video
+10     MON.ID3         Monitor ID, Bit 3
+11     C&VSYNC.GND     CSYNC & VSYNC Ground
+12     VSYNC~          Vertical Sync
+13     BLU.GND         Blue Video Ground
+14     HSYNC.GND       HSYNC Ground
+15     HSYNC~          Horizontal Sync
+Shell  CHASSIS.GND     Chassis Ground
+</PRE>
+You can pretty much ignore the ID bits.  You can try the following cable
+pinouts to match to a VGA connector.
+<PRE>
+ Mac Video DB15                        VGA Connector HD15
+----------------                      --------------------
+ 
+ 2  ------------------- Red Video ------------ 1
+ 1  ------------------- Red Ground ----------- 6
+ 9  ------------------- Blue Video ----------- 3
+ 13 ------------------- Blue Ground ---------- 8
+ 5  ------------------- Green Video ---------- 2
+ 6  ------------------- Green Ground --------- 7
+ 15 ------------------- Hsync ---------------- 13
+ 12 ------------------- Vsync ---------------- 14
+ 14 ------------------- Sync Ground ---------- 10
+</PRE>
+
+<h3><a name="nvccon10">Mitsubishi Diamond Scan Monitors</a></h3>
+
+These monitors accept PC video (at least standard VGA - 640x480 at 60 Hz - but
+have non-standard connectors.  Here are two types - there may be others.
+<p>
+(From: Tony Matt (tonym@world.std.com).)
+<p>
+Cable for Mitsubishi Diamond Scan 20M (Model HC3925ETK)
+<pre>
+ Pin Function       PC Connector    Monitor Connector
+
+ Red (Analog)             1                 2
+ Green (Analog)           2                 4
+ Blue (Analog)            3                10
+ Reserved                 4                 6
+ Return                   5                 6
+ Red Return               6                 1
+ Green Return             7                 3
+ Blue Return              8                 5
+ Sync Return             10                 6
+ Monitor ID0             11                 6
+ Horzontal Sync          13                 9
+ Vertical Sync           14                 8
+</pre>
+<ol>
+<li>Both connectors are high-density DSUB-15 male (VGA).
+<li>Cable is marked "CABLE-FA5"; unsure if this is Mitsubishi marking.
+<li>Cable material is Fujikura E49075 (AWM Style 2560).
+<li>Color signals are carried on coax with their respective returns.
+<li>Two wires of the cable are connected to Pin 6 at the monitor end;
+   one of these wires is connected to Pins 4 and 5 at the PC end, the 
+   other wire to Pins 10 and 11.
+<li>Ferrite cylinders are shrink-wrapped around cable near each end.
+</ol>
+Cable for 13" Mitsubishi Diamond Scan (Model AUM1391A)
+<pre>
+ Pin Function       PC Connector    Monitor Connector
+                    HD DB-15 male   DB-25 male
+
+ Red (Analog)             1                 2
+ Green (Analog)           2                 4
+ Blue (Analog)            3                14
+ Red Return               6                 3
+ Green Return             7                 5
+ Blue Return              8                15
+ Sync Return             10                 1
+ Monitor ID0             11                 1
+ Horzontal Sync          13                16
+ Vertical Sync           14                17
+</pre>
+<ol>
+<li>Cable is marked "Mitusbishi CAT. NO. 246C057-8".
+<li>Cable material is E41447 (AWM Style 2560).
+<li>Color signals are carried on coax with their respective returns.
+<li>Pins 10 and 11 use separate wires in the cable, which are connected
+   together at Pin 1 of the DB-25.
+</ol>
+
+<h3><a name="nvccon11">Sun 13W3</a></h3>
+
+This was introduced by Sun Microsystems and is a nice compact robust
+connector.  Other manufacturers have copied it but there are several
+variations.  See:
+<A HREF="http://www.monitorworld.com/Cables/video_standards.html">MonitorWorld
+Video Standards Page</A>.  Towards the bottom they have several different 13W3
+pinouts.  Some only accept composite sync, some have the sync pins reversed,
+etc.
+<p>
+<ul>
+Pin 1: NC<br>
+Pin 2: NC<br>
+Pin 3: Sense 2<br>
+Pin 4: SRTN<br>
+Pin 5: CSYNC<br>
+Pin 6: NC<br>
+Pin 7: NC<br>
+Pin 8: Sense 1<br>
+Pin 9: Sense 0<br>
+Pin 10: CRTN<br>
+<p>
+Pin A1: Red<br>
+<p>
+Pin A2: Green<br>
+Pin A3: Blue<br>
+</ul>
+The following I picked off the net so I do not know the accuracy of the
+resolution table.
+<p>
+Analog:  13W3 connector:
+<PRE>
+         +----------------- * gnd
+         |   +------------- * vertical sync
+         |   |   +---------   sense 2
+         |   |   |   +-----   sense common (gnd)
+         |   |   |   |   +-   composite sync
+         |   |   |   |   |
+         |   |   |   |   |   grey
+    red  |   |   |   |   |   green blue
+     |   1o  2o  3o  4o  5o    |     |
+    (O)                       (O)   (O)
+       6o  7o  8o  9o 10o
+       |   |   |   |   |
+       |   |   |   |   +---   composite common (gnd)
+       |   |   |   +-------   sense 0
+       |   |   +-----------   sense 1
+       |   +--------------- * gnd
+       +------------------- * horizontal sync
+<p>
+    * May be NC. My spies tell me Sun considers these obsolete.
+</PRE>
+The green video input is used by grayscale monitors.
+<p>
+Sense table - 1=nc, 0=strap to gnd
+<PRE>
+  Sense      Type/scan rate
+ -------------------------------------------
+    0      TBD (?))
+    1      Reserved
+    2      1280x1024, 76Hz
+    3      1152x900, 66Hz
+    4      1152x900, 76Hz, 19"
+    5      Reserved
+    6      1152x900, 76Hz, 16 or 17"
+    7      Nothing (no monitor connected)
+</PRE>
+
+<h3><a name="nvccon12">Sun/Sony GDM17E10</a></h3>
+
+(From: Andy Cuffe (baltimora@psu.edu).)
+<p>
+This is a good SVGA monitor (same as Sony Multiscan GDM-17SE).  The Sun
+version doesn't connect the H and V sync lines to the video connector. 
+If you open it, on the the video board there will be a 3 pin connector
+labeled H sync, V sync, and ground.  All you have to do is connect these
+to some unused wires in the video cable.  There will be several wires
+going to a small board which I think is used for monitor detection, or
+other functions only used by a sun station.  You can just cut any two of
+these and use them for sync.  Cut off the 13W3 and attach a HD15
+connector, remembering which pins are used for sync.  
+<p>
+If you're not into soldering, I'm fairly sure there is an adapter fit
+this that just converts the separate sync to sync on green.  If I
+remember correctly, the web site that was selling it incorrectly
+identified it as a fixed frequency monitor and said you needed one of
+their special video cards.  It is NOT fixed frequency.
+
+<h3><a name="nvccon13">Sony PVM-2030 and PVM-2530 Profeel Pro Monitors</a></h3>
+
+(From: Rob Myers (myer3812@nova.gmi.edu).)
+<p>
+I have the pinouts for the RGB connectors on newer Sony monitors
+(specifically, the PVM-2030 and PVM-2530 Profeel Pro monitors).  These pinouts
+are directly from the owner's manual.  The connector used is a DB25 female.  
+<ul>
+<li>High state = 5V (open)
+<li>Low state  = 0V (short to ground)
+</ul>
+Note On Pins 3,4,5,6,11: 
+<ul>
+<li>If pin 9 is high/open (Analog RGB mode) then .7Vpp, 75 ohm signals must
+    be input to these pins.  Pins 1 and 25 are not used.
+<p>
+<li>If pin 9 is low (Digital RGB mode) then TTL signals must be input to
+    these pins.  Pins 1 and 25 are only used in this mode.
+</ul>
+<PRE>
+Pin   Signal         Descr
+---------------------------------------------------------------
+1     IBM Select     High: IBM mode (RGBI)
+                     Low:  3 Bit TTL (RGB)
+
+2     Audio Select   High: Audio input from pin 13
+                     Low:  Audio input from LINE A/B/VTR jacks
+
+3     HSync/CSync    Horizontal or Composite Sync, Negative Pol.
+
+4     Blue Input     Video Inputs: Positive Pol.
+
+5     Green Input    (Sync on green optional in analog mode)
+
+6     Red Input
+
+7     NC
+
+8     NC
+
+9     Analog/Digital High: Analog mode
+                     Low:  Digital mode
+
+10    RGB/Normal     High: RGB input selected
+                     Low:  LINE A/B/VTR input selected
+
+11    VSync          Vertical Sync, Negative Pol.
+
+12    Blanking       High: Video input from RGB input only
+                     Low:  LINE A/B/VTR signal is superimposed over 
+                           signal from RGB input
+
+13    Audio Input    -5 dB / 100% mod.
+
+14    NC
+
+15-24 Ground
+
+25    intensity      Positive Pol.
+</PRE>
+These monitors are regular NTSC monitors, but I'm sure they can be
+connected to computers the same way I connected the KX-2501... using a
+simple buffer circuit and special video drivers.  Another possibility is
+to build a component-to-RGB converter for really high quality DVD
+playback (better than S-Video)... the blanking feature seems interesting
+but the RGB source would have to be synchronized with the composite
+source.  I think the KX's/XBR's have the blanking input, too.
+<p>
+The Sony RGB Multi Input pinout is also valid for the kV-25XBR; it should also
+work with the kV-20XBR and KX-1901, and I know it works with a KX-2501.  (The
+KX series monitors are the original Sony Profeel monitors from about 1983, and
+they are very common.)
+<p>
+A female 34-pin floppy connector will mate with the Sony connector just fine.
+I was able to use the analog RGB input on a KX-2501 to display VGA PC video
+using a sync level converter circuit and drivers from:
+<p>
+<ul>
+<li><a href="http://www.hut.fi/Misc/Electronics/circuits/vga2rgbs.html">
+  Tomi Engdahl's VGA to RGB + Composite Sync Converter</a>
+</ul>
+
+<h3><a name="nvccon14">SGI Octane to Sony GDM-17E21 Cable</a></h3>
+
+(From: Yves DELAY (yves.delay@imag.fr).)
+<p>
+I am trying to connect a Silicon Graphics (SGI) 17" screen display to an SGI
+Octane CPU. I would like to build my own HD15 to 13W3 cable.
+<p>
+The monitor is standard SVGA with the VESA Display Data Channel (DDC) and
+works fine on a PC.
+<p>
+SGI OCTANE CPU video pinout (13W3):
+<ul>
+A1      Red (analog)<br>
+A2      Green (analog)<br>
+A3      Blue (analog)<br>
+<p>
+1       Monitor ID bit 3 (TTL)<br>
+2       Monitor ID bit 0 (TTL)<br>
+3       Composite sync (active low), TTL<br>
+4       Horizontal drive (active high), TTL<br>
+5       Vertical drive (active high), TTL<br>
+6       Monitor ID bit 1 (TTL)<br>
+7       Monitor ID bit 2 (TTL)<br>
+8       Gnd<br>
+9       Gnd<br>
+10      Gnd<br>
+</ul>
+Below is the pinout of the SGI 13W3 to HD15 cable, part number: 018-0500-001,
+Rev. E VIST 9717, obtained after a phone call to the SGI hotline.
+<PRE>
+ Signal     SGI OCTANE (13W3)                 Monitor: GDM-17E21 (HD15 male)
+----------------------------------------------------------------------------
+
+ Red             A1                          1      Red
+ Red Gnd         A1 Gnd                      6      Red Gnd
+ Green           A2                          2      Green (+ composite sync)
+ Green Gnd       A2 Gnd                      7      Green Gnd
+ Blue            A3                          3      Blue
+ Blue Gnd        A3 Gnd                      8      Blue Gnd 
+
+                                      Pins 6, 7, and 8 tied together, along
+                                        with both connectors metallic shell
+                                        and cable shield.
+</PRE>
+Notes:
+<ol>
+<li>ID3 (1): not used
+<li>ID0 (2), ID2 (7), and Gnd (8): all tied together.
+<p>
+<li>Other pins: not used.
+</ol>
+
+<h3><a name="nvccon15">S-Video</a></h3>
+
+Note that this is often called S-VHS.  I don't know whether this is correct.
+I assume that S-Video refers to the use of separate luminance (intensity) and
+chrominance (color) signals and that S-VHS refers to a modified recording
+standard for the VHS tape format to achieve higher resolution on special
+S-VHS tape. S-VHS may or may not use S-Video signals and vice-versa.
+<p>
+In any case, S-Video uses a 4 pin mini-DIN connector.  Viewing from the
+female-end with the key at the bottom:
+<ul>
+Pin 1 (lower right): Y Ground<br>
+Pin 2 (lower left): C Ground<br>
+Pin 3 (upper right): Y (Intensity/Luminance)<br>
+Pin 4 (upper left): C (Color/Chrominance)<br>
+<p>
+<hr>
+<br>
+<li>Back to <A HREF="#nvctoc">Video Conversion FAQ Table of Contents</A>.
+<p>
+-- end V2.01a --
+<p>
+</BODY>
+</HTML>

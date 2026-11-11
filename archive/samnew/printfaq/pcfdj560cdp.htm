@@ -1,0 +1,296 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcfdj560cdp.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="HP DeskJet 560C Detailed problem descrip..&nbsp;&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: HP DeskJet 560C Detailed problem description and possible solutions</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcfdj560cdp.htm">https://www.repairfaq.org/samnew/printfaq/pcfdj560cdp.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">HP DeskJet 560C Detailed problem descrip..&nbsp;&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;<a href="pcfdj520c.htm">&lt;&lt;&nbsp;HP DeskJet 520 - Crunch!</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfcdhpdj.htm">Cartridge detection on HP..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcfdj560cdp">HP DeskJet 560C Detailed problem description and possible solutions</A></h3>
+
+<blockquote>
+"I have a HP DeskJet 560C, Model C2168A that is behaving badly.  When I
+ power it on initially, it appears to run through a diagnostic self-test
+ (as evidenced by the sequence of LEDs on the control panel).  It gets
+ to the point where it moves the print head and that is where things
+ go bad.  I think it is attempting to report some sort of error code
+ because it then flashes some of the LEDs in a repeating pattern 
+ (more on that later).
+<p>
+ First let me describe mechanically what it is doing.  When it gets to
+ the point in the power-up routine where it moves the print head, it
+ should do the following:
+<p>
+ <ol>
+ <li>Move print head to the extreme right.
+<p>
+ <li>Prime the print head (???), a stepper motor on the right raises
+  a mechanism to contact the print head.
+<p>
+ <li>Position the print head in a ready position.
+ </ol>
+<p>
+ OK, here is what it is doing (please forgive my feeble attempts to
+ describe in words what is happening):
+<p>
+ <ol>
+ <li>I hear three distinct sounds (whirring of various stepper motors
+  I think) before the print head moves.
+<p>
+ <li>The first two sounds seem normal from what I can remember when the printer
+  used to work.
+<p>
+ <li>The third sound is the loudest and doesn't sound at all normal.  It sounds
+  as if the stepper motor that does the priming is oscillating back and forth
+  between two "steps" (the sound is like a stripping gear).
+<p>
+ <li>The print head moves approx. 1" to the right.
+<p>
+ <li>The print head immediately moves approx. 1.5" to the left (note, this
+  sequence of print head movements happens bang-bang (no delays between
+  movements).
+ </ol>
+<p>
+ The end result is that the print head winds up about 0.5" to left of
+ the position it was in when the unit was powered on.  If I continue
+ the power on sequences enough times it will end up at the extreme 
+ left and will be accompanied by a much uglier, more sinister sound
+ of the print head slapping against the leftmost guard (as if the
+ printer is attempting to throw the print head through the case).
+<p>
+ Now let me describe the sequence that happens with the LEDs.  The 
+ control panel has 9 LEDs arranged in three columns of three LEDs
+ each.  The leftmost column of LEDs lies between the "CLEAN" button
+ at the top and the "Font" button at the bottom.  The middle column
+ of LEDs lies between the "Alignment Test" button and the "Status"
+ button.  Finally, the rightmost column of LEDs lies between the
+ "Install Print Cartridge" button and the "Quality" button.  Here
+ is some ASCII art:
+<p>
+<PRE>
+
+                              CONTROL PANEL
+ ===========================================================================
+ ||                                                                       ||
+ ||                                  Alignment         Install Print      ||
+ ||  RESET          CLEAN            Test              Cartridge          ||
+ ||                                                                       ||
+ ||                 ,--,              ,--,              ,--,              ||
+ ||                ( #1 )            ( #4 )            ( #7 ) o o o       ||
+ ||                 '--'              '--'              '--'              ||
+ ||                                                                       ||
+ ||                 ,--,              ,--,              ,--,              ||
+ ||                ( #2 )            ( #5 )Busy        ( #8 ) o           ||
+ ||                 '--'              '--'              '--'              ||
+ ||                                                                       ||
+ ||                 ,--,              ,--,              ,--,              ||
+ ||                ( #3 )Condensed   ( #6 )Ready       ( #9 )Econo Mode   ||
+ ||                 '--'              '--'              '--'              ||
+ ||                                                                       ||
+ ||  Load/Eject      Font             Status            Quality           ||
+ ||  Paper                                                                ||
+ ||                                                                       ||
+ ===========================================================================
+
+</PRE> 
+ I have numbered the LEDs (using my own numbering scheme) so that I can 
+ reference them below.
+<p>
+ Here is the sequence that the LEDs progress through each time the unit>is
+ powered on.  The sequence is always the same.
+<p>
+<PRE>
+      LEDs On       Duration                   Description
+    -----------    ----------     --------------------------------------- 
+  1. 123456789      2.5 secs       Happens immediately when I switch the
+                                   power on.  Then LEDs 234789 turn off.
+
+  2. 1   56         0.5 secs       This is a flash (longer than a blink).
+                                   Then LED 5 turns off.
+
+  3. 1    6         2   secs       Then LED 7 flashes on.
+
+  4. 1    67        0.5 secs       This is a flash.  Then LED 7 turns off,
+                                   LED 5 blinks on.
+
+**5. 1   56         ----           Here LED 5 just blinks on then off.
+
+  6.  234  789                     This starts the alternating sequence
+                                   where I believe the printer is trying
+                                   to report an error code.
+
+  7. 1    6                        This is the rest of the alternating
+                                   sequence.  The printer then repeats
+                                   these two patterns forever (LEDs 234789,
+                                   followed by 16).
+</PRE>
+<p>
+** Step 5 is the point where the printer starts moving the print head."
+</blockquote>
+<p>
+(From: Jason D. Pero (JDP6640@ritvax.isc.rit.edu).)
+<p>
+The grinding sound from priming area is the jammed lever black stick 
+that is pushed towards a bit towards right.  If it good, it should be 
+in upright position.  If stuck too very right, unstick it by pushing 
+it back to upright position towards left.  This stick can be seen 
+between the carriage rod and the printhead's purging rubber nipples 
+and wipers.  Also clean (gently!) the clear plastic strip with that 
+fine black lines on it.  First the clear strip must be removed 
+first before doing this operation: The sensor is behind the printhead 
+riding the clear strip, remove it by unengaging two triangular 
+fingers inwards from outside and pull the sensor unit outwards 
+towards back.  Dust off inside that sensor gap and snap it back in.
+<p>
+Finally clean and oil both carriage rod and the angled underside area 
+where the bearing block contacts upward onto it.  Oil that carriage
+motor carefully and all stepper motors.
+<p>
+That should solve everything.  This have happened to my 520, and my 
+friends' 540 and 560C.  Pretty common problem!  Usual action when 
+misbehaving is slamming either stops or do a "rushed start/stop" and 
+some odd scary noises.  All complains with pretty, interesting 
+alterating flashes from the LED's on the control panel.
+<p>
+Pure or almost pure alcohol stuff is best as it does not melt 
+anything or rub marks off and some 2 in 1 heavy duty oil "blue band" 
+can.  Top and bottom white shells comes apart easily after unengaging 
+four snaps, doing one at a time and pulling gently and with a small 
+flat screwdriver.  Top off, the engine is free.  disconnect with care 
+to both ribbon cables one for carriage motor, and the flat white 
+ribbon, or in some models that uses dual printheads, unplug another 
+stepper motor.  All connections you need to worry about is only from 
+the mainboard side.  Then the print engine lifts out without any 
+fastening hardware.
+<p>
+WELL DESIGNED 5xx series compared to many printers past and now!
+I have a 520 chugging away after this fix and real cheap for that 
+printer from a owner who does not want it.
+<p>
+Only problem is cost of cartridges. :(  $50 of two versus $13 can of 
+toner powder for an Okidata 400 that will last thousands of papers.
+Only problem is Oki. 400 LED laser thinks (processing graphics) very 
+slowly.  Is there a hack to swap the proper circuit boards from
+other similar Oki 400/800 series to make it work faster and more 
+useful than a pokey 186 cpu equipped Oki 400???
+<p>
+Your comments and suggestions on which brand of refill inks that is 
+perfect for those cartridges.  I know how to refill it right after 
+experimenting on a bad cartridge and successfully refilling one good 
+cartridge from a bad cartridge (dead jet out of 48 jets I think).
+<p>
+(From: Glenn Allen (glenn@manawatu.gen.nz).)
+<p>
+It is not a stripped gear is it?
+<p>
+The old DJ500 used to have 2 levers on the right hand side at the back that
+went up and down. Sometimes these got stuck and noises could be heard. Normal
+paper feed problems here.
+<p>
+A problem with a DJ850 was that paper got stuck and to get it out I had to
+remove the paper feed motor on the drive shaft, when put back it would bang
+the left hand side of the case. Needles to say it needed the cog setup back to
+right place it expects when powered on.
+<p>
+Those printers have an index strip that the printhead follows doesn't it? Is
+this clean, i.e. Not ink all over the place.?
+<p>
+Lastly if you are repairing and turning your printer up and down, check you do
+not lose the rubber cap where the printhead sits, and clears the guns, If you
+do your cartridges will become clogged in no time.
+<p>
+Also clean the print head shaft, any gunk on it will cause the printhead head
+to stick thus giving error light or worst powers down the printer.
+<p>
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfdj520c.htm">&lt;&lt;HP DeskJet 520 - Crunch!</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfcdhpdj.htm">Cartridge detection on HP..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>

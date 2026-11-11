@@ -1,0 +1,150 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!--
+  Mirrored from https://www.repairfaq.org/samnew/printfaq/pcfljfx.htm
+  Sci.Electronics.Repair FAQ / Sam's Laser FAQ / Silicon Sam's Technology Resource.
+  Copyright (c) Samuel M. Goldwasser and Filip M. Gieszczykiewicz, and the contributing authors
+  where marked (From: ...). All rights reserved. Reproduced unaltered and free of charge under the
+  fair-use terms at https://www.repairfaq.org/sam/copyright.htm. The original site: https://www.repairfaq.org/
+  Only fonts and colors are restyled, as those terms permit.
+-->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="Author" content="www.repairfaq.org">
+  <meta name="Description" content="Do-it-yourself Electronics Repair">
+  <meta name="Generator" content="Splitter6.pl_050305">
+  <meta name="Keywords" content="Hewlet Packard LaserJet FAX (HP C1740A)&nbsp; printfaq repair micro wave broken vcr tv monitor cd radio dead Printer and Photocopier Troubleshooting and Repair Collection  ">
+  <title>SER FAQ: PRINTFAQ: Hewlet Packard LaserJet FAX (HP C1740A)</title><link rel="stylesheet" href="../../../companion/assets/mirror-theme.css">
+</head><body>
+<div class="rfm-source"><small>Source: <a href="https://www.repairfaq.org/samnew/printfaq/pcfljfx.htm">https://www.repairfaq.org/samnew/printfaq/pcfljfx.htm</a> &middot; Original site: <a href="https://www.repairfaq.org/">repairfaq.org</a> &middot; Unaltered mirror with a <a href="../../../index.html">companion guide</a></small></div>
+
+<!-- Header preamble -->
+<table width="95%" border="0" cellpadding="2" cellspacing="2"
+	style="border-collapse: collapse">
+  <tbody><tr>
+<!-- Start of FAQ Header -->
+	<td align="center" valign="top" bgcolor="yellow">
+       <table width="20%" border="0" cellpadding="2" cellspacing="2"
+			style="border-collapse: collapse">S.E.R. FAQ
+<!-- Dynamic Links -->
+ 		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/"
+		>Home</a></td></tr>
+		
+		<tr><td align="right"><a href="http://repairfaq.ece.drexel.edu/wgdrexel.html"
+		>Search</a></td></tr>
+		
+<!-- Static Links -->
+		<form method="post" action="../../cgi-bin/United.cgi">
+		<input name="FAQ" value="printfaq" type="hidden">
+		<input name="TO" value="SAM" type="hidden">
+		<input name="ACTION" value="download" type="hidden">
+		 <tr><td align="right"><input name="Download" value="Download"
+			type="submit"></td></tr>
+		<input name="REF" value="REPAIR-printfaq"
+			type="hidden">
+		<input name="ACTION" value="feedback" type="hidden">
+ 		<tr><td align="right"><input name="Feedback" value="Feedback"
+			type="submit"></td></tr></form>
+       </table>
+	</td>
+<!-- sidebar pseudo-frame -->
+	<td valign="top"><!-- do not close this td! align="center" removed -->
+      <table width="95%" border="0" cellpadding="1" cellspacing="1"
+	  	style="border-collapse: collapse">
+		<tbody><tr>
+		<td><strong>Printer and Photocopier Troubleshooting and Repair Collection  </strong>: <font color="red">Hewlet Packard LaserJet FAX (HP C1740A)&nbsp;</font><br>
+&nbsp;<a href="http://repairfaq.ece.drexel.edu/sam/copyright.htm">Copyright</a> &copy;
+1994-2007, Samuel M. Goldwasser. All Rights Reserved. <font color="grey">Reproduction of this document in whole or in part is permitted if both of the following conditions are satisfied: 1. This notice is included in its entirety at the beginning.  2. There is no charge except to cover the costs of copying.</font>
+I may be contacted via the Sci.Electronics.Repair FAQ (www.repairfaq.org) <a href="http://repairfaq.cis.upenn.edu/Misc/new/emaillnk.htm">Email Links Page</a>.
+</td>
+      </tr></tbody></table>
+      <hr width="100%">
+<!-- NaViGaTiOn -->
+<center>
+	
+		
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pcfbif950m.htm">&lt;&lt;&nbsp;Brother IntelliFax 950M t..</a> |
+		
+	
+&nbsp;<a href="../printfaq.htm">Index</a>&nbsp;
+	
+		
+| <a href="pcfpspbf.htm">Paper sense problems with..&nbsp;&gt;&gt;</a>
+		
+	
+</center>
+<!-- NaViGaTiOn -->
+	</td></tr></tbody>
+</table>
+<!-- End of FAQ Header -->
+<h3><A NAME="pcfljfx">Hewlet Packard LaserJet FAX (HP C1740A)</A></h3>
+
+<blockquote>
+"This machine is copying and sending fax with a line about 3 cm across
+ straight down the paper.  This is a thick black colour.  Any ideas as to
+ the cause?  I have already checked that there is no paper jam or any block
+ to the sensor.
+</blockquote>
+<p>
+(From: Robert Macy (robert.macy@engineers.com).)
+<p>
+I'm not familiar with the HP LaserJet FAX, but I assume the LJ scans in a page
+and then sends it, or copies it.  Since the black stripe is unique to sending
+or copying a document (does not appear on incoming faxes), the problem is in
+the HP's acquisition system.
+<p>
+It can either be the illumination of the page over that small section (no
+light, looks black) or it can be a whole section of the linear CCD went out
+(the whole section is losing any charges built up, looks black) or it can be
+the memory where the image is shifted into (dead RAM section, looks black).
+<p>
+I don't know how the HP illuminates its pages.  Is it a flourescent tube
+across the page, or a row of LED's?  Knowing HP's penchant for reliability I
+would almost assume the engineers went after LEDs.  And the section that
+lights up that 3cm width could have died.  However, if it's illumination that
+died, usually the edges are "soft".
+<p>
+If it uses flourescent light (remember I said I'm not familiar with this
+scanner), then it sounds like the CCD, or memory, has gone funky on you.
+<p>
+If the memory where the image is stored has a section that died, then you
+could end up with such a stripe also.  Even my ScanMan Plus by Logitech has
+occasionally put a black strip on the first 10% of the pixels.  To solve that
+I have to do a full power OFF reset (not reboot, but full power OFF)
+<p>
+You can look for the illumination uniformity with your eyes.  Just make sure
+there is no section that's darker by a noticeable amount (not necessarily
+black, but just a lot dimmer)
+<p>
+Put a sheet of white paper in the machine and put a scope on the output of the
+CCD & sync from the line reset.  Make sure that the CCD is supplying active
+light information across its whole field of view.  If not, you can go from
+there.
+<p>
+If the data coming out of the CCD looks good, then it's probably the memory
+holding that line.  You can probably change the line storage RAM and fix it.
+<p>
+These are just guesses based upon how I perceive the HP LaserJet to work.
+Hope somebody that <b>KNOWS</b> this unit jumps in with more specific help.
+
+
+<!-- End of FAQ Body -->
+<hr width="100%">
+<!-- NaViGaTiOn -->
+
+<center>
+<!-- Show navigation on top and bottom for long sections -->
+	
+		
+&nbsp;<a href="pcfbif950m.htm">&lt;&lt;Brother IntelliFax 950M t..</a> |
+		
+	
+<a href="../printfaq.htm">ToC</a>
+	
+		
+| <a href="pcfpspbf.htm">Paper sense problems with..&gt;&gt;</a>
+		
+	
+</center>
+
+</body>
+</html>
